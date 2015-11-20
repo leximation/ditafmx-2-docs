@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="darkblue"?><?dtall dict="ForceTablesWide"?><?dtall dict="PreserveTableWidths"?><?dtall
+dict="pgwide"?><?dtall dict="stentry"?><?dtall dict="tableformat"?><topic
+    id = "id1429F0P0YPF"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Rotated Table Cells</title>
+<shortdesc status = "changed">FrameMaker allows you to easily rotate
+table cells, and this will remain rotated for PDF publishing.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates status = "changed"><created date = "2009-02-08"/>
+<revised modified = "2014-03-03"/></critdates></prolog>
+<body status = "changed"><p status = "new"><indexterm status = "new">rotated
+table cells</indexterm><indexterm status = "new">cell rotation</indexterm><indexterm
+status = "new">table cell rotation</indexterm>If the Save Cell Rotation
+option is enabled in the Authoring Options dialog, table cell rotation
+will be preserved. This is typically done to specify long table
+column headings, but can be done on any table cell. Because this
+feature is not specifically supported by DITA, it’s not likely that
+this rotation will be applied to output types other than those generated
+through FrameMaker.</p>
+<p status = "new">To rotate a cell, select the entire cell, then
+choose <menucascade status = "new"><uicontrol status = "new">Graphics</uicontrol>
+<uicontrol status = "new">Rotate</uicontrol></menucascade> and specify the
+rotation angle. Save, close and reopen the file in FrameMaker, and
+the rotation will be applied.</p>
+<p status = "new">This rotation information is stored as a DITA
+data element (the first child of the entry element). This data element
+has a @type attribute of “fmx-rotated” and a @value attribute that
+specifies the rotation angle. Because this is valid DITA markup,
+there should be no adverse reaction in other editors or processing
+tools. In fact, it would be possible for other processors to key
+off of this element to apply a cell rotation for other output types.</p></body></topic>

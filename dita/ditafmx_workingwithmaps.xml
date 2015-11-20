@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id7b2f2fd1-1659-4205-b75d-cdb410459bfb"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Working with Maps</title>
+<shortdesc status = "new">General information on creating maps and
+bookmaps, and how they work in FrameMaker.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2009-03-07"/>
+<revised modified = "2014-03-28"/></critdates></prolog>
+<body status = "new"><p status = "new"><indexterm status = "new">map
+structure application</indexterm><indexterm status = "new">maps,
+working with</indexterm><indexterm status = "new">bookmaps, working
+with</indexterm>The default Map structure application (DITA-FMx-Map-1.2)
+allows for creation and editing of both DITA map and bookmap files.
+When saved to disk, the resulting DITA map file is completely DITA-compliant,
+although within the FrameMaker authoring environment some additional
+elements are added to provide a more efficient authoring experience.
+These elements have an “fm-” prefix.</p>
+<p status = "new">DITA maps are the fundamental mechanism provided
+by DITA for organizing topics into deliverables (PDFs, online Help,
+HTML, etc.). A separate map can be created for each deliverable
+type or a single map can be used for multiple deliverables. Maps organize
+the topics into a logical hierarchy using topic referencing elements
+(<synph status = "new" outputclass = "element">topicref</synph> for
+a “map” and <synph status = "new" outputclass = "element">chapter</synph>, <synph
+    status = "new" outputclass = "element">appendix</synph>, <synph
+    status = "new" outputclass = "element">topicref</synph>, and
+others for a “bookmap”). A topic referencing element can also reference
+other maps, allowing you to create multiple levels of nested maps
+as appropriate for your topic organization and workflow.</p>
+<p status = "new">All DITA map files (both map and bookmap) must
+use the “.ditamap” file extension. This is a requirement enforced
+by the DITA Open Toolkit and is also required by DITA-FMx.</p>
+<p status = "changed">On the opening of a DITA map file, some topic
+referencing elements may be updated to include a child <synph
+    status = "new" outputclass = "element">fm-reflabel</synph> element
+that displays a label within a locked text range. Other topic referencing
+elements may already contain a <synph status = "new"
+    outputclass = "element">navtitle</synph> element which serves
+this same purpose. When opening a map that has no <synph status = "new"
+    outputclass = "element">navtitle</synph> elements, the settings
+in the Map Options dialog determine if <synph status = "new"
+    outputclass = "element">navtitle</synph> elements are added
+or not.</p>
+<p status = "new">The Auto-load Topicrefs option (in DITA Options)
+controls what is displayed for the <synph status = "new"
+    outputclass = "element">fm-reflabel</synph> and <synph
+    status = "new" outputclass = "element">navtitle</synph> elements
+(titles, file names, or both).</p></body></topic>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id081SH0K02Y4"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Where Used</title>
+<shortdesc>Generates a report of all references to an element or
+topic.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2008-10-13"/>
+<revised modified = "2014-03-30"/></critdates></prolog>
+<body><p>Before modifying a topic or referenced element (an element
+used as a conref), it may be useful to know all of the files that
+reference that topic or element.</p>
+<fig audience = "web"><title>DITA-FMx Where Used dialog box</title><image
+href="images/whereused.png" align="left" placement="break"  otherprops
+= "fmdpi:110"/></fig>
+<p status = "changed">In the Where Used dialog, select the option
+to indicate the type of reference to locate (element or topic).
+If the insertion point is in an element that has an ID, both options are
+available, otherwise only the topic option can be used. Specify
+the scope as a DITA map or a folder. If you specify a map, the report
+will be generated based on all files referenced by that map (and
+any submaps). If you specify a folder, the report will be generated
+based on all files of the type specified in that file system path.</p>
+<note>In order to use the Where Used command to work properly for
+a selected element, the element with the ID value must be selected.
+This may be obvious in most cases, but if your conref source contains
+a child element, you need to make sure the insertion point is in
+the parent element not the child.</note>
+<p>The context menu (right-click) includes a Where Used menu item
+for quick access.</p></body></topic>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id1413G000ZUI" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Map Options</title>
+<shortdesc status = "new">Navtitles in maps can be constructed in
+various ways.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "2014-01-03"/>
+<revised modified = "2014-08-10"/></critdates></prolog>
+<body status = "new"><p status = "new">Depending on your workflow,
+it may be important how and when <synph status = "new"
+    outputclass = "element">navtitle</synph> elements are added
+to topicrefs in a map. These options control how navtitles are added.</p>
+<fig audience = "web" status = "new"><title>DITA-FMx Map Options
+dialog</title><image href="images/mapoptions.png" align="left" placement="break"
+ otherprops = "fmdpi:110"/></fig>
+<p status = "new">With the “auto-load topicrefs” option enabled
+(in DITA Options), when authoring a map, a clickable label is provided
+for each topicref-based element. For topicrefs that have a <synph
+    status = "new" outputclass = "element">navtitle</synph> element,
+the <synph status = "new" outputclass = "element">navtitle</synph> itself
+becomes that clickable label; if no <synph status = "new"
+    outputclass = "element">navtitle</synph> is present, an <synph
+    status = "new" outputclass = "element">fm-reflabel</synph> element
+is added as a temporary label. These are used as navigation aids
+for accessing topics referenced by a map structure.</p>
+<dl status = "new"><dlentry status = "new"><dt status = "new">Add
+Navtitle to Topicref</dt>
+<dd status = "new"><ul status = "new"><li><p status = "new"><b
+    status = "new">Never Add</b> - Just as it says; with this option
+enabled, navtitles are never added unless you specifically add them.</p></li>
+<li status = "new"><p status = "new"><b status = "new">Add on Topicref
+Insertion</b> - When a topicref-based element is added to a map,
+the title of the associated file is added within the <synph
+    status = "new" outputclass = "element">navtitle</synph> and <synph
+    status = "new" outputclass = "element">topicmeta</synph> elements.
+However, when a map is opened that has topicrefs without <synph
+    status = "new" outputclass = "element">navtitle</synph> elements,
+the <synph status = "new" outputclass = "element">fm-reflabel</synph> element
+is used as a label.</p></li>
+<li status = "new"><p status = "new"><b status = "new">Add on Topicref
+Insertion and Topicref Update</b> - In addition to navtitles being
+added on topicref insertion, when a map is opened, any topicrefs without
+a <synph status = "new" outputclass = "element">navtitle</synph> will
+be updated to include the topicmeta/navtitle structure.</p></li></ul></dd></dlentry></dl>
+<note type = "important" status = "new"><p status = "new">Use of
+the “Add on Topicref Insertion and Topicref Update” option will cause
+topicmeta/navtitle structures to be added to all topicrefs in a
+map when it is opened and saved.</p></note></body></topic>

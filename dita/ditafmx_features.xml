@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="addon"?><?dtall dict="conrefed"?><?dtall dict="customizable"?><?dtall
+dict="ePublisher"?><?dtall dict="Omni"?><?dtall dict="reltables"?><?dtall
+dict="SuiteHelp"?><?dtall dict="UseLanguageTemplate"?><?dtall dict="Webworks"?><?dtall
+dict="webhelp"?><?dtall dict="xml:lang"?><topic id = "ditafmx_main"
+    ditaarch:DITAArchVersion = "1.0"
+    domains = "(topic ui-d) (topic hi-d) (topic pr-d) (topic sw-d)                          (topic ut-d)"
+    class = "- topic/topic "
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title class = "- topic/title ">Features</title>
+<shortdesc status = "changed" class = "- topic/shortdesc ">Describes
+the DITA map and topic authoring commands as well as the enhanced DITA
+publishing features.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>test</author>
+<author>scottp</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2015-09-08"/></critdates></prolog>
+<body status = "changed" class = "- topic/body ">
+<p status = "changed" class = "- topic/p ">DITA-FMx is a plugin
+and set of structure applications that let you create and edit DITA
+XML files in FrameMaker. DITA-FMx 2.0 supports DITA 1.2 (and earlier versions)
+and is available for FrameMaker versions 7.2, 8, 9, 10, 11, 12,
+and 2015.</p>
+<p id = "id_066LE80505Z" class = "- topic/p ">For a complete list
+of changes between versions of DITA-FMx, see <xref href = "ditafmx_revisions.xml#id07C590FA05Z"
+type = "topic" format = "dita" scope = "local" class = "- topic/xref
+"></xref>. The following describes the general features provided
+by DITA-FMx.</p>
+<dl id = "list001" status = "changed" class = "- topic/dl ">
+<dlentry status = "changed" class = "- topic/dlentry ">
+<dt id = "id_066KI0G0PY4" class = "- topic/dt ">DITA Map and Bookmap
+Support</dt>
+<dd status = "changed" class = "- topic/dd "><p status = "changed"><indexterm
+class = "- topic/indexterm ">features<indexterm class = "- topic/indexterm
+">ditamap support</indexterm></indexterm><indexterm class = "- topic/indexterm
+">ditamap support features</indexterm>A Map structure application
+is provided that allows for creation and editing of both DITA 1.2
+map and bookmap files. When saved to disk, the resulting DITA map
+file is completely DITA-compliant, although within the FrameMaker authoring
+environment some additional elements are added to provide a more efficient
+authoring experience. This Map application also provides complete support
+for relationship tables as well as key definitions (keydef).</p><p
+    status = "changed">The <uicontrol>Build Map from Outline</uicontrol> command
+creates a DITA map and optionally DITA topic stub files from a simple
+FrameMaker file.</p><p status = "changed">The <uicontrol>Build WorkBook
+from Map</uicontrol> command creates a FrameMaker book file that contains
+all of the files referenced in the current DITA map and all submaps.
+This “work book” is not intended to be used for publishing, but
+facilitates the use of FrameMaker’s built-in book processing commands
+such as spell checking and searching at the book level. In order
+to use these book processing commands on the work book you must
+first open all of the files in the book. This can be done with the <uicontrol>Open
+All XML Files in Book</uicontrol> command which provides the option to
+resolve references in each file, or open the files without resolving
+references.</p></dd></dlentry>
+<dlentry status = "changed" class = "- topic/dlentry ">
+<dt status = "changed" class = "- topic/dt ">Automatic Metadata
+Support</dt>
+<dd status = "changed" class = "- topic/dd "><p status = "changed">If
+enabled in the Auto-Prolog Options dialog, author and date metadata
+is automatically updated and added to the prolog in topics and bookmeta/topicmeta
+in maps.</p><p status = "new">When a <synph status = "new"
+    outputclass = "element">draft-comment</synph> element is inserted,
+the author and time attributes are automatically set to the values
+defined in the Authoring Options dialog.</p></dd></dlentry>
+<dlentry class = "- topic/dlentry ">
+<dt status = "changed" class = "- topic/dt ">Ditaval Support</dt>
+<dd status = "changed" class = "- topic/dd "><p>Filtering based
+on ditaval files can be applied to content in FrameMaker books and
+files using the <uicontrol>Apply Ditaval</uicontrol> command. Ditaval
+files can also be specified for output generated through the Open
+Toolkit (using the <uicontrol>Generate Output</uicontrol> command).
+The <uicontrol>Ditaval Manager</uicontrol> provides an easy to use
+interface for creating and managing ditaval files. A ditaval file
+can also be specified when generating a FrameMaker book using the <uicontrol
+    status = "new">Generate Book from Map</uicontrol> command.</p></dd></dlentry>
+<dlentry class = "- topic/dlentry ">
+<dt status = "changed" class = "- topic/dt ">Key Reference and Keyspace
+Support</dt>
+<dd status = "changed" class = "- topic/dd "><p status = "changed">Keys
+provide an alternate method of referencing. A key name is bound
+to a reference using a key definition (<synph outputclass = "element">keydef</synph>)
+in a map. This key name can be used in place of (or in addition
+to) an <synph outputclass = "attribute">href</synph> reference (a
+direct reference to a file). A keyspace is comprised of all key
+definitions in a map (and submaps), optionally filtered by an associated
+ditaval file.</p><p status = "new">DITA-FMx provides support for
+key references to files as well as key references to elements (key
+element references).</p></dd></dlentry>
+<dlentry class = "- topic/dlentry ">
+<dt status = "changed" class = "- topic/dt ">Glossary Term Keyref
+Support</dt>
+<dd status = "changed" class = "- topic/dd "><p status = "changed">Using
+a <synph status = "new" outputclass = "element">term</synph> element
+to create a key element reference to a glossary entry will render
+the text of the glossary entry’s title (<synph status = "new"
+    outputclass = "element">glossterm</synph> element). If you enable
+the <uicontrol>Glossary Term Swapping</uicontrol> option (in the <uicontrol>Book
+Build Settings</uicontrol> dialog), the term will render the <synph
+    status = "new" outputclass = "element">glossSurfaceForm</synph> content
+in the first instance of the term in a chapter, and the value of <synph
+    status = "new" outputclass = "element">glossAlt</synph> (<synph
+    status = "new" outputclass = "element">glossAcronym</synph> or <synph
+    status = "new" outputclass = "element">glossAbbreviation</synph>)
+for remaining instances.</p></dd></dlentry>
+<dlentry class = "- topic/dlentry ">
+<dt status = "changed" class = "- topic/dt ">Conref Support</dt>
+<dd status = "changed" class = "- topic/dd "><p status = "changed">Content
+references allow reuse of elements from the same file or other files
+on the same file system. DITA-FMx supports the use of conref ranges
+as well as conref specification by key reference (conkeyref).</p><p
+    status = "new">If enabled (through the <uicontrol
+    class = "+ topic/ph ui-d/uicontrol ">Options</uicontrol> command)
+on the opening of a file, the content included by conref is resolved
+and displayed as a locked text range (similar to a text inset).
+The <uicontrol>Flatten Conref</uicontrol> command is available to
+“unlock” conrefs when saved as FM binary files.</p></dd></dlentry>
+<dlentry class = "- topic/dlentry ">
+<dt id = "id_066LF02905Z" class = "- topic/dt ">Xref and Link Support</dt>
+<dd class = "- topic/dd "><p><indexterm class = "- topic/indexterm
+">features<indexterm class = "- topic/indexterm ">xref support</indexterm></indexterm><indexterm
+class = "- topic/indexterm ">xref support features</indexterm>On
+the opening of a file, all xref and link elements are resolved and
+displayed as a locked text range. The auto-loading functionality
+may be enabled/disabled with the <uicontrol
+    class = "+ topic/ph ui-d/uicontrol ">Options</uicontrol> command.</p><p
+    status = "changed">When an <synph status = "new"
+    outputclass = "element">xref</synph> or <synph status = "new"
+    outputclass = "element">link</synph> element is inserted (from
+the element catalog), the <wintitle>Reference Manager</wintitle> dialog
+displays allowing you to select the target element for that element
+(through a direct reference or a key reference). Unless you enter text
+in the <uicontrol>Alternate Xref Text</uicontrol> field, the xref
+or link text will match that of the target element. The <uicontrol>External
+Xref</uicontrol> button lets you create an xref or link to an external
+file.</p><p>The <uicontrol>Xref to Hyperlink</uicontrol> command
+converts DITA-based xrefs and links into live hyperlinks in generated
+FM files.</p><p>DITA-FMx handles both DITA-based and FM-based cross-refs
+as both <synph status = "new" outputclass = "element">xref</synph> and <synph
+    status = "new" outputclass = "element">link</synph> elements,
+for more information see <xref href = "ditafmx_installing_crossrefs.xml#id_0676F0N405Z"
+type = "topic" format = "dita" scope = "local" class = "- topic/xref
+"></xref>.</p></dd></dlentry>
+<dlentry class = "- topic/dlentry ">
+<dt status = "changed" class = "- topic/dt ">Coderef Support</dt>
+<dd status = "changed" class = "- topic/dd "><p status = "changed">The <synph
+    status = "new" outputclass = "element">coderef</synph> element
+allows you to include the content of a non-DITA “code” file within
+a <synph status = "new" outputclass = "element">codeblock</synph> element.
+The <uicontrol status = "new">Coderef Manager</uicontrol> lets you
+create that reference as well as edit the content of the referenced
+file.</p></dd></dlentry>
+<dlentry><dt status = "changed">Attribute Management</dt>
+<dd><p>The <uicontrol>Set Attributes</uicontrol> command provides
+quick and easy access to setting attributes on elements. This command
+makes use of the FrameMaker “Strings” attribute type and allows
+you to select one or more default values that are applied to the
+attribute. This is particularly useful with the DITA filtering attributes.
+This command also makes use of attributes defined as the “String”
+type and allows you to predefine a list of available values that
+are displayed as a scrolling list.</p></dd></dlentry>
+<dlentry><dt status = "changed">Support for Automated Publishing
+via FMx-Auto</dt>
+<dd><p status = "changed">DITA-FMx supports the FMx-Auto “addon”
+from Leximation to unlock the extended API features in DITA-FMx.
+This API can be used for automated publishing as well as other types
+of scripted or automated processing.</p></dd></dlentry>
+<dlentry class = "- topic/dlentry "><dt class = "- topic/dt ">FM
+Book-based Output Support</dt>
+<dd status = "changed" class = "- topic/dd "><p>The <uicontrol
+    class = "+ topic/ph ui-d/uicontrol ">Generate Book from Map</uicontrol> command
+builds a FrameMaker book from a DITA map or bookmap. It creates
+aggregated FM files from the top-level topic references and their
+child topicrefs (appropriate FM files are created from “part” files
+as well as frontmatter and backmatter files). Also offers the ability
+to include FM binary files in the generated book so you can mix
+DITA and unstructured FM files as needed. This allows you to generate
+a PDF book of an entire map. You can also pass this book to RoboHelp
+or Webworks ePublisher as one option for creating online Help.</p><p>Numerous
+options are available to automate portions of the book build, including
+the following:</p><ul status = "changed"><li>Add related-links from
+reltables as <synph status = "new" outputclass = "element">link</synph> or <synph
+    status = "new" outputclass = "element">fm-link</synph> elements</li>
+<li>Convert <synph status = "new" outputclass = "element">xrefs</synph> and <synph
+    status = "new" outputclass = "element">links</synph> into Hyperlinks</li>
+<li status = "changed">Move <synph status = "new"
+    outputclass = "element">indexterm</synph> elements in prolog
+to the topic title</li>
+<li>Apply ditaval “as conditions” or “by deletion” to perform ditaval-based filtering</li>
+<li status = "changed">Move figure <synph status = "new"
+    outputclass = "element">title</synph> elements to the end of
+a <synph status = "new" outputclass = "element">fig</synph> element</li>
+<li>Enable table <synph status = "new" outputclass = "element">title</synph> elements
+so they are used for tables that span multiple pages</li>
+<li status = "changed">Flatten conrefs</li>
+<li>Assign numbering to the book component files based on their
+map element type</li>
+<li>In a bookmap, replace the “list” files with generated FM lists</li>
+<li>Apply templates to the book component files based on their map
+element type</li>
+<li>Run one or more custom FDK client, ExtendScript, or FrameScript
+automations</li>
+<li>Update the generated book and files</li></ul></dd></dlentry>
+<dlentry class = "- topic/dlentry "><dt class = "- topic/dt ">DITA
+Open Toolkit Integration</dt>
+<dd status = "changed" class = "- topic/dd "><p><indexterm class
+= "- topic/indexterm ">features<indexterm class = "- topic/indexterm
+">output support</indexterm></indexterm><indexterm class = "- topic/indexterm
+">output support features</indexterm>The <uicontrol
+    class = "+ topic/ph ui-d/uicontrol ">Generate Output</uicontrol> command
+provides the ability to run a specific target in an Ant script to
+generate output through the DITA Open Toolkit. One option lets you
+use a provided Ant script to generate output based on the current
+file (a topic or map), or another option lets you select a target
+in an Ant script that you provide. Using the <wintitle
+    class = "+ topic/keyword pr-d/option ">Current File</wintitle> option,
+you can specify a ditaval file for filtering. For more information
+see, <xref href = "ditafmx_ref_genoutput.xml#id067FF700U7Q" type
+= "topic" format = "dita" scope = "local" class = "- topic/xref
+"></xref>.</p><p status = "changed">DITA-FMx includes support for
+the SuiteHelp DITA-OT plugin (from Suite Solutions at <xref href
+= "http://www.suite-sol.com" format = "html" scope = "external">www.suite-sol.com</xref>).
+This plugin offers a nice option for an easily customizable and
+fully features webhelp output.</p></dd></dlentry>
+<dlentry class = "- topic/dlentry "><dt class = "- topic/dt ">DITA2Go
+Integration</dt>
+<dd class = "- topic/dd "><p status = "changed">DITA-FMx includes
+integration with DITA2Go (from Omni Systems at <xref href = "http://www.dita2go.com"
+format = "html" scope = "external">www.dita2go.com</xref>) as an
+alternative to the DITA-OT for creation of various types of online
+Help. If DITA2Go is installed, the “DITA2Go Project Manager” menu
+item will be available on the DITA-FMx menu.</p></dd></dlentry>
+<dlentry class = "- topic/dlentry "><dt class = "- topic/dt ">Locating
+Content in Files</dt>
+<dd class = "- topic/dd "><p>The <uicontrol
+    class = "+ topic/ph ui-d/uicontrol ">Search in Files</uicontrol> command
+lets you search for content in files within a folder (and sub-folders)
+or in files referenced by a DITA map. The search criteria can be
+a mix of textual content, element or attribute names, or attribute
+value.</p><p>The <uicontrol>Where Used</uicontrol> command generates
+a report listing all files that reference the selected element or
+current topic.</p></dd></dlentry>
+<dlentry class = "- topic/dlentry "><dt class = "- topic/dt ">File
+Management</dt>
+<dd class = "- topic/dd "><p>The <uicontrol
+    class = "+ topic/ph ui-d/uicontrol ">Reference Report</uicontrol> command
+generates a report of all referenced files in a DITA map or topic
+file (as well as all references in all referenced files). This report
+can list unresolved and/or resolved references, as well as specific
+reference types (topicref, xref/link, conref, and image).</p><p>The <uicontrol
+    class = "+ topic/ph ui-d/uicontrol ">Create Archive</uicontrol> command
+generates a ZIP archive of the current file and all referenced files.</p></dd></dlentry>
+<dlentry status = "changed" class = "- topic/dlentry ">
+<dt class = "- topic/dt ">Support for FrameMaker Variables</dt>
+<dd class = "- topic/dd "><p status = "changed">If enabled in the <uicontrol
+    status = "new">Authoring Options</uicontrol> dialog, FrameMaker
+variables are wrapped in <synph status = "new" outputclass = "element">fm-var</synph> elements,
+which round-trip to DITA as <synph status = "new"
+    outputclass = "element">ph</synph> elements. The variable name
+is preserved as a special value in the outputclass attribute which
+allows it to round-trip successfully.</p><p status = "changed">The
+“book-build” process provides the ability to import metadata (attributes
+and content values) from the map into the generated FM files as
+variables. This lets you update variables in the headers and footers
+as well as variables in binary FM files (like those used for the
+title page and other frontmatter).</p></dd></dlentry>
+<dlentry class = "- topic/dlentry ">
+<dt status = "changed" class = "- topic/dt ">Support for Graphic
+Overlay Objects in Anchored Frames</dt>
+<dd status = "changed" class = "- topic/dd "><p>Textual callouts
+and graphic objects within an anchored frame will now round-trip
+from FrameMaker to DITA and back. The data to define these objects is
+stored in the DITA <synph status = "new" outputclass = "element">data</synph> element.</p></dd></dlentry>
+<dlentry class = "- topic/dlentry ">
+<dt status = "changed" class = "- topic/dt ">Options</dt>
+<dd class = "- topic/dd "><p>An <uicontrol
+    class = "+ topic/ph ui-d/uicontrol ">Options</uicontrol> command
+provides the ability to specify the structure applications for DITA
+map and topic file authoring, the structure application used for
+the book processing, as well as control of various DITA-FMx options.</p></dd></dlentry>
+<dlentry class = "- topic/dlentry "><dt class = "- topic/dt ">Context-Sensitive
+Help on DITA Elements</dt>
+<dd status = "changed" class = "- topic/dd "><p>You can get context-sensitive
+help for DITA authoring by pressing Alt+F1. The DITA Reference displays
+the topic that relates to the element currently selected. If you
+have added elements through specialization, you can add information about
+your elements to the CHM file (the source is provided in the DITA
+Open Toolkit).</p></dd></dlentry>
+<dlentry class = "- topic/dlentry "><dt class = "- topic/dt ">Specialization</dt>
+<dd status = "changed" class = "- topic/dd "><p status = "changed"><indexterm
+class = "- topic/indexterm ">features<indexterm class = "- topic/indexterm
+">specialization</indexterm></indexterm><indexterm class = "- topic/indexterm
+">specialization features</indexterm>DITA-FMx should fully support
+specialization (or at least not hinder it). If you have a specialized
+data model, you will need to make the parallel changes to your DITA
+EDD and r/w rules. The only effect of specialized elements is with regard
+to element names, and the only place DITA-FMx operates solely on element
+names is with the processing of tables (and in this case, additional
+table elements can be defined in the <filepath conref = "ditafmx_shared.xml#common/ditafm-ini"
+class = "+ topic/ph sw-d/filepath "></filepath> file). In all other
+cases, DITA-FMx processes elements based on their class name, so
+it should properly handle specialized elements.</p></dd></dlentry>
+<dlentry status = "changed" class = "- topic/dlentry ">
+<dt status = "changed" class = "- topic/dt ">Table Support</dt>
+<dd status = "changed" class = "- topic/dd "><p status = "changed"><indexterm
+class = "- topic/indexterm ">features<indexterm class = "- topic/indexterm
+">import/export processing</indexterm></indexterm><indexterm class
+= "- topic/indexterm ">import/export processing featu res</indexterm>DITA-FMx
+fully supports all DITA table types including simpletable-based
+tables. Users who create specialized tables can ensure that they
+are properly rendered by including them in the <wintitle>Element
+Mapping</wintitle> dialog via the <wintitle>Options</wintitle> dialog.</p><p
+    status = "new">DITA-FMx provides support for complex table formatting
+through the use of predefined table formats as well as preserving
+table widths and the state of rotated table cells, in addition to
+indenting tables based on the left indent of the parent element.
+Custom ruling and shading can be applied to rows and cells by preconfiguring
+a reference page table and assigning outputclass attribute values.</p></dd></dlentry>
+<dlentry status = "changed" class = "- topic/dlentry ">
+<dt status = "changed" class = "- topic/dt ">Indexterm Support</dt>
+<dd status = "changed" class = "- topic/dd "><p status = "changed">On
+file open, DITA-FMx converts <synph status = "new"
+    outputclass = "element">indexterm</synph> elements to a FrameMaker-compatible
+syntax within Index markers. DITA specifies that index subentries
+are defined by nested <synph status = "new" outputclass = "element">indexterm</synph> elements.
+This feature collapses nested <synph status = "new"
+    outputclass = "element">indexterm</synph> elements into a single
+semicolon-delimited string within the top-level <synph status = "new"
+    outputclass = "element">indexterm</synph> element which can
+be properly interpreted by FrameMaker and converted into an Index
+marker. This functionality keys off of the value of the class attribute,
+allowing it to work for specialized instances of the <synph
+    status = "new" outputclass = "element">indexterm</synph> element.
+On file save, the Index markers are converted back to valid nested <synph
+    status = "new" outputclass = "element">indexterm</synph> elements.
+If necessary, in order to support more complex element structures
+within <synph status = "new" outputclass = "element">indexterm</synph> elements,
+you can disable the conversion to markers.</p></dd></dlentry>
+<dlentry status = "changed" class = "- topic/dlentry ">
+<dt status = "changed" class = "- topic/dt ">Reference Support</dt>
+<dd status = "changed" class = "- topic/dd "><p>All textual references
+(topic references, conrefs, xrefs, and links) are represented in
+FrameMaker as locked text ranges similar to text insets. These text ranges
+are not linked to text flows but are used as a means to lock a region
+of text and allow the user to click on the object. In order to maintain
+valid DITA files, DITA-FMx converts these text ranges to the appropriate
+XML structure on file save.</p></dd></dlentry>
+<dlentry status = "changed" class = "- topic/dlentry ">
+<dt status = "changed" class = "- topic/dt ">Localization Support</dt>
+<dd status = "changed" class = "- topic/dd "><p>DITA-FMx provides
+a mechanism to apply language-specific templates based on the topic/@xml:lang
+attribute value. This attribute value can also be used to specify
+language-specific book-build options. For more information see the “UseLanguageTemplate”
+parameter in <xref href = "ditafmx_ref_inionly.xml#id067FF8008E9"
+type = "topic" format = "dita" scope = "local" status = "new"></xref>.</p></dd></dlentry>
+<dlentry status = "changed" class = "- topic/dlentry ">
+<dt status = "changed" class = "- topic/dt ">CMS Support</dt>
+<dd status = "changed" class = "- topic/dd "><p>DITA-FMx seamlessly
+integrates with the Bluestream XDocs CMS through the XDocsFMx plugin
+(available at no cost). Customers have also had success with integrations
+of DITA-FMx and SDL Trisoft as well as Vasont.</p><p>Using FMx-Auto,
+DITA-FMx can be set up on the back end of most CMSes and used as
+a PDF publishing engine. To learn more about this support and options visit <xref
+href = "http://www.leximation.com/dita-fmx/cms-support" format =
+"html" scope = "external" status = "new">www.leximation.com/dita-fmx/cms-support</xref>.</p></dd></dlentry></dl></body></topic>

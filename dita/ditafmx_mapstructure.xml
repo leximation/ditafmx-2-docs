@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="sourceonly"?><topic
+    id = "idd39cd586-8ffb-4a6c-87ff-a9657225b99c"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Basic Map Structure</title>
+<shortdesc status = "new">Basic information on working with DITA
+map files.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2009-03-07"/>
+<revised modified = "2014-03-28"/></critdates></prolog>
+<body status = "changed"><p status = "new"><indexterm status = "new">map
+structure</indexterm>The basic DITA map file uses the <synph
+    status = "new" outputclass = "element">map</synph> element as
+the root node. The <synph status = "new" outputclass = "element">map</synph> element
+can be followed by a <synph status = "new" outputclass = "element">title</synph> element.
+After the title is an optional <synph status = "new"
+    outputclass = "element">topicmeta</synph> element which contains
+various elements that define metadata for the map. This metadata
+may define copyright or other legal information regarding the publication,
+as well as keywords or online Help IDs. The type of metadata used
+in a map will generally be defined by the deliverable format and
+the method the output is generated.</p>
+<p status = "new">The only topic referencing element in a <synph
+    status = "new" outputclass = "element">map</synph> is <synph
+    status = "new" outputclass = "element">topicref</synph>. A map
+can include the <synph status = "new" outputclass = "element">keydef</synph> element
+which is used to create key definitions (for use in key-based referencing).</p>
+<p status = "new">Insert a <synph status = "new" outputclass = "element">topicref</synph> element
+and associate it with the target topic. To create a topic hierarchy,
+insert new <synph status = "new" outputclass = "element">topicref</synph> elements
+as children of a parent <synph status = "new" outputclass = "element">topicref</synph>.
+If you are creating a FrameMaker book from a map, keep in mind that
+the “top-level” topicrefs (those that are immediate children of
+the root element) will become chapter FM files. Any child topicrefs
+will be added to the chapter files as sub-topics.</p>
+<p status = "new">One or more relationship tables can be added after
+the topicrefs. A relationship table defines relationships between
+topics, and is the preferred method for defining topic linking (over
+the use of inline cross-references). Relationship tables are defined
+by the <synph status = "new" outputclass = "element">reltable</synph> element
+(which is represented by a standard FrameMaker table), with <synph
+    status = "new" outputclass = "element">topicref</synph> elements
+inside the table cells. You can create relationship tables with
+any number of columns, but typically they will use two or three
+columns.</p>
+<p status = "new">The simplest and easiest to understand is the
+2-column unidirectional reltable, where the topics (defined by topicrefs)
+in the left column will link to the topics in the right column.
+To create this type of relationship table, insert a <synph
+    status = "new" outputclass = "element">reltable</synph> with
+two columns (the number of rows doesn’t matter, you can add more
+as needed). Then locate the first <synph status = "new"
+    outputclass = "element">relcolspec</synph> element (this will
+control the first column’s specifications), and set the linking
+attribute to “sourceonly.” Locate the second <synph status = "new"
+    outputclass = "element">relcolspec</synph> element and set the
+linking attribute to “targetonly.” The selected values will display in
+the table heading (along with the value of the relcolspec/@type
+attribute if provided). Insert <synph status = "new"
+    outputclass = "element">topicref</synph> elements in the table
+cells to create related-links between the specified topics. If you
+create a relationship table without setting the relcolspec/@linking
+attributes, the resulting links will be bidirectional.</p></body></topic>

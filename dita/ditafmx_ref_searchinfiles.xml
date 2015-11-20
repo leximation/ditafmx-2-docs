@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id081SH0HA05Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Search in Files</title>
+<shortdesc status = "changed">Search for content in files in a map
+or on your file system.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2008-02-17"/>
+<revised modified = "2008-02-24"/>
+<revised modified = "2014-03-30"/></critdates></prolog>
+<body><p>Specify search criteria of the following: textual content,
+element tag name, or attribute name and attribute value. If a DITA
+map has the focus, you can choose “current map” as the scope, or
+you can specify a file system path.</p>
+<fig audience = "web"><title>DITA-FMx Search in Files dialog box</title><image
+href="images/searchinfiles.png" align="left" placement="break" 
+otherprops = "fmdpi:110"/></fig>
+<p>The “Search For” value matches on partial strings (case sensitivity
+as specified). When searching for an element tag and/or an attribute
+name, the results will only provide exact matches. Providing an
+attribute value can optionally match on partial strings, which is
+useful for locating individual items within a filtering attribute.
+You can search on the element tag or attribute name only, but if
+you enter an attribute value, you must also enter the attribute
+name.</p>
+<p>The search results are listed in the dialog showing the topic
+title and the file name. Select a file and choose Open to open the
+file.</p>
+<p>If the search is taking too long, pressing the Esc key (possibly
+multiple times) will terminate the search.</p></body></topic>

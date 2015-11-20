@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id0853H0GE05Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Xref to Hyperlink</title>
+<shortdesc>Builds FrameMaker Hyperlinks at each <synph status = "new"
+    outputclass = "element">xref</synph> or <synph status = "new"
+    outputclass = "element">link</synph> element, to enable live hyperlinks
+in generated PDF files.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2014-03-29"/></critdates></prolog>
+<body><p status = "changed">By default, only <synph status = "new"
+    outputclass = "element">fm-xref</synph> or <synph status = "new"
+    outputclass = "element">fm-link</synph> elements become “live”
+hyperlinks in a PDF generated from FrameMaker (as opposed to a PDF
+generated through the DITA-OT with the <uicontrol>Generate Output</uicontrol> command).
+Run the <uicontrol>Xref to Hyperlink</uicontrol> command on an FM
+file or book to build hyperlinks from each <synph status = "new"
+    outputclass = "element">xref</synph> or <synph status = "new"
+    outputclass = "element">link</synph> element. This command only
+processes “internal” <synph status = "new" outputclass = "element">xref</synph> and <synph
+    status = "new" outputclass = "element">link</synph> elements
+(those where the scope attribute is set to something other than
+“external”). To ensure that external xrefs or links become live
+hyperlinks, you must enable the <uicontrol>Add Hypertext Marker to
+External Xrefs</uicontrol> option in the Options dialog before generating
+the FM file or book.</p>
+<p>In order to create proper “gotolink” Hypertext commands, associated
+Hypertext markers with “newlink” commands are inserted at each element
+that contains an id attribute.</p>
+<p>This command should be run only on generated FM files, not the
+source XML files. Running this command on XML files results in the
+Hypertext markers being saved to the XML as processing instructions
+and needlessly clutters the files.</p>
+<p>This can also be done automatically during the Map to Book conversion
+process by selecting the <uicontrol>Convert Xrefs/Links into Hyperlinks</uicontrol> option
+in the <wintitle>Book Build Settings</wintitle> dialog found in
+the <wintitle>DITA Options</wintitle> dialog.</p></body></topic>

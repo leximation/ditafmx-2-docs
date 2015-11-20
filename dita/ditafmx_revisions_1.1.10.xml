@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+
+<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "DITA-Data" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "idc7f8b724-8ee1-4d1d-993c-c14786680b75"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>1.1.10 - 25 October 2010</title>
+<prolog><critdates><created date = "UNK"/>
+<revised modified = "2010-09-30"/></critdates></prolog>
+<body><section><title outputclass = "h3">New Features</title><dl
+    status = "changed"><dlentry><dt status = "changed">Added Save
+View Settings command.</dt>
+<dd status = "changed">The “Save View Settings” feature introduced
+in version 1.1.09 operated on file save, and wasn’t very easy to
+use. This update adds this feature as a new command so you can easily
+specify when to save the view settings.</dd></dlentry>
+<dlentry><dt status = "changed">Restore Previous View Settings option
+renamed to Restore Saved View Settings.</dt>
+<dd status = "changed">Renamed the option to align with the new
+like-named command. If this setting is enabled, the view settings
+saved with the Save View Settings command are applied to files as
+they are opened.</dd></dlentry>
+<dlentry><dt status = "changed">Save View Settings includes attribute
+display options.</dt>
+<dd status = "changed">The Save View Settings command now saves
+the attribute display option setting.</dd></dlentry></dl></section>
+<section><title outputclass = "h3">Structure Application Updates</title><p>None.</p></section>
+<section><title outputclass = "h3">Bug Fixes</title><dl
+    status = "changed"><dlentry><dt status = "changed">Open Maps
+in Document View (FM9) works for submaps.</dt>
+<dd status = "changed">Opening a submap from a topicref in a map
+will open and honor the Open Maps in Document View setting.</dd></dlentry></dl></section></body></topic>

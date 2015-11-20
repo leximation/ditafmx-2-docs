@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id08259N00CPF"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Auto-Prolog Options</title>
+<shortdesc status = "changed">Enable and specify the content for
+automatically inserted prolog data in topics and maps.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2008-02-05 @ 10:00 (scottp)"/>
+<revised modified = "2014-03-31"/></critdates></prolog>
+<body><p status = "changed">If enabled, the auto-prolog options
+automatically insert and update basic data in a topic’s <synph
+    status = "new" outputclass = "element">prolog</synph> or a map’s <synph
+    status = "new" outputclass = "element">topicmeta</synph> or <synph
+    status = "new" outputclass = "element">bookmeta</synph>. There
+are two types of options, one for data that is added on file creation
+and another for data that is added/updated on file save. Each option
+can be enabled independently.</p>
+<fig audience = "web"><title>DITA-FMx Auto-Prolog Options dialog
+box</title><image href="images/autoprologoptions.png" align="left"
+placement="break"  otherprops = "fmdpi:110"/></fig>
+<p status = "changed">Each option provides a text field where you
+can enter plain text and special building blocks (similar to those
+used for new file names, but limited in scope). The building blocks
+that are appropriate for this use are listed below.</p>
+<dl status = "changed"><dlentry><dt status = "changed">File creation:
+add author</dt>
+<dd status = "changed">If enabled, inserts the value from this field
+into the <synph status = "new" outputclass = "element">author</synph> element.
+If an element template is used that contains an <synph status = "new"
+    outputclass = "element">author</synph> element, this value is appended
+to that which already exists.</dd></dlentry>
+<dlentry><dt status = "changed">File creation: add critdates/created/@date</dt>
+<dd status = "changed">If enabled, inserts the value from this field
+into the <synph status = "new">critdates/created/@date</synph> attribute.</dd></dlentry>
+<dlentry><dt status = "changed">File save: add critdates/revised/@modified</dt>
+<dd status = "changed">If enabled, inserts the value from this field
+into the <synph status = "new">critdates/revised/@modified</synph> attribute.</dd>
+<dd>If the <uicontrol>Only Update the Last Element</uicontrol> option
+is selected, the <synph status = "new">modified</synph> attribute value
+will be updated on the last <synph status = "new">critdates/revised</synph> element.
+If not selected, a new <synph status = "new" outputclass = "element">revised</synph> element
+is added each time the new value for the <synph status = "new">modified</synph> attribute
+is different than the previous sibling element (typically a new
+element for each day the file is saved).</dd></dlentry>
+<dlentry><dt status = "changed">File save: new author</dt>
+<dd status = "changed">If enabled, adds a new <synph status = "new"
+    outputclass = "element">author</synph> element if different
+than the value of an existing <synph status = "new"
+    outputclass = "element">author</synph> element. If multiple <synph
+    status = "new" outputclass = "element">author</synph> elements
+exist and the current value matches an earlier value, that element
+is moved to be the last <synph status = "new" outputclass = "element">author</synph> element
+in the sequence.</dd></dlentry></dl>
+<p status = "changed">The building blocks that are appropriate these
+fields are listed below (for details on the syntax, see <xref href
+= "ditafmx_ref_newfileoptions.xml#id0824II0E05Z/id143VB0GB05Z" type
+= "section" format = "dita" scope = "local" status = "new"></xref>).</p><ul
+conref = "ditafmx_ref_newfileoptions.xml#id0824II0E05Z/id0825A0807PN"><li></li></ul></body></topic>

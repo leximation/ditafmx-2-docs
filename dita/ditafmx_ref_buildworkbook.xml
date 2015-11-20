@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+
+<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE hide?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH hide?>
+
+<?Fm BoolCondExpr "DITA-Data" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "id081SH0L09HS"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Build WorkBook from Map</title>
+<shortdesc>Generates a FrameMaker book that contains all of the
+XML files referenced by a DITA map.</shortdesc>
+<prolog><critdates><created date = "UNK"/>
+<revised modified = "2008-02-24"/>
+<revised modified = "2008-03-02"/></critdates></prolog>
+<body><p>A “WorkBook” is a FrameMaker book that contains all of
+the XML files referenced by a DITA map and any sub-maps. This book
+is used for book-wide processing using FrameMaker’s built-in commands;
+it is not intended to be used for publishing or output generation.
+Use the <uicontrol>Open All XML Files in Book</uicontrol> command
+to open the XML files before using a book-wide processing command.</p></body></topic>

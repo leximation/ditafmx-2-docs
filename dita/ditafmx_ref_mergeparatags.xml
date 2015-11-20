@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+
+<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "DITA-Data" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "id420ff157-8ac5-4424-afde-ca14e0c135ab"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Merge Para Tags</title>
+<shortdesc>Ensures that all paragraph tag names in all currently
+open documents, exist in all of those documents.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2011-01-08"/>
+<revised modified = "2011-01-08"/></critdates></prolog>
+<body><p>This command is useful for making it easier to set up PDF
+bookmarks for a PDF created from a book. When creating a PDF from
+a book, the bookmark list is the collection of all paragraph styles
+in all documents in that book. The include/exclude settings are
+defined by the first component in the book. Use the Merge Para Tags
+command to ensure that all paragraph tags in all files, exist in
+the first document.</p>
+<note>This command does not actually “copy” the style definitions,
+it just ensures that the tag names are the same. This means that
+it should not modify any existing style definitions.</note>
+<p>It is best to run this command on the component templates that
+are used when building a book from a map, as well as any included
+files like a title page. </p>
+<p>By default, all open files are updated but are not saved, so
+you can decide which ones to save. If you just want to make sure
+that the “first” file in the book has all of the styles (usually
+the title page), you can just save that file and close the others
+without saving.</p></body></topic>

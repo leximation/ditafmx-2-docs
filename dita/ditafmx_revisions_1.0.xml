@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+
+<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "DITA-Data" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "id197596b3-b586-4dbf-9672-7cb2577f0d6c"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>1.00.25 (1.0 release) - 7 July 2008</title>
+<body><section><title outputclass = "h3">New Features</title><dl>
+<dlentry><dt>FrameMaker 8 support.</dt>
+<dd>Now supports FrameMaker 8 and all of its Unicode functionality.</dd></dlentry>
+<dlentry><dt>Full support for link elements.</dt>
+<dd>Link elements in the related-link section of a topic are now
+managed the same way xref elements have been. </dd></dlentry>
+<dlentry><dt>Search in Files command.</dt>
+<dd>Provides the ability to search for content in files within a
+folder (and sub-folders) or in files referenced by a DITA map. The
+search criteria can be a mix of textual content, element or attribute
+names, or attribute value. </dd></dlentry>
+<dlentry><dt>Where Used command.</dt>
+<dd>Generates a report listing all files that reference the selected
+element or current topic. </dd></dlentry>
+<dlentry><dt>Set Attributes command.</dt>
+<dd>Provides quick and easy access to setting attributes on elements.
+In particular, this command makes use of the FrameMaker “Strings”
+attribute type and allows you to select one or more default values
+that are applied to the attribute. </dd></dlentry>
+<dlentry><dt>Updated New DITA File command.</dt>
+<dd>The New DITA File dialog now lets you enter the topic or map
+title and automatically generate a proposed file name based on your
+specification (in the New File Options dialog). You can also optionally
+select an element template to insert predefined structure and content
+to the new file. If needed, you can specify a folder name along
+with the file name and that folder will be created if needed.</dd></dlentry>
+<dlentry><dt>Integrated ditaval support and management.</dt>
+<dd>The Ditaval Manager provides an easy to use interface for creating
+and managing ditaval files. These files can be used to apply conditional
+filtering to FrameMaker books and documents as well as passed to
+the Open Toolkit for filtering of the generated content.</dd></dlentry>
+<dlentry><dt>Handles “pretty-printed” XML files.</dt>
+<dd>A new option strips padding (spaces and tabs) from files on
+import.</dd></dlentry>
+<dlentry><dt>Auto-Prolog feature.</dt>
+<dd>A new option lets you specify certain prolog data to automatically
+add or update on file creation and file save.</dd></dlentry>
+<dlentry><dt>Build Map from Outline command.</dt>
+<dd>Creates a DITA map and optionally DITA topic files from a simple
+FrameMaker document.</dd></dlentry>
+<dlentry><dt>Build ‘WorkBook’ from Map command.</dt>
+<dd>Generates FrameMaker book file that contains all of the DITA
+files referenced by a DITA map and any sub-maps. This command facilitates
+the use of FrameMaker’s commands that iterate over files in a book
+(such as spell checking and search).</dd></dlentry>
+<dlentry><dt>Open All XML Files in Book command.</dt>
+<dd>Intended to be used with the “WorkBook,” this command opens
+all of the XML files in a book and provides the option to resolve
+references or not in the opened files.</dd></dlentry>
+<dlentry><dt>Topicref labels in DITA maps.</dt>
+<dd>A new option allows you to choose the type of content displayed
+in the topicref label. You can see the title, the file name or both.</dd></dlentry>
+<dlentry><dt>New DITA File updates.</dt>
+<dd>The New DITA File command is now available from the File menu
+in addition to the DITA-FMx menu. When creating a new DITA file,
+you can now overwrite an existing file, and create new folders.</dd></dlentry>
+<dlentry><dt>ID attribute validation.</dt>
+<dd>When manually changing an ID attribute value, a warning is displayed
+if it is invalid.</dd></dlentry>
+<dlentry><dt>Added Xref to Hyperlink command.</dt>
+<dd>This command converts DITA-based xrefs and links into FrameMaker
+Hyperlinks that are live hyperlinks in generated PDF files.</dd></dlentry>
+<dlentry><dt>Variables persist through the Map to Book process.</dt>
+<dd>Two new commands have been added, Prepare Variables and Rebuild
+Variables, which make it possible for FrameMaker variables that
+are used in DITA files to be available as live variables in the
+generated book files.</dd></dlentry>
+<dlentry><dt>Reference Manager “remembers” last selected element
+type.</dt>
+<dd>When you use the Reference Manager, it now defaults to selecting
+the last referenced element type.</dd></dlentry>
+<dlentry><dt>Added option to disable coloring of conrefs.</dt>
+<dd>If the coloring of conrefs causes problems for your output tools
+(WebWorks in particular doesn’t like it), you can now disable this
+in the Topic or Book applications.</dd></dlentry>
+<dlentry><dt>Now recognizes the “include” ditaval action.</dt>
+<dd>The Ditaval Manager and the Apply Ditaval as Conditions command
+now recognize the “include” ditaval action value.</dd></dlentry>
+<dlentry><dt>Added Check for Updates command.</dt>
+<dd>The Check for Updates command was added to the menu as well
+as a setting in the Options dialog to specify the frequency to automatically
+check for updates.</dd></dlentry>
+<dlentry><dt>Added “break conref” functionality.</dt>
+<dd>If you need to convert a conref into editable text (and sever
+the connection to the source element), delete the conref attribute
+value and double-click the conref.</dd></dlentry>
+<dlentry><dt>Added special image-handling features.</dt>
+<dd status = "changed">The “fmdpi” feature maintains alternate image
+sizes within FrameMaker. Add the value, “fmdpi:&lt;DPI>” to the
+image/@otherprops attribute (where &lt;DPI> is the DPI value). See
+the <xref href = "ditafmx_images.xml#id082SI0K0L5Z" type = "topic"
+status = "new" format = "dita" scope = "local"></xref> topic for
+more info.</dd>
+<dd>The default alignment for new images is now defined by the default
+value of the image/@align attribute.</dd></dlentry>
+<dlentry><dt>Added API calls.</dt>
+<dd>FMxVer, FixBookRefs, and LoadReferences.</dd></dlentry>
+<dlentry><dt>Added the fm-* elements to the DITA Reference.</dt>
+<dd>Now when you use Alt+F1 to get help on the selected element,
+it will work for the “fm-*” elements as well.</dd></dlentry></dl></section>
+<section><title outputclass = "h3">Structure Application Updates</title><dl>
+<dlentry><dt>Changed “String” to “Strings” type for filtering attributes.</dt>
+<dd>To allow easy use of the new filtering groups feature of the
+Set Attributes command, the attribute type for platform, product,
+audience, and otherprops has been changed to “Strings” in the Topic
+and Map applications.</dd></dlentry>
+<dlentry><dt>Added a user-settable method of round tripping graphics
+as non-cropped.</dt>
+<dd>A “don't crop” read/write rule has been added to the topic and
+book rules files. By default it is commented out, but by enabling
+it, graphics can round-trip without FrameMaker resetting them to
+“Cropped” during import.</dd></dlentry>
+<dlentry><dt>Added formatting support for more elements within a
+fig.</dt>
+<dd>Some formatting support for lists (ul and ol), p, dl, and note
+has been added and now includes formatting for contexts where fig
+has its attribute expanse set to page. Also, a list whose compact
+attribute is set to “yes” within a fig will now format as a horizontal
+list.</dd></dlentry>
+<dlentry><dt>Line below Task is more reliably drawn.</dt>
+<dd>The line indicating the completion of a Task now occurs in more
+contexts.</dd></dlentry>
+<dlentry><dt>Corrected format of Topic label text in reltable heading.</dt>
+<dd>The “Topic,” “Reference,” “Concept,” and “Task” text that automatically
+appears in the column heading of a reltable is now properly left-aligned
+in its cell.</dd></dlentry>
+<dlentry><dt>Topicmeta formats for author and keyword are now more
+consistent.</dt>
+<dd>Author element text now properly aligns with the other elements
+in topicmeta. And, keyword elements receive more consistent formatting
+where multiple keywords occur.</dd></dlentry>
+<dlentry><dt>Book template DITA-Comment and DITA-Prolog conditions
+display default is now properly set.</dt>
+<dd>With the DITA option set to conditionalize Prolog or Comment
+elements, when a DITA file is opened that contains comment or prolog
+elements, the template default is now to Hide those elements. (For
+Topic and Map templates, the default behavior is still to Show those
+conditions.)</dd></dlentry></dl></section>
+<section><title outputclass = "h3">Bug Fixes</title><dl><dlentry><dt>Processing
+Instructions after the document close tag.</dt>
+<dd>Opening an XML file that has a PI (processing instruction) after
+the document's closing tag no longer crashes FM when you save that
+file.</dd></dlentry>
+<dlentry><dt>Proper handling of colons in the forced sort area of
+an index entry.</dt>
+<dd>Colons in the forced sort area of an index entry (within square
+brackets) are no longer treated as level separators when saving
+to XML. The forced sort content is written to the last indexterm
+element.</dd></dlentry>
+<dlentry><dt>fm-xref and fm-link element fixes.</dt>
+<dd>Fixed problem where fm-xref and fm-link elements did not properly
+reference sub-topic elements. </dd></dlentry>
+<dlentry><dt>New file command properly creates topics with specialized
+title elements.</dt>
+<dd>If your specialized topic type uses a “title” element with a
+name other than “title” it properly uses that specialized element. </dd></dlentry>
+<dlentry><dt>Clipboard content is not lost when opening a new topicref.</dt>
+<dd>If you copy something to the clipboard, then open a topic by
+clicking a topicref, that content is still available for pasting. </dd></dlentry>
+<dlentry><dt>Conrefs that specify no file name now resolve to the
+current file.</dt>
+<dd>When the conref attribute specifies no file name (as in <codeph>conref="#topicid/elemid"</codeph>) the
+conref looks for “topicid/elemid” in the current file. </dd></dlentry>
+<dlentry><dt>Topicrefs that reference a topicid now process correctly.</dt>
+<dd>Updated the book processing XSLT file so it can handle topicrefs
+that reference a file and a topicid (topicref/@href='filename.xml#topicid'). </dd></dlentry>
+<dlentry><dt>On file open, a missing image now triggers the “missing
+image” dialog.</dt>
+<dd>When opening a file, if an image can’t be found, the default
+“Select image file” dialog is now displayed. </dd></dlentry>
+<dlentry><dt>Replacing an existing image properly updates the href
+attribute.</dt>
+<dd>If an existing image is replaced through the FrameMaker interface,
+when the file is reopened the new file name is still properly specified. </dd></dlentry>
+<dlentry><dt>Column widths in simpletable and choicetable elements.</dt>
+<dd>These elements now round trip properly. </dd></dlentry>
+<dlentry><dt>Tables in generated files are full width.</dt>
+<dd>When building a book, tables now fill the width of the text
+column. </dd></dlentry>
+<dlentry><dt>Moved INI parameters around a bit.</dt>
+<dd>The following INI parameters have been moved from one section
+to another (as indicated):</dd>
+<dd>General -> INIOnly/AutoLoadTopicrefs</dd>
+<dd>General -> INIOnly/XrefElements</dd>
+<dd>General -> INIOnly/StructappsFile</dd>
+<dd>General -> INIOnly/FmXrefElem</dd>
+<dd>General -> INIOnly/FileOpenClient</dd>
+<dd>General -> INIOnly/DitaHelpKeys</dd>
+<dd>General -> INIOnly/DitaReference</dd>
+<dd>General -> DitavalDefaults/DitavalName</dd>
+<dd>General -> DitavalDefaults/DitavalExcludeConditionName</dd>
+<dd>General -> DitavalDefaults/DitavalExcludeConditionNameType</dd>
+<dd>General -> DitavalDefaults/DitavalExcludeConditionVisibility</dd>
+<dd>General -> DitavalDefaults/DitavalFlagConditionName</dd>
+<dd>General -> DitavalDefaults/DitavalFlagConditionNameType</dd>
+<dd>General -> DitavalDefaults/DitavalFlagConditionVisibility</dd>
+<dd>GeneralImport -> General/CheckForComments </dd></dlentry>
+<dlentry><dt>Other misc. fixes.</dt>
+<dd>Various cleanup and bug fixes. </dd></dlentry></dl></section></body></topic>

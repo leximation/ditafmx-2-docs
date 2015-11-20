@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "idf0d5a2c0-d1ea-469d-95c1-50f7ae3e10ad"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Flatten Conrefs</title>
+<shortdesc>Unlocks all conrefs in the active book or file.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2014-03-29"/></critdates></prolog>
+<body><p>By default, conrefs are wrapped in a locked region similar
+to a text inset. While working in DITA XML files, this is typically
+the desired functionality, but once a DITA file has been saved to
+a FM file, it may be useful for the conrefs to be unlocked. This is
+a particular issue when the conref contains embedded fm-xrefs, which
+will not be clickable links in a PDF unless the conref has been
+unlocked.</p>
+<p>This can also be done automatically during the Map to Book conversion
+process by selecting the <uicontrol>Flatten Conrefs</uicontrol> option
+in the <wintitle>Book Build Settings</wintitle> dialog found in
+the <wintitle>DITA Options</wintitle> dialog.</p>
+<note type = "important">This command can be run on an XML file
+(or a workbook of XML files), and it will flatten all conrefs. Use
+caution when running this command; once the conrefs are flattened
+they cannot be rebuilt.</note></body></topic>

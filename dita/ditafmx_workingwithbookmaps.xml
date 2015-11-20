@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+
+<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "DITA-Data" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "id7b2f2fd1-1659-4205-b75d-cdb410459bfb"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Working with Maps</title>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2009-03-07"/>
+<revised modified = "2009-04-19"/></critdates></prolog>
+<body status = "changed"><p status = "changed" class = "- topic/dd ">The
+default Map structure application (DITA-FMx-Map-1.1) allows for
+creation and editing of both DITA map and bookmap files. When saved
+to disk, the resulting DITA map file is completely DITA-compliant,
+although within the FrameMaker authoring environment some additional
+elements are added to provide a more efficient authoring experience.
+These elements have an “fm-” prefix.</p>
+<p status = "new">DITA maps are the fundamental mechanism provided
+by DITA for organizing topics into deliverables (PDFs, online Help,
+HTML, etc.). A separate map can be created for each deliverable
+type or a single map can be used for multiple deliverables. Maps
+organize the topics into a logical hierarchy using topic referencing
+elements (<apiname status = "new">topicref</apiname> for a “map”
+and <apiname status = "new">chapter</apiname>, <apiname status = "new">appendix</apiname>, <apiname
+    status = "new">topicref</apiname>, and others for a “bookmap”).
+A topic referencing element can also reference other maps, allowing
+you to create multiple levels of nested maps as appropriate for
+your topic organization and workflow.</p>
+<p status = "new">All DITA map files (both map and bookmap) must
+use the “.ditamap” file extension. This is a requirement enforced
+by the DITA Open Toolkit and is also required by DITA-FMx. </p>
+<p status = "changed" class = "- topic/dd ">On the opening of a
+DITA map file, all topic referencing elements are updated to include
+a child <apiname status = "new">fm-reflabel</apiname> element that
+displays a label within a locked text range. This label is the target
+topic’s title (based on the value of the <apiname status = "new">navtitle</apiname> attribute),
+filename, or both. If the referenced file is not available, the
+label “FILE NOT FOUND” is displayed. When you double click the label,
+the referenced file opens for editing. These labels are formatted
+with a character style named “DITA-Topicref,” you can change the
+color and formatting of topic references by modifying the character
+style definition in the template file.</p>
+<section status = "new"><title>Basic Map Structure</title><p
+    status = "new">The DITA map file uses the <apiname status = "new">map</apiname> element
+as the root node. This type of map was the only map type available
+in DITA 1.0. In DITA 1.0, the map title was defined by the map/@title attribute,
+but with DITA 1.1, the map element can now include a child title
+element instead of the title attribute. DITA-FMx will honor either
+type of map title.</p><p status = "new">Following the title is an
+optional topicmeta element which can contain various elements that
+define metadata for the map. This metadata may define copyright
+or other legal information regarding the publication, as well as
+keywords or online Help IDs. The type of metadata used in a map
+will generally be defined by the deliverable format and the method the
+output is generated.</p><p status = "new">The only topic referencing
+element in a map is topicref. Insert a topicref element and associate
+it with the target topic. To create a topic hierarchy, insert new
+topicref elements as children of a parent topicref. If you are creating
+a FrameMaker book from a map, keep in mind that the “top-level”
+topicrefs (those that are immediate children of the map element) will
+become chapter FM files. Any child topicrefs will be added to the
+chapter files as sub-topics.</p><p status = "new">One or more relationship
+tables can be added after the group of topicrefs. A relationship table
+defines relationships between topics, and is the preferred method
+for defining topic linking (over the use of inline cross-references).
+Relationship tables are defined by the reltable element (which is
+represented by a standard FrameMaker table), and topicref elements
+within the table cells. You can create relationship tables with
+any number of columns, but typically they will use two or three
+columns. </p><p status = "new">The simplest and easiest to understand
+is the 2-column uni-directional reltable, where the topics (defined
+by topicrefs) in the left column will link to the topics in the
+right column. To create this type of reltable, insert a reltable
+with two columns (the number of rows doesn’t matter, you can add
+more as needed). Then locate the first relcolspec element (this
+will control the first column’s specifications), and set the linking
+attribute to “sourceonly.” Locate the second relcolspec element
+and set the linking attribute to “targetonly.” The selected values
+will display in the table heading (along with the value of the relcolspec/@type
+attribute if provided). Insert topicref elements in the table cells
+to create related-links between the specified topics. If you create
+a reltable without setting the relcolspec/@linking attributes, the
+resulting links will be bi-directional.</p></section>
+<section status = "new"><title>Bookmaps</title><p status = "changed">The
+bookmap is a new type of a DITA map that was introduced with DITA
+1.1. It allows you to create a hierarchy of topic references that
+resembles the structure of a printed book. The general order of
+elements in a bookmap is similar to that of the map, although in
+many cases the element names will be different. The title of a bookmap
+can be bookmap/title or bookmap/booktitle. The bookmap’s metadata
+is stored in the bookmeta element (very similar to the topicmeta
+of the map).</p><p status = "new">The most significant difference
+between the map and bookmap are the topic referencing elements.
+A bookmap provides many specialized topic referencing elements for book-specific
+purposes that group topicrefs into logical sections. </p><p
+    status = "new">The first logical grouping is the frontmatter
+element. The frontmatter element can contain a number of topic referencing
+elements (including topicref) that specify topics that are part of
+a book’s frontmatter. A similar backmatter element can be added
+at the end of the book. One of the special elements in the frontmatter
+and backmatter is the booklists element.</p><p status = "changed">The
+booklists element (a child of the frontmatter and backmatter elements)
+can contain one or more “list” elements that are intended to provide
+generated lists (similar to the FrameMaker generated list files
+like a “toc” or “index”). Using DITA-FMx, when you insert an element
+that is a child of booklists, you are not prompted for a target
+file name. Instead you are prompted for the folder that will contain
+a placeholder topic file that defines the location that the generated
+list file will be created. DITA-FMx creates a simple topic file
+in the specified folder using the file name <filepath status = "new">frontmatter_&lt;elemname>.&lt;extension></filepath> or <filepath
+    status = "new">backmatter_&lt;elemname>.&lt;extension></filepath>.
+Where &lt;elemname> is the name of the inserted “list” element and
+&lt;extension> is “dita” or “xml” depending on what you’ve specified
+in the Options dialog as default file type. The name of the list
+element is used as the @navtitle value, and the element is inserted
+into the map. If you’d like to see a different label in the map,
+modify the @navtitle attribute value. </p><p status = "new">Following
+the frontmatter element can be a number of topic grouping elements
+such as part, chapter, and appendix. The part element can be used
+to organize chapter and appendix elements into parts, and the chapter
+and appendix elements are used to organize topicrefs. After the
+last part, chapter, or appendix can be the backmatter element, similar to
+the frontmatter element described above.</p></section>
+<section status = "new">A bookmap can also make use of relationship
+tables in the same way they are used in a map. Note that even though
+your bookmap may make use of part, chapter, and appendix topic referencing
+elements, the reltable can only contain topicref elements.</section></body></topic>

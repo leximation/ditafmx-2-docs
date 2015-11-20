@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="fmdpi:DP"?><?dtall dict="fmdpi:NN"?><?dtall dict="fmdpi:&lt;DPI"?><?dtall
+dict="tableformat"?><topic id = "id1432H0X015Z" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Authoring Options</title>
+<shortdesc status = "new">Provides control over the various settings
+available while editing DITA topics and maps.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>test</author>
+<author>scottp</author>
+<critdates><created date = "2014-03-02"/>
+<revised modified = "2015-03-17"/></critdates></prolog>
+<body status = "new"><p status = "new"></p>
+<fig audience = "web" status = "new"><title>DITA-FMx Authoring Options
+dialog box</title><image href="images/options-authoring.png" align="left"
+placement="break"  otherprops = "fmdpi:110"/></fig>
+<dl status = "new"><dlhead status = "new"><dthd status = "new">General</dthd></dlhead>
+<dlentry><dt>Set @status for New/Changed Elements</dt>
+<dd status = "new"><p>Automatically sets the value of the <synph
+    status = "new" outputclass = "attribute">status</synph> attribute
+on new and changed elements. For new elements, the <synph status = "new"
+    outputclass = "attribute">status</synph> attribute value is
+set to “new,” and if an element’s <synph status = "new"
+    outputclass = "attribute">status</synph> attribute has no value
+and you modify the content of that element, the <synph status = "new"
+    outputclass = "attribute">status</synph> attribute is set to
+“changed.” Use the Reset @status command to delete the value from
+all <synph status = "new" outputclass = "attribute">status</synph> attribute
+in the current file or workbook.</p></dd></dlentry>
+<dlentry><dt>Add Hypertext Marker to External Xrefs</dt>
+<dd><p status = "new">On file open or on insertion of an external
+xref (one that has the <synph status = "new" outputclass = "attribute">scope</synph> attribute
+set to “external”), a FrameMaker Hypertext marker is added so that
+this element is hyperlinked when a PDF is generated through FrameMaker.</p><p
+    status = "new">Use of this feature adds unstructured FrameMaker
+Hypertext markers to the document, which are saved to XML as processing
+instructions. This should not cause any problems for processing
+by the Open Toolkit or other tools.</p></dd></dlentry>
+<dlentry><dt status = "changed">Auto Smart-Spaces (in “pre” elements)</dt>
+<dd status = "changed"><p>Toggles the FrameMaker Smart Space feature
+on and off as the insertion point is moved into and out of a preformatted
+element. A “preformatted” element is one that has a <synph
+    status = "new" outputclass = "attribute">class</synph> attribute
+value that contains “topic/pre” or “topic/lines”.</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">Auto Smart-Quotes
+(in “pre” elements)</dt>
+<dd status = "changed"><p>Toggles the FrameMaker Smart Quotes feature
+on and off as the insertion point is moved into and out of a preformatted
+element. A “preformatted” element is one that has a <synph
+    status = "new" outputclass = "attribute">class</synph> attribute
+value that contains “topic/pre” or “topic/lines”.</p></dd></dlentry>
+<dlentry><dt status = "changed">Fix Line Breaks in “pre” Elements</dt>
+<dd status = "new"><p status = "changed">In order to deal with a
+“bug” in FrameMaker, on file save this option adds a space between
+the end of an inline child element and the end of line in a preformatted
+element. A “preformatted” element is one that has a class attribute value
+that contains “topic/pre” or “topic/lines”.</p><p status = "new">If
+an inline child element starts at the beginning of a line within
+a preformatted element, this option moves the start element to the
+previous line and adds a space between it and the line end.</p><note>This
+option is no longer needed in FM12 and will not be available for selection.</note></dd></dlentry>
+<dlentry><dt status = "changed">Convert Variables to fm-var On Save</dt>
+<dd status = "changed"><p>If enabled, FrameMaker variables are wrapped
+in an <synph status = "new" outputclass = "element">fm-var</synph> element
+which allows the variable to round-trip as a DITA ph element.</p></dd></dlentry>
+<dlentry><dt status = "changed">Apply Color to Conrefs and Keyelemrefs</dt>
+<dd><p status = "changed">Specifies that coloring is applied to
+conrefs and key element references in Topic files. If enabled, the
+color “DITA-Conref” is applied. This color should be defined in
+the template as a custom color. If this custom color is not defined
+and the option is selected, this color will be created and assigned
+the color Blue.</p></dd></dlentry></dl>
+<dl status = "new"><dlhead status = "new"><dthd status = "new">Draft-Comments</dthd></dlhead>
+<dlentry><dt status = "changed">@author Value</dt>
+<dd status = "changed"><p><indexterm>draft-comment<indexterm>author</indexterm></indexterm><indexterm>draft-comment<indexterm>time</indexterm></indexterm>Defines
+the content that is added to the <synph status = "new"
+    outputclass = "attribute">author</synph> attribute when a <synph
+    status = "new" outputclass = "element">draft-comment</synph> element
+is created. Enter plain text or use the building blocks listed for
+use with the Auto-Prolog feature.</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">@time Value</dt>
+<dd status = "changed"><p>Defines the content that is added to the <synph
+    status = "new" outputclass = "attribute">time</synph> attribute
+when a <synph status = "new" outputclass = "element">draft-comment</synph> element
+is created. Enter plain text or use the building blocks listed for
+use with the Auto-Prolog feature.</p></dd></dlentry></dl>
+<dl status = "new"><dlhead status = "new"><dthd status = "new">Coderef</dthd></dlhead>
+<dlentry><dt status = "changed">Spaces per Tab</dt>
+<dd status = "changed"><p>Specifies the number of spaces that are
+added for each tab encountered in the content included by a <synph
+    status = "new" outputclass = "element">coderef</synph>. This
+value must be greater than 0 and no more than 20.</p></dd></dlentry></dl>
+<dl status = "new"><dlhead status = "new"><dthd status = "new">Tables</dthd></dlhead>
+<dlentry status = "new"><dt status = "new">Force Tables Wide</dt>
+<dd status = "changed"><p><indexterm>force tables wide option</indexterm>If
+enabled, tables are forced to fill the text column (or page if the <synph
+    status = "new" outputclass = "attribute">pgwide</synph> attribute
+is set to 1). This overcomes an apparent bug in FrameMaker where
+under certain circumstances tables are not rendered full width in
+book builds. If your EDD already handles “pgwide” tables, you may
+need to disable this functionality but in general it should be enabled.</p></dd></dlentry>
+<dlentry status = "new"><dt status = "new">Preserve Table Widths</dt>
+<dd status = "changed"><p status = "new"><indexterm>preserve table
+widths</indexterm><indexterm>table widths, preserving</indexterm>If
+enabled, the relative width (as a percentage) of each table is stored
+in the table’s <synph status = "new" outputclass = "attribute">pgwide</synph> attribute
+(this only applies to <synph outputclass = "element">table</synph> elements
+and specializations, <synph outputclass = "element">simpletable</synph> specializations
+are not supported by this option). This value will be rounded to
+the nearest higher “5” increment. If this feature is enabled, DITA-FMx
+will interpret a <synph status = "new" outputclass = "attribute">pgwide</synph> value
+greater than 1 to set the relative width of the table. If this option
+is used, we recommend also enabling the <uicontrol>Force Tables
+Wide</uicontrol> option.</p><p status = "new">Note that while the
+use of the <synph status = "new" outputclass = "attribute">pgwide</synph> attribute
+for this purpose is not technically “invalid” (from the DITA perspective),
+it will not be honored by processors other than DITA-FMx so use
+it with caution. Also, use of this feature may require modification
+to the <synph status = "new" outputclass = "attribute">pgwide</synph> attribute
+definition in your EDD to allow values other than 0 or 1.</p></dd></dlentry>
+<dlentry status = "new"><dt status = "new">Apply Custom Ruling and
+Shading</dt>
+<dd status = "new"><p>If enabled, applies custom ruling and shading
+to table rows or cells based on the <synph status = "new"
+    outputclass = "attribute">outputclass</synph> attribute. The
+custom ruling or shading is copied from corresponding row or cell
+elements in a table on the “fmx-tableformat” reference page.</p></dd></dlentry>
+<dlentry status = "new"><dt status = "new">Save Cell Rotation</dt>
+<dd><p status = "new">If enabled, table cell rotation will be preserved
+for DITA topics when rendered in FrameMaker with DITA-FMx.</p></dd></dlentry></dl>
+<dl status = "new"><dlhead status = "new"><dthd status = "new">Graphics</dthd></dlhead>
+<dlentry status = "new"><dt status = "new">Save Graphic Overlay
+Objects as data Elements</dt>
+<dd status = "new"><p>If enabled, graphic overlay objects (e.g.,
+lines and callouts) placed over an image are stored as DITA <synph
+    status = "new" outputclass = "element">data</synph> elements
+so they can be rebuilt when the file is reopened.</p></dd></dlentry>
+<dlentry status = "new"><dt status = "new">Set Runaround to None
+on Images</dt>
+<dd status = "new"><p><indexterm>RunaroundOff, INI parameter</indexterm><indexterm>image
+runaround property</indexterm>If enabled, the image Runaround property
+is set to “None” making it possible to place callouts over images.</p></dd></dlentry>
+<dlentry><dt>Use “fmdpi” for New Images</dt>
+<dd status = "new"><p status = "changed"><indexterm>fmdpi feature,
+enabling</indexterm>Uses the “fmdpi” feature when inserting new
+raster images. If enabled, writes the value “fmdpi:<i status = "new">DPI</i>”
+to the <synph status = "new" outputclass = "attribute">outputclass</synph> attribute
+of the <synph status = "new" outputclass = "element">image</synph> element (where <i
+    status = "new">DPI</i> is replaced with the selected DPI value
+used to insert the image). This is a DITA-FMx feature that adjusts
+the size of the image to the DPI value specified when opened in
+FrameMaker; when processed by other means, the DPI value is ignored.</p><note
+    status = "new">Previous releases of DITA-FMx used the <synph
+    status = "new" outputclass = "attribute">otherprops</synph> attribute
+for this purpose which was considered to be non-standard. If you
+want to continue using the <synph status = "new"
+    outputclass = "attribute">otherprops</synph> attribute for this
+purpose, set the FmDpiUseOutputclass parameter to “1” in the GeneralExport
+section of the ditafmx.ini file.</note></dd></dlentry>
+<dlentry status = "new"><dt status = "new">Image Placement</dt>
+<dd status = "changed"><p><indexterm>ImagePlacement, INI parameter</indexterm>Specifies
+the default value for the image <synph status = "new"
+    outputclass = "attribute">placement</synph> attribute if no
+value is set. Options are: EDD default, Inline, or Break.</p></dd></dlentry>
+<dlentry status = "new"><dt status = "new">Baseline Offset</dt>
+<dd status = "changed"><p><indexterm>BaselineOffset, INI parameter</indexterm>Specifies
+the distance (in points) an inline image is shifted below the baseline of
+the surrounding text.</p></dd></dlentry></dl></body></topic>

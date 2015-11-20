@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id1086AD00E5Z" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Initializing DITA-FMx</title>
+<shortdesc status = "new">Request your authorization code and verify
+that everything is set up properly.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2014-03-29"/></critdates></prolog>
+<body status = "new"><p status = "new">After you’ve run the DITA-FMx
+installer and set up the structure applications, there are a couple
+things that you may need to do before you’re ready to use DITA-FMx.</p>
+<p status = "new"><indexterm status = "new">authorization code</indexterm><indexterm
+status = "new">auth code</indexterm><indexterm status = "new">trial
+auth code</indexterm>If you are new to DITA-FMx, you’ll need to
+request an authorization code. For a 30-day trial authorization
+code, choose the <menucascade status = "new"><uicontrol status = "new">DITA-FMx</uicontrol>
+<uicontrol status = "new">Unregistered. Try Now?</uicontrol></menucascade> menu
+item (near the bottom of the menu). Follow the on-screen instructions
+and enter your email address on leximation.com. Your trial authorization
+code will be sent to the email address you provide. If your trial
+authorization code has expired and you need more time, just contact
+us by email and we’ll be happy to provide an extension.</p>
+<p status = "new">If you’ve purchased DITA-FMx, your permanent authorization
+code is available in your Tool Administration area on leximation.com.
+Just log on to leximation.com, then click the “Tool Administration”
+link in the lower left of any page. On this page you should see
+an entry for DITA-FMx with a “request auth code” link. Click that
+link and your auth code will be sent to the email address registered
+to your leximation.com account.</p>
+<p status = "new">Once you get your authorization code (trial or
+permanent), select the <menucascade status = "new">
+<uicontrol status = "new">DITA-FMx</uicontrol>
+<uicontrol status = "new">Enter Authorization Code</uicontrol></menucascade> menu
+item and provide the information requested. This should unlock the
+items in the DITA-FMx menu.</p>
+<p status = "new">Now you should verify that the proper structure
+applications are selected in the DITA Options dialog. Choose <menucascade
+    status = "new"><uicontrol status = "new">DITA-FMx</uicontrol>
+<uicontrol status = "new">DITA Options</uicontrol></menucascade>.
+The Topic, Map, and Book applications should list those that you
+want to use. If you’re using the default DITA-FMx applications that
+would be DITA-FMx-Topic-1.2, DITA-FMx-Map-1.2, and DITA-FMx-Book-1.2.
+If these applications aren’t available in the drop-lists, you should
+go back and review the <xref href = "ditafmx_installing_apps.xml#id078AAC00PY4"
+type = "topic" format = "dita" scope = "local" status = "new"></xref> topic;
+if these applications have been properly installed, their names
+should be available in the drop-lists in the Options dialog.</p>
+<p status = "new">You may also want to set other options at this
+time. Use the Help button in the Options dialog to read about the
+many options available in DITA-FMx.</p>
+<note status = "new"><indexterm status = "new">maintenance license</indexterm><indexterm
+status = "new">license, maintenance</indexterm>Updates for DITA-FMx
+2.0 are provided on a “maintenance license.” When you purchase DITA-FMx
+you get the first year of updates at no additional cost. If you want
+to continue to receive updates for another year, you’ll need to
+pay for another year of maintenance. If you decide not to extend
+your license, you can continue to use the update that was available
+during your valid license period. You can always check the state
+of your maintenance license by choosing <menucascade status = "new">
+<uicontrol status = "new">DITA-FMx</uicontrol>
+<uicontrol status = "new">Registered to (YOUR NAME)</uicontrol></menucascade>.</note></body></topic>

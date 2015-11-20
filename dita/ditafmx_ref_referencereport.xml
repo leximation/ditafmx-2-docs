@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+
+<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "DITA-Data" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "id08C8D0FE05Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Reference Report</title>
+<shortdesc>Generates a report listing all resolved or unresolved
+references in the current file or map.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2008-12-08"/>
+<revised modified = "2009-02-22"/></critdates></prolog>
+<body><p>The report is generated as an FM file with two tables (one
+for resolved and the other for unresolved references). These tables
+can be sorted as needed using the standard table sorting fetures
+in FrameMaker. The document is locked (view only) and file references
+are hyperlinked. </p>
+<fig audience = "web"><title>DITA-FMx Reference Report dialog box</title><image
+href="images/referencereport.png" align="left" placement="break"
+ otherprops = "fmdpi:110"/></fig></body></topic>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="APIs"?><?dtall dict="ArchiveCommandLine"?><?dtall dict="AssignIdToElem"?><?dtall
+dict="AttrAsCondDefaultState"?><?dtall dict="AttrAsVarPrefix"?><?dtall dict="addon"?><?dtall
+dict="app"?><?dtall dict="att"?><?dtall dict="attrname='flattene"?><?dtall
+dict="authorname"?><?dtall dict="BookBuildOverrides"?><?dtall dict="Booklists"?><?dtall
+dict="BuildFile"?><?dtall dict="backmatter"?><?dtall dict="bookbuild"?><?dtall
+dict="buildname"?><?dtall dict="CallClient"?><?dtall dict="Conditionalize"?><?dtall
+dict="conditionalizes"?><?dtall dict="conreffed"?><?dtall dict="copyrholder"?><?dtall
+dict="customization"?><?dtall dict="DitaDir"?><?dtall dict="DitaFMxGuide"?><?dtall
+dict="DitaReference"?><?dtall dict="DitaRefTargetPath"?><?dtall dict="DitavalName"?><?dtall
+dict="DLLs"?><?dtall dict="desc"?><?dtall dict="dita"?><?dtall dict="ditabook"?><?dtall
+dict="ditafile"?><?dtall dict="ditafmx"?><?dtall dict="ditamap"?><?dtall
+dict="ditavals"?><?dtall dict="doctype"?><?dtall dict="draftinfo"?><?dtall
+dict="draftintro"?><?dtall dict="EnvironmentSetup"?><?dtall dict="epub"?><?dtall
+dict="FlattenedConrefAttr"?><?dtall dict="FmXrefUseOutputclass"?><?dtall
+dict="FrameMaker\DITA"?><?dtall dict="figurelist"?><?dtall dict="fmx"?><?dtall
+dict="fragref"?><?dtall dict="frontmatter"?><?dtall dict="GeneralExport"?><?dtall
+dict="GeneralImport"?><?dtall dict="gentpl"?><?dtall dict="IgnoreFigTitleProcessing"?><?dtall
+dict="ImagePlacement"?><?dtall dict="ImportAttrsAsVars"?><?dtall dict="INIOnly"?><?dtall
+dict="InstallApps"?><?dtall dict="indexlist"?><?dtall dict="ja"?><?dtall
+dict="LastReferencedElement"?><?dtall dict="Linebreak"?><?dtall dict="linebreaks"?><?dtall
+dict="linktext"?><?dtall dict="MasterPageMaps"?><?dtall dict="MissingImageDir"?><?dtall
+dict="MoveFigureTitles"?><?dtall dict="masterpage"?><?dtall dict="omsyshome%\common\bin"?><?dtall
+dict="outputclass"?><?dtall dict="PageStartSide"?><?dtall dict="PostPaginationScriptArgs"?><?dtall
+dict="PostPaginationScriptName"?><?dtall dict="PreserveTableWidths"?><?dtall
+dict="pgwide"?><?dtall dict="print=’no"?><?dtall dict="RegInfo"?><?dtall
+dict="Reimport"?><?dtall dict="ReimportTemplate"?><?dtall dict="RunaroundOff"?><?dtall
+dict="RunPostPaginationScript"?><?dtall dict="reflabel"?><?dtall dict="reimports"?><?dtall
+dict="relinked"?><?dtall dict="StripTrailing"?><?dtall dict="StructMasterPageMaps"?><?dtall
+dict="SuiteHelp"?><?dtall dict="SuppressXrefAttrs"?><?dtall dict="suitehelp"?><?dtall
+dict="synnoteref"?><?dtall dict="syntaxdiagram"?><?dtall dict="toc"?><?dtall
+dict="topicId"?><?dtall dict="type=’fm"?><?dtall dict="UpdateBook"?><?dtall
+dict="UseLanguageTemplate"?><?dtall dict="UseOutputclassForType"?><?dtall
+dict="WriteLineBreakPIs"?><?dtall dict="WriteLineBreakPIsInPre"?><?dtall
+dict="webhelp"?><?dtall dict="whitespace"?><?dtall dict="XSLTs"?><?dtall
+dict="xml:lang"?><topic id = "id141EC070IY4"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>1.1.18 - 14 January 2014</title>
+<prolog><author>Scott Prentice</author>
+<author>test</author>
+<critdates><created date = "2013-11-21"/>
+<revised modified = "2014-04-13"/></critdates></prolog>
+<body><section status = "changed"><title outputclass = "h3">New
+Features</title><dl><dlentry><dt>Added support for FrameMaker 12</dt>
+<dd>DITA-FMx should work properly with FM12. It does not work fully
+with FrameMaker XML Author.</dd></dlentry>
+<dlentry><dt>Added support for identifying flattened conrefs</dt>
+<dd>Added INIOnly/FlattenedConrefAttr parameter. If set to specify
+an attribute name, adds <i>attrname</i>='flattened-conref' to flattened
+conrefs. This is useful for a publishing process that needs to identify
+content that came from a conref.</dd></dlentry>
+<dlentry><dt>Added “post pagination” script book-build options</dt>
+<dd>The default book-build script runs before the content has been
+conditionalized and other processes run which affect pagination.
+If you have a script that needs to run after pagination, use these
+new BookBuildOverrides options (RunPostPaginationScript, PostPaginationScriptName,
+and PostPaginationScriptArgs).</dd></dlentry></dl></section>
+<section status = "changed"><title outputclass = "h3">Structure
+Application Updates</title><dl status = "changed"><dlentry><dt>Import
+XSL script updates</dt>
+<dd>The <filepath>expandOrig.xsl</filepath> and <filepath>bookmap2fmbook.xsl</filepath> scripts
+were updated to add support for references to maps from a backmatter
+and other elements.</dd></dlentry>
+<dlentry><dt>Book template updates</dt>
+<dd>The <filepath>book_1.1.template.fm</filepath> file was updated
+to include “title-appx.0” and “title-part.0” paragraph tags which
+were referenced by the EDD (added in an earlier update).</dd></dlentry></dl></section>
+<section><title outputclass = "h3">Bug Fixes / Minor Updates</title><dl
+    status = "changed"><dlentry><dt>Conditionalize Data option conditionalizes
+area now</dt>
+<dd>The Conditionalize Data option now applies the DITA-Data condition
+to any area elements.</dd></dlentry>
+<dlentry><dt>All 20 custom attribute values display properly in
+Set Attributes dialog</dt>
+<dd>When using all 20 custom attribute values in the <filepath>filtergroups.ini</filepath> file,
+and if those strings were long, it was possible that they would
+not all display completely in the Set Attributes dialog. This has
+been fixed.</dd></dlentry></dl></section></body></topic>

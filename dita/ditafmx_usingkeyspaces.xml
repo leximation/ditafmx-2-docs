@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="ditaarch:DITAArchVersion"?><topic id = "id1413H0407HT"
+    status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Using Keyspaces in DITA-FMx</title>
+<shortdesc status = "new">In DITA-FMx, a keyspace consists of all
+keys defined in a root map and all submaps, optionally filtered
+by an associated ditaval file.</shortdesc>
+<prolog><author status = "changed">Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "2014-01-03"/>
+<revised modified = "2015-03-28"/></critdates></prolog>
+<body status = "new"><p status = "new">The implementation of keyspaces
+in <ph keyref = "prodname"/> is a bit different than that in default FM-DITA
+(and perhaps other tools as well).</p>
+<p status = "new">Each registered key space is stored as a “.keyspace”
+file in the user’s DITA-FMx folder (<menucascade status = "new">
+<uicontrol status = "new">DITA-FMx</uicontrol>
+<uicontrol status = "new">Open DITA-FMx Folder</uicontrol></menucascade>).
+The format of this file is XML, and contains all of the necessary
+data (normalized and filtered) to insert and display key references
+for that key space. This is not a DITA file, so don’t try to open
+it using a FrameMaker DITA structured application. If you’re curious,
+take a look by opening it in a text editor; the structure will be
+apparent.</p>
+<p status = "new">When you create a map and start adding key definitions
+to it, use the Keyspace Manager to register the root map. Consider
+making use of the Keyspace Generation feature (see <xref  keyref
+= "keyspace-options" type = "topic" format = "dita" scope = "local"
+status = "new"></xref>) so that the keyspace file is kept in sync
+with the key definitions in the map.</p>
+<p status = "new">If you are using submaps, remember to register
+the root map, not the submap; the key space should always be defined
+by the root map. As a convenience feature, DITA-FMx will automatically
+update the keyspace, even when working on a submap, if the submap
+includes an “fmx-root-map” <synph status = "new" outputclass = "element">othermeta</synph> element.
+This feature is described in <xref  keyref = "keyspace-options"
+type = "topic" format = "dita" scope = "local" status = "new"></xref>.</p>
+<p status = "new">If you are working with multiple projects and
+thus multiple keyspaces, consider using the Keyspace Resolution
+feature (also described in <xref  keyref = "keyspace-options" type
+= "topic" format = "dita" scope = "local" status = "new"></xref>)
+to automatically change the default keyspace when the root map or
+an associated submap is opened.</p>
+<p status = "new">When registering a keyspace, you have the option
+to assign an associated ditaval file. If you are setting up key
+definitions that are modified by ditaval filtering, you may want
+to select one of the filtering scenarios as the default for editing.
+You can always change the ditaval file associated with a keyspace
+to switch filtering schemes if needed. If no ditaval is assigned
+to a keyspace, all key definitions are included in that keyspace
+(duplicate keys are ignored; first key wins).</p>
+<p status = "new">Only registered ditaval files are available to
+be assigned to a keyspace. Use the Ditaval Manager to register a
+ditaval file.</p>
+<p status = "new">When publishing through the DITA-FMx Generate
+Book from Map command, the ditaval file selected in the Book-Build
+Options dialog or specified in the book-build INI file will be applied
+to the keyspace regardless of the current default keyspace configuration.</p>
+<note type = "important">In order to use keys, you must be using
+DITA 1.2 or greater. This is determined by the ditaarch:DITAArchVersion
+attribute on the “topic” element. The DITA version is not typically
+assigned explicitly, but has a default value that will affect the
+availability of these features in DITA-FMx.</note></body></topic>

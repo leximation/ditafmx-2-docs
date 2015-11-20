@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="datatype"?><?dtall dict="fm:imagedata"?><?dtall dict="fm:polyline"?><?dtall
+dict="fm:textline"?><?dtall dict="TextLine"?><topic
+    id = "idb7f8730b-c982-48db-92b0-a64c487eb1e3"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Graphic Overlay Objects</title>
+<shortdesc>Working with text callouts and simple graphic objects
+placed over a referenced image.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>test</author>
+<critdates><created date = "2008-02-28"/>
+<revised modified = "2014-04-04"/></critdates></prolog>
+<body status = "changed"><p status = "new">DITA-FMx supports the
+use of callouts and other graphic overlay objects in DITA topics.
+Although this is not specifically supported in DITA, the data to
+round-trip these objects is stored in nested <synph status = "new"
+    outputclass = "element">data</synph> elements immediately following
+the <synph status = "new" outputclass = "element">image</synph> element
+within a <synph status = "new" outputclass = "element">fig</synph>.
+This support is only available for images that are child elements
+of a <synph status = "new" outputclass = "element">fig</synph> element.</p>
+<p status = "new">DITA-FMx supports the following types of graphic
+objects as overlay objects within an anchored frame:</p>
+<ul status = "new"><li status = "changed">Line</li>
+<li status = "new">Arc</li>
+<li status = "new">Polyline</li>
+<li status = "new">Rectangle</li>
+<li status = "new">Rounded Rectangle</li>
+<li status = "new">Oval</li>
+<li status = "new">Polygon</li>
+<li status = "new">Text Line</li>
+<li status = "new">Text Frame (limited support)</li></ul>
+<p status = "new">Note that a Text Frame can only contain a single
+paragraph and the only properties that are saved are horizontal
+alignment and paragraph style. Other types of nested frames are
+not currently supported. Additionally, the object grouping mechanism
+is not supported.</p>
+<p status = "new">The Text Line object uses the character style
+applied to the first character, and applies that style to all characters
+in the object. The Text Frame object stores the paragraph style
+name that is applied when it is created. Both of these styles, the character
+style for Text Line objects and the paragraph style for Text Frame
+objects, should be predefined in the Topic and Book templates so
+they will be formatted properly in the final output.</p>
+<p status = "new">If you plan to edit callouts as XML (for localization
+or other purposes) you should not use the Text Line object. The
+dimensions of the text are stored in the data elements and will
+not update when you change the actual text. The result will be that
+the callout remains the same size with the text stretched or compressed
+to fit into the same area. If you plan to edit the callout text
+as XML, you should use the Text Frame object which defines the bounds
+of a region in which the text will flow.</p>
+<p status = "new">The data stored in the nested <synph status = "new"
+    outputclass = "element">data</synph> elements is very FrameMaker-specific,
+but can be translated into other formats such as SVG with a little
+effort. If your <synph status = "new" outputclass = "element">image</synph> element
+is within a <synph status = "new" outputclass = "element">fig</synph> element
+and contains graphic overlay objects, a <synph status = "new"
+    outputclass = "element">data</synph> element will be inserted
+immediately following the <synph status = "new" outputclass = "element">image</synph> element.
+This <synph status = "new" outputclass = "element">data</synph> element
+will have the <synph outputclass = "attribute">datatype</synph> attribute
+set to “fm:imagedata”. Within this <synph status = "new"
+    outputclass = "element">data</synph> element will be a child <synph
+    status = "new" outputclass = "element">data</synph> element
+for each of the graphic overlay objects, and each will have a <synph
+    outputclass = "attribute">datatype</synph> attribute set to
+a value appropriate for the object type (e.g. “fm:textline” for
+a TextLine object and “fm:polyline” for a Polyline object).</p>
+<p status = "new">When written to XML, all of these <synph
+    status = "new" outputclass = "element">data</synph> elements
+will be empty elements (just specifying <synph outputclass = "attribute">name</synph> and <synph
+    outputclass = "attribute">value</synph> attribute values) except
+for the text of a Text Frame object. Because this content is likely
+to be modified for localization purposes, it is written to XML as
+content of the <synph status = "new" outputclass = "element">data</synph> element.
+On import to FrameMaker, this is converted to a data/@value.</p>
+<p status = "new">Each of the child <synph status = "new"
+    outputclass = "element">data</synph> elements will have the <synph
+    outputclass = "attribute">value</synph> attribute set to a tilde-delimited
+string that specifies the property names and values. For some properties
+the associated value may be a very large numeric value, this is
+a FrameMaker “MetricT” value (this has nothing to do with the metric
+measurement system). When used for linear measurement, value of
+65536 is equal to a point (1/72 inch).</p>
+<p status = "new">This feature can be disabled in the Authoring
+Options dialog.</p></body></topic>

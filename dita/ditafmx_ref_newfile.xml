@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="MapFromOutlineTemplate"?><?dtall dict="NewMapShortcuts"?><?dtall
+dict="NewTopicShortcuts"?><?dtall dict="STRUCTDIR\xml\DITA"?><topic
+    id = "id067FF600BY4"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>New DITA File</title>
+<shortdesc>Creates a new DITA map or topic file.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>test</author>
+<author>scottp</author>
+<critdates><created date = "2008-02-05"/>
+<revised modified = "2015-09-13"/></critdates></prolog>
+<body status = "changed"><p status = "changed">There are two groups
+of items on the <menucascade><uicontrol>DITA-FMx</uicontrol><uicontrol>New
+DITA File</uicontrol></menucascade> menu. Items above the divider
+create a new map file and items below the divider create a new topic
+file. The number and label text of these items will vary depending
+on the map and topic structure applications you have selected in
+the Options dialog. Any element definition that defines a class
+attribute with a default value that contains “map/map” will be considered
+a “map” and any with a default value that contains “topic/topic” are
+considered a “topic.”</p>
+<fig><title>New DITA File menu</title><image href="images/newfile-menu.png"
+align="left" placement="break"  outputclass = "fmdpi:110"/></fig>
+<p status = "new">Each topic or map type is assigned a keyboard
+shortcut, if you want to define your own shortcut for specific topic
+types, see the information on the NewMapShortcuts and NewTopicShortcuts
+parameters in <xref href = "ditafmx_ref_inionly.xml#id067FF8008E9"
+type = "topic" format = "dita" scope = "local" status = "new"></xref>.</p>
+<p status = "changed"><indexterm>map from outline template</indexterm>At
+the bottom of the “map” area is the command <uicontrol>New ‘Map
+from Outline’ Template</uicontrol>. This command creates a new FM
+file using the “Map from Outline” file as the template. By default,
+this template is named <filepath>map-from-outline_template.fm</filepath> and is
+in the root of the DITA-FMx structure application folder ($STRUCTDIR\xml\DITA-FMx_1.2\).
+You can specify an alternate template file by changing the MapFromOutlineTemplate
+parameter in the INIOnly section of the <filepath>ditafmx.ini</filepath> file.
+For more information, see <xref href = "ditafmx_ref_listtomap.xml#id0824H0ZL05Z"
+type = "topic" format = "dita" scope = "local"></xref> and <xref
+href = "ditafmx_ref_inionly.xml#id067FF8008E9" type = "topic" format
+= "dita" scope = "local"></xref>.</p>
+<p status = "new">Choosing one of the <uicontrol status = "new">New
+&lt;ELEMNAME></uicontrol> menu items displays the New DITA File dialog.
+This dialog provides fields for entering the topic or map title,
+the topic ID, the file name, file path, and an optional <ph conref
+= "ditafmx_shared.xml#common/elem-template"></ph> to insert predefined
+structure and content into the new file.</p>
+<fig audience = "web"><title>DITA-FMx New DITA File dialog box</title><image
+href="images/newfile.png" align="left" placement="break"  otherprops
+= "fmdpi:110"/></fig>
+<p status = "changed">For new topics, the title is inserted into
+the first title element, for maps, the title text is entered as
+the map/@title attribute or in the map/title element (depending
+on the DITA version). The file name field is populated based on
+the value of the New File Name Format setting (in Options: New File
+Options). If the new file name format includes a building block
+that includes the title, the file name field will update as you enter
+text into the title field.</p>
+<p>Entering a folder name into the File Name field will create the
+new file in the specified folder. If that folder, or folders, do
+not exist, you will be prompted to allow them to be created.</p>
+<note type = "tip">You can use building blocks to automatically
+create new files in folders based on the topic type. For an example,
+see the <xref href = "ditafmx_ref_newfileoptions.xml#id0824II0E05Z"
+type = "topic" format = "dita" scope = "local"></xref> topic.</note>
+<p>You can also select the <uicontrol>Wrap in Dita Element</uicontrol> option
+to create a topic file that includes the dita element as the root
+element. This is useful if you are creating files with nested topics,
+and required if you want to have multiple top-level sibling topics. The
+default value for this option is defined in the <uicontrol>New File
+Options</uicontrol> dialog.</p>
+<p status = "changed">When you choose OK, the file is immediately
+saved as XML using the name specified. If you don’t provide a file
+name extension for the new topic file, one is added based on the
+type specified in the Default File Type option in the Options dialog.
+DITA map files are always given the extension of “ditamap.”</p>
+<p status = "changed">When creating a new topic or map file, if
+your insertion point is in a DITA map at a location that is valid
+for a topicref-based element, a dialog displays asking for the type
+of element to insert, or none (to not insert as an element).</p>
+<p>Creation of new DITA files differs from the standard FrameMaker
+“New” command because FrameMaker does not provide a method for creating
+an “Untitled” XML file (one that is not saved to the file system).
+If you want to start with an “Untitled” file, select the standard
+New command (<menucascade><uicontrol>File</uicontrol><uicontrol>New</uicontrol></menucascade>)
+and use the DITA template as the template file.</p></body></topic>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="choicetable"?><?dtall dict="simpletablebody"?><?dtall dict="simpletablehead"?><?dtall
+dict="sthead"?><?dtall dict="strow"?><topic id = "id0837E0405UI"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>simpletable-Based Tables</title>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2008-03-07"/>
+<revised modified = "2014-03-29"/></critdates></prolog>
+<body><p status = "new"><indexterm>elements<indexterm>simpletable</indexterm></indexterm><indexterm>elements<indexterm>choicetable</indexterm></indexterm><indexterm>elements<indexterm>properties</indexterm></indexterm><indexterm>elements<indexterm>fm-propertieshead</indexterm></indexterm><indexterm>elements<indexterm>fm-propertiesbody</indexterm></indexterm><indexterm>elements<indexterm>fm-simpletablehead</indexterm></indexterm><indexterm>elements<indexterm>fm-simpletablebody</indexterm></indexterm><indexterm>elements<indexterm>fm-choicetablehead</indexterm></indexterm><indexterm>elements<indexterm>fm-choicetablebody</indexterm></indexterm><indexterm
+status = "new">simpletable element</indexterm><indexterm status
+= "new">choicetable element</indexterm><indexterm status = "new">properties
+element</indexterm><indexterm status = "new">fm-propertieshead element</indexterm><indexterm
+status = "new">fm-propertiesbody element</indexterm><indexterm status
+= "new">fm-simpletablehead element</indexterm><indexterm status
+= "new">fm-simpletablebody element</indexterm><indexterm status
+= "new">fm-choicetablehead element</indexterm><indexterm status
+= "new">fm-choicetablebody element</indexterm>Tables based on the <synph
+    status = "new" outputclass = "element">simpletable</synph> element
+require a slightly different structure than that provided by DITA
+in order to render properly as a table in FrameMaker. To accommodate
+this difference, these tables need an extra level of hierarchy added
+to define the table heading area and the table body area while working
+in FrameMaker.</p>
+<p status = "changed">The <synph status = "new" outputclass = "element">simpletable</synph> element
+and those elements that are specialized from <synph status = "new"
+    outputclass = "element">simpletable</synph> (<synph status = "new"
+    outputclass = "element">properties</synph> and <synph status = "new"
+    outputclass = "element">choicetable</synph>) need a Table Heading
+element named “fm-<i status = "new">TABLETYPE</i>head” and a Table
+Body element named “fm-<i status = "new">TABLETYPE</i>body” added to
+the EDD. The <synph status = "new" outputclass = "element">fm-simpletablehead</synph> element
+specifies a general rule of “sthead” and the <synph status = "new"
+    outputclass = "element">fm-simpletablebody</synph> element specifies
+a general rule of “strow+”. The general rule for each of the <i
+    status = "new">TABLETYPE</i> elements should be “fm-<i
+    status = "new">TABLETYPE</i>head?, fm-<i status = "new">TABLETYPE</i>body”.</p>
+<p status = "changed">In addition to the EDD modifications, the
+following rules are needed for each <synph status = "new"
+    outputclass = "element">simpletable</synph>-based structure:</p>
+<codeblock>fm element "fm-simpletablehead" unwrap; 
+fm element "fm-simpletablebody" unwrap; 
+ 
+element "simpletable" 
+{ 
+  is fm table element; 
+  attribute "relcolwidth" is fm property column widths; 
+} 
+element "sthead" 
+{ 
+  is fm table row element; 
+  fm property row type value is "Heading"; 
+} 
+element "strow" 
+{ 
+  is fm table row element; 
+  fm property row type value is "Body"; 
+}</codeblock>
+<p status = "changed">The initial rules (first two lines) discard
+the head and body wrappers on file save. The remaining rules define
+the root table element (in this case <synph status = "new"
+    outputclass = "element">simpletable</synph>), the row element
+that is a “Heading” row (in this case <synph status = "new"
+    outputclass = "element">sthead</synph>) and the row element that
+is a “Body” row (in this case <synph status = "new"
+    outputclass = "element">strow</synph>). For <synph status = "new"
+    outputclass = "element">simpletable</synph> specializations,
+you must provide these three rule groups so the row elements are
+placed into the right “fm-<i status = "new">TABLETYPE</i>head” or
+“fm-<i status = "new">TABLETYPE</i>body” elements.</p>
+<p>Because the <synph status = "new" outputclass = "element">choicetable</synph> element
+must have only 2 columns, the root table rule looks like the following:</p>
+<codeblock>element "choicetable" 
+{ 
+  is fm table element; 
+  fm property columns value is "2"; 
+  attribute "relcolwidth" is fm property column widths; 
+}</codeblock>
+<p status = "changed">And because a <synph status = "new"
+    outputclass = "element">properties</synph> table can have one,
+two, or three columns, the <synph status = "new" outputclass = "element">properties</synph> element
+read/write rule is no longer used (this old rule required that a <synph
+    status = "new" outputclass = "element">properties</synph> table
+always have three columns). The Element Mapping dialog in Options
+allows the definition of multiple optional table cell elements,
+and can be used to support other specializations of <synph
+    status = "new" outputclass = "element">simpletable</synph>.</p>
+<p status = "changed">The <synph status = "new" outputclass = "element">fm-simpletablehead</synph>, <synph
+    status = "new" outputclass = "element">fm-simpletablebody</synph>,
+and the head/body elements for other <synph status = "new"
+    outputclass = "element">simpletable</synph>-specialized elements
+should be added to both the Topic and Book applications.</p></body></topic>

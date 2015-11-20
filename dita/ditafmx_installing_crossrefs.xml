@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id_0676F0N405Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Setting Up to Use Cross-References</title>
+<shortdesc>Explains the differences between FrameMaker and DITA
+based <synph status = "new" outputclass = "element">xref</synph> or <synph
+    status = "new" outputclass = "element">link</synph> elements
+and how they are used.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2008-02-05"/>
+<revised modified = "2014-03-29"/></critdates></prolog>
+<body><p>DITA-FMx offers two types of cross-references, a DITA-based
+cross-reference (the xref and link elements) and a FrameMaker-based
+cross-reference (the <synph status = "new" outputclass = "element">fm-xref</synph> and <synph
+    status = "new" outputclass = "element">fm-link</synph> elements).
+This distinction only exists within the FrameMaker user interface;
+when exported to a DITA XML file, both types appear as standard <synph
+    status = "new" outputclass = "element">xref</synph> and <synph
+    status = "new" outputclass = "element">link</synph> elements.</p>
+<p status = "changed">The FrameMaker-based cross-reference is defined
+as a “Cross-Reference” element in the EDD as opposed to a DITA-based
+cross-reference which is defined as a “Container” element. FrameMaker-based
+cross-references take advantage of the formatting capabilities available
+to standard FrameMaker cross-references such as the inclusion of
+page numbers and additional text (this formatting is defined in
+the underlying FrameMaker template). DITA-based cross-references
+will either display the text of the target element or static “alternate”
+text that is entered when the cross-reference is created.</p>
+<p>FrameMaker-based cross-references can only reference another
+element, while a DITA-based cross-reference can reference another
+element or content outside of the local scope such as a website.
+Both cross-reference types have their purpose and it’s up to the
+author to decide which suits their needs best.</p>
+<p>You can use either or both of these cross-reference types. The
+provided structure applications are set up to use both types of
+references.</p>
+<p status = "changed">When saved to PDF, the FrameMaker-based cross-references
+will become live hyperlinks. In order for DITA-based references
+to become hyperlinks, you must enable the “Convert Xrefs to Hyperlinks”
+option in the Book Build Setting dialog. Alternatively, you can
+run the <uicontrol>Xref to Hyperlink</uicontrol> command after generating
+the book/FM files.</p>
+<p status = "changed">By default, the structure application is set
+up to only allow <synph status = "new" outputclass = "element">fm-xref</synph> and <synph
+    status = "new" outputclass = "element">fm-link</synph> elements
+to reference other topics (such as <synph status = "new"
+    outputclass = "element">topic</synph>, <synph status = "new"
+    outputclass = "element">task</synph>, <synph status = "new"
+    outputclass = "element">concept</synph>, and <synph status = "new"
+    outputclass = "element">reference</synph> elements) and <synph
+    status = "new" outputclass = "element">section</synph> elements.
+You can customize the EDD to allow referencing of other elements
+if needed. In order for an element to appear in the FrameMaker Cross-Reference
+dialog as a cross-reference target, the “id” attribute of that element
+must be defined as a <i>type</i> of “UniqueID.” By default, most
+id attributes are defined as a type of “String.” Just change the
+type to UniqueID and that element will be listed in the Cross-Reference
+dialog.</p>
+<note type = "tip">If you are using FM-based cross-references, always
+use the Source Type of “Elements,” never use a Source Type of “Paragraphs”
+or “Cross-Ref Markers.” If the elements that you want to reference
+are not available, you need to update the EDD as described above.</note>
+<section id = "id0853H0I0WY4"><title>Advanced Cross-Reference Options</title><note>The
+following information is provided for those who want to change the default
+functionality for FrameMaker-based cross-references; there is no
+reason to read further if the default setup is fine for your needs.</note><p>To
+ensure compliance with the DITA specification, when an <synph
+    status = "new" outputclass = "element">fm-xref</synph> or <synph
+    status = "new" outputclass = "element">fm-link</synph> element
+is saved to XML, it is saved to the corresponding DITA element.
+By default the <synph status = "new" outputclass = "element">fm-xref</synph> element
+is saved to the <synph status = "new" outputclass = "element">xref</synph> element
+and the <synph status = "new" outputclass = "element">fm-link</synph> element becomes
+a <synph status = "new" outputclass = "element">link</synph> element.
+When reopened in FrameMaker, these elements convert back into the
+proper FM-based element. If needed, you can change the way this process
+works.</p><dl><dlentry><dt>To save to specialized <synph status = "new"
+    outputclass = "element">xref</synph> or <synph status = "new"
+    outputclass = "element">link</synph> element names.</dt>
+<dd>If your DITA model uses a specialized <synph status = "new"
+    outputclass = "element">xref</synph> or <synph status = "new"
+    outputclass = "element">link</synph> elements, as long as the
+class attribute values indicate the proper inheritance, they should
+function properly. If you make use of the <synph status = "new"
+    outputclass = "element">fm-xref</synph> or <synph status = "new"
+    outputclass = "element">fm-link</synph> functionality, you must
+choose only one element for each to convert into on file save. To
+specify an element other than the default <synph status = "new"
+    outputclass = "element">xref</synph> or <synph status = "new"
+    outputclass = "element">link</synph> for the <synph status = "new"
+    outputclass = "element">fm-xref</synph> or <synph status = "new"
+    outputclass = "element">fm-link</synph> elements make the following
+changes to the <filepath>ditafmx.ini</filepath> file:<ul><li>Set
+GeneralExport\XrefProcessing to 1</li>
+<li>Set GeneralExport\CrossRefToXref to 1</li>
+<li>Set GeneralExport\DitaXrefElem to the “xref” element name</li>
+<li>Set GeneralExport\DitaLinkElem to the “link” element name</li></ul></dd></dlentry>
+<dlentry><dt>To write the FM-based cross-reference text to XML.</dt>
+<dd>Normally on file save, the FM-based cross-reference text is
+not saved to the XML file; it is regenerated on file open. If you
+want the reference text saved to the XML file, you must modify the <filepath>ditafmx.ini</filepath> file
+as follows: <ul><li>Set GeneralExport\WriteLinkTextToFmXrefs to
+1</li></ul></dd></dlentry>
+<dlentry><dt>To disable all cross-reference processing</dt>
+<dd>If you want to manage all cross-reference processing through
+read/write rules or XSLT transformations, make the following modifications
+to the <filepath>ditafmx.ini</filepath> file: <ul><li>Set GeneralExport\XrefProcessing
+to 0</li>
+<li>Set GeneralExport\CrossRefToXref to 0</li>
+<li>Set GeneralExport\DitaXrefElem to “” (nothing)</li>
+<li>Set GeneralExport\DitaLinkElem to “” (nothing)</li></ul></dd></dlentry></dl></section></body></topic>

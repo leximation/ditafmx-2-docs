@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+
+<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "DITA-Data" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "id2684760c-070f-4322-b3da-dd3ae20db3fa"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>1.00.26 - 31 August 2008</title>
+<body><section><title outputclass = "h3">New Features</title><dl>
+<dlentry><dt>Search in Files command matches on partial attribute
+values.</dt>
+<dd>The Search in Files command now allows for matching on partial
+attribute values. This is especially useful for locating elements
+that have multiple values applied to their filtering attributes. </dd></dlentry></dl></section>
+<section><title outputclass = "h3">Bug Fixes</title><dl><dlentry><dt>Apply
+Ditaval as Conditions command applies overlapping conditions.</dt>
+<dd>The Apply Ditaval as Conditions command now applies overlapping
+conditions as required by attribute settings.</dd></dlentry>
+<dlentry><dt>Generate Book from Map no longer saves XML files as
+FM.</dt>
+<dd>In rare circumstances the Generate Book from Map command would
+save the XML file as a binary FM file making it impossible to continue.
+This no longer happens.</dd></dlentry>
+<dlentry><dt>WMF images are now properly handled.</dt>
+<dd>When adding a WMF image, it was not properly shrinkwrapped and
+the href value was not set until file save. WMF files are now handled
+the same as other image types</dd></dlentry>
+<dlentry><dt>Windows Vista problems fixed.</dt>
+<dd>On Windows Vista, inserting an xref no longer causes FM to crash. </dd></dlentry>
+<dlentry><dt>Element templates must be closed to be used.</dt>
+<dd>If you try to use an element template for a new file when the
+element template is open, you now receive a warning that you must
+close the template before it can be used. </dd></dlentry>
+<dlentry><dt>Build Map from Outline handles invalid para styles.</dt>
+<dd>If a paragraph style in the outline document references a style
+that doesn’t map to a topic type FM will no longer crash. </dd></dlentry>
+<dlentry><dt>Conref problems resolved.</dt>
+<dd>A conref to an xref will no longer cause FM to hang. Conrefs
+can now be made to simpletable elements (and related table types). </dd></dlentry></dl></section></body></topic>

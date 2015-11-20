@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+<!ENTITY fmx-revised "fmx-revised">
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id078JF050U5Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Using <ph conref = "ditafmx_shared.xml#common/prodname"></ph></title>
+<shortdesc>Provides efficient and reliable authoring and publishing
+of DITA files with FrameMaker.</shortdesc>
+<prolog><author>scottp</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2015-09-13"/></critdates></prolog>
+<body><p id = "id_066D90F0Q5Z" status = "changed"><i>Documentation
+last updated:</i> <ph  outputclass = "fmvar:Current Date (Long)">September
+13, 2015</ph></p>
+<p status = "changed"><i>Updated for plugin client versions:</i></p>
+<ul><li id = "testid" status = "changed">authoring support client
+(<filepath>ditafmx_&lt;fmver>.dll</filepath>) v.2.0.04</li>
+<li status = "changed">import/export client (<filepath>ditafmx_&lt;fmver>_app.dll</filepath>)
+v.2.0.04</li></ul></body></topic>

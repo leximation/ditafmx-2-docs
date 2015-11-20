@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="Args"?><?dtall dict="BookBuildOverrides"?><?dtall dict="bookbuild"?><?dtall
+dict="comptpl"?><?dtall dict="desc"?><?dtall dict="ExtendScript"?><?dtall
+dict="FrameMaker\DITA"?><?dtall dict="RelatedLink"?><?dtall dict="RunPostPaginationScript"?><?dtall
+dict="reltable(s"?><?dtall dict="ScriptingSupport"?><?dtall dict="StructMasterPageMaps"?><?dtall
+dict="tabletitle"?><?dtall dict="tpl"?><?dtall dict="UpdateBook"?><topic
+    id = "idc70772e6-fe29-429e-a0c5-e24d1b91b542"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Book Build Settings</title>
+<shortdesc status = "changed">Specifies the automated processes
+to be run on a FrameMaker book that has been generated from a DITA
+map.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "2009-01-05"/>
+<revised modified = "2015-09-08"/></critdates></prolog>
+<body><p status = "new"><indexterm status = "new">commands<indexterm
+status = "new">Generate Book from Map</indexterm></indexterm><indexterm
+status = "new">book-build settings</indexterm>The <uicontrol>Generate
+Book from Map</uicontrol> command aggregates all of the topic files
+referenced by a DITA map (and submaps) into a FrameMaker book and
+chapter files. After the book has been assembled, a number of processes
+can be run on the book and book components to prepare it for publishing.
+The Book Build Settings dialog allows you to specify which of these
+processes are performed.</p>
+<p status = "changed">The settings in this dialog can be overridden
+by settings in the BookBuildOverrides section of a <filepath>ditafmx-bookbuild.ini</filepath> file
+(also known as a “book-build INI file”). This dialog should be used
+for testing of various options, but to ensure consistent book generation,
+you should set up a book-build INI file for each project.</p>
+<note status = "new">The term “chapter file” is used in a generic
+sense and does not imply chapter versus appendix or other book component
+type. It just means a “FM binary file”.</note>
+<fig audience = "web print"><title>DITA-FMx Book Build Settings
+dialog box</title><image href="images/bookbuild.png" align="left"
+placement="break"  otherprops = "fmdpi:110"/></fig>
+<p>The options in this dialog specify the processes that are run
+on the book and are shown in the order that they are run.</p>
+<dl status = "changed"><dlentry><dt>Normalize Reference Paths</dt>
+<dd status = "changed"><p>Iterates over all chapter files and converts
+all <synph status = "new" outputclass = "attribute">href</synph> and <synph
+    status = "new" outputclass = "attribute">conref</synph> attribute values
+into absolute paths.</p></dd></dlentry>
+<dlentry><dt>Add Related Links</dt>
+<dd status = "new"><p><indexterm status = "new">related links, adding</indexterm>Adds
+appropriate links to <synph status = "new" outputclass = "element">related-links</synph> elements
+in each topic based on the <synph status = "new" outputclass = "element">reltable</synph>(s)
+in the DITA map. You can select the link type of “link” or “fm-link” (standard
+DITA links or FM-based cross-refs). If you use fm-links, the “RelatedLink”
+cross-reference format is used. This option is only available if
+the Normalize Reference Paths option has been selected.</p></dd></dlentry>
+<dlentry><dt>Reload References</dt>
+<dd><p>Iterates over all references in all chapters and updates/reloads
+them based on the rebuilt reference paths. This option is only available
+if the Normalize Reference Paths option has been selected.</p></dd></dlentry>
+<dlentry><dt status = "changed">Glossary Term Swapping</dt>
+<dd status = "new"><p><indexterm status = "new">glossary term swapping</indexterm><indexterm
+status = "new">keyref to glossentry</indexterm>If enabled, instead
+of using the <synph status = "new" outputclass = "element">glossterm</synph> element
+as the content for a keyref to a glossary entry, the <synph
+    status = "new" outputclass = "element">glossSurfaceForm</synph> element
+is used for the first instance of a term in a chapter, and the <synph
+    status = "new" outputclass = "element">glossAlt</synph> elements
+are used for later instances.</p></dd></dlentry>
+<dlentry><dt status = "changed">Flatten Conrefs</dt>
+<dd status = "new"><p><indexterm status = "new">conrefs, flattening</indexterm>Runs
+the <uicontrol>Flatten Conrefs</uicontrol> command. This is useful
+if you have conrefs that contain cross-refs (<synph status = "new"
+    outputclass = "element">xref</synph>s, <synph status = "new"
+    outputclass = "element">link</synph>s, <synph status = "new"
+    outputclass = "element">fm-xref</synph>s, or <synph status = "new"
+    outputclass = "element">fm-link</synph>s) since this will allow
+those cross-refs to become live hyperlinks.</p></dd></dlentry>
+<dlentry><dt>Convert Xrefs/Links into Hyperlinks</dt>
+<dd status = "new"><p><indexterm status = "new">xrefs, convert into
+hyperlinks</indexterm><indexterm status = "new">hyperlinks from
+xrefs</indexterm>Runs the <uicontrol>Xref to Hyperlink</uicontrol> command.
+This is only useful if you your files contains DITA <synph
+    status = "new" outputclass = "element">xref</synph> or <synph
+    status = "new" outputclass = "element">link</synph> elements.
+This only processes internal xrefs/links; if you need to make external
+xrefs into live links, you’ll need to enable the <wintitle>Add Hypertext
+Marker to External Xrefs</wintitle> option before converting the map
+to a book.</p></dd></dlentry>
+<dlentry><dt>Move prolog/*/fm-indexterms to topic/title</dt>
+<dd status = "new"><p><indexterm status = "new">indexterm in prolog,
+moving</indexterm>Moves all of the <synph status = "new"
+    outputclass = "element">fm-indexterm</synph> elements in the
+prolog to the end of the parent topic’s <synph status = "new"
+    outputclass = "element">title</synph> element. If this option
+is not selected, any <synph status = "new" outputclass = "element">indexterm</synph> elements
+in the <synph status = "new" outputclass = "element">prolog</synph> will
+not be included in a generated index if the <synph status = "new"
+    outputclass = "element">prolog</synph> is hidden.</p></dd></dlentry>
+<dlentry status = "changed"><dt>Apply Ditaval</dt>
+<dd><p status = "new">Runs the <uicontrol>Apply Ditaval</uicontrol> command
+on the generated book file. Select the <uicontrol>As Conditions</uicontrol> or <uicontrol>By
+Deletion</uicontrol> option. Select a registered ditaval file from
+the list. Use the <uicontrol>Ditaval Manager</uicontrol> to register
+a ditaval file with DITA-FMx.</p><note type = "important">When using
+the <uicontrol>As Conditions</uicontrol> option, this feature uses
+the default settings as defined in the Apply Ditaval dialog box.
+In order to change the way the conditions are applied, you must
+run the <menucascade><uicontrol>Utilities</uicontrol><uicontrol>Apply
+Ditaval</uicontrol></menucascade> command manually before using
+this option.</note></dd></dlentry>
+<dlentry><dt>Move fig/title to End of fig Element</dt>
+<dd status = "new"><p><indexterm status = "new">figure titles, after
+image</indexterm>Moves each <synph status = "new"
+    outputclass = "element">title</synph> of a <synph status = "new"
+    outputclass = "element">fig</synph> element to the end of the <synph
+    status = "new" outputclass = "element">fig</synph> element.
+If a <synph status = "new" outputclass = "element">desc</synph> element
+follows the <synph status = "new" outputclass = "element">title</synph>,
+it (and any child elements) will be moved as well. Essentially moves
+the figure title so it follows the image. For this option to work
+properly, the Book application must have the title element valid
+at the end of a <synph status = "new" outputclass = "element">fig</synph> element’s
+general rule.</p></dd></dlentry>
+<dlentry><dt status = "changed">Move table/title to table/tgroup/title</dt>
+<dd status = "new"><p status = "new"><indexterm status = "new">table
+titles</indexterm>Moves each <synph status = "new"
+    outputclass = "element">title</synph> of a <synph status = "new"
+    outputclass = "element">table</synph> element to the location
+in the FrameMaker object structure that allows it to work as a FM
+table title is supposed to (appear at the top of the table on new
+pages). In the FM object model, the <synph status = "new"
+    outputclass = "element">tgroup</synph> element is actually the
+“table”, while the <synph status = "new" outputclass = "element">table</synph> element
+is just a container that wraps the table.</p><p status = "new">This
+option moves the DITA table title so that it works properly in the
+generated FrameMaker files. If you select the <uicontrol>Append
+‘Table Continuation’ variable</uicontrol> option, the Table Continuation
+variable will be appended to the table title after it is moved to
+the new location. To modify the text or format of the Table Continuation
+variable, edit the topic template file. For this option to work
+properly, the Book application must have the <synph status = "new"
+    outputclass = "element">fm-tabletitle</synph> element defined
+and valid as a child of the <synph status = "new"
+    outputclass = "element">tgroup</synph> element.</p></dd></dlentry>
+<dlentry><dt status = "changed">Assign Numbering and Pagination</dt>
+<dd status = "new"><p><indexterm status = "new">pagination</indexterm><indexterm
+status = "new">numbering</indexterm>Sets up the book component’s
+numbering properties based on the settings in the <filepath conref
+= "ditafmx_shared.xml#common/bookbuild-ini"></filepath> file. DITA-FMx
+looks for this INI file in the directory that the book is built
+in, then in the user’s DITA-FMx folder (<menucascade status = "new">
+<uicontrol status = "new">DITA-FMx</uicontrol>
+<uicontrol status = "new">Open DITA-FMx Folder</uicontrol></menucascade>).</p><p>Sections
+named “NumberingFirst-&lt;<i status = "new">maptype</i>>” and “NumberingDefault-&lt;<i
+    status = "new">maptype</i>>” define the numbering and pagination
+properties for the first and remainder files created from specific
+map elements (&lt;<i status = "new">maptype</i>> refers to the element
+name of the top-level map element).</p></dd></dlentry>
+<dlentry><dt>Replace List Files with Generated Files</dt>
+<dd status = "new"><p status = "new"><indexterm status = "new">generated
+lists</indexterm><indexterm status = "new">table of contents</indexterm><indexterm
+status = "new">index</indexterm>Replaces any “list” files with the
+appropriate corresponding FrameMaker generated list. For example,
+the frontmatter/booklists/toc entry will be replaced with a generated
+TOC, and the backmatter/booklists/indexlist entry will be replaced with
+a generated index.</p><p status = "changed">This replacement relies
+on settings in the <filepath conref = "ditafmx_shared.xml#common/bookbuild-ini"></filepath> file.
+DITA-FMx looks for this INI file in the directory that the book
+is built in, then in the user’s DITA-FMx folder (<menucascade
+    status = "new"><uicontrol status = "new">DITA-FMx</uicontrol>
+<uicontrol status = "new">Open DITA-FMx Folder</uicontrol></menucascade>).
+In the General section of the <filepath conref = "ditafmx_shared.xml#common/bookbuild-ini"></filepath> file
+the BookTemplatesDir parameter indicates the directory that contains
+the template files used as the basis for generated book components.
+These files should be named <filepath>gentpl~&lt;maptype>.fm</filepath>, where
+&lt;maptype> is the name of the associated map element that should
+be replaced with a generated file. Other sections named “GeneratedFile-&lt;maptype>”
+define the component type and other properties needed for this file
+replacement.</p></dd></dlentry>
+<dlentry><dt status = "changed">Apply Templates</dt>
+<dd status = "new"><p status = "new"><indexterm status = "new">templates,
+applying to components</indexterm>Applies templates (for both formatting
+and element definitions) to each of the book components based on
+the settings in the <filepath conref = "ditafmx_shared.xml#common/bookbuild-ini"></filepath> file. DITA-FMx
+looks for this INI file in the directory that the book is built
+in, then in the user’s DITA-FMx folder (<menucascade status = "new">
+<uicontrol status = "new">DITA-FMx</uicontrol>
+<uicontrol status = "new">Open DITA-FMx Folder</uicontrol></menucascade>).</p><p>In
+the General section of the <filepath conref = "ditafmx_shared.xml#common/bookbuild-ini"></filepath> file
+the BookTemplatesDir parameter indicates the directory that contains
+the template files used for this process. These files should be
+named <filepath>tpl~&lt;maptype>.fm</filepath>, where &lt;maptype> is
+the name of the associated map element that should be updated with
+the specified template.</p></dd></dlentry>
+<dlentry><dt>Run Custom Script</dt>
+<dd status = "new"><p status = "new"><indexterm status = "new">scripting</indexterm><indexterm
+status = "new">FDK script</indexterm><indexterm status = "new">FrameScript</indexterm>Runs
+a custom FDK client, FrameScript, or ExtendScript (FM10 and later
+only). Enter the client name, and any arguments that are to be passed
+to the client. If you’d like to pass the FDK ID of the book to the
+client, enter “%BOOKID%” in the Args field.</p><p status = "changed">To
+run a FrameScript, enter “fsl” as the client name, and to run an
+ExtendScript (with FM10 and later) enter “ScriptingSupport” as the
+client name. For a FrameScript, the script name is the argument
+and for an ExtendScript provide the script file name as the argument.</p><p
+    status = "changed">You can run multiple clients by separating
+the client name and arguments with the vertical bar character. If
+you are specifying multiple clients, the first character in both
+the client list and the arguments list must be a vertical bar. Be
+sure that the number of vertical bars in the client list and argument
+list are the same to ensure that the arguments are passed to the
+proper client. If no arguments are needed for certain clients but
+are needed for others, you can enter a hyphen where no arguments
+are needed. For example, the following client and argument data
+will run three FDK clients:</p><p><uicontrol>Client:</uicontrol><codeph
+    status = "changed">| client1 | client2 | client3</codeph></p><p><uicontrol>Args:</uicontrol><codeph
+    status = "changed">| client1-arg %BOOKID% | client2-arg | client3-arg
+%BOOKID%</codeph></p><note status = "new">This option runs scripts
+before “pagination” has been completed. Conditional text is still
+shown and other formatting processes are yet to be run that will
+affect pagination. If you need to run a script after pagination
+has been completed, use the RunPostPaginationScript book-build INI
+setting, described in <xref href = "ditafmx_ref_book-buildinifile.xml#id84800a54-1228-438f-881d-08ce097eba90"
+type = "topic" format = "dita" scope = "local" status = "new"></xref>.</note></dd></dlentry>
+<dlentry><dt status = "changed">Hide “Conditionalized” Content</dt>
+<dd status = "new"><p><indexterm status = "new">conditional content,
+hiding</indexterm>Hides the elements that have been tagged through
+any of the four “Conditionalize” options in the Options dialog.</p></dd></dlentry>
+<dlentry><dt status = "changed">Update Book</dt>
+<dd status = "new"><p status = "new"><indexterm status = "new">update
+book</indexterm>Runs the <menucascade><uicontrol>Edit</uicontrol>
+<uicontrol>Update Book</uicontrol></menucascade> command with all
+of the “update” options enabled except “Apply Master Pages”. If
+you’d like to apply master pages, select the <uicontrol>Apply Master
+Pages</uicontrol> option. The Apply Master Pages option assumes
+that your template (or component templates) provide a StructMasterPageMaps table.</p><note
+    type = "important">On FM versions prior to FM10, the <uicontrol>Apply
+Master Pages</uicontrol> option will result in a message box, warning
+you that all current master pages will be reapplied. This interrupts
+any automation, and pauses the build until you choose the “Yes”
+button. Also, on all FM versions if this option is enabled and no
+StructMasterPageMaps table exists in the template(s) in use, an
+alert message displays.</note></dd></dlentry></dl></body></topic>

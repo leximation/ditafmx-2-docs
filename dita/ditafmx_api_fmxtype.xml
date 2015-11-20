@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "DITA-Data" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "id9dc9f64c-ef66-4e35-8a66-32d406dfc523" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>FMxType</title>
+<shortdesc status = "changed">Determines the DITA-FMx application
+type (auto or single user).</shortdesc>
+<prolog><author status = "changed">Scott Prentice</author>
+<critdates><created date = "2009-06-02"/>
+<revised modified = "2011-05-09"/></critdates></prolog>
+<body><p status = "changed">Use this call to determine DITA-FMx
+application type so you’ll know which API calls are available.</p>
+<section id = "id085HGH00RHT" status = "changed"><title>Syntax</title><codeblock status = "changed">F_ApiCallClient("ditafmx", "FMxType");</codeblock><note
+conref = "ditafmx_shared.xml#common/fmxapi_default" status = "changed"></note></section>
+<section><title>Return Value</title><dl compact = "yes">
+<dlentry id = "id085HH0E0OPN"><dt>0</dt>
+<dd>DITA-FMx is not available for calls. Verify that DITA-FMx is
+registered in the <filepath>maker.ini</filepath> file using the
+client name of “ditafmx”.</dd></dlentry>
+<dlentry><dt>>0</dt>
+<dd status = "changed">Indicates the DITA-FMx application type.
+A return value of 1 indicates the single-user version, and a value
+of 2 indicates the “auto” version.</dd></dlentry></dl></section></body></topic>

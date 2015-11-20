@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="AttrAsCondDefaultState"?><?dtall dict="BookBuildOverrides"?><?dtall
+dict="BreakToInline"?><?dtall dict="BuildScript"?><?dtall dict="cmdname"?><?dtall
+dict="content=’CONDITION"?><?dtall dict="DITA_Unsupported"?><?dtall dict="FP_Placement"?><?dtall
+dict="firstParaRules"?><?dtall dict="fmtext"?><?dtall dict="hrefs"?><?dtall
+dict="IndentTables"?><?dtall dict="ini"?><?dtall dict="msgnum"?><?dtall
+dict="name=’author"?><?dtall dict="nbsp"?><?dtall dict="nodename"?><?dtall
+dict="openlink"?><?dtall dict="PdfDocInfo"?><?dtall dict="param"?><?dtall
+dict="Reimport"?><?dtall dict="reltables"?><?dtall dict="ShowStatus"?><?dtall
+dict="StatusChanged"?><?dtall dict="StatusDeleted"?><?dtall dict="StatusNew"?><?dtall
+dict="StatusUnchanged"?><?dtall dict="Stopword"?><?dtall dict="status=’changed"?><?dtall
+dict="status=’new"?><?dtall dict="stopwords"?><?dtall dict="tm"?><?dtall
+dict="unindented"?><?dtall dict="VAR(name"?><?dtall dict="wintitle"?><?dtall
+dict="XDocsFMx"?><topic id = "idce95e64f-1fe1-4dd0-b967-bf6a207cb1b5"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>2.0.04 - 13 September 2015</title>
+<prolog><author>scottp</author>
+<critdates><created date = "2015-08-10"/>
+<revised modified = "2015-09-11"/></critdates></prolog>
+<body status = "changed"><note type = "important" status = "new">The
+FM 13.0.1 update changed the default XSLT processor from XALAN to
+SAXON which causes the DITA-FMx Book application’s XSLT script to
+fail. More information and the fix for this is described in the
+topic, <xref href = "ditafmx_fm131appinstall.xml#idb62f0002-1e12-400f-a28a-a48ed67fcda7"
+type = "concept" format = "dita" scope = "local" status = "new"></xref>.</note>
+<section status = "changed"><title outputclass = "h3">New features</title><dl
+    status = "changed"><dlentry status = "changed">
+<dt status = "changed">Added support for FM 2015</dt>
+<dd status = "changed"><p status = "changed">DITA-FMx now supports
+FrameMaker 2015.</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">New PDF Doc Info
+book-build command</dt>
+<dd status = "changed"><p status = "changed">Added PdfDocInfo feature
+to the book-build INI file (ini-only). Specify the PDF metadata
+values to add into the generated book. Added new PdfDocInfo section to
+the default book-build INI file.</p><p status = "new">Refer to <xref
+href = "ditafmx_ref_book-buildinifile.xml#id84800a54-1228-438f-881d-08ce097eba90/id7a6d7b26-e77b-41e5-bdb3-06d601b13188"
+type = "section" format = "dita" scope = "local" status = "new"></xref> in
+the “Book-Build INI file” topic for usage details.</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">New Show Status
+command and book-build option</dt>
+<dd status = "changed"><p status = "changed">Added Show Status command
+(<menucascade status = "new"><uicontrol status = "new">Utilities</uicontrol>
+<uicontrol status = "new">Show @status</uicontrol></menucascade>)
+to apply special status-oriented conditions to the current document.
+The default conditions will render content marked with @status=’new’
+or @status=’changed’ with change bars. You can customize the template
+to apply custom formatting for all @status states.</p><p status = "new">Added
+ShowStatus BookBuildOverrides param (ini-only). Set this parameter
+to “1” to run the Show Status command on all files in the generated
+book. Useful for creating deliverables to be used for review purposes.</p></dd></dlentry>
+<dlentry><dt status = "changed">New variable building block</dt>
+<dd><p status = "changed">Added &lt;$VAR(name)> building block variable.</p></dd></dlentry></dl></section>
+<section status = "changed"><title outputclass = "h3">Structure
+application updates</title><dl status = "changed"><dlentry>
+<dt status = "changed">Abbreviate domain Elements EDD (abbreviatedomain.edd)</dt>
+<dd status = "changed"><p status = "new">Modified the character
+tag associated with the following elements: abbreviated-form</p></dd></dlentry>
+<dlentry><dt status = "changed">Programming domain Elements EDD
+(programmingdomain.edd)</dt>
+<dd status = "changed"><p status = "new">Added an associated character
+tag for the following elements: apiname</p></dd></dlentry>
+<dlentry><dt status = "changed">Software domain Elements EDD (softwaredomain.edd)</dt>
+<dd status = "changed"><p status = "new">Added an associated character
+tag for the following elements: cmdname, msgnum</p></dd></dlentry>
+<dlentry><dt status = "changed">UI domain Elements EDD (uidomain.edd)</dt>
+<dd status = "changed"><p status = "new">Modified the character
+tag associated with the following elements: shortcut, wintitle</p></dd></dlentry>
+<dlentry><dt status = "changed">Common Elements EDD (commonElements.edd.fm)</dt>
+<dd><p status = "changed">Added support for figure title levels
+(just an example) for BreakToInline on fig title before image (title
+element definition, firstParaRules context rule).</p><p status = "new">Modified
+or added the character tag associated with the following elements: boolean,
+keyword, state, term, tm</p></dd></dlentry>
+<dlentry><dt status = "changed">Topic DTD (fmx-ditabase_1.2.dtd)</dt>
+<dd><p status = "changed">Added definition for &amp;nbsp; entity
+(apparently to be deprecated in DITA 2.0).</p></dd></dlentry>
+<dlentry><dt status = "changed">Topic EDD (topic_1.2.edd.fm)</dt>
+<dd><p status = "changed">Replaced “Red” color in “Unsupported”
+format rule with “DITA_Unsupported”.</p><p status = "new">Reimport
+updated shared EDDs.</p></dd></dlentry>
+<dlentry><dt status = "changed">Topic template (topic_1.2.template.fm)</dt>
+<dd status = "changed"><p status = "new">Added conditions to support
+ShowStatus feature (DITA-StatusNew, DITA-StatusChanged, DITA-StatusUnchanged,
+DITA-StatusDeleted)</p><p status = "new">Added/updated the following
+character tags: term.abbrev, prog.api.name, boolean, soft.cmd.name,
+keyword, soft.msgnum, state, ui.shortcut, term, tm, ui.wintitle.</p><p>Imported
+updated EDD.</p></dd></dlentry>
+<dlentry><dt status = "changed">Map DTD (fmx-map_1.2.dtd)</dt>
+<dd><p status = "changed">Added definition for &amp;nbsp; entity
+(apparently to be deprecated in DITA 2.0).</p></dd></dlentry>
+<dlentry><dt status = "changed">Map EDD (map_1.2.edd.fm)</dt>
+<dd status = "changed"><p status = "changed">Replaced “Red” color
+in “Unsupported” format rule with “DITA_Unsupported”.</p><p
+    status = "new">Added choice values for permissions/@view attribute.</p></dd></dlentry>
+<dlentry><dt status = "changed">Map template (map_1.2.template.fm)</dt>
+<dd status = "changed"><p status = "new">Added “DITA_Unsupported”
+color.</p><p>Imported updated EDD.</p></dd></dlentry>
+<dlentry><dt status = "changed">Book DTD (fmx-book_1.2.dtd)</dt>
+<dd status = "changed"><p status = "new">Added fm-ditabook attributes
+(metadata mappings) for pubinfo-org, pubinfo-completedyear, pubinfo-completedmonth,
+pubinfo-completedday, permissions-view, and category.</p><p
+    status = "changed">Added definition for &amp;nbsp; entity (apparently
+to be deprecated in DITA 2.0).</p></dd></dlentry>
+<dlentry><dt status = "changed">Book EDD (book_1.2.edd.fm)</dt>
+<dd status = "changed"><p status = "new">Added fm-ditabook attributes
+(metadata mappings) for pubinfo-org, pubinfo-completedyear, pubinfo-completedmonth,
+pubinfo-completedday, permissions-view, and category.</p><p
+    status = "changed">Replaced “Red” color in “Unsupported” format
+rule with “DITA_Unsupported”.</p><p status = "new">Reimport updated
+shared EDDs.</p></dd></dlentry>
+<dlentry><dt status = "changed">Book template (book_1.2.template.fm)</dt>
+<dd status = "changed"><p status = "new">Added conditions to support
+ShowStatus feature (DITA-StatusNew, DITA-StatusChanged, DITA-StatusUnchanged,
+DITA-StatusDeleted)</p><p status = "new">Added/updated the following
+character tags: term.abbrev, prog.api.name, boolean, soft.cmd.name,
+keyword, soft.msgnum, state, ui.shortcut, term, tm, ui.wintitle.</p><p>Imported
+updated EDD.</p></dd></dlentry>
+<dlentry><dt status = "changed">Book XSLT (bookmap2fmbook.xsl)</dt>
+<dd status = "changed"><p status = "new">Added metadata mappings
+for pubinfo-org, pubinfo-completedyear, pubinfo-completedmonth,
+pubinfo-completedday, permissions-view, and category. XML mappings
+are as follows:</p><codeblock status = "new">//publisherinformation/organization -> pubinfo-org 
+//publisherinformation/published/completed/year -> pubinfo-completedyear 
+//publisherinformation/published/completed/month -> pubinfo-completedmonth 
+//publisherinformation/published/completed/day -> pubinfo-completedday 
+//permissions/@view -> permissions-view 
+//category -> category</codeblock><p status = "changed">Added support
+for author-defined conditions. Conditions created in the topic XML
+files can be set up to persist in the generated FM files. Add othermeta element(s)
+to the map where @name=’author-condition’ and @content=’CONDITION-NAME’.
+By default these conditions are created with the color Black, but
+if you want specific styling, add the conditions to the template or
+component template.</p><p status = "new">Changed the variable named
+‘node’ to ‘nodename’.</p><p status = "new">Deleted unused ‘fmtext’
+variable definition.</p></dd></dlentry>
+<dlentry><dt status = "changed">Book component templates (tpl~*.fm
+and gentpl~*.fm)</dt>
+<dd><p>Rebuilt all component templates from the updated Book template.</p><p
+    status = "new">Imported new variables and conditions into generated
+list templates.</p></dd></dlentry>
+<dlentry><dt status = "changed">New Book stub file for FM 2015 (structapps-stub_book_1.2_13.0.1.fm)</dt>
+<dd status = "changed"><p status = "new">With the 13.0.1 update,
+the default XSLT processor is now SAXON. The XSLT import script
+in the Book app requires XALAN, so this new stub file includes the new
+Processor node to set the XSLT processor to XALAN.</p><p status = "new">For
+new installations, this stub file will be used by default, but for
+upgrades, it won’t, and the Generate Book from Map command will
+likely fail. For details, see <xref href = "ditafmx_fm131appinstall.xml#idb62f0002-1e12-400f-a28a-a48ed67fcda7"
+type = "concept" format = "dita" scope = "local" status = "new"></xref>.</p></dd></dlentry></dl></section>
+<section><title outputclass = "h3">Bug fixes / minor updates</title><dl
+    status = "changed"><dlentry><dt status = "changed">FrameMaker
+XML Author alerts</dt>
+<dd><p status = "changed">Added alerts that display when running
+DITA-FMx under FM XML Author. Instead of generating errors when
+using commands that don’t work under XML Author, you’ll now see
+messages.</p></dd></dlentry>
+<dlentry><dt status = "changed">book-build INI updates</dt>
+<dd><p status = "changed">Added the General/AttrAsCondDefaultState
+parameter to the default book-build INI file.</p></dd></dlentry>
+<dlentry><dt status = "changed">ditafm.ini update modification</dt>
+<dd><p status = "changed">Modified the test for determining when
+to update the <filepath status = "new">ditafm.ini</filepath> file
+(yes, the default FM <filepath status = "new">ditafm.ini</filepath> not <filepath
+    status = "new">ditafmx.ini</filepath>) on FM10 and later. This
+fixes an edge case problem that results in the inability to open
+topic files after installation.</p></dd></dlentry>
+<dlentry><dt status = "changed">http-based hrefs are not “normalized”</dt>
+<dd><p status = "changed">URLs in an external xref are no longer
+“normalized,” which caused errors.</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">fm-var and fm-data-marker
+updates</dt>
+<dd><p status = "changed">Fixed bug with fm-var and fm-data-marker
+creation for FM12. These elements moved to the start of the container
+paragraph, but now stay where created.</p><p status = "new">An fm-var
+within the source of a conref, no longer causes the conref to get wrapped
+in an fm-var element.</p><p status = "changed">fm-var elements recreated
+from text in a file are no longer truncated when that text wraps
+in the XML.</p><p status = "changed">When hiding area/data/data-about,
+markers (fm-data-marker elements) are no longer hidden.</p></dd></dlentry>
+<dlentry><dt status = "changed">data to fm-data-marker and fm-var
+processing</dt>
+<dd><p status = "changed">Fixed data to fm-data-marker and fm-var
+processing so the 'topic/data' class isn’t passed on to the new
+element, allowing it to take on the default class of the EDD (fmx/fm-data-marker
+or fmx/fm-var).</p></dd></dlentry>
+<dlentry><dt status = "changed">Long ids with long path no longer
+crash FM</dt>
+<dd><p status = "changed">Fixed crasher with very long ID values
+caused the path to exceed an internal limit.</p></dd></dlentry>
+<dlentry><dt status = "changed">Empty indexterms no longer crash
+FM</dt>
+<dd><p status = "changed">Empty indexterms will now properly round-trip
+from XML to FM and back.</p></dd></dlentry>
+<dlentry><dt status = "changed">Relative paths in book-build INI</dt>
+<dd><p status = "changed">Relative paths are now valid in the book-build
+INI for Pre/Post-BuildScript.</p></dd></dlentry>
+<dlentry><dt status = "changed">Ditaval filtering of reltables</dt>
+<dd><p status = "changed">Fixed ditaval filtering of reltables.
+Now handles attributes with multiple values; also properly checks
+for include vs. exclude, so include wins.</p></dd></dlentry>
+<dlentry><dt status = "changed">External xref updates</dt>
+<dd status = "changed"><p status = "changed">Fixed external xrefs
+so the link text sticks (doesn't revert to match the @href).</p><p
+    status = "changed">Fixed external xrefs so they don't grow characters
+(when "Element Banner Text" is enabled).</p><p status = "new">When
+creating Hypertext markers for external xrefs, if target is PDF,
+make into proper syntax (openlink) unless it’s a URL</p></dd></dlentry>
+<dlentry><dt status = "changed">imagemap fixes</dt>
+<dd><p status = "changed">Fixed problems with inserting imagemaps,
+shape, coords, xref didn't render values properly.</p></dd></dlentry>
+<dlentry><dt status = "changed">book-build updates</dt>
+<dd><p status = "changed">Disable “Element Banner Text” display
+when running a book-build (FM11 and later).</p></dd></dlentry>
+<dlentry><dt status = "changed">BreakToInline figure handling</dt>
+<dd><p status = "changed">Updated BreakToInline processing so it
+works for figs where the title isn’t moved.</p></dd></dlentry>
+<dlentry><dt status = "changed">IndentTables handling</dt>
+<dd><p status = "changed">Updated IndentTables processing so when
+checking parent element’s text object, if the parent and the table
+anchor’s object don’t have the same FP_Placement (Format: “In Column”,
+“Run In Head...”, etc.), the table is left unindented.</p></dd></dlentry>
+<dlentry><dt status = "changed">Keyspace Manager update</dt>
+<dd><p status = "changed">Fix to INI-reading code which truncated
+keyspaces listed in Keyspace Manager.</p></dd></dlentry>
+<dlentry><dt status = "changed">fm-xref updates</dt>
+<dd><p status = "changed">fm-xrefs referencing another file now
+properly add the value for @type attribute (target element name).</p><p
+    status = "new">Fixed fm-xrefs so you can click to edit existing
+fm-xrefs.</p></dd></dlentry>
+<dlentry><dt status = "changed">Stopword handling</dt>
+<dd><p status = "changed">When removing stopwords, if the result
+of processing leaves an empty string, set it to the first “word”
+in the string.</p></dd></dlentry>
+<dlentry><dt status = "changed">Element template support</dt>
+<dd><p status = "changed">Updated new file from element template
+so any existing IDs in the element template are updated (if Auto-Add
+IDs is enabled).</p></dd></dlentry>
+<dlentry><dt status = "changed">New file command update</dt>
+<dd><p status = "changed">When creating a new file of the same name
+that exists, it will now successfully delete the existing file (after
+prompting for approval).</p></dd></dlentry></dl></section></body></topic>

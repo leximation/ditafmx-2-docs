@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id68d147e8-2097-4621-a411-7a04cc60da2b" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Using Templates to Define Alternate TOC Entries</title>
+<shortdesc status = "new">It is possible to support multiple styles
+of TOC entries for different templates.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2014-03-28"/></critdates></prolog>
+<body status = "new"><p status = "changed">By default, the paragraph
+styles applied to all titles in all generated FM files are the same
+(title.0, title.1, etc., as defined by the Book structure application).
+When pulled into a TOC file, they become “title.0TOC”, “title.1TOC”,
+and so on. Your TOC generated list template (“<filepath>gentpl~toc.fm</filepath>”)
+defines the handing for these styles on the “TOC” reference page.
+If you want to be able to support multiple types of entries, such
+as “Chapter”, “Appendix”, and “Part”, you’ll need to do the following.</p>
+<dl><dlentry><dt>Create a custom EDD and template for each TOC type</dt>
+<dd><p>The component template (<filepath status = "changed">tpl~&lt;mapelemtype>.fm</filepath>)
+will apply alternate formatting to the specific book component,
+but if you want the underlying paragraph styles to change, you need
+to create a modified EDD that applies the alternate style, and update
+the template to support that style. The actual style may look the
+same, but the name needs to be different so it can be handled separately
+in the TOC template. </p><p status = "new">For example, if you want
+to add support for the appendix element and have your TOC include
+both Chapter and Appendix labels, you could do the following:</p><ol>
+<li>Copy the default Book EDD (<filepath status = "changed">book_1.2.edd.fm</filepath>)
+to a new name, perhaps <filepath status = "changed">book_1.2_appendix.edd.fm</filepath>.</li>
+<li>Copy the default Book template (<filepath status = "changed">book_1.2.template.fm</filepath>)
+to a new name, perhaps <filepath status = "changed">book_1.2_appendix.template.fm</filepath>.</li>
+<li>Edit the <filepath status = "changed">book_1.2_appendix.edd.fm</filepath> file
+and change all instances of “title.0” to “title-appendix.0”, then
+save the EDD.</li>
+<li>In the appendix template (<filepath status = "changed">book_1.2_appendix.template.fm</filepath>)
+rename the “title.0” style to “title-appendix.0” and modify its
+appearance as needed.</li>
+<li>Import the EDD into the appendix template, then save and close
+both files.</li>
+<li>Copy the appendix template to the proper component template
+name (from <filepath status = "changed">book_1.2_appendix.template.fm</filepath> to <filepath>tpl~appendix.fm</filepath>,
+then copy this file into the appropriate component template folders
+(defined by the BookTemplatesDir parameter in the <filepath conref
+= "ditafmx_shared.xml#common/bookbuild-ini"></filepath> file).</li></ol><p>When
+a book is generated and this template is applied, this will apply
+the title-appendix.0 style to the top-level heading in the appendix
+files.</p></dd></dlentry>
+<dlentry><dt>Add the new paragraph style to the GeneratedFile-toc
+section</dt>
+<dd><p>For each new TOC entry type, you’ll need to add that paragraph
+style to the GeneratedFile-toc section of the <filepath conref =
+"ditafmx_shared.xml#common/bookbuild-ini"></filepath> file. Be sure
+to update the NumTags parameter to match the number of paragraph
+tags used to generate the TOC.</p></dd></dlentry>
+<dlentry><dt>Add support for the new TOC styles in the TOC template</dt>
+<dd>In the TOC generated list template (“<filepath>gentpl~toc.fm</filepath>”),
+add support for the “title-appendix.0TOC” style on the TOC reference
+page (it would look just like the title.0TOC style but use the new
+style name and prepend “Appendix” instead of “Chapter.” It should
+also probably use an alpha numbering style instead of Roman.</dd></dlentry></dl>
+<p>You can use the method described above to handle as many alternate
+TOC entry types that you need in your book.</p></body></topic>

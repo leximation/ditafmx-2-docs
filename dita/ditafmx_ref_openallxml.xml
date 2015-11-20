@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+
+<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH hide?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "DITA-Data" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "id081SH0N06UI"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Open All XML Files in Book</title>
+<shortdesc>Opens all XML files in a “WorkBook” to facilitate the
+use of book-wide actions.</shortdesc>
+<prolog><critdates><created date = "UNK"/>
+<revised modified = "2008-02-24"/>
+<revised modified = "2008-03-02"/></critdates></prolog>
+<body><p>This command is only available when a FrameMaker book has
+the focus. In order to take advantage of FrameMaker’s book-wide
+processing commands (such as spell checking and search), XML files
+must be opened before running the command (FrameMaker will not automatically
+open XML files as it does with binary FM files). </p>
+<p>This command provides the option to open and resolve references
+in the XML files or just open the files without resolving references.
+Opening without resolving references may be preferable under certain
+circumstances, but you may be warned of invalid spelling errors due
+to the extra spaces left when an xref or conref doesn’t resolve.</p></body></topic>

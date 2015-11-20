@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="URLs"?><?dtall dict="XrefElements"?><topic
+    id = "id067FF6080YK"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Using the Reference Manager</title>
+<shortdesc>Lets you select a conref, xref, or link target by specifying
+the file, element type, and element.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2009-02-12"/>
+<revised modified = "2014-04-01"/></critdates></prolog>
+<body status = "new"><p status = "new"><indexterm status = "new">inserting
+references</indexterm><indexterm status = "new">xrefs, inserting</indexterm><indexterm
+status = "new">conrefs, inserting</indexterm><indexterm status =
+"new">links, inserting</indexterm>The <wintitle status = "new">Reference
+Manager</wintitle> is displayed when inserting a conref, <synph
+    status = "new" outputclass = "element">xref</synph>, or <synph
+    status = "new" outputclass = "element">link</synph>. To insert
+a conref, choose <uicontrol>Insert Conref</uicontrol> from the DITA
+menu, to insert an <synph status = "new" outputclass = "element">xref</synph> or <synph
+    status = "new" outputclass = "element">link</synph>, use the <wintitle
+    status = "new">Element Catalog</wintitle>. Note that the <wintitle
+    status = "new">Reference Manager</wintitle> is only displayed for <synph
+    status = "new" outputclass = "element">xref</synph> or <synph
+    status = "new" outputclass = "element">link</synph> elements
+if they are defined as a “Container” rather than a “Cross-Reference”
+element in your EDD.</p>
+<fig status = "new"><title>DITA-FMx Reference Manager</title><image
+href="" align="left" placement="break"  keyref = "refman-image"
+otherprops = "fmdpi:110"/></fig>
+<p status = "changed">To insert a reference of any kind, first specify
+the file that contains the reference source. To select a source
+file, specify the file location using the File Location list. This
+list will initially only contain the label “Files Currently Open
+in FrameMaker” but you can browse through files on disk (without
+opening them first), by choosing the “F” button (select folder)
+or the “M” button (select map).</p>
+<p status = "new">Selecting “Files Currently Open in FrameMaker”
+will display those files in the Source File list. Selecting the
+“F” or “M” buttons will list all “.xml” and “.dita” files in that folder
+or map. If you want to place a reference to a file that is not open,
+use the Browse button (“...”) to open another file.</p>
+<p status = "new">By default the Element Tag list displays only
+elements that have id attribute values in the source file. For conrefs,
+this list is further restricted by displaying only elements that
+are valid at the current insertion point. If you want to limit the
+xref or link targets to a specific list of elements, use the XrefElements
+parameter in the <filepath conref = "ditafmx_shared.xml#common/ditafm-ini"
+class = "+ topic/ph sw-d/filepath "></filepath> file (for details,
+see <xref href = "ditafmx_ref_inionly.xml#id067FF8008E9" type =
+"topic" format = "dita" scope = "local"></xref>). When you select
+an element tag name from the list, the available target elements
+display in the Element Data list. By default, only elements that
+have an ‘id’ value are available, but if you select the Show All
+Elements option, you will be able to select from all available elements
+of the selected type (this option is only available if the “Files
+Currently Open in FrameMaker” file location is selected).</p>
+<p status = "new">The elements are listed with their ‘id’ and textual
+content. To place the reference, select an element and choose the
+Insert button. If you have selected an element that does not have
+an ‘id’ value, you will be prompted to provide an ‘id’ for that
+element (the ‘id’ is written to the source file, so be sure to save
+that file before exiting). If you want to specify text for the xref
+that is different than that of the target element, enter that text
+in the Alternate Xref Text field. To insert an xref to an external
+file, choose the External Xref button.</p>
+<p status = "new">To insert a reference based on a key, choose the
+Key Reference button (or enter the key value in the Key Reference
+field). The Keyref Manager dialog allows you to select a key from
+the specified keyspace, then optionally select an element within
+the file referenced by that key. When placing an xref or link to
+the root topic in a file, it is only necessary to provide the key
+name. When inserting a conref, you should provide the key and the
+sub-element reference.</p>
+<fig audience = "web print" status = "new"><title>DITA-FMx Keyref
+Manager dialog</title><image href="images/keyref-manager-xref.png"
+align="left" placement="break"  otherprops = "fmdpi:110"/></fig>
+<p status = "new">When inserting a conref, the Alternate Xref Text
+field is replaced with a Conref End list. This is populated with
+valid conref end targets based on your selection in the Element
+Data list.</p>
+<fig audience = "web print" status = "new"><title>DITA-FMx Reference
+Manager dialog - conref insertion</title><image href="images/refmanager-conref.png"
+align="left" placement="break"  otherprops = "fmdpi:110"/></fig>
+<p status = "new">If you double-click a conref or xref, the <wintitle
+    status = "new">Reference Manager</wintitle> displays with the
+current reference selected. Choosing the Replace button inserts
+a new reference using the selected criteria in place of the old
+reference.</p>
+<note status = "new">Replacing an existing reference removes any
+existing locally applied attribute data.</note>
+<p>Conrefs are inserted as a locked range of text (like a text inset)
+and are tagged with the “DITA-Conref” color. By default this color
+is defined as blue, but because it is defined in the template, you
+can change it to suit your needs.</p>
+<p>Xrefs and links are also inserted as a locked range of text,
+but no coloring or formatting is applied other than that specified
+by your structure application (EDD or template). When an xref or
+link is created or modified, the type attribute is set to the name
+of the target element, the format attribute is set to “dita,” and
+the scope attribute is set to “local.”</p>
+<note type = "tip">If you’d like more of the title text visible
+in the Reference Manager, enable the “Use Wide Reference Manager”
+option in the DITA-FMx Options dialog.</note>
+<section id = "id067FF60G0HT" status = "new"><title>External Xref</title><p
+    status = "changed">Choose the External Xref button in the Reference
+Manager dialog to insert an <synph status = "new"
+    outputclass = "element">xref</synph> or <synph status = "new"
+    outputclass = "element">link</synph> that references files outside
+of the documentation set. Specify the target (the href attribute
+value) and the link text (the content of the <synph status = "new"
+    outputclass = "element">xref</synph> or <synph status = "new"
+    outputclass = "element">link</synph> element), as well as the
+value for the scope attribute (“external” or “peer”).</p><p
+    status = "new">For URLs, set the scope value to “external”.
+The format attribute is automatically set to “html” for references
+of this type.</p><fig audience = "web print"><title>DITA-FMx External
+Xref dialog box</title><image href="images/externalxref.png" align="left"
+placement="break"  otherprops = "fmdpi:110"/></fig><p status = "new">If
+you are creating an <synph status = "new" outputclass = "element">xref</synph> or <synph
+    status = "new" outputclass = "element">link</synph> to other
+types of non-DITA content use the browse button (“...”) to select
+the file or enter the path and file name in the href field. When
+using the browse button, the link text will be set to the target
+file name, you are free to change it to whatever is needed. The
+format attribute is set to the value of the file extension.</p><fig
+    audience = "web print"><title>DITA-FMx External Xref dialog
+box</title><image href="images/externalxref-peer.png" align="left"
+placement="break"  otherprops = "fmdpi:110"/></fig><p status = "new">Keep
+in mind that it is your responsibility to make sure that the path
+in the href field is accurate for the “published” document. Just
+because you use the browse button to select a file that exists while
+authoring, doesn’t mean that this same path is valid for the published
+environment. Paths to external references (“external” or “peer”) are
+not validated during the DITA-FMx book build or other publishing
+processes.</p><p status = "new">Once an external reference has been
+created you can modify it by double-clicking the xref.</p></section></body></topic>

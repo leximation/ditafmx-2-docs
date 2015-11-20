@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="AltBookTemplatesDirs"?><?dtall dict="LevelRule"?><?dtall dict="ParaNumOnly"?><?dtall
+dict="StopWords"?><?dtall dict="XrefToHyperlink"?><?dtall dict="xml:lang"?><topic
+    id = "id5aad8eaf-4d33-432c-95a4-ef073320fef4"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>2.0.01 - 9 June 2014</title>
+<prolog><author>Scott Prentice</author>
+<author>test</author>
+<author>scottp</author>
+<critdates><created date = "2014-01-02"/>
+<revised modified = "2015-09-09"/></critdates></prolog>
+<body><section status = "changed"><title outputclass = "h3">New
+features</title><dl status = "changed"><dlentry status = "changed">
+<dt status = "changed">Generate Book from Map enhancements</dt>
+<dd status = "changed"><p>New options have been added to the Generate
+Book from Map dialog.</p><p>The functionality of the Edit Book-Build
+INI button has been modified. If a book-build INI file exists in
+the book output folder, that file is opened for editing. If no INI
+file exists at that location, the default book-build INI file is
+copied into that location from the “user’s” DITA-FMx folder or from
+the DITA-FMx installation folder, then that file is opened for editing.
+If the Use Language Template option is enabled (in the Options dialog),
+a language-specific INI file is opened or copied using similar logic.
+Also, this button is now labeled “Edit INI” and a “Delete INI” button
+is also provided in order to remove the “local” INI file and revert
+processing to the default INI.</p><p>The Component Templates Override
+option lets you select a new component templates folder to override
+that specified in the book-build INI file. If the AltBookTemplatesDirs
+section exists in the book-build INI, the folders specified in that
+section are presented as alternate override options in the Component Templates
+Override list.</p><p>A new “Open Console File on Completion” option
+is available to automatically open the console log file after the
+build completes. Also, the <filepath>build-consfile.txt</filepath> file
+that is created in the build folder now contains only the console
+log messages for the current build (instead of all previous log
+messages for the session).</p><p>Now, when running the Generate
+Book from Map command, you are presented with a file browse dialog
+if the current file is not a map.</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">Added Apply Master
+Pages option to Book Build Settings dialog</dt>
+<dd status = "changed"><p>Apply Master Pages has been added as a
+sub-option to the Update Book option in the Book Build Settings
+dialog.</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">Use Language
+Templates option</dt>
+<dd status = "changed"><p>The Use Language Templates option is now
+available in the Options dialog (previously an INIOnly setting).
+This setting lets you maintain language-specific book-build INI
+files and component templates, based on the <synph
+    outputclass = "attribute">xml:lang</synph> value in the DITA
+map.</p></dd></dlentry>
+<dlentry><dt status = "changed">Added option to strip stop words
+from new file names</dt>
+<dd status = "changed"><p>If the New File Name format uses a $TITLE*
+building block for creating new file names from titles, any “stop
+words” are stripped from the proposed file names. The INIOnly/StopWords
+parameter lets you specify a space-delimited list of stop words
+or a file name that contains the stop words.</p></dd></dlentry>
+<dlentry><dt status = "changed">Conrefs now partially supported
+in maps</dt>
+<dd status = "changed"><p>Use of conrefs in a map title or other
+metadata element will now be available as a FrameMaker variable
+if the ImportAttrsAsVars book-build INI option is enabled. This
+feature should be considered “experimental” for now.</p></dd></dlentry></dl></section>
+<section status = "changed"><title outputclass = "h3">Structure
+application updates</title><note type = "remember">Any modifications
+to a “common” EDD file must be updated in the structure application
+EDD (both Topic and Book), then imported into the associated templates
+as well as any component templates. Similarly, any modifications
+to templates will require similar changes to component templates.
+This has been done in the provided files, but if you’re implementing
+this on your custom files you’ll need to perform this operation.</note><dl
+    status = "changed"><dlentry><dt>Common EDD updates (commonElements.edd.fm)</dt>
+<dd><ul><li><p>Removed prefix label strings from note element definition.
+These strings are now defined in paragraph tags in template that
+are applied by the context rules.</p></li>
+<li><p>Changed context rules for note to remove LevelRule for note
+within table cell (entry | stentry | propdesc | chdesc | choption),
+replaced with specific match on lists within cell. This prevents
+extra indents within table cell based on context outside of table.</p></li></ul></dd></dlentry>
+<dlentry><dt>Common Topic EDD updates (topic.edd.fm)</dt>
+<dd><ul><li><p>Removed prefix label string from related-links element
+definition. This string is now defined in a paragraph tag in template
+applied by the context rules.</p></li></ul></dd></dlentry>
+<dlentry><dt>Common Task EDD updates (task.edd.fm)</dt>
+<dd><ul><li><p>Changed step/@id and substep/@id types to UniqueID
+to allow linking from an <synph outputclass = "element">fm-xref</synph>.
+Use the ParaNumOnly cross-ref format to link to a step or substep
+number.</p></li>
+<li><p>Removed prefix label strings from prereq, result, and postreq
+element definitions. These strings are now defined in paragraph
+tags in template that are applied by the context rules.</p></li></ul></dd></dlentry>
+<dlentry><dt>Book and Topic application template updates</dt>
+<dd><ul><li><p>Added/updated paragraph tags to support new prefix
+and label strings assigned by EDD modifications described above.</p></li></ul></dd></dlentry>
+<dlentry><dt>Book DTD updates (fmx-book_1.2.dtd)</dt>
+<dd><ul><li><p>Updated to add specific general rules for certain
+inline elements that disallow PCDATA (data-about, copyright, critdates,
+metadata, keywords, prodinfo, vrmlist, menucascade). This fixes
+a situation that caused odd whitespace problems, in particular with
+menucascade structures that lost the “>” delimiter.</p></li></ul></dd></dlentry></dl></section>
+<section><title outputclass = "h3">Bug fixes / minor updates</title><dl
+    status = "changed"><dlentry><dt status = "changed">Coderef Manager
+update</dt>
+<dd><p>The browse button in the Coderef Manager starts browsing
+from the current file’s location if no value is specified.</p><p>The
+maximum line length for a coderef file is now 1024 characters (increased from
+256).</p></dd></dlentry>
+<dlentry><dt status = "changed">No @href specified for a key definition</dt>
+<dd><p>If a key definition didn’t specify an <synph
+    outputclass = "attribute">href</synph> value, the map name was
+being used instead, which caused odd problems. This issue has been
+resolved.</p></dd></dlentry>
+<dlentry><dt status = "changed">Keyspace is automatically rebuilt
+for all book builds</dt>
+<dd><p>If a map contains key definitions, a keyspace is generated
+for that map to ensure proper key resolution.</p></dd></dlentry>
+<dlentry><dt status = "changed">Xref to Hyperlink processing cleanup</dt>
+<dd><p status = "changed">In certain cases where a topic contained
+a large number of id attributes, the XrefToHyperlink processing
+during the book-build process could cause FrameMaker to crash or
+“sleep” for very extended periods. This appears to be resolved now.</p></dd></dlentry>
+<dlentry><dt status = "changed">Xref “alt text” works properly</dt>
+<dd><p status = "changed">An xref created with alternate link text
+preserves that link text after reopening the document. Previously,
+this link text reverted to the target title text.</p></dd></dlentry>
+<dlentry><dt status = "changed">Book build with images that have
+invalid file extensions</dt>
+<dd><p status = "changed">If an image had a file extension that
+didn’t match its actual file type, FrameMaker could crash during
+the book-build process. This issue is now resolved.</p></dd></dlentry>
+<dlentry><dt status = "changed">Move Figure Titles option no longer
+deletes figure titles</dt>
+<dd><p status = "changed">Occasionally if the Move Figure Titles
+book-build option was enabled, the moved figure titles would actually
+get deleted. This issue has been resolved.</p></dd></dlentry>
+<dlentry><dt status = "changed">Generate Book from Map with no map
+open didn’t build related links</dt>
+<dd><p status = "changed">Running the Generate Book From Map command
+with no map open would result in the related links not being added
+to the generated FM files. This issue is now resolved.</p></dd></dlentry>
+<dlentry><dt status = "changed">Maps in “deep” paths</dt>
+<dd><p status = "changed">The <filepath>~mapdata.ini</filepath> file
+contains the build-specific settings and mappings. Maps in very
+long paths were causing this data to be deleted with each restart
+of FrameMaker. This issue is now resolved.</p></dd></dlentry>
+<dlentry><dt status = "changed">Element template updates</dt>
+<dd><p status = "changed">If no path is specified for the Element
+Templates Folder, element templates are detected in an <filepath>element-templates</filepath> folder
+within the current structure application folder (the folder that
+contains the app’s template file). To support this, an <filepath>element-templates</filepath> folder
+(along with a sample element template) has been added to the Map
+application folder.</p><p>When a map element template is used, the <synph
+    outputclass = "element">title</synph> and <synph
+    outputclass = "attribute">id</synph> are updated properly.</p></dd></dlentry>
+<dlentry><dt status = "changed">Where Used update</dt>
+<dd><p status = "changed">Because the Where Used command generates
+a report that is a FM binary file, it cannot operate in Author View
+mode. Now, when running this command in Author View, you are prompted
+if it is OK to switch to WYSIWYG View.</p></dd></dlentry>
+<dlentry><dt status = "changed">Search in Files update</dt>
+<dd><p status = "changed">If no folder is specified for the Search
+Scope, the browse button in the Search in Files dialog now starts
+browsing from the current file location rather than the file system
+root.</p></dd></dlentry></dl></section></body></topic>

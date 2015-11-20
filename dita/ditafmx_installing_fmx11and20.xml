@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+<?Fm Validation Off?>
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="DLLs"?><topic id = "id1413F0N035Z" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Switching Between DITA-FMx 1.1 and 2.0</title>
+<shortdesc status = "new">Don’t want to completely switch to DITA-FMx
+2.0 yet? You can safely install FMx 2.0 along side of FMx 1.1 and
+switch back and forth.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2014-01-03"/>
+<revised modified = "2014-03-29"/></critdates></prolog>
+<body status = "new"><p status = "new">DITA-FMx 2.0 installs into
+a <filepath status = "new">DITA-FMx-2</filepath> folder in the main
+FrameMaker program folder. Because of this, your DITA-FMx 1.1 installation
+will be left untouched after installing DITA-FMx 2.0.</p>
+<p status = "new">After running the installer, your <filepath
+    status = "new">maker.ini</filepath> file will have been updated
+to point to the new DITA-FMx 2.0 DLLs. If you’d like to be able
+to switch between both DITA-FMx versions, just edit the <filepath
+    status = "new">maker.ini</filepath> file as shown below.</p>
+<codeblock expanse = "page" status = "new" outputclass = "ini"><coderef href = "code/maker-ini-example.txt" status = "new"/></codeblock>
+<p status = "new">The example shown will enable DITA-FMx 2.0. To
+switch to DITA-FMx 1.1, just add semicolons in from of the two “2.0”
+entries and remove the semicolons in from of the “1.1” entries,
+then restart FrameMaker.</p></body></topic>

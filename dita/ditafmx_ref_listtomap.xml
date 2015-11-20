@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id0824H0ZL05Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Build Map from Outline</title>
+<shortdesc>Generates a DITA map and stub files from a simple FrameMaker
+document or text file.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2008-02-04 @ 17:37 (scottp)"/>
+<revised modified = "2014-03-29"/></critdates></prolog>
+<body><p><indexterm>build map from outline command</indexterm>This
+command builds a DITA map and associated DITA topic files based
+on the title text in paragraphs in a FrameMaker document (a binary
+FM file, not an XML file) or a text file opened in FrameMaker. The
+topic type for each topicref is defined by the paragraph tag name,
+and the nesting level is defined by the number of tabs that indent
+each paragraph. You can optionally provide an “<ph conref = "ditafmx_shared.xml#common/elem-template"></ph>”
+to define the initial structure for each new topic file.</p>
+<p>A “map from outline” template file is provided in the <filepath
+    status = "changed">Structure\xml\DITA-FMx_1.2</filepath> folder.
+This file provides the paragraph tags for the basic topic types,
+but you can add your own tags for any specialized topic types that
+are needed. Any paragraph tags that start with an underscore are
+ignored when creating topicrefs. The new DITA map file is named
+based on the FM file’s name and all files are created relative to
+the FM file.</p>
+<p>The paragraph tag named “_map-title” defines the text that will
+be used for the map/@title attribute (the map’s title). The paragraph
+tags “topic,” “concept,” “task,” and “reference” are used to define
+a topicref of the specified type. To specify an <ph conref = "ditafmx_shared.xml#common/elem-template"></ph>,
+include the name of the template after the topic title in angle brackets.
+For example, in the following paragraphs the first one is tagged
+with the “concept” style and the second is tagged with the “task”
+style. When converted into a map, it would create two topics, the
+first being a concept that used no element template, and the second
+a task that used the element template named “new~task~basic-task.fm”.</p>
+<codeblock>Linear Objects 
+Drawing Lines &lt;basic-task></codeblock>
+<p>The file names of the generated topic files are defined by the
+New File Name Format in the DITA-FMx Options dialog. This may mean
+that the filenames are title-based or they could be based on the
+topic’s unique ID, the date/time, or other values. You can also
+use that format to create the new files in topic-based folders.</p>
+<p>If the text of the paragraph is a DITA file name (must end with
+“.xml”, “.dita”, or “.ditamap” and have no spaces), that file name
+will be used for the href attribute value. If the paragraph tag
+is named “Body” it will assume the “topic” type. This allows you
+to open a text file that is a listing of files, and quickly generate
+a DITA map from that list.</p></body></topic>

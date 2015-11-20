@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id08C1D0VL0YK"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>XrefToHyperlink</title>
+<shortdesc>Runs the Xref to Hyperlink command.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2015-03-31"/></critdates></prolog>
+<body><section id = "id085HGH00RHT" status = "changed"><title>Syntax</title><codeblock status = "changed">F_ApiCallClient("ditafmx", "XrefToHyperlink [|<varname>docOrBookIdOrName</varname>]");</codeblock><dl>
+<dlentry><dt><varname>docOrBookIdOrName</varname></dt>
+<dd>Id or path and file name of document or book to process. You
+must use double backslashes as the directory delimiter when specifying
+the book or document file name. Optional, if not provided, the “active”
+document or book will be used.</dd></dlentry></dl><note conref =
+"ditafmx_shared.xml#common/fmxapi_auto" status = "changed"></note></section>
+<section><title>Return Value</title><dl compact = "yes"><dlentry><dt>0</dt>
+<dd>Failure. Unable to process the specified document or book. It
+is also possible that DITA-FMx is not available for calls. Verify
+that DITA-FMx is registered in the <filepath>maker.ini</filepath> file
+using the client name of “ditafmx”.</dd></dlentry>
+<dlentry><dt>-1</dt>
+<dd>Failure.</dd></dlentry>
+<dlentry><dt>>0</dt>
+<dd>Success. Value returned represents the number of xrefs hyperlinked.</dd></dlentry></dl></section></body></topic>

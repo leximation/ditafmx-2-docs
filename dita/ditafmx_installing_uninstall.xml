@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id0846EF00BY4"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Uninstalling DITA-FMx</title>
+<shortdesc>To remove DITA-FMx and put things back to the original
+form.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "2008-04-06"/>
+<revised modified = "2015-09-08"/></critdates></prolog>
+<body status = "changed"><p><indexterm>uninstall</indexterm>There
+is no Uninstall application provided with DITA-FMx. Because most
+of the installation is done manually, it would be misleading and
+possibly harmful to provide an uninstaller.</p>
+<p status = "changed">To remove DITA-FMx, just delete the <filepath
+    status = "new">DITA-FMx-2</filepath> folder and remove the “ditafmx” lines
+from the APIClients section of the <filepath>maker.ini</filepath> file.
+If you just want to disable DITA-FMx, you can comment out the “ditafmx”
+lines by adding a semicolon at the beginning of each line.</p>
+<p>In general, to reinstall the default DITA support, just uncomment
+the lines in the <filepath>maker.ini</filepath> file that you commented
+out when installing DITA-FMx. If you deleted those lines, just add
+the following lines to the end of the APIClients section in the <filepath>maker.ini</filepath> file.</p>
+<p>FrameMaker 8:</p>
+<codeblock expanse = "page" outputclass = "ini">ditafm=Standard, Translation client for DITA, fminit\ditafm.dll, structured 
+ditafm_app=Standard, Translation client for DITA, fminit\ditafm_app.dll, structured 
+ditabook=Standard, Translation client for DITA, fminit\ditabook.dll, structured</codeblock>
+<p>FrameMaker 9/10/11:</p>
+<codeblock expanse = "page" outputclass = "ini">ditafm=Standard, Translation client for DITA, fminit\ditafm.dll, structured 
+ditafm_app=Standard, Translation client for DITA, fminit\ditafm_app.dll, structured</codeblock>
+<p status = "changed">FrameMaker 12/2015:</p>
+<codeblock expanse = "page" status = "changed" outputclass = "ini">ditafm=Standard, Translation client for DITA, fminit\ditafm.dll, structured 
+ditafm_app=Standard, Translation client for DITA, fminit\ditafm_app.dll, structured 
+Dita OT=Standard, DITA OT client for DITA, fminit\openToolkit.dll, structured</codeblock></body></topic>

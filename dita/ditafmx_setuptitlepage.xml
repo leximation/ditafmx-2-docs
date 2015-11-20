@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "idd357d5ac-96ac-4968-a83f-172ce378aea3" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Including FM Files in a Generated Book</title>
+<shortdesc status = "new">If needed, you can mix FM binary files
+with DITA-sourced files in the generated book.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2014-03-28"/></critdates></prolog>
+<body status = "new"><p><indexterm>title page, including</indexterm><indexterm>include
+FM files in book</indexterm><indexterm>book, include FM files</indexterm>There
+may be times that you’ll want to include FrameMaker binary (<filepath>.fm</filepath>)
+files in a book that’s created by the <uicontrol>Generate Book from
+Map</uicontrol> command. One particular situation is for the addition
+of a title page but there may be other uses as well. For example,
+you may have content that you want to include in a book that has
+not yet been converted to DITA. With this feature you can build
+a book that contains some DITA-sourced chapters as well as some
+conventional, unstructured chapters.</p>
+<p>DITA-FMx provides an “Include Files” feature that is implemented
+through the <filepath conref = "ditafmx_shared.xml#common/bookbuild-ini"></filepath> file.
+These files are added to the book at the beginning of the book-build
+process, just after the DITA files have been aggregated into FM
+files. To include FM files you’ll specify their file name and position
+in the book (where a position of “1” is the first file in the book).
+You can also optionally define a “mapelemtype” value to be associated
+with this file so you can control the pagination properties. To
+include a title page in the book as the first file and to define
+this as a type of “titlepage,” the following sections should be
+added to the <filepath conref = "ditafmx_shared.xml#common/bookbuild-ini"></filepath> file:</p>
+<codeblock outputclass = "ini">[IncludeFiles] 
+1=title.fm 
+ 
+[IncludeFileTypes] 
+1=titlepage</codeblock>
+<p><indexterm>IncludeFiles INI section</indexterm><indexterm>IncludeFileTypes
+INI section</indexterm>The IncludeFiles section specifies the position
+and file name, where the file name is relative to the book file.
+You can specify that multiple files are added to the book, just
+make sure that the “position” values are always unique, and the
+files are ordered from the lowest position to the highest. The IncludeFileTypes
+section defines the “mapelemtype” value for the files at each position.
+You can use values that match those that are map element types in
+DITA (such as “chapter” or “appendix”) and you can create your own
+values (such as “titlepage”). Be sure to define the NumberingFirst
+and NumberingDefault sections as needed to assign numbering and pagination
+values to these mapelemtype values.</p></body></topic>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="ArchiveCommandLine"?><?dtall dict="app"?><?dtall dict="Booklists"?><?dtall
+dict="backmatter"?><?dtall dict="bookbuild"?><?dtall dict="DitaFMxGuide"?><?dtall
+dict="DitaReference"?><?dtall dict="DitaRefTargetPath"?><?dtall dict="dita"?><?dtall
+dict="ditafmx"?><?dtall dict="doctype"?><?dtall dict="figurelist"?><?dtall
+dict="fmx"?><?dtall dict="frontmatter"?><?dtall dict="GeneralExport"?><?dtall
+dict="ImportAttrsAsVars"?><?dtall dict="INIOnly"?><?dtall dict="indexlist"?><?dtall
+dict="LastReferencedElement"?><?dtall dict="outputclass"?><?dtall dict="RegInfo"?><?dtall
+dict="reflabel"?><?dtall dict="toc"?><?dtall dict="UseOutputclassForType"?><?dtall
+dict="WriteLineBreakPIs"?>
+<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "DITA-Data" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "id287da5d1-c0f6-4d52-97a0-0e06ca410449"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>1.1.12 - 29 March 2011</title>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2011-02-08"/>
+<revised modified = "2011-03-29"/></critdates></prolog>
+<body><section status = "changed"><title outputclass = "h3">New
+Features</title><dl status = "changed"><dlentry><dt status = "changed">Support
+for FrameMaker 10.</dt>
+<dd status = "changed">DITA-FMx can now be installed on FM10. Remember
+that DITA-FMx 1.1 supports the DITA 1.1 specification, so even though
+native FM10 supports DITA 1.2, you cannot use DITA 1.2 features
+with this version of DITA-FMx. DITA-FMx 2.0 is under development
+and will support DITA 1.2.</dd></dlentry>
+<dlentry><dt status = "changed">Support for round-tripping of line
+breaks as PIs.</dt>
+<dd status = "changed">If the GeneralExport/WriteLineBreakPIs INI
+parameter is set to 1 (the default), line breaks (SHIFT+ENTER) entered
+into running text will be stored as processing instructions (PIs)
+in the XML. When opened in FrameMaker (with DITA-FMx), these PIs
+will convert into line breaks. For details, see the “WriteLineBreakPIs”
+description in <xref href = "ditafmx_ref_inionly.xml#id067FF8008E9"
+type = "topic" status = "new" format = "dita" scope = "local"></xref>.</dd></dlentry>
+<dlentry><dt status = "changed">Document dictionary items are stored
+in the DITA file as PIs.</dt>
+<dd status = "changed">When spell-checking a document, the “Allow
+in Document” button saves the current word in the document dictionary;
+this is typically lost when working with XML files. DITA-FMx stores
+the document dictionary as processing instructions so that these words
+will be available for future spell checks on that document.</dd></dlentry>
+<dlentry><dt status = "changed">Added a user interface for defining
+doctype/application mapping.</dt>
+<dd status = "changed">The Options dialog now includes an Edit button
+that lets you define a doctype/application mapping for those who
+want to define separate structure applications for each topic type.
+This is especially important for FM10 support.</dd></dlentry>
+<dlentry><dt status = "changed">Added new auto-prolog and new file
+name building blocks.</dt>
+<dd status = "changed">Four new building blocks have been added:
+&lt;$FMX_USERNAME>, &lt;$FMX_FULLNAME>, &lt;$OS_USERNAME>, and &lt;$OS_COMPUTERNAME>.
+These building blocks are useful when the “RegInfo” values in the <i>maker.ini</i> file
+are not tied to the actual user.</dd></dlentry>
+<dlentry><dt status = "changed">Added support for accessing Help
+from a URL.</dt>
+<dd status = "changed">The DitaFMxGuide and DitaReference INI parameters
+can now specify a URL to access online Help from the web rather
+than a locally installed Help file. Added the DitaRefTargetPath
+parameter. For details, see the “DitaReference” description in <xref
+href = "ditafmx_ref_inionly.xml#id067FF8008E9" type = "topic" status
+= "new" format = "dita" scope = "local"></xref>.</dd></dlentry>
+<dlentry><dt status = "changed">Added the Open DITA-FMx Folder and
+Open Console Log commands.</dt>
+<dd status = "changed">Two new commands were added near the bottom
+DITA-FMx menu, <uicontrol>Open DITA-FMx Folder</uicontrol> and <uicontrol>Open
+Console Log</uicontrol>.The <uicontrol>Open DITA-FMx Folder</uicontrol> command
+opens a Windows Explorer window on the DITA-FMx folder to allow
+easy access to files. With Windows Vista or 7, this folder is under
+the user’s “app data” area. <uicontrol>Open Console Log</uicontrol> provides
+quick access to the <filepath>consfile.txt</filepath> file which
+contains the text of the messages printed to the console window.</dd></dlentry></dl></section>
+<section status = "changed"><title outputclass = "h3">Structure
+Application Updates</title><dl status = "changed">
+<dlentry status = "new"><dt status = "new">Map template (map_1.1.template.fm)</dt>
+<dd status = "new"><ul status = "new"><li status = "changed">Booklists
+items (in frontmatter and backmatter elements) no longer uses the WingDings
+font for the element labels.</li></ul></dd></dlentry>
+<dlentry status = "new"><dt status = "new">Map EDD (map_1.1.edd.mif/fm)</dt>
+<dd status = "new"><ul status = "new"><li status = "changed">Changed
+the general rule for booklists elements (toc, indexlist, figurelist,
+etc.) so the fm-reflabel element is not required.</li></ul></dd></dlentry>
+<dlentry status = "new"><dt status = "new">Book import XSLT (bookmap2fmbook.xsl
+and expandOrig.xsl)</dt>
+<dd status = "new"><ul status = "new"><li status = "changed">The <filepath>bookmap2fmbook.xsl</filepath> file
+was updated and <filepath>expandOrig.xsl</filepath> file was added
+to address some map to book conversion errors.</li></ul></dd></dlentry>
+<dlentry status = "new"><dt status = "new">Book component template
+(gentpl~indexlist.fm)</dt>
+<dd status = "new"><ul status = "new"><li status = "changed">Deleted
+an errant tab from the heading. This was causing bad formatting
+in the generated TOC</li></ul></dd></dlentry></dl></section>
+<section><title outputclass = "h3">Bug Fixes / Minor Updates</title><dl
+    status = "changed"><dlentry><dt status = "changed">Index see/see-also
+forced sorting works for all levels of index entries.</dt>
+<dd status = "changed">The automatic addition of forced sort strings
+to see/see-also entries works for all levels of those entries. You
+should not add your own forced-sort strings. For more information,
+see <xref href = "ditafmx_indexterms.xml#id4214dcdd-4512-43ea-8874-73aeb71f4a7a"
+type = "topic" format = "dita" scope = "local"></xref>.</dd></dlentry>
+<dlentry><dt>Revised the book-build processing order to ensure consistent
+results.</dt>
+<dd>Under certain conditions (with specific options enabled or disabled),
+some of the book-build features were undone or improperly built,
+due to the order of feature processing. We have revised this order
+to ensure consistent and correct results. Specific features that
+were known to be affected are: fmx-variable creation (via the ImportAttrsAsVars
+INI parameter), variable rebuilding (the “Rebuild Variables” book-build
+option), and table title relocation and creation (the “Move table/title” book-build
+option). Book-build start and end time is now printed to the console window.
+Other features may also have been affected.</dd></dlentry>
+<dlentry><dt>The UseOutputclassForType bookbuild INI parameter now
+controls pagination.</dt>
+<dd>If the General/UseOutputclassForType parameter in the <filepath>ditafmx-bookbuild.ini</filepath> file
+is enabled, top-level map elements that use the @outputclass attribute
+to specify an alternate template, can now make use of a like-named
+section to define the pagination and numbering for the resulting
+component.</dd></dlentry>
+<dlentry><dt>Related links to dita-rooted files are now created
+during a book-build.</dt>
+<dd>The root topic within dita-rooted files can now be the target
+of a related-link defined by relationship tables.</dd></dlentry>
+<dlentry><dt>Saved view settings are applied to new topics.</dt>
+<dd>If the Restore Saved View Settings option is enabled, those
+settings will now be applied to newly created topics.</dd></dlentry>
+<dlentry><dt>INIOnly/LastReferencedElement parameter moved to the
+“temp” INI.</dt>
+<dd>The LastReferencedElement parameter is not a user setting, and
+changes each time the Reference Manager is used. This value, previously
+stored in the <filepath>ditafmx.ini</filepath> file, is now stored
+in the <filepath>~fmx-temp.ini</filepath> file.</dd></dlentry>
+<dlentry><dt>Updated handling of default values in INI files.</dt>
+<dd>Some INI parameters, in particular ArchiveCommandLine, were
+not properly set to valid default values when those parameters were
+set to a null value. All parameters have been reviewed and when
+a null value is not valid, it is now set to the appropriate default
+value.</dd></dlentry>
+<dlentry><dt>Authorization code corrections.</dt>
+<dd>When entering the authorization data, user names can now contain
+non-alphanumeric character. Also, you no longer need to be running
+FrameMaker “As Administrator” to enter the authorization code.</dd></dlentry></dl></section></body></topic>

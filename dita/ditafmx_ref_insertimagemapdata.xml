@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="Esc,T,H"?><?dtall dict="fmdpi:NN"?><topic
+    id = "id52f00558-91a5-4288-8fba-349281921cce"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Insert Imagemap Data</title>
+<shortdesc>Imports map data created for HTML imagemaps into your
+DITA topics.</shortdesc>
+<prolog><author>test</author>
+<critdates><created date = "2014-04-12"/>
+<revised modified = "2014-04-13"/></critdates></prolog>
+<body><p><indexterm>imagemap hotspots</indexterm><indexterm>insert
+imagemap data command</indexterm>If your documents make use of imagemaps,
+you can use this command to import the map data created by third
+party imagemap editors. You are prompted to select an XHTML imagemap
+data file (this file must be valid XHTML). The <synph
+    outputclass = "element">area</synph> elements from the first <synph
+    outputclass = "element">map</synph> element in the file is read
+and converted into the proper DITA structure, then inserted into
+the selected <synph outputclass = "element">imagemap</synph> element
+in your document.</p>
+<p>The imported data is not validated, and is inserted as defined
+in the selected file. At this time only the “rect” shape is support
+by DITA-FMx.</p>
+<p><indexterm>test hotspots command</indexterm><indexterm>hotspot
+testing</indexterm>After importing the data, you can visualize the
+regions with the <uicontrol>Test Hotspots</uicontrol> command. This
+command is keyboard-only and is run by selecting the <synph
+    outputclass = "element">imagemap</synph> and pressing the shortcut
+keys <uicontrol>Esc,T,H</uicontrol>. This creates red text frames
+over the image based on the specified coordinates. For the “rect”
+shape, the coords value assumes the syntax of “<i>x1</i>,<i>y1</i>,<i>x2</i>,<i>y2</i>”
+(upper left and lower right corners, measured from the upper left
+corner of the anchored frame).</p>
+<p>The <synph outputclass = "attribute">href</synph> values are
+assumed to be external references (URLs) and are converted into <synph
+    outputclass = "element">xref</synph> elements with <synph
+    outputclass = "attribute">scope</synph> set to “external”. The
+following code sample shows the expected XHTML format:</p>
+<codeblock expanse = "page">... 
+&lt;map name="mymap"> 
+  &lt;area shape="rect" coords="10,10,90,90" href="http://www.adobe.com"/> 
+  &lt;area shape="rect" coords="110,10,190,90" href="http://www.leximation.com"/> 
+  &lt;area shape="rect" coords="10,110,90,190" href="http://www.google.com"/> 
+  &lt;area shape="rect" coords="110,110,190,190" href="http://www.yahoo.com"/> 
+&lt;/map> 
+...</codeblock>
+<p>The following image shows the result of applying this map to
+a simple image. The red boxes indicate the “hot” regions:</p>
+<imagemap><image href="images/imagemap-test.png" align="left" placement="break"
+ outputclass = "fmdpi:96"/>
+<area><shape>rect</shape><coords>10,10,90,90</coords><xref href
+= "http://www.adobe.com" scope = "external">http://www.adobe.com</xref></area>
+<area><shape>rect</shape><coords>110,10,190,90</coords><xref href
+= "http://www.leximation.com" scope = "external">http://www.leximation.com</xref></area>
+<area><shape>rect</shape><coords>10,110,90,190</coords><xref href
+= "http://www.google.com" scope = "external">http://www.google.com</xref></area>
+<area><shape>rect</shape><coords>110,110,190,190</coords><xref href
+= "http://www.yahoo.com" scope = "external">http://www.yahoo.com</xref></area></imagemap>
+<p>The coordinates of the hot spots (text frames) are aligned using
+a DPI of 72. If your image requires a different DPI, set the <synph
+    outputclass = "attribute">outputclass</synph> attribute of the <synph
+    outputclass = "element">image</synph> element to “fmdpi:<i>NNN</i>”
+(where <i>NNN</i> is the DPI value). If you’ve enabled the “fmdpi” feature,
+this will be set automatically.</p>
+<p>When generating a book from topics with imagemaps, remember to
+enable the <synph>BuildImagemapHotspots</synph> setting in the <synph>BookBuildOverrides</synph> section
+of the book-build INI file. If this is not enabled, the hot spots
+will not be created.</p></body></topic>

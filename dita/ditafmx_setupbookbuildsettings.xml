@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="BookTitleVariableName"?><?dtall dict="ComponentType"?><?dtall
+dict="FMxBookTitle"?><?dtall dict="gentpl"?><?dtall dict="mainbooktitle"?><?dtall
+dict="RunPostPaginationScript"?><?dtall dict="UseOutputclassForType"?><topic
+    id = "id00a0eead-77f5-4131-9d2d-5a02de0a1893" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>The Book Build Settings Dialog and the Book-Build INI File</title>
+<shortdesc>Describes the methods available for generating a FM book
+from a DITA map.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2014-03-31"/></critdates></prolog>
+<body status = "new"><p status = "new"><indexterm status = "new">Book
+Build Settings dialog</indexterm><indexterm status = "new">ditafmx-bookbuild.ini
+file</indexterm><indexterm status = "new">book-build INI file</indexterm>The <wintitle>Book
+Build Settings</wintitle> dialog (<menucascade status = "new">
+<uicontrol status = "new">DITA-FMx</uicontrol>
+<uicontrol status = "new">Options</uicontrol></menucascade>) provides
+a number of options that control the processes that are run on the
+generated book file and components after the initial aggregation
+has taken place. If all of the options are deselected, you’ll end
+up with an unprocessed book file and FM files. This is typically not
+what’s needed (since any references will not be resolved, among
+other things), but if you have special processing needs, this may
+be a viable option.</p>
+<p status = "changed">The <term keyref = "book-build-ini"/> (<filepath
+conref = "ditafmx_shared.xml#common/bookbuild-ini"></filepath>)
+is a user-managed text file that defines the properties (pagination,
+numbering, and formatting) of each book component including the
+properties of generated list components (toc, index, etc.). This file
+also defines additional settings that control how book-level variables
+are used, as well as any pre and/or post build scripts. Settings
+defined in the Book Build Settings dialog may be overridden in the
+book-build INI file. This file is intended to allow the user to
+predefine all of the properties for each book-build, to ensure that subsequent
+builds result in the exact same output.</p>
+<p status = "changed">You would typically have one book-build INI
+file for each book that is created. The <uicontrol>Generate Book
+from Map</uicontrol> command looks for the book-build INI file in
+the folder selected for the book file to be created. If one does
+not exist in that location, it reads the settings defined in the
+user’s DITA-FMx folder (<menucascade status = "new">
+<uicontrol status = "new">DITA-FMx</uicontrol>
+<uicontrol status = "new">Open DITA-FMx Folder</uicontrol></menucascade>).</p>
+<p status = "new">The first option in the Book Build Settings dialog
+is “Normalize Reference Paths.” This option processes all elements
+that contains an href or conref attribute and converts them into
+absolute paths based on the new relationship of content due to the
+file aggregation. If this option is selected, the “Add Related Links”
+and “Reload References” are also available. If “Add Related Links”
+is selected, any related links defined in reltable elements will
+be built and added to the bottom of each topic as appropriate. The
+“Reload References” option reloads and updates the references based
+on the updated reference locations.</p>
+<p status = "new">Other options are described in detail in the <xref
+href = "ditafmx_ref_bookbuilds.xml#idc70772e6-fe29-429e-a0c5-e24d1b91b542"
+type = "topic" format = "dita" scope = "local" status = "new"></xref> topic.
+Three of these options rely on properties that can be specified
+in a <filepath conref = "ditafmx_shared.xml#common/bookbuild-ini"></filepath> file.
+This INI file must be created manually and placed in either, the
+folder that contains the generated book file, or the user’s DITA-FMx
+folder (<menucascade status = "new"><uicontrol status = "new">DITA-FMx</uicontrol>
+<uicontrol status = "new">Open DITA-FMx Folder</uicontrol></menucascade>).
+This file is initially checked for in the book folder, if it does
+not exist there one will be used from the user’s DITA-FMx folder.
+This lets you maintain properties and templates that are specific
+to each book. The details of this INI file are provided in the <xref
+href = "ditafmx_ref_book-buildinifile.xml#id84800a54-1228-438f-881d-08ce097eba90"
+type = "topic" format = "dita" scope = "local" status = "new"></xref> topic.</p>
+<p status = "new">The “Assign Numbering and Pagination” option enables
+the “NumberingFirst” and “NumberingDefault” sections of the <filepath
+conref = "ditafmx_shared.xml#common/bookbuild-ini"></filepath> file.
+This INI file can contain either or both of these “Numbering” sections
+for each mapelemtype attribute (each unique topic referencing element
+in the map file). Within each section are options that mirror the
+standard FrameMaker book numbering and pagination options. A simple
+bookmap that contains a “toc”, a few chapters, and an index (indexlist)
+would need the following four “Numbering” sections:</p>
+<ul status = "new"><li>NumberingFirst-toc</li>
+<li status = "new">NumberingFirst-chapter</li>
+<li status = "new">NumberingDefault-chapter</li>
+<li status = "new">NumberingFirst-indexlist</li></ul>
+<p status = "new">If only one element of any given map element type
+exists in the bookmap, you only need the NumberingFirst section
+for that element type, otherwise you should include both the NumberingFirst
+and NumberingDefault sections. These numbering options can be used
+for both DITA maps and bookmaps.</p>
+<p status = "new">If enabled, the “Replace List Files with Generated
+Files” option will replace the placeholder files in the frontmatter
+and backmatter elements with FrameMaker generated lists. This uses
+the “GeneratedFile” sections in the <filepath conref = "ditafmx_shared.xml#common/bookbuild-ini"></filepath> file.
+You should create a GeneratedFile section for each of the unique
+list files. These sections specify the component type and the tags
+that are used for the generated list. Additionally the General section
+specifies the BookTemplatesDir option which specifies the folder
+that contains the template to use for each of the generated lists.
+The BookTemplatesDir location can be an absolute or relative path,
+if relative, it is relative to the book folder. For example, a book
+with a toc and index would specify two GeneratedFile sections:</p>
+<ul status = "new"><li status = "changed">GeneratedFile-toc</li>
+<li status = "new">GeneratedFile-indexlist</li></ul>
+<p status = "new">The INI code would look something like the following:</p>
+<codeblock status = "new" outputclass = "ini">[GeneratedFile-toc] 
+ComponentType=Toc 
+NumTags=3 
+1=title.0 
+2=title.1 
+3=title-index 
+ 
+[GeneratedFile-indexlist] 
+ComponentType=IndexStandard 
+NumTags=1 
+1=Index</codeblock>
+<p status = "new"><indexterm>generated list templates</indexterm><indexterm>templates<indexterm>generated
+lists</indexterm></indexterm><indexterm>gentpl templates</indexterm>The
+valid ComponentType values are specified in the <xref href = "ditafmx_ref_book-buildinifile.xml#id84800a54-1228-438f-881d-08ce097eba90"
+type = "topic" format = "dita" scope = "local" status = "new"></xref> topic.
+The generated list templates in the BookTemplatesDir folder must
+be named with the file naming convention of <filepath status = "new">gentpl~&lt;mapelemtype>.fm</filepath> (that’s
+the string “gentpl” followed by a tilde, then the associated map
+element type name, with a “.fm” file extension). The “Replace List
+Files...” option is only valid with DITA bookmaps. (Sample templates
+are available in the <filepath status = "changed">DITA-FMx_1.2\Book\component-templates</filepath> folder.)</p>
+<p><indexterm>book title<indexterm>in topic files</indexterm></indexterm><indexterm>book
+title<indexterm>in generated lists</indexterm></indexterm><indexterm>FMxBookTitle
+variable</indexterm><indexterm>BookTitleVariableName, INI parameter</indexterm>The
+default XSLT import script makes the book title (from map/title,
+map/@title, bookmap/title, or bookmap/booktitle/mainbooktitle) available
+as a header/footer variable in files generated from DITA topic files.
+If you want to include the book title in generated list files, create
+a variable named “FMxBookTitle” and insert it into the appropriate
+location in your generated list template file. The variable will
+be updated when the generated lists are added to the book. If you’d
+like to use a different variable name, you can specify that name
+in the BookTitleVariableName parameter in the INIOnly section of
+the <filepath>ditafmx.ini</filepath> file.</p>
+<p status = "new"><indexterm>component templates</indexterm><indexterm>templates<indexterm>component</indexterm></indexterm>The
+“Apply templates” option applies component templates to the other
+(non-list) files. It also uses the folder specified by the BookTemplatesDir
+option. The file naming convention for component templates is <filepath
+    status = "new">tpl~&lt;mapelemtype>.fm</filepath>. This option is
+also only applicable for DITA bookmaps. (Sample templates are available
+in the <filepath status = "changed">DITA-FMx_1.2\Book\component-templates</filepath> folder.)</p>
+<p status = "new"><indexterm status = "new">RunPostPaginationScript
+book-build INI setting</indexterm>If you’d like to perform additional
+automated processing to the generated book and component files,
+you can use the “Run Custom Script” option to specify one or more FrameScript
+or FDK clients to run near the end of the book-build processing.
+These scripts run before pagination has been completed (conditional
+text has not been hidden and other processes that affect pagination
+are yet to be run). If you want to run a script after final pagination
+has been applied, use the RunPostPaginationScript settings in the <filepath
+conref = "ditafmx_shared.xml#common/bookbuild-ini"></filepath> file.</p>
+<p status = "changed">Variable values and condition states can be
+defined by values in the DITA map. These are controlled by attributes
+on the <synph status = "new" outputclass = "element">fm-ditabook</synph> element.
+For more information, see <xref href = "ditafmx_addingnewfmditabookattributes.xml#id3a2152b0-95cf-4a97-9f6a-2921c293cc2a"
+type = "topic" format = "dita" scope = "local"></xref>.</p>
+<p status = "new">There are a number of other book-build settings
+that are controlled by the <filepath conref = "ditafmx_shared.xml#common/bookbuild-ini"></filepath>;
+please review the <xref href = "ditafmx_ref_book-buildinifile.xml#id84800a54-1228-438f-881d-08ce097eba90"
+type = "topic" format = "dita" scope = "local" status = "new"></xref> topic
+for more details.</p>
+<p status = "new">A sample <filepath conref = "ditafmx_shared.xml#common/bookbuild-ini"></filepath> is
+provided in the <filepath status = "new">DITA-FMx</filepath> installation
+folder. This file is also provided in the <filepath status = "new">DITA-FMx_Help_Source.zip</filepath> file
+along with the working templates.</p>
+<section id = "id1086G0EF05Z" status = "new"><title>Using the outputclass
+attribute as a “mapelemtype” value</title><p status = "new"><indexterm
+status = "new">UseOutputclassForType book-build INI setting</indexterm>You
+can set the outputclass attribute on topicrefs or topicref-based
+elements in a map and that value will be assigned to the outputclass
+attribute on the associated fm-ditafile element. This mapping is
+used when the UseOutputclassForType parameter is set to 1 in the
+book-build INI file. When this feature is enabled, this value will be
+used instead of the fm-ditafile/@mapelemtype attribute that is set
+based on the type of the associated map element. For additional
+information see “UseOutputclassForType” in the <xref href = "ditafmx_ref_book-buildinifile.xml#id84800a54-1228-438f-881d-08ce097eba90"
+type = "topic" format = "dita" scope = "local" status = "new"></xref> topic.</p></section></body></topic>

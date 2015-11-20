@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<map id = "id41695bd3-283a-4719-9095-1b78c3c54959"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Extending DITA-FMx</title>
+<topicmeta><author>scottp</author>
+<critdates><created date = "2014-07-31"/>
+<revised modified = "2015-03-30"/></critdates>
+<othermeta name = "fmx-root-map" content = "_ditafmx.ditamap"
+    status = "new"/></topicmeta>
+<topicref navtitle = "Extending DITA-FMx" href = "ditafmx_api.xml"
+    collection-type = "family" type = "topic" status = "changed">
+<topicref navtitle = "ApplyDitaval"
+    href = "ditafmx_api_applyditaval.xml" type = "topic"></topicref>
+<topicref navtitle = "AssignIdToElem"
+    href = "ditafmx_api_assignidtoelem.xml" type = "topic"></topicref>
+<topicref navtitle = "FixBookRefs" href = "ditafmx_api_fixbookrefs.xml"
+    type = "topic"></topicref>
+<topicref navtitle = "FMxType" href = "ditafmx_api_fmxtype.xml"
+    type = "topic"></topicref>
+<topicref navtitle = "FMxVer" href = "ditafmx_api_fmxver.xml"
+    type = "topic"></topicref>
+<topicref navtitle = "InstallApps" href = "ditafmx_api_installapps.xml"
+    type = "topic"></topicref>
+<topicref navtitle = "LoadReferences"
+    href = "ditafmx_api_loadreferences.xml" type = "topic"></topicref>
+<topicref href = "ditafmx_api_maptoworkbook.xml" type = "topic">
+<topicmeta><navtitle>MapToWorkbook</navtitle></topicmeta></topicref>
+<topicref navtitle = "MapToBook" href = "ditafmx_api_maptobook.xml"
+    type = "topic"></topicref>
+<topicref navtitle = "OpenDITA" href = "ditafmx_api_opendita.xml"
+    type = "topic" status = "new"></topicref>
+<topicref navtitle = "XrefToHyperlink"
+    href = "ditafmx_api_xreftohyperlink.xml" type = "topic"></topicref></topicref>
+<reltable locktitle = "yes" toc = "no" id = "table-one">
+<relheader>
+<relcolspec linking = "sourceonly"></relcolspec>
+<relcolspec linking = "targetonly"></relcolspec>
+</relheader>
+<relrow>
+<relcell>
+<topicref navtitle = "Extending DITA-FMx" href = "ditafmx_api.xml"
+    type = "topic"></topicref></relcell>
+<relcell>
+<topicref navtitle = "Using DITA-FMx" href = "ditafmx_using.xml"
+    type = "topic"></topicref>
+<topicref navtitle = "Installation and Setup"
+    href = "ditafmx_installing.xml" type = "topic"></topicref>
+<topicref navtitle = "DITA-FMx Commands" href = "ditafmx_ref_main.xml"
+    type = "topic"></topicref></relcell>
+</relrow>
+</reltable></map>

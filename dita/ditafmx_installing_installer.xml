@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id078AA400U5Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Run the Installer Application</title>
+<shortdesc>Extract the EXE from the ZIP archive and run it.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2014-03-29"/></critdates></prolog>
+<body status = "changed"><p status = "changed"><indexterm>plugins,
+installing</indexterm>The DITA-FMx installer application is provided
+in a ZIP archive. Extract the executable from the archive and run
+it. The installer extracts and copies the required files to the <filepath
+    status = "changed">FrameMaker\DITA-FMx-2</filepath> folder.</p>
+<p status = "changed">As part of the installation process, the installer
+modifies the <filepath>maker.ini</filepath> file. If you feel it
+is necessary, you may want to make a backup of this file before
+running the installer. If you are installing an update, see <xref
+href = "ditafmx_installing_update.xml#id0838A0Q605Z" type = "topic"
+format = "dita" scope = "local"></xref>.</p>
+<p>The following files are installed:</p>
+<ul><li><p status = "changed"><b><filepath conref = "ditafmx_shared.xml#common/ditafmx_dll_VER"></filepath></b> -
+Authoring and publishing support plugin DLL.</p></li>
+<li><p><b><filepath conref = "ditafmx_shared.xml#common/ditafmx_app_dll_VER"></filepath></b> -
+Import/export client DLL.</p></li>
+<li><p><b><filepath>pt_updates.dll</filepath></b> - The DLL that
+provides web access for the “check for updates” command.</p></li>
+<li><p><b><filepath conref = "ditafmx_shared.xml#common/ditafmx-chm"
+class = "+ topic/ph sw-d/filepath "></filepath></b> - DITA-FMx User
+Guide online Help file.</p></li>
+<li><p status = "changed"><b><filepath status = "changed">ditafmx-ref-1.1.chm</filepath></b> -
+DITA 1.1 Reference online Help file (for element-based context sensitive
+authoring help). Includes the special DITA-FMx elements.</p></li>
+<li status = "changed"><p status = "changed"><b><filepath
+    status = "changed">ditafmx-ref-1.2.chm</filepath></b> - DITA
+1.2 Reference online Help file (for element-based context sensitive
+authoring help). Includes the special DITA-FMx elements.</p></li>
+<li><p><b><filepath>DITA-FMx_Help_Source.zip</filepath></b> - Source
+for the user documentation.</p></li>
+<li><p><b><filepath>DITA-FMx_apps.zip</filepath></b> - Structure
+application files.</p></li>
+<li><p><b><filepath>ditafmx-ant.xml</filepath></b> - Ant script
+that provides targets for the Current File option of the Generate
+Output command.</p></li>
+<li><p><b><filepath>PROJECT.xml</filepath></b> - Sample Ant script
+for the Selected Target option of the Generate Output command.</p></li>
+<li><p><b><filepath>ditafmx-bookbuild.ini</filepath></b> - The default
+book-build INI used by the Generate Book from Map (Book Build) process.
+Copy this file into the folder that contains the generated book
+file to customize the build process for that book. If no book-build
+INI file is found in the output folder, the settings in this default
+file are used.</p></li>
+<li><p><b><filepath>filtergroups.ini</filepath></b> - The default
+INI file used by the filtering groups feature of the Set Attributes
+command. Copy this file into the folder that contains the topic files
+to create project-specific filtering groups. If no <filepath>filtergroups.ini</filepath> file
+is found in the topic folder, the settings in this default file
+are used.</p></li>
+<li status = "changed"><p status = "changed"><b status = "changed"><filepath
+    status = "changed">missing-images</filepath> folder</b> - Contains
+files named <filepath status = "new">missing-image-break.&lt;ext></filepath> and <filepath
+    status = "new">missing-image-inline.&lt;ext></filepath>. Files
+are provided for all conceivable file types. If you a re using files
+of a type not provided, create them from a type provided. The <filepath
+    status = "new">_README.txt</filepath> file in this folder explains
+why they are needed.</p></li>
+<li><p><b><filepath>ditafmx-zip.exe</filepath></b> - A ZIP archive
+creation utility provided by Info-ZIP. Used by the Create Archive
+command.</p></li>
+<li><p><b><filepath>ditafmx-unzip.exe</filepath></b> - A ZIP archive
+extraction utility provided by Info-ZIP. Used by the automated structure
+application installation process.</p></li></ul>
+<p status = "changed"><indexterm>maker.ini parameters</indexterm><indexterm>APIClients
+section of maker.ini</indexterm>After extracting the new files,
+the installer updates the APIClients section of the <filepath>maker.ini</filepath> file
+with references to the plugin DLLs. The following lines are added
+(the numbers will vary based on the FrameMaker version: “120” is
+FM12, “110” is FM11, and so on):</p>
+<codeblock expanse = "page" status = "changed" outputclass = "ini">ditafmx=Standard, ditafmx, DITA-FMx-2\ditafmx_120.dll, structured 
+ditafmx_app=Standard, ditafmx_app, DITA-FMx-2\ditafmx_120_app.dll, structured</codeblock>
+<note type = "important" status = "new">Before you can use DITA-FMx,
+you must modify the maker.ini file to remove references to the default
+DITA plugins. If you have not done this, return to the “Installation
+Requirements” topic for your version of FrameMaker. See <xref href
+= "ditafmx_installing_first.xml#id097I90V005Z" type = "topic" format
+= "dita" scope = "local" status = "new"></xref>.</note>
+<note status = "new">On Windows Vista, 7, and 8, when you run FrameMaker,
+the user data files (like the <filepath status = "new">ditafmx.ini</filepath> file)
+are created in a <filepath status = "new">DITA-FMx-2</filepath> folder
+in the application data area (typically <filepath status = "new">C:\Users\USERNAME\AppData\Roaming\Adobe\FrameMaker\12\DITA-FMx-2</filepath>).
+Any “global” data files that you create (like <filepath status = "new">filtergroups.ini</filepath> and <filepath
+    status = "new">ditafmx-bookbuild.ini</filepath>), that the documentation
+indicates should be in the <filepath status = "new">FrameMaker/DITA-FMx</filepath> folder
+should be created in this location as well. The <menucascade>
+<uicontrol>DITA-FMx</uicontrol><uicontrol>Open DITA-FMx Folder</uicontrol></menucascade> command
+is useful for accessing this folder.</note>
+<p status = "changed">Once the installation has completed, you need
+to set up the structure applications before you can create and edit
+DITA files. Continue to <xref href = "ditafmx_installing_apps.xml#id078AAC00PY4"
+type = "topic" format = "dita" scope = "local"></xref>.</p></body></topic>

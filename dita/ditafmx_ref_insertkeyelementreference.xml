@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="ini"?><topic id = "id1413F0A0R5Z" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Insert Key Element Reference</title>
+<shortdesc status = "new">Inserts an element whose content is defined
+by content within a key definition.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "2014-01-03"/>
+<revised modified = "2014-08-10"/></critdates></prolog>
+<body status = "new"><note status = "new">The term “key element
+reference” is not an industry standard term. We use this term in
+lieu of any other useful term for this DITA construct.</note>
+<p status = "new"><indexterm status = "new">key element reference</indexterm><indexterm
+status = "new">key-based element</indexterm>The <uicontrol
+    status = "new">Insert Key Element Reference</uicontrol> dialog
+lets you select the keyspace and the key, then it displays the available
+elements and their current values.</p>
+<fig audience = "web" status = "new"><title>Insert Key Element Reference
+dialog</title><image href="images/insert-keyelemref.png" align="left"
+placement="break"  otherprops = "fmdpi:110"/></fig>
+<p status = "new">A <synph status = "new" outputclass = "element">keydef</synph> that
+contains a <synph status = "new" outputclass = "element">topicmeta</synph> element
+with a <synph status = "new" outputclass = "element">linktext</synph> child
+will add the content of <synph status = "new" outputclass = "element">linktext</synph> into
+any element that you insert which references the associated key.</p>
+<p>If a <synph status = "new" outputclass = "element">keydef</synph> does
+not define any a <synph status = "new" outputclass = "element">topicmeta</synph> content,
+the title text from the referenced topic is used as the content
+for the key element reference. You can override the title text by
+providing an Alternate Text value.</p>
+<fig status = "new"><image href="images/key-elemref-simple.png"
+align="left" placement="break"  otherprops = "fmdpi:110"/></fig>
+<p status = "new">To define the content of specific key-based elements,
+include those elements in the <synph status = "new"
+    outputclass = "element">topicmeta</synph> element. In the following
+example key definition of a “ditafmx-ini” key, inserting the <synph
+    status = "new" outputclass = "element">apiname</synph> element
+will provide the content “DITAFMX-INI” for references that use the <synph
+    status = "new" outputclass = "element">apiname</synph> element
+while all other elements will use the content of the <synph
+    status = "new" outputclass = "element">linktext</synph> element
+as “ditafmx.ini.”</p>
+<fig status = "new"><image href="images/key-elemref-complex.png"
+align="left" placement="break"  otherprops = "fmdpi:110"/></fig>
+<note type = "important" status = "new">While the use of the <synph
+    status = "new" outputclass = "element">linktext</synph> element
+as described above is clearly indicated as valid in the DITA specification,
+processing by the DITA Open Toolkit does not seem to honor this
+structure. You may want to use the alternate method described below,
+which does work in OT processing.</note>
+<p status = "new">If your <synph status = "new" outputclass = "element">keydef</synph> includes
+a <synph status = "new" outputclass = "element">keyword</synph> element
+(within <synph status = "new" outputclass = "element">keywords</synph>),
+that value will also be used when inserting a key element reference
+of non-matching element types. For example, if you insert a key-referencing <synph
+    status = "new" outputclass = "element">ph</synph> element, the
+content within the <synph status = "new" outputclass = "element">ph</synph> will
+be that of the <synph status = "new" outputclass = "element">keyword</synph> element.</p>
+<section status = "new"><title>References to glossary entries</title><p
+    status = "new"><indexterm status = "new">glossary entries, key-based
+references</indexterm><indexterm status = "new">glossary term, key-based
+references</indexterm>DITA-FMx supports the use of key-based references
+to glossary entries. When setting up a map that contains topicrefs
+to <synph status = "new" outputclass = "element">glossentry</synph> topics,
+assign a key to that <synph status = "new" outputclass = "element">topicref</synph> (or <synph
+    status = "new" outputclass = "element">glossref</synph>) so
+the glossary term can be referenced by a key. (If using a <synph
+    status = "new" outputclass = "element">topicref</synph>, remember
+to set the <synph status = "new" outputclass = "attribute">type</synph> attribute
+to “glossentry”.)</p><p status = "new">Assuming that your glossary
+entries are identified by a key, insert a <synph status = "new"
+    outputclass = "element">term</synph> element with the <synph
+    status = "new" outputclass = "attribute">keyref</synph> set
+to the value of the key. While authoring, the content of the <synph
+    status = "new" outputclass = "element">term</synph> will match
+that of the glossary entry’s title (the <synph status = "new"
+    outputclass = "element">glossterm</synph> element).</p><p
+    status = "new">If you enable the <uicontrol status = "new">Glossary
+Term Swapping</uicontrol> option (in the <uicontrol status = "new">Book
+Build Settings</uicontrol> dialog), the <synph status = "new"
+    outputclass = "element">term</synph> will render the <synph
+    status = "new" outputclass = "element">glossSurfaceForm</synph> content
+in the first instance of the <synph status = "new"
+    outputclass = "element">term</synph> in a book component, and
+the value of <synph status = "new" outputclass = "element">glossAlt</synph> (<synph
+    status = "new" outputclass = "element">glossAcronym</synph> or <synph
+    status = "new" outputclass = "element">glossAbbreviation</synph>)
+for remaining instances.</p></section></body></topic>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+
+<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "DITA-Data" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "id0844H0YL05Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Prepare Variables</title>
+<shortdesc>Saves variable names to attribute values so they can
+be rebuilt after the map to book conversion.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2008-04-04"/>
+<revised modified = "2008-04-19"/></critdates></prolog>
+<body><p>FrameMaker variables are saved to XML as entities, and
+will round-trip fine in and out of Frame (as long as they are named
+properly). However, any variables that are processed by the <uicontrol>Generate
+Book from Map</uicontrol> command are flattened (converted to text)
+because entities do not survive XSLT processing. This command was
+developed as a way to work around this limitation. </p>
+<p>Before running the <uicontrol>Generate Book from Map</uicontrol> command,
+run the <uicontrol>Prepare Variables</uicontrol> command on all
+files that contain FrameMaker variables. This wraps each variable
+in a <codeph>ph</codeph> element and assigns the variable name to
+the keyref attribute using the format “fmvar:VARNAME” (where VARNAME
+is the name of the variable). After conversion to a book and chapter
+files, you can run the <uicontrol>Rebuild Variables</uicontrol> command
+to rebuild live variables from the data stored in the ph elements.</p>
+<p>You can run the <uicontrol>Prepare Variables</uicontrol> command
+individually on each DITA file, or you can use the <uicontrol>Build
+Workbook from Map</uicontrol> command to create a “workbook” from
+which you can process all of the files at once. Before running the <uicontrol>Prepare
+Variables</uicontrol> command on the workbook, you must first open
+all of the files with the <uicontrol>Open All XML Files in Book</uicontrol> command.</p>
+<p>It is fine to run this command multiple times on the same files
+or variables, so you may just want to run the command after entering
+a variable or before saving a file.</p>
+<note type = "important">If you use the <uicontrol>Prepare Variables</uicontrol> command
+and feel inclined to set attributes on the <codeph>ph</codeph> elements
+that wrap the variables, don’t do it. The <codeph>ph</codeph> wrappers
+are temporary and are deleted each time the command is run. If you
+want to apply filtering or other attributes to variables, wrap them
+in a <codeph>ph</codeph> element and apply the attributes on that
+element.</note>
+<p>The DITA-FMx Options dialog offers the <uicontrol>Auto Prepare
+Variables on Save</uicontrol> option. If this option is enabled,
+the <uicontrol>Prepare Variables</uicontrol> command is run each
+time you save the document. This may allow you to skip running this
+command on a workbook before generating the final book file.</p></body></topic>

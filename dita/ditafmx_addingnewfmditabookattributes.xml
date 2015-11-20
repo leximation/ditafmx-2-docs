@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="dtd"?><?dtall dict="xsl:attribute"?><?dtall dict="xsl:value"?><topic
+    id = "id3a2152b0-95cf-4a97-9f6a-2921c293cc2a"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Adding Map to Book Metadata Mappings</title>
+<shortdesc>Extending the default metadata mappings allows you to
+pass custom element and attribute data from the map to the generated
+book and component files.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2014-03-29"/></critdates></prolog>
+<body><p>Two DITA-FMx features read the attribute values on the <synph
+    status = "new" outputclass = "element">fm-ditabook</synph> element (the
+root of a generated book file). These attributes can define values
+that are passed to the book components as FrameMaker variables.
+These attributes can also be used to control the show/hide state
+of conditions in the generated book components. For information
+on enabling these features see the ImportAttrsAsVars, and ImportAttrsAsConds
+parameter information in <xref href = "ditafmx_ref_book-buildinifile.xml#id84800a54-1228-438f-881d-08ce097eba90"
+type = "topic" format = "dita" scope = "local"></xref>.</p>
+<p>In order to add your own metadata mappings, you need to modify
+a number of files in the Book structure application. The following
+is an overview of the steps required; details are provided below.</p>
+<ol><li status = "changed">Modify the Book EDD to add new attributes
+to the <synph status = "new" outputclass = "element">fm-ditabook</synph> element
+definition, then import the updated EDD into the Book template.</li>
+<li status = "changed">Modify the <filepath>fmx-book_1.2.dtd</filepath> file
+to add the new attribute definitions.</li>
+<li status = "changed">Modify the <filepath>bookmap2fmbook.xsl</filepath> file
+to copy the desired metadata (attributes or element content) into
+the new <synph status = "new" outputclass = "element">fm-ditabook</synph> attributes.</li></ol>
+<p>Specific information regarding the modification of the DTD and
+XSL files are provided below.</p>
+<section><title>Modifying the fmx-book_1.2.dtd file</title><p
+    status = "changed">The <filepath>fmx-book_1.2.dtd</filepath> file
+is found in the <filepath status = "changed">dtd-fmx</filepath> folder.</p><ol>
+<li><p status = "changed">Open the <filepath>fmx-book_1.2.dtd</filepath> file
+and locate the attribute definitions for the <synph status = "new"
+    outputclass = "element">fm-ditabook</synph> element. The unaltered
+attribute definition should look like the following.</p><codeblock outputclass = "xml">&lt;!ATTLIST fm-ditabook 
+    href CDATA #IMPLIED 
+    format CDATA #IMPLIED 
+    title CDATA #IMPLIED 
+></codeblock></li>
+<li><p>Add the new attributes. The example below adds a new “version”
+attribute.</p><codeblock outputclass = "xml">&lt;!ATTLIST fm-ditabook 
+    href CDATA #IMPLIED 
+    format CDATA #IMPLIED 
+    title CDATA #IMPLIED 
+    version CDATA #IMPLIED 
+></codeblock></li>
+<li><p>Save and close the DTD file.</p></li></ol></section>
+<section><title>Modifying the bookmap2fmbook.xsl file</title><p>The <filepath>bookmap2fmbook.xsl</filepath> file
+is used to aggregate the DITA topics into a book file and component
+FM files. It can be used to copy data from the DITA map into attributes
+of the fm-ditabook element. Most likely you would copy data from
+the bookmeta or topicmeta elements, but any accessible element or
+attribute data could be used.</p><p>Open the <filepath>bookmap2fmbook.xsl</filepath> file
+in a text editor. The default import XSLT file contains some default
+mappings that can be copied and modified to create your own. To
+locate this code, scan the XSLT file for the following:</p><codeblock expanse = "page" outputclass = "xml">&lt;xsl:attribute name="created"> 
+  &lt;xsl:value-of select="translate(//critdates/created[1]/@date,'&amp;#10;',' ')"/> 
+&lt;/xsl:attribute></codeblock><p>Just copy the entire xsl:attribute
+block (3 lines), change the @name attribute to the value of the
+fm-ditabook attribute you want to create, then change the xsl:value-of/@select
+code to grab the value of the attribute or element you want to be
+assigned to the new attribute. You’ll see examples of both element
+and attribute matching, plus code that locates the first or last
+instance of that value (in case there may be multiple).</p><p>You’ll
+need to add a similar attribute definition for each type of metadata
+that you want to extract from the map. Note that even if you don’t
+expect there to be more than one instance of a metadata value, it’s
+a good practice to explicitly select the first (or last) value,
+just in case there are more than one in a file you’re processing.</p><p>Also
+note that these attribute definitions are found in two areas in
+the XSLT file, in the map template and the bookmap template. You’ll
+want to modify both or either as needed.</p></section></body></topic>

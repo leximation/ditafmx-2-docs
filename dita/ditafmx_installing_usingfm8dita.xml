@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id081TB060Y5Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Switching Between DITA-FMx and FM8/9/10/11/12/2015-DITA</title>
+<shortdesc status = "changed">If needed, you can easily switch between
+DITA-FMx and the built-in FM8/9/10/11/12/2015 DITA support.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "2008-02-24"/>
+<revised modified = "2015-08-10"/></critdates></prolog>
+<body><p>For testing purposes, you may want to alternate between
+DITA-FMx and the built-in FrameMaker DITA support. Fundamentally,
+this is very simple to do, and if you do this frequently, there
+are things you can do to make it even easier.</p>
+<p>All that is required to switch between these two DITA plugins
+is to update the <filepath>maker.ini</filepath> file. When you installed
+DITA-FMx, you should have commented out the lines that initialize
+the default DITA support. To enable the default support and disable
+DITA-FMx, just uncomment the “ditafm” lines and comment out the “ditafmx”
+lines. Then to switch back to DITA-FMx just do the reverse. Of course, each
+time you modify the <filepath>maker.ini</filepath> file you’ll ned
+to restart FrameMaker to initialize the alternate plugin.</p>
+<note type = "important">Before modifying the <filepath>maker.ini</filepath> file
+you should make a backup and keep it in a safe place.</note>
+<p>You may want to set up the <filepath>maker.ini</filepath> file
+so it’s easy to make this change. Just move the lines to the end
+of the APIClients section and add some comments to look like this
+(note that the FM8 DITA lines have been modified slightly):</p>
+<codeblock expanse = "page" outputclass = "ini">; Default FM8-DITA 
+;ditafm=Standard, FM8-DITA, fminit\ditafm.dll, structured 
+;ditafm_app=Standard, FM8-DITA, fminit\ditafm_app.dll, structured 
+;ditabook=Standard, FM8-DITA, fminit\ditabook.dll, structured 
+;ditaOpenToolkit=Standard, FM8-DITAOT, fminit\openToolkit.dll, structured 
+ 
+; DITA-FMx 
+ditafmx=Standard, ditafmx, DITA-FMx\ditafmx_80.dll, structured 
+ditafmx_app=Standard, ditafmx_app, DITA-FMx\ditafmx_80_app.dll, structured</codeblock>
+<p>This way you can easily add or remove the semicolon to comment
+or uncomment the appropriate lines.</p>
+<p>One additional step that will streamline this process is to change
+the FM8 DITA entry for “ditafm_app” to “ditafmx_app,” then make
+the same change in the structure application definitions file (change
+“ditafm_app” to “ditafmx_app” in the UseApiClient entries). This
+won’t change the functionality of the FM DITA import/export client,
+it just means that you can use the same structure application for
+both plugins and you won’t have to edit the structapps file each
+time you switch. If you call them both “ditafmx_app,” then when
+you install an update of DITA-FMx, it will be an easier installation.</p>
+<p>Leximation provides a plugin called IniSwitcher that modifies
+specified lines in an INI file from a command within FrameMaker.
+This plugin was specifically developed to make it easy to switch
+between the DITA authoring plugins. If you are interested in using
+this plugin, check <xref href = "http://leximation.com/tools" format
+= "html" scope = "external">www.leximation.com/tools</xref> or contact
+Leximation for more information.</p></body></topic>

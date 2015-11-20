@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="APIs"?><?dtall dict="ArchiveCommandLine"?><?dtall dict="AssignIdToElem"?><?dtall
+dict="AttrAsCondDefaultState"?><?dtall dict="AttrAsVarPrefix"?><?dtall dict="addon"?><?dtall
+dict="app"?><?dtall dict="att"?><?dtall dict="authorname"?><?dtall dict="BookBuildOverrides"?><?dtall
+dict="Booklists"?><?dtall dict="BuildFile"?><?dtall dict="backmatter"?><?dtall
+dict="bookbuild"?><?dtall dict="buildname"?><?dtall dict="CallClient"?><?dtall
+dict="Conditionalize"?><?dtall dict="conreffed"?><?dtall dict="copyrholder"?><?dtall
+dict="customization"?><?dtall dict="DitaDir"?><?dtall dict="DitaFMxGuide"?><?dtall
+dict="DitaReference"?><?dtall dict="DitaRefTargetPath"?><?dtall dict="DitavalName"?><?dtall
+dict="DLLs"?><?dtall dict="desc"?><?dtall dict="dita"?><?dtall dict="ditabook"?><?dtall
+dict="ditafile"?><?dtall dict="ditafmx"?><?dtall dict="ditamap"?><?dtall
+dict="ditavals"?><?dtall dict="doctype"?><?dtall dict="draftinfo"?><?dtall
+dict="draftintro"?><?dtall dict="EnvironmentSetup"?><?dtall dict="epub"?><?dtall
+dict="FmXrefUseOutputclass"?><?dtall dict="FrameMaker\DITA"?><?dtall dict="figurelist"?><?dtall
+dict="fmx"?><?dtall dict="fragref"?><?dtall dict="frontmatter"?><?dtall
+dict="GeneralExport"?><?dtall dict="GeneralImport"?><?dtall dict="gentpl"?><?dtall
+dict="IgnoreFigTitleProcessing"?><?dtall dict="ImagePlacement"?><?dtall
+dict="ImportAttrsAsVars"?><?dtall dict="INIOnly"?><?dtall dict="InstallApps"?><?dtall
+dict="indexlist"?><?dtall dict="ja"?><?dtall dict="LastReferencedElement"?><?dtall
+dict="Linebreak"?><?dtall dict="linebreaks"?><?dtall dict="linktext"?><?dtall
+dict="MasterPageMaps"?><?dtall dict="MissingImageDir"?><?dtall dict="MoveFigureTitles"?><?dtall
+dict="masterpage"?><?dtall dict="omsyshome%\common\bin"?><?dtall dict="outputclass"?><?dtall
+dict="PageStartSide"?><?dtall dict="PreserveTableWidths"?><?dtall dict="pgwide"?><?dtall
+dict="print=’no"?><?dtall dict="RegInfo"?><?dtall dict="Reimport"?><?dtall
+dict="ReimportTemplate"?><?dtall dict="RunaroundOff"?><?dtall dict="reflabel"?><?dtall
+dict="reimports"?><?dtall dict="relinked"?><?dtall dict="StripTrailing"?><?dtall
+dict="StructMasterPageMaps"?><?dtall dict="SuiteHelp"?><?dtall dict="SuppressXrefAttrs"?><?dtall
+dict="suitehelp"?><?dtall dict="synnoteref"?><?dtall dict="syntaxdiagram"?><?dtall
+dict="toc"?><?dtall dict="topicId"?><?dtall dict="type=’fm"?><?dtall dict="UpdateBook"?><?dtall
+dict="UseLanguageTemplate"?><?dtall dict="UseOutputclassForType"?><?dtall
+dict="WriteLineBreakPIs"?><?dtall dict="WriteLineBreakPIsInPre"?><?dtall
+dict="webhelp"?><?dtall dict="whitespace"?><?dtall dict="XSLTs"?><?dtall
+dict="xml:lang"?>
+<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT Dark%20Grey NO_OVERRIDE hide?>
+
+<?Fm BoolCondExpr "DITA-Comment"OR"DITA-Data"OR"DITA-Prolog" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "id13BLFK0N05Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>1.1.17 - 25 November 2013</title>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2013-11-21"/>
+<revised modified = "2013-11-23"/></critdates></prolog>
+<body><section status = "changed"><title outputclass = "h3">New
+Features</title><dl><dlentry><dt>Added new file name building blocks
+and modifiers</dt>
+<dd>Added &lt;$TITLE_NOSPACECAMEL> and &lt;$TITLE_NOSPACECAMELLOW>
+building blocks. Also added ‘U’, ‘L’, and ‘T’ (upper, lower, title
+case) modifiers.</dd></dlentry>
+<dlentry><dt>Added book-build option to modify the variable prefix</dt>
+<dd>If using the General/ImportAttrsAsVars feature to generate FM
+variables based on map metadata, by default the variables are created
+with an “fmx-” prefix. If you’d like a different (or no) prefix,
+set the General/AttrAsVarPrefix to that value.</dd></dlentry>
+<dlentry><dt>Added option to preserve table widths</dt>
+<dd>If the <filepath>ditafmx.ini</filepath> INIOnly/PreserveTableWidths
+parameter is set to “1” the relative width of each table will be
+stored in the table/@pgwide attribute. This value will be used to
+adjust the width of each table when rendering the topic in FrameMaker.
+For additional details, see <xref href = "ditafmx_ref_inionly.xml#id067FF8008E9"
+type = "topic" format = "dita" scope = "local"></xref>.</dd></dlentry></dl></section>
+<section status = "changed"><title outputclass = "h3">Structure
+Application Updates</title><p>No changes or updates have been made
+to the structure applications.</p></section>
+<section><title outputclass = "h3">Bug Fixes / Minor Updates</title><dl
+    status = "changed"><dlentry><dt>Use a custom character format
+for xrefs</dt>
+<dd>Previously, if you tried to use a character format for xref
+elements other than the default “link.asis” would result in the
+xref being non-functional. This has been fixed; you can now specify
+any character format.</dd></dlentry>
+<dlentry><dt>The consfile.txt file is now copied to the book-build
+folder</dt>
+<dd>At the end of each book-build, the current <filepath>consfile.txt</filepath> file
+is copied to the book build folder.</dd></dlentry>
+<dlentry><dt>A semicolon in an indexterm no longer causes FM to
+crash</dt>
+<dd>Previously, if an indexterm contained a semicolon, FrameMaker
+could crash. This no longer happens.</dd></dlentry>
+<dlentry><dt>Multi-level forced sort in an indexterm works properly
+now</dt>
+<dd>Previously, the forced sort (index-sort-as) mechanism only worked
+for single level index entries. It now works for multi-level entries.</dd></dlentry>
+<dlentry><dt>Indented tables resize properly</dt>
+<dd>Previously, if a table format specified that a table was indented,
+when resized to fill the text column it would overflow one side.
+Tables now properly fill the text column regardless of the indent.</dd></dlentry>
+<dlentry><dt>Using an element template with a map on FM9-FM11 works
+properly</dt>
+<dd>Attempting to create a map with an element template on FM9-FM11
+was not working. This works properly now.</dd></dlentry>
+<dlentry><dt>The “New DITA File” menu items are available in FM11
+Author View</dt>
+<dd>The “New DITA File” menu items were previously not functional
+in the FM11 Author View.</dd></dlentry>
+<dlentry><dt>New DITA file titles will be added even if your EDD
+defines a prefix</dt>
+<dd>Previously, if your EDD added a prefix to the topic title, the
+New File command would not add the new topic title to the file.
+This has been fixed.</dd></dlentry>
+<dlentry><dt>Items on the New DITA File menu are now alpha-ordered</dt>
+<dd>The new topic types on the New DITA File menu will now appear
+alphabetically ordered.</dd></dlentry>
+<dlentry><dt>http-based image references work properly</dt>
+<dd>Using an http-based reference to images had mixed results. It
+now works as expected.</dd></dlentry>
+<dlentry><dt>Table cells rotate properly</dt>
+<dd>Rotated table cells that contain child elements would previously
+not remain rotated after reopening a DITA file.</dd></dlentry>
+<dlentry><dt>Content within a conreffed table row or cell no longer
+remains in the DITA</dt>
+<dd>Typically, a conref element is empty (or just contains the minimal
+structure to make it valid). Previously, DITA-FMx would leave the
+content of a conreffed row or cell in the DITA file. Now this content
+is omitted.</dd></dlentry>
+<dlentry><dt>Clipboard is no longer lost when using an import XSLT</dt>
+<dd>Previously, when using an import XSLT with the DITA-FMx import
+client application, the clipboard would become non-functional. This
+has been fixed.</dd></dlentry></dl></section></body></topic>

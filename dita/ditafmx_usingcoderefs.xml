@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="CoderefFileTypes"?><?dtall dict="CoderefSpacesPerTab"?><?dtall
+dict="coderefs"?><topic id = "id1416A0LB05Z" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Using coderefs</title>
+<shortdesc status = "new">The coderef element lets you directly
+reference a text file in your documentation.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2014-01-06"/>
+<revised modified = "2014-03-28"/></critdates></prolog>
+<body status = "new"><p status = "new">A <synph status = "new"
+    outputclass = "element">coderef</synph> is basically a conref
+to a non-DITA file. If your documentation contains code samples,
+you can use a <synph status = "new" outputclass = "element">coderef</synph> to
+include code samples from the actual code files rather than copying
+and pasting that content into your document. This allows you to
+include real, working (and tested) code samples in your documentation rather
+than running the risk of accidentally modifying that code making
+it invalid.</p>
+<p status = "new">To use a <synph status = "new" outputclass = "element">coderef</synph>,
+insert the element into a <synph status = "new" outputclass = "element">codeblock</synph> element.
+It can be the only element in the <synph status = "new"
+    outputclass = "element">codeblock</synph> or you can add other
+content including other <synph status = "new" outputclass = "element">coderef</synph> elements.</p>
+<fig status = "new"><image href="images/coderef-exmaple-sv.png"
+align="left" placement="break"  otherprops = "fmdpi:110"/></fig>
+<p status = "new">The content of the referenced code file is inserted
+into FrameMaker as a locked range (like a text inset).</p>
+<fig status = "new"><image href="images/coderef-example-doc.png"
+align="left" placement="break"  otherprops = "fmdpi:110"/></fig>
+<p status = "new">Any tabs within the code file are converted to
+spaces. By default each tab converts to 4 spaces, but you can set
+the value in the Authoring Options dialog.</p>
+<p status = "new">Double-click the <synph status = "new"
+    outputclass = "element">coderef</synph> to access the Coderef
+Manager dialog.</p>
+<fig status = "new"><title>DITA-FMx Coderef Manager dialog</title><image
+href="images/coderef-manager.png" align="left" placement="break"
+ otherprops = "fmdpi:110"/></fig>
+<p status = "new">Through this dialog, you can edit the code file
+or modify the referenced file. Use the Key Reference button to select
+a key to use for referencing the code file.</p>
+<fig status = "new"><title>DITA-FMx Keyref File Browser dialog</title><image
+href="images/keyref-file-browser.png" align="left" placement="break"
+ otherprops = "fmdpi:110"/></fig>
+<p status = "new">By default, when selecting a key reference for
+a <synph status = "new" outputclass = "element">coderef</synph>,
+the Keyref File Browser displays keys that reference all file types.
+If you want to browse for specific file types, edit the Filter field
+in the dialog. This field can be set to a space delimited list of
+one or more file extensions (no wild cards), such as “.txt .java
+.js”.</p></body></topic>

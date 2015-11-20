@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id141II0820Y4"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>fm-var</title>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2014-01-18"/>
+<revised modified = "2014-03-29"/></critdates></prolog>
+<body><p status = "new"><indexterm status = "new">fm-var element</indexterm><indexterm
+status = "new">elements<indexterm status = "new">fm-var</indexterm></indexterm><indexterm
+status = "new">ph element</indexterm><indexterm status = "new">elements<indexterm
+status = "new">ph</indexterm></indexterm>The <synph status = "new"
+    outputclass = "element">fm-var</synph> element round-trips to
+DITA as a <synph status = "new" outputclass = "element">ph</synph> element
+and allows you to make use of FrameMaker variables in DITA. When
+you insert a FrameMaker variable it is wrapped in a <synph
+    status = "new" outputclass = "element">fm-var</synph> element
+on file save. That element saves to DITA as a <synph status = "new"
+    outputclass = "element">ph</synph> element with the @outputclass
+attribute set to “fmvar:<i status = "new">VARNAME</i>”. The content
+of the <synph status = "new" outputclass = "element">fm-var</synph> element
+persists in the <synph status = "new" outputclass = "element">ph</synph> element
+so it can be processed outside of FrameMaker.</p>
+<p status = "changed">The element definition of <synph status = "new"
+    outputclass = "element">fm-var</synph> is identical to that
+of the the <synph status = "new" outputclass = "element">ph</synph> element. DITA-FMx
+handles the conversion from <synph status = "new"
+    outputclass = "element">fm-var</synph> to <synph status = "new"
+    outputclass = "element">ph</synph> and back; no read/write rules
+are needed for this element.</p></body></topic>

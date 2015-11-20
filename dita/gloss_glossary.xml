@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id143UG0O0VHS" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>DITA-FMx Glossary</title>
+<shortdesc status = "new">Terms specific to DITA-FMx.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2014-03-30"/>
+<revised modified = "2014-03-31"/></critdates></prolog></topic>

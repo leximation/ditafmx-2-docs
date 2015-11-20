@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+
+<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "DITA-Data" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "id0759edee-a05a-4e5e-8733-352521df77e8"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>1.1.08 (1.1 release) - 20 October 2009 </title>
+<body><section><title outputclass = "h3">New Features</title><dl>
+<dlentry><dt>New commands</dt>
+<dd>Added the <uicontrol>Reference Report</uicontrol> command. Generates
+a report of all resolved or unresolved references in the current
+map or file as well as any references in referenced files. </dd>
+<dd>Added the <uicontrol>Create Archive</uicontrol> command to generate
+a ZIP archive of the current file and all referenced files.</dd>
+<dd>Added the <uicontrol>Flatten Conrefs</uicontrol> command to
+unlock conrefs in FM files.</dd>
+<dd>Added the <uicontrol>Reset Status</uicontrol> command to remove
+the status attribute values.</dd></dlentry>
+<dlentry><dt>Updated support for indexterm elements</dt>
+<dd>The index-see, index-see-also, and index-sort-as elements properly
+convert to FM marker syntax on import and export back to DITA elements
+on file save. A subdialog has been added to the Options dialog that
+allows you to customize the formatting on the imported marker syntax.</dd>
+<dd>The indexterm elements now import as fm-indexterm elements.
+If you have complex indexterm elements that contain child elements
+other than indexterm, index-see, index-see-also, and index-sort-as,
+you can disable the indexterm to fm-indexterm conversion (in Options)
+in order to preserve the native DITA structure.</dd></dlentry>
+<dlentry><dt status = "changed">Support for graphic overlay objects
+in anchored frames</dt>
+<dd status = "changed">Textual callouts and graphic objects within
+an anchored frame will now round-trip from FrameMaker to DITA and
+back. The data to define these objects is stored in the DITA data
+element.</dd></dlentry>
+<dlentry><dt status = "changed">Reference Manager dialog allows
+browsing for files on disk</dt>
+<dd status = "new">The Reference Manager dialog now allows you to
+browse files on disk in addition to those currently open in FrameMaker.
+You can add multiple folders to the “File Location” list to locate
+elements to reference (for xrefs, links, and conrefs).</dd>
+<dd status = "new">Also, instead of showing all possible elements
+the Reference Manager dialog only shows those elements that have
+id attributes in the target file.</dd></dlentry>
+<dlentry><dt status = "changed">Support for multiple marker types</dt>
+<dd>The fm-data-marker element is a special element that is available
+only within FrameMaker; it is converted into a regular data element
+on save to DITA. When inserting an fm-data-marker element it inserts
+as a marker of any type that you specify. On save to DITA, the datatype
+attribute is set to “fm:marker,” the name attribute is set to the
+marker name, and the value attribute is set to the marker text.
+When you reopen this DITA file, data elements with a datatype of
+“fm:marker” will convert into markers of type fm-data-marker. A
+data element whose datatype attribute is not “fm:marker” will import
+into FrameMaker as a standard container element type. </dd></dlentry>
+<dlentry><dt>Support for optional columns in properties tables</dt>
+<dd>According to the DITA specification, a properties table can
+have one, two, or three columns. In order to support a varying number
+of columns in a simpletable-based table, the Element Mapping dialog
+was added to the Options dialog.</dd></dlentry>
+<dlentry><dt>Added support for bookmap elements</dt>
+<dd>The map authoring interface provides support for the topic reference
+elements (topicref, chapter, appendix, etc.). When inserting a topicref-based
+element that contains an href attribute, you are prompted to specify
+a target filename. </dd></dlentry>
+<dlentry><dt>Enhanced map to book processing</dt>
+<dd>The <uicontrol>Generate Book from Map</uicontrol> command handles
+conversion of a bookmap into an FM book in a similar way to the
+conversion of a map. All “top-level” topic references are converted
+into an FM file, and any child topicrefs are appended to that file.
+Any topic references within a frontmatter or backmatter wrapper
+element are considered “top-level” topic references and become FM
+files. Additionally, if your bookmap uses a part element to organize
+chapters, the file referenced by the part will become a separate
+FM file, and each chapter will be considered a top-level topic reference
+and will be added to the book after the generated part file. </dd>
+<dd>Provide the ability to include FM binary files in the generated
+book. This allows you to create a book that includes both DITA files
+as well as unstructured FM files. Particularly useful for including
+a well designed title page but could be useful for other purposes
+as well.</dd>
+<dd status = "changed">Numerous options are available that affect
+processes run on the generated book. This includes adding related-links
+from reltables, and moving the fig/title to the end of the fig element
+(among numerous other options).</dd></dlentry>
+<dlentry><dt>Faster reference resolving</dt>
+<dd>Instead of needing to open each referenced DITA file in FrameMaker
+to resolve any nested references, this reference resolving is done
+“on disk” before the file is opened, and only the appropriate files
+are opened and resolved as needed. This results in much faster file
+opening times for files that make heavy use of references. For example,
+one small file that previously took 11 seconds to open, now takes
+4 seconds.</dd></dlentry>
+<dlentry><dt>Better Whitespace Normalization</dt>
+<dd>This update now handles whitespace cleanup better than before.
+If you are working on a multi-editor environment, you should no
+longer see “&lt;WHITESPACE>” nodes or extra spaces where they aren’t
+needed.</dd></dlentry>
+<dlentry><dt>Updated Set Attributes command</dt>
+<dd>The Set Attributes command now allows specification of predefined
+values for attributes of the “String” type. If values are specified
+in the filtering-groups.ini file for a “String” attribute, those
+values will display in a scrolling list.</dd></dlentry>
+<dlentry><dt>XDocs 2.0 integration</dt>
+<dd>Developed the XDocsFMx connector to provide a seamless document
+management, authoring, and publishing environment.</dd></dlentry>
+<dlentry><dt>New options</dt>
+<dd>Added <uicontrol>Use doctype/application mapping</uicontrol> option
+to support the use of topic-based DTDs (and structure applicaitons)
+instead of the combined model provided by the ditabase DTD. (You’ll
+need to create your own structure applications to support the topic-based
+DTDs, DITA-FMx only provides the ditabase-based app.)</dd>
+<dd>You can now specify that IDs are generated as a GUID (globally
+unique id) or a QUID (quasi unique id, the previous shorter and
+most always unique value).</dd>
+<dd>Added <uicontrol>Auto smart-quotes</uicontrol> similar in function
+to the <uicontrol>Auto smart-spaces</uicontrol> option.</dd>
+<dd>Added <uicontrol>Use fmdpi for New Images</uicontrol> option.
+Automatically sets the “fmdpi” value to the DPI selected when inserting
+an image.</dd>
+<dd>Added the <uicontrol>Conditionalize data and data-about</uicontrol> option.
+This allows you to hide or flag data and data-about elements if
+needed.</dd>
+<dd>Added <uicontrol>indexterm to fm-indexterm</uicontrol> option
+to enable/disable the round-tripping of DITA-based indexterm elements
+into FM-based markers and syntax. (This option is enabled by default.)</dd>
+<dd>DITA-OT environment setup parameter is now set via the DITA
+Options: <wintitle>External Apps</wintitle> dialog.</dd>
+<dd status = "changed">Added handling for simpletable tables with
+multiple cell element names (specifically properties table). See
+Element Mapping dialog in <xref href = "ditafmx_ref_options.xml#id067FF70N0RO"
+type = "topic" status = "new" format = "dita" scope = "local"></xref></dd>
+<dd>Added an <wintitle>Index Options</wintitle> dialog for control
+of the import and export of index-see and index-see-also elements.</dd>
+<dd status = "changed">Added the <wintitle>Book Builds</wintitle> dialog
+to define the automated processes that are run on a newly generated
+FM book file. </dd>
+<dd>Moved <uicontrol>Wrap in dita element</uicontrol> option to
+the <wintitle>New DITA File</wintitle> dialog.</dd>
+<dd status = "new">Now automatically sets the status attribute on
+new and changed elements with the <uicontrol>Set @status for new/changed
+elements</uicontrol> option.</dd>
+<dd status = "new">Added the <uicontrol>Use wide Reference Manager</uicontrol> option.
+This provides a wider Reference Manager for those that need it.</dd></dlentry></dl></section>
+<section id = "id51125991-b73a-43b4-9091-cc966cf13b28"><title
+    outputclass = "h3">Structure <b>Application</b> Updates</title><dl>
+<dlentry><dt>Updated to support DITA 1.1</dt>
+<dd>Added DITA 1.1 elements to all structure applications.</dd></dlentry>
+<dlentry><dt>Default Topic application is less “book-like”</dt>
+<dd>Because DITA-sourced content may be used for many types of output,
+we have removed many of the print-specific layout and formatting
+features from the default Topic application. This helps authors
+to focus on the content rather than the formatting, and results
+in topics that are more useful in all deliverable formats. The main typeface
+used is now Verdana.</dd></dlentry>
+<dlentry><dt>Added FM-specific elements</dt>
+<dd>Added fm-indexterm as a marker element that has the same attributes
+as the standard indexterm element. The indexterm element is now
+a “container” element. (For backwards compatibility, if a structure
+application contains an indexterm element that is defined as a “marker”
+element type, it will be used instead of the fm-indexterm element.)</dd>
+<dd>Added the fm-data-marker element as a “marker” element type.</dd>
+<dd>Changed the fm-topicreflabel element to fm-reflabel since it
+is now used by elements other than topicref. (For backwards compatibility,
+if a structure application contains the fm-topicreflabel, that will
+be used in place of the fm-reflabel.)</dd></dlentry>
+<dlentry><dt>Customization and localization (topic and book applications)</dt>
+<dd>To lessen the level of effort in EDD/template customization
+and localization, some elements that formerly received prefix text
+directly from the EDD now have that text applied via a paragraph
+tag or set of paragraph tags in the template. With a plan to include
+more elements in the future, this version took this approach with
+the note and permissions elements. </dd>
+<dd>The note prefix text is now applied using a set of template
+paragraph tags. With the exception of “other,” each note type attribute
+value now maps to a similarly named note paragraph tag. For example,
+a note type of “danger” maps to a paragraph tag named note.danger. </dd>
+<dd>To further help support both localization and customization,
+the first and left indents for note are set in the EDD using variables,
+indent_1, indent_2, index_3, and indent_4. Changing those variable
+values will change the indents for both the note and the screen
+elements.</dd>
+<dd>The permissions element is now mapped to a set of prolog.permissions
+paragraph tags.</dd>
+<dd>The prefix text for the example element has been dropped.</dd>
+<dd>The codeblock element has a set of paragraph tags for its various
+contexts. This set of tags all begin with name codeblock (codeblock.ol.ul.first,
+codeblock.ol.ul, etc.).</dd>
+<dd>The syntaxdiagram element is now mapped to a syntaxdiagram paragraph
+tag.</dd>
+<dd>The prolog element is now mapped to a prolog paragraph tag.</dd>
+<dd>Color definitions have been altered to be more consistent between
+the topic and book applications.</dd></dlentry>
+<dlentry><dt>Map/Bookmap application</dt>
+<dd>Various levels of indentation have been added for the topicref-type
+elements that occur in bookmaps.</dd>
+<dd>The relcolspec element now displays attribute values for type,
+collection-type, and linking when in reltables, and collection-type
+and linking in other contexts.</dd>
+<dd>The indexterm element is now mapped to an index character tag.</dd>
+<dd>The vrm element’s prefix text has been modified.</dd></dlentry></dl></section>
+<section><title outputclass = "h3">Bug Fixes</title><dl><dlentry>
+<dt status = "changed">Baseline offset now supported</dt>
+<dd status = "changed">The baseline offset property of an image
+cannot be set through the read/write rules file. To set this property
+you must use the BaselineOffset parameter in the INIOnly section
+of the <filepath>ditafmx.ini</filepath> file.</dd></dlentry>
+<dlentry><dt status = "changed">image/alt element now supported</dt>
+<dd status = "changed">The image/alt element now round-trips from
+DITA to FM. While in FrameMaker, the content of the alt element
+is stored in the image/@alt attribute. To edit the “alt” text, edit
+the @alt attribute value. Note that any child elements of the alt
+element or attributes on the alt element are discarded when the
+file is opened in FM. A warning message is written to the console
+window on file open if attributes or child elements are detected.</dd></dlentry>
+<dlentry><dt status = "changed">UNC path improvements</dt>
+<dd status = "changed">Working with files in folders on a UNC mapped
+network drive (“\\servername”) will now result in the relative paths
+being saved properly (as relative paths) rather than as absolute
+UNC paths.</dd></dlentry>
+<dlentry><dt status = "changed">xref/link issues</dt>
+<dd status = "changed">All xref and link @href values are now written
+with backslashes.</dd></dlentry>
+<dlentry><dt>New file naming issue</dt>
+<dd>If the file name for a new file contains a period, it was incorrectly
+assumed to represent the file extension. Now if a file does not
+end with “.dita” or “.xml” the default file extension is appended.</dd></dlentry>
+<dlentry><dt>Long application names display properly in Options
+dialog</dt>
+<dd>A structure application name that wraps to multiple lines in
+the structure application definitions file now show the entire name
+in the Options dialog.</dd></dlentry>
+<dlentry><dt>Changing the DPI of an image that uses the fmdpi feature
+will update properly</dt>
+<dd>Images that use the fmdpi feature now properly update the fmdpi
+value when the DPI of an image is changed.</dd></dlentry>
+<dlentry><dt>topicref/@navtitle is not added if @navtitle has been
+removed from the EDD</dt>
+<dd>When building topicrefs, if the EDD has been customized to remove
+the navtitle attribute, that attribute is longer automatically added
+(causing an invalid structure).</dd></dlentry>
+<dlentry><dt>Where Used now searches in maps</dt>
+<dd>The Where Used command now properly reports instances of topics
+in maps.</dd></dlentry>
+<dlentry><dt>Search in Files now ignores URLs</dt>
+<dd>The Search in Files command now ignores URLs when scanning for
+files to search.</dd></dlentry></dl></section></body></topic>

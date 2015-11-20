@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id08379F00LY4"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>fm-xref</title>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2008-03-07"/>
+<revised modified = "2014-03-29"/></critdates></prolog>
+<body><p status = "new"><indexterm>elements<indexterm>fm-xref</indexterm></indexterm><indexterm>elements<indexterm>xref</indexterm></indexterm><indexterm
+status = "new">fm-xref element</indexterm><indexterm status = "new">xref
+element</indexterm>The <synph status = "new" outputclass = "element">fm-xref</synph> element
+is used to create a FrameMaker-style cross-reference used inline
+as a standard DITA <synph status = "new" outputclass = "element">xref</synph> element
+would be used. On file save, this converts to a standard DITA <synph
+    status = "new" outputclass = "element">xref</synph> element
+and on file open, it converts back into an <synph status = "new"
+    outputclass = "element">fm-xref</synph> element.</p>
+<p status = "new">The way an <synph status = "new"
+    outputclass = "element">fm-xref</synph> is identified as such
+is the type attribute value which is given the format of “fm:<i
+    status = "new">FORMAT-NAME</i>”. Where <i status = "new">FORMAT-NAME</i> is
+the cross-reference format name as defined in the FrameMaker template.
+When an <synph status = "new" outputclass = "element">fm-xref</synph> element is
+inserted, the standard FrameMaker Cross-Ref dialog displays, select
+the target element and the cross-ref is inserted as the <synph
+    status = "new" outputclass = "element">fm-xref</synph> element.</p>
+<p status = "changed">To use the <synph status = "new"
+    outputclass = "element">fm-xref</synph> feature requires the
+creation of the <synph status = "new" outputclass = "element">fm-xref</synph> element
+definition.</p>
+<ol><li status = "changed">Create an <synph status = "new"
+    outputclass = "element">fm-xref</synph> element definition (in
+the EDD):<ol><li>Make a copy of the default <synph status = "new"
+    outputclass = "element">xref</synph> element definition.</li>
+<li>Change the name to “fm-xref”</li>
+<li status = "changed">Delete the general rule (an <synph status = "new"
+    outputclass = "element">fm-xref</synph> cannot have child elements)</li></ol></li>
+<li status = "changed">Add <synph status = "new" outputclass = "element">fm-xref</synph> to
+the appropriate general rules (everywhere that an <synph status = "new"
+    outputclass = "element">xref</synph> element is valid, the <synph
+    status = "new" outputclass = "element">fm-xref</synph> element
+should also be).</li></ol>
+<p status = "changed">The <synph status = "new" outputclass = "element">fm-xref</synph> element
+should be added to both the Topic and Book applications.</p></body></topic>

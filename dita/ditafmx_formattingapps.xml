@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "idbfd00ad2-9685-4d63-a060-573fe48769b5" status = "changed"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Customizing the Formatting of the Default Structure Applications</title>
+<shortdesc status = "changed">The formatting provided by the default
+DITA-FMx structure applications is sufficient for producing nice
+looking PDFs, but it’s common that each user will want to customize
+the formatting to adhere to house styles. Where to start and what
+to do can be a challenge.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2014-03-29"/></critdates></prolog>
+<body status = "changed"><p status = "new">DITA-FMx uses three structure
+application types, Topic, Map, and Book. The Topic application is
+used for authoring topics, the Map application is used for authoring maps,
+and the Book application is used for publishing.</p>
+<p status = "new">Assuming that you need to customize the appearance
+of the published content, you’ll need to modify the Book application.
+If your changes are minor (fonts, headers, footers, etc.), you may
+be able to just modify the Book template, but if you need to make
+more substantive changes, you’ll need to modify the EDD as well.
+Remember that if you do make changes to the EDD, you must import
+the modified EDD into the template.</p>
+<p status = "new">One of the core concepts of DITA (XML in general)
+is that you’re authoring content that may be published to various
+types of output formats. Because of this it doesn’t typically make
+sense to author in a WYSIWYG view, and if you were authoring in
+a view that resembled one of the output formats, you may spend time
+crafting the content for that output type rather than authoring
+in an output-agnostic mind-set.</p>
+<p status = "new">If it is important that your authoring view matches
+that of the “print” (PDF) output, you can set up the Topic template
+to mirror the formatting in your Book template, but typically, you
+can just use the default Topic application in its default state.</p>
+<p status = "new">There’s typically no need to make any modifications
+to the Map application since it (like the Topic app) is just used
+for authoring, and has no effect on the appearance of the published
+documents.</p>
+<p status = "new">The one time that you will need to modify the
+Topic and Map applications is if you’re creating or modifying the
+data model itself by either adding or removing elements. If you
+do decide to modify the data model, be sure to do that in a way
+that doesn’t “break” DITA. While a modified model may work fine
+for your needs, if you’ve done it in a way that’s not valid (for
+DITA), your files may not work in other tools that support DITA
+(because you no longer have DITA-compliant files).</p>
+<section status = "new"><title>Working with the EDD files</title><p
+    status = "new">In the default DITA-FMx structure applications,
+the Topic and Book EDDs share common element definitions using text
+insets (in the <filepath status = "new">DITA-FMx_1.2\common</filepath> folder).
+While this does make it a bit more complicated to make edits, it
+ensures that the two models remain in sync.</p><p status = "new">The
+text inset source files are named based on the DITA domain for the
+elements. If you’re not sure where an element definition can be
+found, you have two options:</p><ul status = "new"><li status = "new"><p
+    status = "new">Open the Topic or Book EDD, scroll to locate
+the element definition (can’t search on text of an inset), then
+double-click the inset and choose “Open” in the Text Inset Properties
+dialog.</p></li>
+<li status = "new"><p status = "new">Open the <filepath status = "new">dita_1.2.book</filepath> file
+in the <filepath status = "new">common</filepath> folder, then use
+the Find command to search for text in the book components. This
+book file is just provided as a tool to locating content in the
+insets.</p></li></ul><p status = "new">After modifying an element
+definition in the inset source file, save the file and return to
+the main Topic EDD, then scroll to the inset location in the EDD
+and double-click the inset. In the Text Inset Properties dialog
+choose “Update Now.” Updating text insets in a large EDD can take
+some time, so don’t be alarmed when you have to wait for a bit (possibly
+a minute or two) before the inset has been updated.</p><note
+    type = "remember" status = "new">Always update both the Topic
+and Book EDDs when changing any of the shared inset source files.</note><p
+    status = "new">Some of the element definitions in the shared
+insets have conditional tagging applied which hides/shows certain
+context rules or general rules in the respective Topic or Book EDDs.
+The shared files have all conditions visible, and the Topic and
+Book EDDs have the hide/show properties set properly. If you change
+the hide/show settings in the EDDs, it may take considerable time
+for the change to take effect (more than 5 minutes is not unexpected).
+It’s best to leave the conditional settings alone in these files.</p><p
+    status = "new">You may also run into the use of variables within
+an EDD. This is often used to change the text of a general rule
+for use in different EDDs. The variable definition in the “container”
+EDD will change the value of the variable in the inset EDD. Pay careful
+attention to this when making edits.</p><note type = "important"
+    status = "changed">After making any modifications to an EDD,
+its element definitions must be imported into the associated template
+file. The structure application definition references the template,
+not the EDD, so that’s the only way your changes will be available.</note></section>
+<section status = "new"><title>Where to apply formatting, the EDD
+or the template?</title><p status = "new">The template file defines
+the named styles and formats, as well as the overall page layout
+for a component (FM chapter file). The EDD declares element definitions, which
+includes the element type, general rule, attribute definitions,
+and context rules. </p><p status = "new">The context rules allow
+you to specify the formatting that is applied to the element under
+different situations. These situations (contexts) may be based on
+things like the “level” of the element (how deeply nested it is),
+the type of ancestor elements, the position within the parent element,
+or attributes assigned to the current or ancestor elements. When
+a context is matched the rule can assign a named style (defined
+in the template) or it can directly set any property available through
+the FrameMaker user interface (well, almost any property), or both.</p><p
+    status = "new">This means that you can apply formatting through
+named styles in the template (based on context rules in the EDD),
+or by directly assigning the properties in the EDD. In most cases
+(as is the case in the default DITA-FMx apps) you’ll do some of both.
+While this isn’t really the best situation for ease of maintenance,
+you’ll find that it’s just easier to implement.</p><p status = "new">This
+“mixed model” can be the cause of some confusion when trying to
+modify an existing structure application. You’ll want to change
+the text that displays when you insert an element (like the text
+“Task” when you insert a <synph status = "new" outputclass = "element">steps</synph> element
+in a task). In order to determine where that text is defined you
+have to do some digging. It may be part of an Autonumber Format
+in the paragraph style (in the template or EDD), it may be defined
+as a prefix (in the EDD), or it may be included in a reference frame (defined
+in the template, but possibly assigned in the EDD).</p><p status = "new">This
+is just part of the “joy” that is structure application development.
+It’s not hard once you understand what’s going on, but it can take
+some time to get to that point, especially when working on a structure
+application developed by someone else.</p><p status = "new">Don’t
+forget that you can ask questions from the “community”! If you can’t
+figure out where something is defined, email the <i status = "new">dita-fmx-users</i> Yahoo
+group for help.</p></section>
+<section status = "new"><title>Understanding the Book application
+model</title><p status = "new">While you can make use of multiple
+“Topic” structure applications for authoring (if using the “doctype/application
+mapping” feature), all publishing for a single deliverable must
+be done using a single Book structure application. Because it’s
+possible that you’re combining multiple topic types into a single
+FM chapter file, the Book application needs to be designed to support
+all of those topic types in a single model.</p><p status = "new">While
+this may sound complicated, it’s simplified by the fact that this
+“Book” model doesn’t need to strictly adhere to the DITA model.
+It is intended as an output format, and not to be round-tripped
+back to DITA XML. In the extreme sense, you could make a Book EDD
+where all of the general rules are “&lt;ANY>” (meaning that anything
+is valid). Remember that because this is an output model, you don’t
+need to worry about validation. You just need to determine the complete
+set of topic models that will be used in your book, and add all
+of those element definitions to the EDD.</p><p status = "new">The <filepath
+    status = "new">fmx-book_1.2.dtd</filepath> (the DTD associated
+with the Book application) is created by saving the Book EDD to
+a DTD (<menucascade status = "new"><uicontrol status = "new">Structure
+Tools</uicontrol><uicontrol status = "new">Save as DTD</uicontrol></menucascade>).</p></section></body></topic>

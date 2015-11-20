@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "idd795412c-bcc4-4716-87bd-d41c9b18ef54" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Setting Up PDF Bookmarks</title>
+<shortdesc status = "new">It can be tricky to get the PDF bookmarks
+set up properly, but it’s worth the effort.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2015-03-31"/></critdates></prolog>
+<body status = "new"><p><indexterm>PDF bookmarks</indexterm><indexterm>bookmarks,
+PDF</indexterm>When generating a PDF from a book, the default list
+of paragraph styles used to create the bookmarks contains all paragraph
+styles that exist in all files in the book, but the include/exclude
+settings are defined by those in the first file in the book. If you
+want the bookmark list to be ready to use (without needing to move
+items over to the exclude list every time), you must make sure that
+the first file in the book contains all of the styles in all files,
+as well as being set up with the proper include/exclude settings.</p>
+<p status = "changed">Use the <uicontrol>Merge Para Tags</uicontrol> command
+to copy the paragraph tags from all other templates in a book.</p>
+<p>If the first file in the book is generated from a DITA topic,
+you’ll need to set up the app’s template file as described below.
+If the first file in the book is a generated file, you’ll need to
+perform this setup on the generated list template. Or if the first
+file is a title page, that file needs to be set up accordingly.</p>
+<ol><li><p>Import all paragraph styles from all possible documents
+into the file. It’s OK to have more styles than are used, but any
+that are in files other than the “first” file will show up in the
+“included” bookmark list.</p></li>
+<li><p>Open the file and run the <menucascade><uicontrol>Format</uicontrol>
+<uicontrol>Document</uicontrol><uicontrol>PDF Setup</uicontrol></menucascade> command.</p></li>
+<li><p>In the <wintitle>PDF Setup</wintitle> dialog, on the <uicontrol>Bookmarks</uicontrol> tab,
+select <uicontrol>Generate PDF Bookmarks</uicontrol> and “Paragraphs”
+as the <uicontrol>Bookmark Source</uicontrol>, then set up the “Include” and
+“Don’t Include” styles and adjust the bookmark level as needed.</p></li>
+<li><p>Set any other properties as needed in the <wintitle>PDF Setup</wintitle> dialog,
+then choose the <uicontrol>Set</uicontrol> button. This saves the
+PDF setup data to the file.</p></li></ol>
+<note>This process will only work for FM binary files, you cannot
+save this setup data to an XML file.</note>
+<fig audience = "help web print"><title>PDF Setup dialog box</title><image
+href="images/pdfsetup.png" align="left" placement="break"  otherprops
+= "fmdpi:110"/></fig>
+<note type = "tip">To quickly move all paragraph tags from the left
+list to the right list, hold down the SHIFT key and click the ‘->’
+(right arrow) button.</note></body></topic>

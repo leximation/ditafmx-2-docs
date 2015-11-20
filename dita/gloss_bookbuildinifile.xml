@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<glossentry id = "id143VH300M5Z" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<glossterm>book-build INI file</glossterm>
+<glossdef status = "changed"><p status = "new">An INI format file
+(<filepath status = "new">ditafmx-bookbuild.ini</filepath>) used
+to store the setup and processing information required to produce
+a consistently formatted FrameMaker book from a DITA map using the
+DITA-FMx <uicontrol status = "new">Generate Book from Map</uicontrol> command.</p><p
+    status = "new">The <uicontrol status = "new">Generate Book from
+Map</uicontrol> command looks for a book-build INI file in the book
+output folder, then in the user’s DITA-FMx folder (<menucascade
+    status = "new"><uicontrol status = "new">DITA-FMx</uicontrol>
+<uicontrol status = "new">Open DITA-FMx Folder</uicontrol></menucascade>).</p></glossdef>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2014-03-31"/>
+<revised modified = "2014-03-31"/></critdates></prolog>
+<glossBody><glossSurfaceForm status = "new">book-build INI file
+(<varname status = "new">ditafmx-bookbuild.ini</varname>)</glossSurfaceForm></glossBody></glossentry>

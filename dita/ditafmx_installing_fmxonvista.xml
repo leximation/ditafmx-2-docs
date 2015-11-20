@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="FrameMaker\DITA"?><?dtall dict="FrameMaker\Structure\xml"?><topic
+    id = "id1b00fd9b-f198-43d0-839a-8109ab0f9851"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Installing DITA-FMx on Windows Vista, 7, and 8</title>
+<shortdesc status = "changed">Tips on the installation and operation
+of DITA-FMx on the Windows Vista, Windows 7, and Windows 8 operating
+systems.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2014-01-03"/></critdates></prolog>
+<body status = "changed"><p status = "changed"><indexterm>Windows
+Vista</indexterm><indexterm>Windows 7</indexterm><indexterm>installing
+on<indexterm>Windows Vista</indexterm></indexterm><indexterm>installing
+on<indexterm>Windows 7</indexterm></indexterm>Windows Vista, 7,
+and 8 have very strict permission requirements for editing files
+in “non-user” areas of the file system. As of version 1.1.09, DITA-FMx
+is set up to properly support Windows Vista and 7.</p>
+<p>This topic describes installation steps that may vary slightly
+from the standard installation. The steps in this topic do not replace
+those in the standard documentation. It is important to complete
+all of the required installation steps.</p>
+<p status = "changed">First, you must be an Administrator to install
+and set up DITA-FMx. Running the installer, should not require any
+additional effort. However, modifying the <filepath>maker.ini</filepath> file
+to disable the default DITA support can be tricky. To edit the <filepath>maker.ini</filepath> file:</p>
+<ol><li>On the Start menu, right-click the Notepad application and
+select “Run as Administrator”</li>
+<li>In Notepad, choose <menucascade><uicontrol>File</uicontrol>
+<uicontrol>Open</uicontrol></menucascade> then locate and select
+the <filepath>maker.ini</filepath> file (from the main FrameMaker
+program folder).</li>
+<li>Comment out the default DITA clients (as instructed in the documentation),
+and save the file.</li></ol>
+<p status = "changed">After running the installer, you will need
+to extract and install the structure application files. The application
+and support files are installed in the <filepath>FrameMaker\DITA-FMx</filepath> folder.</p>
+<ol><li>In the <filepath>FrameMaker\DITA-FMx</filepath> folder,
+right click the <filepath>DITA-FMx-1.1_apps.zip</filepath> file, then
+choose <uicontrol>Extract All</uicontrol>.</li>
+<li>In the <wintitle>Extract Compressed Folders</wintitle> window,
+enter the path to the structure directory (something like “FrameMaker\Structure\xml”,
+the actual path will vary), and choose <uicontrol>Extract</uicontrol>.</li></ol>
+<p status = "new">When you run FrameMaker, the user data files (like
+the <filepath status = "new">ditafmx.ini</filepath> file) are created in
+a <filepath status = "new">DITA-FMx</filepath> folder in the application
+data area (typically <filepath status = "new">C:\Users\USERNAME\AppData\Roaming\Adobe\FrameMaker\9\DITA-FMx</filepath>).
+Any “global” data files that you create (like <filepath status = "new">filtergroups.ini</filepath> and <filepath
+    status = "new">ditafmx-bookbuild.ini</filepath>), that the documentation
+indicates should be in the <filepath status = "new">FrameMaker/DITA-FMx</filepath> folder
+should be created in this location as well. The <menucascade>
+<uicontrol>DITA-FMx</uicontrol><uicontrol>Open DITA-FMx Folder</uicontrol></menucascade> command
+is useful for accessing this folder.</p>
+<p status = "new">Once this setup is complete, the program and support
+files are accessed from the “Program Files” area and the user files
+are accessed from the “App Data” area.</p></body></topic>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="BookBuildOverrides"?><?dtall dict="FilterByAttribute"?><?dtall
+dict="FilteredContent"?><topic id = "id086QA10L0HS"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Filtering Content</title>
+<shortdesc>Tips for filtering and conditionalizing content in topic
+files or maps.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "2008-06-26"/>
+<revised modified = "2015-03-17"/></critdates></prolog>
+<body><p status = "new"><indexterm status = "new">filtering content</indexterm><indexterm
+status = "new">hiding elements</indexterm><indexterm status = "new">prolog,
+hiding</indexterm><indexterm status = "new">comments, hiding</indexterm><indexterm
+status = "new">data, hiding</indexterm>DITA-FMx provides many ways
+to filter the content in your DITA files. The auto-conditionalizing
+options apply conditions to elements each time you open a file, and
+the <uicontrol>Apply Ditaval as Conditions</uicontrol> command can
+approximate the effect of applying a ditaval file to a topic file
+or book. You can also achieve filtering when generating a FM book
+from a DITA map by modifying the Book application’s read-write rules
+file.</p>
+<section><title>Auto-Conditionalizing Elements</title><p status = "new"><indexterm
+status = "new">conditionalizing elements</indexterm>There are five
+options for applying conditions to elements on file open. The <uicontrol
+    status = "changed">Conditionalize Prolog</uicontrol>, <uicontrol
+    status = "changed">Conditionalize Comments</uicontrol>, and <uicontrol
+    status = "changed">Conditionalize Required-Cleanup</uicontrol> options
+apply the DITA-Prolog, DITA-Comment, and DITA-Cleanup conditions
+to the respective elements each time you open a topic file. The <uicontrol
+    status = "changed">Conditionalize data, data-about, and area</uicontrol> option
+applies the DITA-Data condition to <synph status = "new"
+    outputclass = "element">data</synph>, <synph status = "new"
+    outputclass = "element">data-about</synph>, and <synph
+    status = "new" outputclass = "element">area</synph> elements
+when opening a topic file or DITA map file.The <uicontrol
+    status = "changed">Conditionalize Topicmeta and Bookmeta</uicontrol> option
+applies the DITA-Topicmeta to the topicmeta element when opening
+a DITA map file. On file save, these conditions are stripped (all
+other conditions you may apply will honor the Conditional Text setting
+in the structure application definition).</p><p>The term “Conditionalize”
+does not necessarily mean to “hide,” it just means that the associated
+condition will be applied to the elements. It is up to you to set
+the hide/show state as well as the color and style for these conditions
+(in the structure application template).</p><p>When any of these
+options are enabled, the plugin does a “show all” then a “hide” of
+the appropriate conditions when the XML or FM file is opened. If
+the file makes extensive use of conditions, this may result in the
+addition of blank pages at the end of the document. For XML files,
+this is not a problem since the blank pages are not saved, but if
+you’re working on generated FM files, you may end up with extra
+blank pages that you can’t get rid of (each time you save then reopen,
+the blank pages will reappear). If this is the case, you should
+disable the auto-conditionalizing options when doing final pagination
+on generated FM files.</p></section>
+<section><title>Ditaval Filtering</title><p status = "new"><indexterm
+status = "new">ditaval filtering</indexterm>In order to filter content
+in FM files based on a ditaval file, you can use the <menucascade>
+<uicontrol>Utilities</uicontrol><uicontrol>Apply Ditaval</uicontrol></menucascade> command.
+Before using this command you need to first create the ditaval file
+(using the <uicontrol>Ditaval Manager</uicontrol> or other means),
+then register it with the <uicontrol>Ditaval Manager</uicontrol>.
+Once the ditaval file has been registered with DITA-FMx, you can use
+it with the <uicontrol>Apply Ditaval</uicontrol> command. Detailed
+information about using this command is available in the <xref href
+= "ditafmx_task_applyditaval.xml#id083UF70905Z" type = "task" format
+= "dita" scope = "local"></xref> topic.</p><p>As of DITA-FMx version
+2.0.03, this command can be run in either of two modes, filtering
+with conditions or filtering by deletion. Both modes result in similar
+results, but filtering by deletion will more closely match the filtering
+done by the DITA-OT.</p><p>While not a requirement, it is best to
+use this command only on generated FM files, not on your DITA XML
+files. If using the filter with conditions mode, the conditions are
+typically saved to the XML as processing instructions (PIs) and
+will persist in the state set the next time you open the file (this
+persistence is dependent on the Conditional Text setting in the
+associated structure application definition). If using the filter
+by deletion mode, it will <i>delete</i> content from your files,
+which is typically not desired.</p><p>When you generate an FM book
+from a DITA map, any PIs are filtered out during the import XSLT
+processing and not included in the generated FM files. However,
+any conditions that have been applied to content that is the source
+of a conref, will appear in the generated FM files because the conref
+source is not passed through the import XSLT processing, but pulled
+in by the conref resolution process which happens after the initial
+topic file aggregation. This results in an FM file with some conditions
+that appear to have survived the conversion while other have not.
+This confusing situation can be avoided by not applying conditions
+to the XML files.</p><p>Regardless of whether you have applied conditions
+to the XML files or not, you can still run the <uicontrol>Apply
+Ditaval</uicontrol> command to apply conditions based on the properties
+in a ditaval file.</p></section>
+<section status = "changed"><title>Filter by Attribute</title><p
+    status = "new"><indexterm status = "new">filter by attribute</indexterm>If
+the filtering provided by the <uicontrol>Apply Ditaval</uicontrol> command
+doesn’t result in the required filtering for your documents, you
+can make use of FrameMaker’s <uicontrol status = "new">Filter by Attribute</uicontrol> build
+expressions when generating a book from a map.</p><note status = "new">This
+feature is only available for FM10 and later (even though the command was
+available in FM8, the API was not available to support this until
+FM10).</note><p status = "new">To make use of this feature, you
+should start by developing (and testing) the attribute build expression
+in a generated FM file (the result of the book-build process). When
+you’ve created the necessary build expression, import it into your
+Book template (or appropriate component templates) using <menucascade
+    status = "new"><uicontrol status = "new">File</uicontrol>
+<uicontrol status = "new">Import</uicontrol><uicontrol status = "new">Formats</uicontrol></menucascade> and
+select the <option status = "new">Filter by Attribute Settings</option> option.
+In addition to the named build expression, your template must define
+the condition you plan to assign to the filtered content.</p><p
+    status = "new">Use of this feature requires that you’re using
+a book-build INI file. In the BookBuildOverrides section, add an
+entry named FilterByAttribute. Assign the build expression name
+and the condition name (separated with a greater-than symbol) as
+the value to this INI entry using the syntax: <i status = "new">BUILD-EXPRESSION</i>><i
+    status = "new">CONDITION-NAME</i>. For example, if your build
+expression is named “Print-Filter” and the condition is “FilteredContent”,
+the INI entry would look like the following:</p><codeblock status = "new" outputclass = "ini">[BookBuildOverrides] 
+FilterByAttribute=Print-Filter>FilteredContent 
+...</codeblock><p status = "new">Because the use of this feature
+is a replacement for ditaval filtering, if this entry is used in
+the book-build INI file, any specified ditaval filtering is ignored
+for content filtering. When the FilterByAttribute feature is in
+use, ditaval filtering is still used for the filtering of key definitions,
+so it is important to maintain both.</p><p status = "new">In the
+future, DITA-FMx may provide a mapping from ditaval to attribute
+build expressions, but for now this is left to the user to develop.</p></section>
+<section status = "changed"><title>Filtering with the Read-Write
+Rules File</title><p status = "new">If there are certain elements
+that you want to exclude from your generated FM book files, use
+the “drop” rule. For example, if you want to exclude the shortdesc
+element from your generated files, add the following rule to the
+Book application’s rules file:</p><codeblock>element "shortdesc" drop;</codeblock><p>This
+results in the shortdesc element being removed from the generated
+FM files while it remains in the source topic files.</p></section></body></topic>

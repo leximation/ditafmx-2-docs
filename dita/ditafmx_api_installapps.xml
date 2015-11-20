@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="AppInstall"?><?dtall dict="appname"?><?dtall dict="FMHOME\Structure\XML"?><?dtall
+dict="FrameMaker\DITA"?><?dtall dict="InstallApps"?><?dtall dict="MyApp"?><?dtall
+dict="STUB=pat"?><?dtall dict="Structure\XML"?><?dtall dict="stubfile"?><?dtall
+dict="ZIP=pat"?><topic id = "id11BJG0X065Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>InstallApps</title>
+<shortdesc>Installs structure applications from a ZIP archive.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "2011-11-19"/>
+<revised modified = "2015-03-31"/></critdates></prolog>
+<body><section id = "id085HGH00RHT" status = "changed"><title>Syntax</title><codeblock status = "changed">F_ApiCallClient("ditafmx", "InstallApps |<varname>appname</varname> [|<varname>appname...</varname>]");</codeblock><dl>
+<dlentry><dt><varname>appname</varname></dt>
+<dd>The name of the structure application to install. When installing
+multiple applications, each is passed as a separate argument separated
+by the vertical bar character.</dd></dlentry></dl></section>
+<section><title>Usage</title><p>This API installs structure applications
+using the “stub” file method used by the default DITA-FMx applications.
+The applications to be installed must be provided in a ZIP archive
+and will be installed to the <filepath>FMHOME\Structure\XML</filepath> folder.
+The ZIP file is copied to the <filepath>Structure\XML</filepath> folder
+and extracted into that location. The ZIP archive must be set up
+with the necessary internal folder structure to be extracted in
+this way. After the archive is extracted, the stub file is added
+into the structure application definitions file as a text inset.
+If the structure application definitions file already contains an
+application definition of the name being installed, the existing definition
+will be deleted.</p><p>Structure applications installed with this
+API must first be registered in the AppInstall section of the <filepath>ditafmx.ini</filepath> file.
+Each application requires the following two entries.</p><dl><dlentry>
+<dt><varname>appname</varname>-ZIP=<varname>path-to-zip</varname></dt>
+<dd>Where <varname>appname</varname> is the structure application
+name and <varname>path-to-zip</varname> specifies the ZIP archive
+that contains the application files. This must be an absolute path
+or relative to the FMHOME location.</dd></dlentry>
+<dlentry><dt><varname>appname</varname>-STUB=<varname>path-to-stubfile</varname></dt>
+<dd>Where <varname>appname</varname> is the structure application
+name and <varname>path-to-stubfile</varname> specifies the relative
+path to the installed “stub” file that is to be inserted into the
+structure application definition file. This path is relative to
+the <filepath>FMHOME\Structure\XML</filepath> folder.</dd></dlentry></dl><p>Example <filepath>ditafmx.ini</filepath> file
+settings:</p><codeblock expanse = "page" status = "changed">[AppInstall] 
+DITA-MyApp-Topic-1.2-ZIP=DITA-MyApp\DITA-MyApp_1.2_apps.zip 
+DITA-MyApp-Topic-1.2-STUB=DITA-MyApp_1.2\Topic\structapps-stub_topic_1.2.fm 
+DITA-MyApp-Map-1.2-ZIP=DITA-MyApp\DITA-MyApp_1.2_apps.zip 
+DITA-MyApp-Map-1.2-STUB=DITA-MyApp_1.2\Map\structapps-stub_map_1.2.fm 
+DITA-MyApp-Book-1.2-ZIP=DITA-MyApp\DITA-MyApp_1.2_apps.zip 
+DITA-MyApp-Book-1.2-STUB=DITA-MyApp_1.2\Book\structapps-stub_book_1.2.fm</codeblock><p>In
+this example, all three applications are stored in the same ZIP
+archive. You could specify separate files if needed. This ZIP archive
+is copied to the <filepath>FrameMaker\DITA-MyApp</filepath> folder
+before the API is used to install the applications.</p></section>
+<section><title>Return Value</title><dl compact = "yes"><dlentry><dt>0</dt>
+<dd>Failure. Unable to process the specified document or book. It
+is also possible that DITA-FMx is not available for calls. Verify
+that DITA-FMx is registered in the <filepath>maker.ini</filepath> file
+using the client name of “ditafmx”.</dd></dlentry>
+<dlentry><dt>&lt;0</dt>
+<dd>Failure.</dd></dlentry>
+<dlentry><dt>>0</dt>
+<dd>Success. Value returned represents the number of applications
+installed.</dd></dlentry></dl></section></body></topic>

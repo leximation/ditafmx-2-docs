@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id085HH0S0Y7Q"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>LoadReferences</title>
+<shortdesc>Updates the references in the specified or current file.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "2008-05-17"/>
+<revised modified = "2015-03-31"/></critdates></prolog>
+<body><p>Use this function to update all references (xrefs, links,
+conrefs, and image references) in the specified file. Call this
+function using the “LoadReferences” parameter to update the active
+document, or pass the <varname>docIdOrName</varname> value (as a
+string) after this parameter to update a specific document.</p>
+<section id = "id085HGH00RHT" status = "changed"><title>Syntax</title><codeblock status = "changed">F_ApiCallClient("ditafmx", "LoadReferences [|<varname>docIdOrName</varname>]");</codeblock><dl>
+<dlentry><dt><varname>docIdOrName</varname></dt>
+<dd>The id or path and file name of the document to process. The
+document must be open. You must use double backslashes as the directory
+delimiter when specifying the document file name. Optional; if not
+provided the “active” document is used.</dd></dlentry></dl><note
+conref = "ditafmx_shared.xml#common/fmxapi_auto" status = "changed"></note></section>
+<section><title>Return Value</title><dl compact = "yes"><dlentry><dt>0</dt>
+<dd>Failure. Unable to update the specified document. It is also
+possible that DITA-FMx is not available for calls. Verify that DITA-FMx
+is registered in the <filepath>maker.ini</filepath> file using the
+client name of “ditafmx”.</dd></dlentry>
+<dlentry><dt>-1</dt>
+<dd>Failure. Invalid <varname>docIdOrName</varname>.</dd></dlentry>
+<dlentry><dt>-2</dt>
+<dd>Failure. document is not a DITA file.</dd></dlentry>
+<dlentry><dt>>0</dt>
+<dd>Successfully updated the specified document (this is the value
+of the <varname>docId</varname> processed).</dd></dlentry></dl></section></body></topic>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="FrameMaker\Structure\xml\DITA"?><?dtall dict="MyCo"?><task
+    id = "id524d3bac-215f-4504-8473-76d46bbe39a9"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Cloning the Default Structure Applications</title>
+<shortdesc>The first step in customizing the layout or formatting
+of a structure application is to create your own application; the
+easiest way to create your own is to clone the existing apps.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2014-03-24"/></critdates></prolog>
+<taskbody><prereq><p status = "changed">First, copy the <filepath
+    status = "changed">FrameMaker\Structure\xml\DITA-FMx_1.2</filepath> folder
+(with all subfolders included) to a new folder name, for our purposes
+here, we’ll call it MyCo-DITA-1.2. In the new MyCo-DITA-1.2 folder
+are the three application folders (Topic, Map, and Book), and the
+DTD folder. </p><p status = "new">You’ll be modifying files in the
+application folders, and leaving the DTD folder as it is (unless
+you’re specializing, which we won’t go into here). You’ll want to
+make the same initial changes to each of the applications (replace <i
+    status = "new">APP</i> with the Topic, Map, or Book application
+in the steps below).</p></prereq>
+<steps><step><cmd status = "changed">In the new <filepath status = "new">MyCo-DITA-1.2\Topic</filepath> folder
+open the <filepath status = "changed">topic_1.2.edd.fm</filepath> file
+in FrameMaker. At the top of the file, you’ll see a line that says
+“Structured Application: DITA-FMx-Topic-1.2”, change that to “MyCo-DITA-1.2-Topic”.
+Save this file, but keep it open for now.</cmd></step>
+<step><cmd status = "changed">In the <filepath status = "changed">MyCo-DITA-1.2\Topic</filepath> folder
+open the <filepath status = "changed">topic_1.2.template.fm</filepath> file
+in FrameMaker. Choose <menucascade><uicontrol>File</uicontrol>
+<uicontrol>Import</uicontrol><uicontrol>Element Definitions</uicontrol></menucascade>,
+select the <filepath status = "changed">topic_1.2.edd.fm</filepath> EDD
+file from the list and choose Import.</cmd></step>
+<step><cmd>Save and close the template, then save and close the
+EDD.</cmd></step>
+<step><cmd status = "changed">In the <filepath status = "changed">MyCo-DITA-1.2\Topic</filepath> folder
+open the <filepath status = "changed">structapps-stub_topic_1.2.fm</filepath> file in
+FrameMaker. Change all instances of “DITA-FMx” to “MyCo-DITA”.</cmd>
+<info status = "changed">This involves modifying the text of a variable.
+You’ll actually want to create a new variable and use that, don’t
+just modify the content of the existing variable; if you modify
+the content of the variable, it may break other applications since this
+“stub” file is imported into the structure application definitions
+file.<ol><li>Open the Variable dialog (<menucascade><uicontrol>Special</uicontrol>
+<uicontrol>Variable</uicontrol></menucascade>).</li>
+<li>Select “DITA-FMx-Path” from the list and choose Edit Definition.</li>
+<li status = "changed">In the Edit user variable dialog, change
+the name from “DITA-FMx-Path” to “MyCo-DITA-Path”, then in the Definition
+field change “DITA-FMx” to “MyCo-DITA”. Then choose Add then Done.
+Choose Done again in the Variables dialog.</li>
+<li status = "changed">Double-click the first DITA-FMx-Path variable
+and in the Variables dialog select “MyCo-DITA-Path” and choose Replace.</li>
+<li>Now copy and paste this new variable overall instances of it
+in the stub file (in the Template, DTD, Read/Write Rules, and numerous
+places in Entity Locations).</li></ol></info></step>
+<step><cmd>Save and close the stub file.</cmd></step>
+<step><cmd status = "changed">Now open the structure application
+definitions file with the <menucascade><uicontrol>Structure Tools</uicontrol>
+<uicontrol>Edit Application Definitions</uicontrol></menucascade> command.</cmd></step>
+<step><cmd>Place the insertion point just after the Version element
+(use the Structure View window to see this location easily), and
+choose <menucascade><uicontrol>File</uicontrol><uicontrol>Import</uicontrol>
+<uicontrol>File</uicontrol></menucascade>. Navigate to the new <filepath
+    status = "changed">structapps-stub_topic_1.2.fm</filepath> file
+and select it. In the Import Text Flow By Reference dialog, accept
+the defaults and choose Import.</cmd></step></steps>
+<postreq><p status = "changed">Repeat this task for each of the
+applications, Topic, Map, and Book. Once you have updated each application,
+you’ll have created a “clone” of the default applications and are
+now ready to customize them as needed.</p></postreq></taskbody></task>

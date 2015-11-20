@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="apps"?><?dtall dict="bookcomponent"?><?dtall dict="choicetable"?><?dtall
+dict="clickable"?><?dtall dict="ditafile"?><?dtall dict="ditafmx_app"?><?dtall
+dict="ditafm_app"?><?dtall dict="EDDs"?><?dtall dict="mapelemtype"?><?dtall
+dict="sthead"?><?dtall dict="strow"?><?dtall dict="tablename>body"?><?dtall
+dict="tablename>head"?><?dtall dict="tabletitle"?><?dtall dict="UseApiClient"?><?dtall
+dict="XMetaL"?><topic id = "id3e75b1d0-8b11-4031-bb79-cc301af40803"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Migrating from FM-DITA to DITA-FMx</title>
+<shortdesc status = "changed">Tips for migrating from default FrameMaker
+DITA to DITA-FMx.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2009-02-19"/>
+<revised modified = "2014-03-29"/></critdates></prolog>
+<body status = "changed"><p status = "changed">In general, there
+should be minimal effort required to migrate from the default DITA support
+in FrameMaker (FM-DITA) to DITA-FMx. Because both DITA authoring
+environments create valid DITA files, you can open and edit files
+created by the other environment just as you can open and edit files
+created in different authoring tools such as XMetaL or Oxygen.</p>
+<p status = "changed">If you’ve customized the default FrameMaker
+DITA structure applications and want to continue using those customizations
+in DITA-FMx, there may be some work required to migrate the apps
+since DITA-FMx provides features that do not exist in FM-DITA. For
+a complete listing and description of the DITA-FMx structure application
+requirements, refer to the <xref href = "ditafmx_apprequirements.xml#id0833I0F01HS"
+type = "topic" format = "dita" scope = "local"></xref> topic.</p>
+<p status = "changed"><indexterm>error messages<indexterm>Translator
+client (ditafm_app) was not found.</indexterm></indexterm><indexterm>translator
+client error</indexterm><indexterm>ditafm_app translator client
+error</indexterm>If you want to just “give it a try” to see what
+breaks, that’s fine (you’re not going to hurt anything). The only
+thing that’s absolutely required is that you change the “Use API
+Client” node in the application definition so it uses the “ditafmx_app”
+client name instead of “ditafm_app.” You’ll need to do this for
+any structure application that you want to use with DITA-FMx. (If
+you try to use these apps without changing the UseApiClient node,
+you will get the following error message when opening a DITA file: “Translator
+client (ditafm_app) was not found.”) Once this is done, change the
+application names in the DITA Options dialog, and give it a whirl.</p>
+<p status = "changed">If you’re migrating from an earlier version
+of FM-DITA, which may support DITA 1.0 or 1.1, keep in mind that
+because DITA-FMx 2.0 supports DITA 1.2, there will be significant
+differences in the EDDs. You can continue to use older DITA apps
+in DITA-FMx 2.0 as long as you provide certain element definitions
+(described below).</p>
+<p status = "new">One significant difference between FM-DITA and
+DITA-FMx (since FM8) is that DITA-FMx relies on a separate “Book”
+structure application for publishing. The “Topic” application is
+for authoring topics, the “Map” application is for authoring maps,
+and the “Book” application is for publishing. While this does add
+a bit more effort to maintain one more structure application, it
+provides far greater control over your publishing process. Also
+keep in mind that while you may be tempted to do so, there’s really
+no reason to customize the “Map” or “Topic” apps (unless you’re
+adding specialized elements). You shouldn’t need to see the published
+view of the content while authoring, so you really just need to
+customize the Book app to align with your publishing styles.</p>
+<p>The following items are significant migration points, refer to
+the <xref href = "ditafmx_apprequirements.xml#id0833I0F01HS" type
+= "topic" format = "dita" scope = "local"></xref> topic for a complete
+list of elements specific to DITA-FMx.</p>
+<dl><dlentry><dt status = "changed">The <synph status = "new"
+    outputclass = "element">fm-indexterm</synph> element is required
+(if you use an index).</dt>
+<dd status = "changed"><indexterm>elements<indexterm>fm-indexterm</indexterm></indexterm><indexterm>fm-indexterm
+element</indexterm>In the DITA-FMx Topic and Book applications the <synph
+    status = "new" outputclass = "element">fm-indexterm</synph> element
+is required to exist and be defined as a marker element type. You
+should be able to rename the FM-DITA <synph status = "new"
+    outputclass = "element">indexterm</synph> to <synph status = "new"
+    outputclass = "element">fm-indexterm</synph> since by default
+the FM-DITA <synph status = "new" outputclass = "element">indexterm</synph> is
+a Marker element. You’ll also need to rename all references to <synph
+    status = "new" outputclass = "element">indexterm</synph> in
+the general rule of other element definitions. If you want to be
+able to use the DITA-FMx feature that lets you switch between an <synph
+    status = "new" outputclass = "element">fm-indexterm</synph> Marker
+and an <synph status = "new" outputclass = "element">indexterm</synph> Container,
+you’ll need to create an <synph status = "new" outputclass = "element">indexterm</synph> element
+that is defined as a Container. This should be added to all general
+rules at the same location as the <synph status = "new"
+    outputclass = "element">fm-indexterm</synph>.</dd>
+<dd>For more information, refer to the <xref href = "ditafmx_app_fm-indexterm.xml#id666ef742-0059-405d-aaaa-0b2b02888e7c"
+type = "topic" format = "dita" scope = "local"></xref> topic.</dd></dlentry>
+<dlentry><dt>The topic referencing label in Maps.</dt>
+<dd status = "changed"><indexterm>elements<indexterm>fm-reflabel</indexterm></indexterm><indexterm>fm-reflabel
+element</indexterm><indexterm>elements<indexterm>fm-topicreflabel</indexterm></indexterm><indexterm>fm-topicreflabel
+element</indexterm><indexterm>topic referencing labels in maps</indexterm>The
+DITA-FMx Map application uses the <synph status = "new"
+    outputclass = "element">fm-reflabel</synph> element to provide
+a clickable label for navigation in a map or bookmap. In DITA-FMx
+1.0 as well as in FM-DITA, this element is named <synph status = "new"
+    outputclass = "element">fm-topicreflabel</synph>. Because bookmaps
+can contains topic referencing elements other than <synph status = "new"
+    outputclass = "element">topicref</synph>, it was decided that this
+element name should be changed.</dd>
+<dd>For more information, refer to the <xref href = "ditafmx_app_topicref.xml#id0837I050QY4"
+type = "topic" format = "dita" scope = "local"></xref> topic.</dd></dlentry>
+<dlentry><dt>Special Book application elements.</dt>
+<dd status = "changed">The DITA-FMx Book application includes three
+required elements, <synph status = "new" outputclass = "element">fm-ditabook</synph>, <synph
+    status = "new" outputclass = "element">fm-ditafile</synph>,
+and <synph status = "new" outputclass = "element">fm-bookcomponent</synph>.
+The <synph status = "new" outputclass = "element">fm-ditabook</synph> element makes
+use of href and title attributes, and the <synph status = "new"
+    outputclass = "element">fm-ditafile</synph> element uses the href
+and mapelemtype attributes. The Book application will also use the <synph
+    status = "new" outputclass = "element">fm-tabletitle</synph> element
+if you enable the “Move table/title” book-building option and the <synph
+    status = "new" outputclass = "element">fm-figuretitle</synph> element
+if you use the “Move fig/title” option. If you plan to take advantage
+of the enhanced DITA-FMx book-building functionality, you should
+make sure your Book application includes these elements.</dd>
+<dd>For more information, refer to the <xref href = "ditafmx_app_bookapplicationelements.xml#id466d7829-cb25-46ac-9015-ebd3a4a02729"
+type = "topic" format = "dita" scope = "local"></xref> topic.</dd></dlentry>
+<dlentry><dt>The simpletable-based table structures.</dt>
+<dd status = "changed">All of the DITA-FMx applications make use
+of <synph status = "new" outputclass = "element">simpletable</synph>-based
+tables. In Topic and Book applications are <synph status = "new"
+    outputclass = "element">simpletable</synph>, <synph status = "new"
+    outputclass = "element">choicetable</synph>, and <synph
+    status = "new" outputclass = "element">properties</synph> (table),
+and in the Map application is the <synph status = "new"
+    outputclass = "element">reltable</synph>. Because tables within
+FrameMaker require a slightly different structure than that required
+by the DITA specification, additional “fm-*” elements are added
+as wrappers to the “head” and “row” (<synph status = "new"
+    outputclass = "element">sthead</synph> and <synph status = "new"
+    outputclass = "element">strow</synph> in <synph status = "new"
+    outputclass = "element">simpletable</synph>) elements. DITA-FMx
+uses a slightly different structure than FM-DITA. The base table
+name is the root element, which contains “fm-<i status = "new">TABLENAME</i>head”
+and “fm-<i status = "new">TABLENAME</i>body” elements, which in
+turn contain the standard head and row elements.</dd>
+<dd>For more information, refer to the <xref href = "ditafmx_app_simpletable.xml#id0837E0405UI"
+type = "topic" format = "dita" scope = "local"></xref> topic.</dd></dlentry></dl></body></topic>

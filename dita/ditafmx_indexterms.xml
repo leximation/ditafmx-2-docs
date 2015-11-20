@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="endrange"?><?dtall dict="ix"?><?dtall dict="nopage>ONE:TWO"?><?dtall
+dict="ONE:TWO;&lt;$nopage>ONE:TWO:&lt;ix"?><?dtall dict="seealso"?><?dtall
+dict="seealso>See"?><?dtall dict="see>See"?><?dtall dict="startrange"?><?dtall
+dict="zzz"?><topic id = "id4214dcdd-4512-43ea-8874-73aeb71f4a7a"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Working with Indexterms</title>
+<shortdesc status = "new">Special issues regarding the creation
+of index entries (indexterm and fm-indexterm elements).</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "2009-03-09"/>
+<revised modified = "2015-03-29"/></critdates></prolog>
+<body status = "changed"><p status = "changed"><indexterm status
+= "new">indexterm, using</indexterm><indexterm status = "new">fm-indexterm,
+using</indexterm><indexterm status = "new">indexing with DITA</indexterm>DITA-FMx
+supports the use of the DITA indexing elements in FrameMaker by mapping
+them to the appropriate Index marker syntax, if the <option>Indexterm
+to fm-indexterm</option> option is enabled (in the Options dialog).
+When the <option>Indexterm to fm-indexterm</option> option is enabled,
+you must use the <synph outputclass = "element">fm-indexterm</synph> element
+rather than <synph outputclass = "element">indexterm</synph>.</p>
+<p status = "changed">In general, the process of creating an index
+entry works as it does in unstructured FrameMaker. Inserting an <synph
+    outputclass = "element">fm-indexterm</synph> element displays
+the <uicontrol>Insert Marker</uicontrol> dialog where you type the
+index entry using the standard FrameMaker index syntax. On file
+save, this marker syntax is converted into the proper DITA <synph
+    outputclass = "element">indexterm</synph> structure. When opened
+again in FrameMaker, this is converted to the FrameMaker marker
+syntax as an <synph outputclass = "element">fm-indexterm</synph> element.
+When creating an index entry, feel free to enter multiple entries
+in a single Index marker (separated by semicolons and using the
+standard FrameMaker marker syntax). When you reopen the file in FrameMaker,
+you’ll see multiple <synph outputclass = "element">fm-indexterm</synph> elements,
+because the single Index marker is converted into separate <synph
+    outputclass = "element">indexterm</synph> elements.</p>
+<note><indexterm>Japanese index markers</indexterm><indexterm>index
+markers on Japanese systems</indexterm>For FrameMaker language versions
+that use a translated name for the “Index” marker (such as Japanese),
+you must edit the <filepath>ditafmx.ini</filepath> file and set
+the IndexOptions/IndexMarkerType parameter to the name of the Index
+marker on your system. In doing so, you may need to save the INI
+file as UTF-8 to prevent the characters from being corrupted.</note>
+<p status = "new">In order to properly round-trip the “see” and
+“see-also” index entries, you need to include specific character
+styles within the marker syntax. For example to make a “see” entry,
+you would use the following syntax that uses the “ix-see” character style:</p>
+<p><userinput status = "new">&lt;$nopage>ONE:TWO. &lt;ix-see>See&lt;/>
+SOMEWHERE, ELSE</userinput></p>
+<p status = "changed">To make a “see-also” entry, you would use
+the following syntax that uses the “ix-seealso” character style:</p>
+<p><userinput status = "new">ONE:TWO;&lt;$nopage>ONE:TWO:&lt;ix-seealso>See
+also&lt;/> SOMEWHERE, ELSE</userinput></p>
+<note type = "important"><indexterm>index, forced sorting</indexterm><indexterm>forced
+sorting in index</indexterm>You should not include the “forced sort”
+information in a “see” or “see-also” entry; that will be added based
+on the Forced Sort Value you enter in the DITA-FMx Index Options
+dialog. For example, if your Forced Sort Value is “zzz” the Index
+marker syntax of the sample entry above would be <codeph>ONE:TWO;&lt;$nopage>ONE:TWO:&lt;ix-seealso>See
+also&lt;/> SOMEWHERE, ELSE[ONE:TWO:zzz]</codeph>. The forced sort
+information is added when you save the file; if you manually enter
+forced soft information it will likely conflict with the automatically added
+value.</note>
+<p status = "changed">These character style names are defined in
+the <uicontrol>Index Options</uicontrol> dialog, so you can change
+them as needed. However, if you do change them, be sure to create
+the appropriate styles in the Topic and Book templates (“ix-see”
+and “ix-seealso” are the defaults).</p>
+<p status = "new">The only way for DITA-FMx to know when you want
+an index entry to be a “see” or “see-also” is by entering the marker
+text in a specific way and to use these predefined character styles.
+If you enter the marker text differently, it may not properly convert
+into the DITA <synph outputclass = "element">indexterm</synph> structure.
+Also note that after being saved to DITA and re-opened in FrameMaker,
+the marker text may vary slightly from what you entered (just punctuation
+and structure, not content). The <uicontrol>Index Options</uicontrol> dialog
+provides a number of options that allow you to define the way the <synph
+    outputclass = "element">indexterm</synph> content converts into
+the FrameMaker marker syntax.</p>
+<p><indexterm>index page ranges</indexterm><indexterm>page ranges,
+index</indexterm>DITA-FMx supports index page ranges through the <synph
+    outputclass = "element">indexterm</synph> <synph
+    outputclass = "attribute">start</synph> and <synph
+    outputclass = "attribute">end</synph> attributes. To create
+an index page range, insert an <synph outputclass = "element">fm-indexterm</synph> element
+at the start of the range and set the <synph outputclass = "attribute">start</synph> attribute
+to a unique value. Then insert another <synph outputclass = "element">fm-indexterm</synph> at
+the end of the range and set the <synph outputclass = "attribute">end</synph> attribute
+value to the same value as the <synph outputclass = "attribute">start</synph> attribute.
+There is no need to enter the “&lt;$startrange>” and “&lt;$endrange>”
+FrameMaker index marker syntax; this will be added automatically
+when the file is reopened. The actual text of the “end” marker does
+not need to match that of the “start” marker, as it will be synced
+with the “start” marker (the end marker does need to have content,
+it cannot be left empty). If the “end” marker is located in a different
+file from that of the “start” marker, the end marker’s content will
+be “EMPTY”, but this value will be properly synced when the files
+are aggregated into chapter files at book-build time. Note that
+not all publishing processes will support index page ranges.</p>
+<p status = "new">The DITA <synph outputclass = "element">indexterm</synph> structure
+allows for elements that have no direct parallel in FrameMaker.
+If you need to work with very complex <synph outputclass = "element">indexterm</synph> structures,
+you should disable the <option>Indexterm to fm-indexterm conversion</option> option
+in the <uicontrol>Options</uicontrol> dialog. This will give you
+access to the full array of elements provided by DITA and you'll
+be able to insert an <synph outputclass = "element">indexterm</synph> element
+(as a container object, not a marker) and enter the specific DITA
+elements that you need. This is required if you want to use any
+non-index elements as children of an <synph outputclass = "element">indexterm</synph>.</p></body></topic>

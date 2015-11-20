@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+
+<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "DITA-Data" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "id3ea1ad13-2305-4818-9de5-468cff4cdc08"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>1.00.28 - 16 December 2008</title>
+<body><section><title outputclass = "h3">Bug Fixes</title><dl><dlentry>
+<dt>Apply Ditaval as Conditions command fixes.</dt>
+<dd>Properly applies conditions to empty elements, specifically
+markers and image elements.</dd>
+<dd>The Clear All Existing Conditions option now works in a more
+expected manner.</dd></dlentry>
+<dlentry><dt>Console message revisions.</dt>
+<dd>Removed console message when generating a book from a map that
+reported images not in the project scope.</dd></dlentry></dl></section></body></topic>

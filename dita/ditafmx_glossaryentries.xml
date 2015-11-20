@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id6d487c6c-b534-4d4d-9c3c-a07e3ce7683d"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Working with Glossary Entries</title>
+<shortdesc>Providing a glossary can significantly enhance most any
+documentation set.</shortdesc>
+<prolog><author>test</author>
+<author>scottp</author>
+<critdates><created date = "2014-04-06"/>
+<revised modified = "2015-09-13"/></critdates></prolog>
+<body><p><indexterm>glossentry</indexterm><indexterm>glossary terms</indexterm><indexterm>referencing
+glossary terms</indexterm>In addition to supporting the basic glossary
+models, DITA-FMx supports various aspects of key-based referencing
+of glossary terms. The following image shows a simple <synph
+    outputclass = "element">glossentry</synph> topic that defines
+only <synph outputclass = "element">glossterm</synph> and <synph
+    outputclass = "element">glossdef</synph> elements.</p>
+<fig><image href="images/glossentry-model-1.png" align="right" placement="break"
+ outputclass = "fmdpi:110"/></fig>
+<p>When including a <synph outputclass = "element">glossentry</synph> in
+a map, you might reference it with a <synph outputclass = "element">topicref</synph>. If
+the <synph outputclass = "attribute">type</synph> attribute is set
+to “glossentry”, and the <synph outputclass = "attribute">keys</synph> attribute
+is set, you can insert references to the glossary term through the <uicontrol>Insert
+Key Element Reference</uicontrol> command.</p>
+<fig><image href="images/glossentry-topicref.png" align="right"
+placement="break"  outputclass = "fmdpi:110"/></fig>
+<p><indexterm>glossSurfaceForm</indexterm><indexterm>glossAlt</indexterm>Including
+a <synph outputclass = "element">glossBody</synph> in your <synph
+    outputclass = "element">glossentry</synph> topic lets you provide
+additional information about the term. If the term can be represented
+by “complete” and abbreviated labels, you might consider using the <synph
+    outputclass = "element">glossSurfaceForm</synph> element to define
+the “full form” (which includes the primary abbreviation in parenthesis).
+Then one or more <synph outputclass = "element">glossAlt</synph> groups
+to define the primary and alternate shorter versions.</p>
+<p>The <synph outputclass = "element">glossAlt</synph> element contains
+one of <synph outputclass = "element">glossAbbreviation</synph>, <synph
+    outputclass = "element">glossAcronym</synph>, <synph
+    outputclass = "element">glossShortForm</synph>, or <synph
+    outputclass = "element">glossSynonym</synph>, optionally followed
+by a <synph outputclass = "element">glossStatus</synph> whose <synph
+    outputclass = "attribute">value</synph> attribute indicates
+that the term is preferred, restricted, prohibited, or obsolete.</p>
+<fig><image href="images/glossentry-model-2.png" align="right" placement="break"
+ outputclass = "fmdpi:110"/></fig>
+<p><indexterm>glossary term swapping</indexterm>If the “Glossary
+Term Swapping” book-build option is enabled, the first instance
+of a reference to a term in a chapter (generated FM file) will be
+the content from the <synph outputclass = "element">glossSurfaceForm</synph> element,
+and later instances will be the first or “preferred” <synph
+    outputclass = "element">glossAlt</synph> entry (or the <synph
+    outputclass = "element">glossterm</synph> if no <synph
+    outputclass = "element">glossAlt</synph> elements are defined).</p>
+<note>The “Conditionalize Data ...” option in the DITA Options dialog,
+applies the DITA-Data condition to all <synph outputclass = "element">data</synph>-based
+elements, including <synph outputclass = "element">glossPartOfSpeech</synph>, <synph
+    outputclass = "element">glossStatus</synph>, <synph
+    outputclass = "element">glossProperty</synph>, and others.</note></body>
+<related-links>
+<link
+    href = "https://www.oasis-open.org/committees/download.php/35292/DITA%201.2%20KeyRef%20Feature%20Description_Final.pdf"
+    format = "html" scope = "external"><linktext >www.oasis-open.org/committees/download.php/35292/DITA%201.2%20KeyRef%20Feature%20Description_Final.pdfDITA
+1.2 Keyref: Feature Description - 21 September 2009 (Sowmya Kannan)</linktext>
+<desc>DITA 1.2 Keyref: Feature Description - 21 September 2009 (Sowmya
+Kannan)</desc></link>
+<link
+    href = "https://www.oasis-open.org/committees/download.php/34831/GlossarySpecializationBestPractice_Final.pdf"
+    format = "html" scope = "external"><linktext >www.oasis-open.org/committees/download.php/34831/GlossarySpecializationBestPractice_Final.pdfDITA
+1.2 Glossary and Terminology Specialization Feature Description
+- 21 October 2009 (Kara Warburton)</linktext>
+<desc>DITA 1.2 Glossary and Terminology Specialization Feature Description
+- 21 October 2009 (Kara Warburton)</desc></link>
+<link
+    href = "https://www.oasis-open.org/committees/download.php/35766/glossary_and_term_management.pdf"
+    format = "html" scope = "external"><linktext >www.oasis-open.org/committees/download.php/35766/glossary_and_term_management.pdfDITA
+1.2 Feature Description: Improved glossary and terminology handling
+- 16 December 2009 (Tony Self)</linktext>
+<desc>DITA 1.2 Feature Description: Improved glossary and terminology
+handling - 16 December 2009 (Tony Self)</desc></link>
+<link
+    href = "https://www.oasis-open.org/committees/download.php/38692/DITA1.2FeatureDescriptionAcronym.pdf"
+    format = "html" scope = "external"><linktext >www.oasis-open.org/committees/download.php/38692/DITA1.2FeatureDescriptionAcronym.pdfDITA
+1.2 Feature Article: Acronym Best Practices - 24 May 2010 (DITA
+Translation Subcommittee)</linktext>
+<desc>DITA 1.2 Feature Article: Acronym Best Practices - 24 May
+2010 (DITA Translation Subcommittee)</desc></link></related-links></topic>

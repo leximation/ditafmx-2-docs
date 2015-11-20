@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "idffd51b4f-bdc6-404e-b8cb-53907629e66f"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Best Practice for Book Assembly</title>
+<shortdesc status = "new">Tips and information that applies to both
+maps and bookmaps.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2009-03-07"/>
+<revised modified = "2014-03-28"/></critdates></prolog>
+<body status = "changed"><p>When setting up a <synph status = "new"
+    outputclass = "element">map</synph> or <synph status = "new"
+    outputclass = "element">bookmap</synph> that will be used to
+define a book-like deliverable (either as a PDF or online format
+that breaks topics into sections or chapters), it is common to create
+a root map with submaps (or chapter-maps). The root map would, at
+a minimum, contain <synph status = "new" outputclass = "element">topicref</synph> (or <synph
+    status = "new" outputclass = "element">chapter</synph>, <synph
+    status = "new" outputclass = "element">appendix</synph>, etc.) elements
+that point to each submap (chapter). If your root map is a <synph
+    status = "new" outputclass = "element">bookmap</synph>, it would
+also contain the <synph status = "new" outputclass = "element">frontmatter</synph> and <synph
+    status = "new" outputclass = "element">backmatter</synph> along
+with the appropriate child elements. It might also contain a relationship
+table, but depending on your structure, you might want to maintain
+relationship tables in the submaps.</p>
+<p>The submaps should be standard DITA maps (not a bookmap). If
+you are using the default DITA-FMx XSLT import script that is provided
+with the Book application, your chapter maps should contain a single
+root <synph status = "new" outputclass = "element">topicref</synph> element
+which defines the chapter title and any optional content that would
+appear before the first H1-level heading in the generated FM file.
+Any topicref elements that are children of the root topicref become
+the H1, H2, and so on, headings within the chapter.</p>
+<note status = "new">When using the default DITA-FMx XSLT import
+script, the use of a submap adds no hierarchy or topics to the generated
+FM files. A map should be thought of as purely an authoring convenience.
+All headings in the resulting FM files are created from titles in
+DITA topics. Currently, the <synph status = "new"
+    outputclass = "element">topichead</synph> and <synph status = "new"
+    outputclass = "element">topicgroup</synph> elements are ignored
+in the book-build process, as are any attributes applied to those elements.</note>
+<p>If you want to be able to use the titles from the submaps as
+the chapter titles, you’ll need to modify the XSLT import script
+to pull that content from the map and insert it into the proper
+location in the output.</p>
+<p>This method of creating chapter maps makes it very convenient
+to assign a “chapter” to a specific writer. Note that it is perfectly
+reasonable to take this nested map concept to further levels. You
+may have components within a chapter that make sense to group into
+a map. This is especially useful if you reuse these components in
+other maps or deliverables.</p></body></topic>

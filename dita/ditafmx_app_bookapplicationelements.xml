@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id466d7829-cb25-46ac-9015-ebd3a4a02729"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Special Book Application Elements</title>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates status = "new"><created date = "2009-02-19"/>
+<revised modified = "2015-03-17" status = "new"/></critdates></prolog>
+<body><p status = "changed">The Book application is essentially
+identical to the Topic application except that it has three additional
+elements that are used to isolate the separate pieces that are part of
+the book. The Book application also makes use of special <synph
+    status = "new" outputclass = "element">fm-tabletitle</synph> and <synph
+    status = "new" outputclass = "element">fm-figuretitle</synph> elements
+for proper table formatting.</p>
+<dl status = "changed"><dlentry><dt>fm-ditabook</dt>
+<dd status = "changed"><indexterm>fm-ditabook element</indexterm><indexterm>elements<indexterm>fm-ditabook</indexterm></indexterm>The
+root element of the generated book file. Also represents the root
+DITA map used to create the book. The href attribute defines the
+path and name of the source ditamap file. Additional attributes
+may be added from map metadata for use as variables or by element
+definition context rules.</dd></dlentry>
+<dlentry><dt>fm-ditafile</dt>
+<dd><indexterm>fm-ditafile element</indexterm><indexterm>elements<indexterm>fm-ditafile</indexterm></indexterm>Identifies
+each DITA topic file. The href attribute defines the path and name
+of the source topic file. The maptype attribute contains the name
+of the element that referenced this topic file in the original ditamap.
+This is used by the book-build process to identify specific book
+components to automatically apply templates as well as numbering
+and pagination properties.</dd></dlentry>
+<dlentry><dt>fm-bookcomponent</dt>
+<dd><indexterm>fm-bookcomponent element</indexterm><indexterm>elements<indexterm>fm-bookcomponent</indexterm></indexterm>Used
+as a container for generated book components. This wraps any generated that
+are added by the book-build process, or you can add this for any
+generated files you add manually.</dd></dlentry>
+<dlentry><dt status = "changed">fm-tabletitle</dt>
+<dd status = "changed"><indexterm>fm-tabletitle element</indexterm><indexterm>elements<indexterm>fm-tabletitle</indexterm></indexterm>Allows
+for properly formatted table titles in generated FrameMaker files.
+The Book application must have the fm-tabletitle element defined
+and valid as a child of the tgroup element.</dd></dlentry>
+<dlentry><dt status = "changed">fm-figuretitle</dt>
+<dd status = "changed"><indexterm>fm-figuretitle element</indexterm><indexterm>elements<indexterm>fm-figuretitle</indexterm></indexterm>Supports <synph
+    status = "new" outputclass = "element">fm-xref</synph> references
+to “moved” figure titles in generated FrameMaker files. The Book
+application must have the <synph status = "new" outputclass = "element">fm-figuretitle</synph> element defined
+and valid as the last child of the fig element. If this element
+is not defined, the “move figure titles” book-build option will
+use the default title element, but in order to support cross-references
+to figure titles that are moved, this element must be defined and
+have its @id attribute’s type set to “UniqueID.”</dd></dlentry>
+<dlentry><dt status = "changed">fm-figuredesc</dt>
+<dd status = "changed"><indexterm>fm-figuredesc element</indexterm><indexterm>elements<indexterm>fm-figuredesc</indexterm></indexterm>Supports
+content in a <synph status = "new" outputclass = "element">desc</synph> element
+that is “moved” with figure titles in generated FrameMaker files.
+The Book application must have the <synph status = "new"
+    outputclass = "element">fm-figuredesc</synph> element defined
+and valid as the last child of the fig element. If this element
+is not defined, the “move figure titles” book-build option will
+create this element.</dd></dlentry></dl>
+<p>Other than these special “fm-*” elements that are unique to the
+Book application, three element definitions vary from those in the
+Topic application:</p>
+<dl><dlentry><dt>title</dt>
+<dd>The context rule level numbering differs to allow for an additional
+level of “chapter titles.”</dd></dlentry>
+<dlentry><dt>fig</dt>
+<dd status = "changed">Includes the <synph status = "new"
+    outputclass = "element">title</synph> and <synph status = "new"
+    outputclass = "element">fm-figuretitle</synph> elements as optional
+elements at the end of the general rule. This is required by the
+“Move fig/title to end of fig element” Book Build option.</dd></dlentry>
+<dlentry><dt>tgroup</dt>
+<dd>Includes the <synph status = "new" outputclass = "element">fm-tabletitle</synph> element
+in the general rule. This is required by the “Move table/title to
+table/tgroup/title” Book Build option.</dd></dlentry></dl></body></topic>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="APIs"?><?dtall dict="ArchiveCommandLine"?><?dtall dict="AssignIdToElem"?><?dtall
+dict="AttrAsCondDefaultState"?><?dtall dict="addon"?><?dtall dict="app"?><?dtall
+dict="att"?><?dtall dict="authorname"?><?dtall dict="BookBuildOverrides"?><?dtall
+dict="Booklists"?><?dtall dict="BuildFile"?><?dtall dict="backmatter"?><?dtall
+dict="bookbuild"?><?dtall dict="buildname"?><?dtall dict="CallClient"?><?dtall
+dict="Conditionalize"?><?dtall dict="copyrholder"?><?dtall dict="customization"?><?dtall
+dict="DitaDir"?><?dtall dict="DitaFMxGuide"?><?dtall dict="DitaReference"?><?dtall
+dict="DitaRefTargetPath"?><?dtall dict="DitavalName"?><?dtall dict="DLLs"?><?dtall
+dict="desc"?><?dtall dict="dita"?><?dtall dict="ditabook"?><?dtall dict="ditafile"?><?dtall
+dict="ditafmx"?><?dtall dict="ditamap"?><?dtall dict="ditavals"?><?dtall
+dict="doctype"?><?dtall dict="draftinfo"?><?dtall dict="draftintro"?><?dtall
+dict="EnvironmentSetup"?><?dtall dict="epub"?><?dtall dict="FmXrefUseOutputclass"?><?dtall
+dict="FrameMaker\DITA"?><?dtall dict="figurelist"?><?dtall dict="fmx"?><?dtall
+dict="fragref"?><?dtall dict="frontmatter"?><?dtall dict="GeneralExport"?><?dtall
+dict="GeneralImport"?><?dtall dict="gentpl"?><?dtall dict="IgnoreFigTitleProcessing"?><?dtall
+dict="ImagePlacement"?><?dtall dict="ImportAttrsAsVars"?><?dtall dict="INIOnly"?><?dtall
+dict="InstallApps"?><?dtall dict="indexlist"?><?dtall dict="ja"?><?dtall
+dict="LastReferencedElement"?><?dtall dict="Linebreak"?><?dtall dict="linebreaks"?><?dtall
+dict="linktext"?><?dtall dict="MasterPageMaps"?><?dtall dict="MissingImageDir"?><?dtall
+dict="MoveFigureTitles"?><?dtall dict="masterpage"?><?dtall dict="omsyshome%\common\bin"?><?dtall
+dict="outputclass"?><?dtall dict="PageStartSide"?><?dtall dict="print=’no"?><?dtall
+dict="RegInfo"?><?dtall dict="Reimport"?><?dtall dict="ReimportTemplate"?><?dtall
+dict="RunaroundOff"?><?dtall dict="reflabel"?><?dtall dict="reimports"?><?dtall
+dict="relinked"?><?dtall dict="StripTrailing"?><?dtall dict="StructMasterPageMaps"?><?dtall
+dict="SuiteHelp"?><?dtall dict="SuppressXrefAttrs"?><?dtall dict="suitehelp"?><?dtall
+dict="synnoteref"?><?dtall dict="syntaxdiagram"?><?dtall dict="toc"?><?dtall
+dict="topicId"?><?dtall dict="type=’fm"?><?dtall dict="UpdateBook"?><?dtall
+dict="UseLanguageTemplate"?><?dtall dict="UseOutputclassForType"?><?dtall
+dict="WriteLineBreakPIs"?><?dtall dict="WriteLineBreakPIsInPre"?><?dtall
+dict="webhelp"?><?dtall dict="whitespace"?><?dtall dict="XSLTs"?><?dtall
+dict="xml:lang"?>
+<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT Dark%20Grey NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "DITA-Data" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "id12AVH0J0U5Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>1.1.16 - 1 December 2012</title>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2012-10-31"/>
+<revised modified = "2012-12-01"/></critdates></prolog>
+<body><section status = "changed"><title outputclass = "h3">New
+Features</title><dl><dlentry><dt>Updates to the BookTemplatesDir
+parameter in the book-build INI file</dt>
+<dd>You can now use the $STRUCTDIR variable in the BookTemplatesDir
+parameter to specify a path in the FrameMaker Structure directory.</dd>
+<dd>The path specified in the BookTemplatesDir parameter is now
+always relative to the generated book file. Previously, when the
+default book-build INI file was used (the one in the DITA-FMx folder),
+the path was relative to the INI file. Now it’s consistent.</dd></dlentry>
+<dlentry><dt>Added support for alternate default image placement
+values</dt>
+<dd>When opening a file that contains image elements with no @placement
+value, the default was to set those to @placement=’break’ (even
+though the default value for @placement is ‘inline’). Now you can
+set the <filepath>ditafmx.ini</filepath> parameter INIOnly/ImagePlacement
+to control this for your needs. Valid values are: 0 = use EDD default;
+1 = set to ‘inline’; 2 = set to ‘break’ (the default).</dd></dlentry></dl></section>
+<section status = "changed"><title outputclass = "h3">Structure
+Application Updates</title><dl><dlentry status = "new">
+<dt status = "new">Book XSLT (expandOrig.xsl)</dt>
+<dd>Support for topicref/@print=’no’ was added to expandOrig.xsl.</dd></dlentry></dl></section>
+<section><title outputclass = "h3">Bug Fixes / Minor Updates</title><dl
+    status = "changed"><dlentry><dt>Whitespace normalization has
+been updated</dt>
+<dd>If the option is enabled, whitespace normalization is performed
+when files are opened. There were times when this didn’t work properly
+for some types of pretty-printed files. Now, the following processing
+is applied: multiple whitespace characters are collapsed into a
+single whitespace, and all leading and trailing whitespace is removed
+from each element (unless it is defined as a “preformatted” element).</dd></dlentry>
+<dlentry><dt>DITA-FMx commands are now available in the FM11 Author
+View</dt>
+<dd>FM11 adds Code View and Author View options. The DITA-FMx commands
+are now available in Author View.</dd></dlentry>
+<dlentry><dt>Fixes to the DITA-OT build process including support
+for OT 1.6.x</dt>
+<dd>The ditafmx-ant.xml file has been updated to support changes
+made in OT 1.6. Also fixes an error introduced in 1.1.15 to add
+support for EPUB output through the DITA4Publishers plugin. If the
+D4P plugin was not installed, the build process would fail. These
+problems have been addressed.</dd></dlentry>
+<dlentry><dt>See-also indexterms round-trip properly</dt>
+<dd>See-also indexterm elements that wrap to another line in the
+XML would generate an extra nesting level after reopening the file.
+This no longer happens.</dd></dlentry>
+<dlentry><dt>Support for topicref/@print=’no’ is working again</dt>
+<dd>This support was added in 1.1.11, but then lost in 1.1.12 when
+the XSLTs were updated. Code to support this filtering has been
+added to the expandOrig.xsl file.</dd></dlentry>
+<dlentry><dt>Topicrefs that include a ‘topicid’ reference no longer
+cause problems in xrefs</dt>
+<dd>Previously a topicref/@href that included the topicid value
+(as in “filename.xml#topicid”) could, under certain situations result
+in a non-functioning xref to that topic. This type of @href value
+is no longer a problem.</dd></dlentry>
+<dlentry><dt>Xrefs that include a prefix or suffix are no longer
+deleted on file open</dt>
+<dd>If an xref element definition specifies a prefix or suffix,
+that element will properly render on file open and in book-builds.</dd></dlentry>
+<dlentry><dt>Running the Apply Ditaval as Conditions command on
+a book file, works</dt>
+<dd>Previously, running the Apply Ditaval as Conditions command
+on a book file didn’t not actually apply the conditions. It does
+now.</dd></dlentry>
+<dlentry><dt>New conditions created by the Apply Ditaval as Conditions
+command are no longer colored red</dt>
+<dd>Previously, when the Apply Ditaval as Conditions command created
+a new condition (because it didn’t exist), it was colored red. This
+doesn’t seem to serve any useful purpose, and now no longer happens.</dd></dlentry>
+<dlentry><dt>Use an element template when creating a new file on
+Windows 7 or Vista</dt>
+<dd>The element template feature now works properly on Windows 7
+or Vista.</dd></dlentry>
+<dlentry><dt>Replacing an existing image updates the @href attribute</dt>
+<dd>You can now select an existing image and use <menucascade>
+<uicontrol>File</uicontrol><uicontrol>Import</uicontrol><uicontrol>File</uicontrol></menucascade> to
+replace that image without deleting and reinserting the image element.</dd></dlentry>
+<dlentry><dt>Create Archive command now creates a properly named
+archive file</dt>
+<dd>As of DITA-FMx 1.1.15 the Create Archive command started creating
+an archive file with “more” at the end of the filename, and incorrectly
+included a list of files in the archive. The archive is now created
+properly.</dd></dlentry>
+<dlentry><dt>Missing “gentpl” files no longer cause a book-build
+crash</dt>
+<dd>If the BookTemplatesDir parameter in the book-build INI file
+wasn't referencing a valid location that contained the necessary
+“gentpl” templates for a bookmap that you’re trying to build, the
+Generate Book from Map command would crash. This no longer happens.</dd></dlentry>
+<dlentry><dt>Reset Status command now offers a cancel option</dt>
+<dd>The Reset Status dialog can be dismissed without actually resetting
+the status attribute values.</dd></dlentry></dl></section></body></topic>

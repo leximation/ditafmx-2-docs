@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<task id = "id0846D0U015Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Setting Up Filtering Groups</title>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2008-04-06"/>
+<revised modified = "2014-03-30"/></critdates></prolog>
+<taskbody><prereq><p><indexterm>filtering groups</indexterm><indexterm>filtergroups.ini
+file</indexterm>Before you can make use of filtering groups, your
+EDD must be set up to use the “Strings” attribute type for the attributes
+that you want to use with a filtering group. You can optionally
+add “default” values to the attribute definitions in the EDD, but that
+is not required (and may not be desirable). At a minimum, just change
+the “String” type to “Strings” and you should be all set.</p><p
+    status = "changed">The default DITA-FMx Topic and Map templates
+use the Strings type for all instances of the platform, product,
+audience, and otherprops attributes.</p></prereq>
+<context><p>The following task creates two filtering groups named
+“ProductA” and “ProductB” and sets up unique values for each group
+that are available to apply to the attributes specified. Feel free
+to change the names and file paths to match those on your system.</p></context>
+<steps><step><cmd status = "changed">Using a text editor such as
+Notepad, create a file named <filepath>filtergroups.ini</filepath> in
+the user’s DITA-FMx folder (<menucascade status = "new">
+<uicontrol status = "new">DITA-FMx</uicontrol>
+<uicontrol status = "new">Open DITA-FMx Folder</uicontrol></menucascade>).</cmd></step>
+<step><cmd>Create a “General” section that defines the group names
+and the associated root paths, then create a section for each group
+that defines the attribute names and available values.</cmd>
+<stepxmp><codeblock>[General] 
+ProductA=C:\projects\product-a 
+ProductB=C:\projects\product-b 
+ 
+[ProductA] 
+product=ProdALite|ProdAFull|ProdASimple 
+audience=Novice|Expert|Admin 
+platform=Windows|Mac|Linux 
+otherprops=001|002|003|004|005|006 
+ 
+[ProductB] 
+product=ProdBLite|ProdBFull 
+audience=User|Developer|Admin 
+platform=Windows|Mac|Linux|Solaris</codeblock></stepxmp></step>
+<step><cmd>Save this file.</cmd></step></steps>
+<postreq><p>In FrameMaker, when you open a file in Product A (somewhere
+below the path <filepath>C:\projects\product-a</filepath>), when
+you run the Set Attributes command, and select one of the filtering
+attributes from the list, you will be able to select one or more
+of the values specified in the INI file.</p></postreq></taskbody></task>

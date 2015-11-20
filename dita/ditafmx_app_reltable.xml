@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id0837I0GE0HS"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>reltable</title>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2008-03-07"/>
+<revised modified = "2014-03-29"/></critdates></prolog>
+<body><p status = "new"><indexterm status = "new">reltable element</indexterm><indexterm
+status = "new">elements<indexterm status = "new">reltable</indexterm></indexterm><indexterm
+status = "new">fm-reltablehead element</indexterm><indexterm status
+= "new">elements<indexterm status = "new">fm-reltablehead</indexterm></indexterm><indexterm
+status = "new">fm-reltablebody element</indexterm><indexterm status
+= "new">elements<indexterm status = "new">fm-reltablebody</indexterm></indexterm><indexterm
+status = "new">fm-reltablemeta element</indexterm><indexterm status
+= "new">elements<indexterm status = "new">fm-reltablemeta</indexterm></indexterm>Because
+DITA defines the <synph status = "new" outputclass = "element">reltable</synph> element
+with the same structure as a <synph status = "new"
+    outputclass = "element">simpletable</synph> element, it requires
+additional internal structure to be rendered properly as a table
+within FrameMaker. This adds the <synph status = "new"
+    outputclass = "element">fm-reltablehead</synph> and <synph
+    status = "new" outputclass = "element">fm-reltablebody</synph> elements.
+Also, in order to support the use of the <synph status = "new"
+    outputclass = "element">topicmeta</synph> element as the child
+of a <synph status = "new" outputclass = "element">reltable</synph>,
+the <synph status = "new" outputclass = "element">fm-reltablemeta</synph> element
+is added. On file save, the <synph status = "new"
+    outputclass = "element">fm-reltablemeta</synph> element is converted
+into a <synph status = "new" outputclass = "element">topicmeta</synph>,
+and on import a <synph status = "new" outputclass = "element">topicmeta</synph> that
+is the child of a <synph status = "new" outputclass = "element">reltable</synph> is
+converted into an <synph status = "new" outputclass = "element">fm-reltablemeta</synph> element.</p>
+<p status = "changed">In the EDD, general rule for <synph status = "new"
+    outputclass = "element">reltable</synph> should be “(fm-reltablemeta)?,
+(fm-reltablehead)?, (fm-reltablebody)”. The <synph status = "new"
+    outputclass = "element">fm-reltablehead</synph> elementis defined
+as a Table Heading element named and the <synph status = "new"
+    outputclass = "element">fm-reltablebody</synph> element is defined
+as a Table Body element. The <synph status = "new"
+    outputclass = "element">fm-reltablehead</synph> element specifies
+a general rule of “relheader” and the <synph status = "new"
+    outputclass = "element">fm-reltablebody</synph> element specifies
+a general rule of “relrow+”. The <synph status = "new"
+    outputclass = "element">fm-reltablemeta</synph> element is defined
+as a Table Title element and has the same general rule as the <synph
+    status = "new" outputclass = "element">topicmeta</synph> element.
+It also has the same attribute definitions as the <synph status = "new"
+    outputclass = "element">topicmeta</synph> element, but no other
+element definition properties are needed for <synph status = "new"
+    outputclass = "element">fm-reltablemeta</synph>.</p>
+<p status = "changed">In addition to the EDD modifications, the
+following rules are needed for the <synph status = "new"
+    outputclass = "element">reltable</synph> structure:</p>
+<codeblock>fm element "fm-reltablehead" unwrap; 
+fm element "fm-reltablebody" unwrap; 
+ 
+fm element "fm-reflabel" drop; 
+ 
+element "fm-reltablemeta" 
+{ 
+  is fm table title element; 
+} 
+ 
+element "reltable" 
+{ 
+  is fm table element; 
+} 
+element "relheader" 
+{ 
+  is fm table row element; 
+  fm property row type value is "Heading"; 
+} 
+element "relrow" 
+{ 
+  is fm table row element; 
+  fm property row type value is "Body"; 
+}</codeblock>
+<p status = "changed">The initial rules (first two lines) discard
+the head and body wrappers on file save. The next line discards
+the <synph status = "new" outputclass = "element">fm-topicreflabel</synph> element.
+The remaining rules define <synph status = "new" outputclass = "element">fm-reltablemeta</synph> as
+a Table Title, the root table element (<synph status = "new"
+    outputclass = "element">reltable</synph>), the row element that
+is a “Heading” row (<synph status = "new" outputclass = "element">relheader</synph>)
+and the row element that is a “Body” row (<synph status = "new"
+    outputclass = "element">relrow</synph>).</p></body></topic>

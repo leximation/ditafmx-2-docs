@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="AssignMasterPagesFromMarkers"?><?dtall dict="BookBuildOverrides"?><?dtall
+dict="fmx"?><?dtall dict="masterpage"?><?dtall dict="StructMasterPageMaps"?><?dtall
+dict="UpdateBook"?><topic id = "id1248K0XN0Y4"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Custom Master Pages</title>
+<shortdesc>Custom master pages can be applied to specific pages
+throughout a book to provide alternate page layouts.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2012-04-08"/>
+<revised modified = "2014-03-28"/></critdates></prolog>
+<body><p><indexterm>StructMasterPageMaps</indexterm><indexterm>master
+page mapping</indexterm>By default, the structure application template
+or the component template will apply one or more master pages to
+a document based on the settings in the Master Page Usage dialog
+(<menucascade><uicontrol>Format</uicontrol><uicontrol>Page Layout</uicontrol>
+<uicontrol>Master Page Usage</uicontrol></menucascade>). If you
+need to apply additional master pages to specific pages you can
+use the standard FrameMaker custom master page mapping mechanism
+through the StructMasterPageMaps table Reference page. This mapping
+table lets you associate master pages to paragraph or element tags
+and define very detailed mapping contexts. For information on this
+feature, refer to the FrameMaker documentation.</p>
+<p>In order for the StructMasterPageMaps mapping table to be applied
+to the book components, you must select the <uicontrol>Apply Master
+Pages</uicontrol> option in the Book Build Settings dialog or set
+the BookBuildOverrides/UpdateBook parameter to “2” in the book-build
+INI file. Setting this value to “1” updates the book, but does not
+apply the mapping table.</p>
+<p><data datatype = "fm:marker" name = "Comment" value = "zzz" />If
+you’d like to apply the occasional master page without needing to
+set up this mapping table, insert an fmx-masterpage marker with
+the marker text set to the master page name to apply. Additionally,
+you must set the BookBuildOverrides/AssignMasterPagesFromMarkers
+parameter to “1” in the book-build INI file.</p>
+<p status = "changed">You can use an unstructured fmx-masterpage
+marker, which is stored in the DITA file as a processing instruction,
+or you can use the <synph status = "new" outputclass = "element">fm-data-marker</synph> element (which
+is stored as a DITA <synph status = "new" outputclass = "element">data</synph> element).
+If you use the <synph status = "new" outputclass = "element">fm-data-marker</synph> element,
+you’ll need to create the fmx-masterpage marker definition in the
+Topic and Book structure application templates (and potentially
+any component templates that are used).</p>
+<note>When using the <synph status = "new" outputclass = "element">fm-data-marker</synph> element
+as the fmx-masterpage marker, do not use the “Conditionalize data
+and data-about" option along with "Hide Conditionalized Content"
+option in the DITA-FMx Options dialog.</note></body></topic>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="FrameMaker\DITA"?><topic
+    id = "id46037b3b-abad-4302-acca-9b86261a381f" status = "changed"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Upgrading from DITA-FMx 1.0 or 1.1</title>
+<shortdesc status = "changed">Tips for a painless migration from
+an earlier version of DITA-FMx.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>test</author>
+<critdates><created date = "2009-02-19"/>
+<revised modified = "2014-04-13"/></critdates></prolog>
+<body status = "changed"><p status = "changed">DITA-FMx 2.0 should
+handle your existing DITA-FMx 1.1 structure applications without
+any problems, especially if you’re upgrading from the latest release (1.1.18).
+If you are using an older app, some of the new features that rely
+on specific structure application settings may not work. But you
+should be able to install the update and continue working, and expect
+the same level of functionality that you’re used to. When you are
+ready to migrate the new features into your structure application,
+you should review the <xref href = "ditafmx_apprequirements.xml#id0833I0F01HS"
+type = "topic" format = "dita" scope = "local"></xref> topic.</p>
+<p status = "new">The default structure application provided with
+DITA-FMx 2.0 supports the DITA 1.2 model. You should be able to
+use this app for DITA files created with earlier DITA models, but
+you can also continue to use your existing apps if you prefer.</p>
+<note type = "tip" status = "changed">The changes made to the structure
+applications are documented in the “Structure Application Updates”
+sections of the <xref href = "ditafmx_revisions.xml#id07C590FA05Z"
+type = "topic" format = "dita" scope = "local" status = "new"></xref> for
+each update. It may be useful to review all of these changes from
+your version when upgrading a custom structure application.</note>
+<p status = "new">Because DITA-FMx 2.0 installs into a new directory
+structure (<filepath status = "new">FrameMaker\DITA-FMx-2</filepath>),
+it will not overwrite your DITA-FMx installation. After running
+the installer, run FrameMaker and you’ll be prompted to install
+the new DITA 1.2 structure applications. These are also installed
+to a new directory structure so will not overwrite your existing
+application files.</p>
+<p status = "new">This allows you to maintain both DITA-FMx 1.1
+and 2.0 installations side-by-side. To switch from one to the other,
+see <xref href = "ditafmx_installing_fmx11and20.xml#id1413F0N035Z"
+type = "topic" format = "dita" scope = "local" status = "new"></xref>.</p>
+<p status = "new">After installing DITA-FMx 2.0, you may want to
+migrate some of the settings in the 1.1 <filepath status = "new">ditafmx.ini</filepath> file.
+There have been some changes to this INI file, but some of the settings
+will be the same.</p></body></topic>

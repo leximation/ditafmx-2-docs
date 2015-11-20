@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id666ef742-0059-405d-aaaa-0b2b02888e7c"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>indexterm and fm-indexterm</title>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2014-03-29"/></critdates></prolog>
+<body><p status = "new"><indexterm>elements<indexterm>fm-indexterm</indexterm></indexterm><indexterm>elements<indexterm>indexterm</indexterm></indexterm><indexterm
+status = "new">fm-indexterm element</indexterm>The <synph status = "new"
+    outputclass = "element">fm-indexterm</synph> element represents
+an <synph status = "new" outputclass = "element">indexterm</synph> element
+as a FrameMaker marker. If the <uicontrol>indexterm to fm-indexterm</uicontrol> option
+is enabled in the Options dialog, <synph status = "new"
+    outputclass = "element">indexterm</synph> elements and any index-related
+child elements are converted into the FrameMaker index marker syntax
+and added to an <synph status = "new" outputclass = "element">fm-indexterm</synph> element.</p>
+<p status = "changed">In order to support the <synph status = "new"
+    outputclass = "element">indexterm</synph> to <synph status = "new"
+    outputclass = "element">fm-indexterm</synph> conversion, the
+Topic and Book structure applications must have the <synph
+    status = "new" outputclass = "element">fm-indexterm</synph> element
+defined. This is a clone of the <synph status = "new"
+    outputclass = "element">indexterm</synph> element, but is defined
+as a Marker object rather than a Container. All general rules that
+allow the <synph status = "new" outputclass = "element">indexterm</synph> element
+should also allow the <synph status = "new" outputclass = "element">fm-indexterm</synph> element.
+The default value of the <synph status = "new" outputclass = "element">fm-indexterm</synph> element’s class
+attribute should be “- topic/indexterm fmx/fm-indexterm”. The <synph
+    status = "new" outputclass = "element">fm-indexterm</synph> marker
+only supports the conversion of <synph status = "new"
+    outputclass = "element">indexterm</synph> elements that have
+the following child elements: <synph status = "new"
+    outputclass = "element">indexterm</synph>, <synph status = "new"
+    outputclass = "element">index-see</synph>, <synph status = "new"
+    outputclass = "element">index-see-also</synph>, and <synph
+    status = "new" outputclass = "element">index-sort-as</synph>.
+If your DITA files use other child elements you should disable this optoin.</p>
+<p status = "changed">No rules are needed to properly process the <synph
+    status = "new" outputclass = "element">indexterm</synph> or <synph
+    status = "new" outputclass = "element">fm-indexterm</synph> elements.
+In fact, if you’re migrating an older structure application you
+should remove the <synph status = "new" outputclass = "element">indexterm</synph> rule,
+it is no longer needed.</p>
+<p status = "changed">If the <uicontrol>indexterm to fm-indexterm</uicontrol> option
+is disabled, <synph status = "new" outputclass = "element">indexterm</synph> elements
+will open as simple container elements.</p></body></topic>

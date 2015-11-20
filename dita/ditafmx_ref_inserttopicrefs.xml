@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="lck"?><topic id = "idb51249a1-ac44-44d5-b283-d0cf1b3b711f"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Insert Topicrefs</title>
+<shortdesc>Inserts one or more topicrefs at the current insertion
+point in a map.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "2015-03-30"/>
+<revised modified = "2015-03-30"/></critdates></prolog>
+<body><note>This command is only available on FM10 and later.</note>
+<p>Use this command to insert multiple topicrefs at the current
+insertion point in a DITA map. A file selection dialog displays
+where you can choose the topics to insert using SHIFT+CLICK. Due
+to limitations in the FM API, when selecting multiple files they must
+be sequential. This command will ignore selected “backup” and “lck”
+files.</p>
+<p>The new elements are inserted as <synph outputclass = "element">topicref</synph> elements.
+If you need different topic referencing elements, change them after
+insertion.</p></body></topic>

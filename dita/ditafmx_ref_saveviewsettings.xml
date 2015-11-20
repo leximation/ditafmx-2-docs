@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+
+<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "DITA-Data" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "idbc92f3f8-bd89-474b-88c6-cf2da308dafa"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Save View Settings</title>
+<shortdesc>Preserves the user’s view settings so they can restored
+without editing the default template file.</shortdesc>
+<body><p>This command saves the values of the following view settings:</p>
+<ul><li>Document zoom</li>
+<li>Attribute display options</li>
+<li>Element boundary type and view settings</li>
+<li>Visibility of borders, text symbols, rulers, and grid lines</li></ul>
+<p>To automatically restore these view settings to other documents
+as they are opened, enable the Restore Saved View Settings option.</p>
+<p>The view settings are saved in the FM document, not in XML files,
+so if you change a view setting, then close and reopen a file, those
+settings are not reapplied unless this option is enabled. Without
+this feature, you would need to edit the structure application template file
+by setting the desired options and saving that template. This feature
+allows multiple people to use the same structure application without
+needing to make modifications for personal use.</p>
+<note>This command does not save all of the possible “view” settings,
+just those listed above. To change other view options such as display
+or font units or grid spacing, edit those settings in the appropriate
+structure application’s template file.</note></body></topic>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="XDocsFMx"?><topic
+    id = "idda5aef37-7165-4d78-b691-286af977db92"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>2.0.03 - 31 March 2015</title>
+<prolog><author>scottp</author>
+<critdates><created date = "2015-03-16"/>
+<revised modified = "2015-03-31"/></critdates></prolog>
+<body><section status = "changed"><title outputclass = "h3">New
+features</title><dl status = "changed"><dlentry status = "changed">
+<dt status = "changed">Added support for ditaval filtering by deletion</dt>
+<dd status = "changed"><p>This feature more closely emulates the
+ditaval filtering done by the DITA-OT. Instead of content being
+hidden by FrameMaker’s conditional text feature, the content is
+deleted from the generated FM files. Additionally, if the root element of
+a generated file is to be excluded, that FM file is deleted from
+the book.</p><p>To support this feature, new INI parameters have
+been added. In the <filepath>ditafmx.ini</filepath> file you’ll
+see <codeph>BookBuild/DitavalFilterType</codeph> and in the book-build
+INI you can now use <codeph>BookBuildOverrides/DitavalFilterType</codeph>.
+The values for both of these can be 0 (no filtering), 1 (filter
+by conditions), or 2 (filter by deletion).</p><p>Another new <filepath>ditafmx.ini</filepath> parameter
+is <codeph>INIOnly/FilteringAttributes</codeph>. This specifies
+the attributes that are considered when performing ditaval filtering. The
+default value is a space-delimited string of attribute names “<codeph>audience product
+platform otherprops rev props</codeph>”.</p><p>The <uicontrol>Apply
+Ditaval As Conditions</uicontrol> command has been renamed to <menucascade>
+<uicontrol>Utilities</uicontrol><uicontrol>Apply Ditaval</uicontrol></menucascade> and
+now offers both filtering with conditions and filtering by deletion
+options.</p></dd></dlentry>
+<dlentry><dt status = "changed">Added support for ditaval filtering
+of reltables</dt>
+<dd><p>Ditaval filtering during the book-build process will now
+affect related links added from relationship tables, based on filtering
+attributes applied to <synph outputclass = "element">relrow</synph> and <synph
+    outputclass = "element">topicref</synph> elements.</p></dd></dlentry>
+<dlentry><dt status = "changed">Book-build enhancements</dt>
+<dd><p>The generated book file is now saved automatically at the
+end of a book-build.</p><p>The following options have been added
+to the book-build INI:</p><ul><li><p>BookBuildOverrides/MoveFigTitles
+- Move fig/title after image (2) or to the end of the fig (1).</p></li>
+<li><p>BookBuildOverrides/DitavalFilterType - (described above)</p></li>
+<li><p>DitavalDefaultsOverrides section - replicates values from
+the DitavalDefaults section in the <filepath>ditafmx.ini</filepath> file.
+If used in book-build INI file, overrides those settings for the
+current book build. Only applies to ditaval filtering that uses
+the filter by conditions option.</p></li></ul></dd></dlentry>
+<dlentry><dt status = "changed">New command: Insert Topicrefs</dt>
+<dd><p>The Insert Topicrefs command lets you insert multiple topicrefs
+at one time. This is only available on FM10 and later.</p></dd></dlentry>
+<dlentry><dt status = "changed">Enhanced support for Japanese indexes</dt>
+<dd><p>The <synph outputclass = "element">sort-as</synph> element
+now works properly for Japanese indexes.</p><p>Added new parameter
+to the <filepath>ditafmx.ini</filepath> file to support the Japanese
+index marker name. On Japanese systems the Index marker is not named
+“Index.” Set the <codeph>IndexOptions/IndexMarkerType</codeph> parameter
+to the correct name.</p></dd></dlentry>
+<dlentry><dt status = "changed">Added new option “Conditionalize
+required-cleanup”</dt>
+<dd><p>This option is similar to the other “conditionalize” options,
+and allows the automatic conditionalizing of any <synph
+    outputclass = "element">required-cleanup</synph> elements. It
+applies a DITA-Cleanup condition to the <synph outputclass = "element">required-cleanup</synph> elements.</p></dd></dlentry>
+<dlentry><dt status = "changed">Added new API command: MAPTOWORKBOOK</dt>
+<dd><p>If you’re performing automation with DITA-FMx, the new MAPTOWORKBOOK command
+will allow you to generate a “work book” from a map. This API is
+only available if FMx-Auto is enabled.</p></dd></dlentry>
+<dlentry><dt status = "changed">Added support for the AZARDI EPUB
+reader</dt>
+<dd><p>[Experimental] If you want to use an EPUB for online Help
+in DITA-FMx, you can do that with the AZARDI reader. To enable this,
+add the following entry to the <filepath>ditafmx.ini</filepath> file: <codeph>ExternalApplications/EPUBReaderAppExe=&lt;path-to-exe></codeph></p></dd></dlentry></dl></section>
+<section status = "changed"><title outputclass = "h3">Structure
+application updates</title><dl status = "changed"><dlentry>
+<dt status = "changed">Map DTD (fmx-map_1.2.dtd)</dt>
+<dd><p>Updated to add proper general rule for indexterms in maps.</p></dd></dlentry>
+<dlentry><dt status = "changed">Topic EDD (topic_1.2.edd.fm)</dt>
+<dd><p>Updated <synph outputclass = "element">synph</synph> element
+context rules to check for special values for <synph
+    outputclass = "attribute">outputclass</synph> attribute. If <synph
+    outputclass = "attribute">outputclass</synph> is set to “element”,
+the <synph outputclass = "element">synph</synph> content is wrapped
+in angle brackets, and if set to “attribute” an “@” prefix is added.</p></dd></dlentry>
+<dlentry><dt status = "changed">Topic template (topic_1.2.template.fm)</dt>
+<dd><p>Added DITA-Cleanup condition.</p><p>Imported updated EDD.</p></dd></dlentry>
+<dlentry><dt status = "changed">Topic rules (topic_1.2.rules.txt)</dt>
+<dd><p>Added ‘row’ and ‘entry’ rules.</p></dd></dlentry>
+<dlentry><dt status = "changed">Book XSLT (bookmap2fmbook.xsl)</dt>
+<dd><p>Added new metadata to fmx-variable mappings for: bookpartno,
+booknumber, maintainer/person, and maintainer/organization.</p></dd></dlentry>
+<dlentry><dt status = "changed">Book EDD (book_1.2.edd.fm)</dt>
+<dd><p>Added new fm-ditabook attributes for metadata to fmx-variable
+mappings: bookpartno, booknumber, maintainer/person, and maintainer/organization.</p><p>Added
+support for <synph outputclass = "element">fm-figuredesc</synph> (element
+definition and modified <synph outputclass = "element">fig</synph> general
+rule).</p><p>Updated <synph outputclass = "element">synph</synph> element
+context rules to check for special values for <synph
+    outputclass = "attribute">outputclass</synph> attribute. If <synph
+    outputclass = "attribute">outputclass</synph> is set to “element”,
+the <synph outputclass = "element">synph</synph> content is wrapped
+in angle brackets, and if set to “attribute” an “@” prefix is added.</p></dd></dlentry>
+<dlentry><dt status = "changed">Book DTD (fmx-book_1.2.dtd)</dt>
+<dd><p>Added new fm-ditabook attributes for metadata to fmx-variable
+mappings: bookpartno, booknumber, maintainer/person, and maintainer/organization.</p></dd></dlentry>
+<dlentry><dt status = "changed">Book template (book_1.2.template.fm)</dt>
+<dd><p>Added DITA-Cleanup condition.</p><p>Imported updated EDD.</p><p>Normalized
+the main Book template with the “gentpl” component templates to ensure
+that all para tags exist in all templates. This makes the “Save
+As PDF” from a generated book work better so the para tags are listed
+properly by default.</p></dd></dlentry>
+<dlentry><dt status = "changed">Book rules (book_1.2.rules.txt)</dt>
+<dd><p>Added ‘row’ and ‘entry’ rules.</p></dd></dlentry>
+<dlentry><dt status = "changed">Book component templates (tpl~*.fm
+and gentpl~*.fm)</dt>
+<dd><p>Rebuilt all component templates from the updated Book template.</p></dd></dlentry></dl></section>
+<section><title outputclass = "h3">Bug fixes / minor updates</title><dl
+    status = "changed"><dlentry><dt status = "changed">Book-build
+conditional tagging cleanup</dt>
+<dd><p>Removed the process that added the DITA-Topicmeta conditon
+to generated chapter files. Also made sure that all setting of conditions
+in generated chapter files was also applied to the generated list
+files. This seems to eliminate the book-build errors reported about
+inconsistent conditions.</p></dd></dlentry>
+<dlentry><dt status = "changed">Generate Workbook from Map updates</dt>
+<dd><p>The Generate Workbook from Map command has been updated to
+significantly decrease the time required to generate the book. For
+maps with many (100+) topics, this previously took 20 minutes or
+more. Now it might take a minute for 500 topics.</p></dd></dlentry>
+<dlentry><dt status = "changed">Auto-add @id updates</dt>
+<dd><p>The auto-add @id process now works when wrapping with an
+element that requires an @id attribute.</p></dd></dlentry>
+<dlentry><dt status = "changed">Fix Linebreaks option deprecated
+on FM12</dt>
+<dd><p>The Fix Linebreaks option is no longer needed on FM12 (in
+fact it was causing problems), so it is not available on that version
+of FM.</p></dd></dlentry>
+<dlentry><dt status = "changed">Linebreak PIs within preformatted
+elements</dt>
+<dd><p>Linebreak PIs are no longer added within preformatted elements.</p></dd></dlentry>
+<dlentry><dt status = "changed">Cleanup on coderef handling</dt>
+<dd><p>Edge cases of multiple <synph outputclass = "element">coderef</synph> elements
+in a <synph outputclass = "element">codeblock</synph>, now work
+better.</p></dd></dlentry>
+<dlentry><dt status = "changed">Properly reads nested key maps</dt>
+<dd><p>It’s often useful to create nested key maps, and now DITA-FMx
+will properly interpret the key definitions in those maps.</p></dd></dlentry></dl></section></body></topic>

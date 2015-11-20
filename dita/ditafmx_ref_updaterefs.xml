@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id067FF700BPN"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Update References</title>
+<shortdesc>Updates the content of topicrefs, conrefs, xrefs, or
+links.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2008-02-24"/>
+<revised modified = "2014-03-30"/></critdates></prolog>
+<body><p>Depending on the type of file currently being edited, this
+dialog provides options for updating references in the file. If
+a DITA map is active, you have the option to update the selected
+topicref or all topicrefs in the file. If a DITA topic file is active,
+you can update xrefs, links, and/or conrefs.</p>
+<fig audience = "web"><title>DITA-FMx Update References dialog box</title><image
+href="images/updaterefs.png" align="left" placement="break"  otherprops
+= "fmdpi:110"/></fig>
+<section><title>References in DITA Maps</title><p>Existing topicref
+elements can be updated so the label text reflects changes in the referenced
+file’s title. To update an existing topicref, select the label and
+choose the <uicontrol>Update References</uicontrol> command. The <uicontrol>Update
+References</uicontrol> command also lets you update all topicrefs
+in the DITA map reflect changes in the referenced files’ titles. This
+command honors the setting of the topicref’s locktitle attribute;
+if locktitle is set to ‘yes’ the navtitle text is not updated.</p><dl>
+<dlentry><dt>Update Selected Topicref</dt>
+<dd>Updates the content of the selected topicref (only if a topicref
+is selected).</dd></dlentry>
+<dlentry><dt>Update All Topicrefs in File</dt>
+<dd>Updates all of the topicrefs in the current file to reflect
+any changes to titles in referenced files.</dd></dlentry></dl></section>
+<section><title>References in DITA Topics</title><dl><dlentry><dt>Update
+All Conrefs in File</dt>
+<dd>Updates all of the conrefs in the current file to reflect any
+changes to the source content.</dd></dlentry>
+<dlentry><dt>Update All Xrefs in File</dt>
+<dd>Updates all of the xrefs and links in the current file to reflect
+any changes to titles in referenced files.</dd></dlentry></dl></section></body></topic>

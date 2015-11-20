@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "idf76b65f7-bfbd-4cab-9668-cdadd3e14376"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>0.02 - 18 December 2007</title>
+<prolog><author>test</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2014-04-13"/></critdates></prolog>
+<body><section><title outputclass = "h3">New Features</title><dl>
+<dlentry><dt>Book-building component is now included.</dt>
+<dd>The ability to generate a FrameMaker book from a DITA map is
+now included with DITA-FMx.</dd></dlentry>
+<dlentry><dt>Added ditaval filtering for authoring and output.</dt>
+<dd>The <uicontrol>Apply Ditaval as Conditions</uicontrol> command
+lets you apply ditaval filtering to the document being authored,
+and the <uicontrol>Use Selected Ditaval File</uicontrol> option
+in the Generate Output dialog lets you specify a ditaval file for
+use with a DITA-OT target.</dd></dlentry>
+<dlentry><dt>New “Auto Smart-Spaces” option makes it easier to work
+with code in documents.</dt>
+<dd>If enabled, this option automatically disables and enables the
+FrameMaker “Smart Spaces” option when the insertion point is moved
+into and out of a preformatted text element (one based on the “topic/pre”
+class).</dd></dlentry>
+<dlentry><dt>Child elements and line breaks can coexist in preformatted
+elements.</dt>
+<dd>The new option, “Fix line breaks in topic/pre elements,” properly
+allows for child elements within preformatted (“topic/pre”) elements.
+If this option is enabled, line breaks are no longer lost when a
+child element is before or after a line break. (This overcomes the
+native FrameMaker bug/feature.)</dd></dlentry>
+<dlentry><dt>The character sequence “]]&gt;” can be used in FrameMaker.</dt>
+<dd>Typically, you can’t include the characters “]]&gt;” within
+a FrameMaker document saved to XML. DITA-FMx now overcomes this
+standard limitation.</dd></dlentry>
+<dlentry><dt>Specify the number of reference levels to resolve.</dt>
+<dd>When you open a DITA file (and the auto-loading reference options
+are enabled), DITA-FMx resolves all conrefs and xrefs in all referenced
+files. This new option allows you to specify the number of reference
+levels to resolve (typically 2 is plenty). For documentation sets
+that make extensive use of references, this can significantly speed
+up the time it takes to open topic files.</dd></dlentry>
+<dlentry><dt>Pressing ESC while files are resolving will interrupt
+the process.</dt>
+<dd>If you need to abort the file resolving process, press ESC.</dd></dlentry>
+<dlentry><dt>The Reference Manager dialog now defaults to the last
+referenced file.</dt>
+<dd>Instead of defaulting to the current file, the Reference Manager
+now defaults to the most recently referenced file.</dd></dlentry>
+<dlentry><dt>External Xref dialog now provides External or Peer
+options for the scope attribute.</dt>
+<dd>The scope attribute of external xrefs were previously assigned
+the value of “external,” this value can now be set to either “external”
+or “peer.”</dd></dlentry>
+<dlentry><dt>When xrefs are created they are now populated with
+the proper type, format, and scope attributes.</dt>
+<dd>Xref elements created and modified through the Reference Manager
+are now assigned the proper type, format, and scope attributes.</dd></dlentry>
+<dlentry><dt>Set up environment variables before running the Ant
+script.</dt>
+<dd>The EnvironmentSetup INI-only parameter lets you specify a batch
+file to run before the Ant script in order to properly set up the
+environment for an OT build.</dd></dlentry>
+<dlentry><dt>Updated support for topicmeta element in a map.</dt>
+<dd>The EDD and template have been updated to provide a nicer rendering
+of topicmeta data. Also, a new option was added to the Options dialog
+to allow conditionalizing of topicmeta on file open.</dd></dlentry>
+<dlentry><dt>TOC and Index templates provided for easy book-building.</dt>
+<dd>Two template files are now provided with the Book application
+making it easy to set up a complete book.</dd></dlentry></dl></section>
+<section><title outputclass = "h3">Structure Application Updates</title><dl>
+<dlentry><dt>Topic Application.</dt>
+<dd>&lt;note> - Formatting changes to correct some indention issues.</dd>
+<dd>&lt;ol>, &lt;ul>, &lt;sl>, &lt;li>, and &lt;sli> - Formatting
+changes to correct indention and “red text” issues.</dd>
+<dd>&lt;xref> - Character format added for context scope= “external”
+(link.external).</dd>
+<dd>&lt;apiname> - Now formats as a text range.</dd></dlentry>
+<dlentry><dt>Book Application.</dt>
+<dd>Same updates as those for the Topic application.</dd>
+<dd>&lt;fm-ditabook> - Added &lt;fm-subditamap>.</dd>
+<dd>&lt;title> - Modified formatting of &lt;title> to provide support
+for maps of maps. Modified syntax- and group-related context labels
+so that they'd not be picked up in TOC generation that went to Level4.</dd></dlentry>
+<dlentry><dt>Map Application.</dt>
+<dd>Corrected copyright and legal info.</dd>
+<dd>&lt;topicmeta> - Added formatting for all &lt;topicmeta> elements
+when option is invoked. Added DITA-Topicmeta condition to template.</dd></dlentry></dl></section>
+<section><title outputclass = "h3">Bug Fixes</title><dl><dlentry><dt>Conrefs
+resolve properly.</dt>
+<dd>All known problems with conrefs have been fixed, including conrefs
+to tables and conrefs to single block elements.</dd></dlentry>
+<dlentry><dt>Xrefs that wrap over a line are no longer truncated
+on save.</dt>
+<dd>Xrefs at the end of a paragraph now save properly.</dd></dlentry>
+<dlentry><dt>Indexterms in book builds aren't duplicated.</dt>
+<dd>Nested indexterms in a book build resulted in the duplication
+of all but the top level entry, this no longer happens.</dd></dlentry>
+<dlentry><dt>Indexterm elements are no longer saved with the hard-coded
+class value.</dt>
+<dd>This made it impossible to specialize the indexterm element.</dd></dlentry>
+<dlentry><dt>DITA-Comment and DITA-Prolog conditions are no longer
+saved as PIs.</dt>
+<dd>Because conditions are saved as Processing Instructions, the
+DITA-Comment and DITA-Prolog conditions were saved as well. This
+caused a problem when the “Conditionalize element on file open”
+options were used, causing the condition to be set even when the
+options were disabled.</dd></dlentry>
+<dlentry><dt>In the DITA Options dialog, if an application is not
+selected, it shows as empty.</dt>
+<dd>Previously, this would default to the first application in the
+list.</dd></dlentry>
+<dlentry><dt>Table format and tgroup/@outputclass value are now
+in sync.</dt>
+<dd>Changing one updates the other.</dd></dlentry>
+<dlentry><dt>The clipboard contents are now saved before creating
+a new DITA file.</dt>
+<dd>Previously, the clipboard contents were lost when the New DITA
+File command was used.</dd></dlentry>
+<dlentry><dt>The Open All Topicrefs command properly processes all
+topicref files.</dt>
+<dd>Now all topicrefs are processed.</dd></dlentry>
+<dlentry><dt>No longer displays warning about comments when resolving
+references.</dt>
+<dd>This warning now only happens on file open (if the option is
+enabled).</dd></dlentry>
+<dlentry><dt>Elements with general rule of “&lt;TEXT>” now conref
+properly.</dt>
+<dd>Any elements with the lone general rule of “&lt;TEXT>” were
+saved incorrectly when included by conref. A temporary fix was to
+change the general rule to “(&lt;TEXT>)*” but this fix is no longer
+needed.</dd></dlentry>
+<dlentry><dt>The Reference Manager dialog now properly highlights
+the selected topic.</dt>
+<dd>Previously when double-clicking an existing xref, the current
+file was not selected.</dd></dlentry>
+<dlentry><dt>Long application names now display properly in the
+Options dialog.</dt>
+<dd>Previously, if an application name was so long that it wrapped
+in the <filepath>structapps.fm</filepath> file the name would be
+truncated in the Options dialog.</dd></dlentry></dl></section></body></topic>

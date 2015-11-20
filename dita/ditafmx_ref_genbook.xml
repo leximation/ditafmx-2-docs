@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="SaveAs"?><?dtall dict="UniqueID"?><?dtall dict="xml:lang"?><topic
+    id = "id07BHG0O075Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Generate Book from Map</title>
+<shortdesc>Generates a FrameMaker book and chapter files from the
+current DITA map.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "2008-02-24"/>
+<revised modified = "2014-04-03"/></critdates></prolog>
+<body status = "changed"><p status = "changed">This command builds
+a FrameMaker book by creating FM binary files from each top-level
+topic reference in a DITA map. Any topic references within a <synph
+    status = "new" outputclass = "element">frontmatter</synph> or <synph
+    status = "new" outputclass = "element">backmatter</synph> wrapper
+element are considered “top-level” topic references and become separate
+FM files. Additionally, if your bookmap uses a <synph status = "new"
+    outputclass = "element">part</synph> element to organize chapters,
+the file referenced by the <synph status = "new" outputclass = "element">part</synph> will
+become a separate FM file, and each child topic-referencing element
+in the <synph status = "new" outputclass = "element">part</synph> will
+be considered a top-level topic reference and will be added to the
+book after the generated part file.</p>
+<p status = "changed">If the current DITA map file has not been
+saved, it will be saved before processing begins. This command displays
+the <uicontrol>Generate Map from Book</uicontrol> dialog, which
+lets you specify the name and location of the book to be generated
+as well as the ability to select a ditaval file and set an alternate
+component template folder. You can also edit the associated book-build
+INI file (<filepath status = "new">ditafmx-bookbuild.ini</filepath>)
+or modify the default build settings from this dialog.</p>
+<note type = "tip">The only required setting in this dialog is the <uicontrol>Book
+File</uicontrol> name. If you want a quick test of the build process,
+just specify the book file location and the book and component FM
+files will be created there. A common practice is to create a folder named
+“<filepath>book”</filepath> within the DITA project folder.</note>
+<fig audience = "web print" status = "new"><title>Generate Book
+from Map dialog</title><image href="images/generate-book.png" align="left"
+placement="break"  otherprops = "fmdpi:110"/></fig>
+<p status = "new">If you don’t want to be prompted when overwriting
+files from a previous build, deselect the <uicontrol>Prompt to overwrite</uicontrol> option
+and if you want the build log (console file) to automatically open
+after the build completes, select the <uicontrol>Open console file</uicontrol> option. If
+the path specified for the book file does not exist, it will be
+created for you.</p>
+<p>The <uicontrol>Component Template Folder Override</uicontrol> option
+lets you specify an alternate location from which to read the component
+templates for the build. Similarly, the <uicontrol>Ditaval Override</uicontrol> option
+lets you select an alternate ditaval file. The default for both of
+these settings is defined in the book-build INI file (either local
+or default). The default ditaval can also be set in the Book Build
+Settings dialog (although the value in the book-build INI will override
+that in Settings).</p>
+<p status = "new">Once the book file name has been set, the <uicontrol>Edit
+INI</uicontrol> button opens the “local” book-build INI file which
+provides advanced options for controlling details of the book component
+creation. If no book-build INI file exists in the specified book
+output folder, the <uicontrol>Edit INI</uicontrol> button copies
+the default book-build INI to this location before opening it for
+editing. The <uicontrol>Delete INI</uicontrol> button is provided
+to remove the local INI file. If no book-build INI file exists in
+the book output folder, the settings are read from the default location
+or from the <uicontrol>Book Build Settings</uicontrol> dialog (the
+settings in the book-build INI override those in the Settings dialog).</p>
+<p>If the <uicontrol>Use Language Templates</uicontrol> option is
+enabled (in the Options dialog), a language-specific book-build
+INI file is read (if one exists). The language is determined by
+the <synph outputclass = "attribute">xml:lang</synph> value in the
+map. For example, if the <synph outputclass = "attribute">xml:lang</synph> value
+is “de-de”, the book-build INI file name would be <filepath>ditafmx-bookbuild.de-de.ini</filepath>.</p>
+<p status = "new">The book build process starts by aggregating the
+DITA topic files referenced by the map and any submaps into a single
+XML file which is imported into FrameMaker using the “Book” structure
+application which creates the book and chapter files. The resulting
+FM files are named based on the root topic file’s relative path
+and filename with a “.fm” file extension.</p>
+<p status = "new">If your map contains key definitions, a keyspace
+will be generated based on the selected ditaval file (if any). The
+default keyspace is reset after the build process completes.</p>
+<p status = "changed">Before using this command you should select
+the desired options in the Book Build Settings dialog, or carefully
+set up the book-build INI file for this project. The options specified
+in the Book Build Settings dialog are used for all book builds unless
+overridden by settings in a book-build INI file. This INI file is
+read from the same folder as the generated book file or in the user’s
+DITA-FMx folder (<menucascade status = "new"><uicontrol status = "new">DITA-FMx</uicontrol>
+<uicontrol status = "new">Open DITA-FMx Folder</uicontrol></menucascade>).</p>
+<p status = "new">Many of the more advanced options, such as numbering
+and pagination, must be set manually in the book-build INI file.
+You can maintain separate book-build INI files for each project,
+or one common INI in the user’s DITA-FMx folder.</p>
+<p status = "changed">Conrefs and xrefs that reference content within
+the book, are updated to point to the new FM files. Any references
+to DITA files that are not part of the final book, remain pointing
+at the source DITA file (with the href attribute modified to suit
+the new path if it has changed). The paths to referenced graphics
+are updated to account for any changes due to relative differences
+between the source files and the location of the generated FM files.
+If your files do reference files that are not part of the book (typically
+graphics and possibly conrefs), it is important to choose an appropriate
+location to generate the book so that the FM files and referenced
+files can be easily moved as needed.</p>
+<note>It is not uncommon to get “XML Parser Messages” in the “XML
+Read Report Log” regarding IDs that have been “already used.” This
+happens if you’ve used a conref multiple times and that conref contains
+an ID that is of type “UniqueID.” Frame doesn’t like multiple instances
+of the same UniqueID in the same document. DITA doesn’t care since
+they are in different topics. If you get this message, just choose
+the “OK” button and proceed.</note>
+<section><title>Maintaining a generated book</title><p
+    status = "changed">One possible way to build and maintain a
+custom book is described below. The use of a <filepath>ditafmx-bookbuild.ini</filepath> file
+and component templates should obviate the need to maintain a book
+in the way, but this method is offered as an alternative.</p><ol><li><p>Generate
+the book and FM files with the Generate Book from Map command. Think
+of this as a “throw-away” book, and name it something temporary
+like <filepath>temp.book</filepath>.</p></li>
+<li><p>Create a new book by doing a SaveAs from the throw-away book.
+This is your “real” book, give it an appropriate name.</p></li>
+<li><p>Add your TOC, Index, and other non-DITA-based files to the
+“real” book.</p></li>
+<li><p>Setup the properties for each file in the “real” book. Select
+each file and right-click, then choose Numbering, Pagination, or
+Set Up, as appropriate.</p></li>
+<li><p>Now choose <menucascade><uicontrol>Edit</uicontrol><uicontrol>Update
+Book</uicontrol></menucascade> to generate your TOC and Index.</p></li>
+<li><p>Save the “real” book.</p></li></ol><p>Now, when you update
+your DITA files, re-run the Generate Book from Map command and overwrite
+the “throw-away” book and the FM content files will be replaced
+with fresh versions. Just close the “throw-away” book file that’s
+been generated, then open your “real” book and do an <menucascade>
+<uicontrol>Edit</uicontrol><uicontrol>Update</uicontrol></menucascade> to
+refresh the TOC and Index and your book is ready to print.</p></section></body></topic>

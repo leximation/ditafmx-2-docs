@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="XDocsFMx"?><topic
+    id = "id2ca30c3d-e66f-494e-82a6-30d3233aa532"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>2.0.02 - 10 August 2014</title>
+<prolog><author>Scott Prentice</author>
+<author>test</author>
+<author>scottp</author>
+<critdates><created date = "2014-01-02"/>
+<revised modified = "2014-08-10"/></critdates></prolog>
+<body><section status = "changed"><title outputclass = "h3">New
+features</title><dl status = "changed"><dlentry status = "changed">
+<dt status = "changed">Support for XDocsFMx 2.0</dt>
+<dd status = "changed"><p>This update provides support for the XDocsFMx
+2.0 connector providing DITA 1.2 features with the XDocs CMS.</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">Keyrefs to a
+topic now use title text, also provides alt text support</dt>
+<dd status = "changed"><p>When the associated <synph
+    outputclass = "element">keydef</synph> for a key element reference
+(like a <synph outputclass = "element">keyword</synph>) does not
+define <synph outputclass = "element">topicmeta</synph> content,
+the effective element content is now pulled from the topic title
+referenced by the <synph outputclass = "element">keydef</synph> <synph
+    outputclass = "attribute">href</synph>. Also, key element references
+can make use of alternative text when no <synph outputclass = "element">topicmeta</synph> content
+is defined.</p></dd></dlentry></dl></section>
+<section status = "changed"><title outputclass = "h3">Structure
+application updates</title><p>NONE.</p></section>
+<section><title outputclass = "h3">Bug fixes / minor updates</title><dl
+    status = "changed"><dlentry><dt status = "changed">Book-build
+process supports complex paths</dt>
+<dd><p>The Generate Book from Map command can now handle more complex
+directory structures than in previous releases. A topicref/@href
+that starts with a “..\” should resolve properly now.</p></dd></dlentry>
+<dlentry><dt status = "changed">Conrefs to figs are not deleted
+when using the Move Figure Title option</dt>
+<dd><p>Previously, when using the “Move Figure Titles” option for
+book-builds, a conref to a <synph outputclass = "element">fig</synph> would
+result in that element being deleted from the output. This has been
+fixed.</p></dd></dlentry>
+<dlentry><dt status = "changed">Insert Key Element Reference dialog
+supports multiple keyspaces</dt>
+<dd><p>Available keys are now properly updated when a different
+keyspace is selected.</p></dd></dlentry>
+<dlentry><dt status = "changed">Using keyrefs with images on Windows
+Vista/7/8</dt>
+<dd><p>Images that use a keyref with no href fallback should work
+properly now on Windows Vista/7/8.</p></dd></dlentry>
+<dlentry><dt status = "changed">Update References: xref option works
+properly</dt>
+<dd><p>The Update References xref option no longer deletes xrefs.</p></dd></dlentry>
+<dlentry><dt status = "changed">Set Attributes dialog provides Edit
+INI button</dt>
+<dd><p>A new Edit INI button lets you easily make edits to the <filepath>filtergroups.ini</filepath> file
+to control filtering groups displayed in the dialog.</p></dd></dlentry></dl></section></body></topic>

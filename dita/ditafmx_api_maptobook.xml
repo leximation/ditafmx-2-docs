@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id08C1B0R60Y4"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>MapToBook</title>
+<shortdesc>Runs the DITA map to FM book conversion process.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2015-03-31"/></critdates></prolog>
+<body><p>This function generates an FM book and FM chapter files
+from the specified DITA map. It also runs the FixBookRefs and LoadReferences
+functions to properly resolve all references. If this function is
+used to generate an FM book, you should not use the FixBookRefs
+and LoadReferences functions. All parameters listed below are required.</p>
+<section id = "id085HGH00RHT" status = "changed"><title>Syntax</title><codeblock status = "changed">F_ApiCallClient("ditafmx", "MapToBook |<varname>mapName</varname> |<varname>appName</varname> |<varname>outBookName</varname>");</codeblock><dl>
+<dlentry><dt><varname>mapName</varname></dt>
+<dd>Full path and filename of the DITA map to use as the source
+for the book. To use the “current” document as the map, use a “.”
+(period) as the <varname>mapName</varname> value. Required.</dd></dlentry>
+<dlentry><dt><varname>appName</varname></dt>
+<dd>Name of the structure application to use for the conversion.
+Required.</dd></dlentry>
+<dlentry><dt><varname>outBookName</varname></dt>
+<dd>Path and filename of the new book file to generate. If a relative
+path is used for the <varname>outBookName</varname>, it is assumed
+to be relative to the DITA map being processed. Required.</dd></dlentry></dl><note
+conref = "ditafmx_shared.xml#common/fmxapi_auto" status = "changed"></note></section>
+<section><title>Return Value</title><dl compact = "yes"><dlentry><dt>0</dt>
+<dd>Failure. Unable to update the specified document. It is also
+possible that DITA-FMx is not available for calls. Verify that DITA-FMx
+is registered in the <filepath>maker.ini</filepath> file using the
+client name of “ditafmx”.</dd></dlentry>
+<dlentry><dt>&lt;0</dt>
+<dd>Failure. The number of parameters passed (as a negative number).
+If more or fewer than 4 parameters are passed, that number will
+returned as a negative number.</dd></dlentry>
+<dlentry><dt>>0</dt>
+<dd>Successfully converted the specified map (this is the value
+of the generated <varname>bookId</varname>).</dd></dlentry></dl></section></body></topic>

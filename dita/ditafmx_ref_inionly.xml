@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="ANT:&lt;buildname"?><?dtall dict="AntBuild"?><?dtall dict="AntCommand"?><?dtall
+dict="AntScript"?><?dtall dict="app"?><?dtall dict="BaselineOffset"?><?dtall
+dict="BookTitleVariableName"?><?dtall dict="BuildFile"?><?dtall dict="booklists"?><?dtall
+dict="booktitle"?><?dtall dict="buildname"?><?dtall dict="CMSClientName"?><?dtall
+dict="CMSImageDefaultDpi"?><?dtall dict="CrossRefToXref"?><?dtall dict="CustomTableCount"?><?dtall
+dict="DitaDir"?><?dtall dict="DitaFMxGuide"?><?dtall dict="DitaHelpKeys"?><?dtall
+dict="DitaLinkElem"?><?dtall dict="DitaReference"?><?dtall dict="DitaRefTargetPath"?><?dtall
+dict="DitaRefTargetPath>]&lt;eleme"?><?dtall dict="DitaRefTargetPath>]&lt;element"?><?dtall
+dict="DitaRefTargetType"?><?dtall dict="DitavalFiles"?><?dtall dict="DitaXrefElem"?><?dtall
+dict="DTDs"?><?dtall dict="ditabook"?><?dtall dict="ditafmx"?><?dtall dict="doctype>:&lt;key"?><?dtall
+dict="EnvironmentSetup"?><?dtall dict="element>|&lt;cell"?><?dtall dict="element>|&lt;row"?><?dtall
+dict="FlattenedConrefAttr"?><?dtall dict="FMxBookTitle"?><?dtall dict="FmDpiUseOutputclass"?><?dtall
+dict="FmXrefUseOutputclass"?><?dtall dict="ForceTablesWide"?><?dtall dict="FrameMaker\DITA"?><?dtall
+dict="fmdpi:N"?><?dtall dict="GeneralExport"?><?dtall dict="GeneralImport"?><?dtall
+dict="IgnoreElemPrefix"?><?dtall dict="IndextermProcessing"?><?dtall dict="ja"?><?dtall
+dict="Logfile"?><?dtall dict="MapFromOutlineTemplate"?><?dtall dict="MaxOpenFiles"?><?dtall
+dict="MaxRefLevels"?><?dtall dict="MissingImageDir"?><?dtall dict="mainbooktitle"?><?dtall
+dict="NewMapShortcuts"?><?dtall dict="NewTopicShortcuts"?><?dtall dict="new~&lt;topictype>~&lt;template"?><?dtall
+dict="OutputDir"?><?dtall dict="pgwide"?><?dtall dict="pts"?><?dtall dict="RunaroundOff"?><?dtall
+dict="SetAttrIgnore"?><?dtall dict="SetAttrStrings"?><?dtall dict="SetAttrStringsDefault"?><?dtall
+dict="SetColumnsProp"?><?dtall dict="SetColumnWidthsProp"?><?dtall dict="Shift+Enter"?><?dtall
+dict="STRUCTDIR\xml\DITA"?><?dtall dict="StripClassAttribute"?><?dtall dict="StripPadding"?><?dtall
+dict="StripTrailing"?><?dtall dict="StructappsFile"?><?dtall dict="StructureDir"?><?dtall
+dict="simpletable"?><?dtall dict="structapps"?><?dtall dict="TableImport"?><?dtall
+dict="TableProcessing"?><?dtall dict="TplDelimChar"?><?dtall dict="tag>&lt;DitaRefTargetTy"?><?dtall
+dict="tag>&lt;DitaRefTargetType"?><?dtall dict="UseBooklistPlaceholder"?><?dtall
+dict="UseLanguageTemplate"?><?dtall dict="UseRefList"?><?dtall dict="Whitespace"?><?dtall
+dict="WriteDictionaryPIs"?><?dtall dict="WriteLineBreakPIs"?><?dtall dict="WriteLinkTextToFmXrefs"?><?dtall
+dict="XrefElements"?><?dtall dict="XrefElements=topic|concept|task|reference|section|dt"?><?dtall
+dict="XrefProcessing"?><?dtall dict="xml:lang"?><topic
+    id = "id067FF8008E9"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>INI-Only Settings</title>
+<shortdesc>Describes the settings that must be applied manually
+in the <filepath conref = "ditafmx_shared.xml#common/ditafm-ini"
+class = "+ topic/ph sw-d/filepath "></filepath> file.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>test</author>
+<author>scottp</author>
+<critdates><created date = "2008-02-18"/>
+<revised modified = "2015-08-10"/></critdates></prolog>
+<body status = "changed"><p id = "id1414G0HK05Z">The default values
+for these parameters should be sufficient for most people, but there
+are reasons that you may want to change the default behavior. The
+following settings must be changed manually in the <filepath conref
+= "ditafmx_shared.xml#common/ditafm-ini" class = "+ topic/ph sw-d/filepath
+"></filepath> file.</p>
+<dl status = "changed"><dlentry status = "changed">
+<dt status = "changed">INIOnly section</dt>
+<dd status = "new"><p status = "new"><indexterm status = "new">FlattenedConrefAttr,
+INI parameter</indexterm><indexterm status = "new">flattened conref,
+apply formatting</indexterm><indexterm status = "new">formatting
+of flattened conrefs</indexterm><b status = "new">FlattenedConrefAttr</b> -
+Specifies an attribute name to set on conref elements that have
+been flattened during the book-build process. By default this is disabled
+(set to an empty string), but if you set this to an attribute name
+such as “outputclass”, that attribute will be set with the value
+of “flattened-conref”. This can be useful if you want to apply formatting
+to content that was previously a conref (but has been flattened).</p></dd>
+<dd status = "changed"><p status = "new"><indexterm status = "new">MaxRefLevels,
+INI parameter</indexterm><b status = "changed">MaxRefLevels</b> -
+Specifies the number of nested files that are opened due to the
+auto-loading of references (xref or conref). If your files never
+have references within references (such as an xref within a conref),
+then you should set this to a value of “1”. If your files do make
+use of nested references, set this value equal to the maximum number
+of reference levels that exist. The greater the number the longer
+it may take to open files since all references in all opened files
+will resolve (unless limited by this option). Valid values are 0
+through 9 or “*” (asterisk means unlimited levels). Setting this
+value to 0 disables the auto-updating of xrefs and conrefs. (Defaults
+to “2” if this parameter is missing or set to a null string.)</p><p
+    id = "id1414G0I0OY4" status = "new">This reference resolving
+process is used when generating a book from a map, but is not used
+while authoring unless the INIOnly/UseRefList parameter is set to
+“0”.</p></dd>
+<dd status = "changed"><p status = "changed"><indexterm>UseRefList,
+INI parameter</indexterm><b status = "changed">UseRefList</b> -
+Controls the way references are resolved while authoring. If set to
+“1” (the default), references (xrefs and conrefs) are resolved “on
+disk,” allowing for much faster processing and less time required
+to open files. If set to “0” all referenced files are opened in
+FrameMaker in order to resolve the references. The number of files
+opened is determined by the reference nesting level, which is controlled
+by the General/MaxRefLevels parameter. (Defaults to “1” if this
+parameter is missing or set to a null string.)</p></dd>
+<dd><p><indexterm>StructappsFile, INI parameter</indexterm><b>StructappsFile</b> -
+Specifies an alternate file to use as the structure application definitions
+file. In order for this to function properly you must also have
+set the Directories/StructureDir parameter in the <filepath>maker.ini</filepath> file.
+(No default value, may be null.)</p></dd>
+<dd><p><indexterm>XrefElements, INI parameter</indexterm><b>XrefElements</b> -
+A vertical-bar delimited list of element names that defines the elements
+that are valid as xref or link targets. For example, setting XrefElements
+to the following string limits the xref targets to the elements
+specified:</p><ul><li>XrefElements=topic|concept|task|reference|section|dt</li></ul><p>If
+this parameter is not set, all elements are valid as xref or link
+targets. (No default value, may be null.)</p></dd>
+<dd><p><indexterm>DitaFMxGuide, INI parameter</indexterm><b>DitaFMxGuide</b> -
+Specifies the name of the DITA-FMx Help file (relative to the <filepath>FrameMaker\DITA-FMx</filepath> folder,
+unless an absolute path is specified). This Help file may be a CHM
+file or an EXE, or it may specify a URL (via the “http:” or “file:” protocols).
+If an EXE is specified, this is likely an AIR Help file, but may
+be any executable Help application set up to accept a command line
+parameter that indicates the target HTML filename to display. (Defaults
+to “ditafmx.chm” if this parameter is missing or set to a null string.)</p></dd>
+<dd><p><indexterm>DitaHelpKeys, INI parameter</indexterm><b>DitaHelpKeys</b> -
+Specifies the shortcut keystrokes to launch context-help for DITA
+authoring (this runs the “DitaReference” Help file). The keys defined
+here use the syntax for shortcuts as specified in the FDK Reference.
+(Defaults to “~/F1”, Alt+F1, if this parameter is missing or set
+to a null string.)</p></dd>
+<dd><p><indexterm>DitaReference, INI parameter</indexterm><indexterm>element-based
+context sensitive Help</indexterm><indexterm>context sensitive Help</indexterm><b>DitaReference</b> -
+Specifies the name of the DITA Reference Help file (relative to
+the <filepath>FrameMaker\DITA-FMx</filepath> folder), which is used
+for element-based context sensitive Help. This Help file may be
+a CHM file or an EXE, or it may specify a URL (via the “http:” or
+“file:” protocols). If an EXE is specified, this is likely an AIR
+Help file, but may be any executable Help application set up to
+accept a command line parameter that indicates the target HTML filename
+to display. (Defaults to “ditafmx-ref.chm” if this parameter is
+missing or set to a null string.)</p><p>Displaying the DITA Reference
+Help uses a combination of this and two other parameters, DitaRefTargetType
+and DitaRefTargetPath. If a DITA document is open and the insertion
+point is within a DITA element, when the user presses Alt+F1 (as
+defined by the DitaHelpKeys parameter), the following action is issued:</p><p>&lt;<i>DitaReference</i>>
+[&lt;<i>DitaRefTargetPath</i>>]&lt;<i>element-tag</i>>&lt;<i>DitaRefTargetType</i>></p><p>If
+the DitaReference parameter specifies a CHM or EXE file, the DitaRefTargetPath,
+selected element tag name, and the DitaRefTargetType (file extension) values
+are concatenated and passed to the Help system.</p><p>If the DitaReference
+parameter specifies a URL, the DitaReference, DitaRefTargetPath,
+selected element tag name, and the DitaRefTargetType (file extension) values
+are concatenated and the resulting URL is passed to the default
+web browser application.</p></dd>
+<dd><p><indexterm>DitaRefTargetType, INI parameter</indexterm><b>DitaRefTargetType</b> -
+Specifies the file extension of target topics in the “DitaReference”
+Help file for context sensitive Help. For additional information,
+refer to the DitaReference parameter above. (Defaults to “.html”
+if this parameter is missing or set to a null string.)</p></dd>
+<dd><p><indexterm>DitaRefTargetPath, INI parameter</indexterm><b>DitaRefTargetPath</b> -
+Specifies an optional “path” to target topics in the “DitaReference”
+Help file for context sensitive Help. For additional information,
+refer to the DitaReference parameter above. (No default value, may
+be null.)</p></dd>
+<dd><p status = "changed"><indexterm>MapFromListTemplate, INI parameter</indexterm><b>MapFromOutlineTemplate</b> -
+Specifies the “Map from Outline” template file used as the template
+for the <uicontrol>New ‘Map from Outline’ Template</uicontrol> command. (Defaults
+to “$STRUCTDIR\xml\DITA-FMx_1.2\map-from-outline_template.fm” if
+this parameter is missing or set to a null string.)</p></dd>
+<dd><p status = "changed"><indexterm>BookTitleVariableName, INI
+parameter</indexterm><b>BookTitleVariableName</b> - Specifies the
+name of the variable that is updated with the book title (from map/title,
+map/@title, bookmap/title, or bookmap/booktitle/mainbooktitle).
+This variable is only updated in generated list files if it is included
+in the generated list template (structured files can access the
+book title via the attribute on the fm-ditabook element). (Defaults
+to “FMxBookTitle” if this parameter is missing or set to a null
+string.)</p></dd>
+<dd status = "new"><p status = "changed"><indexterm>StripClassAttribute,
+INI parameter</indexterm><b status = "changed">StripClassAttribute</b> -
+Set this to “0” to prevent the @class attribute value from being
+deleted when changing an element’s type (using the “Change” button
+in the Element Catalog). (Defaults to “1”, enabled, if this parameter
+is missing or set to a null string.)</p></dd>
+<dd status = "new"><p status = "changed"><indexterm>TplDelimChar,
+INI parameter</indexterm><b status = "changed">TplDelimChar</b> -
+Set this to specify the character to use as the file name delimiter
+for new file templates (<filepath status = "new">new~&lt;topictype>~&lt;template
+name>.fm</filepath>), book-build component templates (<filepath
+    status = "new">tpl~&lt;mapelemtype>.fm</filepath>), and generated
+list templates (<filepath status = "new">gentpl~&lt;mapelemtype>.fm</filepath>).
+If necessary you can set this to a character, such as the hash symbol,
+#. (Defaults to “~” if this parameter is missing or set to a null
+string.)</p></dd>
+<dd status = "new"><p status = "changed"><indexterm>MaxOpenFiles,
+INI parameter</indexterm><b status = "changed">MaxOpenFiles</b> -
+Specifies the number of XML files opened before a warning is displayed.
+This is convenience when working with FM7.2 and FM8 to allow time to
+restart FrameMaker before it crashes. These versions of FrameMaker
+have a bug that results in a crash after opening 300+ XML files
+in the same session. (Defaults to “300” if this parameter is missing
+or set to a null string.)</p></dd>
+<dd status = "new"><p status = "changed"><indexterm>UseBooklistPlaceholder,
+INI parameter</indexterm><b status = "changed">UseBooklistPlaceholder</b> -
+Set this to “1” to revert to the pre 1.1.11 DITA-FMx method of requiring
+a placeholder file to generate a list. The default value “0” indicates
+that DITA-FMx will honor the “proper” syntax for frontmatter and backmatter
+list elements which does not require a placeholder file.</p></dd>
+<dd status = "new"><p status = "new"><indexterm>NewMapShortcuts,
+INI parameter</indexterm><indexterm>NewTopicShortcuts, INI parameter</indexterm><indexterm
+status = "new">new file shortcut keys</indexterm><indexterm status
+= "new">shortcut keys, new files</indexterm><b status = "changed">NewMapShortcuts</b> and <b
+    status = "new">NewTopicShortcuts</b> - Allows customization
+of the shortcut keys assigned to the New File menu items. The value
+for both of these is a space-delimited string of doctype/key pairs.
+Use the following syntax:</p><p status = "new">&lt;doctype>:&lt;key-sequence></p><p
+    status = "new">Where:</p><p status = "new">&lt;doctype> is the
+root topic or map element.</p><p status = "new">&lt;key-sequence>
+is the key sequence for the shortcut. To specify an ESC sequence
+the string starts with “\!” (backslash, exclamation). This is followed by
+2 or 3 characters or numbers (case sensitive). (In theory you can
+also use ALT “~” or CTRL “^” or SHIFT “+”, but this may or may not
+work well. You can also “try” to use function keys, which are defined
+as slash followed by “F” and the number, as in “/F3”.)</p><p
+    status = "new">For example, to create shortcuts for map, bookmap,
+topic, and task, you could use the following:</p><codeblock status = "new" outputclass = "ini">NewMapShortcuts=map:\!NMM bookmap:\!NMB 
+NewTopicShortcuts=topic:\!NTO task:\!NTA</codeblock></dd>
+<dd status = "new"><p status = "changed"><indexterm>FilteringAttributes,
+INI parameter</indexterm><b status = "changed">FilteringAttributes</b> -
+Specifies the attributes that are considered when performing ditaval
+filtering. The default value is a space-delimited string of attribute
+names: <codeph>audience product platform otherprops rev props</codeph>.</p></dd></dlentry>
+<dlentry id = "id13BNA0H0I5Z"><dt>INIOnly section (for use with
+the Set Attributes command)</dt>
+<dd><p><indexterm>SetAtt rIgnore, INI parameter</indexterm><b>SetAttrIgnore</b> -
+Specifies the attributes to ignore (and not display) in the Set Attributes
+dialog. This is a vertical bar delimited string. By default this
+is set to the following values, you can change these values or set
+this to a null string as needed.</p><codeblock expanse = "page">xtrc|xtrf|xmlns|class|xmlns:ditaarch|ditaarch:DITAArchVersion|domains</codeblock></dd>
+<dd><p><indexterm>SetAttrStrings, INI parameter</indexterm><b>SetAttrStrings</b> -
+Specifies the “filtering groups” INI file which defines values for
+the specified “Strings” attributes. These values are organized into
+named groups which can be associated with a specific file system
+path. All topic files that fall within the specified root path are
+mapped to that group. Each group lists one or more attributes and
+a vertical bar delimited list of default values for that attribute.
+This lets you provide alternate filtering options for different
+projects that use the same structure application without modifying
+the EDD. (Defaults to “FilterGroups.ini” if this parameter is missing
+or set to a null string.)</p><p>Unless the value of the SetAttrStrings
+parameter specifies an absolute path and file name, it is relative
+to the user’s DITA-FMx folder. If you use a SetAttrStrings file,
+no default values need be set in the EDD at all. This adds flexibility
+to the EDD not otherwise obtainable. For more information and details,
+see <xref href = "ditafmx_ref_setattributes.xml#id083DA0A0WY4" type
+= "topic" format = "dita" scope = "local"></xref>.</p></dd>
+<dd><p><indexterm>SetAttrStringsDefault, INI parameter</indexterm><b
+    id = "id083DC0501PF">SetAttrStringsDefault</b> - Specifies the
+“default” value that is ignored when displaying the list of defaults.</p><note>This
+INI parameter is for very specialized and atypical use. Unless you are
+doing special FDK processing using attributes of type “Strings”
+you can safely ignore the following information.</note><p>When you
+specify default values to a Strings attribute in the EDD, the first default
+may be used as the actual default for certain types of processing.
+If you want to specify a special value as the first default so that
+your processing can match on it and ignore the value, enter that
+string as the value for the SetAttrStringsDefault parameter. A likely
+value is the dot (“.”) character, but you can specify any value
+that makes sense for your processing. If you specify this value,
+it will be ignored and excluded from the options displayed in the
+Set Attribute dialog. (Defaults to “.” if this parameter is missing,
+but this value may be set to a null string.)</p><p>If you do not
+have processing that cares about the initial default value of a Strings
+attribute, you can ignore this parameter.</p></dd></dlentry>
+<dlentry id = "id13BNA0H0TY4" status = "changed">
+<dt status = "changed">INIOnly section (for use with content management
+systems)</dt>
+<dd status = "changed"><p status = "changed"><indexterm>CMSClientName,
+INI parameter</indexterm><b status = "changed">CMSClientName</b> -
+Specifies the FDK client name used to connect with the CMS bridge
+or connector. Typically set automatically by the CMS client. (No
+default value, may be null.)</p></dd>
+<dd status = "changed"><p status = "changed"><indexterm>CMSImageDefaultDpi,
+INI parameter</indexterm><b status = "changed">CMSImageDefaultDpi</b> -
+Specifies the default DPI for new images. Currently only used for
+XDocs CMS. (Defaults to “72” if this parameter is missing or set to
+a null string.)</p></dd></dlentry>
+<dlentry><dt status = "changed">GeneralImport section</dt>
+<dd><p><indexterm>IndextermProcessing (import), INI parameter</indexterm><b>IndextermProcessing</b> -
+If set to 1, enables conversion of indexterm elements to proper
+format required by FrameMaker. This parameter is set through the user
+interface as the <option>Indexterm to Fm-indexterm Conversion</option> option
+in the DITA-FMx Options dialog and should not be set manually without
+care. (Defaults to “1” if this parameter is missing or set to a
+null string.)</p></dd>
+<dd><p><indexterm>StripPadding, INI parameter</indexterm><b>StripPadding</b> -
+If set to 1, strips leading space from the XML. This parameter is
+set through the <option>Normalize Whitespace on Import</option> option
+in the DITA-FMx Options dialog. (Defaults to “1” if this parameter
+is missing or set to a null string.)</p></dd>
+<dd><p><indexterm>StripTrailing, INI parameter</indexterm><b>StripTrailing</b> -
+If set to 1, strips space characters from the XML that follow the opening
+or closing block-level element tags. This only strips the spaces
+when there are no other non-space characters in the node that follow
+the open or close element. (Defaults to “1” if this parameter is
+missing or set to a null string.)</p></dd>
+<dd><p><indexterm>TableProcessing, INI parameter</indexterm><b>TableProcessing</b> -
+If set to 1, enables the counting of table columns for proper import
+of simpletable and other table types into FrameMaker. (Defaults
+to “1” if this parameter is missing or set to a null string.)</p></dd>
+<dd><p><indexterm>MissingImageDir, INI parameter</indexterm><b>MissingImageDir</b> -
+Specifies the folder that the “missing image” files are stored.
+This location is relative to the DITA-FMx folder in the Program
+Files area, and defaults to “missing-images” if not specified. To
+specify an alternate location, specify an absolute path to the folder
+that contains these files. To disable this feature, set this parameter
+to “0” (zero) or “Off”.</p><p>This feature is intended to eliminate
+the XML parser log messages during a book-build that may incorrectly
+report images as missing. This would often happen when generating
+a book file into a folder structure that varies significantly from
+that of the source folder structure. On import, the images would
+in fact not be found, but the DITA-FMx “Reload References” book-build
+option would resolve these references.</p><p>If enabled, during
+the book-build process the images in the MissingImageDir folder
+will temporarily replace the actual images to prevent the errant
+XML parser log messages. This folder must contain a “break” and
+“inline” image for each file type in use in your documents. These
+files are named “missing-image-break.&lt;EXT>” and “missing-image-inline.&lt;EXT>”.</p></dd></dlentry>
+<dlentry><dt>GeneralExport section</dt>
+<dd><p><indexterm>IndextermProcessing (export), INI parameter</indexterm><b>IndextermProcessing</b> -
+If set to 1, enables conversion of indexterm elements from the format
+required by FrameMaker back to one required by DITA. This parameter
+is set through the user interface as the <option>Indexterm to Fm-indexterm Conversion</option> option
+in the DITA-FMx Options dialog and should not be set manually without
+care. (Defaults to “1” if this parameter is missing or set to a
+null string.)</p></dd>
+<dd><p><indexterm>XrefProcessing, INI pa rameter</indexterm><b>XrefProcessing</b> -
+If set to 1, enables processing and conversion of xrefs and links.
+(Defaults to “1” if this parameter is missing or set to a null string.)</p></dd>
+<dd><p><indexterm>CrossRefToXref, INI parameter</indexterm><b>CrossRefToXref</b> -
+If set to 1, enables the conversion of FM-based cross-references
+to DITA-based xrefs and links. (Defaults to “1” if this parameter
+is missing or set to a null string.)</p></dd>
+<dd><p><indexterm>DitaXrefElem , INI parameter</indexterm><b>DitaXrefElem</b> -
+Defines the element name to use when mapping FM-based cross-refs
+to DITA xrefs on file export (only used if GeneralExport/CrossRefToXref
+is enabled). (Defaults to “xref” if this parameter is missing or
+set to a null string.)</p></dd>
+<dd><p><indexterm>DitaLinkElem, INI parameter</indexterm><b>DitaLinkElem</b> -
+Defines the element name to use when mapping FM-based cross-refs
+to DITA links on file export (only used if GeneralExport/CrossRefToXref
+is enabled). (Defaults to “link” if this parameter is missing or
+set to a null string.)</p></dd>
+<dd><p><indexterm>IgnoreElemPrefix, INI parameter</indexterm><b>IgnoreElemPrefix</b> -
+If you use elements in FrameMaker that do not exist in the DITA
+DTDs, you should make sure they all have the same prefix (“fm-”
+for example). This INI setting specifies that prefix. This is required
+for proper generation of conrefs on export, and should be used in
+conjunction with any read/write rules that may be needed. (Defaults
+to “fm-” if this parameter is missing or set to a null string.)</p></dd>
+<dd><p><indexterm>WriteLinkTextToFmXrefs, INI parameter</indexterm><b>WriteLinkTextToFmXrefs</b> -
+If set to 1, specifies that the link text of fm-xrefs is written
+to the xref element on file save. Normally, this link text is regenerated based
+on the target element text, but if you want the FM-generated text
+to be available for other processing engines, this should be enabled.
+(Defaults to “0” if this parameter is missing or set to a null string.)</p></dd>
+<dd><p><indexterm>WriteLineBreakPIs, INI parameter</indexterm><indexterm>dtall
+break, processing instruction</indexterm><indexterm>processing instruction,
+dtall break</indexterm><b>WriteLineBreakPIs</b> - If set to 1, specifies
+that line breaks (Shift+Enter) are written to the XML file as a
+processing instruction (PI). If DITA-FMx encounters a PI of <codeph>&lt;?dtall
+break="line"?></codeph>, it inserts a line break, thus allowing
+proper round-tripping of line breaks between authoring and publishing.
+Note that the line breaks will only be persevered when publishing
+through FrameMaker (and DITA-FMx), and other tools that honor this
+processing instruction. (Defaults to “1” if this parameter is missing
+or set to a null string.)</p></dd>
+<dd><p><indexterm>WriteDictionaryPIs, INI parameter</indexterm><indexterm>document
+dictionary</indexterm><indexterm>dictionary, document</indexterm><indexterm>dtall
+dict, processing instruction</indexterm><indexterm>processing instruction,
+dtall dict</indexterm><b>WriteDictionaryPIs</b> - If set to 1, specifies
+that words flagged by the spelling checker as “Allow in Document”
+are written to the XML file as a processing instruction (PI) before
+the root topic node (<codeph>&lt;?dtall dict="allowed-word"?></codeph>). On
+file open these words are loaded in to the document dictionary for
+the current file. Note that these processing instructions are not
+likely to be honored by other tools. (Defaults to “1” if this parameter
+is missing or set to a null string.)</p><note>Over time if you clone
+a topic file for other uses, these processing instructions may build
+up in the file. You can delete the items in the document dictionary
+for a given file by opening that file and choosing the Dictionaries button
+in the Spelling Checker dialog. In that dialog select the Document Dictionary
+option, choose Clear from the list, then choose OK.</note></dd>
+<dd><p status = "changed"><indexterm>FmXrefUseOutputclass, INI parameter</indexterm><b>FmXrefUseOutputclass</b> -
+If set to 1, specifies that <synph outputclass = "element">fm-xref</synph> elements
+use the <synph outputclass = "attribute">outputclass</synph> attribute
+rather than the <synph outputclass = "attribute">type</synph> attribute
+to store the cross-ref format name. (In DITA-FMx 1.1 the default
+was “0”, but now it is “1”.)</p></dd>
+<dd><p status = "changed"><indexterm>FmDpiUseOutputclass, INI parameter</indexterm><indexterm>fmdpi
+feature, attribute used</indexterm><b>FmDpiUseOutputclass</b> -
+If set to 1, specifies that the “fmdpi” value is assigned to the <synph
+    outputclass = "attribute">outputclass</synph> attribute rather
+than the <synph outputclass = "attribute">otherprops</synph> attribute.</p><p
+    status = "new">DITA-FMx 1.1 used the <synph
+    outputclass = "attribute">otherprops</synph> attribute, which
+was not the intended use for that attribute. Using the <synph
+    outputclass = "attribute">outputclass</synph> attribute is more
+in line with the DITA specification. This setting controls how this
+attribute is added to new elements, but does not affect existing
+elements. The sizing of images will work properly regardless of
+the attribute the “fmdpi:<i>NN</i>” value is assigned.</p></dd></dlentry>
+<dlentry><dt>TableImport section</dt>
+<dd><p><indexterm>SetColumnsProp, INI parameter</indexterm><b>SetColumnsProp</b> -
+If set to 1, enables the automatic assignment of the “columns” property.
+(Defaults to “1” if this parameter is missing or set to a null string.)</p></dd>
+<dd><p><indexterm>SetColumnWidthsProp, INI parameter</indexterm><b>SetColumnWidthsProp</b> -
+If set to 1, enables the automatic assignment of the “column width”
+property. (Defaults to “1” if this parameter is missing or set to a
+null string.)</p></dd>
+<dd><p><indexterm>CustomTableCount, INI parameter</indexterm><b>CustomTableCount</b> and <b><i>N</i></b> -
+Specifies the number of instances of simpletable elements that have
+been specialized that need to be automatically analyzed for their
+column number. The <i>Count</i> value should match the number of <i>N</i> values. Each <i>N</i> value
+should have the following format: “&lt;table-element>|&lt;row-element>|&lt;cell-element>”.</p></dd></dlentry>
+<dlentry><dt>IndexOptions section</dt>
+<dd><p><indexterm>IndexMarkerType, INI parameter</indexterm><indexterm>Japanese
+index marker type</indexterm><b>IndexMarkerType</b> - Specifies
+the name of the index marker type. Useful for Japanese systems,
+which use a localized name for the index marker. (Defaults to “Index”
+if this parameter is missing or set to a null string.)</p></dd></dlentry>
+<dlentry><dt>ExternalApplications section</dt>
+<dd><p><indexterm>EPUBReaderAppExe, INI parameter</indexterm><b>EPUBReaderAppExe</b> -
+Registers the path and filename of the AZARDI EPUB reader application
+to use if an EPUB file is specified in the DitaFMxGuide or DitaReference
+parameters. (This feature is considered experimental.)</p></dd></dlentry>
+<dlentry><dt>BuildFile section</dt>
+<dd><p><indexterm>AntCommand, INI parameter</indexterm><b>AntCommand</b> -
+Specifies the command or path/command used to run Ant. The default
+is “ant”, but if you need to specify another executable or if you
+need to include the path, change this value. This value is used
+for both Generate Output options, Current File and Selected Target.
+(Defaults to “ant” if this parameter is missing or set to a null
+string.)</p></dd>
+<dd><p><indexterm>EnvironmentSetup, INI parameter</indexterm><b>EnvironmentSetup</b> -
+Specifies a batch file to run before the Ant script in order to
+set up any needed environment variables. This parameter can be set
+through the DITA-FMx Options dialog in the External Application
+Settings dialog. (No default value, must be set to use the Generate
+Output command.)</p></dd>
+<dd><p><indexterm>DitaDir, INI parameter</indexterm><b>DitaDir</b> -
+Specifies the folder that contains the DITA-OT files. This parameter can
+be set through the DITA-FMx Options dialog in the External Application Settings
+dialog. (No default value, must be set to use the Generate Output command.)</p></dd>
+<dd><p><indexterm>EnvironmentSetup-BUILD, INI parameter</indexterm><b>EnvironmentSetup-&lt;buildname></b> -
+Specifies an alternate batch file to override the default specified
+by EnvironmentSetup. Allows you to define builds that rely on different
+DITA environments.</p></dd>
+<dd><p><indexterm>DitaDir-BUILD, INI parameter</indexterm><b>DitaDir-&lt;buildname></b> -
+Specifies an alternate location for the DITA-OT folder to override
+the default specified by DitaDir. Allows you to define builds that
+rely on different DITA environments.</p></dd>
+<dd><p><indexterm>AntScript, INI parameter</indexterm><b>AntScript</b> -
+Specifies the filename of the Ant script that is run for the Generate Output:
+Current File option. The default is “ditafmx-ant.xml”, but if you
+need to specify another filename, change this value. This filename
+is assumed to be relative to the path specified by the <i>DitaDir</i> parameter.
+(Defaults to “ditafmx-ant.xml” if this parameter is missing or set
+to a null string.)</p></dd>
+<dd><p><indexterm>Count (BuildFile), INI parameter</indexterm><b>Count</b> and <b><i>N</i></b> -
+Specifies the number of build options available in the <i>AntScript</i> file
+(and thus displayed in the Generate Output: Current File output
+option). If you modify the targets in that script, be sure to update
+the <i>Count</i> value and add/remove the related <i>N</i> value.</p></dd></dlentry>
+<dlentry><dt>AntBuild section</dt>
+<dd><p><indexterm>Count (AntBuild), INI parameter</indexterm><b>Count</b> and <b><i>N</i></b> -
+Specifies the number of “ANT:” sections which define the available
+build options displayed in the Generate Output: Selected Target
+output option. For each “ANT:” section added, you must update the <i>Count</i> value
+and add/remove the related <i>N</i> value. The value of each <i>N</i> parameter
+must exactly match the text following the “ANT:” section name.</p></dd></dlentry>
+<dlentry><dt>ANT:&lt;buildname> section</dt>
+<dd><p><indexterm>BuildFile, INI parameter</indexterm><b>BuildFile</b> -
+Specifies path and filename of the associated Ant script (use double backslashes
+as the directory delimiter). (No default value, must be set to use the
+Selected Target option of the Generate Output command.)</p></dd>
+<dd><p><indexterm>EnvironmentSetup (ANT), INI parameter</indexterm><b>EnvironmentSetup</b> -
+Specifies a batch file to run before the Ant script in order to
+set up any needed environment variables.</p></dd>
+<dd><p><indexterm>Target, INI parameter</indexterm><b>Target</b> -
+Specifies target within the <i>BuildFile</i>. (No default value,
+must be set to use the Selected Target option of the Generate Output
+command.)</p></dd>
+<dd><p><indexterm>OutputDir, INI parameter</indexterm><b>OutputDir</b> -
+Specifies the path to the output directory (use double backslashes as
+the directory delimiter). (No default value, must be set to use
+the Selected Target option of the Generate Output command.)</p></dd>
+<dd><p><indexterm>Logfile, INI parameter</indexterm><b>Logfile</b> -
+Specifies the path and filename to the log file (use double backslashes as
+the directory delimiter). (No default value, must be set to use
+the Selected Target option of the Generate Output command.)</p></dd></dlentry></dl></body></topic>

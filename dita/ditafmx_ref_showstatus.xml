@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id825304a7-efbb-4907-b9ab-1e492c7f6523"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Show Status</title>
+<shortdesc status = "changed">Applies conditional tagging to content
+based on the value of the status attribute. The conditional tagging
+in turn can apply special styling like change bars and strikethrough.</shortdesc>
+<prolog><author>scottp</author>
+<critdates><created date = "2015-09-04"/>
+<revised modified = "2015-09-04"/></critdates></prolog>
+<body><p status = "new"><indexterm status = "new">change bars</indexterm><indexterm
+status = "new">Show Status command</indexterm><indexterm status
+= "new">status, change bars</indexterm>When run on a file or book,
+applies special status-oriented conditions to elements based on
+the value of the status attribute. The following list shows the
+condition names applied for each status value and the corresponding
+default style:</p>
+<ul><li status = "new">“new” -> DITA-StatusNew (style: change bar)</li>
+<li status = "changed">“changed” -> DITA-StatusChanged (style: change
+bar)</li>
+<li status = "deleted">“deleted” -> DITA-StatusDeleted (style: strikethrough)</li>
+<li status = "unchanged">“unchanged” -> DITA-StatusUnchanged (style:
+overline)</li></ul>
+<p status = "new">If these conditions exist in the current file
+(as defined by the corresponding template), the styling applied
+is based on those condition definitions. If the conditions don’t
+exist, they are created and asigned the styles listed above.</p></body></topic>

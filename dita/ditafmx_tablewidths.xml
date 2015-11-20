@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="darkblue"?><?dtall dict="ForceTablesWide"?><?dtall dict="PreserveTableWidths"?><?dtall
+dict="pgwide"?><?dtall dict="stentry"?><?dtall dict="tableformat"?><topic
+    id = "id1429F0LD0YK"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Controlling Table Widths</title>
+<shortdesc status = "changed">Tables will typically fill the available
+text column width, but there are options if you need specific control
+over table widths.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates status = "changed"><created date = "2009-02-08"/>
+<revised modified = "2015-03-28"/></critdates></prolog>
+<body status = "changed"><p>If you are using the default DITA-FMx
+structure applications, all tables, regardless of their type, are
+set to use proportional widths. This means that the table will expand
+to fill the width of the current text column and all cells within
+the table will proportionally fill the table based on the widths
+you assign.</p>
+<p>If you want to be able to specify absolute widths for tables,
+you need to comment out or delete the <codeph>writer use proportional
+widths</codeph> rule in the read/write rules files (<filepath
+    status = "changed">topic_1.2.rules.txt</filepath> and <filepath
+    status = "changed">book_1.2.rules.txt</filepath>). After commenting
+this line out it will look like the following:</p>
+<codeblock>/* writer use proportional widths; */</codeblock>
+<note>This setting affects all tables of all types that use the
+structure application associated with the rule file. You cannot
+have some tables that are proportional and some that are absolute.</note>
+<p status = "changed">You will also need to disable the <uicontrol>Force
+Tables Wide</uicontrol> option in the <uicontrol>Authoring Options</uicontrol> dialog.</p>
+<p status = "changed">If you’d like a specific table to fill the
+width of the text frame (overriding the margins or indents), set
+the <synph outputclass = "element">table</synph> element’s <synph
+    outputclass = "attribute">pgwide</synph> attribute to 1. This
+attribute is only available for tables that inherit from the base <synph
+    outputclass = "element">table</synph> element.</p>
+<p status = "new">An alternate option for defining table widths
+that vary is through the use of the <uicontrol>Preserve Table Widths</uicontrol> option
+in the <uicontrol>Authoring Options</uicontrol> dialog. This should
+be used with <uicontrol>Force Tables Wide</uicontrol> enabled, and
+will preserve the width of tables to the nearest 5%. A relative
+table width value is stored in the table’s <synph
+    outputclass = "attribute">pgwide</synph> attribute (this value
+is updated on file save). </p>
+<p status = "new">Use the <uicontrol>Preserve Table Widths</uicontrol> option
+only if the “writer use proportional widths” rule is enabled, if
+disabled, this feature is not needed. Because of the 5% adjustment on
+save, column widths will not remain exactly as set (they will be
+close though).</p>
+<note type = "important">If you’re using the <uicontrol>Preserve
+Table Widths</uicontrol> option, problems can occur if the text
+flow width in the Topic and Book templates are not the same, because
+the table width is preserved as a percentage of the text flow width.
+The default DITA-FMx Topic and Book templates do not have matching
+width text flows. Edit the Reference pages in Topic template to
+set the text flow width to match that of the Book.</note></body></topic>

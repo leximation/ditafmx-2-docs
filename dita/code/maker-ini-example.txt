@@ -1,0 +1,9 @@
+;=============================
+; FMx 1.1
+;ditafmx=Standard, ditafmx, DITA-FMx\ditafmx_110.dll, structured
+;ditafmx_app=Standard, ditafmx_app, DITA-FMx\ditafmx_110_app.dll, structured
+
+; FMx 2.0
+ditafmx=Standard, ditafmx, DITA-FMx-2\ditafmx_110.dll, structured
+ditafmx_app=Standard, ditafmx_app, DITA-FMx-2\ditafmx_110_app.dll, structured
+;=============================

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="stdin"?><topic id = "id08CUE000L5Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>External Application Settings</title>
+<shortdesc status = "changed">Specifies the path and file name of
+applications called from DITA-FMx as well as any options passed
+to those applications.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2014-03-31"/></critdates></prolog>
+<body><p>The <uicontrol status = "new">External Application Settings</uicontrol> dialog
+allows you to specify the location of the associated application
+and any command line syntax or parameters. All paths entered into
+this dialog must use the slash as the directory delimiter.</p>
+<fig audience = "web"><title>DITA-FMx External Application Settings
+dialog box</title><image href="images/options-externalapps.png"
+align="left" placement="break"  otherprops = "fmdpi:110"/></fig>
+<dl><dlentry><dt status = "changed">DITA-OT Directory</dt>
+<dd status = "changed">Specifies the main DITA-OT (DITA Open Toolkit)
+directory. (Required in order to use the <uicontrol>Generate Output</uicontrol> command.)</dd></dlentry>
+<dlentry><dt status = "changed">DITA-OT Environment Setup File</dt>
+<dd status = "changed">Specifies the DITA-OT environment setup batch
+file. This file is a copy (with minor modifications) of the default <filepath
+    status = "new">startcmd.bat</filepath> file provided with the
+OT. (Required in order to use the <uicontrol>Generate Output</uicontrol> command.)</dd></dlentry>
+<dlentry><dt status = "changed">Archive</dt>
+<dd><p status = "new">Specifies the command line syntax that is
+used to create the archive. Before creating the archive, the list
+of files is generated based on the current file and all referenced
+files (as well as the archive baggage file described in the <xref
+href = "ditafmx_ref_createarchive.xml#id08C8E60035Z" type = "topic"
+format = "dita" scope = "local"></xref> topic). This file is written
+to the user’s DITA-FMx folder (<menucascade status = "new">
+<uicontrol status = "new">DITA-FMx</uicontrol>
+<uicontrol status = "new">Open DITA-FMx Folder</uicontrol></menucascade>)
+as <filepath>~tmpzipfiles.txt</filepath>. The generated archive
+is named <filepath>&lt;filename>_zip.zip</filepath>, where &lt;<i
+    status = "new">filename</i>> is the root file name of the current
+file when the Create Archive command is used. For example, if the
+archive is created from the <filepath>project_a.ditamap</filepath> file,
+the archive created will be named <filepath>project_a_zip.zip</filepath>.</p><p>There
+are three variables that can be used in this field, %ZIPLISTFILE%, %ZIPFILE%,
+and %CURDIR%. The string “%ZIPLISTFILE%” is replaced with the path
+and filename of the list of files to archive. The string “%ZIPFILE%”
+is replaced with the path and file name of the archive file name.
+The string “%CURDIR%” is replaced with the path to the current file.</p><p
+    status = "changed">This command line is included in a batch
+file created in the user’s DITA-FMx folder as the file <filepath>~tmpzip.bat</filepath>.
+before the command line is executed, the current directory is set
+to DITA-FMx installation folder (typically in the Program Files area).
+Any commands you place in this field should be designed to run from
+that folder.</p><p>The default command line syntax is the following.</p><p><codeph>more
+%ZIPLISTFILE% | ditafmx-zip.exe -@ %ZIPFILE%</codeph></p><p>This
+command syntax passes the content of the archive file list (%ZIPLISTFILE%)
+to the ditafmx-zip utility (the -@ option tells the utility to read
+from “stdin”). It then generates the archive file specified by the
+%ZIPFILE% variable.</p><p><note conref = "ditafmx_ref_createarchive.xml#id08C8E60035Z/id4de0563c-dac4-4e17-aa76-6356b853ab27"
+status = "changed"></note></p></dd></dlentry>
+<dlentry><dt status = "changed">Default Text Editor</dt>
+<dd status = "changed">Specifies the application used to edit a <synph
+    status = "new" outputclass = "element">coderef</synph> when
+the Text Editor button is selected in the Coderef Manager dialog.
+Enter the full path and file name to the application executable
+file.</dd></dlentry>
+<dlentry><dt status = "changed">Ditaval Manager</dt>
+<dd>This feature is not currently enabled.</dd></dlentry></dl></body></topic>

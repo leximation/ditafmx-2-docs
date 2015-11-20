@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id6bcde90f-0635-4a66-90f6-345fc922822f"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Recommended Folder/File Structure</title>
+<shortdesc status = "new">Tips for setting up folders and files
+that will provide the desired results when generating books and
+other types of output.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2009-03-07"/>
+<revised modified = "2014-03-28"/></critdates></prolog>
+<body status = "changed"><p status = "new">While, in theory, you
+should be able to use any folder structure for your maps and topic
+files, the default DITA-FMx Book application’s XSLT import script
+is set up to work best with a specific structure as described below.</p>
+<ul status = "new"><li status = "new">First and foremost, all files
+must be on the same “drive,” and should be referenced with relative
+path names. If you’re working on a shared server, be sure to always
+access the files via a mounted drive letter. If you ever see drive
+letters or UNC path descriptors (“\\SERVERNAME\PATH\...”), stop
+and fix things so that you’re only seeing relative paths in the
+source files.</li>
+<li status = "new">Your root map should be in a parent folder or
+the same folder as the topic or map files it references; a map should
+not reference a topic through a folder “above” itself (the @href
+attribute should never start with “../”). Although this will often
+work, you may run into situations that it won’t, and if you’re planning on
+generating CHM or other compiled Help output through the DITA-OT,
+the map must always be at the root of the project.</li>
+<li status = "new">Any submaps should also be in the same top-level
+folder as the root map. This isn’t a hard requirement, and will
+work in most cases with submaps in other folders, but if the folder
+structure is very complex, the reference resolving process may fail.</li>
+<li status = "new">Images and conrefs referenced by topics in the
+project may be in folders above the root map, however if is best
+to keep these in folders that are siblings or children of the root
+map’s directory.</li></ul>
+<p>The recommended folder structure for multiple projects is as
+follows:</p>
+<ul><li>A top-level folder (<filepath>dita-projects</filepath>)</li>
+<li>Within the top-level folder are folders for the shared content
+and the project folders themselves. Such as, <filepath>shared-images</filepath> (for
+images that are shared among the projects), <filepath>shared-content</filepath> (for
+conref source that is shared among the projects). If you have shared
+topics, those may work in this folder as well, but certain output
+types may not work well with that structure.</li>
+<li>Within each project folder is a folder for topics (just one)
+and a folder for images, as well as one or more “book” output folders
+(one per book type).</li>
+<li>Also in the project folder is the root map (possibly with an
+underscore prefix so it sorts to the top) and all submaps. This
+puts all of the maps in a separate folder from the topics and makes
+them easily accessible.</li>
+<li>Within each book output folder is that output type’s <filepath>component-templates</filepath> folder and
+the <filepath>ditafmx-bookbuild.ini</filepath> file. This ensures
+that building a book to that folder will always result in the same
+output. If all of your books use the same component templates, you
+may want to have a shared component templates folder.</li></ul>
+<fig><title>Recommended folder structure</title><image href="images/folders.png"
+align="left" placement="break"  otherprops = "fmdpi:110"/></fig></body></topic>

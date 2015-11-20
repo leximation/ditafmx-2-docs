@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH hide?>
+
+<?Fm BoolCondExpr "" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "id067FF600KHS"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Insert Topicref</title>
+<shortdesc>Add a new topicref to a DITA map file or change the selected
+topicref to reference a new file.</shortdesc>
+<prolog><critdates><created date = "UNK"/>
+<revised modified = "2008-02-24"/>
+<revised modified = "2008-04-04"/></critdates></prolog>
+<body><p>New topicref elements can be added with the <uicontrol>Insert
+Topicref</uicontrol> command or by inserting a topicref element
+from the element catalog. Inserting a topicref displays a file dialog,
+letting you select the referenced file. When the file is selected,
+a topicref element is inserted at the current insertion point and
+an fm-topicreflabel element is inserted as a child of the topicref
+element. Topicref elements can reference other DITA topic files
+or DITA map files. </p>
+<p><indexterm class = "- topic/indexterm ">fm-topicreflabel element</indexterm>The
+fm-topicreflabel element only exists within the FrameMaker environment and
+provides an object that displays a label that can be double-clicked
+to open the associated file. When the file is saved to XML, the
+fm-topicref element is removed. When opening a DITA map, topicref
+elements are automatically populated with fm-topicref label elements.
+When the fm-topicreflabel element is generated on file open, the
+label text is extracted from the navtitle attribute of the topicref
+element. If the title text of the target topic changes, you can
+update the navtitle text (and thus the label) by using the <uicontrol>Update
+References</uicontrol> command.</p></body></topic>

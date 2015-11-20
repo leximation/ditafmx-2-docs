@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="conrefed"?><?dtall dict="conrefing"?><?dtall dict="elemid"?><topic
+    id = "id067FF600TUI"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Insert Conref</title>
+<shortdesc>Displays the Reference Manager which lets you insert
+a content reference.</shortdesc>
+<prolog><author status = "new">Scott Prentice</author>
+<author>test</author>
+<critdates status = "changed"><created date = "2008-02-24"/>
+<revised modified = "2014-04-13"/></critdates></prolog>
+<body status = "changed"><p status = "changed">The <uicontrol
+    status = "new">Reference Manager</uicontrol> (displayed when
+you choose <menucascade><uicontrol>DITA-FMx</uicontrol><uicontrol>Insert Conref</uicontrol></menucascade>)
+allows you to create a content reference (conref or conkeyref) to
+elements within the same file or in other files.</p>
+<p status = "new">Select a source file from those currently open
+or from files in a folder or map (as defined by the <uicontrol
+    status = "new">File Location</uicontrol> option). Select the
+target element type in the <uicontrol status = "new">Element Tag</uicontrol> list,
+then select an item from the <uicontrol status = "new">Element Data</uicontrol> list
+to create a conref to that element. Alternatively, you can use the <uicontrol
+    status = "new">Key Reference</uicontrol> button to select the
+target content based on a key.</p>
+<fig audience = "web"><title>DITA-FMx Reference Manager dialog box</title><image
+href="images/insertconref.png" align="left" placement="break"  otherprops
+= "fmdpi:110"/></fig>
+<p status = "new">The <uicontrol status = "new">Element Tag</uicontrol> list
+displays the names of elements that exist in the source file and
+have an <synph status = "new" outputclass = "attribute">id</synph> attribute
+value. The <uicontrol status = "new">Element Data</uicontrol> list
+displays the <synph status = "new" outputclass = "attribute">id</synph> and
+text of the available elements.</p>
+<p status = "new">If you are creating a conref range, select the
+end element from the <uicontrol status = "new">Conref End</uicontrol> list. Only
+elements that follow the selected item in the <uicontrol status = "new">Element
+Data</uicontrol> list are available as a conref end element.</p>
+<p status = "new"><indexterm status = "new">conkeyref, creating</indexterm>To
+create a reference to an element defined by a key (conkeyref), choose
+the <uicontrol status = "new">Key Reference</uicontrol> button.
+The <uicontrol status = "new">Keyref Manager</uicontrol> dialog
+lets you select a key from the specified keyspace, then locate the
+required element id. For a conref, you should select both the key
+and the element id. Choosing <uicontrol status = "new">OK</uicontrol> in
+the <uicontrol status = "new">Keyref Manager</uicontrol> inserts
+the &lt;key>/&lt;elemid> into the <uicontrol status = "new">Key
+Reference</uicontrol> field.</p>
+<p status = "new">The referenced element is inserted at the location
+specified. You can double click the conref to re-open the Reference
+Manager to change the referenced element or edit the source file.
+The Reference Manager also lets you display the list of all elements for
+conrefing (even if they have no <synph status = "new"
+    outputclass = "attribute">id</synph> value), you must provide
+the <synph status = "new" outputclass = "attribute">id</synph> value
+at insertion time.</p>
+<p status = "changed"><indexterm class = "- topic/indexterm ">features<indexterm
+class = "- topic/indexterm ">conref support</indexterm></indexterm><indexterm
+class = "- topic/indexterm ">conref support features</indexterm>On
+the opening of a file, the content of any element included by conref
+is resolved and displayed as a locked text range (similar to a text
+inset). The color of conrefs is defined by the “DITA-Conref” color
+(this is a custom color definition and can be changed in the template).
+The auto-loading functionality may be enabled/disabled with the <uicontrol>Options</uicontrol> command.</p>
+<p>The <uicontrol>Update References</uicontrol> command provides
+an option to load and build the conref elements (if they were not
+initially loaded by the auto-load functionality), and update the
+conrefs to reflect changes in the source files.</p>
+<p status = "changed"><indexterm>convert conref to text</indexterm><indexterm>conref,
+convert to text</indexterm>If you want to “break” a conref (make
+it into editable text rather than a locked range), select the conref
+and choose the <uicontrol status = "new">Flatten Conref</uicontrol> command
+(<menucascade status = "new"><uicontrol status = "new">DITA-FMx</uicontrol>
+<uicontrol status = "new">FM File Commands</uicontrol>
+<uicontrol status = "new">Flatten Conrefs</uicontrol></menucascade>).
+To flatten all conrefs in the current file, use the same command,
+but place the insertion point away from a conref.</p></body></topic>

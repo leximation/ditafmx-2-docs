@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id8da112a1-c86a-49ea-86a6-a7abedb52ca2"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Utilities</title>
+<shortdesc>Less frequently used commands.</shortdesc>
+<prolog><author>test</author>
+<author>scottp</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2015-09-13"/></critdates></prolog>
+<body><fig><title>Utilities menu</title><image href="images/utilities-menu.png"
+align="left" placement="break"  outputclass = "fmdpi:110"/></fig></body></topic>

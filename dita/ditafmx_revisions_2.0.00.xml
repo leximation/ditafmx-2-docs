@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="APIs"?><?dtall dict="ApplyTemplates"?><?dtall dict="ArchiveCommandLine"?><?dtall
+dict="AssignIdToElem"?><?dtall dict="AttrAsCondDefaultState"?><?dtall dict="AttrAsVarPrefix"?><?dtall
+dict="addon"?><?dtall dict="app"?><?dtall dict="att"?><?dtall dict="authorname"?><?dtall
+dict="BookBuildOverrides"?><?dtall dict="Booklists"?><?dtall dict="BuildFile"?><?dtall
+dict="BuildImagemapHotspots"?><?dtall dict="backmatter"?><?dtall dict="bookbuild"?><?dtall
+dict="buildname"?><?dtall dict="CallClient"?><?dtall dict="Conditionalize"?><?dtall
+dict="conreffed"?><?dtall dict="copyrholder"?><?dtall dict="customization"?><?dtall
+dict="DitaDir"?><?dtall dict="DitaFMxGuide"?><?dtall dict="DitaReference"?><?dtall
+dict="DitaRefTargetPath"?><?dtall dict="DitavalName"?><?dtall dict="DLLs"?><?dtall
+dict="desc"?><?dtall dict="dita"?><?dtall dict="ditabook"?><?dtall dict="ditafile"?><?dtall
+dict="ditafmx"?><?dtall dict="ditamap"?><?dtall dict="ditavals"?><?dtall
+dict="doctype"?><?dtall dict="draftinfo"?><?dtall dict="draftintro"?><?dtall
+dict="EnvironmentSetup"?><?dtall dict="epub"?><?dtall dict="FilterByAttribute"?><?dtall
+dict="FmDpiUseOutputclass"?><?dtall dict="FmXrefUseOutputclass"?><?dtall
+dict="FrameMaker\DITA"?><?dtall dict="figurelist"?><?dtall dict="filtergroups"?><?dtall
+dict="fmx"?><?dtall dict="fragref"?><?dtall dict="frontmatter"?><?dtall
+dict="GeneralExport"?><?dtall dict="GeneralImport"?><?dtall dict="gentpl"?><?dtall
+dict="IgnoreFigTitleProcessing"?><?dtall dict="ImagePlacement"?><?dtall
+dict="ImportAttrsAsVars"?><?dtall dict="INIOnly"?><?dtall dict="InstallApps"?><?dtall
+dict="indexlist"?><?dtall dict="ja"?><?dtall dict="keyref=’fmvar:VARNAME"?><?dtall
+dict="LastReferencedElement"?><?dtall dict="Linebreak"?><?dtall dict="linebreaks"?><?dtall
+dict="linktext"?><?dtall dict="MasterPageMaps"?><?dtall dict="MissingImageDir"?><?dtall
+dict="MoveFigureTitles"?><?dtall dict="masterpage"?><?dtall dict="NewMapShortcuts"?><?dtall
+dict="NewTopicShortcuts"?><?dtall dict="omsyshome%\common\bin"?><?dtall
+dict="outputclass"?><?dtall dict="PageStartSide"?><?dtall dict="PostPaginationScript"?><?dtall
+dict="PostPaginationScriptArgs"?><?dtall dict="PostPaginationScriptName"?><?dtall
+dict="PreserveTableWidths"?><?dtall dict="pgwide"?><?dtall dict="print=’no"?><?dtall
+dict="RegInfo"?><?dtall dict="Reimport"?><?dtall dict="ReimportTemplate"?><?dtall
+dict="RetagElements"?><?dtall dict="RunaroundOff"?><?dtall dict="RunPostPaginationScript"?><?dtall
+dict="reflabel"?><?dtall dict="reimports"?><?dtall dict="relinked"?><?dtall
+dict="retagged"?><?dtall dict="ShowBuildTimes"?><?dtall dict="StripTrailing"?><?dtall
+dict="StructMasterPageMaps"?><?dtall dict="SuiteHelp"?><?dtall dict="SuppressXrefAttrs"?><?dtall
+dict="suitehelp"?><?dtall dict="synnoteref"?><?dtall dict="syntaxdiagram"?><?dtall
+dict="toc"?><?dtall dict="topicId"?><?dtall dict="type=’fm"?><?dtall dict="UpdateBook"?><?dtall
+dict="UseLanguageTemplate"?><?dtall dict="UseOutputclassForType"?><?dtall
+dict="WriteLineBreakPIs"?><?dtall dict="WriteLineBreakPIsInPre"?><?dtall
+dict="webhelp"?><?dtall dict="whitespace"?><?dtall dict="XSLTs"?><?dtall
+dict="xml:lang"?><topic id = "id1412G400EY4"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>2.0.00 - 14 April 2014</title>
+<prolog><author>Scott Prentice</author>
+<author>test</author>
+<critdates><created date = "2014-01-02"/>
+<revised modified = "2014-04-14"/></critdates></prolog>
+<body><section status = "changed"><title outputclass = "h3">Changes
+that may affect content migration</title><ul><li>The FmDpiUseOutputclass <filepath>ditafmx.ini</filepath> parameter
+controls the attribute used for the “fmdpi” feature. In DITA-FMx
+1.1, this was the <synph outputclass = "attribute">otherprops</synph> attribute,
+but in DITA-FMx 2.0 it now defaults to the <synph
+    outputclass = "attribute">outputclass</synph> attribute. If
+you want to continue using the <synph outputclass = "attribute">otherprops</synph> attribute,
+set this parameter to “0”.</li>
+<li>The FmXrefUseOutputclass <filepath>ditafmx.ini</filepath> parameter
+controls the attribute used to store the <synph outputclass = "element">fm-xref</synph> (cross-ref)
+format name. In DITA-FMx 1.1, this defaulted to the <synph
+    outputclass = "attribute">otherprops</synph> attribute, but
+in DITA-FMx 2.0 it now defaults to the <synph outputclass = "attribute">outputclass</synph> attribute.
+If you want to continue using the <synph outputclass = "attribute">otherprops</synph> attribute,
+set this parameter to “0”.</li>
+<li>Opening DITA 1.1 topic files in a DITA 1.2 model (the default
+application model in DITA-FMx 2.0) will work fine, and you should
+be able to open those same files back in a DITA 1.1 application
+model without trouble. However, adding new elements that make use
+of DITA 1.2 features (such as using keyrefs, conkeyrefs, or coderefs),
+will prevent you from opening these files using a DITA 1.1 application.
+If you plan on working with a DITA 1.1 model, just install the structure
+applications from DITA-FMx 1.1.</li>
+<li>Opening DITA 1.1 map files in a DITA 1.2 model (the default
+application model in DITA-FMx 2.0) will work fine. However, the
+DITA 1.2 map model adds the option for a <synph outputclass = "element">navtitle</synph> element
+as a descendant of topicrefs. By default, when working in maps,
+the <synph outputclass = "element">navtitle</synph> will be added
+only for new topicrefs. In the Map Options dialog you can change
+this to Never add <synph outputclass = "element">navtitle</synph> elements,
+or to add <synph outputclass = "element">navtitle</synph> elements
+on map open.</li></ul></section>
+<section status = "changed"><title outputclass = "h3">New features</title><dl
+    status = "changed"><dlentry status = "changed">
+<dt status = "changed">Generate Book from Map dialog</dt>
+<dd status = "changed"><p>A dialog has been added to the Generate
+Book from Map command. This dialog lets you select the output book
+file name as well as select a ditaval file to apply to the build.
+The selected book name persists between builds and remains associated
+with each DITA map. This dialog also lets you access the Book Build Settings
+dialog and create/edit the associated book-build INI file.</p></dd></dlentry>
+<dlentry><dt status = "changed">Keyspace Manager dialog</dt>
+<dd status = "changed"><p>Lets you specify a root map as the source
+for a keyspace. The keyspace can optionally be filtered by a ditaval
+file.</p><p status = "new">For details, see <xref  keyref = "keyspace-manager"
+type = "topic" format = "dita" scope = "local" status = "new"></xref>.</p></dd></dlentry>
+<dlentry><dt status = "changed">Key reference support for xrefs,
+links and conrefs</dt>
+<dd status = "changed"><p>The Reference Manager allows you to select
+a key and a sub-element within the referenced file to specify the
+keyref for xrefs, links and conrefs.</p><p status = "new">For details,
+see <xref  keyref = "using-refman" type = "topic" format = "dita"
+scope = "local" status = "new"></xref>.</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">Conref range
+support</dt>
+<dd status = "changed"><p>The Reference Manager lets you specify
+the end element for a conref range.</p><p status = "new">For details,
+see <xref  keyref = "using-refman" type = "topic" format = "dita"
+scope = "local" status = "new"></xref>.</p></dd></dlentry>
+<dlentry><dt status = "changed">Key element reference support</dt>
+<dd status = "new"><p>The Insert Key Element Reference command lets
+you insert an element whose content is defined by content within
+a key definition.</p><p status = "new">For details, see <xref  keyref
+= "insert-key-element-ref" type = "topic" format = "dita" scope
+= "local" status = "new"></xref>.</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">Glossary term
+keyref support</dt>
+<dd status = "new"><p>When inserting a key element reference to
+a glossary entry, by default, the content of the glossary term (<synph
+    status = "new" outputclass = "element">glossterm</synph> element)
+is included in the <synph status = "new" outputclass = "element">term</synph> element.</p><p
+    status = "new">If you enable Glossary Term Swapping (in the
+Book Build Options dialog) and your glossary topic provides a <synph
+    status = "new" outputclass = "element">glossSurfaceForm</synph> element
+and a <synph status = "new" outputclass = "element">glossAlt</synph> abbreviation,
+the first instance of the <synph status = "new" outputclass = "element">term</synph> in
+a chapter will use the <synph status = "new" outputclass = "element">glossSurfaceForm</synph> value
+and the rest will use the <synph status = "new" outputclass = "element">glossAlt</synph> value.</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">Insert Image
+dialog provides keyref support</dt>
+<dd><p status = "new">The Insert Image dialog provides easy access
+to image properties and referencing methods.</p></dd></dlentry>
+<dlentry><dt status = "changed">Coderef support</dt>
+<dd status = "new"><p>Non-DITA content references can be created
+with the coderef element. This is ideal for documentation that uses
+code samples.</p><p status = "new">For details, see <xref  keyref
+= "using-coderefs" type = "topic" format = "dita" scope = "local"
+status = "new"></xref>.</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">FrameMaker variable
+support has been enhanced</dt>
+<dd status = "new"><p>The Prepare Variables and Rebuild Variables
+commands have been removed and the Auto-Prepare Variables on Save
+option has been replaced with a new Convert Variables to fm-var
+Elements option. The new <synph status = "new" outputclass = "element">fm-var</synph> element round-trips
+to DITA as a <synph status = "new" outputclass = "element">ph</synph> element.
+This allows you to insert FrameMaker variables at any time and those
+variables will be rebuilt when the file is opened later.</p><p
+    status = "new">When opening a file from DITA-FMx 1.1 that used
+the old ph/@keyref=’fmvar:VARNAME’ markup, it will convert into
+the new format.</p></dd></dlentry>
+<dlentry><dt status = "changed">New auto-prolog options</dt>
+<dd status = "new"><p>Added “new author” option to support multiple
+authors of the same document. Also, now provides support for auto-prolog
+control in maps.</p><p status = "new">For details, see <xref  keyref
+= "auto-prolog-options" type = "topic" format = "dita" scope = "local"
+status = "new"></xref>.</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">Automatically
+adds author and date to draft-comments</dt>
+<dd><p status = "new">When inserting a draft-comment element, the
+author and date are added to the element.</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">Provides control
+of when navtitles are added to maps</dt>
+<dd><p status = "new">Navtitle elements can be added to a map on
+file open or only on topicref insertion (or not at all). This is
+controlled in the Map Options dialog.</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">Set Attributes
+dialog is available in three sizes</dt>
+<dd><p status = "new">The DITA-FMx Set Attributes dialog/pod can
+be set to small, medium, and large depending on your needs. If you
+have enabled the “filtergroups” feature to make use of attribute
+value checkboxes, the small dialog supports up to 10 checkboxes,
+medium supports up to 20, and large supports up to 40. Each checkbox
+option name will now display up to 24 characters.</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">Additional support
+for table formatting and layout</dt>
+<dd status = "new"><p>Tables can now make use of the outputclass
+attribute to assign custom ruling and shading to rows and cells.
+Also, the new Preserve Table Widths option provides better control
+over the width of tables, and the Indent Table to Parent Element
+option allows control over table indents (both are found in the Authoring
+Options dialog).</p><p status = "new">For details, see <xref href
+= "ditafmx_tables.xml#idb3d008c7-8840-451e-b955-b9c59b579f68" type
+= "topic" format = "dita" scope = "local" status = "new"></xref>.</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">Added support
+for imagemaps</dt>
+<dd status = "new"><p>The <uicontrol>Insert Imagemap Data</uicontrol> command
+(on the Utilities menu) lets you import map data created by a third
+party application (or by hand) from an XHTML file. This transfers
+the map data (area, shape, coords, xref) into the DITA <synph
+    outputclass = "element">imagemap</synph> element.</p><p>The <uicontrol>Test
+Hotspots</uicontrol> command is keyboard-only and accessed via the
+shortcut <userinput>Esc,T,H</userinput>. It draws rectangles on
+the <synph outputclass = "element">imagemap</synph> image to represent
+the “rect” hot spots.</p><p status = "changed">The BuildImagemapHotspots
+book-build INI option generates “hot spot” regions in an image based
+on the <synph outputclass = "element">area</synph> data provided
+by an <synph outputclass = "element">imagemap</synph> element. To
+make use of this option use the BuildImagemapHotspots setting in
+the BookBuildOverrides section of the book-build INI file. A value
+of “1” enables the option and a value of “0” disables it.</p></dd></dlentry></dl></section>
+<section status = "changed"><title outputclass = "h3">Structure
+application updates</title><p status = "changed">New structure applications
+based on the DITA 1.2 model are provided.</p><p status = "new">Refer
+to the <filepath status = "new">DITA-FMx_1.2\common\_info.fm</filepath> file
+in the structure application folder for details.</p><p status = "new">The
+structure of the default DITA-FMx EDDs have been modified to support
+the $attribute syntax in the Initial Table Format context rule.
+This allows the table object element definitions to apply the format
+stored in the outputclass attribute, without needing to explicitly
+list all table formats in the template. For details, see <xref href
+= "ditafmx_tables.xml#idb3d008c7-8840-451e-b955-b9c59b579f68" type
+= "topic" format = "dita" scope = "local" status = "new"></xref>.</p><note>A
+“Learning” application is provided (in the Topic folder), but it
+is not considered to be production-ready. It is provided for testing
+purposes only and will be updated in a future release.</note></section>
+<section><title outputclass = "h3">Bug fixes / minor updates</title><dl
+    status = "changed"><dlentry><dt status = "changed">Added the
+FmDpiUseOutputclass parameter</dt>
+<dd><p status = "changed">By default, when using the “fmdpi” feature,
+DITA-FMx will now use the <synph outputclass = "attribute">outputclass</synph> attribute
+to store the DPI data instead of the <synph outputclass = "attribute">otherprops</synph> attribute
+as used in DITA-FMx 1.1. If you want to continue using the <synph
+    outputclass = "attribute">otherprops</synph> attribute, set
+the FmDpiUseOutputclass parameter to “0”. This change only affects
+how files are written; any existing images that use <synph
+    outputclass = "attribute">otherprops</synph> for this data will
+still render correctly regardless of the setting.</p></dd></dlentry>
+<dlentry><dt status = "changed">The FmXrefUseOutputclass parameter
+now defaults to “1”</dt>
+<dd><p status = "changed">By default, when saving an fm-xref, the
+cross-reference format name is stored in the outputclass attribute
+instead of the type attribute. This more accurately follows the
+intent of these attributes.</p></dd></dlentry>
+<dlentry><dt status = "changed">Allow specification of topic and
+map ID in New DITA File dialog</dt>
+<dd><p status = "changed">When creating a new topic or map, the
+proposed ID is included in a field that may be edited if you have
+a requirement for an alternate value.</p></dd></dlentry>
+<dlentry><dt status = "changed">New File Name Options are now available
+for maps</dt>
+<dd><p status = "changed">When creating a new map, the map file
+name is automatically generated based on the title, according to
+the New Map File Name Format option.</p></dd></dlentry>
+<dlentry><dt status = "changed">Insert File As dialog displays for
+new files in map</dt>
+<dd><p status = "changed">If the insertion point is in a map when
+creating a new topic file, you are prompted to select the type of
+element to insert into the map.</p></dd></dlentry>
+<dlentry><dt status = "changed">Added $T_D and $TOPIC_ID building
+blocks</dt>
+<dd><p status = "changed">The $T_D building block provides a 1 or
+2 digit date, and $TOPIC_ID is a replacement for $UNIQUEID.</p></dd></dlentry>
+<dlentry><dt status = "changed">Added limited support for image/alt
+text</dt>
+<dd><p status = "changed">Image alt text (via the <synph
+    outputclass = "element">alt</synph> element as a child of <synph
+    outputclass = "element">image</synph>) is available for editing
+in FrameMaker through the Object Properties (Object Attributes)
+dialog. The alt text is stored as an object attribute of the image’s
+anchored frame, then written back to a proper <synph
+    outputclass = "element">alt</synph> element on file save.</p></dd></dlentry>
+<dlentry><dt status = "changed">Added browse button to External
+Xref dialog</dt>
+<dd><p status = "changed">To assist in linking to non-DITA content
+a browse button has been added.</p></dd></dlentry>
+<dlentry><dt status = "changed">Provide option to customize the
+New File shortcut keys</dt>
+<dd><p status = "changed">Two new INIOnly <filepath status = "new">ditafmx.ini</filepath> settings
+are available to define custom shortcut keys for the New File menu
+commands. Refer to the documentation on NewMapShortcuts and NewTopicShortcuts.</p></dd></dlentry>
+<dlentry><dt status = "changed">Update to the ApplyTemplates book-build
+feature</dt>
+<dd><p status = "changed">The ApplyTemplates book-build option now
+selects all available formats when importing from the template(s)
+to the generated files. Previously for FM10 and later, some of the
+formats were not imported.</p></dd></dlentry>
+<dlentry><dt status = "changed">Added ShowBuildTimes book-build
+INI option</dt>
+<dd><p>This option prints the current build time of each step in
+the book-build process, which can help in debugging. To enable this
+option, add a ShowBuildTimes=1 entry to the General section. A value
+of “1” enables the option and a value of “0” disables it.</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">Added FilterByAttribute
+book-build INI option</dt>
+<dd status = "changed"><p>In some cases, the filtering provided
+by the Filter By Attribute command (FM10 and later) may be preferable
+to that currently provided by the DITA-FMx mapping of ditavals to
+conditions. To make use of this filtering option use the FilterByAttribute
+setting in the BookBuildOverrides section of the book-build INI file.</p><p
+    status = "new">Set the value of the FilterByAttribute entry
+to <i status = "new">ATTR-EXPRESSION</i>><i status = "new">CONDITION-NAME</i>.
+Where <i status = "new">ATTR-EXPRESSION</i> is the attribute build
+expression (must exist in the template), and <i status = "new">CONDITION-NAME</i> is
+the name of the condition to apply (also must exist in the template).</p><p
+    status = "new">When the FilterByAttribute entry is enabled,
+ditaval filtering is not performed, even if specified.</p><p
+    status = "new">For additional information, see “Filter by Attribute”
+in <xref href = "ditafmx_filtering.xml#id086QA10L0HS" type = "topic"
+format = "dita" scope = "local" status = "new"></xref>.</p></dd></dlentry>
+<dlentry><dt status = "changed">Added RetagElements book-build INI
+option</dt>
+<dd status = "changed"><p>In an attempt to overcome an elusive FrameMaker
+formatting bug, this new setting lets you specify a space-delimited
+list of element names that are “retagged” at the end of the book-build
+process. This seems to correct the formatting of paragraphs that
+contain multiple inline elements.</p><p status = "new">To enable
+this option, add a RetagElements entry to the BookBuildOverrides section.
+The value for this entry is a space-delimited list of elements to
+retag. This problem seems to occur most in &lt;li> and &lt;note>
+elements, but may happen elsewhere.</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">Added PostPaginationScript
+book-build INI options</dt>
+<dd><p status = "changed">The standard Script options run before
+pagination is complete, which may be what’s needed for some scripts,
+but if you need to run a script after pagination, use this new option.
+To enable, add the RunPostPaginationScript, PostPaginationScriptName,
+and PostPaginationScriptArgs entries to the BookBuildOverrides section.</p></dd></dlentry>
+<dlentry><dt status = "changed">Global structure applications may
+be used</dt>
+<dd><p status = "changed">Structure applications defined in the
+global structure application definitions file (FM11 and FM12) will
+now properly be recognized by DITA-FMx.</p></dd></dlentry>
+<dlentry><dt status = "changed">Authoring options were moved to
+a new dialog</dt>
+<dd status = "changed"><p>In an effort to clean up the Options dialog,
+the settings that were previously in an “Authoring Options” section
+of the main dialog are now in a sub-dialog accessed via the Authoring
+Options button.</p><p status = "new">Additionally, some settings
+were migrated from the INIOnly section of the <filepath status = "new">ditafmx.ini</filepath> file
+to the Authoring Options dialog.</p></dd></dlentry>
+<dlentry><dt status = "changed">Addressed problems with conref tables
+and moved table titles</dt>
+<dd><p status = "changed">If the “Move table titles” book-build
+option is enabled, tables that include titles and are included by
+conref should no longer get deleted.</p></dd></dlentry></dl></section></body></topic>

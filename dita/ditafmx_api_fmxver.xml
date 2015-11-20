@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id085HGJ050PF"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>FMxVer</title>
+<shortdesc>Determines if DITA-FMx is initialized and accessible
+to external calls.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2008-05-17"/>
+<revised modified = "2014-03-09"/></critdates></prolog>
+<body><p>Use this call to determine that the DITA-FMx client is
+available in addition to ensuring that you are working with the
+version that you expect.</p>
+<section id = "id085HGH00RHT" status = "changed"><title>Syntax</title><codeblock>F_ApiCallClient("ditafmx", "FMxVer");</codeblock><note
+conref = "ditafmx_shared.xml#common/fmxapi_default" status = "changed"></note></section>
+<section><title>Return Value</title><dl compact = "yes">
+<dlentry id = "id085HH0E0OPN"><dt>0</dt>
+<dd>DITA-FMx is not available for calls. Verify that DITA-FMx is
+registered in the <filepath>maker.ini</filepath> file using the
+client name of “ditafmx”.</dd></dlentry>
+<dlentry><dt>>0</dt>
+<dd status = "changed">Indicates the DITA-FMx version number. A
+return value of 10113 indicates version 1.1.13, and 20000 indicates
+version 2.0.00.</dd></dlentry></dl></section></body></topic>

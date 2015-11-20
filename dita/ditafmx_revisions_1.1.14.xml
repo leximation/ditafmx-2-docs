@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="APIs"?><?dtall dict="ArchiveCommandLine"?><?dtall dict="AssignIdToElem"?><?dtall
+dict="AttrAsCondDefaultState"?><?dtall dict="addon"?><?dtall dict="app"?><?dtall
+dict="BookBuildOverrides"?><?dtall dict="Booklists"?><?dtall dict="BuildFile"?><?dtall
+dict="backmatter"?><?dtall dict="bookbuild"?><?dtall dict="CallClient"?><?dtall
+dict="DitaFMxGuide"?><?dtall dict="DitaReference"?><?dtall dict="DitaRefTargetPath"?><?dtall
+dict="DitavalName"?><?dtall dict="DLLs"?><?dtall dict="desc"?><?dtall dict="dita"?><?dtall
+dict="ditafmx"?><?dtall dict="ditavals"?><?dtall dict="doctype"?><?dtall
+dict="FrameMaker\DITA"?><?dtall dict="figurelist"?><?dtall dict="fmx"?><?dtall
+dict="fragref"?><?dtall dict="frontmatter"?><?dtall dict="GeneralExport"?><?dtall
+dict="IgnoreFigTitleProcessing"?><?dtall dict="ImportAttrsAsVars"?><?dtall
+dict="INIOnly"?><?dtall dict="InstallApps"?><?dtall dict="indexlist"?><?dtall
+dict="LastReferencedElement"?><?dtall dict="Linebreak"?><?dtall dict="linebreaks"?><?dtall
+dict="linktext"?><?dtall dict="MoveFigureTitles"?><?dtall dict="omsyshome%\common\bin"?><?dtall
+dict="outputclass"?><?dtall dict="PageStartSide"?><?dtall dict="RegInfo"?><?dtall
+dict="Reimport"?><?dtall dict="ReimportTemplate"?><?dtall dict="reflabel"?><?dtall
+dict="reimports"?><?dtall dict="relinked"?><?dtall dict="SuiteHelp"?><?dtall
+dict="SuppressXrefAttrs"?><?dtall dict="suitehelp"?><?dtall dict="synnoteref"?><?dtall
+dict="syntaxdiagram"?><?dtall dict="toc"?><?dtall dict="type=’fm"?><?dtall
+dict="UseOutputclassForType"?><?dtall dict="WriteLineBreakPIs"?><?dtall
+dict="WriteLineBreakPIsInPre"?><?dtall dict="webhelp"?><?dtall dict="whitespace"?>
+<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "id5a8568e2-9ca6-43d8-9747-36354b3b8d96"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>1.1.14 - 31 January 2012</title>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2011-08-03"/>
+<revised modified = "2012-02-06"/></critdates></prolog>
+<body><section status = "changed"><title outputclass = "h3">New
+Features</title><dl><dlentry><dt>Default structure applications
+are automatically installed</dt>
+<dd>On a new installation of DITA-FMx, the default structure applications
+are installed on the first use of FrameMaker.</dd></dlentry>
+<dlentry><dt>New CallClient APIs have been added</dt>
+<dd>The “InstallApps” API is now available for use by other applications
+to automatically install structure applications. This API does not
+require the use of the FMx-Auto addon.</dd>
+<dd>The “AssignIdToElem” API is now available for use by other applications
+to assign an ID to the specified or selected element in a document.
+This API does require the use of the FMx-Auto addon.</dd></dlentry>
+<dlentry><dt>Integration with the FMx-Auto addon</dt>
+<dd>This DITA-FMx update is the minimum version that can be used
+with the FMx-Auto addon. FMx-Auto is a separate plugin that enables
+the API in DITA-FMx to allow automated PDF (and other) publishing
+options.</dd></dlentry>
+<dlentry><dt>Integration with DITA2Go</dt>
+<dd>If you have DITA2Go installed, a “DITA2Go Project Manager” menu
+item will be available on the DITA-FMx menu. (This checks for the
+%OMSYSHOME% environment variable and the existence of the <filepath>d2gpm.exe</filepath> file
+at %omsyshome%\common\bin.)</dd></dlentry>
+<dlentry><dt>Integration with SuiteHelp DITA-OT plugin</dt>
+<dd>The <filepath>ditafmx-ant.xml</filepath> file has been updated
+to include a “suitehelp” target. If you have the <xref href = "http://www.suite-sol.com/pages/solutions/suitehelp.html"
+format = "html" scope = "external">SuiteHelp DITA-OT plugin</xref> installed
+(from Suite Solutions), you’ll be able to generate the SuiteHelp
+webhelp output from the DITA-FMx Generate Output dialog.</dd>
+<dd>If you are upgrading DITA-FMx, in order to take advantage of
+this integration, in addition to installing the SuiteHelp plugin
+you’ll need to do the following:<ul><li><p>Copy the updated <filepath>ditafmx-ant.xml</filepath> file
+into your DITA-OT folder then run the DITA-OT <filepath>startcmd.bat</filepath> file
+and integrate the new <filepath>ditafmx-ant.xml</filepath> file
+by running: <codeph>ant-f integrator.xml</codeph></p></li>
+<li><p>Update your <filepath>ditafmx.ini</filepath> file by adding
+a new “suitehelp” entry to the BuildFile section (be sure to update
+the “Count” parameter as well)</p></li></ul></dd></dlentry></dl></section>
+<section status = "changed"><title outputclass = "h3">Structure
+Application Updates</title><p>None.</p></section>
+<section><title outputclass = "h3">Bug Fixes / Minor Updates</title><dl
+    status = "changed"><dlentry status = "new"><dt status = "new">Updated
+the version of the import/export client to 1.1.14</dt>
+<dd status = "new">Previously, the two plugin DLLs were not in sync;
+they were updated separately as needed when their code was changed.
+In an effort to reduce confusion, both DLLs will now have the same
+version number regardless of any changes to the underlying code. The
+import/export client would have been version 1.1.12 with this release,
+but it is now set to 1.1.14 to match the authoring client DLL.</dd></dlentry>
+<dlentry status = "new"><dt status = "new">XML Read Report messages
+no longer report missing images in book build</dt>
+<dd status = "new">Previously, images were reported as missing even
+though they would typically be relinked to the proper file location
+during the book-build process. Missing images are now replaced with
+a default “missing” image file on file open. This process prevents the
+XML Read Report window from displaying when no real problem exists.
+The default missing image is defined by the value of the image/@placement
+attribute, and is one of the two files (installed in the <filepath>FrameMaker\DITA-FMx</filepath> folder) <filepath>missing-image-break.png</filepath> or <filepath>missing-image-inline.png</filepath>.</dd></dlentry>
+<dlentry status = "new"><dt status = "new">Use ditavals in Book
+Build process without registering the ditaval file</dt>
+<dd status = "new">The DitavalName parameter now accepts a file
+name in addition to the registered ditaval name. This simplifies
+the use of alternate ditaval files for book builds.</dd></dlentry>
+<dlentry status = "new"><dt status = "new">Added new Book Build
+setting for controlling conditions</dt>
+<dd status = "new">New General/AttrAsCondDefaultState INI parameter
+defines the default Hide/Show state for all “fmx-” conditions. Significantly
+updated the related documentation on this topic, see <xref href
+= "ditafmx_fmditabook_attributes.xml#id1094G010FBF" type = "topic"
+format = "dita" scope = "local"></xref> and <xref href = "ditafmx_addingnewfmditabookattributes.xml#id3a2152b0-95cf-4a97-9f6a-2921c293cc2a"
+type = "topic" format = "dita" scope = "local"></xref>.</dd></dlentry>
+<dlentry status = "new"><dt status = "new">New maps are opened in
+document view</dt>
+<dd status = "new">For FM9/10 if the “Open maps in document view”
+option is enabled, newly created maps are now opened in document
+view.</dd></dlentry>
+<dlentry status = "new"><dt status = "new">Fixed problem with writing
+of duplicate document dictionary PIs</dt>
+<dd status = "new">If the structure application template contained
+document dictionary entries, each time you open and save a file,
+the entries would get duplicated as processing instructions in the
+DITA file. Now if a file contains duplicate document dictionary
+entries, only one instance is written as a PI.</dd></dlentry>
+<dlentry status = "new"><dt status = "new">Added support for proper
+whitespace handling around conrefs and xrefs</dt>
+<dd status = "new">Recompiled the FM10 import/export client with
+the updated FM10 FDK to incorporate fixes provided by Adobe regarding
+whitespace handling in FM10.</dd></dlentry>
+<dlentry status = "new"><dt status = "new">Corrected problems when
+using nesting separators in see-also index entries</dt>
+<dd status = "new">Resolved data corruption when an indexterm used
+two or more “nesting separators.” Previously, if a see-also entry
+made use of more than two reference terms, indexterm elements would
+not import properly and would thus be lost on file save..</dd>
+<dd>A semicolon can now be defined as a see-also nesting separator.
+When specifying this type of separator be sure to use a slash-semicolon
+(“\;”).</dd></dlentry>
+<dlentry><dt>Conrefs to tables and footers now properly round trip
+with the XDocs CMS</dt>
+<dd>Previously, conrefs to table and sub-table elements as well
+as footer elements were not being properly converted into CMS-based
+paths. XDocs refused to allow these files to be checked in.</dd></dlentry>
+<dlentry><dt>Attribute selection in the Set Attributes dialog remains
+correct when switching elements </dt>
+<dd>Previously, when using the Set Attributes command, changing
+the element selection would cause the selected attribute to change
+incorrectly. This no longer happens.</dd></dlentry>
+<dlentry><dt>External links with a desc element format properly</dt>
+<dd>Previously, if an external link contained a desc element, the
+text of the desc element was merged with the linktext element. This
+no longer happens.</dd></dlentry>
+<dlentry><dt>Fixed problems with fragref and synnoteref elements</dt>
+<dd>When fragref and synnoteref elements are used, they no longer
+are assigned the @type, @scope, and @format attributes (invalid
+for these elements). Also, when synnoteref is written to XML, it
+is now correctly written as an empty element. Note that there are
+still some EDD and functional issues with the syntaxdiagram child elements,
+however they should all round trip properly. (These remaining issues
+will be addressed in a future release.)</dd>
+<dd>Because fragref and synnoteref are specializations of the xref
+element, the @type, @scope, and @format attributes would be added
+when written to XML, to prevent this from happening, a new <filepath>ditafmx.ini</filepath> setting
+has been added to the INIOnly section. Use the SuppressXrefAttrs
+parameter to specify elements that should not have these attributes
+added. If this parameter is not set, this value defaults to “fragref
+synnoteref”.</dd></dlentry>
+<dlentry><dt>syntaxdiagram/title is not treated as a figure title</dt>
+<dd>Because syntaxdiagram inherits from fig, its title was moved
+when the MoveFigureTitles option is enabled. A new ditafmx.ini setting
+has been added to prevent this from happening. INIOnly/IgnoreFigTitleProcessing
+specifies a space-delimited list of fig-based elements to ignore.
+By default this is set to “syntaxdiagram”.</dd></dlentry>
+<dlentry><dt>Linebreak PIs are no longer added to preformatted elements</dt>
+<dd>By default, a linebreak processing instruction is added to all
+linebreaks entered into the document. These are not needed and in
+fact redundant when included in elements based on the pre element
+(such as screen and codeblock). These PIs are no longer added to
+pre-based elements by default.</dd>
+<dd>There are two new <filepath>ditafmx.ini</filepath> parameters
+provided to control the linebreak PI feature. In the GeneralExport
+section, the WriteLineBreakPIs parameter can be set to 1 or 0 to
+enable or disable the writing of linebreak PIs (if not set this
+defaults to 1, enabled). Also in the GeneralExport section, the
+WriteLineBreakPIsInPre parameter can be set to 1 or 0 to enable
+or disable the writing of linebreak PIs within pre-based elements (if
+not set this defaults to 0, disabled). These parameters must be
+manually set in the <filepath>ditafmx.ini</filepath> file.</dd></dlentry></dl></section></body></topic>

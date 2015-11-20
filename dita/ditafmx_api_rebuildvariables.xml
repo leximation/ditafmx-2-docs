@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+
+<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "DITA-Data" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "id08C1D0O0SUI"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>RebuildVariables</title>
+<shortdesc>Runs the Rebuild Variables in FM Book command.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2011-05-09"/></critdates></prolog>
+<body><section id = "id085HGH00RHT" status = "changed"><title>Syntax</title><codeblock status = "changed">F_ApiCallClient("ditafmx", "RebuildVariables[|<varname>docOrBookIdOrName</varname>]");</codeblock><dl>
+<dlentry><dt><varname>docOrBookIdOrName</varname></dt>
+<dd>Id or path and file name of document or book to process. You
+must use double backslashes as the directory delimiter when specifying
+the book or document file name. Optional, if not provided, the “active”
+document or book will be used.</dd></dlentry></dl><note conref =
+"ditafmx_shared.xml#common/fmxapi_auto" status = "changed"></note></section>
+<section><title>Return Value</title><dl compact = "yes"><dlentry><dt>0</dt>
+<dd>Failure. Unable to process the specified document or book. It
+is also possible that DITA-FMx is not available for calls. Verify
+that DITA-FMx is registered in the <filepath>maker.ini</filepath> file
+using the client name of “ditafmx”.</dd></dlentry>
+<dlentry><dt>-1</dt>
+<dd>Failure. </dd></dlentry>
+<dlentry><dt>>0</dt>
+<dd>Success. Value returned represents the number of variables “rebuilt.”</dd></dlentry></dl></section></body></topic>

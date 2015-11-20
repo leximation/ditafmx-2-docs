@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<glossentry id = "id143UG0RA0YK" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<glossterm>key element reference</glossterm>
+<glossdef>A key element reference refers to content that is defined
+within the <synph outputclass = "element">topicmeta</synph> of a <synph
+    outputclass = "element">keydef</synph> element. This is not
+an industry-defined term, but one created to provide a name in which
+to refer to this construct since it does differ from other types
+of referenced content in DITA.</glossdef>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "2014-03-30"/>
+<revised modified = "2014-04-03"/></critdates></prolog></glossentry>

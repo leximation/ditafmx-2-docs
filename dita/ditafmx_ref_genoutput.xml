@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id067FF700U7Q"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Generate Output</title>
+<shortdesc>Provides methods for generating output through the DITA
+Open Toolkit (DITA-OT) from within FrameMaker.</shortdesc>
+<prolog><author status = "new">Scott Prentice</author>
+<critdates status = "changed"><created date = "2008-02-24"/>
+<revised modified = "2014-03-31"/></critdates></prolog>
+<body><p>Select the build type and the desired options, then choose
+the Build button to generate output through the DITA Open Toolkit.
+If you want to generate output based on the current file (a topic
+or map) using one of the pre-defined targets (such as CHM, XHTML,
+or PDF), use the Current File option. If you have set up an Ant
+script to build a specific project (not necessarily the current
+file), use the Selected Target option.</p>
+<fig audience = "web"><title>DITA-FMx Generate Output dialog box</title><image
+href="images/generateoutput.png" align="left" placement="break"
+ otherprops = "fmdpi:110"/></fig>
+<dl><dlentry><dt>Current File</dt>
+<dd status = "new"><p>This option uses a provided Ant script for
+processing the current map or topic file using the selected target.
+You can also use the <option>Use Selected Ditaval File</option> option
+to specify filtering using a selected ditaval file. For setup information,
+see <xref href = "ditafmx_installing_genoutput.xml#id_067EF01A0YZ/id078AF0J0LHS"
+type = "section" format = "dita" scope = "local"></xref>.</p><p>When
+this build type is used, a folder is created in the current file’s
+folder named <filepath class = "+ topic/ph sw-d/filepath ">build-&lt;filename></filepath>.
+Within that folder, another folder is created to match the selected
+output type. The files are generated in that folder.</p></dd></dlentry>
+<dlentry><dt>Selected Target</dt>
+<dd><p>This option lets you run an Ant script and target that you
+have provided. For information on using this feature, see the section <xref
+href = "ditafmx_installing_genoutput.xml#id_067EF01A0YZ/id_0679K0GL05Z"
+type = "section" format = "dita" scope = "local"></xref>.</p></dd></dlentry></dl>
+<p>Additional options are available for use with either Generate
+Output build option.</p>
+<dl><dlentry><dt id = "id0832H00105Z">Open Output</dt>
+<dd>If selected, the output folder will be opened after the build
+completes.</dd></dlentry>
+<dlentry><dt>Write Logfile</dt>
+<dd>If selected, a log file is generated and opened after the build
+completes. If this option is not selected, the build status displays
+in a command shell window.</dd></dlentry>
+<dlentry><dt>Keep Dialog Open</dt>
+<dd>If selected, the Generate Output dialog remains open so you
+can easily run another build.</dd></dlentry>
+<dlentry><dt>Use Selected Ditaval File</dt>
+<dd>This option is only available for use with the Current File
+output type. If selected, the selected ditaval file is used for
+the build. Note that you must have added ditaval files with the
+Ditaval Manager in order for ditaval files to be listed here.</dd></dlentry></dl></body></topic>

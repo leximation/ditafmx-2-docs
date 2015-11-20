@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="FrameMaker\Structure\xml\DITA"?><topic
+    id = "idffd07239-7822-4af1-b400-c9f488a6870f" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>The Book Structure Application</title>
+<shortdesc status = "new">The Book structure application defines
+the fundamental structure and formatting that is applied to the
+topic files that become FM chapter files through the book-build process.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2014-03-28"/></critdates></prolog>
+<body status = "new"><p status = "new">Because it’s possible to
+combine multiple topic types into a single chapter file, this structure
+application must contain the element definitions for all possible
+elements and structures that are included in the final book. </p>
+<p status = "new">If you are using “ditabase” (the DTD that supports
+all of the basic topic types in a single DTD), it will be virtually
+identical to the Topic structure application. However, if you are
+using the “Doctype/Application Mapping” option which lets you use
+individual DTDs (and structure applications) for each topic type,
+you will need to create a special Book application that supports
+all of those topic types in a single EDD. The default Book application
+files are installed to <filepath status = "new">FrameMaker\Structure\xml\DITA-FMx_1.2\Book</filepath>.</p>
+<p status = "new">The Book structure application definition (<menucascade
+    status = "new"><uicontrol status = "new">StructureTools</uicontrol>
+<uicontrol status = "new">Edit Application Definitions</uicontrol></menucascade>)
+also specifies an “Import” XSLT file which is the first step of
+the conversion process. This XSLT is the piece that does the aggregation
+of DITA XML files into chapter-based FM files. It processes the
+root map, any sub maps, and all topic files to build a single XML
+file that is opened in FrameMaker and becomes the book and components. </p>
+<p status = "new">If you look through this file (<filepath
+    status = "new">bookmap2fmbook.xsl</filepath>), you’ll see that
+it adds FM-specific processing instructions that tell FrameMaker
+where the book file starts and where each of the chapter FM files
+start. You can modify this XSLT to accomplish additional custom
+processing as needed. One XSLT modification that may prove easy and
+useful is to pass metadata from the map or bookmap so it is added
+to the <synph status = "new" outputclass = "element">fm-ditabook</synph> element
+as attributes. These attribute values can then be used in various
+ways in the resulting generated book and chapter files. For more
+information on this see, <xref href = "ditafmx_fmditabook_attributes.xml#id1094G010FBF"
+type = "topic" format = "dita" scope = "local" status = "new"></xref>.</p>
+<p status = "new"><indexterm status = "new">fm-ditafile element</indexterm><indexterm
+status = "new">fm-ditafile/@mapelemtype</indexterm><indexterm status
+= "new">fm-ditafile/@href</indexterm><indexterm status = "new">mapelemtype
+attribute</indexterm>The resulting generated FM book and components
+are set up so that each XML file is represented by an <synph
+    status = "new" outputclass = "element">fm-ditafile</synph> element.
+This element is used to provide a container on which to hang file-specific
+attributes, specifically the href attribute which is the path and
+filename to the original DITA topic file. This is needed for later processes
+to properly resolve references. Another attribute that is found
+on the <synph status = "new" outputclass = "element">fm-ditafile</synph> element
+is the mapelemtype attribute. The mapelemtype attribute is set on
+the top-level <synph status = "new" outputclass = "element">fm-ditafile</synph> elements
+and will have the value of the element name of the associated topic
+referencing element in the map. For example, a <synph status = "new"
+    outputclass = "element">chapter</synph> element will result
+in an <synph status = "new" outputclass = "element">fm-ditafile</synph> element
+with a mapelemtype attribute set to ‘chapter’.</p></body></topic>

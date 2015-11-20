@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id08C1D70E0HT"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>ApplyDitaval</title>
+<shortdesc>Runs the Apply Ditaval command to filter the current
+book or file.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2015-03-29"/></critdates></prolog>
+<body><section id = "id085HGH00RHT" status = "changed"><title>Syntax</title><codeblock status = "changed">F_ApiCallClient("ditafmx", "ApplyDitaval |<varname>docOrBookIdOrName</varname> |<varname>ditavalName</varname> [| <varname>doClear</varname> [|<varname>filterType</varname>]]");</codeblock><dl>
+<dlentry><dt><varname>docOrBookId</varname></dt>
+<dd>Id or path and file name of document or book to process. You
+must use double backslashes as the directory delimiter when specifying
+the book or document file name. Required.</dd></dlentry>
+<dlentry><dt><varname>ditavalName</varname></dt>
+<dd>Name of the ditaval file as shown in the DITA-FMx Ditaval Manager.
+Required.</dd></dlentry>
+<dlentry><dt><varname>doClear</varname></dt>
+<dd>Indicates if existing conditions should be cleared or left alone.
+This value is ignored for a <varname>filterType</varname> of “2”
+(filter by deletion). Use “1” to clear or “0” to persist any existing
+conditions. Optional; default is 1 (clear).</dd></dlentry>
+<dlentry><dt><varname>filterType</varname></dt>
+<dd>Specifies the type of filtering to perform. Use “1” for filtering
+with conditions or “2” for filtering by deletion. Optional; default
+is 1 (filtering with conditions).</dd></dlentry></dl><note conref
+= "ditafmx_shared.xml#common/fmxapi_auto" status = "changed"></note></section>
+<section><title>Return Value</title><dl compact = "yes"><dlentry><dt>0</dt>
+<dd>Failure. Unable to process the specified document or book. It
+is also possible that DITA-FMx is not available for calls. Verify
+that DITA-FMx is registered in the <filepath>maker.ini</filepath> file
+using the client name of “ditafmx”.</dd></dlentry>
+<dlentry><dt>&lt;0</dt>
+<dd>Failure.</dd></dlentry>
+<dlentry><dt>>0</dt>
+<dd>Success. Value returned represents the number of conditions
+applied.</dd></dlentry></dl></section></body></topic>

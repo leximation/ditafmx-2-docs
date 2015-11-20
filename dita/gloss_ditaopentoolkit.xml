@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<glossentry id = "id681d2ae5-36e9-4501-826e-2e151a84ab6e"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<glossterm>DITA Open Toolkit</glossterm>
+<glossdef><p>The DITA Open Toolkit, or DITA-OT for short, is a set
+of Java-based, open source tools that provide processing for DITA
+maps and topic content.</p><p>You can download the OT and install
+it for free on your computer to get started with topic-based writing
+and publishing (<xref href = "http://dita-ot.github.io" format =
+"html" scope = "external">dita-ot.github.io</xref>).</p></glossdef>
+<prolog><author>test</author>
+<critdates><created date = "2014-04-06"/>
+<revised modified = "2014-04-06"/></critdates></prolog>
+<glossBody><glossPartOfSpeech value = "properNoun"/>
+<glossSurfaceForm>DITA Open Toolkit (DITA-OT)</glossSurfaceForm>
+<glossAlt><glossAbbreviation>DITA-OT</glossAbbreviation>
+<glossStatus value = "preferred"/></glossAlt>
+<glossAlt><glossAbbreviation>DITA-OTK</glossAbbreviation></glossAlt>
+<glossAlt><glossAcronym>OT</glossAcronym></glossAlt></glossBody></glossentry>

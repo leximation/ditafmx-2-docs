@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="admin"?><?dtall dict="Files\Adobe\FrameMaker\DITA"?><?dtall
+dict="STRUCTDIR\\xml\\DITA"?><?dtall dict="apps\\DITA"?><concept
+    id = "id3e0f22a6-bded-404b-9a77-2a80461af2bd" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Alternate Location for the Structure Applications</title>
+<shortdesc status = "new">On systems where the author does not have
+admin privileges, it may make sense to install the structure applications
+to an alternate location that is more accessible.</shortdesc>
+<prolog><author>scottp</author>
+<critdates><created date = "2015-08-10"/>
+<revised modified = "2015-08-10"/></critdates></prolog>
+<conbody><p status = "new">The structure applications should be
+installed to a location that’s writable for the end user. This is
+to allow for modifications to be made as needed.</p>
+<p status = "new">The following steps describe an option for installing
+the structure applications in a more accessible location.</p>
+<ol status = "new"><li status = "new"><p status = "new">Select a
+writable location for the structure applications.</p><p status = "new">It
+doesn’t really matter where you choose, just some place that is
+writable by the end user. These instructions will use the path <filepath
+    status = "new">C:\FM-apps</filepath>.</p></li>
+<li status = "new"><p status = "new">Copy the app files into the
+selected folder.</p><p status = "new">Extract the contents of the <filepath
+    status = "new">DITA-FMx_apps.zip</filepath> file (found in the <filepath
+    status = "new">Program Files\Adobe\FrameMaker\DITA-FMx_2</filepath> folder)
+into the <filepath status = "new">FM-apps</filepath> folder. This
+will create a folder named <filepath status = "new">DITA-FMx_1.2</filepath> which
+contains three folders, <filepath status = "new">Topic</filepath>, <filepath
+    status = "new">Map</filepath>, and <filepath status = "new">Book</filepath>.
+Each of these three folders contain a “structapps-stub” file specific
+to that structure application (<filepath status = "new">structapps-stub_topic_1.2.fm</filepath>, <filepath
+    status = "new">structapps-stub_map_1.2.fm</filepath>, and <filepath
+    status = "new">structapps-stub_book_1.2.fm</filepath>).</p></li>
+<li status = "new"><p status = "new">Modify the path variables in
+each of the “structapps-stub” files.</p><p status = "new">Open the <filepath
+    status = "new">structapps-stub_topic_1.2.fm</filepath> file
+in FrameMaker. You’ll see a number of file references, starting
+with the text “$STRUCTDIR,” these are FrameMaker variables. The
+goal is to change these to reference the new location for the files. Double-click
+the variable, then click the “edit” button in the Variables panel
+or dialog (this functionality will vary based on the FrameMaker
+version). Change the definition of this variable from “$STRUCTDIR\\xml\\DITA-FMx_1.2\\”
+to “C:\\FM-apps\\DITA-FMx_1.2\\” (make the actual value match the
+real location). Be sure to use double backslashes and to include
+the trailing slashes.</p><p status = "new">Choose “Change” and complete
+the process of modifying the variable. You should see that all instances
+of this variable have updated to use the new path.</p><p status = "new">Do
+the same thing for the Map and Book “structapps-stub” files.</p></li>
+<li status = "new"><p status = "new">Follow the instructions for
+manually installing the structure applications. </p><p status = "new">See, <xref
+href = "ditafmx_installing_apps_manual.xml#id078AAC00PY42" type
+= "topic" format = "dita" scope = "local" status = "new"></xref>.
+Start with step #3, and in step #5 navigate to the “structapps-stub”
+files in the folders you just set up.</p></li></ol>
+<note type = "important" status = "new">If you have already installed
+the structure applications to the default location, you should remove
+the entries in the structure application definitions file that reference
+those applications. You can only have one application definition
+for a named application.</note></conbody></concept>

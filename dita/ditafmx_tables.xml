@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="darkblue"?><?dtall dict="ForceTablesWide"?><?dtall dict="PreserveTableWidths"?><?dtall
+dict="pgwide"?><?dtall dict="stentry"?><?dtall dict="tableformat"?><topic
+    id = "idb3d008c7-8840-451e-b955-b9c59b579f68"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Working with Tables</title>
+<shortdesc>DITA provides tables for many situations. Learn how to
+make them look the way you want.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates status = "changed"><created date = "2009-02-08"/>
+<revised modified = "2014-02-09"/></critdates></prolog>
+<body status = "changed"><p status = "new">DITA-FMx provides a number
+of methods for controlling the appearance of tables. You can’t just
+apply ad-hoc formatting to a table and expect it to “stick”, but
+with a little planning and setup, you should be able to achieve
+most of the formatting that you want.</p>
+<p status = "new">General table formatting is accomplished by assigning
+a FrameMaker table format. Custom ruling and shading can also be
+achieved by setting up the template’s reference page with representative
+examples of the custom formatting. By default, tables are rendered
+to fill the full width of the text column, but can be adjusted.
+Rotated table cells will round-trip without any special effort.
+If you make use of specialized elements based on the simpletable
+element, you’ll need to provide information about those structures
+in order for them to operate properly.</p></body></topic>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id0853I010AHS"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>FrameMaker 7.2 Installation Requirements</title>
+<shortdesc>If installing on FrameMaker 7.2 and other DITA support
+is installed, you will need to disable that DITA support.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>test</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2014-04-13"/></critdates></prolog>
+<body><p status = "changed">If you are upgrading from the Adobe
+DITA App Pack or from the first beta version of DITA-FMx (v.0.01),
+you may need to modify the <filepath>maker.ini</filepath> file or
+disable existing client plugins. If you’re new to DITA authoring
+or haven’t installed either of these plugins, proceed to <xref href
+= "ditafmx_installing_installer.xml#id078AA400U5Z" type = "topic"
+format = "dita" scope = "local"></xref>.</p>
+<note type = "important">The structure applications provided with
+DITA-FMx 2.0 are in FM8 format. FM7.2 users will need to open them
+in FM8 and downsave to FM7 format. If you’re unable to do this,
+contact Leximation.</note>
+<p>In order to eliminate any possible conflicts with previous versions
+of the DITA authoring plugins, check the following:</p>
+<ul status = "changed"><li><p>Verify that there are no “ditafm”
+or “ditafmx” plugin DLLs in the <filepath>FrameMaker/fminit/Plugins</filepath> folder
+(or any subfolders). Files to look for are: <filepath>ditafm.dll</filepath>, <filepath>ditafm_app_72.dll</filepath>, <filepath>fm-ditabook.dll</filepath>, <filepath>ditafmx_72.dll</filepath>,
+and <filepath>ditafmx_app_72.dll</filepath>. If any of these files
+are found, move them to a backup location outside of the <filepath>Plugins</filepath> folder.</p><p>This
+only applies to files in the “Plugins” folder; files found in the <filepath>\fminit\ditafm</filepath> folder
+can be left alone.</p><note type = "important">Do not rename the
+DLLs or move them to a sub-folder of the Plugins folder. You must
+completely move them to an alternate location. If the files exist
+(under any name) within or below the Plugins folder, FrameMaker
+will still load them.</note></li>
+<li><p>Open the <filepath>maker.ini</filepath> file and locate the
+APIClients section. Look for lines that start with “ditafm” or “ditafm_app”
+and delete or comment them out (by adding a semicolon at the start
+of the line). Lines that start with “ditafmx” or “ditafmx_app” will
+be updated by the installer and do not need to be commented out.</p></li></ul>
+<p>You may now proceed to <xref href = "ditafmx_installing_installer.xml#id078AA400U5Z"
+type = "topic" format = "dita" scope = "local"></xref>.</p></body></topic>

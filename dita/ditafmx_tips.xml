@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="Ctrl+Enter"?><?dtall dict="conditionalize"?><?dtall dict="conrefs"?><?dtall
+dict="disambiguator"?><?dtall dict="ditafmx"?><?dtall dict="entfmts"?><?dtall
+dict="FMx"?><?dtall dict="FmDingbats"?><?dtall dict="FrameMaker\Structure"?><?dtall
+dict="GeneralExport"?><?dtall dict="indexterm"?><?dtall dict="inline"?><?dtall
+dict="leximation"?><?dtall dict="pgwide"?><?dtall dict="WriteDictionaryPIs"?><?dtall
+dict="Zapfdingbats"?><topic id = "id068PG600D5Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Tips and Troubleshooting</title>
+<shortdesc>Tips for making the most efficient use of DITA-FMx.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>test</author>
+<author>scottp</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2015-09-11"/></critdates></prolog>
+<body><p><indexterm>indexterm</indexterm>The following list describes
+common and useful tips for working with DITA-FMx. For additional
+information, please visit the FrameMaker/DITA Community KB at <xref
+href = "http://kb.leximation.com/dfm/" format = "html" scope = "external">kb.leximation.com/dfm/</xref>.</p>
+<p status = "changed">If you have tips or suggestions you’d like
+to share, please send them to &lt;<ph audience = "web"
+    status = "changed">ditafmx-help AT leximation DOT com</ph><xref
+href = "mailto:ditafmx-help@leximation.com" format = "html" scope
+= "external" audience = "help">ditafmx-help@leximation.com</xref>>.</p>
+<dl status = "changed"><dlentry><dt status = "changed">FM 2015 map
+to book build fails with XSLT Processor message.</dt>
+<dd status = "changed"><p status = "changed"><indexterm>XSLT Processor
+failure</indexterm>The FM 13.0.1 update changed the default XSLT
+processor from XALAN to SAXON which causes the DITA-FMx Book application’s
+XSLT script to fail. More information and the fix for this is described
+in the topic, <xref href = "ditafmx_fm131appinstall.xml#idb62f0002-1e12-400f-a28a-a48ed67fcda7"
+type = "concept" format = "dita" scope = "local" status = "new"></xref>.</p></dd></dlentry>
+<dlentry><dt status = "changed">"Zapfdingbats Font Family not available"
+message in console.</dt>
+<dd><p status = "changed"><indexterm>Zapfdingbats font message</indexterm>If
+you’re seeing this message in the FrameMaker console window, you’ll
+need to modify the <filepath>entfmts</filepath> file that ships
+with FrameMaker. This file is found in the FrameMaker\Structure
+folder, and is a FM binary file (although it doesn’t have a “.fm”
+extension). To fix this annoyance, open that file in FrameMaker
+(make a backup first), and change the Font Family of the “FmDingbats”
+character style to “Adobe Pi Std”. While you’re in there you may
+also want to change the default font family of the “Bulleted” paragraph
+style from “Courier” to “Courier New” (if you’re seeing console
+messages about Courier). Save the file. (Make sure it remains named
+“entfmts” not “entfmts.fm”.)</p><p>If you’re seeing other font messages
+in the console, that may be due to other fonts used in that file
+or template files. The easiest way to locate the problem is to save
+the template(s) to MIF and search in the MIF file for the offending
+font name.</p></dd></dlentry>
+<dlentry><dt status = "changed">Spelling Checker - Allow in Document.</dt>
+<dd><p status = "changed"><indexterm>image size</indexterm>By default
+(in DITA-FMx), when you spell check a file and use the “Allow in Document”
+option, that word is stored as a processing instruction in the DITA file.
+For words that are common to an entire project, you might consider
+using the “Learn” option instead, which stores the word in a system-level
+location. To disable this feature (prevent creation of the dictionary
+PIs), change the GeneralExport/WriteDictionaryPIs parameter to “0”
+in the <filepath status = "new">ditafmx.ini</filepath> file.</p></dd></dlentry>
+<dlentry><dt>Supporting round-tripping of image sizes.</dt>
+<dd><p><indexterm>image size</indexterm>To support the proper sizing
+and placement of image elements, certain read/write rules must be
+defined. If you’re using a custom or older structure application,
+the height and width rules may not be properly defined. Refer to
+the <xref href = "ditafmx_app_imagesupport.xml#id0837HJ0C05Z" type
+= "topic" format = "dita" scope = "local"></xref> topic for the
+proper rules.</p></dd></dlentry>
+<dlentry><dt>Images aren’t “shrink-wrapped” in book builds.</dt>
+<dd><p><indexterm>images<indexterm>shrink-wrapped in book builds</indexterm></indexterm>If
+your images resize and shrink-wrap properly while authoring, but
+don’t for your book builds, check the Reload References setting
+in the Book Build Settings dialog. This setting must be enabled
+for images to resize and shrink-wrap in book builds.</p></dd></dlentry>
+<dlentry><dt>Making use of page-wide tables.</dt>
+<dd><indexterm>tables<indexterm>page-wide</indexterm></indexterm><p>If
+you want a table to extend to the full width of the text frame,
+set the table/@pgwide attribute to 1.</p></dd></dlentry>
+<dlentry id = "id082NH0J0Q5Z"><dt id = "id082NH0K05Y4">Using FrameMaker
+variables with DITA</dt>
+<dd status = "changed"><p status = "changed"><indexterm class =
+"- topic/indexterm ">FrameMaker variables</indexterm><indexterm
+class = "- topic/indexterm ">variables</indexterm>As of DITA-FMx
+2.0 variables (user and system) will round trip properly if the “Convert
+Variables to fm-var on Save” option is selected in the Authoring Options
+dialog.</p><note status = "changed">Using FrameMaker variables is
+not really considered to be a “best practice” although there may
+be situations where it is an ideal solution for a particular problem.
+The proper DITA way to use “variables” is that of a conref to a phrase
+element or as a keyref with a “key element reference.”</note></dd></dlentry>
+<dlentry><dt>Heavy use of references slowing things down?</dt>
+<dd><p>If you make heavy use of references (conrefs or xrefs), you
+may find it more efficient to open the target files first (those
+that are the destination of an xref or the source of a conref).
+If the target files are already open when you open topic files,
+the referencing process will go much faster.</p></dd></dlentry>
+<dlentry><dt>Reference problems while converting unstructured content
+to DITA</dt>
+<dd><p>While converting an existing set of unstructured files into
+DITA, you may want to disable the auto-loading of xrefs and conrefs.
+If auto-loading is enabled you may get a lot of referencing errors
+when opening files if the target of those references is not a completely
+valid file.</p></dd></dlentry>
+<dlentry><dt>Conrefs in title elements</dt>
+<dd><p>If you have titles that contain conrefs, be sure to have
+that file open when updating the DITA map file, otherwise the conref
+content will not appear in the topicref label.</p></dd></dlentry>
+<dlentry><dt>Use of inline formatting within “preformatted” elements
+(like codeblock)</dt>
+<dd><p status = "changed">FrameMaker uses the read/write rule “preserve
+line breaks” to allow the line breaks within code or preformatted
+elements to round trip between XML and the authoring view. The use
+of inline child elements such as <synph status = "new"
+    outputclass = "element">b</synph> or <synph status = "new"
+    outputclass = "element">i</synph> within a preformatted element
+poses a particular problem since you generally don’t want line breaks
+preserved for those child elements when used in non-code situations.
+There are a number of ways to handle this problem, but the easiest
+is to only apply these inline elements within a line (don’t tag
+multiple lines), and don’t let the child element start at the beginning
+of the line (allow at least a leading space before the inline element
+starts and ends). What appears to be a Frame bug causes the preserved
+line break to be lost if a child element starts or ends a line.</p></dd></dlentry>
+<dlentry><dt>Use of draft-comments inline</dt>
+<dd><p>If you make use of the <synph status = "new"
+    outputclass = "element">draft-comment</synph> element within
+running text, be sure to wrap a trailing (or leading) space within
+the element so that when (or if) you conditionalize these elements
+so they are hidden in Frame, you don’t end up with a double space.</p></dd></dlentry>
+<dlentry><dt>Quick way to add a row to tables</dt>
+<dd><p>Place the cursor anywhere in a row, press Ctrl+Enter and
+a new row is added after the current row.</p></dd></dlentry>
+<dlentry><dt>Converting unstructured to structured files</dt>
+<dd><p status = "changed"><indexterm>error messages<indexterm>ditafmx_app
+got assertion failure</indexterm></indexterm><indexterm>Index markers
+in conversion table</indexterm><indexterm>conversion table<indexterm>Index
+markers</indexterm></indexterm>When creating a conversion table,
+be sure to map Index markers to a valid element type. In the default
+DITA-FMx Topic app, the <synph status = "new" outputclass = "element">indexterm</synph> element
+is not defined as a Marker type, but a Container. Index markers
+should be mapped to the <synph status = "new" outputclass = "element">fm-indexterm</synph> element
+instead because that is defined as a Marker element type in the
+EDD. If you map Index markers to the <synph status = "new"
+    outputclass = "element">indexterm</synph> element, FrameMaker
+will crash with an assertion failure error when saving the structured
+file to XML.</p></dd></dlentry></dl></body></topic>

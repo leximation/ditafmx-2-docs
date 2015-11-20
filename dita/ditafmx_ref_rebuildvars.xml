@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+
+<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+
+<?Fm BoolCondExpr "DITA-Data" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "id0844HD080Y4"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Rebuild Variables</title>
+<shortdesc>Rebuilds variables after conversion to a FrameMaker book.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2008-04-04"/></critdates></prolog>
+<body><p>In order to resurrect variables that have been flattened
+to text by the map to book conversion process, they must have been
+first processed with the <uicontrol>Prepare Variables</uicontrol> command. The <uicontrol>Rebuild
+Variables</uicontrol> command locates all ph elements with a keyref
+attribute value that matches the pattern of “fmvar:VARNAME”, and
+replaces the content of the ph element with the variable. The variable
+will added, only if a matching variable definition is found in the
+file. Because of this you may need to import the variable definitions
+into the file before running the <uicontrol>Rebuild Variables</uicontrol> command.</p>
+<p>This can also be done automatically during the Map to Book conversion
+process by selecting the <uicontrol>Rebuild Variables</uicontrol> option
+in the <wintitle>Book Build Settings</wintitle> dialog found in
+the <wintitle>DITA Options</wintitle> dialog.</p></body></topic>

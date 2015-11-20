@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id0837HJ0C05Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>image</title>
+<prolog><author>Scott Prentice</author>
+<author>test</author>
+<critdates><created date = "2008-03-07"/>
+<revised modified = "2014-04-12"/></critdates></prolog>
+<body><p status = "new"><indexterm status = "new">image element</indexterm><indexterm
+status = "new">elements<indexterm status = "new">image</indexterm></indexterm>To
+support the image/alt element the value of the <synph
+    outputclass = "element">alt</synph> element is stored in the anchored
+frame’s “object attribute” while open in FrameMaker. Select the
+anchored frame, then choose <menucascade><uicontrol>Graphics</uicontrol>
+<uicontrol>Object Properties</uicontrol></menucascade>, then Object
+Attributes. The <synph outputclass = "element">alt</synph> value
+is stored in the “Alternate” field. The EDD should define the <synph
+    outputclass = "element">image</synph> element as a “Graphic,”
+which doesn’t allow for a general rule (hence no support for the <synph
+    outputclass = "element">alt</synph> and <synph
+    outputclass = "element">longdescref</synph> child elements in
+FrameMaker).</p>
+<p status = "new">To support the proper sizing and placement of <synph
+    status = "new" outputclass = "element">image</synph> elements,
+add the following to the “image” rule in both Topic and Book apps:</p>
+<codeblock>element "image" 
+{ 
+  is fm graphic element; 
+  fm property import by reference or copy value is "ref"; 
+ 
+  writer facet default 
+  { 
+    specify size in pt; 
+  } 
+  attribute "href" 
+  { 
+     is fm attribute "href"; 
+     is fm property file; 
+  } 
+  attribute "align" 
+  { 
+    is fm property alignment; 
+    value "left" is fm property value align left; 
+    value "right" is fm property value align right; 
+    value "center" is fm property value align center; 
+    value "current" is fm property value align center; 
+  } 
+  attribute "height" 
+  { 
+    is fm property height; 
+    is fm attribute; 
+  } 
+  attribute "width" 
+  { 
+    is fm property width; 
+    is fm attribute; 
+  } 
+}</codeblock></body></topic>

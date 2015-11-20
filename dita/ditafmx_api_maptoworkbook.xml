@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="MapToWorkbook"?><?dtall dict="mapName"?><?dtall dict="outBookName"?><topic
+    id = "idf785916c-3c56-4c00-a775-198268247c7a"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>MapToWorkbook</title>
+<shortdesc>Runs the Build Workbook from Map command to create a
+book file that contains all XML files referenced by a map.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2015-03-30"/></critdates></prolog>
+<body><section id = "id085HGH00RHT" status = "changed"><title>Syntax</title><codeblock status = "changed">F_ApiCallClient("ditafmx", "MapToWorkbook |<varname>mapName</varname> [| <varname>outBookName</varname>]");</codeblock><dl>
+<dlentry><dt><varname>mapName</varname></dt>
+<dd>The full path and file name of the DITA map to be processed.
+This file must already be open in FrameMaker. The <varname>mapName</varname> value
+may be “.” (dot) to indicate the “current” file. Required.</dd></dlentry>
+<dlentry><dt><varname>outBookName</varname></dt>
+<dd>Full path and file name of the book to be generated. Optional.
+If not provided the new book name will be <filepath>&lt;mapName>.work.book</filepath>.</dd></dlentry></dl><note
+conref = "ditafmx_shared.xml#common/fmxapi_auto" status = "changed"></note></section>
+<section><title>Return Value</title><dl compact = "yes"><dlentry><dt>0</dt>
+<dd>Failure. Unable to process the specified document or book. It
+is also possible that DITA-FMx is not available for calls. Verify
+that DITA-FMx is registered in the <filepath>maker.ini</filepath> file
+using the client name of “ditafmx”.</dd></dlentry>
+<dlentry><dt>&lt;0</dt>
+<dd>Failure.</dd></dlentry>
+<dlentry><dt>>0</dt>
+<dd>Success. Value returned represents the number of conditions
+applied.</dd></dlentry></dl></section></body></topic>

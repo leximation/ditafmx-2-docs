@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id0854D03105Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>fm-link and fm-linkref</title>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2008-03-07"/>
+<revised modified = "2014-03-29"/></critdates></prolog>
+<body><p status = "new"><indexterm>elements<indexterm>fm-link</indexterm></indexterm><indexterm>elements<indexterm>link</indexterm></indexterm><indexterm>elements<indexterm>fm-linkref</indexterm></indexterm><indexterm
+status = "new">link element</indexterm><indexterm status = "new">fm-link
+element</indexterm><indexterm status = "new">fm-linkref element</indexterm>The <synph
+    status = "new" outputclass = "element">fm-link</synph> element
+is used to create a FrameMaker-style cross-reference as a related-links
+item. On file save, this converts to a standard DITA <synph
+    status = "new" outputclass = "element">link</synph> element
+and on file open, it converts back into an <synph status = "new"
+    outputclass = "element">fm-link</synph> element. </p>
+<p status = "new">The way an <synph status = "new"
+    outputclass = "element">fm-link</synph> is identified as such
+is the type attribute value which is given the format of “fm:<i
+    status = "new">FORMAT-NAME</i>”. Where <i status = "new">FORMAT-NAME</i> is
+the cross-reference format name as defined in the FrameMaker template.
+When an <synph status = "new" outputclass = "element">fm-link</synph> element is
+inserted, the standard FrameMaker Cross-Ref dialog displays, select
+the target element and the cross-ref is inserted as a <synph
+    status = "new" outputclass = "element">fm-linkref</synph> element
+(child of <synph status = "new" outputclass = "element">fm-link</synph>).
+You can optionally add a standard <synph status = "new"
+    outputclass = "element">desc</synph> element as a sibling of
+the <synph status = "new" outputclass = "element">fm-linkref</synph>.</p>
+<p status = "changed">To use the <synph status = "new"
+    outputclass = "element">fm-link</synph> feature requires the
+creation of <synph status = "new" outputclass = "element">fm-link</synph> and <synph
+    status = "new" outputclass = "element">fm-linkref</synph> elements.</p>
+<ol><li status = "changed">Create an <synph status = "new"
+    outputclass = "element">fm-link</synph> element definition (in
+the EDD):<ol><li>Make a copy of the default <synph status = "new"
+    outputclass = "element">link</synph> element definition.</li>
+<li>Change the name to “fm-link”</li>
+<li>Change the general rule to “fm-linkref, desc?”</li>
+<li>Change the default value for the class attribute to “- topic/fm-link”</li>
+<li>Add an automatic insertion of a child “fm-linkref” element.</li></ol></li>
+<li>Create an <synph status = "new" outputclass = "element">fm-linkref</synph> element
+definition (in the EDD):<ol><li>Make a copy of the default <synph
+    status = "new" outputclass = "element">link</synph> element
+definition.</li>
+<li>Change the name to “fm-linkref”</li>
+<li>Change the element type from Container to CrossReference</li>
+<li>Delete the general rule</li>
+<li>Make all of the attributes into the type “String” that is “Optional”
+with a Special Attribute Control of “Hidden”. Remove all default
+values.</li></ol></li>
+<li status = "changed">Add <synph status = "new" outputclass = "element">fm-link</synph> to
+the appropriate general rules (everywhere that a <synph status = "new"
+    outputclass = "element">link</synph> element is valid, the <synph
+    status = "new" outputclass = "element">fm-link</synph> element
+should also be).</li></ol>
+<p status = "changed">The <synph status = "new" outputclass = "element">fm-link</synph> and <synph
+    status = "new" outputclass = "element">fm-linkref</synph> elements
+should be added to both the Topic and Book applications.</p></body></topic>

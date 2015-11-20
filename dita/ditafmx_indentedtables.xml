@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id143NG020F5Z" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Indented Tables</title>
+<shortdesc status = "new">It may be useful to indent within lists.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2014-03-23"/>
+<revised modified = "2014-03-23"/></critdates></prolog>
+<body status = "new"><p status = "new">Unfortunately, FrameMaker
+does not provide any way to control the indenting of tables other
+than by setting a left indent value for all tables of a particular
+format. While you could have a special format for tables in lists,
+this may quickly become unreasonable to manage.</p>
+<p status = "new">DITA-FMx provides an option (in the Authoring
+Options dialog), to automatically set the left indent for tables,
+based on the Left Indent property of the parent element’s paragraph
+tag. When a table is used in a standard list, the parent element
+will be the <synph status = "new" outputclass = "element">li</synph> element.</p>
+<p status = "new">The indent is applied on file save (as well as
+on file open). After inserting a table in a list, save the document
+and the table will be indented to match the parent.</p></body></topic>

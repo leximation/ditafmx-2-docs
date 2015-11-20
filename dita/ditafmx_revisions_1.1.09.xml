@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "DITA-Data" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "id6a607bdf-7d24-45d1-a154-82a525462094"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>1.1.09 - 4 October 2010</title>
+<prolog><critdates><created date = "UNK"/>
+<revised modified = "2010-09-30"/></critdates></prolog>
+<body><section><title outputclass = "h3">New Features</title><dl
+    status = "changed"><dlentry><dt status = "changed">Better integration
+with Windows Vista and Windows 7.</dt>
+<dd status = "changed">DITA-FMx does not need to be run “As Administrator.”</dd></dlentry>
+<dlentry><dt status = "changed">Added support for SDL Trisoft CMS.</dt>
+<dd status = "changed">This version of DITA-FMx is designed to integrate
+with the SDL Trisoft CMS.</dd></dlentry>
+<dlentry><dt status = "changed">Added the option to restore the
+previous view settings.</dt>
+<dd status = "changed">On file open, restores the document zoom
+value and the visibility of borders, text symbols, rulers, grid
+lines, and element boundaries. See “Restore Previous View Settings”
+in the <xref href = "ditafmx_ref_options.xml#id067FF70N0RO" type
+= "topic" status = "new" format = "dita" scope = "local"></xref> topic.</dd></dlentry>
+<dlentry><dt status = "changed">Import fm-ditabook attributes as
+variables and condition states.</dt>
+<dd status = "changed">Attributes on the fm-ditabook element can
+define values that are passed to the book components as FrameMaker
+variables. These attributes can also be used to control the show/hide
+state of conditions in the generated book components. See <xref
+href = "ditafmx_addingnewfmditabookattributes.xml#id3a2152b0-95cf-4a97-9f6a-2921c293cc2a"
+type = "topic" status = "new" format = "dita" scope = "local"></xref>.</dd></dlentry>
+<dlentry><dt status = "changed">Added support for pre and post book-build
+scripts.</dt>
+<dd status = "changed">The book-build INI file can now specify pre
+and/or post build script file names to assist in automating setup
+and cleanup tasks. These file names specify batch or executable script
+files, and are not used to run an FDK client or FrameScript. See <xref
+href = "ditafmx_ref_book-buildinifile.xml#id84800a54-1228-438f-881d-08ce097eba90"
+type = "topic" status = "new" format = "dita" scope = "local"></xref>.</dd></dlentry>
+<dlentry><dt status = "changed">Override default book-build settings
+via the book-build INI file.</dt>
+<dd status = "changed">The book-build INI file can now override
+the default values set in the Book Build Options dialog. See <xref
+href = "ditafmx_ref_book-buildinifile.xml#id84800a54-1228-438f-881d-08ce097eba90"
+type = "topic" status = "new" format = "dita" scope = "local"></xref>.</dd></dlentry>
+<dlentry><dt status = "changed">Allow specification of component
+templates via the @outputclass attribute.</dt>
+<dd status = "changed">You can now set the outputclass attribute
+on topicref or topicref-based elements in maps, and that attribute
+value will be added to the fm-ditafile element in generated files
+in a book. This value can be used instead of the “mapelemtype” value
+in the book-build INI file to specify templates and properties of
+book components. See <xref href = "ditafmx_setupbookbuildsettings.xml#id00a0eead-77f5-4131-9d2d-5a02de0a1893/id1086G0EF05Z"
+type = "section" status = "new" format = "dita" scope = "local"></xref>.</dd></dlentry>
+<dlentry><dt status = "changed">Added the “substring extraction”
+option to New File building blocks.</dt>
+<dd status = "changed">When using new file name building blocks,
+in addition to being able to extract the first <i status = "new">N</i> characters
+of the string you can now specify a range of characters to extract.
+See “New File Name Format” in the <xref href = "ditafmx_ref_newfileoptions.xml#id0824II0E05Z"
+type = "topic" status = "new" format = "dita" scope = "local"></xref> topic.</dd></dlentry>
+<dlentry><dt status = "changed">Added the option to open DITA maps
+in document view (FM9 only).</dt>
+<dd status = "changed">See “Open Maps in Document View” in the <xref
+href = "ditafmx_ref_options.xml#id067FF70N0RO" type = "topic" status
+= "new" format = "dita" scope = "local"></xref> topic.</dd></dlentry>
+<dlentry><dt status = "changed">Provide a user-definable template
+file name delimiter.</dt>
+<dd status = "changed">Allows modification of the file name delimiter
+used in new file templates, component templates, and generated list
+templates. See “TplDelimChar” in the <xref href = "ditafmx_ref_inionly.xml#id067FF8008E9"
+type = "topic" status = "new" format = "dita" scope = "local"></xref> topic.</dd></dlentry></dl></section>
+<section><title outputclass = "h3">Structure Application Updates</title><dl
+    status = "changed"><dlentry><dt status = "changed">Topic and
+Book EDDs</dt>
+<dd status = "changed">Corrected a typo in the comments: "index_3"
+has been changed to "indent_3".</dd></dlentry>
+<dlentry status = "new"><dt status = "new">Topic and Book EDDs and
+templates</dt>
+<dd status = "new">Added the following sl list paragraph styles:<ul
+    status = "new"><li status = "new">sl.ul.entry.bullet</li>
+<li status = "new">sl.ol.entry.bullet</li>
+<li status = "new">sl.entry.bullet</li>
+<li status = "new">sl.step.bullet</li>
+<li status = "new">sl.ul.bullet</li>
+<li status = "new">sl.ol.bullet</li>
+<li status = "new">sl.bullet</li></ul></dd></dlentry>
+<dlentry status = "new"><dt status = "new">Topic and Book templates</dt>
+<dd status = "new">glossdef, removed Keep w/ Next</dd>
+<dd status = "new">glossterm, removed Keep w/ Next, add Keep w/
+Previous.</dd>
+<dd status = "new">glossterm.runhead, removed Keep w/ Next.</dd></dlentry>
+<dlentry status = "new"><dt status = "new">Component templates</dt>
+<dd status = "new">Added ix-see and ix-seealso character styles
+to gentpl~toc.fm file.</dd>
+<dd status = "new">Added support for appendix and part TOC entries.</dd>
+<dd status = "new">Added new tpl~appendix.fm template.</dd></dlentry>
+<dlentry status = "new"><dt status = "new">Book EDD and DTD (fmxbook.dtd)</dt>
+<dd status = "new">Added numerous new attributes to the fm-ditabook
+element.</dd>
+<dd status = "new">Added @outputclass attribute to the fm-ditafile
+element.</dd></dlentry>
+<dlentry status = "new"><dt status = "new">Book EDD</dt>
+<dd status = "new">Added fm-indexterm as child of title element.</dd>
+<dd status = "new">Added support for title.4 as a 6th level heading.</dd></dlentry>
+<dlentry status = "new"><dt status = "new">Book template</dt>
+<dd status = "new">Added <i status = "new">&lt;$chapnum>-</i> to
+prefix figure title and table title paragraph tags.</dd>
+<dd status = "new">Removed hyphenation from title.0.</dd>
+<dd status = "new">Added ix-see and ix-seealso character styles.</dd></dlentry>
+<dlentry status = "new"><dt status = "new">Book XSLT </dt>
+<dd status = "new">Overall updates to improve handling of various
+folder structures.</dd>
+<dd status = "new">Added example code to add fm-ditabook attributes
+from map and bookmap metadata.</dd></dlentry>
+<dlentry status = "new"><dt status = "new">Map EDD</dt>
+<dd status = "new">Added @id attribute to the relcolspec element.</dd></dlentry></dl></section>
+<section><title outputclass = "h3">Bug Fixes</title><dl
+    status = "changed"><dlentry><dt status = "changed">The number
+of ditaval files supported by the Ditaval Manager has been increased.</dt>
+<dd status = "changed">The number of ditaval files that can be listed
+in the Ditaval Manager is restricted to the length of the aggregated
+string of all of the ditaval names (just the file name, not the
+extension or path). This length was 256 and is now 1024. The new
+length should accommodate 50 ditaval files with an average length
+of 20 characters.</dd></dlentry>
+<dlentry><dt status = "changed">Create Archive command now available
+from Resource Manager.</dt>
+<dd status = "changed">The Create Archive command can now be run
+on a map open in the FM9 Resource Manager.</dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">Flatten conref
+fixes.</dt>
+<dd status = "changed">Nested conrefs will now flatten properly,
+and selected individual conrefs in an XML file will now remain flattened
+after the XML file is reopened.</dd></dlentry>
+<dlentry><dt status = "changed">Nested conrefs to the same file
+resolve properly.</dt>
+<dd status = "changed">Conrefs that reference an element within
+the same file will now properly resolve nested conrefs within the
+referenced element.</dd></dlentry>
+<dlentry><dt status = "changed">The “fmdpi” feature is only used
+for raster images.</dt>
+<dd status = "changed">The “fmdpi” value is no longer set for vector
+graphics. Because you can’t set the DPI of a vector graphic, this
+caused sizing problems.</dd></dlentry>
+<dlentry><dt status = "changed">Xrefs that contain Unicode characters
+are no longer deleted on file open.</dt>
+<dd status = "changed">Entering alternate xref text that contains
+Unicode characters, will now properly round trip through FrameMaker.</dd></dlentry>
+<dlentry><dt status = "changed">The Open All Topicrefs command opens
+topic references that include IDs.</dt>
+<dd status = "changed">If the @href in a topicref-based element
+includes the topic ID, the referenced file will now open correctly.</dd></dlentry>
+<dlentry><dt status = "changed">The Open All Files in Book command
+opens DITA map files.</dt>
+<dd status = "changed">If a workbook contains references to a DITA
+map, that map file will now be opened as expected along with other
+topic files.</dd></dlentry>
+<dlentry><dt status = "changed">Added support for structure applications
+with a read-only template.</dt>
+<dd status = "changed">Read-only template files will no longer cause
+problems. The same goes for a <filepath status = "new">structapps.fm</filepath> file
+that is read-only.</dd></dlentry>
+<dlentry><dt status = "changed">FrameMaker variables support additional
+characters.</dt>
+<dd status = "changed">FM variables in topic files can now contain
+alphanumeric, plus dot, dash, and underscore characters (other characters
+will cause errors at file open).</dd></dlentry>
+<dlentry><dt status = "changed">Ampersands can now be used in xref/@href
+attributes.</dt>
+<dd status = "changed">When an ampersand is used in an @href it
+will be converted to “&amp;amp;” on file save.</dd></dlentry>
+<dlentry><dt status = "changed">Set Attributes dialog displays sorted
+attribute names.</dt>
+<dd status = "changed">The attribute names in the Set Attributes
+dialog are now sorted.</dd></dlentry>
+<dlentry><dt status = "changed">Properly supports xrefs that contain
+high-ascii characters.</dt>
+<dd status = "changed">An xref with alternate link text containing
+non-English characters (such as an “ä”) will now properly resolve
+and render when the document is reopened.</dd></dlentry>
+<dlentry><dt status = "changed">The @class value is deleted when
+an element type is changed.</dt>
+<dd status = "changed">When changing an element’s type (using the
+“Change” button in the Element Catalog) the @class value will often
+get hard-coded to the previous element’s value. This causes problems
+for DITA-OT processing. Now, when you change an element, the @class
+value is deleted (unless you explictly turn this off with the INIOnly/StripClassAttribute
+setting in the <filepath status = "new">ditafmx.ini</filepath> file).</dd></dlentry></dl></section></body></topic>

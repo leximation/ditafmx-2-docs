@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id0837I050QY4"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>fm-reflabel and Topic References</title>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2008-03-07"/>
+<revised modified = "2014-03-29"/></critdates></prolog>
+<body><p status = "new"><indexterm>elements<indexterm>fm-reflabel</indexterm></indexterm><indexterm
+status = "new">fm-reflabel element</indexterm>In order to provide
+a clickable label for some of the topic referencing elements in map
+and bookmap files, the <synph status = "new" outputclass = "element">fm-reflabel</synph> element
+must be added to the EDD. This element is discarded on file save,
+and is recreated on file open.</p>
+<p status = "changed">To implement this feature the <synph
+    status = "new" outputclass = "element">fm-reflabel</synph> element
+definition must be added to the EDD and added to the general rule
+of the <synph status = "new" outputclass = "element">topicref</synph>, <synph
+    status = "new" outputclass = "element">chapter</synph>, <synph
+    status = "new" outputclass = "element">appendix</synph>, <synph
+    status = "new" outputclass = "element">part</synph>, etc. elements.
+The <synph status = "new" outputclass = "element">fm-reflabel</synph> element
+should have a general rule of “&lt;TEXT>”. If you want to apply
+character formatting you can add text format rules.</p>
+<p status = "changed">Because the <synph status = "new"
+    outputclass = "element">fm-reflabel</synph> element is not part
+of the DITA specification, it must be deleted on file save. Add
+the following rule to the Map application rules file:</p>
+<codeblock>fm element "fm-reflabel" drop;</codeblock>
+<p>If this element is not added to the EDD, you will be able to
+create topic referencing elements, but they will have no label to
+click on.</p>
+<p status = "new">For maps based on the DITA 1.2 model, most of
+the topic referencing elements will use the <synph status = "new"
+    outputclass = "element">navtitle</synph> element instead of
+the <synph status = "new" outputclass = "element">fm-reflabel</synph> element,
+however, the <synph status = "new" outputclass = "element">keydef</synph> element
+does need a clickable label so uses <synph status = "new"
+    outputclass = "element">fm-reflabel</synph>.</p>
+<p status = "changed">The <synph status = "new" outputclass = "element">fm-reflabel</synph> element
+should be added only to Map application.</p>
+<note status = "changed"><indexterm>elements<indexterm>fm-topicreflabel</indexterm></indexterm>The <synph
+    status = "new" outputclass = "element">fm-reflabel</synph> element
+replaces the <synph status = "new" outputclass = "element">fm-topicreflabel</synph> as
+of DITA-FMx 1.1. This change was made to support a clickable label
+on all topic referencing bookmap elements. When migrating FM-DITA
+applications, you’ll want to change <synph status = "new"
+    outputclass = "element">fm-topicreflabel</synph> to <synph
+    status = "new" outputclass = "element">fm-reflabel</synph>.</note></body></topic>

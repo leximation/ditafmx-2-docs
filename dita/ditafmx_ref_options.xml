@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="Apps"?><?dtall dict="DTDs"?><?dtall dict="fmdpi:NN"?><?dtall
+dict="fmdpi:&lt;DPI"?><?dtall dict="glossPartOfSpeech"?><?dtall dict="glossProperty"?><?dtall
+dict="glossStatus"?><?dtall dict="ja"?><?dtall dict="MaxRefLevels"?><?dtall
+dict="UseLanguageTemplate"?><?dtall dict="xml:lang"?><topic
+    id = "id067FF70N0RO"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>DITA Options</title>
+<shortdesc>Specify options that control the various authoring and
+publishing features of DITA-FMx.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>test</author>
+<author>scottp</author>
+<critdates><created date = "2008-02-05"/>
+<revised modified = "2015-03-30"/></critdates></prolog>
+<body status = "changed"><p status = "changed">The Options dialog
+provides access to the frequently modified properties and settings.
+Other settings can be changed manually in the <filepath conref =
+"ditafmx_shared.xml#common/ditafm-ini" class = "+ topic/ph sw-d/filepath
+"></filepath> file in the user’s DITA-FMx folder (<menucascade
+    status = "new"><uicontrol status = "new">DITA-FMx</uicontrol>
+<uicontrol status = "new">Open DITA-FMx Folder)</uicontrol></menucascade>,
+see the <xref href = "ditafmx_ref_inionly.xml#id067FF8008E9" type
+= "topic" format = "dita" scope = "local"></xref> topic for details.</p>
+<fig audience = "web"><title>DITA-FMx Options dialog box</title><image
+href="images/options.png" align="right" placement="break"  otherprops
+= "fmdpi:110"/></fig>
+<dl status = "changed"><dlhead status = "new"><dthd status = "new">File
+and Application Options</dthd></dlhead>
+<dlentry><dt status = "changed">Use Doctype/Application Mapping</dt>
+<dd><p status = "new">Uses a doctype-to-structure-application mapping
+to specify the application to use when opening a DITA topic or map
+file. Choose the Edit button to define the mapping, then enable
+the <uicontrol status = "new">Use doctype/application mapping</uicontrol> option
+to use the mapping. For details on this feature, see <xref href
+= "ditafmx_doctypemapping.xml#idee670175-2865-4577-9a94-9bbeb8b6ab12"
+type = "topic" format = "dita" scope = "local"></xref>.</p><p
+    status = "new">It is important to define a mapping for all possible
+doctypes that you may encounter, otherwise errors will result when
+opening files. When this option is enabled, the Topic and Map applications
+specified in the Options dialog are ignored. The “doctype” is the
+root element’s name, or the “topic type”. If you use the task, concept,
+and reference topic types, you should set up a mapping for each
+type.</p><p status = "new">Use of this option allows you to define
+separate structure applications for each topic type, or you can
+use a structure application that supports multiple types (like the
+default DITA-FMx applications). The structure applications can share common
+files as needed (typically the EDD and DTDs), but each unique application
+name will require a separate entry in the structure application
+definitions file.</p></dd></dlentry>
+<dlentry><dt>DITA Topic Application</dt>
+<dd><p status = "new">The name of the Topic structure application
+used for topic items on the <menucascade><uicontrol>New DITA File</uicontrol></menucascade> menu.
+The Topic structure application is used for authoring of DITA topics.</p><p
+    status = "new">Also, if the <uicontrol>Use doctype/application
+mapping</uicontrol> option is not enabled, this specifies the application
+used to open a DITA topic file when that topic is opened automatically
+(such as when you double-click a topicref or reference a topic from
+a topic or a map).</p></dd></dlentry>
+<dlentry><dt>DITA Map Application</dt>
+<dd><p status = "new">The name of the Map structure application
+used for map items on the <menucascade><uicontrol>New DITA File</uicontrol></menucascade> menu.
+The Map structure application is used for authoring of DITA maps.</p><p
+    status = "new">Also, if the <uicontrol>Use doctype/application
+mapping</uicontrol> option is not enabled, this specifies the application
+used to open a DITA map file when that map is opened automatically
+(such as when you double-click a topicref or reference a map from another
+map).</p></dd></dlentry>
+<dlentry><dt>DITA Book Application</dt>
+<dd status = "changed"><p>The name of the Book structure application
+used by the <uicontrol>Generate Book from Map</uicontrol> command.
+The Book application is used for generating FM book and chapter
+files from a DITA map; it is not used for authoring.</p></dd></dlentry>
+<dlentry><dt>Default “New” Type</dt>
+<dd><p>Specifies the file extension applied to new topic files when
+one is not provided as part of the file name.</p></dd></dlentry></dl>
+<dl status = "new"><dlhead status = "new"><dthd status = "new">ID
+Handling Options</dthd></dlhead>
+<dlentry><dt>Auto-Generated ID Type</dt>
+<dd><p status = "changed">Specifies the type of ID that will be
+generated automatically by DITA-FMx when an ID is required. GUID
+specifies a globally unique ID and QUID specifies a “quasi unique”
+ID. The QUID is shorter and when combined with a unique ID prefix
+can be considered to be unique under typical conditions (but is
+technically not globally unique).</p><p status = "new">Neither of
+these ID types is necessarily better than the other, it really depends on
+your needs. The GUID is defined to be “globally” unique, so if this
+is important to your process that might be a reason to use the GUID.
+The downside of a GUID is that they are very long and not particularly
+user-friendly. The QUID is unique under most conditions, and if
+each of your writers specifies a unique prefix the uniqueness is
+almost guaranteed. The QUID is probably preferable if you want to
+be able to “read” the values.</p></dd></dlentry>
+<dlentry><dt>Default ID Prefix</dt>
+<dd><p>The string that is used as a prefix on IDs that are automatically
+generated.</p></dd></dlentry>
+<dlentry><dt>Auto-Add IDs if Required by Element</dt>
+<dd><p>When an element is inserted that has a required ID attribute,
+that attribute value is automatically added.</p></dd></dlentry></dl>
+<dl status = "new"><dlhead status = "new"><dthd status = "new">On
+File Open</dthd></dlhead>
+<dlentry><dt status = "changed">Auto-Load Conrefs</dt>
+<dd status = "changed"><p>On file open, any conrefs are resolved
+and updated. Note that this auto-loading is applied to all files
+opened as a result of a reference in that file being resolved. The
+number of levels of reference resolution is determined by the <option
+    status = "changed">MaxRefLevels</option> INIOnly parameter.</p></dd></dlentry>
+<dlentry><dt status = "changed">Auto-Load Xrefs and Links</dt>
+<dd status = "changed"><p status = "new">On file open, any <synph
+    status = "new" outputclass = "element">xref</synph> (or <synph
+    status = "new" outputclass = "element">fm-xref</synph>) and <synph
+    status = "new" outputclass = "element">link</synph> (or <synph
+    status = "new" outputclass = "element">fm-link</synph>) elements are
+resolved and the labels are updated with the text of the target
+element. Note that this auto-loading is applied to all files opened
+as a result of a reference in that file being resolved. The number
+of levels of reference resolution is determined by the <option
+    status = "changed">MaxRefLevels</option> INIOnly parameter.</p><p
+    status = "changed">If this option is disabled, <synph status = "new"
+    outputclass = "element">fm-xref</synph> and <synph status = "new"
+    outputclass = "element">fm-link</synph> elements are not converted from
+their base <synph status = "new" outputclass = "element">xref</synph> or <synph
+    status = "new" outputclass = "element">link</synph> elements;
+they will remain as <synph status = "new" outputclass = "element">xref</synph> or <synph
+    status = "new" outputclass = "element">link</synph> elements
+until you enable this option.</p></dd></dlentry>
+<dlentry><dt status = "changed">Auto-Load Topicrefs</dt>
+<dd status = "changed"><p>On file open of a DITA map, labels (as <synph
+    status = "new" outputclass = "element">fm-reflabel</synph> and <synph
+    status = "new" outputclass = "element">navtitle</synph> elements) are
+added to all topicref-based elements. To open the associated file, double-click
+the label. If this option is selected, the additional “Show” options are
+available:</p><ul><li><b>Titles</b> - displays the target file’s
+title as the label.</li>
+<li><b>File names</b> - displays the target file’s file name as
+the label (the value of the href attribute).</li>
+<li><b>Both</b> - displays the target file’s title and file name
+as the label.</li></ul></dd></dlentry>
+<dlentry><dt status = "changed">Conditionalize Prolog</dt>
+<dd><p><indexterm>prolog element, conditionalize</indexterm><indexterm>DITA-Prolog
+conditional tag</indexterm><indexterm>conditional tags<indexterm>DITA-Prolog</indexterm></indexterm>On
+file open, the <synph status = "new" outputclass = "element">prolog</synph> element
+is tagged with the “DITA-Prolog” condition. If this condition does
+not exist, it is created, and set to “Show.” If this condition already
+exists in the template, the condition is applied and the current Show/Hide
+state is used.</p></dd></dlentry>
+<dlentry><dt status = "changed">Conditionalize Topicmeta and Bookmeta</dt>
+<dd status = "changed"><p><indexterm>topicmeta element, conditionalize</indexterm><indexterm>bookmeta
+element, conditionalize</indexterm><indexterm>DITA-Topicmeta conditional
+tag</indexterm><indexterm>conditional tags<indexterm>DITA-Topicmeta</indexterm></indexterm>On
+file open (of a map), any <synph status = "new" outputclass = "element">topicmeta</synph> and <synph
+    status = "new" outputclass = "element">bookmeta</synph> elements
+are tagged with the “DITA-Topicmeta” condition. If this condition
+does not exist, it is created, and set to “Show.” If this condition
+already exists in the template, the condition is applied and the
+current Show/Hide state is used.</p></dd></dlentry>
+<dlentry><dt status = "changed">Conditionalize Comments</dt>
+<dd><p><indexterm>draft-comment element, conditionalize</indexterm><indexterm>DITA-Comment
+conditional tag</indexterm><indexterm>conditional tags<indexterm>DITA-Comment</indexterm></indexterm>On
+file open, any <synph status = "new" outputclass = "element">draft-comment</synph> elements
+are tagged with the “DITA-Comment” condition. If this condition
+does not exist, it is created, and set to “Show.” If this condition
+already exists in the template, the condition is applied and the
+current Show/Hide state is used.</p></dd></dlentry>
+<dlentry><dt status = "changed">Conditionalize Data, Data-About,
+and Area</dt>
+<dd status = "changed"><p><indexterm>data element, conditionalize</indexterm><indexterm>data-about
+element, conditionalize</indexterm><indexterm>area element, conditionalize</indexterm><indexterm>DITA-Data
+conditional tag</indexterm><indexterm>conditional tags<indexterm>DITA-Data</indexterm></indexterm>On
+file open, any <synph status = "new" outputclass = "element">data</synph>, <synph
+    status = "new" outputclass = "element">data-about</synph>, and <synph
+    status = "new" outputclass = "element">area</synph> elements
+are tagged with the “DITA-Data” condition. If this condition does
+not exist, it is created, and set to “Show.” If this condition already
+exists in the template, the condition is applied and the current
+Show/Hide state is used.</p><note>This option applies the DITA-Data
+condition to all <synph outputclass = "element">data</synph>-based elements,
+such as <synph outputclass = "element">glossPartOfSpeech</synph>, <synph
+    outputclass = "element">glossStatus</synph>, <synph
+    outputclass = "element">glossProperty</synph>, and others.</note></dd></dlentry>
+<dlentry><dt status = "changed">Conditionalize Required-Cleanup</dt>
+<dd><p><indexterm>required-cleanup element, conditionalize</indexterm><indexterm>DITA-Cleanup
+conditional tag</indexterm><indexterm>conditional tags<indexterm>DITA-Cleanup</indexterm></indexterm>On
+file open, the <synph status = "new" outputclass = "element">required-cleanup</synph> elements
+are tagged with the “DITA-Cleanup” condition. If this condition
+does not exist, it is created, and set to “Show.” If this condition
+already exists in the template, the condition is applied and the
+current Show/Hide state is used.</p></dd></dlentry>
+<dlentry><dt status = "changed">Normalize Whitespace on Import</dt>
+<dd><p status = "changed"><indexterm>whitespace, normalization</indexterm>Strips
+redundant spaces and tabs from the XML file, often added by XML
+editors to “pretty-print” XML files for ease of use. If this option
+is disabled, you may see extra whitespace or paragraphs in the file
+when open in FrameMaker.</p></dd></dlentry>
+<dlentry><dt>Indexterm to Fm-Indexterm Conversion</dt>
+<dd status = "changed"><p status = "new"><indexterm>check for updates</indexterm><indexterm>updates,
+checking</indexterm>If enabled, <synph status = "new"
+    outputclass = "element">indexterm</synph> elements are converted
+into <synph status = "new" outputclass = "element">fm-indexterm</synph> elements
+on file open and that process is revered when the file is written
+to disk. This provides for compatibility between the DITA indexing
+syntax and FrameMaker’s marker syntax. If this option is not enabled, <synph
+    status = "new" outputclass = "element">indexterm</synph> elements
+import as container elements and display inline as ordinary content.</p><note
+    type = "important" status = "new">If an <synph status = "new"
+    outputclass = "element">indexterm</synph> element contains child
+elements (other than <synph status = "new" outputclass = "element">index-see</synph>, <synph
+    status = "new" outputclass = "element">index-see-also</synph>,
+and <synph status = "new" outputclass = "element">index-sort-as</synph>),
+those elements will be lost on import. If your files do contain
+additional child elements within an <synph status = "new"
+    outputclass = "element">indexterm</synph>, you should disable
+this option.</note></dd></dlentry>
+<dlentry><dt status = "changed">Restore Saved View Settings</dt>
+<dd status = "changed"><p>On file open, the “saved” view settings
+are restored. The settings are saved when the <uicontrol status = "new">Save
+View Settings</uicontrol> command is run, and include the document zoom
+value, attribute display options, and the visibility of borders,
+text symbols, rulers, grid lines, and element boundaries.</p></dd></dlentry>
+<dlentry><dt status = "changed">Use Language Templates</dt>
+<dd status = "changed"><p><indexterm>UseLanguageTemplate INI parameter</indexterm><indexterm>language
+template</indexterm><indexterm>templates, language-specific</indexterm>Enables
+the use of language-specific template files. When opening a DITA
+XML file, if the topic’s <synph outputclass = "attribute">xml:lang</synph> attribute
+specifies a value, and a matching language template exists in the
+same folder as the default structure application template, that
+template is used instead of the default template. The language template
+must be named “&lt;templatename>.&lt;langval>.fm” (the “.fm” extension
+is optional, but if the default template includes the extension,
+the language template must also. For example, if your default template
+is <filepath>topic.template.fm</filepath>, a Japanese language template
+would be named <filepath>topic.template.ja-jp.fm</filepath> (assuming
+that “ja-jp” was the value in the xml:lang attribute).</p><p
+    status = "new">If this option is enabled, DITA-FMx will also
+look for a language-specific book-build INI file when creating a
+book from a map (<filepath status = "new">ditafmx-bookbuild.&lt;langval>.ini</filepath>).
+This file will be located in the same places as the standard book-build
+INI file. If a language-specific INI is not found, the default book-build INI
+will be used (if available). For example, if the <synph
+    outputclass = "attribute">xml:lang</synph> attribute value is set
+to “ja-jp”, DITA-FMx will look for the file <filepath status = "new">ditafmx-bookbuild.ja-jp.ini</filepath>.</p><note>In
+DITA-FMx 2.0.01, this setting was migrated from an “INI-Only” UseLanguageTemplate
+setting into the Options dialog.</note></dd></dlentry>
+<dlentry><dt status = "changed">Open Maps in Document View (FM9/10)</dt>
+<dd status = "changed"><p status = "new">When opening a DITA map,
+instead of opening it in the <uicontrol status = "new">Resource
+Manager</uicontrol>, it is opened in the document view. Although
+the <uicontrol status = "new">Resource Manager</uicontrol> presents
+the files in an orderly package, it is not a terribly useful way
+to work on a map because many features of a map are unavailable.</p><note
+    status = "new">On FM9/10 this option operates properly on initial
+map open and when opening a map from a topicref. For later versions,
+it only works when opening a map from a topicref; after initial
+map open, you’ll need to manually switch to document view.</note></dd></dlentry>
+<dlentry><dt status = "changed">Check for XML Comments (FM7.2)</dt>
+<dd>On file open, a message displays at the console window if the
+file contains XML comments. This option is not available (or needed)
+in FM versions above FM7.2 since XML comments now round-trip as
+markers.</dd></dlentry></dl>
+<dl status = "new"><dlhead status = "new"><dthd status = "new">Additional
+Options</dthd></dlhead>
+<dlentry><dt status = "changed">New File Options</dt>
+<dd status = "changed">Displays the <wintitle>New File Options</wintitle> dialog
+where you can specify the new file name format for topics and maps,
+as well as the location of the element template folder. This dialog
+also controls the default setting for wrapping new topics in the
+dita element.</dd></dlentry>
+<dlentry><dt status = "changed">Auto-Prolog Options</dt>
+<dd status = "changed">Displays the <wintitle>Auto-Prolog Options</wintitle> dialog
+which lets you control the way the <synph status = "new"
+    outputclass = "element">prolog</synph>, <synph status = "new"
+    outputclass = "element">topicmeta</synph>, and <synph status = "new"
+    outputclass = "element">bookmeta</synph> are initialized for
+new files and updated on file open.</dd></dlentry>
+<dlentry><dt status = "changed">Map Options</dt>
+<dd status = "changed">Displays the <wintitle status = "changed">Map
+Options</wintitle> dialog which controls the way the <synph
+    status = "new" outputclass = "element">navtitle</synph> element is
+rendered when a map is opened and how the <synph status = "new"
+    outputclass = "element">navtitle</synph> is added when a topicref-based
+element is created.</dd></dlentry>
+<dlentry><dt status = "changed">Authoring Options</dt>
+<dd status = "changed">Displays the <wintitle status = "changed">Authoring
+Options</wintitle> dialog which provides numerous settings that affect
+authoring.</dd></dlentry>
+<dlentry><dt status = "changed">Keyspace Options</dt>
+<dd status = "changed">Displays the <wintitle status = "changed">Keyspace
+Options</wintitle> dialog which controls the way a keyspace is generated
+and resolved.</dd></dlentry>
+<dlentry><dt status = "changed">Index Options</dt>
+<dd status = "new">Displays the <wintitle>Index Options</wintitle> dialog
+which lets you control the rendering and functionality of <synph
+    status = "new" outputclass = "element">index-see</synph> and <synph
+    status = "new" outputclass = "element">index-see-also</synph> elements.</dd></dlentry>
+<dlentry><dt status = "changed">Element Mapping</dt>
+<dd status = "changed">Displays the New <wintitle>Element Mapping</wintitle> dialog.
+This dialog lets you control the rendering of <synph status = "new"
+    outputclass = "element">simpletable</synph>-based elements and
+preformatted elements.</dd></dlentry>
+<dlentry><dt status = "changed">External Apps</dt>
+<dd status = "changed"><p status = "new">Displays the <wintitle>External
+Application Settings</wintitle> dialog. This dialog specifies the following
+program locations and settings:</p><ul status = "new"><li><p
+    status = "new">DITA Open Toolkit installation directory (used
+by the <uicontrol>Generate Output</uicontrol> command)</p></li>
+<li status = "new"><p status = "new">utility used for the <uicontrol>Create
+Archive</uicontrol> command</p></li>
+<li status = "new"><p status = "new">application used as the text
+editor for coderefs</p></li></ul></dd></dlentry>
+<dlentry><dt status = "changed">Book Builds</dt>
+<dd>Displays the <wintitle>Book Build Settings</wintitle> dialog.
+This dialog provides control over the processes that are run on
+the book and generated FM files created by the <uicontrol>Generate
+Book from Map</uicontrol> command.</dd></dlentry></dl></body></topic>

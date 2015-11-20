@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id0837A060NHS"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Developing Custom Structure Applications</title>
+<shortdesc>Once you’re comfortable with the features in DITA-FMx,
+you’ll surely want to create your own custom structure applications
+that apply your house style to your DITA documents.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2008-03-07"/>
+<revised modified = "2014-03-24"/></critdates></prolog>
+<body status = "changed"><p>In FrameMaker, all of the formatting
+and page layout applied to XML files is done by the selected structure
+application. A structure application (also called a “structure app”
+or just “app”) is made up of the following components:</p>
+<ul><li><b>Template file</b> – contains the page layout, paragraph/character
+formatting, other object formatting (such as cross-ref and variable
+definitions), and any document-specific interface defaults (such
+as the visibility of element boundaries).</li>
+<li><b>EDD (element definition document)</b> – defines the structure
+of the elements in the data model, and the context rules for formatting
+those elements.</li>
+<li><b>DTD (document type definition) files</b> – a set of markup
+declarations that define a document type for SGML-based markup languages
+(XML, SGML, HTML). This includes files of type DTD, ENT, MOD, and
+others that define the structure of a data model.</li>
+<li><b>Read/write rules file</b> – specifies how FrameMaker translates
+from markup (XML files) to the authoring environment and back.</li></ul>
+<p status = "changed">There are many ways to develop and maintain
+structure applications. DITA-FMx is set up to work with three types
+of apps, a Topic app and a Map app (both used for authoring) and
+a Book app (used for printing and PDF generation). If you want to control
+the way your DITA files are printed, you will want to modify the
+Book app. If you want to modify the structure or add/remove elements,
+you’ll need to modify both the Topic and Book apps (and possibly
+the Map app). The default DITA-FMx application folder structure
+puts the files for all three of these apps into Topic, Map, and
+Book folders under a main folder named “DITA-FMX_1.2.” We find this
+folder structure to be the most efficient, but you are free to devise
+any structure that works for your needs.</p>
+<p>When creating your own custom structure applications, you can
+either start by cloning the existing default DITA-FMx apps or by
+creating your own from scratch. The cloning method is the easiest
+and least likely to have errors, but you can do which ever works
+best for you.</p>
+<note type = "important">You may be tempted to make minor modifications
+to the default DITA-FMx apps. We strongly recommend that you maintain
+an instance of the DITA-FMx structure applications in their original
+form. Because these applications work properly with DITA-FMx, as
+you customize/build your own apps, you may need to refer back to
+the originals in case something goes wrong (which it often does).</note></body></topic>

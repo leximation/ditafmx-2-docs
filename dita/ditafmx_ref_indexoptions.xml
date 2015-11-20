@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="ix"?><?dtall dict="seealso"?><topic
+    id = "idf15ab8fa-7832-45e3-b892-442771c31826"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Index Options</title>
+<shortdesc>Allows customization of the import/export processing
+of the marker syntax with index-see and index-see-also elements.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2014-03-31"/></critdates></prolog>
+<body><p status = "changed"><indexterm status = "new">index-see
+element rendering</indexterm><indexterm status = "new">index-see-also
+element rendering</indexterm>Although there are standards for the
+formatting of “see” and “see-also” index entries, each organization
+may want these entries to be constructed slightly differently. The <uicontrol
+    status = "new">Index Options</uicontrol> dialog allows for this
+personalization. DITA provides the <synph status = "new"
+    outputclass = "element">index-see</synph> and <synph status = "new"
+    outputclass = "element">index-see-also</synph> elements for
+identifying these type of index entries, but in FrameMaker, the
+index syntax is all contained within a single Index marker (in DITA-FMx
+this becomes an <synph status = "new" outputclass = "element">fm-indexterm</synph> element).
+This dialog defines how the DITA elements map to and are converted
+from DITA into FrameMaker (and back).</p>
+<fig audience = "web"><title>DITA-FMx Index Options dialog box</title><image
+href="images/indexoptions.png" align="left" placement="break"  otherprops
+= "fmdpi:110"/></fig>
+<p>The Index Options dialog provides two main sections, one for
+each of the “see” and “see-also” entry types. Within each section
+are fields (described below) and a “Resulting Marker Text” area
+that dynamically shows the index marker syntax to be generated using
+the fields as entered. The textual content used for the sample entries
+can be modified in the Sample Entry Values field. Any time a value
+requires leading or trailing spaces, wrap it in square or curly
+brackets ( “[ .. ]” or “{ .. }” ).</p>
+<dl><dlhead><dthd>index-see Options</dthd></dlhead>
+<dlentry><dt>Main Terminator</dt>
+<dd>Separates the text of the main entry with that of the referenced
+entry. Typically a period followed by a space.</dd></dlentry>
+<dlentry><dt>Char Tag</dt>
+<dd>The name of the character style used to format the “see” reference
+entry. This is required even if there is no additional formatting
+to be applied because it is the only way for FrameMaker to know
+if the index entry is a “see” entry. The character tag “ix-see”
+is defined in the default DITA-FMx templates; you are free to modify
+the formatting of that tag. If you want to use a different character
+tag, you must add that style to the template.</dd></dlentry>
+<dlentry><dt>Label</dt>
+<dd>The label that separates the main entry and the referenced entry
+text. This value will be formatted with the character style specified
+in the Char Tag field.</dd></dlentry>
+<dlentry><dt>Nesting Separator</dt>
+<dd>Separates multiple referenced entries. Typically a comma with
+a trailing space.</dd></dlentry></dl>
+<dl><dlhead><dthd>index-see-also Options</dthd></dlhead>
+<dlentry><dt>Char Tag</dt>
+<dd>The name of the character style used to format the “see-also”
+reference entry. This is required even if there is no additional
+formatting to be applied because it is the only way for FrameMaker
+to know if the index entry is a “see-also” entry. The character
+tag “ix-seealso” is defined in the default DITA-FMx templates; you
+are free to modify the formatting of that tag. If you want to use a
+different character tag, you must add that style to the template.</dd></dlentry>
+<dlentry><dt>Label</dt>
+<dd>The label that separates the main entry and the referenced entry
+text. This value will be formatted with the character style specified
+in the Char Tag field.</dd></dlentry>
+<dlentry><dt>Nesting Separator</dt>
+<dd>Separates multiple referenced entries. Typically a comma with
+a trailing space.</dd></dlentry>
+<dlentry><dt>Forced Sort Value</dt>
+<dd>If you want the entry to sort in a particular manner, enter
+the forced sort text here.</dd></dlentry>
+<dlentry><dt>Entry Separator</dt>
+<dd>String that separates multiple top-level target entries. Typically
+a semicolon with a trailing space. This value is not represented
+in the sample Resulting Marker Text field.</dd></dlentry>
+<dlentry><dt>Wrap See-Also Reference</dt>
+<dd>If enabled, wraps the entire see-also reference in parenthesis.</dd></dlentry></dl></body></topic>

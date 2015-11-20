@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="project_a"?><topic id = "id08C8E60035Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Create Archive</title>
+<shortdesc>Creates a ZIP archive of the current file and all referenced
+files.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2008-12-08"/>
+<revised modified = "2014-03-31"/></critdates></prolog>
+<body><p>The Create Archive command uses the command line syntax
+specified in the Archive field of the DITA Options: External Applications
+dialog to create a ZIP archive of all files referenced by the current
+file or map. This is an ideal way to create an archive of a project
+at a given point in time or makes it easy to package up a project
+to hand off to others.</p>
+<p>When the command completes, a dialog displays the name of the
+archive file created. The archive generated is named <filepath>&lt;filename>_zip.zip</filepath>,
+where &lt;filename> is the root file name of the current file when
+the Create Archive command is used. For example, if the archive
+is created from the <filepath>project_a.ditamap</filepath> file,
+the archive created will be named <filepath>project_a_zip.zip</filepath>.</p>
+<p>If you’d like to include additional files in the archive that
+are not specifically referenced (such as ditaval files), you can
+create an “archive baggage” file. When the Create Archive command
+runs, it checks in the folder of the current file for a file named <filepath>&lt;filename>-archive.txt</filepath> and
+if this file is found, it includes the files listed in the new archive.
+For example, if the archive is created from the <filepath>project_a.ditamap</filepath> file,
+the command checks for a file named <filepath>project_a-archive.txt</filepath>.
+This TXT file should list each baggage file on a separate line.
+The file names are assumed to be relative to the current folder.</p>
+<p status = "changed">By default DITA-FMx uses an open source archive
+utility called “Info-ZIP.” The default file name of this utility
+has been renamed to <filepath>ditafmx-zip.exe</filepath> and is
+installed to the DITA-FMx installation folder (in the Program Files
+area). You can specify an alternate archive utility or use different
+command line options, by changing the command line syntax in the
+DITA Options: External Applications dialog.</p>
+<note id = "id4de0563c-dac4-4e17-aa76-6356b853ab27" status = "changed">If
+the archive is not created, verify that the Command Line Syntax
+value in the DITA Options: External Applications dialog is valid.
+Deleting this value will reset it to the default value. You can
+test by running the <filepath>~tmpzip.bat</filepath> batch file
+in the user’s DITA-FMx folder (<menucascade status = "new">
+<uicontrol status = "new">DITA-FMx</uicontrol>
+<uicontrol status = "new">Open DITA-FMx Folder</uicontrol></menucascade>);
+run this from a command shell to see any errors that may display.</note></body></topic>

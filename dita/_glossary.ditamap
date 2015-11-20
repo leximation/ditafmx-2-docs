@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<map id = "id143UG0M0T5Z" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>DITA-FMx Glossary</title>
+<topicmeta status = "new"><author>Scott Prentice</author>
+<author>test</author>
+<author>scottp</author>
+<critdates><created date = "2014-03-30"/>
+<revised modified = "2014-08-01"/></critdates>
+<othermeta name = "fmx-root-map" content = "_ditafmx.ditamap"
+    status = "new"/></topicmeta>
+<topicref href = "gloss_glossary.xml" type = "topic"><topicmeta><navtitle>DITA-FMx
+Glossary</navtitle></topicmeta>
+<topicref href = "gloss_bookbuildinifile.xml" keys = "book-build-ini"
+    type = "glossentry"><topicmeta><navtitle>book-build INI file</navtitle></topicmeta></topicref>
+<topicref href = "gloss_componenttemplate.xml"
+    keys = "component-template" type = "glossentry"><topicmeta><navtitle>component
+template</navtitle></topicmeta></topicref>
+<topicref href = "gloss_ditaopentoolkit.xml" keys = "dita-ot"
+    type = "glossentry"><topicmeta><navtitle>DITA Open Toolkit</navtitle></topicmeta></topicref>
+<topicref href = "gloss_elementtemplate.xml" keys = "element-template"
+    type = "glossentry"><topicmeta><navtitle>element template</navtitle></topicmeta></topicref>
+<topicref href = "gloss_keyelementreference.xml"
+    keys = "key-element-reference" type = "glossentry"><topicmeta><navtitle>key
+element reference</navtitle></topicmeta></topicref></topicref>
+<reltable status = "new">
+<relheader>
+<relcolspec linking = "sourceonly" status = "new"></relcolspec>
+<relcolspec linking = "targetonly"></relcolspec>
+</relheader>
+<relrow>
+<relcell status = "changed">
+<topicref href = "gloss_glossary.xml" type = "topic"><topicmeta><navtitle>DITA-FMx
+Glossary</navtitle></topicmeta></topicref></relcell>
+<relcell status = "changed">
+<topicref navtitle = "Using DITA-FMx" href = "ditafmx_using.xml"
+    status = "changed"></topicref>
+<topicref navtitle = "DITA-FMx Commands" href = "ditafmx_ref_main.xml"
+    type = "topic"></topicref></relcell>
+</relrow>
+<relrow>
+<relcell status = "changed">
+<topicref href = "gloss_bookbuildinifile.xml" type = "glossentry">
+<topicmeta><navtitle>book-build INI file</navtitle></topicmeta></topicref></relcell>
+<relcell status = "changed">
+<topicref
+    navtitle = "The Book Build Settings Dialog and the Book-Build INI File"
+    href = "ditafmx_setupbookbuildsettings.xml" type = "topic"></topicref>
+<topicref navtitle = "Book-Build INI file"
+    href = "ditafmx_ref_book-buildinifile.xml" type = "topic"></topicref>
+<topicref navtitle = "Generate Book from Map"
+    href = "ditafmx_ref_genbook.xml" type = "topic"></topicref></relcell>
+</relrow>
+<relrow>
+<relcell status = "changed">
+<topicref href = "gloss_componenttemplate.xml"
+    keys = "component-template" type = "glossentry"><topicmeta><navtitle>component
+template</navtitle></topicmeta></topicref></relcell>
+<relcell status = "changed">
+<topicref navtitle = "Description of the Structure Application Files"
+    href = "ditafmx_installing_apps_descr.xml" type = "topic"></topicref>
+<topicref navtitle = "Generate Book from Map"
+    href = "ditafmx_ref_genbook.xml" type = "topic"></topicref></relcell>
+</relrow>
+<relrow>
+<relcell status = "changed">
+<topicref href = "gloss_elementtemplate.xml" keys = "element-template"
+    type = "glossentry"><topicmeta><navtitle>element template</navtitle></topicmeta></topicref></relcell>
+<relcell status = "changed">
+<topicref navtitle = "Creating Element Templates"
+    href = "ditafmx_installing_creatingelementtemplates.xml"
+    type = "topic"></topicref>
+<topicref navtitle = "New DITA File" href = "ditafmx_ref_newfile.xml"
+    type = "topic"></topicref></relcell>
+</relrow>
+<relrow>
+<relcell status = "changed">
+<topicref href = "gloss_keyelementreference.xml"
+    keys = "key-element-reference" type = "glossentry"><topicmeta><navtitle>key
+element reference</navtitle></topicmeta></topicref></relcell>
+<relcell status = "changed">
+<topicref href = "ditafmx_ref_insertkeyelementreference.xml"
+    keys = "insert-key-element-ref" type = "topic" status = "new">
+<topicmeta><navtitle>Insert Key Element Reference</navtitle></topicmeta></topicref></relcell>
+</relrow>
+</reltable></map>

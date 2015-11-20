@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+
+<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "DITA-Data" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "id727be2f2-0a33-46b0-a8ba-f65bf53ad956"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>1.1.11 - 10 January 2011</title>
+<prolog><critdates><created date = "2010-12-31"/>
+<revised modified = "2011-01-09"/></critdates></prolog>
+<body><section status = "changed"><title outputclass = "h3">New
+Features</title><dl status = "changed"><dlentry><dt status = "changed">Enables
+“proper” handling of booklists elements.</dt>
+<dd status = "changed">The INIOnly/UseBooklistPlaceholder INI parameter
+enables the “proper” handling of frontmatter and backmatter automatic
+list generation where the @href attribute is empty rather than requiring
+placeholder files. For details, see the “UseBooklistPlaceholder”
+description in <xref href = "ditafmx_ref_inionly.xml#id067FF8008E9"
+type = "topic" status = "new" format = "dita" scope = "local"></xref>.</dd></dlentry>
+<dlentry><dt status = "changed">Added support for language-specific
+book-build INI files.</dt>
+<dd status = "changed">The INIOnly/UseLanguageTemplate INI parameter
+enables support for alternate language book-build INI files based
+on the value of the topic/@xml:lang attribute. For details, see
+the “UseLanguageTemplate” description in <xref href = "ditafmx_ref_inionly.xml#id067FF8008E9"
+type = "topic" status = "new" format = "dita" scope = "local"></xref>.</dd></dlentry>
+<dlentry><dt status = "changed">Added support for table cell rotation.</dt>
+<dd status = "changed">Rotated table cells will round-trip properly
+and are rendered properly in generated book components. For details,
+see <xref href = "ditafmx_tables.xml#idb3d008c7-8840-451e-b955-b9c59b579f68"
+type = "topic" status = "new" format = "dita" scope = "local"></xref>.</dd></dlentry>
+<dlentry><dt status = "changed">Enhancements to the book-build process.</dt>
+<dd status = "changed">Five new parameters have been added to the
+book-build INI file. In the General section, the AttrAsCondPrefix
+parameter lets the user specify an alternate prefix for conditions
+generated from map attributes. In the BookBuildOverrides section
+the MoveFigId and MoveTableId parameters support proper referencing
+of table titles and figure titles, the BreakToInline parameter allows
+for better indenting of images, and the NormalizeConditions parameter
+eliminates the inconsistent show/hide setting and inconsistent condition
+indicator messages when updating a book. For details, see <xref
+href = "ditafmx_ref_book-buildinifile.xml#id84800a54-1228-438f-881d-08ce097eba90"
+type = "topic" status = "new" format = "dita" scope = "local"></xref>.</dd></dlentry>
+<dlentry><dt status = "changed">New DITA File dialog pre-selects
+last used element template.</dt>
+<dd status = "changed">When an element template is used to create
+a specific topic type, that same template will be pre-selected when
+that topic type is created again.</dd></dlentry>
+<dlentry><dt status = "changed">Added “Merge Para Tags” command.</dt>
+<dd status = "changed">The Merge Para Tags command ensures that
+all paragraph tag names in all currently open documents, exist in
+all of those documents. For more information, see <xref href = "ditafmx_ref_mergeparatags.xml#id420ff157-8ac5-4424-afde-ca14e0c135ab"
+type = "topic" format = "dita" scope = "local"></xref>.</dd></dlentry></dl></section>
+<section status = "changed"><title outputclass = "h3">Structure
+Application Updates</title><dl status = "changed">
+<dlentry status = "new"><dt status = "new">Book Structure Application</dt>
+<dd status = "new"><ul status = "new"><li status = "changed">Added
+a Chapter component template (tpl~chapter.fm), just a copy of the
+Book template, but a nice convenience.</li></ul></dd></dlentry>
+<dlentry status = "new"><dt status = "new">Book EDD (book_1.1.edd.mif/fm)</dt>
+<dd status = "new"><ul status = "new"><li status = "new">Added fm-ditabook/@xml:lang</li>
+<li status = "new">Changed fig/@id type to UniqueID</li>
+<li status = "new">Added fm-figuretitle to fig general rule</li>
+<li status = "new">Added fm-figuretitle element definition</li>
+<li status = "new">Changed table/@id type to a UniqueID</li>
+<li status = "new">Changed fm-tabletitle/@id type to UniqueID</li>
+<li status = "new">Added context rules to title element definition
+to apply appendix and part title formats eliminating the need for
+separate appendix and part component template EDDs.</li>
+<li status = "new">Added second set of context rules to fig element
+definition to support indenting of images.</li></ul></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">Book template
+(book_1.1.template.fm) and component templates</dt>
+<dd status = "changed"><ul status = "new"><li status = "changed">Changed
+autonum in note.danger para format to “danger” (was “fastpath”).</li>
+<li status = "new">Added figure.title.bottom and figure.title.wide.bottom
+para styles (for fm-figuretitle element).</li>
+<li status = "new">Removed “Fixed” line spacing from figure.anchor
+and figure.anchor.wide para styles to support the revised handling
+of indented images.</li>
+<li status = "new">Import updated Book EDD</li></ul></dd></dlentry>
+<dlentry status = "new"><dt status = "new">Book DTD (fmxbook.dtd)</dt>
+<dd status = "new"><ul status = "new"><li status = "changed">Added
+@xml:lang to fm-ditabook</li></ul></dd></dlentry>
+<dlentry status = "new"><dt status = "new">Book XSLT (bookmap2fmbook.xsl)</dt>
+<dd status = "new"><ul status = "new"><li status = "changed">Added
+"translate" to strip CRs from attribute values assigned to fm-ditabook element
+(CRs are introduced when map metadata wraps in the XML file)</li>
+<li status = "new">Added @xml:lang attribute to fm-ditabook</li>
+<li status = "new">Strip colons from FM filename (fmfile variable)
+in 2 places</li>
+<li status = "new">Added new template to process booklists/* map
+elements that have no @href value (no associated file)</li>
+<li status = "new">Added new template to handle data and data-about
+elements in topics separately from maps (they get stripped from
+a map [book] but not from topics)</li>
+<li status = "new">Added support for @print='no' (exclude from output)
+in 2 places</li></ul></dd></dlentry>
+<dlentry status = "new"><dt status = "new">Map template (map_1.1.template.fm)</dt>
+<dd status = "new"><ul status = "new"><li status = "changed">Changed
+font family to Wingdings on topicref.lead.char character style</li></ul></dd></dlentry>
+<dlentry status = "new"><dt status = "new">Topic EDD (topic_1.1.edd.mif/fm)</dt>
+<dd status = "new"><ul status = "new"><li status = "changed">Changed
+fig/@id type to UniqueID</li>
+<li status = "new">Changed table/@id type to a UniqueID</li></ul></dd></dlentry>
+<dlentry status = "new"><dt status = "new">Topic template (topic_1.1.template.fm)</dt>
+<dd status = "new"><ul status = "new"><li status = "changed">Import
+updated EDD</li></ul></dd></dlentry></dl></section>
+<section><title outputclass = "h3">Bug Fixes</title><dl
+    status = "changed"><dlentry><dt status = "changed">Significant
+improvements to handling of graphic overlay objects.</dt>
+<dd status = "changed">The time required to open and save files
+that contain graphic overlay objects has been reduced significantly.</dd></dlentry>
+<dlentry><dt status = "changed">data and data-about elements are
+not deleted during book-build.</dt>
+<dd status = "changed">The XSLT import script no longer deletes
+the data and data-about elements from topics during a book-build.</dd></dlentry>
+<dlentry><dt status = "changed">topicref/@print=’no’ is now honored
+in book-build.</dt>
+<dd status = "changed">Topic references in a map that have the @print
+attribute set to “no” are now omitted from the generated book files.</dd></dlentry>
+<dlentry><dt status = "changed">fm-xref references to “moved” table
+and figure titles work properly.</dt>
+<dd status = "changed">Cross-references created with the fm-xref
+element will resolve properly even when the “Move title” options
+are selected in the book-build options.</dd></dlentry>
+<dlentry><dt status = "changed">All figure titles are rendered properly
+in the generated FM files.</dt>
+<dd status = "changed">The first figure title is no longer deleted
+from each chapter when the “move” option is used.</dd></dlentry>
+<dlentry><dt status = "changed">fm-link insertion no longer produces
+an error message.</dt>
+<dd status = "changed">Inserting an fm-link in FM9 no longer generates
+an invalid error message.</dd></dlentry>
+<dlentry><dt status = "changed">RelLinkType parameter is no longer
+ignored in the book-build INI file.</dt>
+<dd status = "changed">When specifying the related link type in
+the book-build INI file, the RelLinkType value will is now honored.</dd></dlentry>
+<dlentry><dt status = "changed">The Rebuild Variables in book-builds
+feature works properly now.</dt>
+<dd status = "changed">Selecting the Rebuild Variables option in
+the Book Build Options dialog or using the RebuildVars parameter
+in a book-build INI file will now enable previously “prepared” variables
+to be rebuilt in the generated FM files.</dd></dlentry></dl></section></body></topic>

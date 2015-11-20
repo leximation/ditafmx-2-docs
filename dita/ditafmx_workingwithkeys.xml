@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id1413GF00VYK" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Working with Keys</title>
+<shortdesc status = "new">Keys can provide a huge benefit but also
+create great complications. Here are some tips that may help to
+reduce some of the latter.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2014-01-03"/>
+<revised modified = "2014-03-28"/></critdates></prolog>
+<body status = "new"><ul status = "new"><li status = "new"><p
+    status = "new">When setting up a project, remember to use the
+Keyspace Manager to register a keyspace for the root map. Do not
+register keyspaces for the submaps (unless those are used as a “root
+map” for other deliverables); only the root map’s keyspace is used
+for resolving keys.</p></li>
+<li status = "new"><p status = "new">If your key definitions are
+not in the root map, but in one or more submaps, be sure to use
+the special DITA-FMx “fmx-root-map” othermeta flag to reference the
+root map from the submaps. This feature (along with use of the Keyspace Generation
+feature) ensures that any edits to the key definitions will be automatically
+included in the keyspace.</p></li>
+<li status = "new"><p status = "new">When creating a map, go ahead
+and assign a key to each of the significant topicrefs. They may
+not get used, but may provide an easy way to reference those topics.
+This is especially useful for references if each command or function
+has its own key.</p></li>
+<li status = "new"><p status = "new">It doesn’t matter where keys
+are defined in a map. Some conventions will have them at the “top”
+of a map, but this is not necessary. The only thing to keep in mind
+is that if you have multiple instances of the same key, the first
+one (in document order) wins.</p></li>
+<li status = "new"><p status = "new">Rather than cluttering up your
+root map or submaps used to define topicref hierarchy, consider
+adding <synph status = "new" outputclass = "element">keydef</synph> elements
+to a “keymap.” This is not a map element type, but rather a map
+that you use to store key definitions. You can then reference this
+keymap from your root map using a <synph status = "new"
+    outputclass = "element">mapref</synph> element. Add the <synph
+    status = "new" outputclass = "element">mapref</synph> element
+to your <synph status = "new" outputclass = "element">frontmatter</synph> or
+other top-level container.</p></li>
+<li status = "new"><p status = "new">A “key element reference” is
+defined by element content contained within the <synph status = "new"
+    outputclass = "element">topicmeta</synph> in a <synph status = "new"
+    outputclass = "element">keydef</synph> in a map (or by a keyref
+to a glossary entry). Insert a <synph status = "new"
+    outputclass = "element">keydef</synph> and provide the key name;
+the referenced file is not required if you are creating a key element
+reference. After inserting the <synph status = "new"
+    outputclass = "element">keydef</synph> add a <synph status = "new"
+    outputclass = "element">topicmeta</synph> element then a nested <synph
+    status = "new" outputclass = "element">keywords</synph> element
+and a <synph status = "new" outputclass = "element">keyword</synph> element.
+The content of the key element reference will be taken from the <synph
+    status = "new" outputclass = "element">keyword</synph> element
+within the <synph status = "new" outputclass = "element">keydef</synph>’s
+topicmeta. </p><p status = "new">Assign filtering attributes to
+the <synph status = "new" outputclass = "element">keyword</synph> elements
+to change the value of the resulting key element reference based
+on the use of different ditaval files.</p><note status = "new">The
+term “key element reference” is specific to DITA-FMx. We could find no
+common term for this type of a key-based reference, so use this
+term.</note></li></ul></body></topic>

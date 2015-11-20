@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id66dc7aa2-9fb8-4450-94da-05a3333081a5" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Setting up Book Builds (PDF)</title>
+<shortdesc status = "new">Issues and options regarding the generation
+of a FrameMaker book file from a DITA map or bookmap.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2014-03-31"/></critdates></prolog>
+<body status = "new"><p status = "new"><indexterm status = "new">ditafmx-bookbuild.ini
+file</indexterm><indexterm status = "new">map to book settings</indexterm><indexterm
+status = "new">PDF creation</indexterm>DITA-FMx provides numerous
+options for controlling the features and properties of a book and
+its components when using the Generate Book from Map command. There
+are three areas that affect the way a book is created, the Book
+structure application, the Book Build Settings, and the <term keyref
+= "book-build-ini"/>.</p></body></topic>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id085HG700Y5Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Extending DITA-FMx</title>
+<shortdesc>Provides methods for controlling DITA-FMx from other
+applications.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "2008-05-17"/>
+<revised modified = "2015-09-08"/></critdates></prolog>
+<body><p status = "changed">DITA-FMx provides a limited set of “CallClient”
+function calls. These functions can be used by other FDK plugin
+clients as well as by ExtendScript (in FM10 and later), FrameScript
+and FrameAC.</p>
+<note status = "changed">Most of these functions are enabled only
+when the “FMx-Auto” addon is installed. For information on this
+DITA-FMx addon, please contact Leximation.</note>
+<p>A typical syntax statement shows the call from an FDK client
+using the F_ApiCallClient() function. A similar call can be made
+from ExtendScript or FrameScript using the CallClient() function.</p>
+<p status = "changed">All calls require the DITA-FMx client name
+(“ditafmx”), which must be lower case, and a call client function
+name (which is not case sensitive). Some calls may have additional
+(required or optional) parameters. When additional parameters are provided,
+they are passed as a single tab or vertical bar delimited string.
+If this string exceeds 512 characters it is truncated.</p>
+<p>For example, the FixBookRefs call can make use of the bookId.
+To pass the bookId (an integer value) convert it to a string and
+concatenate that string to the initial parameter. For example, if
+the bookId is 3489237, the FDK call would be as follows:</p>
+<codeblock status = "changed">F_ApiCallClient("ditafmx", "FixBookRefs\t3489237");</codeblock>
+<p status = "new">You can also use the vertical bar character as
+the argument delimiter for calls to the ditafmx client:</p>
+<codeblock status = "changed">F_ApiCallClient("ditafmx", "FixBookRefs|3489237");</codeblock>
+<p status = "changed">If you would like to have access to specific
+DITA-FMx functionality that is not currently exposed, please let
+us know.</p></body></topic>

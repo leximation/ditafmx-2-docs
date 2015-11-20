@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<map id = "id141IH0Y0G5Z" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>keymap</title>
+<topicmeta status = "changed"><author>Scott Prentice</author>
+<author>test</author>
+<author>scottp</author>
+<critdates><created date = "2014-01-18"/>
+<revised modified = "2015-03-30"/></critdates>
+<othermeta name = "fmx-root-map" content = "_ditafmx.ditamap"
+    status = "new"/></topicmeta>
+<keydef href = "images/refmanager.png" keys = "refman-image"
+    format = "png"><topicmeta><navtitle>refman screencap</navtitle></topicmeta></keydef>
+<keydef keys = "prodname"><topicmeta status = "new">
+<linktext status = "new">DITA-FMx</linktext></topicmeta></keydef>
+<keydef keys = "ditafmx-ini"><topicmeta status = "new">
+<linktext status = "new">ditafmx.ini</linktext>
+<keywords status = "new"><apiname status = "new">DITAFMX-INI</apiname></keywords></topicmeta></keydef></map>

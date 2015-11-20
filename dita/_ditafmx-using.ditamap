@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<map id = "id01b5a695-b0da-4254-9580-8799d92e8392"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Using DITA-FMx</title>
+<topicmeta><author>scottp</author>
+<critdates><created date = "2014-07-31"/>
+<revised modified = "2015-09-13"/></critdates>
+<othermeta name = "fmx-root-map" content = "_ditafmx.ditamap"
+    status = "new"/></topicmeta>
+<topicref href = "ditafmx_using.xml" type = "topic"><topicmeta><navtitle>Using
+DITA-FMx</navtitle></topicmeta>
+<topicref navtitle = "Features" href = "ditafmx_features.xml"
+    type = "topic"></topicref>
+<topicref navtitle = "Limitations" href = "ditafmx_issues.xml"
+    type = "topic"></topicref>
+<topicref navtitle = "Tips and Troubleshooting"
+    href = "ditafmx_tips.xml" type = "topic"></topicref>
+<topicref navtitle = "Using the Reference Manager"
+    href = "ditafmx_ref_refmanager.xml" keys = "using-refman"
+    type = "topic"></topicref>
+<topicref navtitle = "Filtering Content" href = "ditafmx_filtering.xml"
+    type = "topic">
+<topicref
+    navtitle = "Filtering with Conditions with the Apply Ditaval Command"
+    href = "ditafmx_task_applyditaval.xml" type = "task"></topicref></topicref>
+<topicref navtitle = "Working with Images" href = "ditafmx_images.xml"
+    collection-type = "family" type = "topic">
+<topicref navtitle = "Graphic Overlay Objects"
+    href = "ditafmx_graphicoverlays.xml" type = "topic"></topicref>
+<topicref navtitle = "Support for Indented Images"
+    href = "ditafmx_indentedimages.xml" type = "topic"></topicref></topicref>
+<topicref navtitle = "Working with Tables" href = "ditafmx_tables.xml"
+    type = "topic">
+<topicref href = "ditafmx_tableformatting.xml" type = "topic"
+    status = "new"><topicmeta><navtitle>Table Formatting</navtitle></topicmeta></topicref>
+<topicref href = "ditafmx_indentedtables.xml" type = "topic">
+<topicmeta><navtitle>Indented Tables</navtitle></topicmeta></topicref>
+<topicref href = "ditafmx_tablerulingshading.xml" type = "topic"
+    status = "new"><topicmeta><navtitle>Custom Ruling and Shading</navtitle></topicmeta></topicref>
+<topicref href = "ditafmx_tablewidths.xml" type = "topic" status = "new">
+<topicmeta><navtitle>Controlling Table Widths</navtitle></topicmeta></topicref>
+<topicref href = "ditafmx_tablerotatedcells.xml" type = "topic"
+    status = "new"><topicmeta><navtitle>Rotated Table Cells</navtitle></topicmeta></topicref>
+<topicref href = "ditafmx_tablespecialization.xml" type = "topic"
+    status = "new"><topicmeta><navtitle>Simpletable Specializations</navtitle></topicmeta></topicref></topicref>
+<topicref navtitle = "Working with Indexterms"
+    href = "ditafmx_indexterms.xml" type = "topic"></topicref>
+<topicref navtitle = "Working with Maps"
+    href = "ditafmx_workingwithmaps.xml" collection-type = "family"
+    type = "topic" status = "new">
+<topicref navtitle = "Basic Map Structure"
+    href = "ditafmx_mapstructure.xml" type = "topic"></topicref>
+<topicref navtitle = "Bookmaps" href = "ditafmx_bookmaps.xml"
+    type = "topic"></topicref>
+<topicref navtitle = "Best Practice for Book Assembly"
+    href = "ditafmx_mapsbestpractice.xml" type = "topic"></topicref>
+<topicref navtitle = "Recommended Folder/File Structure"
+    href = "ditafmx_filestructure.xml" type = "topic"></topicref></topicref>
+<topicref href = "ditafmx_usingkeyspaces.xml" type = "topic">
+<topicmeta><navtitle>Using Keyspaces in DITA-FMx</navtitle></topicmeta></topicref>
+<topicref href = "ditafmx_workingwithkeys.xml" type = "topic">
+<topicmeta><navtitle>Working with Keys</navtitle></topicmeta></topicref>
+<topicref href = "ditafmx_glossaryentries.xml" type = "topic">
+<topicmeta><navtitle>Working with Glossary Entries</navtitle></topicmeta></topicref>
+<topicref href = "ditafmx_usingcoderefs.xml" keys = "using-coderefs"
+    type = "topic"><topicmeta><navtitle>Using coderefs</navtitle></topicmeta></topicref>
+<topicref navtitle = "Setting up Book Builds (PDF)"
+    href = "ditafmx_setupbookbuilds.xml" collection-type = "family"
+    type = "topic" status = "new">
+<topicref navtitle = "The Book Structure Application"
+    href = "ditafmx_setupbookapp.xml" type = "topic"></topicref>
+<topicref
+    navtitle = "The Book Build Settings Dialog and the Book-Build INI File"
+    href = "ditafmx_setupbookbuildsettings.xml" type = "topic"></topicref>
+<topicref navtitle = "Passing Map-level Metadata to the FM Book"
+    href = "ditafmx_fmditabook_attributes.xml" type = "topic"
+    status = "new"></topicref>
+<topicref navtitle = "Using Templates to Define Alternate TOC Entries"
+    href = "ditafmx_setupdefinealttoc.xml" type = "topic"></topicref>
+<topicref navtitle = "Including FM Files in a Generated Book"
+    href = "ditafmx_setuptitlepage.xml" type = "topic"></topicref>
+<topicref navtitle = "Custom Master Pages"
+    href = "ditafmx_applyingmasterpages.xml" type = "topic"></topicref>
+<topicref navtitle = "Setting Up PDF Bookmarks"
+    href = "ditafmx_setuppdfbookmarks.xml" type = "topic"></topicref></topicref></topicref>
+<reltable locktitle = "yes" toc = "no" id = "table-one">
+<relheader>
+<relcolspec linking = "sourceonly"></relcolspec>
+<relcolspec linking = "targetonly"></relcolspec>
+</relheader>
+<relrow>
+<relcell>
+<topicref navtitle = "Using DITA-FMx" href = "ditafmx_using.xml"
+    type = "topic"></topicref></relcell>
+<relcell>
+<topicref navtitle = "Features" href = "ditafmx_features.xml"
+    type = "topic"></topicref>
+<topicref navtitle = "Installation and Setup"
+    href = "ditafmx_installing.xml" type = "topic"></topicref>
+<topicref navtitle = "DITA-FMx Commands" href = "ditafmx_ref_main.xml"
+    type = "topic"></topicref></relcell>
+</relrow>
+<relrow>
+<relcell collection-type = "family" linking = "normal">
+<topicref navtitle = "Features" href = "ditafmx_features.xml"
+    type = "topic"></topicref></relcell>
+<relcell>
+<topicref navtitle = "DITA-FMx Commands" href = "ditafmx_ref_main.xml"
+    type = "topic"></topicref>
+<topicref navtitle = "Revision History" href = "ditafmx_revisions.xml"
+    type = "topic"></topicref>
+<topicref navtitle = "Limitations" href = "ditafmx_issues.xml"
+    type = "topic"></topicref></relcell>
+</relrow>
+<relrow>
+<relcell collection-type = "family" linking = "normal">
+<topicref navtitle = "Limitations" href = "ditafmx_issues.xml"
+    type = "topic"></topicref></relcell>
+<relcell>
+<topicref navtitle = "DITA-FMx Commands" href = "ditafmx_ref_main.xml"
+    type = "topic"></topicref>
+<topicref navtitle = "Features" href = "ditafmx_features.xml"
+    type = "topic"></topicref></relcell>
+</relrow>
+<relrow>
+<relcell>
+<topicref navtitle = "Tips and Troubleshooting"
+    href = "ditafmx_tips.xml" type = "topic"></topicref></relcell>
+<relcell status = "changed">
+<topicref navtitle = "image" href = "ditafmx_app_imagesupport.xml"
+    type = "topic"></topicref>
+<topicref navtitle = "Working with Images" href = "ditafmx_images.xml"
+    type = "topic"></topicref>
+<topicref navtitle = "DITA Options" href = "ditafmx_ref_options.xml"
+    type = "topic"></topicref>
+<topicref navtitle = "INI-Only Settings"
+    href = "ditafmx_ref_inionly.xml" type = "topic"></topicref></relcell>
+</relrow>
+<relrow>
+<relcell>
+<topicref navtitle = "Using the Reference Manager"
+    href = "ditafmx_ref_refmanager.xml" type = "topic"></topicref></relcell>
+<relcell>
+<topicref navtitle = "INI-Only Settings"
+    href = "ditafmx_ref_inionly.xml" type = "topic"></topicref>
+<topicref navtitle = "Update References"
+    href = "ditafmx_ref_updaterefs.xml" type = "topic"></topicref>
+<topicref navtitle = "Insert Conref"
+    href = "ditafmx_ref_insertconref.xml" type = "topic"></topicref>
+<topicref navtitle = "Setting Up to Use Cross-References "
+    href = "ditafmx_installing_crossrefs.xml" type = "topic"></topicref></relcell>
+</relrow>
+<relrow>
+<relcell>
+<topicref navtitle = "Filtering Content" href = "ditafmx_filtering.xml"
+    type = "topic"></topicref></relcell>
+<relcell>
+<topicref navtitle = "DITA Options" href = "ditafmx_ref_options.xml"
+    type = "topic"></topicref>
+<topicref navtitle = "Ditaval Manager"
+    href = "ditafmx_ref_ditavalmanager.xml" type = "topic"></topicref>
+<topicref navtitle = "Apply Ditaval"
+    href = "ditafmx_ref_applyditaval.xml" type = "topic"></topicref>
+<topicref
+    navtitle = "Filtering with Conditions with the Apply Ditaval Command"
+    href = "ditafmx_task_applyditaval.xml" type = "task"></topicref></relcell>
+</relrow>
+<relrow>
+<relcell status = "changed">
+<topicref
+    navtitle = "Filtering with Conditions with the Apply Ditaval Command"
+    href = "ditafmx_task_applyditaval.xml" type = "task"></topicref></relcell>
+<relcell status = "changed">
+<topicref navtitle = "Apply Ditaval"
+    href = "ditafmx_ref_applyditaval.xml" type = "topic"
+    status = "changed"></topicref></relcell>
+</relrow>
+<relrow>
+<relcell>
+<topicref navtitle = "Working with Images" href = "ditafmx_images.xml"
+    type = "topic"></topicref></relcell>
+<relcell status = "changed">
+<topicref navtitle = "image" href = "ditafmx_app_imagesupport.xml"
+    type = "topic"></topicref>
+<topicref navtitle = "INI-Only Settings"
+    href = "ditafmx_ref_inionly.xml" type = "topic"></topicref>
+<topicref href = "ditafmx_ref_authoringoptions.xml" type = "topic">
+<topicmeta><navtitle>Authoring Options</navtitle></topicmeta></topicref></relcell>
+</relrow>
+<relrow>
+<relcell>
+<topicref navtitle = "Graphic Overlay Objects"
+    href = "ditafmx_graphicoverlays.xml" type = "topic"></topicref></relcell>
+<relcell></relcell>
+</relrow>
+<relrow>
+<relcell>
+<topicref navtitle = "Support for Indented Images"
+    href = "ditafmx_indentedimages.xml" type = "topic"></topicref></relcell>
+<relcell></relcell>
+</relrow>
+<relrow>
+<relcell>
+<topicref navtitle = "Working with Tables" href = "ditafmx_tables.xml"
+    type = "topic"></topicref></relcell>
+<relcell status = "changed">
+<topicref navtitle = "Element Mapping"
+    href = "ditafmx_ref_elementmapping.xml" type = "topic"></topicref></relcell>
+</relrow>
+<relrow>
+<relcell status = "changed">
+<topicref href = "ditafmx_tableformatting.xml" type = "topic"
+    status = "new"><topicmeta><navtitle>Table Formatting</navtitle></topicmeta></topicref></relcell>
+<relcell status = "changed">
+<topicref navtitle = "Working with Tables" href = "ditafmx_tables.xml"
+    type = "topic"></topicref></relcell>
+</relrow>
+<relrow>
+<relcell status = "changed">
+<topicref href = "ditafmx_indentedtables.xml" type = "topic">
+<topicmeta><navtitle>Indented Tables</navtitle></topicmeta></topicref></relcell>
+<relcell status = "changed">
+<topicref navtitle = "Working with Tables" href = "ditafmx_tables.xml"
+    type = "topic"></topicref>
+<topicref href = "ditafmx_ref_authoringoptions.xml" type = "topic">
+<topicmeta><navtitle>Authoring Options</navtitle></topicmeta></topicref></relcell>
+</relrow>
+<relrow>
+<relcell status = "changed">
+<topicref href = "ditafmx_tablerulingshading.xml" type = "topic"
+    status = "new"><topicmeta><navtitle>Custom Ruling and Shading</navtitle></topicmeta></topicref></relcell>
+<relcell status = "changed">
+<topicref navtitle = "Working with Tables" href = "ditafmx_tables.xml"
+    type = "topic"></topicref>
+<topicref href = "ditafmx_ref_authoringoptions.xml" type = "topic">
+<topicmeta status = "changed"><navtitle>Authoring Options</navtitle></topicmeta></topicref></relcell>
+</relrow>
+<relrow>
+<relcell status = "changed">
+<topicref href = "ditafmx_tablewidths.xml" type = "topic" status = "new">
+<topicmeta><navtitle>Controlling Table Widths</navtitle></topicmeta></topicref></relcell>
+<relcell status = "changed">
+<topicref navtitle = "Working with Tables" href = "ditafmx_tables.xml"
+    type = "topic"></topicref>
+<topicref href = "ditafmx_ref_authoringoptions.xml" type = "topic">
+<topicmeta status = "changed"><navtitle>Authoring Options</navtitle></topicmeta></topicref></relcell>
+</relrow>
+<relrow>
+<relcell status = "changed">
+<topicref href = "ditafmx_tablerotatedcells.xml" type = "topic"
+    status = "new"><topicmeta><navtitle>Rotated Table Cells</navtitle></topicmeta></topicref></relcell>
+<relcell status = "changed">
+<topicref navtitle = "Working with Tables" href = "ditafmx_tables.xml"
+    type = "topic"></topicref>
+<topicref href = "ditafmx_ref_authoringoptions.xml" type = "topic">
+<topicmeta status = "changed"><navtitle>Authoring Options</navtitle></topicmeta></topicref></relcell>
+</relrow>
+<relrow>
+<relcell status = "changed">
+<topicref href = "ditafmx_tablespecialization.xml" type = "topic"
+    status = "new"><topicmeta><navtitle>Simpletable Specializations</navtitle></topicmeta></topicref></relcell>
+<relcell status = "changed">
+<topicref navtitle = "Working with Tables" href = "ditafmx_tables.xml"
+    type = "topic"></topicref></relcell>
+</relrow>
+<relrow>
+<relcell status = "changed">
+<topicref navtitle = "Working with Indexterms"
+    href = "ditafmx_indexterms.xml" type = "topic"></topicref></relcell>
+<relcell status = "changed">
+<topicref navtitle = "Index Options"
+    href = "ditafmx_ref_indexoptions.xml" type = "topic"></topicref></relcell>
+</relrow>
+<relrow>
+<relcell status = "changed">
+<topicref navtitle = "Working with Maps"
+    href = "ditafmx_workingwithmaps.xml" type = "topic" status = "new"></topicref></relcell>
+<relcell status = "changed">
+<topicref navtitle = "Generate Book from Map"
+    href = "ditafmx_ref_genbook.xml" type = "topic"></topicref>
+<topicref navtitle = "Book Build Settings"
+    href = "ditafmx_ref_bookbuilds.xml" type = "topic"
+    status = "changed"></topicref>
+<topicref navtitle = "Setting up Book Builds (PDF)"
+    href = "ditafmx_setupbookbuilds.xml" type = "topic"></topicref></relcell>
+</relrow>
+<relrow>
+<relcell>
+<topicref navtitle = "Basic Map Structure"
+    href = "ditafmx_mapstructure.xml" type = "topic"></topicref></relcell>
+<relcell></relcell>
+</relrow>
+<relrow>
+<relcell>
+<topicref navtitle = "Bookmaps" href = "ditafmx_bookmaps.xml"
+    type = "topic"></topicref></relcell>
+<relcell></relcell>
+</relrow>
+<relrow>
+<relcell>
+<topicref navtitle = "Best Practice for Book Assembly"
+    href = "ditafmx_mapsbestpractice.xml" type = "topic"></topicref></relcell>
+<relcell></relcell>
+</relrow>
+<relrow>
+<relcell>
+<topicref navtitle = "Recommended Folder/File Structure"
+    href = "ditafmx_filestructure.xml" type = "topic"></topicref></relcell>
+<relcell></relcell>
+</relrow>
+<relrow>
+<relcell status = "changed">
+<topicref href = "ditafmx_usingkeyspaces.xml" type = "topic">
+<topicmeta><navtitle>Using Keyspaces in DITA-FMx</navtitle></topicmeta></topicref></relcell>
+<relcell status = "changed">
+<topicref href = "ditafmx_ref_keyspaceoptions.xml"
+    keys = "keyspace-options" type = "topic"><topicmeta><navtitle>Keyspace
+Options</navtitle></topicmeta></topicref>
+<topicref href = "ditafmx_ref_keyspacemanager.xml" type = "topic"
+    status = "new"><topicmeta><navtitle>Keyspace Manager</navtitle></topicmeta></topicref>
+<topicref href = "ditafmx_ref_insertkeyelementreference.xml"
+    type = "topic" status = "new"><topicmeta><navtitle>Insert Key
+Element Reference</navtitle></topicmeta></topicref></relcell>
+</relrow>
+<relrow>
+<relcell status = "changed">
+<topicref href = "ditafmx_workingwithkeys.xml" type = "topic">
+<topicmeta><navtitle>Working with Keys</navtitle></topicmeta></topicref></relcell>
+<relcell status = "changed">
+<topicref href = "ditafmx_usingkeyspaces.xml" type = "topic">
+<topicmeta><navtitle>Using Keyspaces in DITA-FMx</navtitle></topicmeta></topicref>
+<topicref href = "ditafmx_ref_keyspaceoptions.xml"
+    keys = "keyspace-options" type = "topic"><topicmeta><navtitle>Keyspace
+Options</navtitle></topicmeta></topicref>
+<topicref href = "ditafmx_ref_keyspacemanager.xml" type = "topic"
+    status = "new"><topicmeta><navtitle>Keyspace Manager</navtitle></topicmeta></topicref></relcell>
+</relrow>
+<relrow>
+<relcell><topicref href = "ditafmx_glossaryentries.xml" type = "topic">
+<topicmeta><navtitle>Working with Glossary Entries</navtitle></topicmeta></topicref></relcell>
+<relcell><topicref href = "ditafmx_usingkeyspaces.xml" type = "topic">
+<topicmeta><navtitle>Using Keyspaces in DITA-FMx</navtitle></topicmeta></topicref>
+<topicref href = "ditafmx_workingwithkeys.xml" type = "topic">
+<topicmeta><navtitle>Working with Keys</navtitle></topicmeta></topicref>
+<topicref navtitle = "Book Build Settings"
+    href = "ditafmx_ref_bookbuilds.xml" type = "topic"></topicref></relcell>
+</relrow>
+<relrow>
+<relcell>
+<topicref href = "ditafmx_usingcoderefs.xml" keys = "using-coderefs"
+    type = "topic"><topicmeta><navtitle>Using coderefs</navtitle></topicmeta></topicref></relcell>
+<relcell>
+<topicref href = "ditafmx_ref_authoringoptions.xml" type = "topic">
+<topicmeta status = "changed"><navtitle>Authoring Options</navtitle></topicmeta></topicref></relcell>
+</relrow>
+<relrow>
+<relcell status = "changed">
+<topicref navtitle = "Setting up Book Builds (PDF)"
+    href = "ditafmx_setupbookbuilds.xml" type = "topic"></topicref></relcell>
+<relcell status = "changed">
+<topicref navtitle = "Book Build Settings"
+    href = "ditafmx_ref_bookbuilds.xml" type = "topic"></topicref>
+<topicref navtitle = "Book-Build INI file"
+    href = "ditafmx_ref_book-buildinifile.xml" type = "topic"></topicref>
+<topicref navtitle = "Generate Book from Map"
+    href = "ditafmx_ref_genbook.xml" type = "topic"></topicref>
+<topicref navtitle = "Customizing the Default Structure Applications"
+    href = "ditafmx_customizingapps.xml" type = "topic"></topicref>
+<topicref
+    navtitle = "Customizing the Formatting in the Default Structure Applications"
+    href = "ditafmx_formattingapps.xml" type = "topic"></topicref>
+<topicref navtitle = "Working with Maps"
+    href = "ditafmx_workingwithmaps.xml" type = "topic" status = "new"></topicref>
+<topicref navtitle = "Merge Para Tags"
+    href = "ditafmx_ref_mergeparatags.xml" type = "topic"></topicref></relcell>
+</relrow>
+<relrow>
+<relcell>
+<topicref navtitle = "The Book Structure Application"
+    href = "ditafmx_setupbookapp.xml" type = "topic"></topicref></relcell>
+<relcell></relcell>
+</relrow>
+<relrow>
+<relcell>
+<topicref
+    navtitle = "The Book Build Settings Dialog and the Book-Build INI File"
+    href = "ditafmx_setupbookbuildsettings.xml" type = "topic"></topicref></relcell>
+<relcell></relcell>
+</relrow>
+<relrow>
+<relcell>
+<topicref navtitle = "Passing Map-level Metadata to the FM Book"
+    href = "ditafmx_fmditabook_attributes.xml" type = "topic"
+    status = "new"></topicref></relcell>
+<relcell>
+<topicref navtitle = "Adding New fm-ditabook Attributes"
+    href = "ditafmx_addingnewfmditabookattributes.xml" type = "topic"></topicref></relcell>
+</relrow>
+<relrow>
+<relcell>
+<topicref navtitle = "Using Templates to Define Alternate TOC Entries"
+    href = "ditafmx_setupdefinealttoc.xml" type = "topic"></topicref></relcell>
+<relcell></relcell>
+</relrow>
+<relrow>
+<relcell>
+<topicref navtitle = "Including FM Files in a Generated Book"
+    href = "ditafmx_setuptitlepage.xml" type = "topic"></topicref></relcell>
+<relcell></relcell>
+</relrow>
+<relrow>
+<relcell>
+<topicref navtitle = "Custom Master Pages"
+    href = "ditafmx_applyingmasterpages.xml" type = "topic"></topicref></relcell>
+<relcell></relcell>
+</relrow>
+<relrow>
+<relcell>
+<topicref navtitle = "Setting Up PDF Bookmarks"
+    href = "ditafmx_setuppdfbookmarks.xml" type = "topic"></topicref></relcell>
+<relcell>
+<topicref navtitle = "Merge Para Tags"
+    href = "ditafmx_ref_mergeparatags.xml" type = "topic"></topicref></relcell>
+</relrow>
+</reltable></map>

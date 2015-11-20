@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="FrameMaker\DITA"?><?dtall dict="ProductA"?><?dtall dict="ProductB"?><topic
+    id = "id083DA0A0WY4"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Set Attributes</title>
+<shortdesc>Provides a quick and easy way to set attribute values
+and provide custom project-specific attribute values.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2008-03-13"/>
+<revised modified = "2014-03-09"/></critdates></prolog>
+<body><p status = "changed">The Set Attributes command displays
+a modeless dialog that lets you easily set the attribute values
+on selected elements. Attribute names are displayed in a listbox
+on the left of the dialog, and when one is selected, an appropriate
+form field is displayed on the right for you to enter or select
+the value to apply. Use the popup list box in the lower left of
+the dialog to set the size of the dialog. The larger dialogs allow
+selection of more values.</p>
+<fig audience = "web"><title>DITA-FMx Set Attributes dialog box,
+single value selection</title><image href="images/setattributes-choices.png"
+align="left" placement="break"  otherprops = "fmdpi:110"/></fig>
+<p status = "changed">Depending on the underlying attribute type
+(Choice, String, Strings, Integer, Integers, Real, Reals, IDReference,
+IDReferences, and UniqueID), as defined in the EDD, the attribute
+values display in a different type of field. For a Choice attribute,
+the values specified in the EDD by the Choices element are displayed
+in a scrolling list box. For the Strings, Integers, Reals, and IDReferences
+attribute types, the values specified in the EDD by the “Default”
+elements is displayed as an array of checkboxes (up to 10 in the
+small dialog, 20 in the medium dialog, and 40 in the large dialog),
+allowing you to select one or more values. All other attribute types
+are displayed in a simple text box. The checkboxes are particularly
+useful for managing the DITA filtering attributes (platform, product,
+audience, and otherprops).</p>
+<p>Because the dialog is modeless, you can leave it open and whenever
+desired, select an element and apply new attribute values. In addition
+to the main DITA-FMx menu, the Set Attributes command is available
+from the context (right-click) menus.</p>
+<p>The Set Attributes command provides a feature that lets you extend
+the values displayed for specific attributes, by allowing these
+to be specified in a text file. It also lets you specify different
+predefined attribute values for different projects. This mechanism
+lets you associate a <i>filtering group</i> name with a file system
+path. When editing a DITA file that is within the specified path,
+the values associated with that group are displayed with those defined
+in the EDD. These groups and their associated attribute names and
+possible values are defined in an INI file named (by default) <filepath>FilterGroups.ini</filepath> that
+is created in the user’s DITA-FMx folder (<menucascade><uicontrol>DITA-FMx</uicontrol>
+<uicontrol>Open DITA-FMx Folder</uicontrol></menucascade>). You
+can edit this file by choosing the <uicontrol>Edit INI</uicontrol> button
+in the Set Attributes dialog.</p>
+<p>The following sample filtering groups file defines two groups
+named ProductA and ProductB (these are both defined as an attribute
+of type “Strings” in the EDD). When you edit a DITA file that is
+in the path specified by group ProductA, selecting the product attribute
+will offer the three products listed (in addition to any already defined
+in the EDD) as options. Likewise, selecting audience or platform
+will offer those items as options.</p>
+<codeblock status = "changed">[General] 
+ProductA=C:\projects\product-a 
+ProductB=C:\projects\product-b 
+ 
+[ProductA] 
+product=ProdALite|ProdAFull|ProdASimple 
+audience=Novice|Expert|Admin 
+platform=windows|mac|linux|unix 
+outputclass=style1|style2|style3|style4|style5|style6 
+ 
+[ProductB] 
+product=ProdBLite|ProdBFull 
+audience=User|Developer|Admin 
+platform=windows|mac|linux|unix 
+outputclass=style1|style2|style3|style4|style5|style6</codeblock>
+<fig audience = "web"><title>DITA-FMx Set Attributes dialog box,
+multiple value selection</title><image href="images/setattributes-strings.png"
+align="left" placement="break"  otherprops = "fmdpi:110"/></fig>
+<p>This mechanism can also be used for attributes defined as a type
+of “String” to predefine mutually exclusive attribute values similar
+to the attribute type of “Choice.” In the previous example, selecting
+the outputclass attribute (defined as a “String” in the EDD) from
+the list, would display a scrolling list box with the style names
+available for selection.</p>
+<p>There are three “INI-Only” parameters that can be used to enhance
+the functionality of this command.</p>
+<dl><dlentry><dt>SetAttrStrings</dt>
+<dd><p>Specifies an alternate file to use as the filtering groups
+INI file. Useful to define a shared file at a network location.</p></dd></dlentry>
+<dlentry><dt>SetAttrIgnore</dt>
+<dd><p>Specifies the attributes to ignore (and not display) in the
+Set Attributes dialog.</p></dd></dlentry>
+<dlentry><dt>SetAttrStringsDefault</dt>
+<dd><p>Specifies the “default” value that is ignored when displaying
+the list of defaults.</p></dd></dlentry></dl>
+<p>To modify these settings, you must manually edit the <filepath
+conref = "ditafmx_shared.xml#common/ditafm-ini" class = "+ topic/ph
+sw-d/filepath "></filepath> file and update (or add) these values
+to the INIOnly section. For more information see <xref href = "ditafmx_ref_inionly.xml#id067FF8008E9"
+type = "topic" format = "dita" scope = "local"></xref>.</p></body></topic>

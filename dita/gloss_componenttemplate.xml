@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<glossentry id = "id143UG0N09Y4" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<glossterm>component template</glossterm>
+<glossdef status = "changed"><p status = "new">Structured FrameMaker
+template files applied to the book components after the initial
+Book structured application template has been applied to the DITA
+map to generate the book and component files. </p><p status = "new">There
+are two types of component templates, layout templates (with a <filepath
+    status = "new">tpl~</filepath> prefix) and generated list templates
+(with a <filepath status = "new">gentpl~</filepath> prefix). Layout
+templates are applied to book components based on their map element
+type (<synph status = "new" outputclass = "element">chapter</synph>, <synph
+    status = "new" outputclass = "element">appendix</synph>, etc.).
+Generated list templates are applied to components that are children
+of the <synph status = "new" outputclass = "element">booklists</synph> element
+(in <synph status = "new" outputclass = "element">frontmatter</synph> and <synph
+    status = "new" outputclass = "element">backmatter</synph>),
+in order to make use of the default FrameMaker generated list feature.</p><p
+    status = "new">Fundamentally, the layout component templates
+are typically a renamed copy of the Book template, with modifications
+made to alter the page layout or formatting definitions. The underlying
+structural model must match that of the Book template, but the context
+rules may differ in order to achieve the desired effect.</p><p
+    status = "new">Component templates are referenced by the <synph
+    status = "new" outputclass = "ini-param">BookTemplatesDir</synph> parameter
+in a book-build INI file. This parameter specifes a folder that
+contains the component templates available for a particular build.</p></glossdef>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2014-03-30"/>
+<revised modified = "2014-03-31"/></critdates></prolog>
+<glossBody></glossBody></glossentry>

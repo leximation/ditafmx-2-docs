@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id0837GL00E30"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>link and fm-linklabel</title>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2008-03-07"/>
+<revised modified = "2014-03-29"/></critdates></prolog>
+<body><p status = "new"><indexterm>elements<indexterm>fm-linklabel</indexterm></indexterm><indexterm>elements<indexterm>link</indexterm></indexterm><indexterm
+status = "new">link element</indexterm><indexterm status = "new">fm-linklabel
+element</indexterm>In order to provide a clickable label for the <synph
+    status = "new" outputclass = "element">link</synph> element,
+the <synph status = "new" outputclass = "element">fm-linklabel</synph> element
+must be added to the EDD. This element is discarded on file save,
+and is recreated on file open.</p>
+<p status = "changed">The only thing required to implement this
+feature is to add the element definition to the EDD and to add it
+to the general rule of the <synph status = "new" outputclass = "element">link</synph> element.
+The <synph status = "new" outputclass = "element">fm-linklabel</synph> element
+should have a general rule of “&lt;TEXT>”. If you want to apply
+character formatting you can add text format rules.</p>
+<p>If this element is not added to the EDD, you will be able to
+create <synph status = "new" outputclass = "element">link</synph> elements, but
+they will have no label to click on.</p>
+<note status = "changed">It has been found that children of this
+element may not import properly if your EDD specifies a prefix rule
+for the <synph status = "new" outputclass = "element">link</synph> element.
+The FM8-DITA and early DITA-FMx Topic applications specify a prefix
+rule for <synph status = "new" outputclass = "element">link</synph>.
+If you’re having link import problems, you may want to investigate
+this possibility.</note>
+<p status = "changed">The <synph status = "new" outputclass = "element">fm-linklabel</synph> element
+should be added to both the Topic and Book applications.</p></body></topic>

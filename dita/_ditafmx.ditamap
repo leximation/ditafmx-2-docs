@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<bookmap id = "id0831I900FHS" status = "changed"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>DITA-FMx User Guide</title>
+<bookmeta>
+<shortdesc>Documentation for DITA-FMx</shortdesc>
+<author>Scott Prentice</author>
+<authorinformation><organizationinfo><namedetails>
+<organizationnamedetails><organizationname>Leximation, Inc.</organizationname></organizationnamedetails></namedetails>
+<emailaddresses><emailaddress>ditafmx@leximation.com</emailaddress></emailaddresses>
+<urls><url>http://leximation.com/dita-fmx</url></urls></organizationinfo></authorinformation>
+<author>Scott Prentice</author>
+<author>test</author>
+<author>scottp</author>
+<critdates status = "new"><created date = "2007-01-01" status = "new"/>
+<revised modified = "2015-09-14" status = "new"/></critdates>
+<prodinfo><prodname>DITA-FMx</prodname>
+<vrmlist status = "changed"><vrm version = "2.0.00"/>
+<vrm version = "2.0.01"/>
+<vrm version = "2.0.02"/>
+<vrm version = "2.0.03"/>
+<vrm version = "2.0.04"/></vrmlist></prodinfo>
+<bookrights><copyrfirst>
+<year>2006</year>
+</copyrfirst>
+<copyrlast><year status = "changed">2015</year></copyrlast>
+<bookowner><organization>Leximation, Inc.</organization></bookowner></bookrights></bookmeta>
+<frontmatter><mapref href = "_keymap.ditamap" format = "ditamap">
+<topicmeta><navtitle>keymap</navtitle></topicmeta></mapref>
+<booklists audience = "print" status = "new"><toc></toc></booklists></frontmatter>
+<chapter href = "_ditafmx-using.ditamap" format = "ditamap"><topicmeta><navtitle>Using
+DITA-FMx</navtitle></topicmeta></chapter>
+<chapter href = "_ditafmx-installing.ditamap" format = "ditamap">
+<topicmeta><navtitle>Installing DITA-FMx</navtitle></topicmeta></chapter>
+<chapter href = "_ditafmx-commands.ditamap" format = "ditamap">
+<topicmeta><navtitle>Commands</navtitle></topicmeta></chapter>
+<appendix href = "_ditafmx-extending.ditamap" format = "ditamap">
+<topicmeta><navtitle>Extending DITA-FMx</navtitle></topicmeta></appendix>
+<appendix href = "_glossary.ditamap" format = "ditamap"><topicmeta><navtitle>DITA-FMx
+Glossary</navtitle></topicmeta></appendix>
+<appendix href = "_ditafmx-revisions.ditamap" format = "ditamap">
+<topicmeta><navtitle>Revision History</navtitle></topicmeta></appendix>
+<backmatter audience = "print"><booklists status = "changed">
+<indexlist></indexlist></booklists></backmatter></bookmap>

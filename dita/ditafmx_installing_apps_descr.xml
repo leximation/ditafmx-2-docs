@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id078AAC00PY43"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Description of the Structure Application Files</title>
+<shortdesc status = "changed">The structure application files provided
+with DITA-FMx do more than your typical DITA structure applications.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>test</author>
+<author>scottp</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2015-09-11"/></critdates></prolog>
+<body status = "changed"><p status = "changed"><indexterm>structure
+application files, described</indexterm><indexterm>files, described</indexterm>After
+installation of the DITA-FMx structure applications, the <filepath
+    status = "changed">FrameMaker\Structure\xml\DITA-FMx_1.2</filepath> folder
+contains a number of files, some are specific to the structure applications,
+and some are used for other purposes.</p>
+<note type = "important" status = "new">The DITA-FMx structure applications
+are provided in FM8 format. This should work fine for FM8 and later
+versions of FrameMaker. FM7.2 users willl need to downsave to the
+FM7 format. If you are unable to do this, contact Leximation.</note>
+<dl><dlentry><dt status = "changed">DITA-FMx_1.2\</dt>
+<dd><p status = "new"><filepath>map-from-outline_template.fm</filepath> -
+Template file used by the <menucascade><uicontrol>New DITA File</uicontrol>
+<uicontrol>New Map from Outline</uicontrol></menucascade> command.</p></dd></dlentry>
+<dlentry><dt status = "changed">DITA-FMx_1.2\Book\</dt>
+<dd status = "changed"><p status = "new"><filepath status = "changed">book_1.2.edd.fm</filepath> -
+The Book application EDD. Defines the data model structure and provides
+the element definitions. Remember to import this into the template
+(below) if you make and changes to the EDD.</p><p><filepath
+    status = "changed">book_1.2.rules.txt</filepath> - The Book
+application read/write rules file.</p><p><filepath status = "changed">book_1.2.template.fm</filepath> -
+The Book application template file. Defines the page layout and
+formatting as well as the character and paragraph styles used by
+the EDD.</p><p><filepath>bookmap2fmbook.xsl</filepath> - The Book
+application XSL import file. Controls the process that aggregates
+all of the topic files into the book and chapter FM files.</p><p><filepath>expandOrig.xsl</filepath> -
+A support file for the Book XSL import process. Performs initial aggregation
+of all topic files before passing control off to the <filepath>bookmap2fmbook.xml</filepath> file.</p><p
+    status = "changed"><filepath status = "changed">structapps-stub_book_1.2.fm</filepath> -
+The Book application definition stub file. Inserted into the structure
+application definitions file.</p><p status = "changed"><filepath
+    status = "changed">structapps-stub_book_1.2_13.0.1.fm</filepath> -
+The Book application definition stub file for FM13.0.1 and later.
+Inserted into the structure application definitions file.</p></dd></dlentry>
+<dlentry><dt status = "changed">DITA-FMx_1.2\Book\component-templates\</dt>
+<dd><p status = "new"><filepath>gentpl~indexlist.fm</filepath> -
+A sample template for generating an Index (indexlist). Referenced
+by the <filepath>ditafmx-bookbuild.ini</filepath> file.</p><p><filepath>gentpl~toc.fm</filepath> -
+A sample template for generating a TOC (toc). Referenced by the <filepath>ditafmx-bookbuild.ini</filepath> file.</p><p
+    status = "changed"><filepath status = "changed">tpl~appendix.fm</filepath> -
+A sample template for an Appendix map element. Referenced by the <filepath>ditafmx-bookbuild.ini</filepath> file.</p><p
+    status = "changed"><filepath status = "changed">tpl~chapter.fm</filepath> -
+A sample template for a Chapter map element. Referenced by the <filepath>ditafmx-bookbuild.ini</filepath> file.
+The default Chapter template is actually just a copy (and rename)
+of the default Book template. It can be convenient to use a Chapter
+template to make adjustments to the output without modifying the
+core Book template.</p><p status = "changed"><filepath>tpl~part.fm</filepath> -
+A sample template for a Part map element. Referenced by the <filepath>ditafmx-bookbuild.ini</filepath> file.</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">DITA-FMx_1.2\common\</dt>
+<dd status = "new"><p status = "new">Because the EDD structure is
+mostly identical between the Topic and Book applications, we have
+set up groups of element definitions as text insets. The <filepath
+    status = "new">common</filepath> folder contains these files.
+A book file is provided as an easy way to search through the files.</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">DITA-FMx_1.2\dtd-fmx\</dt>
+<dd status = "new"><p status = "new">In order to speed up processing
+of the complex DITA DTD structure, single-file versions of the DITA
+DTDs have been created for use with the default DITA-FMx structure
+applications. This is particularly important if you are using FM7.2
+or FM8, but is beneficial for all versions of FM. You are free to
+reference the standard versions of the DITA DTDs if preferred.</p><p
+    status = "new"><filepath status = "new">fmx-ditabase_1.2.dtd</filepath> -
+Used by the default Topic application.</p><p status = "new"><filepath
+    status = "new">fmx-map_1.2.dtd</filepath> - Used by the default
+Map application.</p><p status = "new"><filepath status = "new">fmx-learning_1.2.dtd</filepath> -
+Used by the default Learning application.</p><p status = "changed"><filepath>fmx-book_1.2.dtd</filepath> -
+Used by the default Book application.</p></dd></dlentry>
+<dlentry><dt status = "changed">DITA-FMx_1.2\Map\</dt>
+<dd status = "changed"><p status = "new"><filepath status = "changed">map_1.2.edd.fm</filepath> -
+The Map application EDD. Defines the data model structure and provides
+the element definitions. Remember to import this into the template
+(below) if you make and changes to the EDD.</p><p><filepath
+    status = "changed">map_1.2.rules.txt</filepath> - The Map application
+read/write rules file.</p><p><filepath status = "changed">map_1.2.template.fm</filepath> -
+The Map application template file. Defines the page layout and formatting
+as well as the character and paragraph styles used by the EDD.</p><p
+    status = "changed"><filepath status = "changed">structapps-stub_map_1.2.fm</filepath> -
+The Map application definition stub file. Inserted into the structure
+application definitions file.</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">DITA-FMx_1.2\Topic\</dt>
+<dd status = "changed"><p status = "new"><filepath status = "changed">topic_1.2.edd.fm</filepath> -
+The Topic application EDD. Defines the data model structure and
+provides the element definitions. Remember to import this into the template
+(below) if you make and changes to the EDD.</p><p><filepath
+    status = "changed">topic_1.2.rules.txt</filepath> - The Topic
+application read/write rules file.</p><p><filepath status = "changed">topic_1.2.template.fm</filepath> -
+The Topic application template file. Defines the page layout and
+formatting as well as the character and paragraph styles used by
+the EDD.</p><p status = "changed"><filepath status = "changed">structapps-stub_topic_1.2.fm</filepath> -
+The Topic application definition stub file. Inserted into the structure
+application definitions file.</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">DITA-FMx_1.2\Topic\element-templates\</dt>
+<dd><p status = "new"><filepath>new~reference~simple ref.fm</filepath> -
+A sample “reference” element template named “simple ref”.</p><p><filepath>new~task~simple
+task.fm</filepath> - A sample “task” element template named “simple task”.</p><p><filepath>new~topic~simple
+ref.fm</filepath> - A sample “topic” element template named “simple topic”.</p></dd></dlentry></dl></body></topic>

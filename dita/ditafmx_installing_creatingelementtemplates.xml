@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id082590WN0HT"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Creating Element Templates</title>
+<shortdesc>Provides a method to add predefined structure and content
+to new files.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2008-02-05 @ 09:33 (scottp)"/>
+<revised modified = "2014-03-29"/></critdates></prolog>
+<body><p><indexterm>element template</indexterm>An element template
+is an FM binary file that contains structural and textual content that
+is inserted into a new topic when it is created. You can have many
+different element templates for each topic type. Available element
+templates may be selected in the New DITA File dialog.</p>
+<p>By default, element templates are stored in the folder that contains
+the structure application template file. You can specify another
+folder (local or network location) to store these files in the New
+File Options dialog which is available from the New DITA File dialog
+or the Options dialog.</p>
+<p>Element template files must follow a strict naming convention
+in order to appear in the list in the New DITA File dialog. The
+file name pattern is <filepath>new~&lt;topictype>~&lt;template name>.fm</filepath>.
+That is “new” followed by a tilde followed by the topic or map element
+type (such as “topic”, “concept”, “task” etc.), followed by a tilde, followed
+by the name that you want to appear in the list, with an “.fm” file
+extension.</p>
+<p>To create an element template just create a new DITA file and
+insert the elements and content that you want in the template, then
+save this file to a binary FM file into the specified element template
+folder. Note that when the new file is created using your template,
+the text of the title element will be replaced with the text entered
+in the New DITA File dialog, and the ID attribute of the root topic
+will be replaced with a new unique ID (assuming that the “auto-add
+IDs” option is enabled in Options).</p>
+<p>Sample topic and task element templates are provided in the DITA-FMx
+Topic application folder.</p></body></topic>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="APIs"?><?dtall dict="ArchiveCommandLine"?><?dtall dict="AssignIdToElem"?><?dtall
+dict="AttrAsCondDefaultState"?><?dtall dict="addon"?><?dtall dict="app"?><?dtall
+dict="att"?><?dtall dict="authorname"?><?dtall dict="BookBuildOverrides"?><?dtall
+dict="Booklists"?><?dtall dict="BuildFile"?><?dtall dict="backmatter"?><?dtall
+dict="bookbuild"?><?dtall dict="buildname"?><?dtall dict="CallClient"?><?dtall
+dict="Conditionalize"?><?dtall dict="copyrholder"?><?dtall dict="customization"?><?dtall
+dict="DitaDir"?><?dtall dict="DitaFMxGuide"?><?dtall dict="DitaReference"?><?dtall
+dict="DitaRefTargetPath"?><?dtall dict="DitavalName"?><?dtall dict="DLLs"?><?dtall
+dict="desc"?><?dtall dict="dita"?><?dtall dict="ditabook"?><?dtall dict="ditafile"?><?dtall
+dict="ditafmx"?><?dtall dict="ditamap"?><?dtall dict="ditavals"?><?dtall
+dict="doctype"?><?dtall dict="draftinfo"?><?dtall dict="draftintro"?><?dtall
+dict="EnvironmentSetup"?><?dtall dict="epub"?><?dtall dict="FmXrefUseOutputclass"?><?dtall
+dict="FrameMaker\DITA"?><?dtall dict="figurelist"?><?dtall dict="fmx"?><?dtall
+dict="fragref"?><?dtall dict="frontmatter"?><?dtall dict="GeneralExport"?><?dtall
+dict="GeneralImport"?><?dtall dict="IgnoreFigTitleProcessing"?><?dtall dict="ImportAttrsAsVars"?><?dtall
+dict="INIOnly"?><?dtall dict="InstallApps"?><?dtall dict="indexlist"?><?dtall
+dict="ja"?><?dtall dict="LastReferencedElement"?><?dtall dict="Linebreak"?><?dtall
+dict="linebreaks"?><?dtall dict="linktext"?><?dtall dict="MasterPageMaps"?><?dtall
+dict="MissingImageDir"?><?dtall dict="MoveFigureTitles"?><?dtall dict="masterpage"?><?dtall
+dict="omsyshome%\common\bin"?><?dtall dict="outputclass"?><?dtall dict="PageStartSide"?><?dtall
+dict="RegInfo"?><?dtall dict="Reimport"?><?dtall dict="ReimportTemplate"?><?dtall
+dict="RunaroundOff"?><?dtall dict="reflabel"?><?dtall dict="reimports"?><?dtall
+dict="relinked"?><?dtall dict="StripTrailing"?><?dtall dict="StructMasterPageMaps"?><?dtall
+dict="SuiteHelp"?><?dtall dict="SuppressXrefAttrs"?><?dtall dict="suitehelp"?><?dtall
+dict="synnoteref"?><?dtall dict="syntaxdiagram"?><?dtall dict="toc"?><?dtall
+dict="topicId"?><?dtall dict="type=’fm"?><?dtall dict="UpdateBook"?><?dtall
+dict="UseLanguageTemplate"?><?dtall dict="UseOutputclassForType"?><?dtall
+dict="WriteLineBreakPIs"?><?dtall dict="WriteLineBreakPIsInPre"?><?dtall
+dict="webhelp"?><?dtall dict="whitespace"?><?dtall dict="xml:lang"?>
+<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT Dark%20Grey NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "DITA-Data" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "id1248K0N095Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>1.1.15 - 30 July 2012</title>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2012-04-08"/>
+<revised modified = "2012-07-29"/></critdates></prolog>
+<body><section status = "changed"><title outputclass = "h3">New
+Features</title><dl><dlentry><dt>Added support for FrameMaker 11</dt>
+<dd>DITA-FMx can now be installed on FrameMaker 11. No FM11-specific
+modifications have been made to the code to support new FM11 features.</dd></dlentry>
+<dlentry><dt>Added feature to disable “Runaround” on images</dt>
+<dd>The default setting for the Runaround property is “On”, which
+causes problems when placing callouts over images. When using DITA-FMx
+this will automatically be set to “Off”. To disable this feature
+and revert to the default setting, set the INIOnly/RunaroundOff
+parameter in the <filepath>ditafmx.ini</filepath> file to “0”.</dd></dlentry>
+<dlentry><dt>Strips space that follows open or close element tags</dt>
+<dd>The <filepath>ditafmx.ini</filepath> file GeneralImport section
+includes a new parameter, StripTrailing. If set to 1, the import
+process strips space characters from the XML that follow opening or
+closing block-level element tags. This only strips the spaces when
+there are no other non-space characters in the node that follow
+the open or close element.</dd></dlentry>
+<dlentry><dt>Added support for multiple DITA-OT environments</dt>
+<dd>The <filepath>ditafmx.ini</filepath> file BuildFile section
+can include new parameters EnvironmentSetup-&lt;buildname> and DitaDir-&lt;buildname>. </dd></dlentry>
+<dlentry><dt>Added support for EPUB publishing through the DITA
+for Publishers plugin</dt>
+<dd>The <filepath>ditafmx-ant.xml</filepath> file has been updated
+to include a new “epub-out” target. Install the DITA for Publishers
+plugin, then update the Ant file in your DITA-OT installation, and
+add this entry to the BuildFile section in the <filepath>ditafmx.ini</filepath> file.</dd></dlentry>
+<dlentry><dt>Added book-build support for master pages</dt>
+<dd>When generating a FM book using the Generate Book from Map command,
+if your base template or component-templates make use of a StructMasterPageMaps
+reference page to control the application of master pages, those
+master pages will be applied. To enable this feature you must be
+using a book-build INI file, and in the BookBuildOverrides section
+set the UpdateBook parameter to “2”.</dd>
+<dd>An alternative to the StructMasterPageMaps reference page method
+for applying master pages is to add an “fmx-masterpage” marker to
+a page. If this marker is found during the book-build process, the
+text of the marker specifies the name of the master page to apply
+to that page. This may be useful for the occasional setting of master pages.
+The fm-data-marker element can be used to set this marker. Note
+that in order to use this feature, the “fmx-masterpage” marker must
+be defined in the Topic and Book templates. For additional information,
+see <xref href = "ditafmx_applyingmasterpages.xml#id1248K0XN0Y4" type =
+"topic" format = "dita" scope = "local"></xref>.</dd></dlentry>
+<dlentry><dt>Added support for ditaval filtering using missing @att
+or @val values</dt>
+<dd>The Apply Ditaval as Conditions command (and book-build ditaval
+process) now supports processing using prop elements that don’t
+include the att or val attribute values. A ditaval prop that doesn’t
+specify the val attribute will match on all “att” attribute values.
+A ditaval prop that doesn’t specify the att attribute will match
+on all “val” attribute values.</dd></dlentry>
+<dlentry><dt>Added support for ditaval filtering on topicref elements</dt>
+<dd>Through updates to the Book import XSLT, filtering attributes
+applied to topicref elements are now passed on to the corresponding
+fm-ditafile elements in the generated FM files. Because of this
+update, filtering specified in the map will now allow you to hide
+entire topics in the generated book. Note that this does not apply
+to the root topicref elements at this time; the content will get
+filtered, but the file will still exist in the generated book. This
+could be achieved through further customization of the Book import
+XSLT if needed.</dd></dlentry>
+<dlentry><dt>Added support for structapps.fm from Text Structure
+Consulting, Inc.</dt>
+<dd>Text Structure Consulting (<xref href = "http://www.txstruct.com"
+format = "html" scope = "external">www.txstruct.com</xref>) provides
+a custom structure application definition file that offers extended
+features over the default option from Adobe. DITA-FMx now functions
+properly when this file is in use. </dd></dlentry></dl></section>
+<section status = "changed"><title outputclass = "h3">Structure
+Application Updates</title><dl><dlentry status = "new">
+<dt status = "new">Book DTD (fmxbook.dtd)</dt>
+<dd status = "new"><p>The <filepath>fmxbook.dtd</filepath> file
+has been updated as follows:</p><ul><li>Added the fm-ditabook/@xml:lang
+attribute. This resulted in an error when generating a book from
+a map that included an xml:lang value.</li>
+<li>Added authorname and copyrholder attributes to the fm-ditabook
+element.</li>
+<li>Added filtering attributes to the fm-ditafile element.</li></ul></dd></dlentry>
+<dlentry status = "new"><dt status = "new">Book EDD (book_1.1.edd.fm)</dt>
+<dd status = "new"><p>Added corresponding attributes to support
+DTD updates:</p><ul><li>Added the fm-ditabook/@xml:lang attribute.</li>
+<li>Added authorname and copyrholder attributes to the fm-ditabook
+element.</li>
+<li>Added filtering attributes to the fm-ditafile element.</li></ul></dd></dlentry>
+<dlentry status = "new"><dt status = "new">Book Template (book_1.1.template.fm)</dt>
+<dd status = "new"><p>The book template was updated as follows:</p><ul>
+<li>Imported updated EDD.</li>
+<li>Added fmx-masterpage marker definition.</li></ul></dd></dlentry>
+<dlentry status = "new"><dt status = "new">Book XSLT (bookmap2fmbook.xsl
+and expandOrig.xsl)</dt>
+<dd status = "new"><p>A number of updates were made to the <filepath>bookmap2fmbook.xsl</filepath> file.</p><ul>
+<li status = "new">Incorrect references to a draftinfo element were
+changed to draftintro. </li>
+<li status = "new">Support was added for a preface element that
+can reference a ditamap.</li>
+<li>Additional support was added for the migration of map metadata
+to book-level attributes.</li>
+<li>Updated processing to migrate filtering attribute values from
+topicrefs to the associated fm-ditafile element in the generated
+FM files. This allows ditaval/conditional filtering based on map-level
+attributes.</li></ul><p>It is possible that these updates could
+cause problems for existing book-build processing, so the old XSL
+files are also provided as <filepath>bookmap2fmbook.1.1.14.xsl</filepath> and <filepath>expandOrig.1.1.14.xsl</filepath>.</p></dd></dlentry>
+<dlentry status = "new"><dt status = "new">Book Component Templates</dt>
+<dd status = "new"><p>The updated EDD was imported into the following
+component templates: <filepath>tpl~appendix.fm</filepath>, <filepath>tpl~chapter.fm</filepath>, <filepath>tpl~part.fm</filepath>, <filepath>tpl~preface.fm</filepath></p></dd></dlentry>
+<dlentry status = "new"><dt status = "new">Topic Template (topic_1.1.template.fm)</dt>
+<dd status = "new"><p>Added fmx-masterpage marker definition.</p></dd></dlentry></dl></section>
+<section><title outputclass = "h3">Bug Fixes / Minor Updates</title><dl
+    status = "changed"><dlentry status = "new"><dt status = "new">Updated
+“missing image” feature</dt>
+<dd status = "new">The solution (added in 1.1.14) to eliminate the
+XML parser log messages about missing images has been updated. Instead
+of swapping all images for a default PNG, the temporary image replacement
+is done with an image of the same type. This eliminates the “missing
+filter” message that resulted from the previous implementation.
+A new “missing-images” folder now contains multiple “inline” and
+“break” images. The location of this folder defaults to a missing-images
+folder in the “Program Files” DITA-FMx folder, but can be set to
+another location by setting the GeneralImport/MissingImageDir parameter
+in the <filepath>ditafmx.ini</filepath> file. For details, see MissingImageDir
+in the <xref href = "ditafmx_ref_inionly.xml#id067FF8008E9" type
+= "topic" format = "dita" scope = "local"></xref> topic.</dd></dlentry>
+<dlentry><dt>Rotated table cells now remain rotated in generated
+files</dt>
+<dd>If the “Conditionalize Data Elements” option is enabled, rotated
+cells were not remaining rotated in generated files. The cells now
+remain rotated regardless of this setting.</dd></dlentry>
+<dlentry><dt>Language-specific book-build INI file now works properly</dt>
+<dd>If the GeneralImport/UseLanguageTemplate parameter is set to
+“1”, the book-build process will check for language-specific versions
+of the component templates. Additionally it will check for an use
+a language-specific version of the book-build INI file. For example,
+if the map’s @xml:lang attribute value is set to “ja-jp”, DITA-FMx
+will look for the file <filepath>ditafmx-bookbuild.ja-jp.ini</filepath>.</dd></dlentry>
+<dlentry><dt>fm-xref can now use outputclass for format name</dt>
+<dd>Added the GeneralExport/FmXrefUseOutputclass parameter to <filepath>ditafmx.ini</filepath>.
+If set to 1, specifies that fm-xref elements use the @outputclass
+attribute rather than the @type attribute to store the cross-ref
+format name. (Should be considered experimental. Currently defaults
+to “0” if this parameter is missing or set to a null string, but
+will default to “1” in DITA-FMx 2.0.)</dd></dlentry>
+<dlentry status = "new"><dt status = "new">Linebreak now properly
+maintained in lines element</dt>
+<dd status = "new">The 1.1.14 update caused linebreaks in the lines
+element to include a linebreak PI, but not the linebreak itself.
+This has been fixed.</dd></dlentry>
+<dlentry status = "new"><dt status = "new">Set Attributes functionality
+more sensible</dt>
+<dd status = "new">When selecting an element after setting the attributes
+for another, the currently selected attribute remains selected if
+that attribute exists on the newly selected element.</dd></dlentry>
+<dlentry status = "new"><dt status = "new">Undo history now preserved</dt>
+<dd status = "new">Clicking in the document window no longer breaks
+the undo history.</dd></dlentry>
+<dlentry status = "new"><dt status = "new">Xref and link references
+without a topicId now link to the root element</dt>
+<dd status = "new">Xref and link elements whose href attributes
+include only a target filename will now properly reference the root
+element in that file.</dd></dlentry>
+<dlentry status = "new"><dt status = "new">Whitespace is properly
+stripped from elements within a section</dt>
+<dd status = "new">Previously, with the Normalize Whitespace option
+enabled, whitespace within a section element was not stripped. It
+is now.</dd></dlentry>
+<dlentry status = "new"><dt status = "new">Whitespace is properly
+normalized for inline elements</dt>
+<dd status = "new">Previously, for inline elements that terminated
+at the end of a line in the XML the whitespace that followed would
+be lost. It is now properly normalized.</dd></dlentry>
+<dlentry status = "new"><dt status = "new">Clipboard contents no
+longer lost</dt>
+<dd status = "new">When creating a new file or opening an existing
+file, the clipboard contents remain available to paste after the
+operation has completed.</dd></dlentry>
+<dlentry status = "new"><dt status = "new">Apply Ditaval as Conditions
+“crasher” on Win7 appears fixed</dt>
+<dd status = "new">Some Windows 7 systems would crash when the Apply
+Ditaval as Conditions command was run. This appears to be resolved
+now (fingers crossed).</dd></dlentry>
+<dlentry status = "new"><dt status = "new">Build Map from Outline
+“crasher” on Win7 appears fixed</dt>
+<dd status = "new">Some Windows 7 systems would crash when the Build
+Map form Outline command was run. This appears to be resolved now
+(fingers crossed).</dd></dlentry>
+<dlentry status = "new"><dt status = "new">A PI that wraps to another
+line will crash FM during link processing</dt>
+<dd status = "new">Strange but true. Has been fixed.</dd></dlentry></dl></section></body></topic>

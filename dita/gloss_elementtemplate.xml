@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<glossentry id = "id143UG0QM0UI" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<glossterm>element template</glossterm>
+<glossdef>An element template is used to provide boilerplate (default)
+content for a new DITA topic created with the <uicontrol>New DITA
+File</uicontrol> command. One or more element templates may be created
+for each topic type, and added to a folder (specified in the <uicontrol>New
+File Options</uicontrol> dialog). When creating a new file you can
+select from the available element templates for each topic type.</glossdef>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "2014-03-30"/>
+<revised modified = "2014-04-03"/></critdates></prolog></glossentry>

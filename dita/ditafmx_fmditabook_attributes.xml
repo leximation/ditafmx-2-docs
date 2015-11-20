@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="AttrAsCondDefaultState"?><?dtall dict="AttrAsCondPrefix"?><?dtall
+dict="authorinformation"?><?dtall dict="authorname"?><?dtall dict="bookid"?><?dtall
+dict="bookowner"?><?dtall dict="bookrestriction"?><?dtall dict="bookrights"?><?dtall
+dict="copyrfirst"?><?dtall dict="copyrholder"?><?dtall dict="copyrlast"?><?dtall
+dict="copyryear"?><?dtall dict="firstname"?><?dtall dict="IncludeFiles"?><?dtall
+dict="lastname"?><?dtall dict="namedetails"?><?dtall dict="org"?><?dtall
+dict="personinfo"?><?dtall dict="personname"?><?dtall dict="prodinfo"?><?dtall
+dict="prodlist"?><?dtall dict="prodname"?><?dtall dict="vrm"?><?dtall dict="vrmlist"?><?dtall
+dict="&lt;prefix>&lt;attribu"?><topic id = "id1094G010FBF"
+    status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Passing Map-level Metadata to the FM Book</title>
+<shortdesc>Use attribute and element values in the map to affect
+formatting and properties in the structure application, set conditional
+hide/show settings, and update variable definitions.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>test</author>
+<author>scottp</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2015-09-13"/></critdates></prolog>
+<body status = "new"><p status = "new">DITA-FMx provides a number
+of features which make it easier to use map-level metadata to control
+formatting and data in the generated chapter files. Attribute and element
+values in the map are passed to the <synph status = "new"
+    outputclass = "element">fm-ditabook</synph> element (the root
+of the generated book file) during the XSLT import step of the book-build
+process. Once these attribute values are set on the <synph
+    status = "new" outputclass = "element">fm-ditabook</synph> element
+they can control other aspects of the component document formatting
+and content.</p>
+<p>These attributes can be used in various ways in a structure application
+EDD and template and to set the hide/show state of conditional text.
+They can also control the value of variable definitions in files
+that are included in the generated book file.</p>
+<p status = "changed">By default, only a limited set of metadata
+(attributes and element values) are transferred to the generated
+book. You can add additional metadata by modifying the Book application
+EDD, the <filepath status = "changed">fmx-book_1.2.dtd</filepath> file,
+and the Book application import XSLT file (<filepath>bookmap2fmbook.xsl</filepath>),
+as described in <xref href = "ditafmx_addingnewfmditabookattributes.xml#id3a2152b0-95cf-4a97-9f6a-2921c293cc2a"
+type = "topic" format = "dita" scope = "local"></xref>. The following
+tables describe the metadata supported in the default files.</p>
+<table frame = "all" colsep = "1" rowsep = "1" pgwide = "100">
+<tgroup cols = "3" outputclass = "FormatA" colsep = "1" rowsep = "1">
+<colspec colnum = "1" colname = "1" colwidth = "3.264in"/>
+<colspec colnum = "2" colname = "2" colwidth = "1.603in"/>
+<colspec colnum = "3" colname = "3" colwidth = "2.133in"/>
+<thead>
+<row rowsep = "1">
+<entry colname = "1">Bookmap metadata (in bookmeta)</entry>
+<entry colname = "2">If multiple, use ..</entry>
+<entry colname = "3">fm-ditabook attribute</entry>
+</row>
+</thead>
+<tbody>
+<row rowsep = "1">
+<entry colname = "1">publisherinformation/organization</entry>
+<entry colname = "2">first instance</entry>
+<entry colname = "3">@pubinfo-org</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">publisherinformation/published/completed/year</entry>
+<entry colname = "2">first instance</entry>
+<entry colname = "3">@pubinfo-completedyear</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">publisherinformation/published/completed/month</entry>
+<entry colname = "2">first instance</entry>
+<entry colname = "3">@pubinfo-completedmonth</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">publisherinformation/published/completed/day</entry>
+<entry colname = "2">first instance</entry>
+<entry colname = "3">@pubinfo-completedday</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">permissions/@view</entry>
+<entry colname = "2">first instance of permissions</entry>
+<entry colname = "3">@permissions-view</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">category</entry>
+<entry colname = "2">first instance</entry>
+<entry colname = "3">@category</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">critdates/created/@date</entry>
+<entry colname = "2">first instance</entry>
+<entry colname = "3">@created</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">critdates/revised/@modified</entry>
+<entry colname = "2">last instance</entry>
+<entry colname = "3">@revised</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">bookid/bookpartno</entry>
+<entry colname = "2">first instance</entry>
+<entry colname = "3">@bookpartno</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">bookid/edition</entry>
+<entry colname = "2">first instance</entry>
+<entry colname = "3">@edition</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">bookid/isbn</entry>
+<entry colname = "2">first instance</entry>
+<entry colname = "3">@isbn</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">bookid/booknumber</entry>
+<entry colname = "2">first instance</entry>
+<entry colname = "3">@booknumber</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">bookid/volume</entry>
+<entry colname = "2">first instance</entry>
+<entry colname = "3">@volume</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">bookid/maintainer/person</entry>
+<entry colname = "2">first instance</entry>
+<entry colname = "3">@maintainer-person</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">bookid/maintainer/organization</entry>
+<entry colname = "2">first instance</entry>
+<entry colname = "3">@maintainer-org</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">bookrights/copyrfirst/year</entry>
+<entry colname = "2">-</entry>
+<entry colname = "3">@copyrfirst</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">bookrights/copyrlast/year</entry>
+<entry colname = "2">-</entry>
+<entry colname = "3">@copyrlast</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">bookrights/bookowner/organization</entry>
+<entry colname = "2">first instance</entry>
+<entry colname = "3">@copyrholder</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">bookrights/bookowner/organization</entry>
+<entry colname = "2">first instance</entry>
+<entry colname = "3">@bookowner-org</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">bookrights/bookowner/person</entry>
+<entry colname = "2">first instance</entry>
+<entry colname = "3">@bookowner-person</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">bookrights/bookrestriction/@value</entry>
+<entry colname = "2">-</entry>
+<entry colname = "3">@bookrestriction</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">prodinfo/prodname</entry>
+<entry colname = "2">-</entry>
+<entry colname = "3">@prodname</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">prodinfo/vrmlist/vrm/@version</entry>
+<entry colname = "2">last instance</entry>
+<entry colname = "3">@version</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">prodinfo/vrmlist/vrm/@release</entry>
+<entry colname = "2">last instance</entry>
+<entry colname = "3">@release</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">prodinfo/vrmlist/vrm/@modification</entry>
+<entry colname = "2">last instance</entry>
+<entry colname = "3">@modification</entry>
+</row>
+<row rowsep = "0">
+<entry colname = "1">authorinformation/personinfo/namedetails/personname/firstname
+and lastname</entry>
+<entry colname = "2">first instance</entry>
+<entry colname = "3">@authorname</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame = "all" colsep = "1" rowsep = "1" pgwide = "100">
+<tgroup cols = "3" outputclass = "FormatA" colsep = "1" rowsep = "1">
+<colspec colnum = "1" colname = "1" colwidth = "3.500in"/>
+<colspec colnum = "2" colname = "2" colwidth = "1.610in"/>
+<colspec colnum = "3" colname = "3" colwidth = "1.890in"/>
+<thead>
+<row rowsep = "1">
+<entry colname = "1">Map metadata (in topicmeta)</entry>
+<entry colname = "2">If multiple, use ..</entry>
+<entry colname = "3">fm-ditabook attribute</entry>
+</row>
+</thead>
+<tbody>
+<row rowsep = "1">
+<entry colname = "1">critdates/created/@date</entry>
+<entry colname = "2">first instance</entry>
+<entry colname = "3">@created</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">critdates/revised/@modified</entry>
+<entry colname = "2">last instance</entry>
+<entry colname = "3">@revised</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">copyright/copyryear/year</entry>
+<entry colname = "2">first instance</entry>
+<entry colname = "3">@copyrfirst</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">copyright/copyryear/year</entry>
+<entry colname = "2">last instance</entry>
+<entry colname = "3">@copyrlast</entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">copyright/copyrholder</entry>
+<entry colname = "2">-</entry>
+<entry colname = "3">@copyrholder</entry>
+</row>
+<row rowsep = "0">
+<entry colname = "1">author</entry>
+<entry colname = "2">-</entry>
+<entry colname = "3">@authorname</entry>
+</row>
+</tbody>
+</tgroup></table>
+<section><title>Structure application template and EDD context rules</title><p>Attribute
+value building blocks can reference an attribute in the book file
+(as well as attributes in elements in the same file). Use the following
+building block to reference the value of the prodname attribute
+on the <synph status = "new" outputclass = "element">fm-ditabook</synph> element:</p><codeblock>&lt;$attribute[prodname:fm-ditabook]></codeblock><p>Attribute
+value building blocks like this can be used in cross-reference formats, header/footer
+variables, as well as EDD prefix and suffix rules. You can also
+use this type of building block in EDD context rules to apply formatting
+based on the values of book-level attributes. A context rule could
+start as follows:</p><codeblock><b>If context is:</b> * &lt; fm-ditabook[prodname="DITA-FMx"]</codeblock><p>Note
+that changing an attribute value directly in the book doesn’t affect
+the component files until that book is updated.</p></section>
+<section><title>Control conditional text hide/show state</title><p><indexterm
+status = "new">ImportAttrsAsConds</indexterm><indexterm status =
+"new">import attributes as conditions</indexterm><indexterm status
+= "new">ConditionMap</indexterm>To enable the setting of conditional
+text hide/show states using book-level attributes you must be using
+a book-build INI file for your book building process. If you’re
+not familiar with the book-build INI file, you should review the
+information in <xref href = "ditafmx_setupbookbuildsettings.xml#id00a0eead-77f5-4131-9d2d-5a02de0a1893"
+type = "topic" format = "dita" scope = "local"></xref>. To enable
+this feature, set the ImportAttrsAsConds parameter to “1” in the
+General section of the book-build INI file.</p><p>When using this
+feature, conditional text names must follow a specific naming convention
+of “<varname>&lt;prefix></varname><varname>&lt;attribute></varname>-<varname>&lt;value></varname>”.
+Where <varname>&lt;prefix></varname> is “fmx-” by default, but can
+be changed by setting the General/AttrAsCondPrefix parameter, <varname>&lt;attribute></varname> is
+the name of the fm-ditabook attribute, and <varname>&lt;value></varname> is
+the value of that attribute. For example, if you wanted to be able
+to hide/show a condition that was controlled by the value of the
+bookmeta/bookrights/bookrestriction/@value attribute, you could
+use conditions named “fmx-bookrestriction-confidential” and “fmx-bookrestriction-restricted”.
+These conditions must exist in the templates (Book application template
+and any component templates) and must be set to “Show” (if they
+are set to “Hide”, any content tagged with that condition will be
+lost when the template is applied).</p><p>To control the hide/show
+state of a condition, you must add the condition names to the ConditionMap
+section of the book-build INI file. List each condition name followed
+by “Hide” or “Show” (typically “Show”).</p><codeblock outputclass = "ini">[ConditionMap] 
+fmx-bookrestriction-confidential=Show 
+fmx-bookrestriction-restricted=Show</codeblock><p status = "changed">When
+this feature is enabled, DITA-FMx starts off by hiding all “fmx-”
+conditions (or whatever is defined as your prefix using the AttrAsCondPrefix
+parameter) in the document. Then, each fm-ditabook attribute and
+value are matched with the condition named in the ConditionMap section.
+If a match is found (using the “<varname>&lt;prefix></varname><varname>&lt;attribute></varname>-<varname>&lt;value></varname>”
+naming convention), that condition is set to the specified hide/show
+state. The <synph status = "new" outputclass = "element">fm-ditabook</synph> attribute
+value set in the bookmap must be represented by a condition specified
+in the book-build INI, so be sure to include all possible condition
+names that you're hiding and showing and set them all to “Show”
+(even if some may need to be hidden). Only one value for an attribute
+can be set at a time, so only the condition representing an attribute
+value match will show.</p><p>If you need to work in reverse and
+have all of the conditions set to “Show” by default, you can set
+the General/AttrAsCondDefaultState parameter to “Show”, then set
+the values in the condition map to “Hide”.</p><p>This condition
+setting works in both generated (structured) FM files as well as unstructured
+FM files (from generated lists as well as those files that have
+been “included” via the book-build INI).</p></section>
+<section><title>Update variable definitions</title><p><indexterm
+status = "new">ImportAttrsAsVars</indexterm><indexterm status =
+"new">import attributes as variables</indexterm>To enable the updating
+of variable definitions using book-level attributes you must be
+using a book-build INI file for your book building process. If you’re
+not familiar with the book-build INI file, you should review the
+information in <xref href = "ditafmx_setupbookbuildsettings.xml#id00a0eead-77f5-4131-9d2d-5a02de0a1893"
+type = "topic" format = "dita" scope = "local"></xref>. To enable
+this feature, set the ImportAttrsAsVars parameter to “1” in the
+General section of the book-build INI file.</p><p status = "changed">If
+the ImportAttrsAsVars parameter is set to “1”, all <synph status = "new"
+    outputclass = "element">fm-ditabook</synph> attributes are used
+to update like-named variables in each book component (both structured
+and unstructured files). Like the conditional text names, the variable
+names must adhere to the naming convention of “fmx-<varname
+    status = "changed">ATTRIBUTE-NAME</varname>”. The value of the
+variable is set to the value of the <synph status = "new"
+    outputclass = "element">fm-ditabook</synph> attribute.</p><p>In
+order to make use of these map-defined variables, create a variable
+definition of the proper name (following the naming convention described
+above), give it some default value, then insert it into the document.
+If you’re using this in a structured application template file,
+you’ll be placing this variable in a frame that’s not part of the
+main flow (since the flow is replaced with the XML-defined data).
+If this is being used in an unstructured file that is being included
+(using the IncludeFiles book-build INI feature), you can place the
+variable wherever it makes sense to do so.</p><p>After the book
+has been generated and updated, the variables will have been updated
+with the values from the map.</p><p>For example, if your goal is
+to include a header/footer variable in your documents that includes
+the “version” information defined in the DITA map metadata.</p><ol><li><p>In
+your DITA map, include a prodlist/vrmlist/vrm/@version value.</p></li>
+<li><p>In your Book application template file, or in the appropriate
+component template, add a header/footer variable named “fmx-version”
+and give it a default value (perhaps “0.00”). Save and close the
+template file.</p><p>You can also add this variable definition to
+any “included” FM binary files. The variable value will be updated
+when the book is generated.</p></li>
+<li><p>In your book-build INI file (or the default book-build INI),
+enable the ImportAttrsAsVars parameter by setting it to “1”.</p></li>
+<li><p>Use the Generate Book from Map command to create a new FM
+book and chapter files. The pages in the generated output that are
+based on the template pages which include the variables added in
+step #2 will contain the updated variable values.</p></li></ol><p>This
+works because the Book application’s XSLT file creates the corresponding
+attribute (@version in this case) on the fm-ditabook element (in
+the generated book file). If this isn’t working, make sure that
+your Book application XSLT contains the proper variable definition,
+and you’ve followed the instructions correctly.</p><p status = "changed">You
+should be able to create variables that use any of the <synph
+    status = "new" outputclass = "element">fm-ditabook</synph> attributes listed
+in the tables in <xref href = "#id1094G010FBF" type = "topic" format
+= "dita" scope = "local"></xref>. If you want to make use of map
+metadata not currently supported by the XSLT, just add new XSLT variable
+processing for a new fm-ditabook attribute and add that attribute
+definition to the <filepath status = "changed">fmx-book_1.2.dtd</filepath> file
+and to the Book application EDD.</p></section></body></topic>

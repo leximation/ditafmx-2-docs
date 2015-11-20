@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<map id = "id75bd1032-ddff-4034-8b96-878d8288d212"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Revision History</title>
+<topicmeta><author>scottp</author>
+<critdates><created date = "2014-07-31"/>
+<revised modified = "2015-09-11"/></critdates>
+<othermeta name = "fmx-root-map" content = "_ditafmx.ditamap"
+    status = "new"/></topicmeta>
+<topicref navtitle = "Revision History" href = "ditafmx_revisions.xml"
+    collection-type = "family" type = "topic">
+<topicref href = "ditafmx_revisions_2.0.04.xml" type = "topic"
+    status = "new"><topicmeta><navtitle>2.0.04 - 13 September 2015</navtitle></topicmeta></topicref>
+<topicref href = "ditafmx_revisions_2.0.03.xml" type = "topic">
+<topicmeta><navtitle>2.0.03 - 31 March 2015</navtitle></topicmeta></topicref>
+<topicref href = "ditafmx_revisions_2.0.02.xml" type = "topic">
+<topicmeta><navtitle>2.0.02 - 10 August 2014</navtitle></topicmeta></topicref>
+<topicref href = "ditafmx_revisions_2.0.01.xml" type = "topic">
+<topicmeta><navtitle>2.0.01 - 9 June 2014</navtitle></topicmeta></topicref>
+<topicref href = "ditafmx_revisions_2.0.00.xml" type = "topic">
+<topicmeta><navtitle>2.0.00 - 14 April 2014</navtitle></topicmeta></topicref>
+<topicref href = "ditafmx_revisions_1.1.18.xml" type = "topic">
+<topicmeta><navtitle>1.1.18 - 14 January 2014</navtitle></topicmeta></topicref>
+<topicref navtitle = "1.1.17 - 25 November 2013"
+    href = "ditafmx_revisions_1.1.17.xml" type = "topic"></topicref>
+<topicref navtitle = "1.1.16 - 1 December 2012"
+    href = "ditafmx_revisions_1.1.16.xml" type = "topic"></topicref>
+<topicref navtitle = "1.1.15 - 30 July 2012"
+    href = "ditafmx_revisions_1.1.15.xml" type = "topic"></topicref>
+<topicref navtitle = "1.1.14 - 31 January 2012"
+    href = "ditafmx_revisions_1.1.14.xml" type = "topic"></topicref>
+<topicref navtitle = "1.1.13 - 6 June 2011"
+    href = "ditafmx_revisions_1.1.13.xml" type = "topic"></topicref>
+<topicref navtitle = "1.1.12 - 29 March 2011"
+    href = "ditafmx_revisions_1.1.12.xml" type = "topic"></topicref>
+<topicref navtitle = "1.1.11 - 10 January 2011"
+    href = "ditafmx_revisions_1.1.11.xml" type = "topic" status = "new"></topicref>
+<topicref navtitle = "1.1.10 - 25 October 2010"
+    href = "ditafmx_revisions_1.1.10.xml" type = "topic"></topicref>
+<topicref navtitle = "1.1.09 - 4 October 2010"
+    href = "ditafmx_revisions_1.1.09.xml" type = "topic"></topicref>
+<topicref navtitle = "1.1.08 (1.1 release) - 20 October 2009 "
+    href = "ditafmx_revisions_1.1.xml" type = "topic"></topicref>
+<topicref navtitle = "1.00.28 - 16 December 2008"
+    href = "ditafmx_revisions_1.00.28.xml" type = "topic"></topicref>
+<topicref navtitle = "1.00.27 - 28 November 2008"
+    href = "ditafmx_revisions_1.00.27.xml" type = "topic"></topicref>
+<topicref navtitle = "1.00.26 - 31 August 2008"
+    href = "ditafmx_revisions_1.00.26.xml" type = "topic"></topicref>
+<topicref navtitle = "1.00.25 (1.0 release) - 7 July 2008"
+    href = "ditafmx_revisions_1.0.xml" type = "topic"></topicref>
+<topicref navtitle = "0.02 - 18 December 2007"
+    href = "ditafmx_revisions_0.02.xml" type = "topic"></topicref>
+<topicref navtitle = "0.01 - 20 August 2007"
+    href = "ditafmx_revisions_0.01.xml" type = "topic"></topicref></topicref>
+<reltable locktitle = "yes" toc = "no" id = "table-one">
+<relheader>
+<relcolspec linking = "sourceonly"></relcolspec>
+<relcolspec linking = "targetonly"></relcolspec>
+</relheader>
+<relrow>
+<relcell>
+<topicref navtitle = "Revision History" href = "ditafmx_revisions.xml"
+    type = "topic"></topicref></relcell>
+<relcell>
+<topicref navtitle = "DITA-FMx Commands" href = "ditafmx_ref_main.xml"
+    type = "topic"></topicref></relcell>
+</relrow>
+</reltable></map>

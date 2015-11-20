@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="ditafmx_app"?><?dtall dict="ditafm_app"?><topic
+    id = "id078AAC00PY4"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>DITA Structure Applications</title>
+<shortdesc status = "changed">You can use the DITA structure applications
+provided with DITA-FMx, those provided by Adobe, or your own custom
+applications. If you’re using apps other than the DITA-FMx apps,
+you’ll need to make some minor adjustments.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>test</author>
+<author>scottp</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2015-09-10"/></critdates></prolog>
+<body status = "changed"><p status = "changed">In order for FrameMaker
+to properly open and save DITA files, you must have structure applications
+that support the authoring of topic and map files. DITA-FMx provides
+both of these applications as well as a structure application for
+book processing.</p>
+<p status = "new">Using the default DITA-FMx structure applications
+is the easiest way to get started, because those applications will
+support all of the advanced features provided by DITA-FMx.</p>
+<note status = "new">If you’re installing on a system where the
+user does not have “admin” permissions, you’ll want to install the
+structure applications in a more accessible location. For details,
+see <xref href = "ditafmx_apprelocation.xml#id3e0f22a6-bded-404b-9a77-2a80461af2bd"
+type = "concept" format = "dita" scope = "local" status = "new"></xref>.</note>
+<note type = "important" status = "changed">The structure applications
+provided with DITA-FMx 2.0 are in FM8 format. This works fine for
+FM8 and later, but if you’re using FM7.2, you’ll need to open them
+in FM8 and downsave to FM7 format. If you’re unable to do this,
+contact Leximation.</note>
+<p status = "changed">If you are already working with DITA structure
+applications, and want to continue using them, you’ll need to do
+the following:</p>
+<ul status = "new"><li><p status = "new">Edit the structure application
+definition for each of your structure applications. Change the <b
+    status = "new">Use API Client</b> node so it references the
+client <b status = "new">ditafmx_app</b> instead of <b status = "new">ditafm_app</b>.
+This is required; if you do not do this, you’ll get an error message.</p></li>
+<li status = "new"><p status = "new">Add new element definitions
+that support special features provided by DITA-FMx. For details
+see <xref href = "ditafmx_apprequirements.xml#id0833I0F01HS" type
+= "topic" format = "dita" scope = "local" status = "new"></xref>.
+This is optional, but may limit the available functionality.</p></li>
+<li status = "new"><p status = "new">Create a special “Book” application
+for publishing. DITA-FMx relies on a structure application for Book
+publishing. It is possible that your current “Topic” application
+will do the job.</p></li></ul>
+<p status = "new">If you want to customize the appearance of default
+DITA-FMx structure applications, you should clone the provided structure
+application folders and modify the cloned versions. For additional
+information, refer to <xref href = "ditafmx_cloningtapps.xml#id524d3bac-215f-4504-8473-76d46bbe39a9"
+type = "task" format = "dita" scope = "local" status = "new"></xref>.</p>
+<p status = "changed">After installing DITA-FMx, when you run FrameMaker
+you should see a message asking to install the default structure
+applications. Unless you’re doing something special, you should
+choose Yes to this message. To manually install the structure applications
+or if you’d like to understand what this automated process is doing,
+read the topic titled <xref href = "ditafmx_installing_apps_manual.xml#id078AAC00PY42"
+type = "topic" format = "dita" scope = "local"></xref>.</p>
+<note type = "important" status = "new">On Windows Vista, 7, and
+8, the automated structure application installation process may
+fail unless FrameMaker is run “As Administrator.” Exit FrameMaker,
+then right-click the program icon and choose “Run As Administrator.”</note>
+<p status = "changed">After the structure applications have been
+installed, you may want to take a look at the structure application
+definitions so you will better understand how they work. Just choose <menucascade>
+<uicontrol>Structure Tools</uicontrol><uicontrol>Edit Application
+Definitions</uicontrol></menucascade> to open the structure application
+definitions file. You should see the three DITA-FMx structure application definitions
+at the top of the file. These are added as text insets to make it
+easier to manage. If you need to modify these entries, you’ll ned
+to open the source file by double-clicking the inset and choosing
+the Open button. When you’re done reviewing the structure application
+definitions file, just close the file. You’ll be prompted to save
+when closing. Unless you’ve made intentional changes, there is no
+need to save.</p></body></topic>

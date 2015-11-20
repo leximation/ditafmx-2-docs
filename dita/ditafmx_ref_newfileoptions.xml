@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="computername"?><?dtall dict="FullName"?><?dtall dict="lowercased"?><?dtall
+dict="RegInfo"?><?dtall dict="Username"?><topic id = "id0824II0E05Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>New File Options</title>
+<shortdesc status = "changed">Provides settings that affect the
+creation of new topic and map files.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "2008-02-04 @ 18:55 (scottp)"/>
+<revised modified = "2015-09-08"/></critdates></prolog>
+<body><p>The new file options affect the functionality of the <uicontrol
+    status = "new">New DITA File</uicontrol> dialog. You can access
+these options from the main <uicontrol status = "new">Options</uicontrol> dialog
+as well as the <uicontrol status = "new">New DITA File</uicontrol> dialog.</p>
+<fig audience = "web"><title>DITA-FMx New File Options dialog box</title><image
+href="images/newfileoptions.png" align="left" placement="break"
+ otherprops = "fmdpi:110"/></fig>
+<dl><dlentry status = "changed"><dt status = "changed">New Topic
+File Name Format</dt>
+<dd status = "changed">This field defines the text of auto-generated
+file names for topics. File names are auto-generated in the <uicontrol
+    status = "new">New DITA File</uicontrol> dialog as well as the <uicontrol>Build
+Map from Outline</uicontrol> command. You can enter plain text in
+this field as well as special building blocks. Details on use of
+building blocks is provided below.</dd></dlentry>
+<dlentry status = "new"><dt>Wrap New Topics in DITA Element</dt>
+<dd status = "new">When a new topic file is created (using the <uicontrol>New
+DITA File</uicontrol> command), the new file is created with a <synph
+    status = "new" outputclass = "element">dita</synph> element
+at its root. If you plan to include multiple topics in a single
+file, that file must have <synph status = "new" outputclass = "element">dita</synph> as
+the root element. This option controls the default setting for this
+feature, it can be overridden by the same option in the <wintitle>New
+DITA File</wintitle> dialog.</dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">New Map File
+Name Format</dt>
+<dd status = "changed">This field defines the text of auto-generated
+file names for maps. File names are auto-generated in the <uicontrol
+    status = "new">New DITA File</uicontrol> dialog as well as the <uicontrol>Build
+Map from Outline</uicontrol> command. You can enter plain text in
+this field as well as special building blocks. Details on use of
+building blocks is provided below.</dd></dlentry>
+<dlentry><dt status = "changed">Element Template folder</dt>
+<dd>Specifies the folder where element templates are stored. This
+can be a local or network location. If the element template folder
+field is empty, the default location is the folder that contains
+the structure application template file.</dd>
+<dd><note>When entering paths in text fields, you must use the forward
+slash as the directory separator.</note></dd></dlentry></dl>
+<section id = "id143VB0GB05Z" status = "new"><title>Use of building
+blocks</title><p status = "new"><indexterm>$ building blocks</indexterm><indexterm
+status = "new">building blocks</indexterm>A building block is a
+string of text enclosed in angle brackets. Valid building blocks are
+listed below (some of these make more sense to use in a file name
+than others):</p><ul id = "id0825A0807PN"><li><p status = "changed">&lt;$FM_USER>
+- from <filepath status = "new">maker.ini</filepath> RegInfo/User</p></li>
+<li><p status = "changed">&lt;$FM_COMPANY> - from <filepath
+    status = "new">maker.ini</filepath> RegInfo/Company</p></li>
+<li><p status = "changed">&lt;$FMX_USERNAME> - from <filepath
+    status = "new">ditafmx.ini</filepath> Registration/Username</p></li>
+<li><p status = "changed">&lt;$FMX_FULLNAME> - from <filepath
+    status = "new">ditafmx.ini</filepath> Registration/FullName</p></li>
+<li><p status = "changed">&lt;$OS_USERNAME> - %username% environment
+variable</p></li>
+<li><p status = "changed">&lt;$OS_COMPUTERNAME> - %computername%
+environment variable</p></li>
+<li><p>&lt;$T_YYYY> - 4 digit year</p></li>
+<li><p>&lt;$T_YY> - 2 digit year</p></li>
+<li><p>&lt;$T_MM> - 2 digit month (zero padded)</p></li>
+<li><p>&lt;$T_MON> - 3 character month</p></li>
+<li><p>&lt;$T_MONTH> - full month name</p></li>
+<li><p status = "changed">&lt;$T_D> - 1 or 2 digit date</p></li>
+<li status = "changed"><p>&lt;$T_DD> - 2 digit date (zero padded)</p></li>
+<li><p>&lt;$T_HOUR> - 2 digit hour (zero padded)</p></li>
+<li><p>&lt;$T_MIN> - 2 digit minute (zero padded)</p></li>
+<li><p>&lt;$T_SEC> - 2 digit second (zero padded)</p></li></ul><ul
+    status = "changed"><li><p>&lt;$TITLE> - the actual text of the
+title (as entered in the New File dialog)</p></li>
+<li><p>&lt;$TITLE_LC> - the text of the title lowercased</p></li>
+<li><p>&lt;$TITLE_NOSPACE> - the text of the title with spaces removed</p></li>
+<li><p>&lt;$TITLE_NOSPACELC> - the text of the title, lowercased
+with spaces removed</p></li>
+<li><p>&lt;$TITLE_NOSPACECAMEL> - the text of the title, camel-cased
+with spaces removed</p></li>
+<li><p>&lt;$TITLE_NOSPACECAMELLOW> - the text of the title, camel-cased
+with spaces removed, and the first character lowercased</p></li>
+<li><p>&lt;$TITLE_SPACETOUNDER> - the text of the title with spaces
+replaced with underscores</p></li>
+<li><p>&lt;$TITLE_SPACETOUNDERLC> - the text of the title with spaces
+replaced with underscores and lowercased</p></li>
+<li><p>&lt;$TOPIC_TYPE> - the topic type’s element name</p></li>
+<li><p>&lt;$UNIQUEID> - the unique ID as applied to the root topic
+element</p></li>
+<li><p status = "changed">&lt;$VAR(<i status = "new">VARNAME</i>)>
+- the value of the variable <i status = "new">VARNAME</i> </p></li></ul><p>Note
+that you can include slashes (always use forward slashes or double
+backslashes in FrameMaker dialog boxes) in the New File Name Format
+field to automatically fill in subdirectory names.</p><p
+    status = "changed">You can include a modifier value following
+the building block name in square brackets. This value must be a
+number (from 0 to 99), and if provided, limits the length of the
+resulting string to that value (the first <i status = "new">N</i> characters).
+If you want to extract a substring from a building block, include
+the start and end positions in square brackets. For example, the
+following building block will extract the first two characters from
+the topic type:</p><codeblock status = "new">&lt;$TOPIC_TYPE[2]></codeblock><p
+    status = "new">Or, to extract the second through fifth characters,
+use the following syntax:</p><codeblock status = "new">&lt;$TOPIC_TYPE[2-5]></codeblock><p>Other
+modifiers can be used to change the case of the text that results
+from the building block. These single-character modifiers must follow
+any numeric modifiers if present. The following modifiers are available:</p><ul>
+<li><codeph>U</codeph> - uppercase</li>
+<li><codeph>L</codeph> - lowercase</li>
+<li><codeph>T</codeph> - title case</li></ul><p>The following syntax
+will generate the first two characters from the topic type in uppercase:</p><codeblock status = "new">&lt;$TOPIC_TYPE[2U]></codeblock><p
+    status = "new">For example, if you always want files to be saved
+into folders based on the topic type, you might use the following
+format string:</p><codeblock>&lt;$TOPIC_TYPE>/&lt;$TOPIC_TYPE[2]>_&lt;$TITLE_NOSPACELC>.dita</codeblock><p>If
+the title was “Using New Tools” and the topic type was task, the
+resulting filename would be “task/ta_usingnewtools.dita”.</p></section></body></topic>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "ida79fd7d9-9ffe-4c93-9b74-fcbc08bdb1fd"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Bookmaps</title>
+<shortdesc status = "new">Information specific to bookmaps in DITA-FMx.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2009-03-07"/>
+<revised modified = "2014-03-28"/></critdates></prolog>
+<body status = "changed"><p status = "new"><indexterm status = "new">bookmaps</indexterm>The <synph
+    status = "new" outputclass = "element">bookmap</synph> element
+allows you to create a hierarchy of topic references that resembles
+the structure of a printed book. The general order of elements in
+a <synph status = "new" outputclass = "element">bookmap</synph> is
+similar to that of the <synph status = "new" outputclass = "element">map</synph>,
+although the top-level element names will be different. The title
+of a <synph status = "new" outputclass = "element">bookmap</synph> can
+be <synph status = "new" outputclass = "element">title</synph> or <synph
+    status = "new" outputclass = "element">booktitle</synph>. The <synph
+    status = "new" outputclass = "element">bookmap</synph>’s metadata
+is stored in the <synph status = "new" outputclass = "element">bookmeta</synph> element
+(very similar to the <synph status = "new" outputclass = "element">topicmeta</synph> of
+the <synph status = "new" outputclass = "element">map</synph>).</p>
+<p status = "new">The most significant difference between the <synph
+    status = "new" outputclass = "element">map</synph> and <synph
+    status = "new" outputclass = "element">bookmap</synph> are the
+topic referencing elements. A <synph status = "new"
+    outputclass = "element">bookmap</synph> provides many specialized
+topic referencing elements for book-specific purposes that group
+topicrefs into logical sections.</p>
+<p status = "new">The first logical grouping is the <synph
+    status = "new" outputclass = "element">frontmatter</synph> element.
+The <synph status = "new" outputclass = "element">frontmatter</synph> element can
+contain a number of topic referencing elements (including <synph
+    status = "new" outputclass = "element">topciref</synph>) that specify
+topics that are part of a book’s frontmatter. A similar <synph
+    status = "new" outputclass = "element">backmatter</synph> element can
+be added at the end of the book. One of the special elements in
+the <synph status = "new" outputclass = "element">frontmatter</synph> and <synph
+    status = "new" outputclass = "element">backmatter</synph> is
+the <synph status = "new" outputclass = "element">booklists</synph> element.</p>
+<p status = "new">The <synph status = "new" outputclass = "element">booklists</synph> element
+(a child of the <synph status = "new" outputclass = "element">frontmatter</synph> and <synph
+    status = "new" outputclass = "element">backmatter</synph> elements)
+can contain one or more “list” elements that are intended to provide generated
+lists (similar to the FrameMaker generated list files like a “toc”
+or “index”). Using DITA-FMx, when you insert an element that is
+a child of <synph status = "new" outputclass = "element">booklists</synph>,
+you are not prompted for a target file name. Instead this element
+is left empty, and doesn’t reference any file at all. At book-build
+time, if you have enabled the “Replace List Files with Generated
+Lists”, those elements will become FrameMaker generated lists (assuming
+you’ve set up the proper “component templates”).</p>
+<p status = "new">Following the <synph status = "new"
+    outputclass = "element">frontmatter</synph> element can be a
+number of topic grouping elements such as <synph status = "new"
+    outputclass = "element">part</synph>, <synph status = "new"
+    outputclass = "element">chapter</synph>, and <synph status = "new"
+    outputclass = "element">appendix</synph>. The <synph status = "new"
+    outputclass = "element">part</synph> element can be used to organize <synph
+    status = "new" outputclass = "element">chapter</synph> and <synph
+    status = "new" outputclass = "element">appendix</synph> elements
+into parts, and the <synph status = "new" outputclass = "element">chapter</synph> and <synph
+    status = "new" outputclass = "element">appendix</synph> elements
+are used to organize <synph status = "new" outputclass = "element">topciref</synph> elements.
+After the last <synph status = "new" outputclass = "element">part</synph>, <synph
+    status = "new" outputclass = "element">chapter</synph>, or <synph
+    status = "new" outputclass = "element">appendix</synph> can
+be the <synph status = "new" outputclass = "element">backmatter</synph> element,
+similar to the <synph status = "new" outputclass = "element">frontmatter</synph> element
+described above.</p>
+<p status = "new">A <synph status = "new" outputclass = "element">bookmap</synph> can
+also make use of relationship tables in the same way they are used
+in a <synph status = "new" outputclass = "element">map</synph>.
+Note that even though your <synph status = "new" outputclass = "element">bookmap</synph> may
+make use of <synph status = "new" outputclass = "element">part</synph>, <synph
+    status = "new" outputclass = "element">chapter</synph>, and <synph
+    status = "new" outputclass = "element">appendix</synph> topic
+referencing elements, the <synph status = "new" outputclass = "element">reltable</synph> can
+only contain <synph status = "new" outputclass = "element">topciref</synph> elements.</p></body></topic>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="admin"?><?dtall dict="apps\\DITA"?><?dtall dict="Files\Adobe\FrameMaker\DITA"?><?dtall
+dict="STRUCTDIR\\xml\\DITA"?><?dtall dict="XSLTProcessors"?><concept
+    id = "idb62f0002-1e12-400f-a28a-a48ed67fcda7" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Special Instructions for FM 2015</title>
+<shortdesc status = "new">The default XSLT processor changed with
+the FM13.0.1 update, which requires some extra work when setting
+up the Book structure application.</shortdesc>
+<prolog><author>scottp</author>
+<critdates status = "changed"><created date = "2015-09-10"/>
+<revised modified = "2015-09-11"/></critdates></prolog>
+<conbody><p status = "new">The DITA-FMx Book structure application’s
+XSLT import script requires the XALAN processor, and with the FM13.0.1
+update, the default has been changed to SAXON (the default can be
+changed by modifying a setting in the <filepath status = "new">maker.ini</filepath> file).
+The Generate Book from Map command makes use of the Book structure
+application, and if the wrong processor is used, that command will
+fail.</p>
+<p status = "new">In order to ensure that the right processor is
+used, a new element, Processor, was added to the structure application
+definition EDD model. While this element is available after installing
+the update, in the “global” structapps file (<menucascade status = "new">
+<uicontrol status = "new">Structure Tools</uicontrol>
+<uicontrol status = "new">Edit Global Application Definitions</uicontrol></menucascade>),
+it may not be available in the “local” (user’s) structapps file
+(<menucascade status = "new"><uicontrol status = "new">Structure
+Tools</uicontrol><uicontrol status = "new">Edit Application Definitions</uicontrol></menucascade>).</p>
+<p status = "new">If you’re installing DITA-FMx for the first time,
+and you’ve got the 13.0.1 (or later) update for FM 2015, allowing
+the structure applications to be installed as part of the default
+workflow will ensure that the right files are installed; no further
+effort on your part is needed.</p>
+<p status = "new">However, if you’re using custom structure applications
+or already have the DITA-FMx apps installed, you’ll need to perform
+some manual updates in order for things to work properly.</p>
+<p status = "new">Because of the variety of possible installation
+scenarios, there is no “step-by-step” process that can be used to
+fix this problem. The easiest fix is to open the <filepath
+    status = "new">maker.ini</filepath> file and change the “Default”
+from SAXON to XALAN (in the XSLTProcessors section). However, if
+you want to be able to use SAXON in other contexts, you'll need
+to jump through a few more hoops to get things working properly.</p>
+<p status = "new">If you’re using the default DITA-FMx Book app,
+you can just delete the Book entry in the structapps file and import
+the new “stub” file that’s been modified for FM13.0.1 (<filepath
+    status = "new">structapps-stub_book_1.2_13.0.1.fm</filepath>)
+When you do this you’ll notice that the new Processor element is
+flagged as being invalid. This is because the structapps file doesn’t
+have the new EDD model. To fix this, open the stub file in FrameMaker, and
+import the EDD from that file into the structapps file (<menucascade
+    status = "new"><uicontrol status = "new">File</uicontrol>
+<uicontrol status = "new">Import</uicontrol><uicontrol status = "new">Element Definitions</uicontrol></menucascade>).</p>
+<p status = "new">If you’re using a custom structure application,
+a similar process is needed. First, open your custom stub file,
+and import the EDD from the <filepath status = "new">structapps-stub_book_1.2_13.0.1.fm</filepath> stub
+file into your file. Then modify the PreProcessing element to include
+the new Processor/XALAN elements. (If you’re not using a stub file,
+do this directly in the structapps file.) After updating the stub
+file, re-import that into the structapps file. You’ll need to import
+the EDD from the stub file into the structapps file to get the EDD
+model updated there as well.</p>
+<p status = "new">Save the structapps file and restart FrameMaker,
+then try a book-build. If you performed the necessary updates, all
+should work fine.</p></conbody></concept>

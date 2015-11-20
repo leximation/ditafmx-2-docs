@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id082AE0V025Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Ditaval Manager</title>
+<shortdesc status = "changed">Create and edit ditaval files, and
+manage the list of ditaval files registered with DITA-FMx.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates status = "changed"><created date = "UNK"/>
+<revised modified = "2015-03-29"/></critdates></prolog>
+<body><p>DITA-FMx provides three commands (<uicontrol>Generate Book
+from Map</uicontrol>, <uicontrol>Generate Output</uicontrol>, and <uicontrol>Apply
+Ditaval</uicontrol>) from which you select from a list of ditaval
+files available to DITA-FMx. The Ditaval Manager controls the files
+on this list, registered with DITA-FMx. Each ditaval file has an
+associated name that is displayed in the lists. By default, this
+name is the ditaval file name, but can be changed if needed.</p>
+<fig audience = "web"><title>DITA-FMx Ditaval Manager dialog box</title><image
+href="images/ditavalmanager.png" align="left" placement="break"
+ otherprops = "fmdpi:110"/></fig>
+<p>If you have existing ditaval files that you want to use with
+DITA-FMx, choose the Add button and select the file. Once it has
+been added to the list in the Ditaval Manager dialog, this file
+will be available to the other commands that make use of ditaval
+files. Use the Rename button to change the name that is shown in
+the list (this does not change the actual ditaval file name). The
+Remove button will remove a name from the list and can optionally
+delete the file as well. You can also use the Add button to create
+a new ditaval file and add it to the list.</p>
+<p status = "changed">The contents of the currently selected ditaval
+file displays in the Ditaval File Entries list in the dialog. Selecting
+a <synph status = "new" outputclass = "element">prop</synph> element
+makes the attributes of that element available for editing. Only <synph
+    status = "new" outputclass = "element">prop</synph> elements
+can be edited through this dialog, but all elements (as well as
+comments) will be shown in the list. After selecting a <synph
+    status = "new" outputclass = "element">prop</synph> element,
+change the values of the att and val attributes as needed, then
+choose the Save To File button to write your changes back to the
+ditaval file.</p>
+<p status = "changed">Use the Add <synph status = "new"
+    outputclass = "element">prop</synph> button to add a new empty
+prop element to the file, and the Update <synph status = "new"
+    outputclass = "element">prop</synph> button to update the attribute
+values of the selected entry in the list based on the values in
+the text boxes. The Delete Entry button deletes the currently selected
+entry.</p>
+<p status = "changed"><indexterm>ditaval</indexterm><indexterm>sample
+file</indexterm>The following code shows a simple ditaval file.
+Each <synph status = "new" outputclass = "element">prop</synph> element
+has three attributes. The att and val attributes specify the filtering
+attribute and its value to match on. Valid values for the action
+attribute are “exclude” and “flag.” This file specifies two filtering
+schemes, the first excludes all elements whose audience attribute
+has the value of “admin” and the second excludes all elements whose
+product attribute has the value of “PROD1.”</p>
+<codeblock outputclass = "xml">&lt;?xml version="1.0" encoding="UTF-8"?> 
+&lt;val> 
+  &lt;prop att="audience" val="admin" action="exclude"/> 
+  &lt;prop att="product" val="PROD1" action="exclude"/> 
+&lt;/val></codeblock></body></topic>

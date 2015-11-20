@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="alt"?><?dtall dict="BaselineOffset"?><?dtall dict="fmdpi:&lt;DPI"?><?dtall
+dict="pts"?><topic id = "id082SI0K0L5Z"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Working with Images</title>
+<shortdesc>Information and tips regarding the image handling features.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>test</author>
+<critdates><created date = "2008-02-28"/>
+<revised modified = "2014-04-12"/></critdates></prolog>
+<body status = "changed"><p status = "changed">To insert an image,
+just insert the <synph outputclass = "element">image</synph> or <synph
+    outputclass = "element">fig</synph> element from the Element Catalog.
+The Insert Image dialog lets you select the image folder location
+and the image file name. You can also set the <synph
+    outputclass = "attribute">alignment</synph>, <synph
+    outputclass = "attribute">placement</synph>, and DPI values.
+If the “fmdpi” feature is enabled, the DPI value will be assigned
+to that property, otherwise it’ll be used to set the <synph
+    outputclass = "attribute">height</synph> and <synph
+    outputclass = "attribute">width</synph> attribute values.</p>
+<fig><title>Insert Image dialog</title><image href="images/insert-image.png"
+align="left" placement="break"  outputclass = "fmdpi:110"><alt>alt
+text</alt></image></fig>
+<p>Use the “...” (browse) button to add one or more image location
+paths to the list. The “X” button deletes the current path from
+the list.</p>
+<p>Alternatively (or in addition to selecting the file name), you
+can specify a key reference to identify the image file. Choose the
+Key Reference button to display the Keyref File Browser dialog.
+Selecting the keyspace lists all of the keys in that keyspace that
+reference files which match the specified file name filter.</p>
+<fig><title>Keyref File Browser dialog</title><image href="images/image-keyref.png"
+align="left" placement="break"  outputclass = "fmdpi:110"><alt>more
+alt text</alt></image></fig>
+<p status = "changed"><indexterm>image handling</indexterm><indexterm>images,
+shrink-wrapped</indexterm>When an image is added to a document,
+the anchored frame is “shrink-wrapped” to the size of the image.
+The relative path to the image file is added to the <synph
+    outputclass = "attribute">href</synph> attribute and the height/width
+in pixels is added to the <synph outputclass = "attribute">height</synph> and <synph
+    outputclass = "attribute">width</synph> attributes. The initial
+value of the <synph outputclass = "attribute">placement</synph> attribute
+matches that specified as the default in the EDD, unless the image
+is auto-inserted as the result of inserting a <synph
+    outputclass = "element">fig</synph> element in which case the <synph
+    outputclass = "attribute">placement</synph> attribute is set
+to “break.” For images where the <synph outputclass = "attribute">placement</synph> attribute
+value is “break,” the initial alignment is set to match that of
+the default value of the <synph outputclass = "attribute">align</synph> attribute
+as defined in the EDD; no alignment value is set for “inline” images.</p>
+<p>You can change the alignment after inserting the image by editing
+the value of the <synph outputclass = "attribute">align</synph> attribute
+or by selecting an alignment option in the Anchored Frame dialog (<menucascade>
+<uicontrol>Special</uicontrol><uicontrol>Anchored Frame</uicontrol></menucascade>).
+The <synph outputclass = "attribute">height</synph> and <synph
+    outputclass = "attribute">width</synph> cannot be set through
+the attribute value; they can only be changed by re-importing the
+image using a different scaling, or by changing the properties through
+the Object Properties dialog. The <synph outputclass = "attribute">href</synph> attribute
+also cannot be changed through the attribute value.</p>
+<p><indexterm>native image size</indexterm><indexterm>image size,
+native</indexterm>If you do not want any height/width values associated
+with an image, deleting those attributes in the XML or Frame document
+will result in the image element being written with no values for <synph
+    outputclass = "attribute">height</synph> and <synph
+    outputclass = "attribute">width</synph> which uses the “native”
+(default) size of the image. This is often desirable for output
+being generated as HTML.</p>
+<p><indexterm>dpi, image</indexterm><indexterm>image dpi</indexterm><indexterm>fmdpi
+setting</indexterm>If you want to use the native size of raster
+images for output generated through the Open Toolkit but want to
+use a specific DPI for output generated from FrameMaker, add an
+“fmdpi:<i>DPI</i>” attribute value to the image/@outputclass attribute,
+where <i>DPI</i> is the DPI value. Adding this value to the <synph
+    outputclass = "attribute">outputclass</synph> attribute allows
+the DPI setting to round trip from XML to Frame and it will only
+be used by FrameMaker; other output processes will see no <synph
+    outputclass = "attribute">height</synph> and width <synph
+    outputclass = "attribute">values</synph> and will use the native
+image size. Adding this value to the <synph outputclass = "attribute">outputclass</synph> attribute
+deletes any value set to the <synph outputclass = "attribute">height</synph> or <synph
+    outputclass = "attribute">width</synph> attributes.</p>
+<p status = "changed">If you want to use the fmdpi feature for all
+raster images, enable the “Use fmdpi for New Images” setting in
+the Authoring Options dialog. This will set the fmdpi value to the
+DPI value you select when importing the image. The fmdpi value is
+only set for raster images; this feature is not available for vector
+images.</p>
+<note status = "changed">If your images sizes are not round-tripping
+properly, your read/write rules file probably needs to be updated.
+Refer to the <xref href = "ditafmx_app_imagesupport.xml#id0837HJ0C05Z"
+type = "topic" format = "dita" scope = "local" status = "new"></xref> topic
+for the proper rules, especially with regard to the height and width
+attribute definitions.</note>
+<section status = "new"><title>Baseline Offset of Inline Images</title><p
+    status = "new"><indexterm status = "new">image, alt text</indexterm><indexterm
+status = "new">alt text, images</indexterm><indexterm status = "new">alternative
+text</indexterm><indexterm>baseline offset</indexterm><indexterm>inline
+images, baseline offset</indexterm>By default, the baseline offset
+for inline images is set to 2 pts (this shifts the image 2 pts below
+the baseline of the surrounding text). If you want to set this property
+to a different value, change the value of the Baseline Offset option
+in the Authoring Options dialog. This value is only applied to inline
+images. Setting the “baseline offset” property in the read/write
+rules file has no effect.</p></section>
+<section status = "new"><title>Special Handling of Alternative Text
+(image/alt)</title><p status = "new"><indexterm status = "new">image,
+alt text</indexterm><indexterm status = "new">alt text, images</indexterm><indexterm
+status = "new">alternative text</indexterm>Content of an image/alt
+element is stored in the anchored frame’s “object attribute” while
+open in FrameMaker. To edit the alt text, select the anchored frame,
+then choose <menucascade><uicontrol>Graphics</uicontrol><uicontrol>Object
+Properties</uicontrol></menucascade>, then Object Attributes. The <synph
+    outputclass = "element">alt</synph> value is stored in the “Alternate”
+field.</p><p status = "new">Because a graphic object cannot have
+child elements this content is stored in an attribute, any attributes
+on the <synph outputclass = "element">alt</synph> element or child
+elements are discarded when the file is opened in FrameMaker.</p></section></body></topic>

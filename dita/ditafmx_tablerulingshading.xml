@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="darkblue"?><?dtall dict="ForceTablesWide"?><?dtall dict="PreserveTableWidths"?><?dtall
+dict="pgwide"?><?dtall dict="stentry"?><?dtall dict="tableformat"?><topic
+    id = "id1429F0G0OHS"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Custom Ruling and Shading</title>
+<shortdesc status = "changed">Applying ruling and shading to specific
+table rows and cells requires additional forethought and setup.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates status = "changed"><created date = "2009-02-08"/>
+<revised modified = "2014-03-03"/></critdates></prolog>
+<body status = "changed"><p status = "new">DITA-FMx allows you to
+apply custom ruling and shading to table rows or cells based on
+the <synph outputclass = "attribute">outputclass</synph> attribute.
+Because there is no option to control this formatting through EDD
+context rules, you must set up a representative table on an “fmx-tableformat”
+reference page in the structure application templates. A sample
+page has been added in the default DITA-FMx Topic and Book templates.</p>
+<p status = "new">To enable this feature, you must enable the Apply
+Custom Ruling and Shading option in the Authoring Options dialog.</p>
+<p status = "new">On this reference page (must be created if it
+doesn’t exist), create a text frame and add a structure flow that
+contains the table types for which you want to provide formatting.
+Use the <menucascade status = "new"><uicontrol status = "new">Table</uicontrol>
+<uicontrol status = "new">Row Format</uicontrol></menucascade> or <menucascade
+    status = "new"><uicontrol status = "new">Table</uicontrol>
+<uicontrol status = "new">Custom Ruling and Shading</uicontrol></menucascade> commands
+to assign the desired formatting to a row or cell. Then set the outputclass
+attribute of that formatted row or cell to the value you want to
+use to identify that formatting. Save the template. Be sure to make
+similar modifications to both the Topic and Book templates.</p>
+<p status = "new">After setting up the template, apply the appropriate
+name to the <synph outputclass = "attribute">outputclass</synph> attribute
+of row or cell elements in your DITA topic files. When you save
+the file, the formatting is transferred from the object on the reference
+page to the corresponding object in the topic.</p>
+<p status = "new">Keep in mind that the formatting is only applied
+to matching row or cell elements. Don’t set the <synph
+    outputclass = "attribute">outputclass</synph> on other table
+objects (<synph outputclass = "element">thead</synph>, <synph
+    outputclass = "element">tbody</synph>, etc.). For example the
+formatting of an <synph outputclass = "element">entry</synph> element
+on the reference page with an <synph outputclass = "attribute">outputclass</synph> of
+“darkblue” will not be applied to an <synph outputclass = "element">stentry</synph> element
+with an <synph outputclass = "attribute">outputclass</synph> of
+“darkblue,” only to another <synph outputclass = "element">entry</synph> element.</p></body></topic>

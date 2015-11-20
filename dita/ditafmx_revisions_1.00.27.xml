@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+
+<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "DITA-Data" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "idb57e3400-a2ef-4e97-8159-1487d1ba6a68"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>1.00.27 - 28 November 2008</title>
+<body><section><title outputclass = "h3">Bug Fixes</title><dl><dlentry>
+<dt>Apply Ditaval as Conditions command applies overlapping conditions.</dt>
+<dd>Now this “really” works properly.</dd></dlentry>
+<dlentry><dt>Conref updates.</dt>
+<dd>Conrefs to elements within a table cell no longer have the extra
+“end of para” mark that visually adds an extra empty line to the
+cell.</dd>
+<dd>Conref paths that reference a higher level directory (“../”)
+are built properly now (in cases where directory names were very
+similar, the paths were not properly built).</dd></dlentry>
+<dlentry><dt>FM cross-refs.</dt>
+<dd>All fm-xrefs and fm-links that specify an undefined cross-reference
+format will now render with a label (previously the first one of
+each format type was blank).</dd></dlentry>
+<dlentry><dt>Map from outline.</dt>
+<dd>Attempting to generate a map from an outline file that is unsaved
+will no longer crash FM. </dd></dlentry></dl></section></body></topic>

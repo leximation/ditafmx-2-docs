@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id078AAC00PY42"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Manual Installation of the Structure Applications</title>
+<shortdesc status = "changed">Perform a manual installation of the
+structure applications or gain an understanding of what needs to
+be done.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>test</author>
+<author>scottp</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2015-09-08"/></critdates></prolog>
+<body><p>The following steps describe the installation of the structure
+applications provided with DITA-FMx.</p>
+<note status = "new">If you’re installing on a system where the
+user does not have “admin” permissions, you’ll want to install the
+structure applications in a more accessible location. For details,
+see <xref href = "ditafmx_apprelocation.xml#id3e0f22a6-bded-404b-9a77-2a80461af2bd"
+type = "concept" format = "dita" scope = "local" status = "new"></xref>.</note>
+<note type = "tip" status = "new">We’ve posted a video of the complete
+DITA-FMx installation process. If you haven’t watched this video
+you may want to take a moment to do so: <?dtall break="line"?><xref
+href = "http://blog.leximation.com/2010/03/installing-dita-fmx-1-1/"
+format = "html" scope = "external" status = "new">http://blog.leximation.com/2010/03/installing-dita-fmx-1-1/</xref></note>
+<ol id = "id086PK0T0THT"><li><p status = "changed">Make a backup
+copy of your current structure application definitions file (typically
+found at <filepath>FrameMaker\Structure\structapps.fm</filepath> for
+FM7.2 and FM8, or <filepath>&lt;user appdata>\Adobe\FrameMaker\&lt;version></filepath> for
+FM9 and later). Store this file in a safe location before making
+modifications.</p></li>
+<li id = "CEGCFEJA" status = "changed"><p status = "changed"><indexterm
+class = "- topic/indexterm ">ditamap structure application, installing</indexterm>Extract
+the contents of the <filepath>DITA-FMx_apps.zip</filepath> file
+to the <filepath>FrameMaker\Structure\xml</filepath> folder. This
+will create a folder named <filepath status = "changed">DITA-FMx_1.2</filepath> that
+contains folders named <filepath>Book</filepath>, <filepath
+    status = "changed">dtd-fmx</filepath>, <filepath>Map</filepath>,
+and <filepath>Topic</filepath>. These folders contains the three structure
+application as well as the DITA 1.2 DTD files used by the applications.</p></li>
+<li><p status = "changed">Start FrameMaker and open the structure
+application definitions file (<menucascade><uicontrol>Structure Tools</uicontrol>
+<uicontrol>Edit Application Definitions</uicontrol></menucascade>).
+(If running FM9 or later, this opens the <filepath>structapps.fm</filepath> file
+in your “USERNAME\AppData” area, not the one in the FrameMaker program
+files area).</p></li>
+<li id = "CEGFAGCA" status = "changed"><p status = "changed">Open
+the Structure View window (for FM7.2 or FM8 click the <image href="images/structview-btn.png"
+align="center" placement="inline"  status = "new"/> button on the upper
+right of the document window, in FM9 and later choose <menucascade
+    status = "new"><uicontrol status = "new">Structure Tools</uicontrol>
+<uicontrol status = "new">Structure View</uicontrol></menucascade>).
+In the structure application definitions file place the insertion
+point just after the Version element. When the insertion point is
+in the right location, you’ll see a black triangle pointing to the
+right in the Structure View window (see the following image).</p><fig
+    id = "id5c0db573-28f5-45df-a73d-ebc1217780f8" status = "new">
+<title>Structure View window insertion point</title><image href="images/structview-insert.png"
+align="left" placement="break"  otherprops = "fmdpi:110"/></fig></li>
+<li status = "new"><p>Choose <menucascade><uicontrol>File</uicontrol>
+<uicontrol>Import</uicontrol><uicontrol>File</uicontrol></menucascade>,
+then navigate to the <filepath status = "changed">structapps-stub_topic_1.2.fm</filepath> file
+in the <filepath status = "changed">DITA-FMx_1.2\Topic</filepath> folder
+created in step <xref href = "#id078AAC00PY42/CEGCFEJA" outputclass
+= "fm:ParaNumOnly" type = "li" />. Select the Import by Reference
+option and choose the Import button. In the next dialog accept the
+defaults and choose Import.</p><note status = "new">If you see red
+dotted lines in the Structure View window after importing the “stub”
+file, it has been inserted into the wrong location. Delete the inset
+and try again. Make sure that the black triangle is placed as shown
+in <xref href = "#id078AAC00PY42/id5c0db573-28f5-45df-a73d-ebc1217780f8"
+outputclass = "fm:Figure_Num" type = "fig" />.</note></li>
+<li><p>Repeat step <xref href = "#id078AAC00PY42/CEGFAGCA" outputclass
+= "fm:ParaNumOnly" type = "li" /> for the “structapps-stub” files
+in the <filepath status = "changed">DITA-FMx_1.2\Map</filepath> and <filepath
+    status = "changed">DITA-FMx_1.2\Book</filepath> folders.</p></li>
+<li><p>Save the file, then choose <menucascade><uicontrol>Structure
+Tools</uicontrol><uicontrol>Read Application Definitions</uicontrol></menucascade>.</p></li>
+<li><p>Close the file and exit FrameMaker.</p></li>
+<li><p>Restart FrameMaker and run the <menucascade><uicontrol>DITA-FMx</uicontrol>
+<uicontrol>Options</uicontrol></menucascade> command and select <uicontrol
+    status = "changed">DITA-FMx-Topic-1.2</uicontrol> for the DITA
+Topic Application, <uicontrol status = "changed">DITA-FMx-Map-1.2</uicontrol> for the
+DITA Map Application, and <uicontrol status = "changed">DITA-FMx-Book-1.2</uicontrol> for
+the DITA Book Application.</p></li></ol>
+<note>If your folder structure is non-standard, you may need to
+modify the paths specified in the “structapps-stub” files to match
+the file paths on your system. To do this, just open the structure
+application definitions file and double-click each application’s
+text inset. In the dialog that displays, choose the Open Source
+button and make the changes in the “stub” file. When you have finished
+editing the stub file, save and close that file, then double-click
+the text inset again and choose the Update Now button.</note>
+<p>If you plan to make use of the DITA Open Toolkit for generating
+output, see <xref href = "ditafmx_installing_genoutput.xml#id_067EF01A0YZ"
+type = "topic" format = "dita" scope = "local"></xref>.</p></body></topic>

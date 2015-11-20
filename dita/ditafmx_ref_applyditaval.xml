@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="att"?><?dtall dict="audience=admin"?><topic
+    id = "id07BHG0P05Y4"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Apply Ditaval</title>
+<shortdesc>Applies filtering to files based on the properties defined
+in a ditaval file.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2008-02-24"/>
+<revised modified = "2008-03-02"/>
+<revised modified = "2015-03-29"/></critdates></prolog>
+<body><p><indexterm>ditaval filtering</indexterm>The <uicontrol>Apply
+Ditaval</uicontrol> command offers two modes for ditaval filtering:</p>
+<ul><li><p><uicontrol>Filter with Conditions</uicontrol> - Applies
+filtering by mapping the ditaval properties to FrameMaker conditional
+tagging based on the options selected in the <uicontrol>Apply Ditaval</uicontrol> dialog.
+Due to the nature of FrameMaker conditions, for complex filtering,
+this option may not always result in the expected outcome.</p></li>
+<li><p><uicontrol>Filter by Deletion</uicontrol> - Applies filtering
+by deleting “excluded” content as defined in the selected ditaval
+file. The result of using this option will often be closer to that
+of the filtering applied by the DITA-OT.</p></li></ul>
+<p>This command can be used to filter a topic while authoring or
+for filtering content that has been generated through the <uicontrol>Generate
+Book from Map</uicontrol> command. If the command is run on a topic
+file, the filtering is applied to that file. If a book is active, the
+filtering is applied to all files in that book.</p>
+<p>In order to use this command you must have at least one ditaval
+file registered with DITA-FMx. A ditaval file is “registered” with
+DITA-FMx when you use the Ditaval Manager to create new ditaval
+files or add existing ditaval files. When you run the <uicontrol>Apply
+Ditaval</uicontrol> command, the dialog box lists the available
+ditaval files (those that have been registered).</p>
+<note type = "important">When applying filtering to the active topic
+file, keep in mind that the Filter by Deletion option actually deletes
+content from the file. Because of this it’s recommended that you
+only run this command on a duplicate file. When using the Filter
+with Conditions option on the active topic file, the conditional
+tagging is typically saved to the XML file as processing instructions
+(PIs). This may also not be a desirable situation. Use this command
+with caution on active topic files.</note>
+<fig audience = "web"><title>DITA-FMx Apply Conditions dialog box</title><image
+href="images/ditavalapply.png" align="left" placement="break"  otherprops
+= "fmdpi:110"/></fig>
+<section><title>Filtering by deletion</title><p>When using the Filter
+by Deletion option, the rest of the options in the dialog are disabled;
+they only apply to the filter with condition option. The Filter
+by Deletion option deletes all elements with filtering attributes
+that match those specified with “exclude” <synph outputclass = "element">prop</synph> values
+in the ditaval file.</p></section>
+<section><title>Filtering with conditions</title><p>When using the
+Filter with Conditions option, the properties assigned to the ditaval <synph
+    outputclass = "attribute">action</synph> values (“exclude”,
+“include” and “flag”). The settings in the three “action=” areas
+define the condition name and the visibility of the conditions that
+are applied when a <synph outputclass = "element">prop</synph> <synph
+    outputclass = "attribute">action</synph> attribute matches the
+specified type.</p><p>For each <synph outputclass = "element">prop</synph> element
+in a ditaval file the <synph outputclass = "attribute">action</synph> attribute
+specifies either to exclude, include, or flag elements with matching
+attributes and values. When a ditaval file is applied as conditions
+in a FrameMaker file, elements are matched based on the <synph
+    outputclass = "attribute">att</synph> and <synph
+    outputclass = "attribute">val</synph> attributes, and a named
+condition is applied to each element. In the <uicontrol>Apply Conditions</uicontrol> dialog
+you specify that the condition name is defined as a fixed string
+(such as “Exclude”, “Include” or “Flag”) or that it is defined based
+on a combination of the <synph outputclass = "attribute">att</synph> and <synph
+    outputclass = "attribute">val</synph> attribute values. For
+example, given the following line from a ditaval file, if the condition
+name is defined by the <synph outputclass = "attribute">att</synph> and <synph
+    outputclass = "attribute">val</synph> attributes, it would be
+“audience=admin.”</p><codeblock>&lt;prop att="audience" val="admin" action="exclude" /></codeblock><p>The
+condition visibility options are Show, Hide, and Default. If set
+to Show or Hide, the conditions will be shown or hidden accordingly.
+However, if Default is selected, the condition visibility will be
+defined by the settings in the template assuming that the condition
+is already defined.</p><p>This can also be done automatically during
+the Map to Book conversion process by selecting the <uicontrol>Apply
+Ditaval</uicontrol> option in the <uicontrol>Book Build Settings</uicontrol> dialog
+found in the <uicontrol>DITA Options</uicontrol> dialog.</p><note>The <uicontrol>Apply
+Ditaval as Conditions</uicontrol> command does not necessarily result
+in conditional filtering that matches that of the DITA Open Toolkit.
+The conditions are applied properly based on the filtering attribute
+values, but the default hide/show logic of FrameMaker conditions
+is not the same as the used by the OT. It may be possible to achieve
+this filtering through the use of Boolean conditional expressions.</note></section></body></topic>

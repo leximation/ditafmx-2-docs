@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="darkblue"?><?dtall dict="ForceTablesWide"?><?dtall dict="PreserveTableWidths"?><?dtall
+dict="pgwide"?><?dtall dict="stentry"?><?dtall dict="tableformat"?><topic
+    id = "id1429F0D09Y4"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Table Formatting</title>
+<shortdesc status = "changed">Named table formats allow you to control
+the basic layout and appearance of each table.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates status = "changed"><created date = "2009-02-08"/>
+<revised modified = "2014-02-09"/></critdates></prolog>
+<body status = "changed"><p status = "new">When inserting a table
+of any type, you are prompted to select from one of the available
+table formats (defined in the structure application template). You
+can modify the definition of these table formats or add new named
+formats to the template. Be sure to update both the “Topic” and
+“Book” structure application templates so the same table formats
+exist in both places.</p>
+<p status = "new">The assigned table format name defines the basic
+formatting of the table. This name is applied to the outputclass
+attribute of the “table” object element (tgroup for table elements).</p>
+<note type = "tip" status = "new">Previous structure applications
+included a fixed list of table formats in the element definition,
+which was cumbersome to maintain. The latest DITA-FMx structure
+application uses a modified EDD structure that allows for the value
+of outputclass to be used as the Initial Table Format. This means
+that when adding new formats, you just need to update the template,
+and not the EDD. If you’re using a custom EDD, be sure to import
+the EDD from the DITA-FMx EDD into your EDD.</note></body></topic>

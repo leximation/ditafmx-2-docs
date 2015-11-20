@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "idee670175-2865-4577-9a94-9bbeb8b6ab12"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Doctype/Application Mapping</title>
+<shortdesc>Associate individual structure applications with each
+topic type.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "2011-02-26"/>
+<revised modified = "2015-09-08"/></critdates></prolog>
+<body status = "changed"><p status = "new"><indexterm status = "new">doctype-application
+mapping</indexterm><indexterm status = "new">topic-based structure
+applications</indexterm>The <uicontrol status = "new">Doctype/Application
+Mapping</uicontrol> dialog lets you associate individual structured applications
+with each topic type (or doctype). The default DITA-FMx structured application
+provides support for all of the main DITA topic types in a single
+application. This simplifies template and EDD maintenance, but does
+mean that all of the topics use the same doctype, ditabase.</p>
+<p status = "new">If you want to maintain the applications separately
+or need to use the topic-specific doctypes, you should use the doctype/application
+mapping feature.</p>
+<fig audience = "web"><title>Doctype/App Mapping dialog box</title><image
+href="images/options-appmapping.png" align="left" placement="break"
+ otherprops = "fmdpi:110"/></fig>
+<p>The mapped doctypes (or topic types) are shown in the scrolling
+list box. The application type is indicated by a letter in square
+brackets, an “M” for maps or a “T” for topics, followed by the doctype
+name, then the structured application name.</p>
+<dl><dlentry><dt>Add</dt>
+<dd>To add a doctype mapping, enter the doctype and select the structure
+application from the list. Select the application type (map or topic)
+and choose the Add button. The new mapping is added to the bottom
+of the list.</dd></dlentry>
+<dlentry><dt>Change</dt>
+<dd>To modify an existing doctype mapping, select the mapping from
+the list. The doctype, structure application, and application type
+values populate the fields in the bottom of the dialog box. Modify
+those fields as needed, then choose the Change button.</dd></dlentry>
+<dlentry><dt>Delete</dt>
+<dd>To delete a doctype mapping, select the mapping from the list
+then choose the Delete button.</dd></dlentry></dl>
+<p>When you are done making changes to the mappings, choose the
+Save button.</p>
+<p otherprops = "fm100-110" status = "changed">If you are using
+FM10 or later, the mapping you define will be added to the default FrameMaker <filepath>ditafm.ini</filepath> file
+in a new section named “DITA-FMx_1.1_Applications”. Also, by default,
+the DITA version will be set to “DITA 1.1” (even for DITA 1.2 apps).</p>
+<p status = "changed">Also, on FM10 and later, you may need to restart
+FrameMaker after changing structure applications to ensure that
+the proper structure applications have been registered in the <filepath>ditafm.ini</filepath> file.
+Due to changes in these FrameMaker versions, the structure applications
+are stored in both the <filepath>ditafmx.ini</filepath> and the
+default <filepath>ditafm.ini</filepath> files.</p></body></topic>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "idba41bf6a-dd6c-4df5-8480-fc4f6d1a9a5e"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>fm-data-marker</title>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2009-02-22"/>
+<revised modified = "2014-03-29"/></critdates></prolog>
+<body><p status = "new"><indexterm status = "new">fm-data-marker
+element</indexterm><indexterm status = "new">elements<indexterm
+status = "new">fm-data-marker</indexterm></indexterm><indexterm
+status = "new">data element</indexterm><indexterm status = "new">elements<indexterm
+status = "new">data</indexterm></indexterm>The <synph status = "new"
+    outputclass = "element">fm-data-marker</synph> element round-trips
+to DITA as the <synph status = "new" outputclass = "element">data</synph> element,
+and allows you to make use of multiple marker types in FrameMaker.
+When you insert an <synph status = "new" outputclass = "element">fm-data-marker</synph>,
+that element saves to DITA as a <synph status = "new"
+    outputclass = "element">data</synph> element with the @datatype
+attribute set to “fm:marker” and the @name attribute set to the
+marker’s type. The marker text is assigned to the @value attribute.</p>
+<p status = "changed">The element definition of <synph status = "new"
+    outputclass = "element">fm-data-marker</synph> is identical
+to that of the the <synph status = "new" outputclass = "element">data</synph> element,
+except that the object type is a Marker instead of a Container.
+Also the @class attribute is “topic/data fmx/fm-data-marker.” The
+plugin handles the conversion from <synph status = "new"
+    outputclass = "element">fm-data-marker</synph> to <synph
+    status = "new" outputclass = "element">data</synph> and back;
+no read/write rules are needed for this element.</p></body></topic>

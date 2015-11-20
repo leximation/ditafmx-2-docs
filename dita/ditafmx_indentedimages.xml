@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="BookBuildOverrides"?><?dtall dict="BreakToInline"?><?dtall
+dict="placement=’break"?><?dtall dict="placement=’inline"?><topic
+    id = "idd23c490c-4441-4e76-968f-91bbae5af1dd"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Support for Indented Images</title>
+<shortdesc>Images are typically aligned with the text margins, but
+you can enable the ability for images to align with the container
+paragraph.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>test</author>
+<critdates><created date = "2008-02-28"/>
+<revised modified = "2014-04-13"/></critdates></prolog>
+<body status = "changed"><p status = "new"><indexterm status = "new">images<indexterm
+status = "new">indented</indexterm></indexterm><indexterm status
+= "new">indented images</indexterm><indexterm status = "new">image<indexterm
+status = "new">anchoring position</indexterm></indexterm><indexterm
+status = "new">image<indexterm status = "new">placement</indexterm></indexterm>The
+image/@placement attribute controls the anchoring position of images.
+By default, when inserting an <synph outputclass = "element">image</synph> without
+a <synph outputclass = "element">fig</synph> container, the <synph
+    outputclass = "attribute">placement</synph> attribute will be
+set to “inline” (since this would typically be used for inline images). When
+inserting an <synph outputclass = "element">image</synph> within
+a <synph outputclass = "element">fig</synph> (inserting the <synph
+    outputclass = "element">fig</synph> typically automatically
+inserts the <synph outputclass = "element">image</synph>), the <synph
+    outputclass = "attribute">placement</synph> attribute will be
+set to “break”. You are free to change the @placement value as needed
+for situations that require a different setting. When <synph
+    outputclass = "attribute">placement</synph> is set to “inline”
+the anchoring position (<menucascade status = "new">
+<uicontrol status = "new">Special</uicontrol><uicontrol status = "new">Anchored
+Frame</uicontrol></menucascade>) is set to “At Insertion Point”,
+and when <synph outputclass = "attribute">placement</synph> is set
+to “break” the anchoring position is set to “Below Current Line”
+(these settings cannot be changed).</p>
+<p status = "new">When <synph outputclass = "attribute">placement</synph> is
+“break” and <synph outputclass = "attribute">align</synph> is “left”,
+the image will be forced to the left margin (page margin or side
+head margin). If you are using side heads this is typically the
+formatting that’s needed, but if you’re not using side heads or
+when you have an image in indented text (like a list), you will
+probably want the image to be indented to match the text block.</p>
+<p status = "new"><indexterm status = "new">BreakToInline, INI parameter</indexterm>If
+you make use of the “Move Figure Title” book-build option, you will
+find that setting the <synph outputclass = "attribute">placement</synph> of
+an <synph outputclass = "element">image</synph> within a <synph
+    outputclass = "element">fig</synph> to “inline” will probably achieve
+the desired result by allowing the <synph outputclass = "element">image</synph> to
+align with the containing paragraph. To automate this processing,
+DITA-FMx provides the “BreakToInline” parameter in the BookBuildOverrides
+section of the book-build INI file (<filepath status = "new">ditafmx-bookbuild.ini</filepath>).
+Setting this parameter to “1” will change all of the <codeph>placement=’break’</codeph> images
+to <codeph>placement=’inline’</codeph> that are in a paragraph whose first
+indent is greater than zero. This setting must be made manually
+in the book-build INI file, and may not work well in all situations,
+so it’s best to experiment a bit and test to make sure it is providing
+the proper results.</p>
+<p>In order for this to work properly, the “Fixed” option of the
+“Line Spacing” property of the fig.anchor paragraph (or the style
+assigned to a figure anchor) style must be deselected. Also, the
+MoveFigTitles book-build INI parameter must be set to “1”. When
+testing this, be sure to watch the report in the console log to
+verify that you see the following message:</p>
+<screen>Using BookBuild Override: BreakToInline=1</screen></body></topic>

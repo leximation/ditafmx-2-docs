@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id085HGE040Y4"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>FixBookRefs</title>
+<shortdesc>Normalizes all references in the files of a FM book file.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "2008-05-17"/>
+<revised modified = "2015-03-31"/></critdates></prolog>
+<body><p>Use this function to rebuild and correct all references
+(xrefs, links, conrefs, and image references) after aggregating
+loose DITA topics into “chapter” files. Call this function using
+the “FixBookRefs” parameter to update the active book, or pass the <varname>bookIdOrName</varname> value
+(as a string) after this parameter to update a specific book. In order
+to properly update the references in the book, the fm-ditabook/@href
+attribute must be set to the map’s path and file name. You can set
+this attribute before calling FixBookRefs, or you can pass this
+value as the <varname>mapFile</varname> parameter.</p>
+<section id = "id085HGH00RHT"><title>Syntax</title><codeblock status = "changed">F_ApiCallClient("ditafmx", "FixBookRefs [[|<varname>bookIdOrName</varname>] |<varname>mapFile</varname>]");</codeblock><dl>
+<dlentry><dt><varname>bookIdOrName</varname></dt>
+<dd>The id or path and file name of the book to process. The book
+must be open. You must use double backslashes as the directory delimiter
+when specifying the book file name. Optional; if not provided the
+“active” book is used, must be provided if <varname>mapFile</varname> is
+used.</dd></dlentry></dl><dl><dlentry><dt><varname>mapFile</varname></dt>
+<dd status = "changed">The path and file name of the DITA map from
+which the book was generated. You must use double backslashes as
+the directory delimiter when specifying the DITA map file name.
+Optional; if not provided the fm-ditabook/@href attribute must be
+set to the value of the map’s path and file name before calling FixBookRefs.
+If this parameter is used, the <varname>bookIdOrName</varname> parameter
+is required.</dd></dlentry></dl><note conref = "ditafmx_shared.xml#common/fmxapi_auto"
+status = "changed"></note></section>
+<section><title>Return Value</title><dl compact = "yes"><dlentry><dt>0</dt>
+<dd>Failure. Unable to update the specified book. It is also possible
+that DITA-FMx is not available for calls. Verify that DITA-FMx is
+registered in the <filepath>maker.ini</filepath> file using the
+client name of “ditafmx”.</dd></dlentry>
+<dlentry><dt>-1</dt>
+<dd>Failure. <varname>bookIdOrName</varname> is not a structured
+book.</dd></dlentry>
+<dlentry><dt>-2</dt>
+<dd>Failure. No non-generated files in book.</dd></dlentry>
+<dlentry><dt>>0</dt>
+<dd>Successfully updated the specified book (this is the id of the
+book processed).</dd></dlentry></dl></section></body></topic>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id95151bba-5c40-459f-8f98-f943fbcd3ac5"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Element Mapping</title>
+<shortdesc>Allows the specification of simpletable element types
+and preformatted element types. Any specializations of these element
+types should be added here.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2014-03-31"/></critdates></prolog>
+<body><p>The Element Mapping dialog lists the default and specialized
+elements that are processed in a particular way by DITA-FMx.</p>
+<fig audience = "web"><title>DITA-FMx Element Mapping dialog box</title><image
+href="images/elementmapping.png" align="left" placement="break"
+ otherprops = "fmdpi:110"/></fig>
+<p>When <synph status = "new" outputclass = "element">simpletable</synph>-based
+elements are encountered during the import process, FrameMaker needs
+to be able to count the number of columns in each table. This information
+is typically stored in attributes within the table element, but
+the DITA specification does not provide this type of attribute for <synph
+    status = "new" outputclass = "element">simpletable</synph>s
+(and any table based on a <synph status = "new" outputclass = "element">simpletable</synph>). </p>
+<p status = "new">Using the information provided in this dialog,
+FrameMaker can determine the number of columns in these tables.
+The default <synph status = "new" outputclass = "element">simpletable</synph> elements
+are indicated with an asterisk. Even though the <synph status = "new"
+    outputclass = "element">choicetable</synph> elements are specialized from <synph
+    status = "new" outputclass = "element">simpletable</synph>,
+they are not listed in this dialog because they must always have
+two columns and are therefore defined in the read/write rules file.</p>
+<p>If you’ve specialized <synph status = "new" outputclass = "element">simpletable</synph> to
+create one of your own, you’ll need to add it to this list. Enter
+the table, row, and cell element names in the fields provided. If your
+table uses different element names for the cells (like the <synph
+    status = "new" outputclass = "element">properties</synph> table), you
+can enter the multiple names separated by the vertical bar character.</p></body></topic>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id1412GD0H0HS"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Keyspace Manager</title>
+<shortdesc status = "changed">Defines the current and registered
+keyspaces available to the author.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "2014-01-02"/>
+<revised modified = "2015-03-28"/></critdates></prolog>
+<body status = "changed"><p status = "new">A keyspace is defined
+by all key definitions in a map and any submaps, along with any
+ditaval filtering applied to those key definitions. The <uicontrol
+    status = "new">Keyspace Manager</uicontrol> lets you specify
+the root map for each keyspace and the default ditaval file to be
+applied to the key definitions found in that scope.</p>
+<p status = "new">As you insert references to keys, the referenced
+content or files will be determined by key definitions in the current
+default keyspace. You should register a keyspace for each root map
+that contains key definitions or each root map that contains submaps
+with key definitions. (Do not register a keyspace for submaps unless
+those maps are used as a root map.)</p>
+<p status = "new">If you have assigned filtering attributes to your
+key definitions, and want to author in one specific filtered “view”,
+assign a ditaval file to the registered keyspace. Each root map
+can only be registered with one ditaval file at a time. To switch
+the filtering to render a different ditaval file, change the existing
+keyspace to use a new ditaval file. The current keyspace filtering
+has no effect on the filtering applied to the book-build process
+(which uses the ditaval defined for that build).</p>
+<fig audience = "web" status = "new"><title>Keyspace Manager</title><image
+href="images/keyspace-manager.png" align="left" placement="break"
+ otherprops = "fmdpi:110"/></fig>
+<p status = "new">If keyspaces are registered for multiple maps,
+when you open one of the registered maps, the <uicontrol status = "new">Keyspace
+Resolution</uicontrol> option (in <uicontrol status = "new">Keyspace
+Options</uicontrol>) can set the default keyspace to match the map.
+If Keyspace Resolution is set to Auto, this switching is automatic,
+and if set to Prompt, you are prompted to change the default keyspace.</p>
+<p status = "new">The <uicontrol status = "new">Keyspace Generation</uicontrol> option
+(in <uicontrol status = "new">Keyspace Options</uicontrol>) determines
+if the default keyspace is regenerated automatically when the associated
+root map is saved or if you are prompted to regenerate the keyspace
+(we suggest using “Auto”). If this option is disabled, you can regenerate
+the keyspace with the <uicontrol status = "new">Rebuild</uicontrol> button
+in the <uicontrol status = "new">Keyspace Manager</uicontrol> dialog.</p>
+<p status = "new">A submap that contains key definitions may be
+associated with a root map by adding an <synph status = "new"
+    outputclass = "element">othermeta</synph> element with the <synph
+    status = "new" outputclass = "attribute">name</synph> attribute
+set to “fmx-root-map” and the <synph status = "new"
+    outputclass = "attribute">content</synph> attribute set to the
+relative path and file name of the root map. When this is done,
+the submap is treated by the <uicontrol status = "new">Keyspace
+Resolution</uicontrol> and <uicontrol status = "new">Keyspace Generation</uicontrol> options
+as if it were the root map when saving and opening. This ensures
+that modifications to the key definitions in the submap are reflected
+in the keyspace.</p>
+<note type = "important"><indexterm>Keyspace Manager command<indexterm>not
+available</indexterm></indexterm>If the <uicontrol>Keyspace Manager</uicontrol> command
+is not available, check the “ditaver” attribute for the current
+file. It must be set to version 1.2 or greater. In order to use
+keys, you must be using DITA 1.2 or greater. This is determined
+by the ditaarch:DITAArchVersion attribute on the “topic” element.
+The DITA version is not typically assigned explicitly, but has a
+default value that will affect the availability of these features
+in DITA-FMx</note></body></topic>

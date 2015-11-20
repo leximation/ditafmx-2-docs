@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="ArchiveCommandLine"?><?dtall dict="app"?><?dtall dict="BookBuildOverrides"?><?dtall
+dict="Booklists"?><?dtall dict="backmatter"?><?dtall dict="bookbuild"?><?dtall
+dict="DitaFMxGuide"?><?dtall dict="DitaReference"?><?dtall dict="DitaRefTargetPath"?><?dtall
+dict="desc"?><?dtall dict="dita"?><?dtall dict="ditafmx"?><?dtall dict="doctype"?><?dtall
+dict="figurelist"?><?dtall dict="fmx"?><?dtall dict="frontmatter"?><?dtall
+dict="GeneralExport"?><?dtall dict="ImportAttrsAsVars"?><?dtall dict="INIOnly"?><?dtall
+dict="indexlist"?><?dtall dict="LastReferencedElement"?><?dtall dict="outputclass"?><?dtall
+dict="PageStartSide"?><?dtall dict="RegInfo"?><?dtall dict="Reimport"?><?dtall
+dict="ReimportTemplate"?><?dtall dict="reflabel"?><?dtall dict="reimports"?><?dtall
+dict="toc"?><?dtall dict="type=’fm"?><?dtall dict="UseOutputclassForType"?><?dtall
+dict="WriteLineBreakPIs"?>
+<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "DITA-Data" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "idefa91d3d-ef2b-454c-88e7-adeaff2114e4"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>1.1.13 - 6 June 2011</title>
+<prolog><author>Scott Prentice</author>
+<critdates><created date = "2011-05-09"/>
+<revised modified = "2011-06-05"/></critdates></prolog>
+<body><section status = "changed"><title outputclass = "h3">New
+Features</title><p>None.</p></section>
+<section status = "changed"><title outputclass = "h3">Structure
+Application Updates</title><dl status = "changed">
+<dlentry status = "new"><dt status = "new">Book XSLT (bookmap2fmbook.xsl)</dt>
+<dd status = "new"><ul status = "new"><li status = "changed">Updated
+$href translation to replace backslashes with an underscore to properly support
+maps created with default FM DITA (lines 707 and 996).</li>
+<li status = "new">Added topicgroup to the list of elements that
+were unwrapped (line 1068).</li></ul></dd></dlentry></dl></section>
+<section><title outputclass = "h3">Bug Fixes / Minor Updates</title><dl
+    status = "changed"><dlentry><dt status = "changed">Eliminated
+Japanese error messages in FM10 book build processing.</dt>
+<dd status = "changed">Replaced the resource file in the FM10 import/export
+client with the proper English version, so now all messages during
+the book-build process are in English rather than Japanese.</dd></dlentry>
+<dlentry><dt>The “Move fig/title” book-build feature now moves the
+fig/desc.</dt>
+<dd>If a figure includes a desc element, that will also be moved
+to follow the image if the “Move fig/title” option is enabled for
+book-build processing.</dd></dlentry>
+<dlentry><dt>The Hide Conditionalized Content book-build feature
+now works properly.</dt>
+<dd>Previously this option didn’t appear to be working; now it does.</dd></dlentry>
+<dlentry><dt>Properly handles xrefs with @type=’fm:’.</dt>
+<dd>FrameMaker 9 and 10 create xrefs that contain a type attribute
+of “fm:”. Previously this was assumed to be a format name and resulted
+in an unresolved cross reference. Now if the type attribute contains
+this value, it is ignored when opened with DITA-FMx.</dd></dlentry>
+<dlentry><dt>The PageStartSide book-build INI parameter allows chapters
+with uneven pages.</dt>
+<dd>When the PageStartSide parameter is used in a section within
+the book-build INI file, it will now properly generate chapters
+with uneven pages.</dd></dlentry>
+<dlentry><dt>Tables no longer overlap with the content that follows.</dt>
+<dd>Added a new bookbuild INI setting BookBuildOverrides/ReimportTemplate,
+if set to 1 enables the "Reimport Template" feature which, reimports
+the template from the “current” file on each component in the book.
+This should be used with caution since when enabled in previous
+releases was causing Frame to crash. So far this seems to be working
+fine and fixes the table overlap (as well as other formatting) issues.</dd></dlentry>
+<dlentry><dt>Test for invalid marker elements on save.</dt>
+<dd>When saving a file, test for invalid marker elements to ensure
+that the markers have the proper EDD element definition (should
+be a marker object rather than a container). If a marker element
+is defined as a container, the save will be prevented (if the save
+is allowed to happen, FrameMaker will crash). This is a common error when
+converting from unstructured FM files to structure.</dd></dlentry></dl></section></body></topic>

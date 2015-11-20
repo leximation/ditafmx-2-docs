@@ -1,0 +1,1220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id082AF2010Y4"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>FrameMaker DITA Feature Comparison</title>
+<prolog><author>test</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2014-04-14"/></critdates></prolog>
+<body><p>This document provides a comparison of the DITA features
+in the default FrameMaker 8, 9, 10, 11, and 12, with those in DITA-FMx
+1.1 and 2.0.</p>
+<p><i>Updated 14 April 2014 (DITA-FMx 2.0.00)</i></p>
+<table frame = "all" colsep = "1" rowsep = "1" pgwide = "100"
+    outputclass = "comptbl"><title>DITA Map Support</title>
+<tgroup cols = "8" outputclass = "FormatA" colsep = "1" rowsep = "1">
+<colspec colnum = "1" colname = "1" colwidth = "1.861in"/>
+<colspec colnum = "2" colname = "2" colwidth = "0.734in"/>
+<colspec colnum = "3" colname = "3" colwidth = "0.734in"/>
+<colspec colnum = "4" colname = "4" colwidth = "0.734in"/>
+<colspec colnum = "5" colname = "5" colwidth = "0.734in"/>
+<colspec colnum = "6" colname = "6" colwidth = "0.734in"/>
+<colspec colnum = "7" colname = "7" colwidth = "0.734in"/>
+<colspec colnum = "8" colname = "8" colwidth = "0.734in"/>
+<thead>
+<row rowsep = "1">
+<entry colname = "1">Feature</entry>
+<entry colname = "2" align = "center">FM8</entry>
+<entry colname = "3" align = "center">FM9</entry>
+<entry colname = "4" align = "center">FM10</entry>
+<entry colname = "5" align = "center">FM11</entry>
+<entry colname = "6" align = "center">FM12</entry>
+<entry colname = "7" align = "center">FMx 1.1</entry>
+<entry colname = "8" align = "center">FMx 2.0</entry>
+</row>
+</thead>
+<tbody>
+<row rowsep = "1">
+<entry colname = "1">Keyspace management</entry>
+<entry colname = "2" align = "center"><ph>n/a</ph></entry>
+<entry colname = "3" align = "center"><ph>n/a</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph>n/a</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Support for ditaval-filtered keyspaces</entry>
+<entry colname = "2" align = "center"><ph>n/a</ph></entry>
+<entry colname = "3" align = "center"><ph>n/a</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph>n/a</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Automatic keyspace switching</entry>
+<entry colname = "2" align = "center"><ph>n/a</ph></entry>
+<entry colname = "3" align = "center"><ph>n/a</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph>n/a</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Automatic keyspace regeneration</entry>
+<entry colname = "2" align = "center"><ph>n/a</ph></entry>
+<entry colname = "3" align = "center"><ph>n/a</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph>n/a</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Support for key element references</entry>
+<entry colname = "2" align = "center"><ph>n/a</ph></entry>
+<entry colname = "3" align = "center"><ph>n/a</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph>n/a</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Support for key-based glossary term references</entry>
+<entry colname = "2" align = "center"><ph>n/a</ph></entry>
+<entry colname = "3" align = "center"><ph>n/a</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph>n/a</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">DITA map authoring (structure application provided)</entry>
+<entry colname = "2" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Tree-structured collapsible structure view</entry>
+<entry colname = "2" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Tags-on/tags-off view</entry>
+<entry colname = "2" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Drag and drop interface</entry>
+<entry colname = "2" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Edit referenced topics and maps by clicking topicref</entry>
+<entry colname = "2" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Visual notification of missing references</entry>
+<entry colname = "2" align = "center"><ph outputclass = "limited">LIMITED</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "limited">LIMITED</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "limited">LIMITED</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "limited">LIMITED</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "limited">LIMITED</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Create and edit relationship tables</entry>
+<entry colname = "2" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Open all referenced files in map</entry>
+<entry colname = "2" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Insert new topic as topicref</entry>
+<entry colname = "2" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Update all topicref labels in map</entry>
+<entry colname = "2" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Topicref label options (title, file name, or both)</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "limited">ONLY IN RESOURCE VIEW</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "limited">ONLY IN RESOURCE VIEW</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "limited">ONLY IN RESOURCE VIEW</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Search for content in referenced files</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Generate a FM book (for search and spell check) that
+contains all referenced XML files </entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Generate a report of all referenced files</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Generate a ZIP archive of files referenced
+by map</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Visual labeling of linking and collection-type attribute
+values</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "0">
+<entry colname = "1">Auto-open DITA map in document view</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame = "all" colsep = "1" rowsep = "1" pgwide = "100"
+    outputclass = "comptbl"><title>New File Creation</title>
+<tgroup cols = "8" outputclass = "FormatA" colsep = "1" rowsep = "1">
+<colspec colnum = "1" colname = "1" colwidth = "1.884in"/>
+<colspec colnum = "2" colname = "2" colwidth = "0.731in"/>
+<colspec colnum = "3" colname = "3" colwidth = "0.731in"/>
+<colspec colnum = "4" colname = "4" colwidth = "0.731in"/>
+<colspec colnum = "5" colname = "5" colwidth = "0.731in"/>
+<colspec colnum = "6" colname = "6" colwidth = "0.731in"/>
+<colspec colnum = "7" colname = "7" colwidth = "0.731in"/>
+<colspec colnum = "8" colname = "8" colwidth = "0.731in"/>
+<thead>
+<row rowsep = "1">
+<entry colname = "1">Feature</entry>
+<entry colname = "2" align = "center">FM8</entry>
+<entry colname = "3" align = "center">FM9</entry>
+<entry colname = "4" align = "center">FM10</entry>
+<entry colname = "5" align = "center">FM11</entry>
+<entry colname = "6" align = "center">FM12</entry>
+<entry colname = "7" align = "center">FMx 1.1</entry>
+<entry colname = "8" align = "center">FMx 2.0</entry>
+</row>
+</thead>
+<tbody>
+<row rowsep = "1">
+<entry colname = "1">Create new topic or map based on type</entry>
+<entry colname = "2" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Automatically generate file name based on title text
+and building blocks</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Specify custom template for new topic or map</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Insert prolog data on file creation</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Create a DITA map and topic files from FrameMaker
+file</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">New DITA file from “File” menu</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Ability to overwrite an existing file on file creation</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "0">
+<entry colname = "1">Ability to create new topic folders based on topic
+type on file creation</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame = "all" colsep = "1" rowsep = "1" pgwide = "100"
+    outputclass = "comptbl"><title>Topic Authoring Support</title>
+<tgroup cols = "8" outputclass = "FormatA" colsep = "1" rowsep = "1">
+<colspec colnum = "1" colname = "1" colwidth = "1.881in"/>
+<colspec colnum = "2" colname = "2" colwidth = "0.731in"/>
+<colspec colnum = "3" colname = "3" colwidth = "0.731in"/>
+<colspec colnum = "4" colname = "4" colwidth = "0.731in"/>
+<colspec colnum = "5" colname = "5" colwidth = "0.731in"/>
+<colspec colnum = "6" colname = "6" colwidth = "0.731in"/>
+<colspec colnum = "7" colname = "7" colwidth = "0.731in"/>
+<colspec colnum = "8" colname = "8" colwidth = "0.731in"/>
+<thead>
+<row rowsep = "1">
+<entry colname = "1">Feature</entry>
+<entry colname = "2" align = "center">FM8</entry>
+<entry colname = "3" align = "center">FM9</entry>
+<entry colname = "4" align = "center">FM10</entry>
+<entry colname = "5" align = "center">FM11</entry>
+<entry colname = "6" align = "center">FM12</entry>
+<entry colname = "7" align = "center">FMx 1.1</entry>
+<entry colname = "8" align = "center">FMx 2.0</entry>
+</row>
+</thead>
+<tbody>
+<row rowsep = "1">
+<entry colname = "1">Switch between DITA 1.2 and DITA 1.1 without
+restarting FrameMaker</entry>
+<entry colname = "2" align = "center"><ph>n/a</ph></entry>
+<entry colname = "3" align = "center"><ph>n/a</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph>n/a</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Tree-structured collapsible structure view</entry>
+<entry colname = "2" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Tags-on/tags-off view</entry>
+<entry colname = "2" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Drag and drop interface</entry>
+<entry colname = "2" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Dynamic “conref” creation and management </entry>
+<entry colname = "2" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Support conref ranges</entry>
+<entry colname = "2" align = "center"><ph>n/a</ph></entry>
+<entry colname = "3" align = "center"><ph>n/a</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph>n/a</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Support coderef element</entry>
+<entry colname = "2" align = "center"><ph>n/a</ph></entry>
+<entry colname = "3" align = "center"><ph>n/a</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph>n/a</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Automatically assign IDs to required elements</entry>
+<entry colname = "2" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Dynamic “xref” creation and management</entry>
+<entry colname = "2" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Support xref and fm-xref</entry>
+<entry colname = "2" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Support imagemap development</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Support FM variables</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "limited">LIMITED</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Support image “alt” text</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "limited">LIMITED</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Automatically add author and date to draft-comments</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Auto smart-spaces</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Auto smart-quotes</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Context sensitive Help for element structure</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Limit the number of files opened when resolving references
+(results in faster reference resolving)</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Provide support for multiple selection of filtering
+attribute values</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Dynamic “link” (in related-links section) creation
+and management</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Strip XML padding from pretty-printed files</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Supports “pgwide” tables</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Properly round-trips column widths in simpletable
+and choicetable elements</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Automatically, insert/update prolog data on
+file save</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Determine where an element or topic is referenced
+(Where Used command)</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Validate manually updated ID attributes</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Convert conrefs to text</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Support index-see, index-see-also, and index-sort-as
+elements</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Provide custom management of index-see, index-see-also,
+and index-sort-as labels in index entries</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Support indexterms as markers and as a container
+(to allow for complex element nesting)</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Whitespace normalization for easier transfer
+between XML editors</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Support graphic overlay objects (callouts and “Frame-art”)</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Support multiple marker types</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Support optional columns in properties tables</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Display only the available element types when
+inserting a conref or xref</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Support topic-based DTDs rather than “ditabase”
+if needed</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Supports inline tagging anywhere within codeblock</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Optionally use GUID IDs</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Automatically set the @status for new and changed
+elements</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Support separate sizing of images when rendered
+in FM vs. the DITA-OT</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Preserve forced line breaks</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Preserve table cell rotation</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Store document dictionary entries</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Restore previous view settings</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Integration with Bluestream XDocs CMS</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "0">
+<entry colname = "1">Integration with SDL Trisoft CMS</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame = "all" colsep = "1" rowsep = "1" pgwide = "100"
+    outputclass = "comptbl"><title>Open Toolkit Output Support</title>
+<tgroup cols = "8" outputclass = "FormatA" colsep = "1" rowsep = "1">
+<colspec colnum = "1" colname = "1" colwidth = "1.872in"/>
+<colspec colnum = "2" colname = "2" colwidth = "0.733in"/>
+<colspec colnum = "3" colname = "3" colwidth = "0.733in"/>
+<colspec colnum = "4" colname = "4" colwidth = "0.733in"/>
+<colspec colnum = "5" colname = "5" colwidth = "0.733in"/>
+<colspec colnum = "6" colname = "6" colwidth = "0.733in"/>
+<colspec colnum = "7" colname = "7" colwidth = "0.733in"/>
+<colspec colnum = "8" colname = "8" colwidth = "0.733in"/>
+<thead>
+<row rowsep = "1">
+<entry colname = "1">Feature</entry>
+<entry colname = "2" align = "center">FM8</entry>
+<entry colname = "3" align = "center">FM9</entry>
+<entry colname = "4" align = "center">FM10</entry>
+<entry colname = "5" align = "center">FM11</entry>
+<entry colname = "6" align = "center">FM12</entry>
+<entry colname = "7" align = "center">FMx 1.1</entry>
+<entry colname = "8" align = "center">FMx 2.0</entry>
+</row>
+</thead>
+<tbody>
+<row rowsep = "1">
+<entry colname = "1">Generate output from the DITA Open Toolkit</entry>
+<entry colname = "2" align = "center"><ph outputclass = "limited">LIMITED</ph><p
+    outputclass = "info">Extra plugin needed</p></entry>
+<entry colname = "3" align = "center"><ph outputclass = "limited">LIMITED</ph><p
+    outputclass = "info">Extra plugin needed</p></entry>
+<entry colname = "4" align = "center"><ph outputclass = "limited">LIMITED</ph><p
+    outputclass = "info">Extra plugin needed</p></entry>
+<entry colname = "5" align = "center"><ph outputclass = "limited">LIMITED</ph><p
+    outputclass = "info">Extra plugin needed</p></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph><p
+    outputclass = "info">Integrated</p></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph><p
+    outputclass = "info">Integrated</p></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph><p
+    outputclass = "info">Integrated</p></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Support for multiple DITA-OT environments</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Specify ditaval file for DITA-OT output</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Easy integration with DITA-OT</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "0">
+<entry colname = "1">Integrated ditaval file creation/management</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame = "all" colsep = "1" rowsep = "1" pgwide = "100"
+    outputclass = "comptbl"><title>FM Book (PDF) Output Support</title>
+<tgroup cols = "8" outputclass = "FormatA" colsep = "1" rowsep = "1">
+<colspec colnum = "1" colname = "1" colwidth = "1.881in"/>
+<colspec colnum = "2" colname = "2" colwidth = "0.731in"/>
+<colspec colnum = "3" colname = "3" colwidth = "0.731in"/>
+<colspec colnum = "4" colname = "4" colwidth = "0.731in"/>
+<colspec colnum = "5" colname = "5" colwidth = "0.731in"/>
+<colspec colnum = "6" colname = "6" colwidth = "0.731in"/>
+<colspec colnum = "7" colname = "7" colwidth = "0.731in"/>
+<colspec colnum = "8" colname = "8" colwidth = "0.731in"/>
+<thead>
+<row rowsep = "1">
+<entry colname = "1">Feature</entry>
+<entry colname = "2" align = "center">FM8</entry>
+<entry colname = "3" align = "center">FM9</entry>
+<entry colname = "4" align = "center">FM10</entry>
+<entry colname = "5" align = "center">FM11</entry>
+<entry colname = "6" align = "center">FM12</entry>
+<entry colname = "7" align = "center">FMx 1.1</entry>
+<entry colname = "8" align = "center">FMx 2.0</entry>
+</row>
+</thead>
+<tbody>
+<row rowsep = "1">
+<entry colname = "1">Generate a single FM document from all topics
+in the map</entry>
+<entry colname = "2" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "no">NO</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Map to book (aggregates all topics into FM
+chapters for PDF output)</entry>
+<entry colname = "2" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph><p
+    outputclass = "info">Creates separate FM files for each topic</p></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph><p
+    outputclass = "info">With proper setup</p></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph><p
+    outputclass = "info">With proper setup</p></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Map to book output can be generated at any location
+in the file system</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph><p
+    outputclass = "info">FM files are created in topic folders</p></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Support “per-project” control of generated book
+formatting and properties.</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph><p
+    outputclass = "info">All output uses the same INI file settings</p></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph><p
+    outputclass = "info">All output uses the same INI file settings</p></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Apply filtering to generated book based on
+ditaval file</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Integrated ditaval file creation/management</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Generate related links from reltable</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Attribute values on topic referencing elements
+in map are passed on to topics in the generated FM files</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Option to move indexterms in prolog to topic
+title</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Automatically apply numbering and pagination
+to generated FM files</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Automatically generate FM lists (toc, index, etc.)
+from “booklist” files</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph><p>Added via
+INI file</p></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph><p>Added via
+INI file</p></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Automatically include FM binary files in generated
+book</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Option to move figure titles so they follow
+the image</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Use “real” FM table titles (for tables that
+wrap pages and include the Table Continuation variable)</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Support table row and cell shading</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Support table indenting based on parent element</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Automatically apply a custom template to each
+bookmap component</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Automatically run a custom FDK client or FrameScript
+during the book-build process</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "1">
+<entry colname = "1">Run pre and post book-build command line scripts</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+<row rowsep = "0">
+<entry colname = "1">Import attributes and metadata from map as variables
+and conditions</entry>
+<entry colname = "2" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "3" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "4" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "5" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "6" align = "center"><ph outputclass = "no">NO</ph></entry>
+<entry colname = "7" align = "center"><ph outputclass = "yes">YES</ph></entry>
+<entry colname = "8" align = "center"><ph outputclass = "yes">YES</ph></entry>
+</row>
+</tbody>
+</tgroup></table></body></topic>

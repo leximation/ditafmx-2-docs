@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<topic id = "id1413FN030HS" status = "new"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Keyspace Options</title>
+<shortdesc status = "new">Options for controlling when a keyspace
+is rebuilt, and when the default keyspace changes.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "2014-01-03"/>
+<revised modified = "2014-08-10"/></critdates></prolog>
+<body status = "new"><p status = "new">When working with multiple
+projects and maps, it may be necessary to work with multiple keyspaces.
+These options allow you to work with keyspaces in a way that’s most
+efficient for your needs.</p>
+<fig audience = "web" status = "new"><title>DITA-FMx Keyspace Options
+dialog</title><image href="images/keyspaceoptions.png" align="left"
+placement="break"  otherprops = "fmdpi:110"/></fig>
+<dl status = "new"><dlentry status = "new"><dt status = "new">Keyspace
+Generation</dt>
+<dd status = "new"><p status = "new"><indexterm status = "new">keyspace<indexterm
+status = "new">generation</indexterm></indexterm>Defines when the
+current map’s keyspace is rebuilt, by scanning for key definitions
+in the root map and all submaps.</p><ul status = "new"><li><p
+    status = "new"><b status = "new">Auto</b> - Rebuilds the current
+map’s keyspace each time that file is opened or saved. (Also rebuilds
+the keyspace when a submap has the <synph status = "new"
+    outputclass = "element">othermeta</synph> “fmx-root-map” flag.)</p></li>
+<li status = "new"><p status = "new"><b status = "new">Manual</b> -
+Never rebuilds the keyspace. Assumes that you use the Rebuild option
+in the Keyspace Manager dialog.</p></li>
+<li status = "new"><p status = "new"><b status = "new">Prompt</b> -
+Prompts you to rebuild the current map’s keyspace each time the map
+is opened or saved. (Also prompts to rebuild the keyspace when a submap
+has the <synph status = "new" outputclass = "element">othermeta</synph> “fmx-root-map”
+flag.)</p></li></ul></dd></dlentry>
+<dlentry status = "new"><dt status = "new">Keyspace Resolution</dt>
+<dd status = "new"><p status = "new"><indexterm status = "new">keyspace<indexterm
+status = "new">resolution</indexterm></indexterm>Specifies when
+the “default” keyspace changes</p><ul status = "new"><li><p
+    status = "new"><b status = "new">Auto</b> - Detects if a newly
+opened map is registered with an associated keyspace. If it is,
+the default keyspace is automatically set to that map’s keyspace.</p></li>
+<li status = "new"><p status = "new"><b status = "new">Manual</b> -
+Never changes the default keyspace. Assumes that you change the
+default keyspace in the Keyspace Manager dialog.</p></li>
+<li status = "new"><p status = "new"><b status = "new">Prompt</b> -
+Prompts you to approve changing the default keyspace when the newly
+opened map is registered with an associated keyspace.</p></li></ul></dd></dlentry></dl>
+<p status = "new"><indexterm status = "new">fmx-root-map othermeta</indexterm><indexterm
+status = "new">othermeta, fmx-root-map</indexterm>If you are working
+with submaps and want these options to be triggered when editing
+a submap, add an <synph status = "new" outputclass = "element">othermeta</synph> element
+to the map’s <synph status = "new" outputclass = "element">topicmeta</synph> where the <synph
+    status = "new" outputclass = "attribute">name</synph> attribute
+is set to “fmx-root-map” and the <synph status = "new"
+    outputclass = "attribute">content</synph> attribute is set to the
+relative path and file name of the root map.</p>
+<p status = "new">For example, if the root map’s name is “ditafmx.ditamap”,
+add the following <synph status = "new" outputclass = "element">othermeta</synph> element
+to all submaps that define keys:</p>
+<codeblock status = "new">&lt;othermeta name="fmx-root-map" content="ditafmx.ditamap"/></codeblock>
+<p status = "new">Adding this flag to the submaps will cause the
+keyspace options to be triggered when editing the submaps.</p>
+<note status = "new">If you’re sharing submaps between multiple
+root maps, use of this feature may not produce the desired results.</note></body></topic>
