@@ -12,6 +12,7 @@ DITA-FMx is a plugin for Adobe FrameMaker (versions 7.2 through 2015) that provi
 
 - Are you aware of errors or omissions in the docs? Report **Issues**
 - Have content to contribute to the docs? Submit a **Pull request**
+- For software bugs or questions, please post to the Yahoo dita-fmx-users group
 
 ## Overview of files
 
