@@ -21,17 +21,18 @@
 <author>test</author>
 <author>scottp</author>
 <critdates status = "new"><created date = "2007-01-01" status = "new"/>
-<revised modified = "2015-09-14" status = "new"/></critdates>
+<revised modified = "2016-09-13" status = "new"/></critdates>
 <prodinfo><prodname>DITA-FMx</prodname>
 <vrmlist status = "changed"><vrm version = "2.0.00"/>
 <vrm version = "2.0.01"/>
 <vrm version = "2.0.02"/>
 <vrm version = "2.0.03"/>
-<vrm version = "2.0.04"/></vrmlist></prodinfo>
+<vrm version = "2.0.04"/>
+<vrm version = "2.0.05"/></vrmlist></prodinfo>
 <bookrights><copyrfirst>
 <year>2006</year>
 </copyrfirst>
-<copyrlast><year status = "changed">2015</year></copyrlast>
+<copyrlast><year status = "changed">2016</year></copyrlast>
 <bookowner><organization>Leximation, Inc.</organization></bookowner></bookrights></bookmeta>
 <frontmatter><mapref href = "_keymap.ditamap" format = "ditamap">
 <topicmeta><navtitle>keymap</navtitle></topicmeta></mapref>

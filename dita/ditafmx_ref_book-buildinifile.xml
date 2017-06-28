@@ -42,8 +42,24 @@ dict="subditamap"?><?dtall dict="TableFootnoteNumberCustom"?><?dtall dict="Table
 dict="TableFootnoteProperty"?><?dtall dict="tabletitle"?><?dtall dict="titlepage"?><?dtall
 dict="toc"?><?dtall dict="topicref"?><?dtall dict="UCAlpha"?><?dtall dict="UCRoman"?><?dtall
 dict="UpdateBook"?><?dtall dict="UseOutputclassForType"?><?dtall dict="UseSame"?><?dtall
-dict="VolumeNumberFormat"?><?dtall dict="VolumeNumberValue"?><?dtall dict="VolumeProperty"?><topic
-    id = "id84800a54-1228-438f-881d-08ce097eba90"
+dict="VolumeNumberFormat"?><?dtall dict="VolumeNumberValue"?><?dtall dict="VolumeProperty"?>
+<?Fm Condition DITA-Data Forest%20Green NO_OVERRIDE show?>
+<?Fm Condition DITA-Cleanup Green NO_OVERRIDE show?>
+<?Fm Condition DITA-StatusNew AsIs CHANGEBAR show?>
+<?Fm Condition DITA-StatusChanged AsIs CHANGEBAR show?>
+<?Fm Condition DITA-StatusUnchanged AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH hide?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition DITA-StatusDeleted AsIs STRIKETHROUGH show?>
+
+<?Fm BoolCondExpr "DITA-Data"OR"DITA-Cleanup"OR"DITA-Comment"OR"DITA-Prolog"OR"DITA-StatusNew"OR"DITA-StatusChanged"OR"DITA-StatusUnchanged"OR"DITA-StatusDeleted" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "id84800a54-1228-438f-881d-08ce097eba90"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
 <title>Book-Build INI file</title>
 <shortdesc status = "new">Controls all aspects of generating FM
@@ -52,7 +68,7 @@ files from a DITA map using the Generate Book from Map command.</shortdesc>
 <author>test</author>
 <author>scottp</author>
 <critdates><created date = "2009-02-08"/>
-<revised modified = "2015-09-04"/></critdates></prolog>
+<revised modified = "2016-09-13"/></critdates></prolog>
 <body status = "changed"><p status = "changed"><indexterm>ditafmx-bookbuild.ini
 file</indexterm><indexterm>book-build INI file</indexterm><indexterm>book-build
 settings</indexterm>The <filepath conref = "ditafmx_shared.xml#common/bookbuild-ini"></filepath> file
@@ -128,20 +144,23 @@ Count=<i>&lt;N></i>
 [NumberingDefault-<i>&lt;mapelemtype></i>] 
 VolumeProperty=<i>(Restart|Continue|UseSame|FromFile)</i> 
 VolumeNumberValue=<i>&lt;value></i> 
-VolumeNumberFormat=<i>(Numeric|LCRoman|UCRoman|LCAlpha|UCAlpha|Text)</i> 
+VolumeNumberFormat=<i status = "changed">(&lt;see valid values below>|Text)</i> 
 ChapterProperty=<i>(Restart|Continue|UseSame|FromFile)</i> 
 ChapterNumberValue=<i>&lt;value></i> 
-ChapterNumberFormat=<i>(Numeric|LCRoman|UCRoman|LCAlpha|UCAlpha|Text)</i> 
+ChapterNumberFormat=<i status = "changed">(&lt;see valid values
+below>|Text)</i> 
 PageProperty=<i>(Restart|Continue|FromFile)</i> 
 PageNumberValue=<i>&lt;value></i> 
-PageNumberFormat=<i>(Numeric|LCRoman|UCRoman|LCAlpha|UCAlpha|Text)</i> 
+PageNumberFormat=<i status = "changed">(&lt;see valid values below>|Text)</i> 
 ParagraphProperty=<i>(Restart|Continue|FromFile)</i> 
 FootnoteProperty=<i>(Restart|StartOver|Continue|FromFile)</i> 
 FootnoteNumberValue=<i>&lt;value></i> 
-FootnoteNumberFormat=<i>(Numeric|LCRoman|UCRoman|LCAlpha|UCAlpha|Custom)</i> 
+FootnoteNumberFormat=<i status = "changed">(&lt;see valid values
+below>|Custom)</i> 
 FootnoteNumberCustom=<i>&lt;value></i> 
 TableFootnoteProperty=<i>(Format|FromFile)</i> 
-TableFootnoteNumberFormat=<i>(Numeric|LCRoman|UCRoman|LCAlpha|UCAlpha|Custom)</i> 
+TableFootnoteNumberFormat=<i status = "changed">(&lt;see valid values
+below>|Custom)</i> 
 TableFootnoteNumberCustom=<i>&lt;value></i> 
 PageStartSide=<i>(FromFile|Next|Left|Right)</i> 
 PageDoubleSided=<i>(1|0)</i> 
@@ -196,6 +215,10 @@ RetagElements=<i status = "new">&lt;element list></i>
 FilterByAttribute=<i status = "new">BUILD-EXPRESSION</i>><i
     status = "new">CONDITION-NAME</i> 
 BuildImagemapHotspots=<i>(0|1)</i></codeblock>
+<p status = "new">Valid values for the *NumberFormat entries are:
+Numeric, LCRoman, UCRoman, LCAlpha, UCAlpha, Kanji, Zenkaku, UCZenkaku,
+LCZenkaku, Kazu, Daiji, FullWidthNumeric, UCFullWidthAlpha, LCFullWidthAlpha,
+ChineseNumeric, and Text or Custom.</p>
 <p>Each section and item are described below.</p>
 <section status = "changed"><title>General Section</title><dl
     status = "changed"><dlentry><dt>BookTemplatesDir</dt>
@@ -319,7 +342,7 @@ Keywords=keyword one, keyword two
 Copyright= 
 Web Statement= 
 Job= 
-Marked= </codeblock><p status = "changed">If the value starts with
+Marked=</codeblock><p status = "changed">If the value starts with
 an “@” symbol, the corresponding attribute value is extracted from
 the fm-ditabook element in the generated book. Otherwise the specified content
 is written to the PDF info dictionary.</p></section>
@@ -385,10 +408,11 @@ are: Restart, Continue, UseSame, and FromFile.</p></dd></dlentry>
 to use as the starting value (use numeric values only regardless
 of the number format).</p></dd></dlentry>
 <dlentry><dt>VolumeNumberFormat</dt>
-<dd><p>If Restart is specified for VolumeProperty, defines the format
-for that number and all subsequent numbers of this type that follow.
-Valid values are: <option>Numeric</option>, <option>LCRoman</option>, <option>UCRoman</option>, <option>LCAlpha</option>, <option>UCAlpha</option>,
-and <option>Text</option>.</p></dd></dlentry>
+<dd><p status = "changed">If Restart is specified for VolumeProperty,
+defines the format for that number and all subsequent numbers of
+this type that follow. Valid values are: <option>Numeric</option>, <option>LCRoman</option>, <option>UCRoman</option>, <option>LCAlpha</option>, <option>UCAlpha</option>,
+Kanji, Zenkaku, UCZenkaku, LCZenkaku, Kazu, Daiji, FullWidthNumeric,
+UCFullWidthAlpha, LCFullWidthAlpha, ChineseNumeric, and <option>Text</option>.</p></dd></dlentry>
 <dlentry><dt>ChapterProperty</dt>
 <dd><p>Correlates to the options on the <uicontrol>Chapter</uicontrol> tab
 of the <wintitle>Numbering Properties</wintitle> dialog. Valid values
@@ -399,10 +423,11 @@ and <option>FromFile</option>.</p></dd></dlentry>
 number to use as the starting value (use numeric values only regardless
 of the number format).</p></dd></dlentry>
 <dlentry><dt>ChapterNumberFormat</dt>
-<dd><p>If Restart is specified for ChapterProperty, defines the
-format for that number and all subsequent numbers of this type that
-follow. Valid values are: <option>Numeric</option>, <option>LCRoman</option>, <option>UCRoman</option>, <option>LCAlpha</option>, <option>UCAlpha</option>,
-and <option>Text</option>.</p></dd></dlentry>
+<dd><p status = "changed">If Restart is specified for ChapterProperty,
+defines the format for that number and all subsequent numbers of
+this type that follow. Valid values are: <option>Numeric</option>, <option>LCRoman</option>, <option>UCRoman</option>, <option>LCAlpha</option>, <option>UCAlpha</option>,
+Kanji, Zenkaku, UCZenkaku, LCZenkaku, Kazu, Daiji, FullWidthNumeric,
+UCFullWidthAlpha, LCFullWidthAlpha, ChineseNumeric, and <option>Text</option>.</p></dd></dlentry>
 <dlentry><dt>PageProperty</dt>
 <dd><p>Correlates to the options on the <uicontrol>Page</uicontrol> tab
 of the <wintitle>Numbering Properties</wintitle> dialog. Valid values
@@ -412,10 +437,11 @@ are: <option>Restart</option>, <option>Continue</option>, and <option>FromFile</
 to use as the starting value (use numeric values only regardless
 of the number format).</p></dd></dlentry>
 <dlentry><dt>PageNumberFormat</dt>
-<dd><p>If Restart is specified for PageProperty, defines the format
-for that number and all subsequent numbers of this type that follow.
-Valid values are: <option>Numeric</option>, <option>LCRoman</option>, <option>UCRoman</option>, <option>LCAlpha</option>, <option>UCAlpha</option>,
-and <option>Text</option>.</p></dd></dlentry>
+<dd><p status = "changed">If Restart is specified for PageProperty,
+defines the format for that number and all subsequent numbers of
+this type that follow. Valid values are: <option>Numeric</option>, <option>LCRoman</option>, <option>UCRoman</option>, <option>LCAlpha</option>, <option>UCAlpha</option>,
+Kanji, Zenkaku, UCZenkaku, LCZenkaku, Kazu, Daiji, FullWidthNumeric,
+UCFullWidthAlpha, LCFullWidthAlpha, ChineseNumeric, and <option>Text</option>.</p></dd></dlentry>
 <dlentry><dt>ParagraphProperty</dt>
 <dd><p>Correlates to the options on the <uicontrol>Paragraph</uicontrol> tab
 of the <wintitle>Numbering Properties</wintitle> dialog. Valid values
@@ -430,10 +456,11 @@ and <option>FromFile</option>.</p></dd></dlentry>
 number to use as the starting value (use numeric values only regardless
 of the number format).</p></dd></dlentry>
 <dlentry><dt>FootnoteNumberFormat</dt>
-<dd><p>If Restart is specified for FootnoteProperty, defines the
-format for that number and all subsequent numbers of this type that
-follow. Valid values are: <option>Numeric</option>, <option>LCRoman</option>, <option>UCRoman</option>, <option>LCAlpha</option>, <option>UCAlpha</option>,
-and <option>Custom</option>.</p></dd></dlentry>
+<dd><p status = "changed">If Restart is specified for FootnoteProperty,
+defines the format for that number and all subsequent numbers of
+this type that follow. Valid values are: <option>Numeric</option>, <option>LCRoman</option>, <option>UCRoman</option>, <option>LCAlpha</option>, <option>UCAlpha</option>,
+Kanji, Zenkaku, UCZenkaku, LCZenkaku, Kazu, Daiji, FullWidthNumeric,
+UCFullWidthAlpha, LCFullWidthAlpha, ChineseNumeric, and <option>Custom</option>.</p></dd></dlentry>
 <dlentry><dt>FootnoteNumberCustom</dt>
 <dd><p>If Custom is specified in FootnoteNumberFormat, defines the
 custom value to use.</p></dd></dlentry>
@@ -442,10 +469,11 @@ custom value to use.</p></dd></dlentry>
 of the <wintitle>Numbering Properties</wintitle> dialog. Valid values
 are: <option>Format</option> and <option>FromFile</option>.</p></dd></dlentry>
 <dlentry><dt>TableFootnoteNumberFormat</dt>
-<dd><p>If Format is specified for TableFootnoteProperty, defines
-the format for that number and all subsequent numbers of this type
-that follow. Valid values are: <option>Numeric</option>, <option>LCRoman</option>, <option>UCRoman</option>, <option>LCAlpha</option>, <option>UCAlpha</option>,
-and <option>Custom</option>.</p></dd></dlentry>
+<dd><p status = "changed">If Format is specified for TableFootnoteProperty,
+defines the format for that number and all subsequent numbers of
+this type that follow. Valid values are: <option>Numeric</option>, <option>LCRoman</option>, <option>UCRoman</option>, <option>LCAlpha</option>, <option>UCAlpha</option>,
+Kanji, Zenkaku, UCZenkaku, LCZenkaku, Kazu, Daiji, FullWidthNumeric,
+UCFullWidthAlpha, LCFullWidthAlpha, ChineseNumeric, and <option>Custom</option>.</p></dd></dlentry>
 <dlentry><dt>TableFootnoteNumberCustom</dt>
 <dd><p>If Custom is specified in TableFootnoteNumberFormat, defines
 the custom value to use.</p></dd></dlentry>

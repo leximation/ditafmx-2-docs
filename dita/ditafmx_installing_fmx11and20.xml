@@ -16,9 +16,8 @@
 2.0 yet? You can safely install FMx 2.0 along side of FMx 1.1 and
 switch back and forth.</shortdesc>
 <prolog><author>Scott Prentice</author>
-<author>scottp</author>
 <critdates><created date = "2014-01-03"/>
-<revised modified = "2015-11-20"/></critdates></prolog>
+<revised modified = "2014-03-29"/></critdates></prolog>
 <body status = "new"><p status = "new">DITA-FMx 2.0 installs into
 a <filepath status = "new">DITA-FMx-2</filepath> folder in the main
 FrameMaker program folder. Because of this, your DITA-FMx 1.1 installation
@@ -30,6 +29,6 @@ to switch between both DITA-FMx versions, just edit the <filepath
     status = "new">maker.ini</filepath> file as shown below.</p>
 <codeblock expanse = "page" status = "new" outputclass = "ini"><coderef href = "code/maker-ini-example.txt" status = "new"/></codeblock>
 <p status = "new">The example shown will enable DITA-FMx 2.0. To
-switch to DITA-FMx 1.1, just add semicolons in front of the two
-“2.0” entries and remove the semicolons in from of the “1.1” entries,
+switch to DITA-FMx 1.1, just add semicolons in from of the two “2.0”
+entries and remove the semicolons in from of the “1.1” entries,
 then restart FrameMaker.</p></body></topic>

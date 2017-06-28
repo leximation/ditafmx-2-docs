@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+
+<!-- Begin Document Specific Declarations -->
+
+
+<!-- End Document Specific Declarations -->
+
+]>
+<?dtall dict="AttrAsCondDefaultState"?><?dtall dict="BookBuildOverrides"?><?dtall
+dict="BreakToInline"?><?dtall dict="BuildScript"?><?dtall dict="cmdname"?><?dtall
+dict="content=’CONDITION"?><?dtall dict="DITA_Unsupported"?><?dtall dict="FP_Placement"?><?dtall
+dict="firstParaRules"?><?dtall dict="fmtext"?><?dtall dict="hrefs"?><?dtall
+dict="IndentTables"?><?dtall dict="ini"?><?dtall dict="msgnum"?><?dtall
+dict="name=’author"?><?dtall dict="nbsp"?><?dtall dict="nodename"?><?dtall
+dict="openlink"?><?dtall dict="PdfDocInfo"?><?dtall dict="param"?><?dtall
+dict="Reimport"?><?dtall dict="reltables"?><?dtall dict="ShowStatus"?><?dtall
+dict="StatusChanged"?><?dtall dict="StatusDeleted"?><?dtall dict="StatusNew"?><?dtall
+dict="StatusUnchanged"?><?dtall dict="Stopword"?><?dtall dict="status=’changed"?><?dtall
+dict="status=’new"?><?dtall dict="stopwords"?><?dtall dict="tm"?><?dtall
+dict="unindented"?><?dtall dict="VAR(name"?><?dtall dict="wintitle"?><?dtall
+dict="XDocsFMx"?>
+<?Fm Condition DITA-Data Forest%20Green NO_OVERRIDE show?>
+<?Fm Condition DITA-Cleanup Green NO_OVERRIDE show?>
+<?Fm Condition DITA-StatusNew AsIs CHANGEBAR show?>
+<?Fm Condition DITA-StatusChanged AsIs CHANGEBAR show?>
+<?Fm Condition DITA-StatusUnchanged AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH hide?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition DITA-StatusDeleted AsIs STRIKETHROUGH show?>
+
+<?Fm BoolCondExpr "DITA-Data"OR"DITA-Cleanup"OR"DITA-Comment"OR"DITA-Prolog"OR"DITA-StatusNew"OR"DITA-StatusChanged"OR"DITA-StatusUnchanged"OR"DITA-StatusDeleted" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+<topic id = "id3250cd3c-930b-4974-a351-7e1bf4614190"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>2.0.05 - 13 September 2016</title>
+<prolog><author>scottp</author>
+<critdates><created date = "2015-08-10"/>
+<revised modified = "2016-09-13"/></critdates></prolog>
+<body status = "changed"><section status = "changed"><title
+    outputclass = "h3">New features</title><dl status = "changed">
+<dlentry status = "changed"><dt status = "changed">Added support
+for new number formats</dt>
+<dd status = "changed"><p status = "changed">Added support for these
+number formats: FV_FN_NUM_FULL_WIDTH FV_FN_NUM_FULL_WIDTH_UC FV_FN_NUM_FULL_WIDTH_LC FV_FN_NUM_CHINESE_NUMERIC</p><p
+    status = "new">Added support for these *NumberFormat values
+in bookbuild INI: Kanji, Zenkaku, UCZenkaku, LCZenkaku, Kazu, Daiji,
+FullWidthNumeric, UCFullWidthAlpha, LCFullWidthAlpha, ChineseNumeric
+(last 4 only valid for FM9 and later).</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">New labels for
+external topicrefs</dt>
+<dd status = "changed"><p status = "changed">Added prefix to topicref
+labels in map. For external hrefs, use protocol as prefix (only
+happens when "Title" is selected in options).</p></dd></dlentry>
+<dlentry status = "changed"><dt status = "changed">Improved support
+for indexterm ranges</dt>
+<dd status = "changed"><p status = "new"><indexterm status = "new">Index
+ranges</indexterm>Added support for start/end range Index marker
+syntax. Sets @start and @end values based on marker text.</p><p
+    status = "new">The text of the Index marker (including subentry
+text) is the value for the @start and @end attributes, but once
+those attributes are set, you’ll have to manually change the attributes
+if you want to change the values. (Changing the marker text won't
+change the attribute values.)</p><p status = "new">The first time
+an Index marker is converted into an indexterm, it’ll “do the right thing”
+and split on semicolons, even if the marker has multiple start/end
+range markup. But, if you edit an existing marker that has a @start
+or @end attribute, and you tack on a semicolon with a new entry,
+it’ll split those, but the new entry will have the same @start or
+@end value. This basically duplicates the attributes on the element.
+This may or may not be what you really want, but something to be
+aware of.</p><p status = "new">At this time, indexterms are not
+supported in maps (thus ranges are not either). The content of the
+“end” indexterm is ignored.</p></dd></dlentry></dl></section>
+<section status = "changed"><title outputclass = "h3">Structure
+application updates</title><dl status = "changed"><dlentry>
+<dt status = "changed">Map EDD (map_1.2.edd.fm)</dt>
+<dd status = "changed"><p status = "changed">Limited support for
+topichead/glossref (visually in map, still not properly supported
+by XSLT though).</p></dd></dlentry>
+<dlentry><dt status = "changed">Topic app (topic_1.2.edd.fm, topic_1.2.template.fm)</dt>
+<dd status = "changed"><p status = "new">Added limited support for
+hazardstatement elements.</p></dd></dlentry>
+<dlentry><dt status = "changed">Book app (book_1.2.edd.fm, book_1.2.template.fm)</dt>
+<dd status = "changed"><p status = "new">Added limited support for
+hazardstatement elements.</p></dd></dlentry>
+<dlentry><dt status = "changed">Book XSLT (bookmap2fmbook.xsl)</dt>
+<dd status = "changed"><p status = "new">Provide minimal support
+for topichead, it is now no longer deleted, unwrapped instead, @navtitle
+is lost but remaining markup persists.</p></dd></dlentry></dl></section>
+<section><title outputclass = "h3">Bug fixes / minor updates</title><dl
+    status = "changed"><dlentry><dt status = "changed">Table cell
+rotation</dt>
+<dd><p status = "changed">If a table cell is rotated, and you use
+the reference page coloring/properties feature, the rotation specified
+in the topic now takes precidence over any rotation defined in the
+reference page.</p><p status = "new">Also, now multiple values are
+supported in @outputclass (space-delimited).</p></dd></dlentry>
+<dlentry><dt status = "changed">indexterm fixes</dt>
+<dd status = "changed"><p status = "changed">Fixed case where a
+trailing semicolon and space was creating empty indexterm.</p><p
+    status = "new">Fixed case where empty Index marker was writing
+&lt;fm-indexterm> to DITA, causing error.</p></dd></dlentry>
+<dlentry><dt status = "changed">keyrefs deleted on file open</dt>
+<dd status = "changed"><p status = "changed">Fixed problem with
+XDocsFMx (and possibly elsewhere) with keyrefs that got deleted
+on file open.</p></dd></dlentry>
+<dlentry><dt status = "changed">keydef with angle brackets</dt>
+<dd status = "changed"><p status = "changed">A keydef with content
+that uses angle brackets will display properly now.</p></dd></dlentry>
+<dlentry><dt status = "changed">Rendering of invalid conkeyref</dt>
+<dd status = "changed"><p status = "changed">An invalid conkeyref
+now renders as "[CONKEY:&lt;conkeyval>]".</p></dd></dlentry>
+<dlentry><dt status = "changed">xref relink fix</dt>
+<dd status = "changed"><p status = "changed">Relinking an xref to
+a new topic type, now updates @type to the new topic type.</p></dd></dlentry>
+<dlentry><dt status = "changed">Reference Manager fix</dt>
+<dd status = "changed"><p status = "changed">Reference Manager now
+properly scrolls to the selected element and element data.</p></dd></dlentry>
+<dlentry><dt status = "changed">Navtitle not lost if target topicref
+is missing</dt>
+<dd status = "changed"><p status = "changed">On map save, if the
+referenced topic is missing, no longer writes “FILE NOT FOUND” text
+to navtitle.</p></dd></dlentry>
+<dlentry><dt status = "changed">fm-var no longer deletes conditional
+tagging</dt>
+<dd status = "changed"><p status = "changed">A fm-var in the first
+child element of a block element (like abstract/shortdesc or ul/li),
+no longer causes conditional tagging on the block element to get
+lost.</p></dd></dlentry>
+<dlentry><dt status = "changed">Crash on edit of invalid attribute</dt>
+<dd status = "changed"><p status = "changed">If an attribute is
+copied to an element where it is invalid, editing that attribute with
+the Set Attributes command no longer crashes Frame.</p></dd></dlentry>
+<dlentry><dt status = "changed">image handling fixes</dt>
+<dd status = "changed"><p status = "changed">The file save operation
+no longer writes an empty @align attribute for images.</p><p
+    status = "new">A mis-cased image file extension no longer causes
+image reimport for book builds.</p></dd></dlentry>
+<dlentry><dt status = "changed">Insert image dialog</dt>
+<dd status = "changed"><p status = "changed">Changed the Insert
+Image dialog so the default alignment is “sticky” (persistent in
+session) if no default is defined in the EDD, otherwise the default
+is based on the EDD default.</p></dd></dlentry>
+<dlentry><dt status = "changed">Change to book build default</dt>
+<dd status = "changed"><p status = "changed">Changed the default
+for book-build PromptToOverwrite to "Off".</p></dd></dlentry>
+<dlentry><dt status = "changed">Book-build messages</dt>
+<dd status = "changed"><p status = "changed">Eliminated the “ERROR:
+Unable to open ditaval file! []” message during book builds with
+reltables.</p></dd></dlentry>
+<dlentry><dt status = "changed">Auto-prolog support for required
+abstract</dt>
+<dd status = "changed"><p status = "changed">The auto-prolog feature
+will now work properly if your EDD specifies that the abstract is
+required..</p></dd></dlentry>
+<dlentry><dt status = "changed">Fixed disabling of keyboard-only
+commands</dt>
+<dd status = "changed"><p status = "changed">The keyboard-only commands
+were disabled after switching to XML code view and back. This has
+been fixed.</p></dd></dlentry>
+<dlentry><dt status = "changed">Where Used topicref fix</dt>
+<dd status = "changed"><p status = "changed">Now properly reports
+topicref references in the selected map.</p></dd></dlentry></dl></section></body></topic>

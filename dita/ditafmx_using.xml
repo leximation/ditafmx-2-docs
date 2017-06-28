@@ -8,6 +8,23 @@
 <!-- End Document Specific Declarations -->
 
 ]>
+
+<?Fm Condition DITA-Data Forest%20Green NO_OVERRIDE show?>
+<?Fm Condition DITA-Cleanup Green NO_OVERRIDE show?>
+<?Fm Condition DITA-StatusNew AsIs CHANGEBAR show?>
+<?Fm Condition DITA-StatusChanged AsIs CHANGEBAR show?>
+<?Fm Condition DITA-StatusUnchanged AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
+<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH hide?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition DITA-StatusDeleted AsIs STRIKETHROUGH show?>
+
+<?Fm BoolCondExpr "DITA-Data"OR"DITA-Cleanup"OR"DITA-Comment"OR"DITA-Prolog"OR"DITA-StatusNew"OR"DITA-StatusChanged"OR"DITA-StatusUnchanged"OR"DITA-StatusDeleted" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
 <topic id = "id078JF050U5Z"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
 <title>Using <ph conref = "ditafmx_shared.xml#common/prodname"></ph></title>
@@ -15,12 +32,12 @@
 of DITA files with FrameMaker.</shortdesc>
 <prolog><author>scottp</author>
 <critdates><created date = "UNK"/>
-<revised modified = "2015-09-13"/></critdates></prolog>
+<revised modified = "2016-09-13"/></critdates></prolog>
 <body><p id = "id_066D90F0Q5Z" status = "changed"><i>Documentation
 last updated:</i> <ph  outputclass = "fmvar:Current Date (Long)">September
-13, 2015</ph></p>
+13, 2016</ph></p>
 <p status = "changed"><i>Updated for plugin client versions:</i></p>
 <ul><li id = "testid" status = "changed">authoring support client
-(<filepath>ditafmx_&lt;fmver>.dll</filepath>) v.2.0.04</li>
+(<filepath>ditafmx_&lt;fmver>.dll</filepath>) v.2.0.05</li>
 <li status = "changed">import/export client (<filepath>ditafmx_&lt;fmver>_app.dll</filepath>)
-v.2.0.04</li></ul></body></topic>
+v.2.0.05</li></ul></body></topic>
