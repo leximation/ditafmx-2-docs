@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
 <?dtall dict="datatype"?><?dtall dict="fm:imagedata"?><?dtall dict="fm:polyline"?><?dtall
 dict="fm:textline"?><?dtall dict="TextLine"?><topic
@@ -16,8 +10,9 @@ dict="fm:textline"?><?dtall dict="TextLine"?><topic
 placed over a referenced image.</shortdesc>
 <prolog><author>Scott Prentice</author>
 <author>test</author>
+<author>scottp</author>
 <critdates><created date = "2008-02-28"/>
-<revised modified = "2014-04-04"/></critdates></prolog>
+<revised modified = "2017-11-10"/></critdates></prolog>
 <body status = "changed"><p status = "new">DITA-FMx supports the
 use of callouts and other graphic overlay objects in DITA topics.
 Although this is not specifically supported in DITA, the data to
@@ -67,14 +62,24 @@ and contains graphic overlay objects, a <synph status = "new"
     outputclass = "element">data</synph> element will be inserted
 immediately following the <synph status = "new" outputclass = "element">image</synph> element.
 This <synph status = "new" outputclass = "element">data</synph> element
-will have the <synph outputclass = "attribute">datatype</synph> attribute
+will have the <synph outputclass = "attribute">name</synph> attribute
 set to “fm:imagedata”. Within this <synph status = "new"
     outputclass = "element">data</synph> element will be a child <synph
     status = "new" outputclass = "element">data</synph> element
 for each of the graphic overlay objects, and each will have a <synph
-    outputclass = "attribute">datatype</synph> attribute set to
-a value appropriate for the object type (e.g. “fm:textline” for
-a TextLine object and “fm:polyline” for a Polyline object).</p>
+    outputclass = "attribute">name</synph> attribute set to a value
+appropriate for the object type (e.g. “fm:textline” for a TextLine
+object and “fm:polyline” for a Polyline object).</p>
+<note><indexterm>datatype attribute in graphic overlay objects</indexterm><indexterm>graphic
+overlay objects, datatype attribute</indexterm>Prior to v.2.0.06
+graphic overlay objects used the <synph outputclass = "attribute">datatype</synph> attribute
+to store the object type value (fm:imagedata, fm:textline, etc.).
+This was switched to use the <synph outputclass = "attribute">name</synph> attribute
+for LwDITA support. The migration from <synph outputclass = "attribute">datatype</synph> to <synph
+    outputclass = "attribute">name</synph> will happen when you
+open and save a DITA file. If you want to continue using the <synph
+    outputclass = "attribute">datatype</synph> attribute, set the
+INIOnly/UseDatatype parameter to “1”.</note>
 <p status = "new">When written to XML, all of these <synph
     status = "new" outputclass = "element">data</synph> elements
 will be empty elements (just specifying <synph outputclass = "attribute">name</synph> and <synph

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+]>
+<topic id = "id8d464290-0f5b-4d3b-b89a-8ef550b70d1b"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Configurator</title>
+<shortdesc>Simplifies the setup for new installations or configurations.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>scottp</author>
+<critdates><created date = "0000-00-00"/>
+<revised modified = "2019-04-02"/></critdates></prolog>
+<body><p>When you’re working in a team environment, it’s often a
+good idea for everyone to use the same settings (or at least start
+off that way). Rather than providing a list of options to manually
+enable/disable, use the Configurator command to deploy those settings.
+In addition to setting specific options defined in the <filepath>ditafmx.ini</filepath> file,
+this command can also install your custom structure applications.</p>
+<p>To use this feature, create a “configuration INI” file and (optionally)
+a structure application package (ZIP), then copy those files to
+a location on your shared network (or local file system). As part
+of your setup process, you request that each team member run the
+Configurator command and select the configuration INI file.</p>
+<p>This INI file has the following basic structure:</p>
+<codeblock>[INIUpdates]
+Count=N
+N=&lt;Section>|&lt;Parameter>|&lt;Value>
+
+[MakerINIUpdates]
+Count=N
+N=&lt;Section>|&lt;Parameter>|&lt;Value>
+
+[UserMakerINIUpdates]
+Count=N
+N=&lt;Section>|&lt;Parameter>|&lt;Value>
+
+[InstallApps]
+Count=N
+N=&lt;AppName></codeblock>
+<p>The INIUpdates section sets the specified values in the user’s <filepath>ditafmx.ini</filepath> file.
+Each entry in this section specifies the section, parameter, and
+value for an option. To create this file, you’ll need to manually
+set up your system as needed, then open your <filepath>ditafmx.ini</filepath> file,
+and transfer the specific settings into the configuration INI file (which
+can have any name you like). Each entry in the INIUpdates section
+is identified with a sequential number (starting from 1). Set the
+Count parameter to the value of the last entry.</p>
+<p>Following is an example of a very simple configuration INI file:</p>
+<codeblock>[INIUpdates]
+Count=4
+1=General|AutoSmartSpaces|1
+2=General|UseFmDpi|1
+3=NewFileOptions|NewTopicFileFormat|&lt;$TITLE_NOSPACELC>
+4=NewFileOptions|NewMapFileFormat|_&lt;$TITLE_NOSPACELC></codeblock>
+<p>To install structure applications as part of this process, your
+structure applications must be set up similar to the default DITA-FMx
+apps. Most importantly, you must be using the “stub” technique for
+adding the structure application definition.</p>
+<p>The MakerINIUpdates and UserMakerINIUpdates sections follow the
+same logical structure as the INIUpdates section. These two additional
+sections allow you to modify entries in the <filepath>maker.ini</filepath> files,
+both in the “FMHOME” area (in Program Files, with the FrameMaker
+executable file) and the <filepath>maker.ini</filepath> in the “user”
+area (a location like <filepath>C:\Users\USERNAME\AppData\Roaming\Adobe\FrameMaker\VERSION</filepath>).</p>
+<note>This functionality does not allow you to delete an entry or
+set it to a null value (an empty string).</note>
+<p>The Configurator command uses the InstallApps API to perform
+the structure application installation from a ZIP file. This requires
+that you add a special AppInstall section to the <filepath>ditafmx.ini</filepath> file.
+This can be done using the INIUpdates section in the configuration
+INI file. For details on this process, see the <xref href = "ditafmx_api_installapps.xml#id11BJG0X065Z"
+type = "topic" format = "dita" scope = "local"></xref> topic.</p>
+<p>Unless the AppInstall section has been added to the <filepath>ditafmx.ini</filepath> file
+through other means, you’ll need to include those entries in the
+INIUpdates section of your configuration INI file. To trigger the
+InstallApps API process, include an InstallApps section in the configuration
+INI file.</p>
+<p>For each structure application, there are two requires entries,
+“ZIP” and “STUB”. The ZIP entry specifies the location of the ZIP
+file that contains the app files, and the STUB entry is a relative
+path to the stub file (structure application definition). An optional
+“ROOT” entry can define the location where the applications are
+to be installed on the user’s system. If this is missing, the root
+location is in the <filepath>Structure/XML</filepath> folder in
+the FrameMaker application installation directory. The STUB entry path
+is relative to this ROOT location. Note that the ZIP entry may specify
+the same ZIP package for multiple apps that share a common directory
+structure (like the default DITA-FMx apps).</p>
+<p>Following is a configuration INI file that includes the installation
+of 3 custom structure applications. The ZIP package and configuration
+INI file are copied to a network location at <filepath>Z:\fmx-cfg</filepath>,
+and the apps are installed to the user’s system at <filepath>C:\fmapps</filepath>:</p>
+<codeblock>[INIUpdates]
+Count=13
+1=General|AutoSmartSpaces|1
+2=General|UseFmDpi|1
+3=NewFileOptions|NewTopicFileFormat|&lt;$TITLE_NOSPACELC>
+4=NewFileOptions|NewMapFileFormat|_&lt;$TITLE_NOSPACELC>
+5=AppInstall|DITA-MyApp-Topic-1.2-ZIP|Z:\fmx-cfg\DITA-MyApp_1.2_apps.zip
+6=AppInstall|DITA-MyApp-Topic-1.2-STUB|DITA-MyApp_1.2\Topic\structapps-stub_topic_1.2.fm
+7=AppInstall|DITA-MyApp-Topic-1.2-ROOT|C:\fmapps
+8=AppInstall|DITA-MyApp-Map-1.2-ZIP|Z:\fmx-cfg\DITA-MyApp_1.2_apps.zip
+9=AppInstall|DITA-MyApp-Map-1.2-STUB|DITA-MyApp_1.2\Map\structapps-stub_map_1.2.fm
+10=AppInstall|DITA-MyApp-Map-1.2-ROOT|C:\fmapps
+11=AppInstall|DITA-MyApp-Book-1.2-ZIP|Z:\fmx-cfg\DITA-MyApp_1.2_apps.zip
+12=AppInstall|DITA-MyApp-Book-1.2-STUB|DITA-MyApp_1.2\Book\structapps-stub_book_1.2.fm
+13=AppInstall|DITA-MyApp-Book-1.2-ROOT|C:\fmapps
+
+[InstallApps]
+Count=3
+1=DITA-MyApp-Topic-1.2
+2=DITA-MyApp-Map-1.2
+3=DITA-MyApp-Book-1.2</codeblock>
+<p>If installing the apps to the FrameMaker application area (no
+“ROOT” entry specified), the user will need to run FrameMaker “As
+Administrator” so it can write to the Program Files area.</p></body></topic>

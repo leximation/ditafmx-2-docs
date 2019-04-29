@@ -1,41 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
 <topic id = "id0671I080W5Z"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
 <title>Installation and Setup</title>
-<shortdesc status = "changed">Detailed information about installing
-DITA-FMx.</shortdesc>
+<shortdesc>Detailed information about installing DITA-FMx.</shortdesc>
 <prolog><author>Scott Prentice</author>
 <author>scottp</author>
-<critdates><created date = "UNK"/>
-<revised modified = "2015-08-10"/></critdates></prolog>
-<body><p status = "changed">DITA-FMx version 2.0 supports DITA 1.2
-(and earlier versions) on FrameMaker versions 7.2, 8, 9, 10, 11,
-12, and 2015, and can be downloaded from <xref href = "http://www.leximation.com/dita-fmx/"
+<critdates><created date = "0000-00-00"/>
+<revised modified = "2019-03-14"/></critdates></prolog>
+<body><p status = "changed">DITA-FMx supports DITA 1.2 (and earlier
+versions) on FrameMaker versions 7.2, 8, 9, 10, 11, 12, 2015, 2017,
+and 2019, and can be downloaded from <xref href = "http://www.leximation.com/dita-fmx/"
 format = "html" scope = "external">www.leximation.com/dita-fmx/</xref>.</p>
-<p id = "id_066QB200JY4" status = "changed"><indexterm class = "-
-topic/indexterm ">installing DITA-FMx</indexterm>DITA-FMx is made
-up of two plugin components, one that provides import/export processing
-and one that provides general authoring support. DITA-FMx also provides three
-structure applications (DTD, EDD, template, and read/write rules
-files), two for DITA topic and map authoring and one for book publishing.
-The EDD and rules files have been set up to allow proper interaction
-with DITA-FMx. If you want to build your own DITA structure applications,
+<p id = "id_066QB200JY4"><indexterm class = "- topic/indexterm ">installing
+DITA-FMx</indexterm>DITA-FMx is made up of two plugin components,
+one that provides import/export processing and one that provides
+general authoring support. DITA-FMx also provides three structure
+applications (DTD, EDD, template, and read/write rules files), two for
+DITA topic and map authoring and one for book publishing. The EDD
+and rules files have been set up to allow proper interaction with
+DITA-FMx. If you want to build your own DITA structure applications,
 you should clone these files and modify them as needed. For more
 information see <xref href = "ditafmx_customizingapps.xml#id0837A060NHS"
 type = "topic" format = "dita" scope = "local"></xref>.</p>
-<p status = "new">We’ve posted a video of the complete installation
-process. Please take a moment to watch this video: <?dtall break="line"?><xref
-href = "http://blog.leximation.com/2010/03/installing-dita-fmx-1-1/"
-format = "html" scope = "external" status = "new">http://blog.leximation.com/2010/03/installing-dita-fmx-1-1/</xref></p>
-<p status = "changed">If you have any installation problems or questions,
-please contact us at &lt;<ph audience = "web" status = "changed">ditafmx-help
-AT leximation DOT com</ph><xref href = "mailto:ditafmx-help@leximation.com"
-format = "html" scope = "external" audience = "help">ditafmx-help@leximation.com</xref>>.</p></body></topic>
+<p status = "new">As of DITA-FMx 2.0.06, support for authoring and
+publishing of Lightweight DITA (pre-release) is available.</p>
+<p>We’ve posted a video of the complete installation process. Please
+take a moment to watch this video: <?dtall break="line"?><xref href
+= "http://blog.leximation.com/2010/03/installing-dita-fmx-1-1/"
+format = "html" scope = "external">http://blog.leximation.com/2010/03/installing-dita-fmx-1-1/</xref></p>
+<p>If you have any installation problems or questions, please contact
+us at &lt;<ph audience = "web">ditafmx-help AT leximation DOT com</ph><xref
+href = "mailto:ditafmx-help@leximation.com" format = "html" scope
+= "external" audience = "help">ditafmx-help@leximation.com</xref>>.</p></body></topic>

@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
 <?dtall dict="AltBookTemplatesDirs"?><?dtall dict="AssignMasterPagesFromMarkers"?><?dtall
 dict="AttrAsCondPrefix"?><?dtall dict="AttrAsVarPrefix"?><?dtall dict="appxspecial"?><?dtall
@@ -42,62 +36,44 @@ dict="subditamap"?><?dtall dict="TableFootnoteNumberCustom"?><?dtall dict="Table
 dict="TableFootnoteProperty"?><?dtall dict="tabletitle"?><?dtall dict="titlepage"?><?dtall
 dict="toc"?><?dtall dict="topicref"?><?dtall dict="UCAlpha"?><?dtall dict="UCRoman"?><?dtall
 dict="UpdateBook"?><?dtall dict="UseOutputclassForType"?><?dtall dict="UseSame"?><?dtall
-dict="VolumeNumberFormat"?><?dtall dict="VolumeNumberValue"?><?dtall dict="VolumeProperty"?>
-<?Fm Condition DITA-Data Forest%20Green NO_OVERRIDE show?>
-<?Fm Condition DITA-Cleanup Green NO_OVERRIDE show?>
-<?Fm Condition DITA-StatusNew AsIs CHANGEBAR show?>
-<?Fm Condition DITA-StatusChanged AsIs CHANGEBAR show?>
-<?Fm Condition DITA-StatusUnchanged AsIs NO_OVERRIDE show?>
-<?Fm Condition DITA-Comment AsIs NO_OVERRIDE show?>
-<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
-<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE hide?>
-<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH hide?>
-<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
-<?Fm Condition DITA-StatusDeleted AsIs STRIKETHROUGH show?>
-
-<?Fm BoolCondExpr "DITA-Data"OR"DITA-Cleanup"OR"DITA-Comment"OR"DITA-Prolog"OR"DITA-StatusNew"OR"DITA-StatusChanged"OR"DITA-StatusUnchanged"OR"DITA-StatusDeleted" State 0?>
-
-
-<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
-<topic id = "id84800a54-1228-438f-881d-08ce097eba90"
+dict="VolumeNumberFormat"?><?dtall dict="VolumeNumberValue"?><?dtall dict="VolumeProperty"?><topic
+    id = "id84800a54-1228-438f-881d-08ce097eba90"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
 <title>Book-Build INI file</title>
-<shortdesc status = "new">Controls all aspects of generating FM
-files from a DITA map using the Generate Book from Map command.</shortdesc>
+<shortdesc>Controls all aspects of generating FM files from a DITA
+map using the Generate Book from Map command.</shortdesc>
 <prolog><author>Scott Prentice</author>
 <author>test</author>
 <author>scottp</author>
 <critdates><created date = "2009-02-08"/>
-<revised modified = "2016-09-13"/></critdates></prolog>
-<body status = "changed"><p status = "changed"><indexterm>ditafmx-bookbuild.ini
-file</indexterm><indexterm>book-build INI file</indexterm><indexterm>book-build
-settings</indexterm>The <filepath conref = "ditafmx_shared.xml#common/bookbuild-ini"></filepath> file
+<revised modified = "2017-11-10"/></critdates></prolog>
+<body><p><indexterm>ditafmx-bookbuild.ini file</indexterm><indexterm>book-build
+INI file</indexterm><indexterm>book-build settings</indexterm>The <filepath
+conref="ditafmx_shared.xml#common/bookbuild-ini"></filepath> file
 defines many of the parameters used to assemble the generated book
 to match your needs. The book build process first looks for this
 file in the directory that you have specified for the new book file,
-then it checks in the user’s DITA-FMx folder (<menucascade
-    status = "new"><uicontrol status = "new">DITA-FMx</uicontrol>
-<uicontrol status = "new">Open DITA-FMx Folder</uicontrol></menucascade>).</p>
-<p status = "new">If you always use the same settings, you can just
-keep one copy in the user’s DITA-FMx folder, but if you have book-specific
-settings, you may want to add this file to each output directory.
-This file follows the standard INI file format with section names
-in square brackets and key/value pairs following each section using
-a <i status = "new">key</i>=<i status = "new">value</i> syntax.</p>
-<p status = "changed">The book build process operates on individual
-book components based on the names of the map elements that are
-referencing the topic files (such as “part,” “chapter,” “toc,” “indexlist,”
-and so on). These element names are stored in the <synph status = "new"
+then it checks in the user’s DITA-FMx folder (<menucascade><uicontrol>DITA-FMx</uicontrol>
+<uicontrol>Open DITA-FMx Folder</uicontrol></menucascade>).</p>
+<p>If you always use the same settings, you can just keep one copy
+in the user’s DITA-FMx folder, but if you have book-specific settings,
+you may want to add this file to each output directory. This file
+follows the standard INI file format with section names in square
+brackets and key/value pairs following each section using a <i>key</i>=<i>value</i> syntax.</p>
+<p>The book build process operates on individual book components
+based on the names of the map elements that are referencing the
+topic files (such as “part,” “chapter,” “toc,” “indexlist,” and
+so on). These element names are stored in the <synph
     outputclass = "attribute">mapelemtype</synph> attributes on
-the <synph status = "new" outputclass = "element">fm-ditafile</synph> elements
-in the generated book. The <filepath conref = "ditafmx_shared.xml#common/bookbuild-ini"></filepath> file
+the <synph outputclass = "element">fm-ditafile</synph> elements
+in the generated book. The <filepath conref="ditafmx_shared.xml#common/bookbuild-ini"></filepath> file
 provides two general section types, one that defines the numbering
 and pagination properties for each element type and one that defines
 the creation of generated FM files that replace the “list” files
-in the <synph status = "new" outputclass = "element">frontmatter</synph> and <synph
-    status = "new" outputclass = "element">backmatter</synph> elements.
-The basic syntax for this file is as follows:</p>
-<codeblock expanse = "page" status = "changed" outputclass = "ini">[General] 
+in the <synph outputclass = "element">frontmatter</synph> and <synph
+    outputclass = "element">backmatter</synph> elements. The basic
+syntax for this file is as follows:</p>
+<codeblock expanse = "page" outputclass = "ini">[General] 
 BookTemplatesDir=<i>&lt;path to templates folder></i> 
 PreBuildScript=<i>&lt;c:\projects\prebuild.bat %MAPNAME%></i> 
 PostBuildScript=<i>&lt;c:\projects\postbuild.bat %MAPNAME%></i> 
@@ -144,23 +120,20 @@ Count=<i>&lt;N></i>
 [NumberingDefault-<i>&lt;mapelemtype></i>] 
 VolumeProperty=<i>(Restart|Continue|UseSame|FromFile)</i> 
 VolumeNumberValue=<i>&lt;value></i> 
-VolumeNumberFormat=<i status = "changed">(&lt;see valid values below>|Text)</i> 
+VolumeNumberFormat=<i>(&lt;see valid values below>|Text)</i> 
 ChapterProperty=<i>(Restart|Continue|UseSame|FromFile)</i> 
 ChapterNumberValue=<i>&lt;value></i> 
-ChapterNumberFormat=<i status = "changed">(&lt;see valid values
-below>|Text)</i> 
+ChapterNumberFormat=<i>(&lt;see valid values below>|Text)</i> 
 PageProperty=<i>(Restart|Continue|FromFile)</i> 
 PageNumberValue=<i>&lt;value></i> 
-PageNumberFormat=<i status = "changed">(&lt;see valid values below>|Text)</i> 
+PageNumberFormat=<i>(&lt;see valid values below>|Text)</i> 
 ParagraphProperty=<i>(Restart|Continue|FromFile)</i> 
 FootnoteProperty=<i>(Restart|StartOver|Continue|FromFile)</i> 
 FootnoteNumberValue=<i>&lt;value></i> 
-FootnoteNumberFormat=<i status = "changed">(&lt;see valid values
-below>|Custom)</i> 
+FootnoteNumberFormat=<i>(&lt;see valid values below>|Custom)</i> 
 FootnoteNumberCustom=<i>&lt;value></i> 
 TableFootnoteProperty=<i>(Format|FromFile)</i> 
-TableFootnoteNumberFormat=<i status = "changed">(&lt;see valid values
-below>|Custom)</i> 
+TableFootnoteNumberFormat=<i>(&lt;see valid values below>|Custom)</i> 
 TableFootnoteNumberCustom=<i>&lt;value></i> 
 PageStartSide=<i>(FromFile|Next|Left|Right)</i> 
 PageDoubleSided=<i>(1|0)</i> 
@@ -184,6 +157,7 @@ NormalizeRefs=<i>(0|1)</i>
 AddRelLinks=<i>(0|1)</i> 
 RelLinkType=<i>(0|1)</i> 
 ReloadRefs=<i>(0|1)</i>  
+GlossTermSwapping=<i>(0|1)</i> 
 XrefToHyperlink=<i>(0|1)</i> 
 ApplyDitaval=<i outputclass = "ini">(0|1)</i> 
 DitavalName=<i>&lt;registered ditaval name or file name></i> 
@@ -204,103 +178,103 @@ UpdateBook=<i>(0|1|2)</i>
  
 ; The following parameters are not exposed in the UI, must be set in INI 
 RunPostPaginationScript=<i>(0|1)</i> 
-PostPaginationScriptName=<i status = "new">&lt;script names></i> 
-PostPaginationScriptArgs=<i status = "new">&lt;script arguments></i> 
+PostPaginationScriptName=<i>&lt;script names></i> 
+PostPaginationScriptArgs=<i>&lt;script arguments></i> 
 MoveFigId=<i>(0|1)</i> 
 MoveTableId=<i>(0|1)</i> 
 BreakToInline=<i>(0|1)</i> 
 NormalizeConditions=<i>(0|1)</i> 
 AssignMasterPagesFromMarkers=<i>(0|1)</i> 
-RetagElements=<i status = "new">&lt;element list></i> 
-FilterByAttribute=<i status = "new">BUILD-EXPRESSION</i>><i
-    status = "new">CONDITION-NAME</i> 
-BuildImagemapHotspots=<i>(0|1)</i></codeblock>
-<p status = "new">Valid values for the *NumberFormat entries are:
-Numeric, LCRoman, UCRoman, LCAlpha, UCAlpha, Kanji, Zenkaku, UCZenkaku,
-LCZenkaku, Kazu, Daiji, FullWidthNumeric, UCFullWidthAlpha, LCFullWidthAlpha,
+RetagElements=<i>&lt;element list></i> 
+FilterByAttribute=<i>BUILD-EXPRESSION</i>><i>CONDITION-NAME</i> 
+BuildImagemapHotspots=<i>(0|1)</i> 
+FixTableWidths=<i>(0|1)
+ShowStatus=<i>(0|1)</i>
+HazardToTable=<i>(0|1)</i>
+HazardSymbolMaxWidth=<i>&lt;value></i> 
+UseColorFromTable=<i>(0|1)</i></i></codeblock>
+<p>Valid values for the *NumberFormat entries are: Numeric, LCRoman,
+UCRoman, LCAlpha, UCAlpha, Kanji, Zenkaku, UCZenkaku, LCZenkaku,
+Kazu, Daiji, FullWidthNumeric, UCFullWidthAlpha, LCFullWidthAlpha,
 ChineseNumeric, and Text or Custom.</p>
 <p>Each section and item are described below.</p>
-<section status = "changed"><title>General Section</title><dl
-    status = "changed"><dlentry><dt>BookTemplatesDir</dt>
-<dd status = "changed"><p><indexterm>BookTemplatesDir, INI parameter</indexterm>Specifies
+<section><title>General Section</title><dl><dlentry><dt>BookTemplatesDir</dt>
+<dd><p><indexterm>BookTemplatesDir, INI parameter</indexterm>Specifies
 the directory that contains the component templates. There are two types
 of component templates: layout templates (<filepath>tpl~*.fm</filepath>)
 and generated file templates (<filepath>gentpl~*.fm</filepath>)
 files. You can include the $STRUCTDIR “variable” to specify the
 FrameMaker Structure directory. A relative path is relative to the generated
 book file.</p></dd></dlentry>
-<dlentry status = "new"><dt status = "new">ImportAttrsAsVars</dt>
-<dd status = "new"><p status = "new"><indexterm>ImportAttrsAsVars,
-INI parameter</indexterm>If set to 1, results in FrameMaker variables
-being created or updated in all book components (both structured
-and unstructured) where the variable name is “&lt;<i status = "new">prefix</i>>&lt;<i
-    status = "new">attributename</i>>” and the value of the variable
-is set to the attribute value. The default &lt;<i status = "new">prefix</i>>
-value is “fmx-”, but can be changed or set to an emptying string
-with the AttrAsVarPrefix parameter, described below.</p><p
-    status = "new">These variables can be used as header/footer
-variables or elsewhere in a document’s layout. If the variable exists
-in the template or predefined FM file, its value will be updated,
-otherwise the variable will be created. For more information see, <xref
-href = "ditafmx_addingnewfmditabookattributes.xml#id3a2152b0-95cf-4a97-9f6a-2921c293cc2a"
+<dlentry><dt>ImportAttrsAsVars</dt>
+<dd><p><indexterm>ImportAttrsAsVars, INI parameter</indexterm>If
+set to 1, results in FrameMaker variables being created or updated
+in all book components (both structured and unstructured) where
+the variable name is “&lt;<i>prefix</i>>&lt;<i>attributename</i>>”
+and the value of the variable is set to the attribute value. The
+default &lt;<i>prefix</i>> value is “fmx-”, but can be changed or
+set to an emptying string with the AttrAsVarPrefix parameter, described
+below.</p><p>These variables can be used as header/footer variables
+or elsewhere in a document’s layout. If the variable exists in the
+template or predefined FM file, its value will be updated, otherwise
+the variable will be created. For more information see, <xref href
+= "ditafmx_addingnewfmditabookattributes.xml#id3a2152b0-95cf-4a97-9f6a-2921c293cc2a"
 type = "topic" format = "dita" scope = "local"></xref>.</p></dd></dlentry>
-<dlentry status = "new"><dt status = "new">ImportAttrsAsConds</dt>
-<dd status = "new"><p status = "new"><indexterm>ImportAttrsAsConds,
-INI parameter</indexterm>If set to 1, results in the hide/show state
-of FrameMaker conditions being set in all book components (both
-structured and unstructured) where the condition name is “&lt;<i
-    status = "new">prefix</i>>&lt;<i status = "new">attributename</i>>-&lt;<i
-    status = "new">attributevalue</i>>”. The default &lt;<i
-    status = "new">prefix</i>> value is “fmx-”, but can be changed
+<dlentry><dt>ImportAttrsAsConds</dt>
+<dd><p><indexterm>ImportAttrsAsConds, INI parameter</indexterm>If
+set to 1, results in the hide/show state of FrameMaker conditions
+being set in all book components (both structured and unstructured)
+where the condition name is “&lt;<i>prefix</i>>&lt;<i>attributename</i>>-&lt;<i>attributevalue</i>>”.
+The default &lt;<i>prefix</i>> value is “fmx-”, but can be changed
 or set to an emptying string with the AttrAsCondPrefix parameter,
-described below.</p><p status = "new">Only conditions that exactly
-match the composite names are set. The hide/show state of the conditions
-is determined by the names in the ConditionMap section (described
-below). This feature works best for attributes that use enumerated values
-as the attribute value. For example, you may enable an <synph
-    status = "new" outputclass = "element">fm-ditabook</synph> attribute
-named “permission”, and one of the possible values is “controlled”. You
+described below.</p><p>Only conditions that exactly match the composite
+names are set. The hide/show state of the conditions is determined
+by the names in the ConditionMap section (described below). This
+feature works best for attributes that use enumerated values as
+the attribute value. For example, you may enable an <synph
+    outputclass = "element">fm-ditabook</synph> attribute named
+“permission”, and one of the possible values is “controlled”. You
 would create a condition named “fmx-permission-controlled” and tag
 the text “CONTROLLED” in the footer with this condition. The default
 state of this condition may be hidden, and if the attribute is set
 to “controlled”, the condition is toggled to show. For more information
 see, <xref href = "ditafmx_addingnewfmditabookattributes.xml#id3a2152b0-95cf-4a97-9f6a-2921c293cc2a"
 type = "topic" format = "dita" scope = "local"></xref>.</p></dd></dlentry>
-<dlentry status = "new"><dt status = "new">AttrAsVarPrefix</dt>
-<dd status = "new"><p><indexterm>AttrAsVarPrefix, INI parameter</indexterm>If
-provided, this parameter specifies the prefix of variables created
-when imported from map metadata (if the ImportAttrsAsVars feature
-is enabled). If not provided, the default value of “fmx-” is used
-as the prefix. To create variables with no prefix, provide this
-parameter with no value.</p></dd></dlentry>
-<dlentry status = "new"><dt status = "new">AttrAsCondPrefix</dt>
-<dd status = "new"><p><indexterm>AttrAsCondPrefix, INI parameter</indexterm>If
+<dlentry><dt>AttrAsVarPrefix</dt>
+<dd><p><indexterm>AttrAsVarPrefix, INI parameter</indexterm>If provided,
+this parameter specifies the prefix of variables created when imported
+from map metadata (if the ImportAttrsAsVars feature is enabled).
+If not provided, the default value of “fmx-” is used as the prefix.
+To create variables with no prefix, provide this parameter with
+no value.</p></dd></dlentry>
+<dlentry><dt>AttrAsCondPrefix</dt>
+<dd><p><indexterm>AttrAsCondPrefix, INI parameter</indexterm>If
 provided, this parameter specifies the prefix of conditions defined
 in the ConditionMap section (if the ImportAttrsAsConds feature is
 enabled). If not provided, the default value of “fmx-” is used as
 the prefix. To create conditions with no prefix, provide this parameter
 with no value.</p></dd></dlentry>
-<dlentry status = "new"><dt status = "new">UseOutputclassForType</dt>
-<dd status = "new"><p status = "new"><indexterm>UseOutputclassForType,
-INI parameter</indexterm>If set to 1, uses the value of the top-level
-topicref-based element’s <synph status = "new" outputclass = "attribute">outputclass</synph> attribute
-to specify the component template’s “mapelemtype” value. If no <synph
-    status = "new" outputclass = "attribute">outputclass</synph> value
-is set, the element type will be used. This allows you to specify
-different component templates for files of the same map element
-type. If this option is enabled, you’ll need to include the corresponding
-NumberingFirst/NumberingDefault sections for that value. For example,
-if you set the <synph status = "new" outputclass = "attribute">outputclass</synph> of
-the first <synph status = "new" outputclass = "element">appendix</synph> element
-to “appxspecial”, you’ll need to include a section labeled “NumberingFirst-appxspecial”.</p><note
-    status = "new">If you are using submaps, you’ll need to set
-this <synph status = "new" outputclass = "attribute">outputclass</synph> value
-on the root “topicref” element in the submap rather than the referencing
-element in the root map. This limitation may be addressed in a future
-update to DITA-FMx.</note></dd></dlentry>
-<dlentry status = "new"><dt status = "new">PreBuildScript</dt>
-<dd status = "new"><p><indexterm>PreBuildScript, INI parameter</indexterm>If
-provided, this parameter specifies the name of a batch file or executable
+<dlentry><dt>UseOutputclassForType</dt>
+<dd><p><indexterm>UseOutputclassForType, INI parameter</indexterm>If
+set to 1, uses the value of the top-level topicref-based element’s <synph
+    outputclass = "attribute">outputclass</synph> attribute to specify
+the component template’s “mapelemtype” value. If no <synph
+    outputclass = "attribute">outputclass</synph> value is set,
+the element type will be used. This allows you to specify different
+component templates for files of the same map element type. If this
+option is enabled, you’ll need to include the corresponding NumberingFirst/NumberingDefault
+sections for that value. For example, if you set the <synph
+    outputclass = "attribute">outputclass</synph> of the first <synph
+    outputclass = "element">appendix</synph> element to “appxspecial”,
+you’ll need to include a section labeled “NumberingFirst-appxspecial”.</p><note>If
+you are using submaps, you’ll need to set this <synph
+    outputclass = "attribute">outputclass</synph> value on the root
+“topicref” element in the submap rather than the referencing element in
+the root map. This limitation may be addressed in a future update
+to DITA-FMx.</note></dd></dlentry>
+<dlentry><dt>PreBuildScript</dt>
+<dd><p><indexterm>PreBuildScript, INI parameter</indexterm>If provided,
+this parameter specifies the name of a batch file or executable
 script that will run before any book-build processing is begun (this
 is not used to run an FDK client or FrameScript). You can use this
 to copy or rename files that may vary under different conditions
@@ -309,8 +283,8 @@ to provide information to the script. The string “%MAPNAME%” is
 replaced with the DITA map name (no path or file extension) and
 “%MAPFILE%” is replaced with the full path and file name of the
 DITA map.</p></dd></dlentry>
-<dlentry status = "new"><dt status = "new">PostBuildScript</dt>
-<dd status = "new"><p><indexterm>PostBuildScript, INI param eter</indexterm>If
+<dlentry><dt>PostBuildScript</dt>
+<dd><p><indexterm>PostBuildScript, INI param eter</indexterm>If
 provided, this parameter specifies the name of a batch file or executable
 script that will run after all book-build processing has completed
 (this is not used to run an FDK client or FrameScript). You can
@@ -320,21 +294,20 @@ to provide information to the script. The string “%MAPNAME%” is
 replaced with the DITA map name (no path or file extension) and
 “%MAPFILE%” is replaced with the full path and file name of the
 DITA map.</p></dd></dlentry>
-<dlentry status = "new"><dt status = "new">ShowBuildTimes</dt>
-<dd status = "new"><p><indexterm>ShowBuildTimes, INI parameter</indexterm>This
+<dlentry><dt>ShowBuildTimes</dt>
+<dd><p><indexterm>ShowBuildTimes, INI parameter</indexterm>This
 option prints the current build time of each step in the book-build
 process, which can help in debugging. To enable this option, add
 a ShowBuildTimes=1 entry to the General section. A value of “1”
 enables the option and a value of “0” disables it (the default).</p></dd></dlentry></dl></section>
 <section id = "id7a6d7b26-e77b-41e5-bdb3-06d601b13188"><title>PdfDocInfo
-Section</title><p status = "new"><indexterm status = "new">PdfDocInfo</indexterm><indexterm
-status = "new">PDF document info</indexterm><indexterm status =
-"new">PDF metadata</indexterm>The PdfDocInfo section defines the
-values assigned to fields in the PDF Document Info dictionary of
-the generated book file. Each key and value pair in this section
-are added to the book and then passed to the PDF when it is created.
-The standard fields are shown below, but you can use any fields
-that you feel are needed.</p><codeblock status = "changed">[PdfDocInfo] 
+Section</title><p><indexterm>PdfDocInfo</indexterm><indexterm>PDF
+document info</indexterm><indexterm>PDF metadata</indexterm>The
+PdfDocInfo section defines the values assigned to fields in the
+PDF Document Info dictionary of the generated book file. Each key
+and value pair in this section are added to the book and then passed
+to the PDF when it is created. The standard fields are shown below,
+but you can use any fields that you feel are needed.</p><codeblock>[PdfDocInfo] 
 Author=@authorname 
 Title=@title 
 Subject=this is the subject 
@@ -342,28 +315,26 @@ Keywords=keyword one, keyword two
 Copyright= 
 Web Statement= 
 Job= 
-Marked=</codeblock><p status = "changed">If the value starts with
-an “@” symbol, the corresponding attribute value is extracted from
-the fm-ditabook element in the generated book. Otherwise the specified content
-is written to the PDF info dictionary.</p></section>
-<section status = "changed"><title>AltBookTemplatesDirs Section</title><p
-    status = "changed">The AltBookTemplatesDirs section is used
-to define alternate component template folders available as overrides
-in the Generate Book from Map dialog. To use this feature, set the
-Count parameter to the number of alternate paths to display, then add
-sequential numeric entries for each path.</p><codeblock>[AltBookTemplatesDirs] 
+Marked=</codeblock><p>If the value starts with an “@” symbol, the
+corresponding attribute value is extracted from the fm-ditabook
+element in the generated book. Otherwise the specified content is
+written to the PDF info dictionary.</p></section>
+<section><title>AltBookTemplatesDirs Section</title><p>The AltBookTemplatesDirs
+section is used to define alternate component template folders available
+as overrides in the Generate Book from Map dialog. To use this feature,
+set the Count parameter to the number of alternate paths to display,
+then add sequential numeric entries for each path.</p><codeblock>[AltBookTemplatesDirs] 
 Count=2 
 1=C:/some/path 
 2=C:/another/path</codeblock><p>You can add as many paths to this
 section as you’d like. They display as a list in the Generate Book
 from Map dialog. The “default” setting is defined by the path specified in
 the BookTemplatesDir parameter.</p></section>
-<section><title>ConditionMap Section</title><p status = "changed">The
-ConditionMap section is used to assign a hide/show state to conditions
-that are set based on the value of <synph status = "new"
-    outputclass = "element">fm-ditabook</synph> attributes. If the
-General/ImportAttrsAsConds parameter is set to 1, the values in
-the ConditionMap section are read.</p><p>Each entry in the ConditionMap
+<section><title>ConditionMap Section</title><p>The ConditionMap
+section is used to assign a hide/show state to conditions that are set
+based on the value of <synph outputclass = "element">fm-ditabook</synph> attributes.
+If the General/ImportAttrsAsConds parameter is set to 1, the values
+in the ConditionMap section are read.</p><p>Each entry in the ConditionMap
 section specifies the full composite condition name and the hide/show
 state to set that condition. To use the example described above (in
 the ImportAttrsAsConds description), the following ConditionMap
@@ -372,14 +343,13 @@ if the permissions attribute is set to “controlled”.</p><codeblock>[Conditio
 fmx-permission-controlled=Show</codeblock><p>You can add as many
 conditions to this section as you’d like, each is used only if the attribute
 name and value match a defined entry. These conditions are updated
-in the FM book components only if the condition exists in that file.</p><p
-    status = "new">Use the General/AttrAsCondPrefix parameter to
-specify a prefix other than “fmx-”.</p></section>
-<section><title>DitavalDefaultsOverrides Section</title><p
-    status = "changed">The DitavalDefaultsOverrides section can
-be used to override the values in the DitavalDefaults section of
-the <filepath>ditafmx.ini</filepath> file. These are the values
-that are set when you configure the options in the <uicontrol>Apply
+in the FM book components only if the condition exists in that file.</p><p>Use
+the General/AttrAsCondPrefix parameter to specify a prefix other
+than “fmx-”.</p></section>
+<section><title>DitavalDefaultsOverrides Section</title><p>The DitavalDefaultsOverrides
+section can be used to override the values in the DitavalDefaults
+section of the <filepath>ditafmx.ini</filepath> file. These are
+the values that are set when you configure the options in the <uicontrol>Apply
 Ditaval</uicontrol> dialog. This only applies if you are using the
 “filter by conditions” option.</p><codeblock>[DitavalDefaultsOverrides] 
 ;DitavalName= 
@@ -395,11 +365,11 @@ content from the DitavalDefaults section into the DitavalDefaultsOverrides
 section of the book-build INI file. Manually edit the values as
 needed. Doing this ensures that the proper conditional settings
 are used regardless of the default settings that may be defined.</p></section>
-<section><title>Numbering(First|Default)-&lt;<i status = "new">mapelemtype</i>> Sections</title><p
-    status = "changed">A NumberingFirst-&lt;<i status = "new">mapelemtype</i>>
-section applies to the first occurrence of this element in the map,
-and NumberingDefault-&lt;<i status = "new">mapelemtype</i>> applies
-to any additional like-named elements in the map.</p><dl><dlentry><dt>VolumeProperty</dt>
+<section><title>Numbering(First|Default)-&lt;<i>mapelemtype</i>> Sections</title><p>A
+NumberingFirst-&lt;<i>mapelemtype</i>> section applies to the first
+occurrence of this element in the map, and NumberingDefault-&lt;<i>mapelemtype</i>>
+applies to any additional like-named elements in the map.</p><dl>
+<dlentry><dt>VolumeProperty</dt>
 <dd><p>Correlates to the options on the <uicontrol>Volume</uicontrol> tab
 of the <wintitle>Numbering Properties</wintitle> dialog. Valid values
 are: Restart, Continue, UseSame, and FromFile.</p></dd></dlentry>
@@ -408,9 +378,9 @@ are: Restart, Continue, UseSame, and FromFile.</p></dd></dlentry>
 to use as the starting value (use numeric values only regardless
 of the number format).</p></dd></dlentry>
 <dlentry><dt>VolumeNumberFormat</dt>
-<dd><p status = "changed">If Restart is specified for VolumeProperty,
-defines the format for that number and all subsequent numbers of
-this type that follow. Valid values are: <option>Numeric</option>, <option>LCRoman</option>, <option>UCRoman</option>, <option>LCAlpha</option>, <option>UCAlpha</option>,
+<dd><p>If Restart is specified for VolumeProperty, defines the format
+for that number and all subsequent numbers of this type that follow.
+Valid values are: <option>Numeric</option>, <option>LCRoman</option>, <option>UCRoman</option>, <option>LCAlpha</option>, <option>UCAlpha</option>,
 Kanji, Zenkaku, UCZenkaku, LCZenkaku, Kazu, Daiji, FullWidthNumeric,
 UCFullWidthAlpha, LCFullWidthAlpha, ChineseNumeric, and <option>Text</option>.</p></dd></dlentry>
 <dlentry><dt>ChapterProperty</dt>
@@ -423,9 +393,9 @@ and <option>FromFile</option>.</p></dd></dlentry>
 number to use as the starting value (use numeric values only regardless
 of the number format).</p></dd></dlentry>
 <dlentry><dt>ChapterNumberFormat</dt>
-<dd><p status = "changed">If Restart is specified for ChapterProperty,
-defines the format for that number and all subsequent numbers of
-this type that follow. Valid values are: <option>Numeric</option>, <option>LCRoman</option>, <option>UCRoman</option>, <option>LCAlpha</option>, <option>UCAlpha</option>,
+<dd><p>If Restart is specified for ChapterProperty, defines the
+format for that number and all subsequent numbers of this type that
+follow. Valid values are: <option>Numeric</option>, <option>LCRoman</option>, <option>UCRoman</option>, <option>LCAlpha</option>, <option>UCAlpha</option>,
 Kanji, Zenkaku, UCZenkaku, LCZenkaku, Kazu, Daiji, FullWidthNumeric,
 UCFullWidthAlpha, LCFullWidthAlpha, ChineseNumeric, and <option>Text</option>.</p></dd></dlentry>
 <dlentry><dt>PageProperty</dt>
@@ -437,9 +407,9 @@ are: <option>Restart</option>, <option>Continue</option>, and <option>FromFile</
 to use as the starting value (use numeric values only regardless
 of the number format).</p></dd></dlentry>
 <dlentry><dt>PageNumberFormat</dt>
-<dd><p status = "changed">If Restart is specified for PageProperty,
-defines the format for that number and all subsequent numbers of
-this type that follow. Valid values are: <option>Numeric</option>, <option>LCRoman</option>, <option>UCRoman</option>, <option>LCAlpha</option>, <option>UCAlpha</option>,
+<dd><p>If Restart is specified for PageProperty, defines the format
+for that number and all subsequent numbers of this type that follow.
+Valid values are: <option>Numeric</option>, <option>LCRoman</option>, <option>UCRoman</option>, <option>LCAlpha</option>, <option>UCAlpha</option>,
 Kanji, Zenkaku, UCZenkaku, LCZenkaku, Kazu, Daiji, FullWidthNumeric,
 UCFullWidthAlpha, LCFullWidthAlpha, ChineseNumeric, and <option>Text</option>.</p></dd></dlentry>
 <dlentry><dt>ParagraphProperty</dt>
@@ -456,9 +426,9 @@ and <option>FromFile</option>.</p></dd></dlentry>
 number to use as the starting value (use numeric values only regardless
 of the number format).</p></dd></dlentry>
 <dlentry><dt>FootnoteNumberFormat</dt>
-<dd><p status = "changed">If Restart is specified for FootnoteProperty,
-defines the format for that number and all subsequent numbers of
-this type that follow. Valid values are: <option>Numeric</option>, <option>LCRoman</option>, <option>UCRoman</option>, <option>LCAlpha</option>, <option>UCAlpha</option>,
+<dd><p>If Restart is specified for FootnoteProperty, defines the
+format for that number and all subsequent numbers of this type that
+follow. Valid values are: <option>Numeric</option>, <option>LCRoman</option>, <option>UCRoman</option>, <option>LCAlpha</option>, <option>UCAlpha</option>,
 Kanji, Zenkaku, UCZenkaku, LCZenkaku, Kazu, Daiji, FullWidthNumeric,
 UCFullWidthAlpha, LCFullWidthAlpha, ChineseNumeric, and <option>Custom</option>.</p></dd></dlentry>
 <dlentry><dt>FootnoteNumberCustom</dt>
@@ -469,9 +439,9 @@ custom value to use.</p></dd></dlentry>
 of the <wintitle>Numbering Properties</wintitle> dialog. Valid values
 are: <option>Format</option> and <option>FromFile</option>.</p></dd></dlentry>
 <dlentry><dt>TableFootnoteNumberFormat</dt>
-<dd><p status = "changed">If Format is specified for TableFootnoteProperty,
-defines the format for that number and all subsequent numbers of
-this type that follow. Valid values are: <option>Numeric</option>, <option>LCRoman</option>, <option>UCRoman</option>, <option>LCAlpha</option>, <option>UCAlpha</option>,
+<dd><p>If Format is specified for TableFootnoteProperty, defines
+the format for that number and all subsequent numbers of this type
+that follow. Valid values are: <option>Numeric</option>, <option>LCRoman</option>, <option>UCRoman</option>, <option>LCAlpha</option>, <option>UCAlpha</option>,
 Kanji, Zenkaku, UCZenkaku, LCZenkaku, Kazu, Daiji, FullWidthNumeric,
 UCFullWidthAlpha, LCFullWidthAlpha, ChineseNumeric, and <option>Custom</option>.</p></dd></dlentry>
 <dlentry><dt>TableFootnoteNumberCustom</dt>
@@ -489,13 +459,13 @@ and <option>0</option> (single-sided).</p></dd></dlentry>
 <dd><p>Correlates to the <uicontrol>Before Saving &amp; Printing</uicontrol> options
 in the <wintitle>Pagination</wintitle> dialog. Valid values are: <option>DeleteEmpty</option>, <option>MakeEven</option>, <option>MakeOdd</option>,
 and <option>NoChange</option>.</p></dd></dlentry></dl></section>
-<section><title>GeneratedFile-&lt;<i status = "new">mapelemtype</i>>
-Section</title><p status = "changed">A GeneratedFile-&lt;<i
-    status = "new">mapelemtype</i>> section should be included for
-each generated file to be included in the book.</p><dl><dlentry><dt>ComponentType</dt>
-<dd status = "changed"><p>Specifies the type of generated file to
-create for this map element. Valid values are:</p><ul><li><option>Toc</option> -
-Table of contents</li>
+<section><title>GeneratedFile-&lt;<i>mapelemtype</i>> Section</title><p>A
+GeneratedFile-&lt;<i>mapelemtype</i>> section should be included
+for each generated file to be included in the book.</p><dl><dlentry>
+<dt>ComponentType</dt>
+<dd><p>Specifies the type of generated file to create for this map
+element. Valid values are:</p><ul><li><option>Toc</option> - Table
+of contents</li>
 <li><option>ListFigure</option> - List of figures</li>
 <li><option>ListTable</option> - List of tables</li>
 <li><option>ListPara</option> - Elements and paragraphs</li>
@@ -515,41 +485,39 @@ Standard index</li>
 marker types) to be included in this generated file. For each tag
 provide a numbered entry starting with 1 and extending to the value
 specified in NumTags.</p></dd></dlentry></dl></section>
-<section><title>IncludeFiles Section</title><p status = "changed">An
-IncludeFiles section is used to include FM binary (<filepath>.fm</filepath>)
-files in a generated book.</p><p>Entries in the IncludeFiles section
-specify the position and file name of the included file, where the
-file name is relative to the book file. The key specifies the position and
+<section><title>IncludeFiles Section</title><p>An IncludeFiles section
+is used to include FM binary (<filepath>.fm</filepath>) files in
+a generated book.</p><p>Entries in the IncludeFiles section specify
+the position and file name of the included file, where the file
+name is relative to the book file. The key specifies the position and
 the value specifies the file name. This section can contain multiple
 entries to add multiple files, just make sure that the “position”
 values are always unique, and the files are ordered from the lowest
 position to the highest.</p></section>
-<section><title>IncludeFileTypes Section</title><p status = "changed">An
-IncludeFileTypes section is optionally included (if the IncludeFiles
-section is used) to define the “mapelemtype” values that are associated
-with the files listed in the IncludeFiles section.</p><p>Entries
-in the IncludeFileTypes section assign the specified mapelemtype
-values to the files defined by the “position” as used in the IncludeFiles
-section. The key specifies the position, and the value is the mapelemtype
-string. You can use values that match those that are map element
-types in DITA (such as “chapter” or “appendix”) and you can create
-your own values (such as “titlepage”). Be sure to define the NumberingFirst
-and NumberingDefault sections as needed to assign numbering and pagination
-values to these mapelemtype values.</p></section>
-<section status = "changed"><title>BookBuildOverrides Section</title><p
-    status = "changed">A BookBuildOverrides section is available
-to override default book-build settings defined in the Book Build
-Options dialog.</p><p status = "changed">Most entries in the BookBuildOverrides
+<section><title>IncludeFileTypes Section</title><p>An IncludeFileTypes
+section is optionally included (if the IncludeFiles section is used) to
+define the “mapelemtype” values that are associated with the files
+listed in the IncludeFiles section.</p><p>Entries in the IncludeFileTypes
+section assign the specified mapelemtype values to the files defined
+by the “position” as used in the IncludeFiles section. The key specifies
+the position, and the value is the mapelemtype string. You can use
+values that match those that are map element types in DITA (such
+as “chapter” or “appendix”) and you can create your own values (such
+as “titlepage”). Be sure to define the NumberingFirst and NumberingDefault
+sections as needed to assign numbering and pagination values to
+these mapelemtype values.</p></section>
+<section><title>BookBuildOverrides Section</title><p>A BookBuildOverrides
+section is available to override default book-build settings defined
+in the Book Build Options dialog.</p><p>Most entries in the BookBuildOverrides
 section of the <filepath>ditafmx-bookbuild.ini</filepath> file mirror
-those found in the BookBuild section of the <filepath status = "new">ditafmx.ini</filepath> file.
+those found in the BookBuild section of the <filepath>ditafmx.ini</filepath> file.
 If you have questions about the values to be used, refer to the
-parameters and values in the BookBuild section of the <filepath
-    status = "new">ditafmx.ini</filepath> file.</p><p status = "changed">The
+parameters and values in the BookBuild section of the <filepath>ditafmx.ini</filepath> file.</p><p>The
 following parameters are either not available through the Book Build
 Options dialog or have features that must be manually entered in
 the INI file. It’s likely that these options will be included in
-the UI in a future release.</p><dl status = "changed"><dlentry><dt>DitavalName</dt>
-<dd status = "changed"><p><indexterm>DitavalName, INI parameter</indexterm><indexterm>ditaval,
+the UI in a future release.</p><dl><dlentry><dt>DitavalName</dt>
+<dd><p><indexterm>DitavalName, INI parameter</indexterm><indexterm>ditaval,
 in book builds</indexterm>The value of the DitavalName parameter
 can be either a registered ditaval name or the path and file name
 of a ditaval file. If you use the file name option, be sure that
@@ -558,60 +526,55 @@ the book output folder, use “./” as the prefix for the file name.
 Any value that has no slash will be assumed to be a registered ditaval
 name.</p></dd></dlentry>
 <dlentry><dt>UpdateBook</dt>
-<dd status = "changed"><p><indexterm>UpdateBook, INI parameter</indexterm><indexterm>master
+<dd><p><indexterm>UpdateBook, INI parameter</indexterm><indexterm>master
 pages, applying</indexterm>If set to “1”, specifies to run the Update
 Book command on the generated book. If set to “2”, when the book
 update is performed, the “Apply Master Pages” option is enabled.</p></dd></dlentry>
 <dlentry><dt>RunPostPaginationScript</dt>
-<dd status = "changed"><p><indexterm>RunPostPaginationScript, INI
-parameter</indexterm>Similar to the RunScript feature, but instead
-of running the script before pagination has been completed, use
-of this parameter runs the script(s) afterwards. Depending on the
-type of script you’re using, you will want to use one or the other
-(or both).</p></dd></dlentry>
+<dd><p><indexterm>RunPostPaginationScript, INI parameter</indexterm>Similar
+to the RunScript feature, but instead of running the script before
+pagination has been completed, use of this parameter runs the script(s)
+afterwards. Depending on the type of script you’re using, you will
+want to use one or the other (or both).</p></dd></dlentry>
 <dlentry><dt>PostPaginationScriptName</dt>
-<dd status = "changed"><p><indexterm>PostPaginationScriptName, INI
-parameter</indexterm>Identical in syntax to the RunScriptName feature.</p></dd></dlentry>
+<dd><p><indexterm>PostPaginationScriptName, INI parameter</indexterm>Identical
+in syntax to the RunScriptName feature.</p></dd></dlentry>
 <dlentry><dt>PostPaginationScriptArgs</dt>
-<dd status = "changed"><p><indexterm>PostPaginationScriptArgs, INI
-parameter</indexterm>Identical in syntax to the RunScriptArgs feature.</p></dd></dlentry>
-<dlentry><dt status = "changed">MoveFigId</dt>
-<dd status = "changed"><p><indexterm>MoveFigId, INI parameter</indexterm><indexterm>fm-figuretitle
+<dd><p><indexterm>PostPaginationScriptArgs, INI parameter</indexterm>Identical
+in syntax to the RunScriptArgs feature.</p></dd></dlentry>
+<dlentry><dt>MoveFigId</dt>
+<dd><p><indexterm>MoveFigId, INI parameter</indexterm><indexterm>fm-figuretitle
 element</indexterm><indexterm>elements<indexterm>fm-figuretitle</indexterm></indexterm>If
-set to “1”, specifies that the <synph status = "new"
-    outputclass = "attribute">id</synph> attribute values are moved
-to the respective “title” elements when the “Move fig/title” option
-is enabled. For figures, the <synph status = "new"
+set to “1”, specifies that the <synph outputclass = "attribute">id</synph> attribute
+values are moved to the respective “title” elements when the “Move
+fig/title” option is enabled. For figures, the <synph
     outputclass = "attribute">id</synph> attribute value is moved
-to the <synph status = "new" outputclass = "element">fm-figuretitle</synph> element
+to the <synph outputclass = "element">fm-figuretitle</synph> element
 (if one exists in the EDD). This is required to support <synph
-    status = "new" outputclass = "element">fm-xref</synph> references
-to figure titles. If you do not want these <synph status = "new"
-    outputclass = "attribute">id</synph> values to be moved, set
-this parameter to “0” (it is set to “1” by default).</p></dd></dlentry>
+    outputclass = "element">fm-xref</synph> references to figure
+titles. If you do not want these <synph outputclass = "attribute">id</synph> values
+to be moved, set this parameter to “0” (it is set to “1” by default).</p></dd></dlentry>
 <dlentry><dt>MoveTableId</dt>
-<dd status = "changed"><p><indexterm>MoveTableId, INI parameter</indexterm><indexterm>fm-tabletitle
+<dd><p><indexterm>MoveTableId, INI parameter</indexterm><indexterm>fm-tabletitle
 element</indexterm><indexterm>elements<indexterm>fm-tabletitle</indexterm></indexterm>If
-set to “1”, specifies that the <synph status = "new"
-    outputclass = "attribute">id</synph> attribute values are moved
-to the respective “title” elements when the “Move table/title” option
-is enabled. For tables, the <synph status = "new"
+set to “1”, specifies that the <synph outputclass = "attribute">id</synph> attribute
+values are moved to the respective “title” elements when the “Move
+table/title” option is enabled. For tables, the <synph
     outputclass = "attribute">id</synph> attribute value is moved
-to the <synph status = "new" outputclass = "element">fm-tabletitle</synph> element.
-This is required to support <synph status = "new"
-    outputclass = "element">fm-xref</synph> references to table
-titles. If you do not want these <synph status = "new"
+to the <synph outputclass = "element">fm-tabletitle</synph> element.
+This is required to support <synph outputclass = "element">fm-xref</synph> references
+to table titles. If you do not want these <synph
     outputclass = "attribute">id</synph> values to be moved, set
 this parameter to “0” (it is set to “1” by default).</p></dd></dlentry>
 <dlentry><dt>BreakToInline</dt>
-<dd status = "changed"><p><indexterm>BreakToInline, INI parameter</indexterm><indexterm>images,
+<dd><p><indexterm>BreakToInline, INI parameter</indexterm><indexterm>images,
 indented</indexterm><indexterm>indented images</indexterm>If set
 to “1”, supports the indenting of images in indented content blocks.
 This parameter must be set manually in a book-build INI file, and
 defaults to “0” (off). For more information, see <xref href = "ditafmx_indentedimages.xml#idd23c490c-4441-4e76-968f-91bbae5af1dd"
 type = "topic" format = "dita" scope = "local"></xref>.</p></dd></dlentry>
 <dlentry><dt>NormalizeConditions</dt>
-<dd status = "changed"><p><indexterm>NormalizeCond itions, INI parameter</indexterm><indexterm>inconsistent
+<dd><p><indexterm>NormalizeCond itions, INI parameter</indexterm><indexterm>inconsistent
 condition error message</indexterm><indexterm>inconsistent show/hide
 state error message</indexterm><indexterm>condition settings, errors</indexterm>If
 set to “1”, runs a “normalization” process on the condition formats
@@ -622,56 +585,50 @@ will be set to the properties of the first instance of that condition
 in the book. This parameter must be set manually in a book-build
 INI file, and defaults to “0” (off).</p></dd></dlentry>
 <dlentry><dt>AssignMasterPagesFromMarkers</dt>
-<dd status = "changed"><p><indexterm>AssignMasterPagesFromMarkers,
-INI parameter</indexterm><indexterm>master pages, from markers</indexterm><indexterm>fmx-masterpage
-marker</indexterm>If set to “1”, enables the <uicontrol status = "new">Assign
-master pages from markers</uicontrol> feature. The text of the first
-“fmx-masterpage” marker found on a page defines the master page
-that is applied to that page. This provides an alternative to the
-StructMasterPageMaps feature in FrameMaker. For additional information,
-see <xref href = "ditafmx_applyingmasterpages.xml#id1248K0XN0Y4"
+<dd><p><indexterm>AssignMasterPagesFromMarkers, INI parameter</indexterm><indexterm>master
+pages, from markers</indexterm><indexterm>fmx-masterpage marker</indexterm>If
+set to “1”, enables the <uicontrol>Assign master pages from markers</uicontrol> feature.
+The text of the first “fmx-masterpage” marker found on a page defines
+the master page that is applied to that page. This provides an alternative
+to the StructMasterPageMaps feature in FrameMaker. For additional
+information, see <xref href = "ditafmx_applyingmasterpages.xml#id1248K0XN0Y4"
 type = "topic" format = "dita" scope = "local"></xref>.</p></dd></dlentry>
 <dlentry><dt>RetagElements</dt>
-<dd status = "changed"><p status = "new"><indexterm>RetagElements,
-INI parameter</indexterm>This feature attempts to overcome an elusive
-FrameMaker formatting bug, this setting lets you specify a space-delimited
-list of element names that are “retagged” at the end of the book-build
-process. This seems to correct the formatting of paragraphs that
-contain multiple inline elements.</p><p status = "new">To enable
+<dd><p><indexterm>RetagElements, INI parameter</indexterm>This feature
+attempts to overcome an elusive FrameMaker formatting bug, this setting
+lets you specify a space-delimited list of element names that are “retagged”
+at the end of the book-build process. This seems to correct the formatting
+of paragraphs that contain multiple inline elements.</p><p>To enable
 this option, add a RetagElements entry to the BookBuildOverrides section.
 The value for this entry is a space-delimited list of elements to
-retag. This problem seems to occur most in <synph status = "new"
-    outputclass = "element">li</synph> and <synph status = "new"
+retag. This problem seems to occur most in <synph
+    outputclass = "element">li</synph> and <synph
     outputclass = "element">note</synph> elements, but may happen
 elsewhere.</p></dd></dlentry>
-<dlentry status = "changed"><dt status = "changed">FilterByAttribute</dt>
-<dd status = "changed"><p status = "new"><indexterm>FilterByAttributes,
-INI parameter</indexterm>In some cases, the filtering provided by
-the Filter By Attribute command (FM10 and later) may be preferable
-to that currently provided by the DITA-FMx mapping of ditavals to
-conditions. To make use of this filtering option use the FilterByAttribute
-setting in the BookBuildOverrides section of the book-build INI file.</p><p
-    status = "new">Set the value of the FilterByAttribute entry
-to <i status = "new">ATTR-EXPRESSION</i>><i status = "new">CONDITION-NAME</i>.
-Where <i status = "new">ATTR-EXPRESSION</i> is the attribute build
-expression (must exist in the template), and <i status = "new">CONDITION-NAME</i> is
-the name of the condition to apply (also must exist in the template).</p><p
-    status = "new">When the FilterByAttribute entry is enabled,
-ditaval filtering is not performed, even if specified.</p><p
-    status = "new">For additional information, see “Filter by Attribute”
-in <xref href = "ditafmx_filtering.xml#id086QA10L0HS" type = "topic"
-format = "dita" scope = "local" status = "new"></xref>.</p></dd></dlentry>
-<dlentry status = "changed"><dt status = "changed">BuildImagemapHotspots</dt>
-<dd status = "changed"><p status = "new"><indexterm>BuildImagemapHotspots,
-INI parameter</indexterm><indexterm>area element</indexterm><indexterm>imagemap
-element</indexterm><indexterm>shape element</indexterm><indexterm>coords
-element</indexterm><indexterm>xref element</indexterm><indexterm>imagemap
-hotspots in PDF</indexterm><indexterm>elements<indexterm>imagemap</indexterm></indexterm><indexterm>elements<indexterm>area</indexterm></indexterm><indexterm>elements<indexterm>coords</indexterm></indexterm><indexterm>elements<indexterm>shape</indexterm></indexterm><indexterm>elements<indexterm>xref</indexterm></indexterm>If
+<dlentry><dt>FilterByAttribute</dt>
+<dd><p><indexterm>FilterByAttributes, INI parameter</indexterm>In
+some cases, the filtering provided by the Filter By Attribute command
+(FM10 and later) may be preferable to that currently provided by
+the DITA-FMx mapping of ditavals to conditions. To make use of this
+filtering option use the FilterByAttribute setting in the BookBuildOverrides
+section of the book-build INI file.</p><p>Set the value of the FilterByAttribute
+entry to <i>ATTR-EXPRESSION</i>><i>CONDITION-NAME</i>. Where <i>ATTR-EXPRESSION</i> is
+the attribute build expression (must exist in the template), and <i>CONDITION-NAME</i> is
+the name of the condition to apply (also must exist in the template).</p><p>When
+the FilterByAttribute entry is enabled, ditaval filtering is not
+performed, even if specified.</p><p>For additional information,
+see “Filter by Attribute” in <xref href = "ditafmx_filtering.xml#id086QA10L0HS"
+type = "topic" format = "dita" scope = "local"></xref>.</p></dd></dlentry>
+<dlentry><dt>BuildImagemapHotspots</dt>
+<dd><p><indexterm>BuildImagemapHotspots, INI parameter</indexterm><indexterm>area
+element</indexterm><indexterm>imagemap element</indexterm><indexterm>shape
+element</indexterm><indexterm>coords element</indexterm><indexterm>xref
+element</indexterm><indexterm>imagemap hotspots in PDF</indexterm><indexterm>elements<indexterm>imagemap</indexterm></indexterm><indexterm>elements<indexterm>area</indexterm></indexterm><indexterm>elements<indexterm>coords</indexterm></indexterm><indexterm>elements<indexterm>shape</indexterm></indexterm><indexterm>elements<indexterm>xref</indexterm></indexterm>If
 you use <synph outputclass = "element">imagemap</synph> elements
 to define linked regions in an <synph outputclass = "element">image</synph>, enable
 the BuildImagemapHotspots parameter to have those linked regions automatically
 generated by the book-build process. Set this parameter to “1” to enable
-and “0” to disable (“0” is the default).</p><p status = "new">The <synph
+and “0” to disable (“0” is the default).</p><p>The <synph
     outputclass = "element">imagemap</synph> element allows for
 multiple <synph outputclass = "element">area</synph> elements, each
 of which defines a “hot” region. The <synph outputclass = "element">area</synph> element
@@ -688,4 +645,30 @@ the coordinates value is “<i>x1</i>,<i>y1</i>,<i>x2</i>,<i>y2</i>”
 for the hot spot.</p><p>The <synph outputclass = "element">coords</synph> values
 are assumed to be in pixels (at 72 DPI). In order to ensure alignment
 of the coordinates with those of the image itself, you must make
-use of the “fmdpi” feature (unless your image DPI is 72).</p></dd></dlentry></dl></section></body></topic>
+use of the “fmdpi” feature (unless your image DPI is 72).</p></dd></dlentry>
+<dlentry status = "new"><dt>FixTableWidths</dt>
+<dd><p><indexterm>FixTableWidths, INI parameter</indexterm>This
+option corrects table widths after master pages have been applied.
+This is needed if the text column width applied by the master pages
+differs from that in the base template. Set this parameter to “1”
+to enable and “0” to disable (“0” is the default).</p></dd></dlentry>
+<dlentry status = "new"><dt>ShowStatus</dt>
+<dd><p><indexterm>ShowStatus, INI parameter</indexterm>Set this
+parameter to “1” to run the Show Status command on all files in
+the generated book. Useful for creating deliverables to be used
+for review purposes (“0” is the default).</p></dd></dlentry>
+<dlentry status = "new"><dt>HazardToTable</dt>
+<dd><p><indexterm>HazardToTable, INI parameter</indexterm>Set this
+parameter to “1” to enable hazard statement processing in the book build.
+(“0” is the default.)</p></dd></dlentry>
+<dlentry status = "new"><dt>HazardSymbolMaxWidth</dt>
+<dd><p><indexterm>HazardSymbolMaxWidth, INI parameter</indexterm>This
+parameter provides deliverable-specific control over the hazard
+symbol width. If not set, the value in the Authoring Options dialog
+is used. Note that this is a “max” width setting; it does not increase
+the width of a smaller image.</p></dd></dlentry>
+<dlentry status = "new"><dt>UseColorFromTable</dt>
+<dd><p><indexterm>UseColorFromTable, INI parameter</indexterm>Set
+this parameter to “0” to prevent color from being applied to full-width hazard
+tables in the book build. (“1” is the default, if hazard statement processing
+is enabled.)</p></dd></dlentry></dl></section></body></topic>

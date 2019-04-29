@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
-<?dtall dict="desc"?><?dtall dict="easyDITA"?><?dtall dict="hrefs"?><?dtall
-dict="msgblock"?><?dtall dict="relinks"?><?dtall dict="SaveAs"?><?dtall
-dict="SubjectScheme"?><?dtall dict="syntaxdiagram"?><?dtall dict="TextLine"?><?dtall
-dict="toolbar"?><?dtall dict="uninstalled"?><topic id = "id067FFA00K4Y"
+<?dtall dict="attr"?><?dtall dict="desc"?><?dtall dict="easyDITA"?><?dtall
+dict="fn"?><?dtall dict="hrefs"?><?dtall dict="msgblock"?><?dtall dict="relinks"?><?dtall
+dict="SaveAs"?><?dtall dict="SubjectScheme"?><?dtall dict="syntaxdiagram"?><?dtall
+dict="TextLine"?><?dtall dict="toolbar"?><?dtall dict="uninstalled"?><topic
+    id = "id067FFA00K4Y"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
 <title>Limitations</title>
 <shortdesc>Known limitations in the current version of DITA-FMx.</shortdesc>
@@ -18,36 +13,33 @@ dict="toolbar"?><?dtall dict="uninstalled"?><topic id = "id067FFA00K4Y"
 <author>test</author>
 <author>scottp</author>
 <critdates><created date = "2008-10-13"/>
-<revised modified = "2015-09-08"/></critdates></prolog>
-<body><p id = "id_066EJI0F05Z" status = "changed">The following
-list describes the currently known issues that apply to using DITA-FMx on
-all supported versions of FrameMaker (see below for version-specific
-issues):</p>
-<ul id = "id_066GG700J5Z" status = "changed"><li status = "new"><p
-    status = "new">DITA 1.3 is not currently supported by DITA-FMx.
-We are assessing which features to support; if you have specific
-needs, please contact us.</p><p status = "new">While no support
-is provided out of the box, there is no reason that DITA-FMx would
+<revised modified = "2017-11-20"/></critdates></prolog>
+<body><p id = "id_066EJI0F05Z">The following list describes the
+currently known issues that apply to using DITA-FMx on all supported
+versions of FrameMaker (see below for version-specific issues):</p>
+<ul id = "id_066GG700J5Z"><li><p>DITA 1.3 is not currently supported
+by DITA-FMx. We are assessing which features to support; if you
+have specific needs, please contact us.</p><p>While no support is
+provided out of the box, there is no reason that DITA-FMx would
 not support the DITA 1.3 model if an appropriately defined structure application
 were developed. The aspects of DITA 1.3 that will not currently work,
 involve new methods for ditaval filtering, scoped key resolution,
 and cross-deliverable linking.</p></li>
-<li status = "new"><p status = "new">The following DITA 1.2 features
-are not currently supported:</p><ul status = "new"><li status = "new"><p
-    status = "new">keyrefs to topicref-based elements are not supported</p></li>
-<li status = "changed"><p status = "new">key element references
-to <synph status = "new" outputclass = "element">fm-indexterm</synph>, <synph
-    status = "new" outputclass = "element">indexterm</synph>, and <synph
-    status = "new" outputclass = "element">indextermref</synph> are
-not supported</p></li>
-<li status = "new"><p status = "new">key element references will
-provide the defined content but will not currently provide a hyperlink
-to a provided <synph status = "new" outputclass = "attribute">href</synph> target</p></li>
-<li status = "new"><p status = "new">text from conrefs and keyrefs
-within a map will not be passed to the book-build process</p></li>
-<li status = "new"><p status = "new"><indexterm>conaction attribute,
-support</indexterm>the <synph status = "new" outputclass = "attribute">conaction</synph> attribute
-is not supported</p></li>
+<li><p>The following DITA 1.2 features are not currently supported:</p><ul>
+<li><p>keyrefs to topicref-based elements are not supported</p></li>
+<li><p>key element references to <synph outputclass = "element">fm-indexterm</synph>, <synph
+    outputclass = "element">indexterm</synph>, and <synph
+    outputclass = "element">indextermref</synph> are not supported</p></li>
+<li><p>key element references will provide the defined content but
+will not currently provide a hyperlink to a provided <synph
+    outputclass = "attribute">href</synph> target</p></li>
+<li status = "new"><p>inline elements within key element references
+are unwrapped; the content will remain, but the markup is deleted</p></li>
+<li><p>text from conrefs and keyrefs within a map will not be passed
+to the book-build process</p></li>
+<li><p><indexterm>conaction attribute, support</indexterm>the <synph
+    outputclass = "attribute">conaction</synph> attribute is not
+supported</p></li>
 <li><p><indexterm>Learning and Training model, support</indexterm>a
 “Learning” structure application (based on the Learning and Training specialization)
 is provided for testing purposes only and is not considered to be
@@ -55,35 +47,37 @@ production-ready; an update will be provided in a future release</p></li>
 <li><p><indexterm>SubjectScheme model, support</indexterm>a “SubjectScheme”
 structure application is not currently provided</p></li></ul></li>
 <li><p>When generating an FM book from a map, you may get the following
-messages in the FrameMaker Log file:</p><ul status = "changed"><li><p>XML
-Parser Message: <b>“ID '<i>TOPICID</i>' has already been used”</b></p><p>This
-message is caused when your topic files contain duplicate IDs. This
-can happen when you clone a topic file to create a new topic file
-or if you include the same topic in multiple places in the map.
-Both of these situations are valid as far as DITA is concerned,
-but FrameMaker doesn’t like to see duplicate IDs in a single book.
-This is just a warning and can generally be ignored.</p><p>The only
-situation where this duplicate ID issue will cause problems or possibly
-unexpected results, is when you have xrefs or related links to a topic
-where the ID exists in multiple places in a given chapter file.
-The reference will always end up pointing at the first instance
-of the ID in a generated FM chapter file.</p></li></ul></li>
-<li status = "changed"><p status = "changed">The <uicontrol>Apply
-Ditaval as Conditions</uicontrol> command does not necessarily result
-in conditional filtering that matches that of the DITA Open Toolkit.
-The conditions are applied properly based on the filtering attribute
-values, but the default hide/show logic of FrameMaker conditions
-is not the same as the used by the OT.</p><p status = "new">Avoiding
-the use of the “include” statement in a ditaval file will typically
-result in properly filtered files; since all content is included
-by default (under typical conditions), this should be easy to accommodate.</p><p
-    status = "new">A new “filter by deletion” option is available,
-which more closely emulates the filtering done by the OT. You can
-also use Boolean conditional expressions for filtering.</p></li>
-<li><p status = "changed">For the <uicontrol>Apply Ditaval as Conditions</uicontrol> command,
-currently only the <synph status = "new" outputclass = "element">prop</synph> ditaval
-element is supported. Other elements may be recognized in a future release
-if that is seen as beneficial.</p></li>
+messages in the FrameMaker Log file:</p><ul><li><p>XML Parser Message: <b>“ID
+'<i>TOPICID</i>' has already been used”</b></p><p>This message is
+caused when your topic files contain duplicate IDs. This can happen
+when you clone a topic file to create a new topic file or if you
+include the same topic in multiple places in the map. Both of these
+situations are valid as far as DITA is concerned, but FrameMaker
+doesn’t like to see duplicate IDs in a single book. This is just
+a warning and can generally be ignored.</p><p>The only situation
+where this duplicate ID issue will cause problems or possibly unexpected
+results, is when you have xrefs or related links to a topic where
+the ID exists in multiple places in a given chapter file. The reference
+will always end up pointing at the first instance of the ID in a generated
+FM chapter file.</p></li></ul></li>
+<li><p>For the <uicontrol>Apply Ditaval</uicontrol> command, only
+the <synph outputclass = "element">prop</synph> ditaval element
+is supported. Other elements may be recognized in a future release
+if that is seen as beneficial.</p><p>The <i>as conditions</i> option
+of the <uicontrol>Apply Ditaval</uicontrol> command does not necessarily result
+in filtering that matches that of the DITA Open Toolkit. The conditions
+are applied properly based on the filtering attribute values, but
+the default hide/show logic of FrameMaker conditions is not the
+same as that used by the OT. When using the <i>as conditions</i> option,
+it is best to use ditaval files that only use the “exclude” action
+attribute; this will provide more reliable results. Due to the nature
+of conditional tagging, this option cannot remove components from a
+book. If this is needed, use the <i>by deletion</i> option.</p><p>The <i>by
+deletion</i> option of the <uicontrol>Apply Ditaval</uicontrol> command,
+more closely emulates the filtering done by the DITA-OT. However,
+the <i>by deletion</i> option only supports the “include” and “exclude”
+action attributes; the “flag” action is not supported (if “flag”
+is needed, use the <i>as conditions</i> option).</p></li>
 <li><p>Because a graphic object in FrameMaker cannot have children,
 the <synph outputclass = "element">alt</synph> and <synph
     outputclass = "element">longdescref</synph> elements are not
@@ -98,41 +92,52 @@ Center or Right alignment, only use the default Left alignment.
 Using an alignment of Center or Right will result in the text line
 position shifting to the left or right when the file is reopened.
 This will be fixed in a future release.</p></li>
-<li><p status = "changed">In a relationship table, only <synph
-    status = "new" outputclass = "attribute">href</synph> references
-to files are honored. Any <synph status = "new"
-    outputclass = "attribute">href</synph> attributes that include
-references to topic IDs will be stripped down to just the file name
-for processing and creation of related links. This may change in
-a future update.</p></li>
-<li status = "changed"><p status = "changed"><indexterm>indexterm</indexterm>Indexterms
-with multiple child elements that are siblings, will not round-trip properly.
-On import, the sibling <synph status = "new" outputclass = "element">indexterm</synph>s
+<li><p>In a relationship table, only <synph outputclass = "attribute">href</synph> references
+to files are honored. Any <synph outputclass = "attribute">href</synph> attributes
+that include references to topic IDs will be stripped down to just
+the file name for processing and creation of related links. This
+may change in a future update.</p></li>
+<li status = "new"><p><indexterm>footnotes, referencing</indexterm><indexterm>fn
+element</indexterm>DITA-FMx does not support the “use by reference”
+feature of DITA footnotes. This is where the footnote reference
+number only shows up at the referenced (via <synph
+    outputclass = "element">xref</synph>) location but not at the
+location of the <synph outputclass = "element">fn</synph> element.
+In all cases, there will be a reference number generated by the <synph
+    outputclass = "element">fn</synph> element. You may add references
+to that footnote with a formatted reference (<synph
+    outputclass = "element">fm-xref</synph>).</p></li>
+<li><p><indexterm>indexterm</indexterm>Indexterms with multiple
+child elements that are siblings, will not round-trip properly.
+On import, the sibling <synph outputclass = "element">indexterm</synph>s
 are incorrectly converted into FM index syntax, which means the
-exported <synph status = "new" outputclass = "element">indexterm</synph>s
-will be nested rather than siblings. A workaround is to disable <synph
-    status = "new" outputclass = "element">indexterm</synph> conversion
-on import and export (although this will not allow you to generate
-a FM index). This may be fixed in a future update.</p></li>
+exported <synph outputclass = "element">indexterm</synph>s will
+be nested rather than siblings. A workaround is to disable <synph
+    outputclass = "element">indexterm</synph> conversion on import and
+export (although this will not allow you to generate a FM index).
+This may be fixed in a future update.</p></li>
 <li><p>Xrefs within the link/desc element will not resolve properly
 on file open. After file open, running the Update References command
 will resolve these references. This may be fixed in a future update.</p></li>
-<li><p status = "changed">Backslashes used in an external <synph
-    status = "new" outputclass = "element">xref</synph> (either
-in the element text or in the <synph status = "new"
-    outputclass = "attribute">href</synph> value) will not render
-as expected. You should use forward slashes if at all possible.
-This is due to a FrameMaker limitation and cannot be resolved.</p></li>
+<li><p>Backslashes used in an external <synph outputclass = "element">xref</synph> (either
+in the element text or in the <synph outputclass = "attribute">href</synph> value)
+will not render as expected. You should use forward slashes if at all
+possible. This is due to a FrameMaker limitation and cannot be resolved.</p></li>
 <li><p>The <uicontrol>Generate Book From Map</uicontrol> command
 disallows the building of a book from a DITA map that references
 files on multiple disk drives. This appears to be a core FrameMaker
-limitation (but this probably isn’t a good idea anyway).</p></li>
-<li><p status = "changed">If an XML file is “pretty-printed” and
-a line breaks after an inline element (such as a <synph status = "new"
-    outputclass = "element">ph</synph>), when opened in Frame the
-space between that element and the following word will be lost.</p></li>
-<li><p>Child elements within an <synph status = "new"
-    outputclass = "element">xref</synph> or <synph status = "new"
+limitation (but this probably isn’t a good idea anyway).</p><p>When
+generating a book from a map, any attributes on topicref-based elements that
+reference a submap are lost during the XSLT import process. The
+“merge” process replaces the <i>referencing</i> topicref with the <i>referenced</i> topicref
+(the root topicref in the referenced map). Therefore, any filtering
+(or other) attributes intended to affect the generated book, should
+be placed on the <i>referenced</i> topicref rather than the <i>referencing</i> topicref.</p></li>
+<li><p>If an XML file is “pretty-printed” and a line breaks after
+an inline element (such as a <synph outputclass = "element">ph</synph>),
+when opened in Frame the space between that element and the following
+word will be lost.</p></li>
+<li><p>Child elements within an <synph outputclass = "element">xref</synph> or <synph
     outputclass = "element">link</synph> are lost on import if the
 Auto-Load Xrefs option is enabled. If your xrefs contain child elements,
 disable this option.</p></li>
@@ -140,20 +145,27 @@ disable this option.</p></li>
 Update References command in a DITA map unless the target file is
 already open. If you have conrefs in your titles, you should open
 the file first before running the Update References command.</p></li>
-<li><p>Deleting an <synph status = "new" outputclass = "element">fm-reflabel</synph> element
-from a DITA map file without deleting the entire <synph status = "new"
+<li><p>Deleting an <synph outputclass = "element">fm-reflabel</synph> element
+from a DITA map file without deleting the entire <synph
     outputclass = "element">topicref</synph>, may result in the
 leading symbol being left in the map. This is a temporary issue
 and will go away the next time you open the file; it has no effect
 on the ability to process the files.</p></li>
-<li><p status = "changed">The <synph status = "new"
-    outputclass = "element">syntaxdiagram</synph> child elements
-should round-trip properly, but the formatting of these elements
-may not be optimal. We will focus on providing better support for
-these elements in DITA-FMx 2.x.</p></li></ul>
-<p otherprops = "fm120"><b status = "changed">Issues that relate
-to using DITA-FMx with FrameMaker 12 and 2015:</b></p>
-<ul><li><p status = "changed"><indexterm>XML Author</indexterm><indexterm>FMXA</indexterm><indexterm>FrameMaker
+<li><p>The <synph outputclass = "element">syntaxdiagram</synph> child
+elements should round-trip properly, but the formatting of these
+elements may not be optimal. We will focus on providing better support
+for these elements in DITA-FMx 2.x.</p></li></ul>
+<p otherprops = "fm140" status = "new"><b>Issues that relate to
+using DITA-FMx with FrameMaker 2017:</b></p>
+<ul><li><p>FM version 14.0.2 or later is required for use with DITA-FMx
+due to FDK library updates with that update.</p></li>
+<li status = "new"><p><indexterm>FM 2017, welcome screen</indexterm>The
+FM 2017 “welcome screen” has no API, so the DITA-related links and buttons
+will not work when DITA-FMx is installed. When Adobe provides an
+API to these items, we’ll hook it up.</p></li></ul>
+<p otherprops = "fmxmla"><b>Issues that relate to using DITA-FMx
+with FrameMaker XML Author (FM 12 and 2015):</b></p>
+<ul><li><p><indexterm>XML Author</indexterm><indexterm>FMXA</indexterm><indexterm>FrameMaker
 XML Author</indexterm>DITA-FMx does not work well with FrameMaker
 XML Author. Many commands work fine, but due to the inability to
 open FM binary files, you cannot create new DITA files through the
@@ -164,17 +176,16 @@ can also use DITA-FMx to author files that are stored in a CMS such
 as XDocs or easyDITA.</p></li></ul>
 <p otherprops = "fm110"><b>Issues that relate to using DITA-FMx
 with FrameMaker 11:</b></p>
-<ul><li><p status = "changed">Due to changes in the FrameMaker 11
-API, the “Open Maps in Document View” option does not work on the
-initial open of a map. It will however, work when opening a supmap
-from a topicref in a map. If a solution is found it will be provided
-in a future update.</p></li>
+<ul><li><p>Due to changes in the FrameMaker 11 API, the “Open Maps
+in Document View” option does not work on the initial open of a
+map. It will however, work when opening a supmap from a topicref
+in a map. If a solution is found it will be provided in a future
+update.</p></li>
 <li><p><indexterm>code view problems (FM11)</indexterm>Be aware
 that using the FrameMaker 11 Code View can strip leading spaces from
-preformatted elements (i.e., <synph status = "new"
-    outputclass = "element">codeblock</synph>, <synph status = "new"
-    outputclass = "element">lines</synph>, <synph status = "new"
-    outputclass = "element">msgblock</synph>, <synph status = "new"
+preformatted elements (i.e., <synph outputclass = "element">codeblock</synph>, <synph
+    outputclass = "element">lines</synph>, <synph
+    outputclass = "element">msgblock</synph>, <synph
     outputclass = "element">pre</synph>). This is a core FM bug,
 that will hopefully be fixed soon. Unfortunately, there’s nothing
 that DITA-FMx can do about this (other than to warn you about it).</p></li></ul>
@@ -192,9 +203,9 @@ Document</li>
 <li><p>The two left-most buttons on the Resource Manager (map editor)
 toolbar are non-functional when DITA-FMx is installed. We are looking
 into options for enabling them, but for now you must use the element
-catalog to insert topic referencing elements (<synph status = "new"
-    outputclass = "element">topicref</synph>, <synph status = "new"
-    outputclass = "element">chapter</synph>, <synph status = "new"
+catalog to insert topic referencing elements (<synph
+    outputclass = "element">topicref</synph>, <synph
+    outputclass = "element">chapter</synph>, <synph
     outputclass = "element">appendix</synph>, etc.). The remainder
 of the buttons seem to work properly with DITA-FMx.</p></li></ul>
 <p otherprops = "fm90"><b>Issues that relate to using DITA-FMx with
@@ -208,13 +219,13 @@ The following SaveAs options are not supported:</p><ul><li>Composite
 Document</li>
 <li>Book with FM Components</li>
 <li>PDF</li></ul></li>
-<li><p status = "changed">The four left-most buttons on the Resource
-Manager (map editor) toolbar are non-functional when DITA-FMx is
-installed. We are looking into options for enabling them, but for
-now you must use the element catalog to insert topic referencing
-elements (<synph status = "new" outputclass = "element">topicref</synph>, <synph
-    status = "new" outputclass = "element">chapter</synph>, <synph
-    status = "new" outputclass = "element">appendix</synph>, etc.).</p></li></ul>
+<li><p>The four left-most buttons on the Resource Manager (map editor)
+toolbar are non-functional when DITA-FMx is installed. We are looking
+into options for enabling them, but for now you must use the element
+catalog to insert topic referencing elements (<synph
+    outputclass = "element">topicref</synph>, <synph
+    outputclass = "element">chapter</synph>, <synph
+    outputclass = "element">appendix</synph>, etc.).</p></li></ul>
 <p otherprops = "fm80"><b>Issues that relate to using DITA-FMx with
 FrameMaker 8:</b></p>
 <ul><li><p>A bug exists in FrameMaker 8 (and FM7.2) that causes
@@ -236,15 +247,13 @@ is not recommended. Many of the features of DITA-FMx rely on the
 files being XML (allowing them to be parsed on disk). The following
 are reported issues, but there may be others:</p>
 <ul><li><p>A file that can’t be opened due to missing fonts or images
-and it is the target of a conref or <synph status = "new"
-    outputclass = "element">xref</synph>, the Reference Manager
-won’t display when the conref or <synph status = "new"
+and it is the target of a conref or <synph outputclass = "element">xref</synph>,
+the Reference Manager won’t display when the conref or <synph
     outputclass = "element">xref</synph> is double-clicked. This
 can be resolved by opening the referenced file before double-clicking
 the conref or xref.</p></li>
 <li><p>Double-clicking a conref then choosing Update, will delete
 the conref.</p></li></ul>
-<p status = "changed">Please send any problems or suggestions to
-&lt;<ph audience = "web" status = "changed">ditafmx-help AT leximation
-DOT com</ph><xref href = "mailto:ditafmx-help@leximation.com" format
-= "html" scope = "external" audience = "help">ditafmx-help@leximation.com</xref>>.</p></body></topic>
+<p>Please send any problems or suggestions to &lt;<ph audience = "web">ditafmx-help
+AT leximation DOT com</ph><xref href = "mailto:ditafmx-help@leximation.com"
+format = "html" scope = "external" audience = "help">ditafmx-help@leximation.com</xref>>.</p></body></topic>

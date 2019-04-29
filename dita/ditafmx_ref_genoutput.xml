@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
 <topic id = "id067FF700U7Q"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
@@ -13,24 +7,27 @@
 <shortdesc>Provides methods for generating output through the DITA
 Open Toolkit (DITA-OT) from within FrameMaker.</shortdesc>
 <prolog><author status = "new">Scott Prentice</author>
+<author>scottp</author>
 <critdates status = "changed"><created date = "2008-02-24"/>
-<revised modified = "2014-03-31"/></critdates></prolog>
+<revised modified = "2017-11-10"/></critdates></prolog>
 <body><p>Select the build type and the desired options, then choose
 the Build button to generate output through the DITA Open Toolkit.
 If you want to generate output based on the current file (a topic
-or map) using one of the pre-defined targets (such as CHM, XHTML,
+or map) using one of the predefined targets (such as CHM, XHTML,
 or PDF), use the Current File option. If you have set up an Ant
 script to build a specific project (not necessarily the current
-file), use the Selected Target option.</p>
+file), use the Selected Target option (OT 1.x only).</p>
 <fig audience = "web"><title>DITA-FMx Generate Output dialog box</title><image
 href="images/generateoutput.png" align="left" placement="break"
  otherprops = "fmdpi:110"/></fig>
 <dl><dlentry><dt>Current File</dt>
-<dd status = "new"><p>This option uses a provided Ant script for
-processing the current map or topic file using the selected target.
-You can also use the <option>Use Selected Ditaval File</option> option
-to specify filtering using a selected ditaval file. For setup information,
-see <xref href = "ditafmx_installing_genoutput.xml#id_067EF01A0YZ/id078AF0J0LHS"
+<dd status = "new"><p>This option allows you to select from the
+predefined build targets available for your DITA-OT installation
+You can also use the <option>Use Selected Ditaval File</option> option to
+specify filtering. </p><p>For setup information, see <xref href
+= "ditafmx_installing_genoutput.xml#id_067EF01A0YZ/id078AF0J0LHS"
+type = "section" format = "dita" scope = "local"></xref> or <xref
+href = "ditafmx_installing_genoutput.xml#id_067EF01A0YZ/id_0679K0GL05Z"
 type = "section" format = "dita" scope = "local"></xref>.</p><p>When
 this build type is used, a folder is created in the current file’s
 folder named <filepath class = "+ topic/ph sw-d/filepath ">build-&lt;filename></filepath>.

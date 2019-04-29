@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+]>
+<?dtall dict="autonum"?><?dtall dict="FMx"?><?dtall dict="hazardstatement"?><topic
+    id = "id12ec2684-05f9-4d85-8f60-3540edc24e63"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Authoring Hazard Statements</title>
+<shortdesc>In order to make them easier to visualize, DITA-FMx performs
+minor adjustments to <synph outputclass = "element">hazardstatement</synph> elements
+when authoring.</shortdesc>
+<prolog><author>scottp</author>
+<critdates><created date = "2017-10-03"/>
+<revised modified = "2017-11-10"/></critdates></prolog>
+<body><p>The DITA model places the <synph outputclass = "element">hazardsymbol</synph> element
+at the end of the <synph outputclass = "element">hazardstatement</synph> model.
+This can make for a somewhat odd-looking layout when authoring.
+The default DITA-FMx publishing process wraps this model in a special hazard
+table to make it all look right, but that can’t be easily done for
+authoring.</p>
+<fig><image href="images/hazard-topic-struct.png" align="left" placement="break"
+ outputclass = "fmdpi:120"/></fig>
+<p>As of DITA-FMx 2.0.06, special processing of <synph
+    outputclass = "element">hazardstatement</synph> elements while authoring,
+is done if the Process Hazardstatement Elements option is enabled
+in the Authoring Options dialog.</p>
+<p>The default DITA-FMx Topic application, indents the <synph
+    outputclass = "element">hazardstatement</synph> elements which
+allows the <synph outputclass = "element">hazardsymbol</synph> image
+to be moved into the space to the left of the hazard information.
+The Max Symbol Width setting in the Authoring Options dialog controls
+the maximum image width; be sure to set this to a value that fits
+in the available space.</p>
+<fig><image href="images/hazard-topic.png" align="left" placement="break"
+ outputclass = "fmdpi:120"/></fig>
+<p>The hazard type label (“ATTENTION:” in the image above) is controlled
+by the autonum prefix of the paragraph tag assigned to the <synph
+    outputclass = "element">typeofhazard</synph> element. This paragraph
+tag is set based on the <synph outputclass = "attribute">type</synph> attribute
+of the <synph outputclass = "element">hazardstatement</synph> element.
+The position of the <synph outputclass = "element">hazardsymbol</synph> image
+is set when the image is inserted. It’s also updated on file save,
+so it may not look quite right after adding more content to the
+hazard statement until you save. If multiple <synph
+    outputclass = "element">hazardsymbol</synph> elements are included,
+only the first is placed in the indented space; the rest are added
+after the last <synph outputclass = "element">messagepanel</synph> element.</p>
+<p>Setting the <synph outputclass = "attribute">align</synph> attribute
+of the <synph outputclass = "element">hazardsymbol</synph> element
+controls the horizontal placement within the indented area as well
+as in the published output.</p>
+<note>A prefix/suffix on the <synph outputclass = "element">hazardstatement</synph> element
+is not supported by the default processing.</note></body></topic>

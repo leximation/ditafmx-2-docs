@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
 <?dtall dict="ditafmx_app"?><?dtall dict="ditafm_app"?><topic
     id = "id078AAC00PY4"
@@ -19,7 +13,7 @@ you’ll need to make some minor adjustments.</shortdesc>
 <author>test</author>
 <author>scottp</author>
 <critdates><created date = "UNK"/>
-<revised modified = "2015-09-10"/></critdates></prolog>
+<revised modified = "2017-10-10"/></critdates></prolog>
 <body status = "changed"><p status = "changed">In order for FrameMaker
 to properly open and save DITA files, you must have structure applications
 that support the authoring of topic and map files. DITA-FMx provides
@@ -67,10 +61,10 @@ choose Yes to this message. To manually install the structure applications
 or if you’d like to understand what this automated process is doing,
 read the topic titled <xref href = "ditafmx_installing_apps_manual.xml#id078AAC00PY42"
 type = "topic" format = "dita" scope = "local"></xref>.</p>
-<note type = "important" status = "new">On Windows Vista, 7, and
-8, the automated structure application installation process may
-fail unless FrameMaker is run “As Administrator.” Exit FrameMaker,
-then right-click the program icon and choose “Run As Administrator.”</note>
+<note type = "important" status = "new">On <ph conref="ditafmx_shared.xml#common/winvers_new"></ph>,
+the automated structure application installation process may fail
+unless FrameMaker is run “As Administrator.” Exit FrameMaker, then
+right-click the program icon and choose “Run As Administrator.”</note>
 <p status = "changed">After the structure applications have been
 installed, you may want to take a look at the structure application
 definitions so you will better understand how they work. Just choose <menucascade>

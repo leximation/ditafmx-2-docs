@@ -1,27 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
-
-<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
-<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE show?>
-<?Fm Condition DITA-Comment AsIs NO_OVERRIDE hide?>
-<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
-<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE hide?>
-<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH hide?>
-<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
-
-<?Fm BoolCondExpr "DITA-Data" State 0?>
-
-
-<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
 <topic id = "id097I90V005Z"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
 <title>Before Running the Installer</title>
 <shortdesc>Be sure to address all appropriate pre-installation tasks
-before running the installer application.</shortdesc></topic>
+before running the installer application.</shortdesc>
+<prolog><author>scottp</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2017-11-01"/></critdates></prolog>
+<body><note type = "important"><p>If installing DITA-FMx on FM 2017,
+you must have FrameMaker version 14.0.2 or later. Please update
+to that patch level before installing DITA-FMx.</p></note></body></topic>

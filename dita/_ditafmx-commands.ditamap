@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
 <map id = "id0831I900FHS" status = "changed"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
@@ -13,8 +7,8 @@
 <topicmeta status = "new"><author>Scott Prentice</author>
 <author>test</author>
 <author>scottp</author>
-<critdates><created date = "UNK"/>
-<revised modified = "2015-09-13"/></critdates>
+<critdates><created date = "0000-00-00"/>
+<revised modified = "2019-04-02"/></critdates>
 <othermeta name = "fmx-root-map" content = "_ditafmx.ditamap"
     status = "new"/></topicmeta>
 <topicref navtitle = "DITA-FMx Commands" href = "ditafmx_ref_main.xml"
@@ -49,7 +43,8 @@
 <topicref navtitle = "Xref to Hyperlink"
     href = "ditafmx_ref_xreftohyperlink.xml" type = "topic"></topicref>
 <topicref navtitle = "Flatten Conrefs"
-    href = "ditafmx_ref_flattenconrefs.xml" type = "topic"></topicref></topicref>
+    href = "ditafmx_ref_flattenconrefs.xml" type = "topic"></topicref>
+<topicref href = "ditafmx_ref_configurator.xml" type = "topic"></topicref></topicref>
 <topicref navtitle = "Ditaval Manager"
     href = "ditafmx_ref_ditavalmanager.xml" type = "topic"></topicref>
 <topicref href = "ditafmx_ref_keyspacemanager.xml"
@@ -275,6 +270,18 @@ Manager</navtitle></topicmeta></topicref>
 <relcell status = "changed">
 <topicref navtitle = "DITA Options" href = "ditafmx_ref_options.xml"
     type = "topic"></topicref></relcell>
+</relrow>
+<relrow>
+<relcell>
+<topicref href = "ditafmx_ref_configurator.xml" type = "topic"></topicref></relcell>
+<relcell>
+<topicref navtitle = "InstallApps" href = "ditafmx_api_installapps.xml"
+    type = "topic"></topicref>
+<topicref navtitle = "DITA Options" href = "ditafmx_ref_options.xml"
+    type = "topic"></topicref>
+<topicref navtitle = "INI-Only Settings"
+    href = "ditafmx_ref_inionly.xml" type = "topic"><topicmeta><navtitle>INI-Only
+Settings</navtitle></topicmeta></topicref></relcell>
 </relrow>
 <relrow>
 <relcell>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+]>
+<?dtall dict="AttrAsCondDefaultState"?><?dtall dict="BookBuildOverrides"?><?dtall
+dict="BreakToInline"?><?dtall dict="BuildScript"?><?dtall dict="cmdname"?><?dtall
+dict="content=’CONDITION"?><?dtall dict="DITA_Unsupported"?><?dtall dict="FP_Placement"?><?dtall
+dict="firstParaRules"?><?dtall dict="fmtext"?><?dtall dict="hrefs"?><?dtall
+dict="IndentTables"?><?dtall dict="ini"?><?dtall dict="msgnum"?><?dtall
+dict="name=’author"?><?dtall dict="nbsp"?><?dtall dict="nodename"?><?dtall
+dict="openlink"?><?dtall dict="PdfDocInfo"?><?dtall dict="param"?><?dtall
+dict="Reimport"?><?dtall dict="reltables"?><?dtall dict="ShowStatus"?><?dtall
+dict="StatusChanged"?><?dtall dict="StatusDeleted"?><?dtall dict="StatusNew"?><?dtall
+dict="StatusUnchanged"?><?dtall dict="Stopword"?><?dtall dict="status=’changed"?><?dtall
+dict="status=’new"?><?dtall dict="stopwords"?><?dtall dict="tm"?><?dtall
+dict="unindented"?><?dtall dict="VAR(name"?><?dtall dict="wintitle"?><?dtall
+dict="XDocsFMx"?><topic id = "idd3afc9ad-fd1c-4520-a01a-4093481a1784"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>2.0.07 - 18 April 2019</title>
+<prolog><author>scottp</author>
+<critdates><created date = "2015-08-10"/>
+<revised modified = "2019-04-18"/></critdates></prolog>
+<body status = "new"><section><title outputclass = "h3">New features</title><dl>
+<dlentry><dt>Added support for FM 2019</dt>
+<dd><p>Only offering support for the 64-bit version of FM 2019 at
+this time.</p></dd></dlentry>
+<dlentry><dt>Installer now updates maker.ini</dt>
+<dd><p>The installer application now provides the option to comment
+out the default “fm-dita” API client entries in the <filepath>maker.ini</filepath> file.
+You no longer need to do this manually when installing DITA-FMx
+for the first time.</p></dd></dlentry>
+<dlentry><dt>Added support for image formatting overrides</dt>
+<dd><p>Allows the use of many of FrameMaker’s anchored frame properties.
+See <xref  href = "ditafmx_imageformatting.xml#idd23c490c-4441-4e76-968f-91bbae5af1dd"
+type = "topic" format = "dita" scope = "local"></xref>, for details.</p></dd></dlentry>
+<dlentry><dt>Added file name filtering in Insert Image dialog</dt>
+<dd><p>The Insert Image dialog now provides the option for substring
+filtering of the file name to insert, making it much easier to locate
+image files in a long list.</p></dd></dlentry>
+<dlentry><dt>New Configurator command</dt>
+<dd><p>Simplifies the setting of default DITA-FMx and FrameMaker
+options by changing values in the <filepath>ditafmx.ini</filepath> and <filepath>maker.ini</filepath> files.
+Useful for helping to ensure team members are using the same settings
+or for switching between different settings for different projects.
+See <xref  href = "ditafmx_ref_configurator.xml#id8d464290-0f5b-4d3b-b89a-8ef550b70d1b"
+type = "topic" format = "dita" scope = "local"></xref>, for details.</p></dd></dlentry></dl></section>
+<section><title outputclass = "h3">Structure application updates</title><dl>
+<dlentry><dt>Common EDD inset files</dt>
+<dd><ul><li><p>Updated <filepath>commonElements.edd.fm</filepath> to
+add formatting support for note/@type=notice and note/@type=warning.
+Added context rules to apply note.notice, note.warning, note.entry.notice,
+and note.entry.warning para tags.</p></li></ul></dd></dlentry>
+<dlentry><dt>Topic app (topic_1.2.edd.fm, topic_1.2.template.fm)</dt>
+<dd><ul><li><p>Added new para tags to Topic template for note type
+support added to EDD (note.notice, note.warning, note.entry.notice,
+and note.entry.warning).</p></li>
+<li><p>Updated commonElements EDD inset in Topic EDD.</p></li></ul></dd></dlentry>
+<dlentry><dt>Book app (book_1.2.edd.fm, book_1.2.template.fm)</dt>
+<dd><ul><li><p>Added new para tags to Book template for note type
+support added to EDD (note.notice, note.warning, note.entry.notice,
+and note.entry.warning).</p></li>
+<li><p>Updated commonElements EDD inset in Book EDD.</p></li></ul></dd></dlentry>
+<dlentry><dt>Book XSLT (bookmap2fmbook.xsl)</dt>
+<dd><ul><li><p>None</p></li></ul></dd></dlentry>
+<dlentry><dt>Component template updates</dt>
+<dd><ul><li><p>Import updates from EDD and template (for note/@type=notice
+and note/@type=warning) into component templates.</p></li></ul></dd></dlentry>
+<dlentry><dt>Element template updates</dt>
+<dd><ul><li><p>Updated <filepath>new~reference~simple ref.fm</filepath> element
+template to remove hard-coded @class attribute values (causing validation
+issues from the lack of trailing space).</p></li></ul></dd></dlentry></dl></section>
+<section><title outputclass = "h3">Bug fixes / minor updates</title><dl>
+<dlentry><dt>DITA-OT 2.x updates</dt>
+<dd><ul><li><p>Added new <filepath>ditafmx.ini</filepath> parameters
+for the BuildFile section to provide additional support for DITA
+OT 2.x (or later) builds:</p><p>BuildFile/OT2Params=&lt;user params>
+(defaults to nothing)</p><p>BuildFile/OT2Params-&lt;build>=&lt;user
+params> (applies only to current build, overrides OT2Params if set)</p><p>BuildFile/OT2Logging=[&lt;Verbose>/Debug/None]
+(None = errors only, if not set, defaults to Verbose)</p></li>
+<li><p>If the OT2Params value specifies an output location (via
+'-output=' or '-o='), that will override the creation of the default
+builds directory based on the current filename.</p></li></ul></dd></dlentry>
+<dlentry><dt>Auto-prolog updates and fixes</dt>
+<dd><ul><li><p>Added optional <filepath>ditafmx.ini</filepath> parameter
+PrologOptions/UnknownDateStr for setting critdate/@created if unknown.
+(default “0000-00-00”, was “UNK”) </p></li>
+<li><p>On file open, if critdate/@created is "UNK" it is changed
+to the value specified by PrologOptions/UnknownDateStr (default
+"0000-00-00").</p></li>
+<li><p>If “New Author” option is not selected in the Auto-Prolog
+Options dialog, that value is no longer added to the prolog (as
+you’d expect).</p></li></ul></dd></dlentry>
+<dlentry><dt>New building blocks</dt>
+<dd><ul><li><p>Added $TITLE_SPACETODASH and $TITLE_SPACETODASHLC.
+Converts the document title to a dash-delimited string.</p></li></ul></dd></dlentry>
+<dlentry><dt>Image element enhancements</dt>
+<dd><ul><li><p>Added support for the image/@scale attribute. If
+the @height and @width attributes are empty, the value of the @scale
+attribute will be used for scaling the image. </p><note type = "tip">When
+inserting an image with the Insert Image dialog, enter NN% in the
+DPI field to set the @scale attribute.</note></li>
+<li><p>Added (limited) support for @scalefit.</p></li>
+<li><p>Support editing of @height, @width, @scale, @scalefit via
+attribute window.</p></li></ul></dd></dlentry>
+<dlentry><dt>Image element fixes</dt>
+<dd><ul><li><p>When referencing images, the drive letter is now
+treated in a case-insensitive manner, so an absolute path isn’t
+created to the same drive. </p></li></ul></dd></dlentry>
+<dlentry><dt>Xref fixes</dt>
+<dd><ul><li><p>If an xref with alt text wraps to a new line in the
+XML, the space (new line) between wrapped words is no longer lost
+on file save.</p></li>
+<li><p>Added a feature to automatically add alt text to xrefs based
+on the target element type when selected in the Reference Manager.
+In the <filepath>ditafmx.ini</filepath> file, the INIOnly/AutoXrefTextElems
+parameter specifies a space delimited list of elements. If not set,
+no automatic alt text is added.</p></li></ul></dd></dlentry>
+<dlentry><dt>Conref fixes</dt>
+<dd><ul><li><p>When an @id is required on an element, if that element
+is included in a conref structure when saving the minimum required
+elements as a placeholder in the XML, a temporary @id is now added
+to that element. (Prevents Xerces error messages on file save.)</p></li></ul></dd></dlentry>
+<dlentry><dt>Keyref fixes</dt>
+<dd><ul><li><p>Improved the resolution of nested keyrefs.</p></li>
+<li><p>Improved keyref resolution in titles and topicrefs.</p></li></ul></dd></dlentry>
+<dlentry><dt>Conkeyref fixes</dt>
+<dd><ul><li><p>A conkeyref of a table that has a row which contains
+no cells, will render correctly now.</p></li></ul></dd></dlentry>
+<dlentry><dt>Updated InstallApps API</dt>
+<dd><ul><li><p>Added ROOT option, allowing installation of custom
+apps in locations other than the default “FMHOME” area.</p></li></ul></dd></dlentry>
+<dlentry><dt>Fixed indexterm seealso forced sort string duplication</dt>
+<dd><ul><li><p>Added support for multiline see/seealso entries (happens
+when entry has multiple words).</p></li>
+<li><p>While authoring, forced sort coding for seealso entries is
+not added (authors should not add); coding is added during the book-build
+process.</p></li></ul></dd></dlentry>
+<dlentry><dt>Reporting of read-only files</dt>
+<dd><ul><li><p>To disable to message box generated when opening
+read-only files set the <filepath>ditafmx.ini</filepath> file INIOnly/ReportRO
+parameter to “0”.</p></li></ul></dd></dlentry>
+<dlentry><dt>Processing instructions</dt>
+<dd><ul><li><p>Fixed round-tripping of comments and unstructured
+marker PIs.</p></li></ul></dd></dlentry>
+<dlentry><dt>Book-build INI updates</dt>
+<dd><ul><li><p>None.</p></li></ul></dd></dlentry>
+<dlentry><dt>ditafmx.ini updates</dt>
+<dd><ul><li><p>INIOnly/AutoXrefTextElems</p></li>
+<li><p>INIOnly/ReportRO</p></li>
+<li><p>BuildFile/OT2Logging</p></li>
+<li><p>BuildFile/OT2Params</p></li>
+<li><p>PrologOptions/UnknownDateStr</p></li></ul></dd></dlentry></dl></section></body></topic>

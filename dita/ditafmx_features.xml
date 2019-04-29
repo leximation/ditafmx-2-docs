@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
-<?dtall dict="addon"?><?dtall dict="conrefed"?><?dtall dict="customizable"?><?dtall
-dict="ePublisher"?><?dtall dict="Omni"?><?dtall dict="reltables"?><?dtall
-dict="SuiteHelp"?><?dtall dict="UseLanguageTemplate"?><?dtall dict="Webworks"?><?dtall
-dict="webhelp"?><?dtall dict="xml:lang"?><topic id = "ditafmx_main"
+<?dtall dict="addon"?><?dtall dict="CMSes"?><?dtall dict="conditionalization"?><?dtall
+dict="conrefed"?><?dtall dict="customizable"?><?dtall dict="easyDITA"?><?dtall
+dict="ePublisher"?><?dtall dict="Hazardstatement"?><?dtall dict="hazardstatement"?><?dtall
+dict="hazardsymbol"?><?dtall dict="LwDITA"?><?dtall dict="Omni"?><?dtall
+dict="reltables"?><?dtall dict="SuiteHelp"?><?dtall dict="UseLanguageTemplate"?><?dtall
+dict="Vasont"?><?dtall dict="Webworks"?><?dtall dict="webhelp"?><?dtall
+dict="XDocsFMx"?><?dtall dict="xml:lang"?><topic id = "ditafmx_main"
     ditaarch:DITAArchVersion = "1.0"
     domains = "(topic ui-d) (topic hi-d) (topic pr-d) (topic sw-d)                          (topic ut-d)"
     class = "- topic/topic "
@@ -22,14 +19,14 @@ publishing features.</shortdesc>
 <prolog><author>Scott Prentice</author>
 <author>test</author>
 <author>scottp</author>
-<critdates><created date = "UNK"/>
-<revised modified = "2015-09-08"/></critdates></prolog>
+<critdates><created date = "0000-00-00"/>
+<revised modified = "2019-03-14"/></critdates></prolog>
 <body status = "changed" class = "- topic/body ">
 <p status = "changed" class = "- topic/p ">DITA-FMx is a plugin
 and set of structure applications that let you create and edit DITA
 XML files in FrameMaker. DITA-FMx 2.0 supports DITA 1.2 (and earlier versions)
-and is available for FrameMaker versions 7.2, 8, 9, 10, 11, 12,
-and 2015.</p>
+as well as Lightweight DITA (as of v.2.0.06) and is available for FrameMaker
+versions 7.2 through 2019.</p>
 <p id = "id_066LE80505Z" class = "- topic/p ">For a complete list
 of changes between versions of DITA-FMx, see <xref href = "ditafmx_revisions.xml#id07C590FA05Z"
 type = "topic" format = "dita" scope = "local" class = "- topic/xref
@@ -63,6 +60,13 @@ All XML Files in Book</uicontrol> command which provides the option to
 resolve references in each file, or open the files without resolving
 references.</p></dd></dlentry>
 <dlentry status = "changed" class = "- topic/dlentry ">
+<dt status = "changed" class = "- topic/dt ">Lightweight DITA Support</dt>
+<dd status = "changed" class = "- topic/dd "><p status = "changed">As
+of DITA-FMx 2.0.06, a set of LwDITA-FMx structure applications are provided,
+which are based on the current (as of July 2017) DTDs being developed
+by the DITA TC at OASIS. With these applications you can author
+and publish using Lightweight DITA.</p></dd></dlentry>
+<dlentry status = "changed" class = "- topic/dlentry ">
 <dt status = "changed" class = "- topic/dt ">Automatic Metadata
 Support</dt>
 <dd status = "changed" class = "- topic/dd "><p status = "changed">If
@@ -76,9 +80,10 @@ defined in the Authoring Options dialog.</p></dd></dlentry>
 <dt status = "changed" class = "- topic/dt ">Ditaval Support</dt>
 <dd status = "changed" class = "- topic/dd "><p>Filtering based
 on ditaval files can be applied to content in FrameMaker books and
-files using the <uicontrol>Apply Ditaval</uicontrol> command. Ditaval
-files can also be specified for output generated through the Open
-Toolkit (using the <uicontrol>Generate Output</uicontrol> command).
+files using the <uicontrol>Apply Ditaval</uicontrol> command. This
+filtering can be done via conditionalization or by element deletion.
+Ditaval files can also be specified for output generated through
+the Open Toolkit (using the <uicontrol>Generate Output</uicontrol> command).
 The <uicontrol>Ditaval Manager</uicontrol> provides an easy to use
 interface for creating and managing ditaval files. A ditaval file
 can also be specified when generating a FrameMaker book using the <uicontrol
@@ -234,9 +239,9 @@ fully features webhelp output.</p></dd></dlentry>
 <dlentry class = "- topic/dlentry "><dt class = "- topic/dt ">DITA2Go
 Integration</dt>
 <dd class = "- topic/dd "><p status = "changed">DITA-FMx includes
-integration with DITA2Go (from Omni Systems at <xref href = "http://www.dita2go.com"
-format = "html" scope = "external">www.dita2go.com</xref>) as an
-alternative to the DITA-OT for creation of various types of online
+integration with DITA2Go (from Omni Systems at <xref href = "http://dita2go.omsys.com"
+format = "html" scope = "external">dita2go.omsys.com</xref>) as
+an alternative to the DITA-OT for creation of various types of online
 Help. If DITA2Go is installed, the “DITA2Go Project Manager” menu
 item will be available on the DITA-FMx menu.</p></dd></dlentry>
 <dlentry class = "- topic/dlentry "><dt class = "- topic/dt ">Locating
@@ -305,16 +310,13 @@ data model, you will need to make the parallel changes to your DITA
 EDD and r/w rules. The only effect of specialized elements is with regard
 to element names, and the only place DITA-FMx operates solely on element
 names is with the processing of tables (and in this case, additional
-table elements can be defined in the <filepath conref = "ditafmx_shared.xml#common/ditafm-ini"
+table elements can be defined in the <filepath conref="ditafmx_shared.xml#common/ditafm-ini"
 class = "+ topic/ph sw-d/filepath "></filepath> file). In all other
 cases, DITA-FMx processes elements based on their class name, so
 it should properly handle specialized elements.</p></dd></dlentry>
 <dlentry status = "changed" class = "- topic/dlentry ">
 <dt status = "changed" class = "- topic/dt ">Table Support</dt>
-<dd status = "changed" class = "- topic/dd "><p status = "changed"><indexterm
-class = "- topic/indexterm ">features<indexterm class = "- topic/indexterm
-">import/export processing</indexterm></indexterm><indexterm class
-= "- topic/indexterm ">import/export processing featu res</indexterm>DITA-FMx
+<dd status = "changed" class = "- topic/dd "><p status = "changed">DITA-FMx
 fully supports all DITA table types including simpletable-based
 tables. Users who create specialized tables can ensure that they
 are properly rendered by including them in the <wintitle>Element
@@ -325,6 +327,21 @@ table widths and the state of rotated table cells, in addition to
 indenting tables based on the left indent of the parent element.
 Custom ruling and shading can be applied to rows and cells by preconfiguring
 a reference page table and assigning outputclass attribute values.</p></dd></dlentry>
+<dlentry status = "changed" class = "- topic/dlentry ">
+<dt status = "changed" class = "- topic/dt ">Hazardstatement Support</dt>
+<dd status = "changed" class = "- topic/dd "><p status = "changed"><indexterm
+class = "- topic/indexterm ">hazardstatement support</indexterm>DITA-FMx
+provides special support for authoring and publishing of <synph
+    status = "new" outputclass = "element">hazardstatement</synph> elements.
+When using the default Topic structure application, the<synph
+    status = "new" outputclass = "element">hazardsymbol</synph> element
+will move into a sensible location while authoring. When publishing
+with the default Book structure application, the <synph status = "new"
+    outputclass = "element">hazardstatement</synph> elements will
+be wrapped in a table structure with a special header and coloring
+based on the hazard type (attribute). For additional information
+on this feature, see <xref href = "ditafmx_app_bookapplicationelements.xml#id466d7829-cb25-46ac-9015-ebd3a4a02729"
+type = "topic" format = "dita" scope = "local"></xref>.</p></dd></dlentry>
 <dlentry status = "changed" class = "- topic/dlentry ">
 <dt status = "changed" class = "- topic/dt ">Indexterm Support</dt>
 <dd status = "changed" class = "- topic/dd "><p status = "changed">On
@@ -367,8 +384,9 @@ type = "topic" format = "dita" scope = "local" status = "new"></xref>.</p></dd><
 <dd status = "changed" class = "- topic/dd "><p>DITA-FMx seamlessly
 integrates with the Bluestream XDocs CMS through the XDocsFMx plugin
 (available at no cost). Customers have also had success with integrations
-of DITA-FMx and SDL Trisoft as well as Vasont.</p><p>Using FMx-Auto,
-DITA-FMx can be set up on the back end of most CMSes and used as
-a PDF publishing engine. To learn more about this support and options visit <xref
-href = "http://www.leximation.com/dita-fmx/cms-support" format =
-"html" scope = "external" status = "new">www.leximation.com/dita-fmx/cms-support</xref>.</p></dd></dlentry></dl></body></topic>
+of DITA-FMx and SDL Trisoft as well as Vasont. We also have development
+prototypes to integrate DITA-FMx with the easyDITA CMS.</p><p>Using
+FMx-Auto, DITA-FMx can be set up on the back end of most CMSes and used
+as a PDF publishing engine. To learn more about this support and
+options visit <xref href = "http://www.leximation.com/dita-fmx/cms-support"
+format = "html" scope = "external" status = "new">www.leximation.com/dita-fmx/cms-support</xref>.</p></dd></dlentry></dl></body></topic>

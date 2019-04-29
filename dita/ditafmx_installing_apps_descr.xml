@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
 <topic id = "id078AAC00PY43"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
@@ -16,7 +10,7 @@ with DITA-FMx do more than your typical DITA structure applications.</shortdesc>
 <author>test</author>
 <author>scottp</author>
 <critdates><created date = "UNK"/>
-<revised modified = "2015-09-11"/></critdates></prolog>
+<revised modified = "2017-10-10"/></critdates></prolog>
 <body status = "changed"><p status = "changed"><indexterm>structure
 application files, described</indexterm><indexterm>files, described</indexterm>After
 installation of the DITA-FMx structure applications, the <filepath
@@ -64,7 +58,18 @@ The default Chapter template is actually just a copy (and rename)
 of the default Book template. It can be convenient to use a Chapter
 template to make adjustments to the output without modifying the
 core Book template.</p><p status = "changed"><filepath>tpl~part.fm</filepath> -
-A sample template for a Part map element. Referenced by the <filepath>ditafmx-bookbuild.ini</filepath> file.</p></dd></dlentry>
+A sample template for a Part map element. Referenced by the <filepath>ditafmx-bookbuild.ini</filepath> file.</p><p
+    status = "changed"><filepath status = "changed">tpl~topicref.fm</filepath> -
+A sample template for a topicref map element. Referenced by the <filepath>ditafmx-bookbuild.ini</filepath> file.
+The default topicref template is actually just a copy (and rename)
+of the default Book template (same as the Chapter template). It
+can be convenient to use a topicref template to make adjustments to
+the output without modifying the core Book template.</p><p
+    status = "changed"><filepath status = "changed">tpl~topicref-HAZALT.fm</filepath> -
+An alternate version of the <filepath status = "changed">tpl~topicref.fm</filepath> file
+that defines the hazard table objects for a full-width header table.
+For details, see <xref href = "ditafmx_hazardstatementpublishingoptions.xml#id97325cf7-d095-4331-9c64-5617fd46d6e9"
+type = "topic" format = "dita" scope = "local"></xref>.</p></dd></dlentry>
 <dlentry status = "changed"><dt status = "changed">DITA-FMx_1.2\common\</dt>
 <dd status = "new"><p status = "new">Because the EDD structure is
 mostly identical between the Topic and Book applications, we have

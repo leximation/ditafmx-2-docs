@@ -1,50 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
 <?dtall dict="ditafm"?><?dtall dict="ditafm_app"?><?dtall dict="ditaOpenToolkit"?><?dtall
 dict="OpenToolkit"?><topic id = "id07BIGD00U5Z"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
-<title>FrameMaker 8/9/10/11/12/2015 Installation Requirements</title>
-<shortdesc status = "changed">If installing on FrameMaker 8, 9,
-10, 11, 12, or 2015 you must edit the <filepath>maker.ini</filepath> file
-to disable the existing DITA support.</shortdesc>
+<title>Installing DITA-FMx for the First Time</title>
+<shortdesc>As of DITA-FMx 2.0.07, the installation application modifies
+the <filepath>maker.ini</filepath> file to disable the existing
+DITA support; on earlier releases, you needed to do this manually.</shortdesc>
 <prolog><author>Scott Prentice</author>
 <author>scottp</author>
-<critdates><created date = "UNK"/>
-<revised modified = "2015-09-08"/></critdates></prolog>
-<body><p status = "changed">DITA-FMx cannot coexist with the default
-FM-DITA support. An error message will display to remind you of
-this if you neglect to modify the <filepath>maker.ini</filepath> file.</p>
-<ul><li status = "changed"><p status = "changed">Open the <filepath>maker.ini</filepath> file
-(in the main FrameMaker program folder) and locate the APIClients
-section. Look for lines that start with <b>ditafm</b>, <b>ditafm_app</b>, <b>ditabook</b> (FM8
-only), and possibly <b>ditaOpenToolkit</b> or <b status = "new">DITA
-OT</b> (in FM12/2015 or if you’ve installed the DITA OpenToolkit
-connector). Delete or comment out these lines (by adding a semicolon
-at the start of the line).</p><p status = "new">In FM12/2015, you
-should see lines that look like the following:</p><codeblock expanse = "page" status = "changed" outputclass = "ini">ditafm=Standard, Translation client for DITA, fminit\ditafm.dll, structured 
-ditafm_app=Standard, Translation client for DITA, fminit\ditafm_app.dll, structured 
-Dita OT=Standard, DITA OT client for DITA, fminit\openToolkit.dll, structured</codeblock><note
-    status = "new">On Windows Vista, 7, or 8, in order to edit the
-maker.ini file you may need to run Notepad (or whatever text editor
-you are using), “As Administrator”. This does not mean that you
-have Administrator permissions, but that you right-click the program
-icon and choose “Run As Administrator.”</note></li></ul>
-<p otherprops = "fm100-110" status = "changed">On FrameMaker 10
-and later, you must restart FrameMaker after initial setup to ensure
-that the proper structure applications have been registered in the
-default FrameMaker <filepath>ditafm.ini</filepath> file. Due to
-changes in these FrameMaker versions, the structure applications
+<critdates><created date = "0000-00-00"/>
+<revised modified = "2019-03-14"/></critdates></prolog>
+<body status = "changed"><p status = "changed">DITA-FMx cannot coexist
+with the default DITA support. An error message will display to
+remind you of this if the <filepath>maker.ini</filepath> file has
+been edited to enable the default DITA support.</p>
+<note status = "new"><p status = "new">If installing on FrameMaker
+7.2, read <xref href = "ditafmx_installing_first_fm72.xml#id0853I010AHS"
+type = "topic" format = "dita" scope = "local" status = "new"></xref> instead
+of this topic. For all other version of FrameMaker continue reading
+below.</p></note>
+<p>The information in the following bullet item is provided for
+your information only; there is no action that is required.</p>
+<ul><li><p status = "changed">After installation, the <filepath>maker.ini</filepath> file
+(in the main FrameMaker program folder) will have been modified
+to comment out the default DITA support. In the APIClients section,
+you should see lines that start with <b>ditafm</b>, <b>ditafm_app</b>, <b>ditabook</b> (FM8
+only), and possibly <b>ditaOpenToolkit</b> or <b>DITA OT</b> (in FM12/2015/2017/2019
+or if you’ve installed the DITA OpenToolkit connector).</p><p
+    status = "changed">In FM12/2015/2017/2019, you should see lines
+that look like the following:</p><codeblock expanse = "page" outputclass = "ini">;ditafm=Standard, Translation client for DITA, fminit\ditafm.dll, structured 
+;ditafm_app=Standard, Translation client for DITA, fminit\ditafm_app.dll, structured 
+;Dita OT=Standard, DITA OT client for DITA, fminit\openToolkit.dll, structured</codeblock><note
+    status = "changed">On <ph conref="ditafmx_shared.xml#common/winvers_new"></ph>,
+in order to edit the <filepath status = "new">maker.ini</filepath> file
+you may need to run Notepad (or whatever text editor you are using),
+“As Administrator”. This does not mean that you have Administrator
+permissions, but that you right-click the program icon and choose
+“Run As Administrator.”</note></li></ul>
+<p otherprops = "fm100-110">On FrameMaker 10 and later, you must
+restart FrameMaker after initial setup to ensure that the proper
+structure applications have been registered in the default FrameMaker <filepath>ditafm.ini</filepath> file.
+Due to changes in these FrameMaker versions, the structure applications
 are stored in both the <filepath>ditafmx.ini</filepath> and the
 default <filepath>ditafm.ini</filepath> files.</p>
-<note status = "changed">If you’re interested in switching between
-FM-DITA and DITA-FMx, refer to the topic <xref href = "ditafmx_installing_usingfm8dita.xml#id081TB060Y5Z"
+<note>If you’re interested in switching between FM-DITA and DITA-FMx,
+refer to the topic <xref href = "ditafmx_installing_usingfm8dita.xml#id081TB060Y5Z"
 type = "topic" format = "dita" scope = "local"></xref>.</note>
 <p>You may now proceed to <xref href = "ditafmx_installing_installer.xml#id078AA400U5Z"
 type = "topic" format = "dita" scope = "local"></xref>.</p></body></topic>

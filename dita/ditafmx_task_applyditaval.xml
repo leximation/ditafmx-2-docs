@@ -1,28 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
 <task id = "id083UF70905Z"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
-<title>Filtering with Conditions with the Apply Ditaval Command</title>
+<title>Using the Apply Ditaval Command to Filter with Conditions</title>
 <shortdesc>Steps for using a ditaval file to apply conditional filtering
 to topics.</shortdesc>
 <prolog><author>Scott Prentice</author>
 <author>scottp</author>
 <critdates><created date = "2008-03-30"/>
-<revised modified = "2015-03-17"/></critdates></prolog>
-<taskbody><prereq><p>The ditaval file must be registered with DITA-FMx.
-To create a new ditaval file or register an existing ditaval file,
-use the Ditaval Manager.</p></prereq>
+<revised modified = "2017-11-01"/></critdates></prolog>
+<taskbody><prereq><p>When run interactively, the ditaval file must
+be registered with DITA-FMx. To create a new ditaval file or register
+an existing ditaval file, use the <uicontrol>Ditaval Manager</uicontrol> command.</p></prereq>
 <steps><step><cmd>Open the document or book to apply the conditions.</cmd></step>
 <step><cmd>Run the <menucascade><uicontrol>DITA-FMx</uicontrol>
 <uicontrol>Utilities</uicontrol><uicontrol>Apply Ditaval</uicontrol></menucascade> command.</cmd></step>
-<step><cmd>In the Apply Conditions dialog, select the <uicontrol>Filter
+<step><cmd>In the Apply Ditaval dialog, select the <uicontrol>Filter
 with Conditions</uicontrol> option, then select the ditaval file
 to use from the list box.</cmd></step>
 <step><cmd>For each “action” type defined in the ditaval file, set

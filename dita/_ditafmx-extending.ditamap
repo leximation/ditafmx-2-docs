@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
 <map id = "id41695bd3-283a-4719-9095-1b78c3c54959"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
 <title>Extending DITA-FMx</title>
 <topicmeta><author>scottp</author>
 <critdates><created date = "2014-07-31"/>
-<revised modified = "2015-03-30"/></critdates>
+<revised modified = "2019-03-19"/></critdates>
 <othermeta name = "fmx-root-map" content = "_ditafmx.ditamap"
     status = "new"/></topicmeta>
 <topicref navtitle = "Extending DITA-FMx" href = "ditafmx_api.xml"
@@ -55,5 +49,12 @@
     href = "ditafmx_installing.xml" type = "topic"></topicref>
 <topicref navtitle = "DITA-FMx Commands" href = "ditafmx_ref_main.xml"
     type = "topic"></topicref></relcell>
+</relrow>
+<relrow>
+<relcell>
+<topicref navtitle = "InstallApps" href = "ditafmx_api_installapps.xml"
+    type = "topic"></topicref></relcell>
+<relcell>
+<topicref href = "ditafmx_ref_configurator.xml" type = "topic"></topicref></relcell>
 </relrow>
 </reltable></map>

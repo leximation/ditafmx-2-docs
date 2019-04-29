@@ -1,36 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
-
-<?Fm Condition DITA-Topicmeta Red NO_OVERRIDE show?>
-<?Fm Condition DITA-Prolog AsIs NO_OVERRIDE hide?>
-<?Fm Condition DITA-Comment AsIs NO_OVERRIDE hide?>
-<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
-<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE hide?>
-<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH hide?>
-<?Fm Condition DITA-Data AsIs NO_OVERRIDE show?>
-
-<?Fm BoolCondExpr "DITA-Data" State 0?>
-
-
-<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
 <topic id = "common"
     domains = "(topic ui-d) (topic hi-d) (topic pr-d) (topic sw-d)                          (topic ut-d)"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
 <title>SHARED CONTENT</title>
-<prolog><critdates><created date = "UNK"/>
+<prolog><author>scottp</author>
+<critdates><created date = "UNK"/>
 <revised modified = "2008-02-04 @ 18:30 (scottp)"/>
 <revised modified = "2008-02-04 @ 18:33 (scottp)"/>
 <revised modified = "2008-02-04 @ 18:34 (scottp)"/>
 <revised modified = "2008-02-04 @ 18:41 (scottp)"/>
 <revised modified = "2008-02-04 @ 19:24 (scottp)"/>
-<revised modified = "2011-05-09"/></critdates></prolog>
+<revised modified = "2017-10-10"/></critdates></prolog>
 <body status = "changed"><p>PRODNAME: <ph id = "prodname">DITA-FMx</ph></p>
 <p>ROOT: <varname id = "ditafmx-root">ditafmx</varname></p>
 <p>FILENAME: <filepath id = "ditafm-ini">ditafmx.ini</filepath></p>
@@ -40,18 +22,16 @@
 <p>FILENAME: <filepath id = "ditafm-app-72-dll">ditafmx_72_app.dll</filepath></p>
 <p>FILENAME: <filepath id = "ditafm-book-72-dll"
     class = "+ topic/ph sw-d/filepath ">ditafmx_72_book.dll</filepath></p>
-<p>FILENAME: <filepath id = "ditafmx_dll_80"><varname conref = "#common/ditafmx-root"></varname>_80.dll</filepath></p>
-<p>FILENAME: <filepath id = "ditafmx_app_dll_80"><varname conref
-= "#common/ditafmx-root"></varname>_80_app.dll</filepath></p>
-<p>FILENAME: <filepath id = "ditafmx_book_dll_80"><varname conref
-= "#common/ditafmx-root"></varname>_80_book.dll</filepath></p>
-<p>FILENAME: <filepath id = "ditafmx_dll_VER"><varname conref =
-"#common/ditafmx-root"></varname>_&lt;fmver>.dll</filepath></p>
-<p>FILENAME: <filepath id = "ditafmx_app_dll_VER"><varname conref
-= "#common/ditafmx-root"></varname>_&lt;fmver>_app.dll</filepath></p>
-<p>FILENAME: <filepath id = "ditafmx-chm"><varname conref = "#common/ditafmx-root"></varname>.chm</filepath></p>
-<p>FILENAME: <filepath id = "ditafmx-ant"><varname conref = "#common/ditafmx-root"></varname>-ant.xml</filepath></p>
+<p>FILENAME: <filepath id = "ditafmx_dll_80"><varname conref="#common/ditafmx-root"></varname>_80.dll</filepath></p>
+<p>FILENAME: <filepath id = "ditafmx_app_dll_80"><varname conref="#common/ditafmx-root"></varname>_80_app.dll</filepath></p>
+<p>FILENAME: <filepath id = "ditafmx_book_dll_80"><varname conref="#common/ditafmx-root"></varname>_80_book.dll</filepath></p>
+<p>FILENAME: <filepath id = "ditafmx_dll_VER"><varname conref="#common/ditafmx-root"></varname>_&lt;fmver>.dll</filepath></p>
+<p>FILENAME: <filepath id = "ditafmx_app_dll_VER"><varname conref="#common/ditafmx-root"></varname>_&lt;fmver>_app.dll</filepath></p>
+<p>FILENAME: <filepath id = "ditafmx-chm"><varname conref="#common/ditafmx-root"></varname>.chm</filepath></p>
+<p>FILENAME: <filepath id = "ditafmx-ant"><varname conref="#common/ditafmx-root"></varname>-ant.xml</filepath></p>
 <p>element template: <ph id = "elem-template">element template</ph></p>
+<p>Windows versions: <ph id = "winvers_new">Windows Vista, 7, 8,
+or 10</ph></p>
 <p>FILENAME: <filepath id = "bookbuild-ini">ditafmx-bookbuild.ini</filepath></p>
 <note id = "fmxapi_auto" status = "changed">This DITA-FMx API function
 is only available when the “FMx-Auto” addon is installed. For information

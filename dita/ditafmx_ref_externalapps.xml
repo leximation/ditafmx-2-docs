@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
 <?dtall dict="stdin"?><topic id = "id08CUE000L5Z"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
@@ -14,8 +8,9 @@
 applications called from DITA-FMx as well as any options passed
 to those applications.</shortdesc>
 <prolog><author>Scott Prentice</author>
+<author>scottp</author>
 <critdates><created date = "UNK"/>
-<revised modified = "2014-03-31"/></critdates></prolog>
+<revised modified = "2017-11-10"/></critdates></prolog>
 <body><p>The <uicontrol status = "new">External Application Settings</uicontrol> dialog
 allows you to specify the location of the associated application
 and any command line syntax or parameters. All paths entered into
@@ -24,13 +19,16 @@ this dialog must use the slash as the directory delimiter.</p>
 dialog box</title><image href="images/options-externalapps.png"
 align="left" placement="break"  otherprops = "fmdpi:110"/></fig>
 <dl><dlentry><dt status = "changed">DITA-OT Directory</dt>
-<dd status = "changed">Specifies the main DITA-OT (DITA Open Toolkit)
-directory. (Required in order to use the <uicontrol>Generate Output</uicontrol> command.)</dd></dlentry>
+<dd status = "changed"><p>Specifies the main DITA-OT (DITA Open
+Toolkit) directory. (Required in order to use the <uicontrol>Generate
+Output</uicontrol> command.)</p></dd></dlentry>
 <dlentry><dt status = "changed">DITA-OT Environment Setup File</dt>
-<dd status = "changed">Specifies the DITA-OT environment setup batch
-file. This file is a copy (with minor modifications) of the default <filepath
-    status = "new">startcmd.bat</filepath> file provided with the
-OT. (Required in order to use the <uicontrol>Generate Output</uicontrol> command.)</dd></dlentry>
+<dd status = "changed"><p>Specifies the DITA-OT environment setup
+batch file. (Required in order to use the <uicontrol>Generate Output</uicontrol> command.)</p><p>For
+OT 2.x or later, this field specifies the <filepath>bin\dita.bat</filepath> file
+in the DITA-OT installation.</p><p>For OT 1.x, this file is a copy
+(with minor modifications) of the default <filepath status = "new">startcmd.bat</filepath> file
+provided with the OT. </p></dd></dlentry>
 <dlentry><dt status = "changed">Archive</dt>
 <dd><p status = "new">Specifies the command line syntax that is
 used to create the archive. Before creating the archive, the list
@@ -62,13 +60,13 @@ that folder.</p><p>The default command line syntax is the following.</p><p><code
 command syntax passes the content of the archive file list (%ZIPLISTFILE%)
 to the ditafmx-zip utility (the -@ option tells the utility to read
 from “stdin”). It then generates the archive file specified by the
-%ZIPFILE% variable.</p><p><note conref = "ditafmx_ref_createarchive.xml#id08C8E60035Z/id4de0563c-dac4-4e17-aa76-6356b853ab27"
+%ZIPFILE% variable.</p><p><note conref="ditafmx_ref_createarchive.xml#id08C8E60035Z/id4de0563c-dac4-4e17-aa76-6356b853ab27"
 status = "changed"></note></p></dd></dlentry>
 <dlentry><dt status = "changed">Default Text Editor</dt>
-<dd status = "changed">Specifies the application used to edit a <synph
-    status = "new" outputclass = "element">coderef</synph> when
+<dd status = "changed"><p>Specifies the application used to edit
+a <synph status = "new" outputclass = "element">coderef</synph> when
 the Text Editor button is selected in the Coderef Manager dialog.
 Enter the full path and file name to the application executable
-file.</dd></dlentry>
+file.</p></dd></dlentry>
 <dlentry><dt status = "changed">Ditaval Manager</dt>
-<dd>This feature is not currently enabled.</dd></dlentry></dl></body></topic>
+<dd><p>This feature is not currently enabled.</p></dd></dlentry></dl></body></topic>

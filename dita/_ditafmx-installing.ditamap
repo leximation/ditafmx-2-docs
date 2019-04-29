@@ -1,109 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
 <map id = "id08b719a1-487b-4114-beb6-2f7a1da8a884"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
 <title>Installing DITA-FMx</title>
 <topicmeta><author>scottp</author>
 <critdates><created date = "2014-07-31"/>
-<revised modified = "2015-09-14"/></critdates>
+<revised modified = "2019-03-24"/></critdates>
 <othermeta name = "fmx-root-map" content = "_ditafmx.ditamap"
     status = "new"/></topicmeta>
 <topicref navtitle = "Installation and Setup"
     href = "ditafmx_installing.xml" collection-type = "sequence"
-    type = "topic">
+    type = "topic"><topicmeta><navtitle>Installation and Setup</navtitle></topicmeta>
 <topicref navtitle = "Before Running the Installer"
     href = "ditafmx_installing_first.xml" collection-type = "family"
-    type = "topic" status = "changed">
+    type = "topic" status = "changed"><topicmeta><navtitle>Before
+Running the Installer</navtitle></topicmeta>
+<topicref
+    navtitle = "FrameMaker 8/9/10/11/12/2015 Installation Requirements"
+    href = "ditafmx_installing_first_fm80.xml" type = "topic">
+<topicmeta><navtitle>Installing DITA-FMx for the First Time</navtitle></topicmeta>
+<topicref navtitle = "Migrating from FM-DITA to DITA-FMx"
+    href = "ditafmx_installing_migratingfromfm89.xml" type = "topic">
+<topicmeta><navtitle>Migrating from FM-DITA to DITA-FMx</navtitle></topicmeta></topicref>
+<topicref navtitle = "FrameMaker 7.2 Installation Requirements"
+    href = "ditafmx_installing_first_fm72.xml" type = "topic">
+<topicmeta><navtitle>FrameMaker 7.2 Installation Requirements</navtitle></topicmeta></topicref>
 <topicref navtitle = "Upgrading from DITA-FMx 1.0"
     href = "ditafmx_installing_upgrading.xml" type = "topic"
     status = "changed"><topicmeta><navtitle>Upgrading from DITA-FMx
-1.0 or 1.1</navtitle></topicmeta></topicref>
+1.0 or 1.1</navtitle></topicmeta></topicref></topicref>
 <topicref navtitle = "Installing a DITA-FMx Update"
-    href = "ditafmx_installing_update.xml" type = "topic"></topicref>
-<topicref navtitle = "Migrating from FM-DITA to DITA-FMx"
-    href = "ditafmx_installing_migratingfromfm89.xml" type = "topic"></topicref>
-<topicref
-    navtitle = "FrameMaker 8/9/10/11/12/2015 Installation Requirements"
-    href = "ditafmx_installing_first_fm80.xml" type = "topic"></topicref>
-<topicref navtitle = "FrameMaker 7.2 Installation Requirements"
-    href = "ditafmx_installing_first_fm72.xml" type = "topic"></topicref></topicref>
+    href = "ditafmx_installing_update.xml" type = "topic"><topicmeta><navtitle>Installing
+a DITA-FMx Update</navtitle></topicmeta></topicref></topicref>
 <topicref navtitle = "Run the Installer Application"
-    href = "ditafmx_installing_installer.xml" type = "topic"></topicref>
+    href = "ditafmx_installing_installer.xml" type = "topic">
+<topicmeta><navtitle>Run the Installer Application</navtitle></topicmeta></topicref>
 <topicref navtitle = "DITA Structure Applications"
     href = "ditafmx_installing_apps.xml" collection-type = "family"
-    type = "topic">
+    type = "topic"><topicmeta><navtitle>DITA Structure Applications</navtitle></topicmeta>
 <topicref href = "ditafmx_fm131appinstall.xml" type = "concept"
     status = "new"><topicmeta><navtitle>Special Instructions for
-FM 2015</navtitle></topicmeta></topicref>
+FM12 and Earlier</navtitle></topicmeta></topicref>
 <topicref navtitle = "Manual Installation of the Structure Applications"
-    href = "ditafmx_installing_apps_manual.xml" type = "topic"></topicref>
+    href = "ditafmx_installing_apps_manual.xml" type = "topic">
+<topicmeta><navtitle>Manual Installation of the Structure Applications</navtitle></topicmeta></topicref>
 <topicref href = "ditafmx_apprelocation.xml" type = "concept"
     status = "new"><topicmeta><navtitle>Alternate Location for the
 Structure Applications</navtitle></topicmeta></topicref>
 <topicref navtitle = "Description of the Structure Application Files"
-    href = "ditafmx_installing_apps_descr.xml" type = "topic"></topicref></topicref>
+    href = "ditafmx_installing_apps_descr.xml" type = "topic">
+<topicmeta><navtitle>Description of the Structure Application Files</navtitle></topicmeta></topicref></topicref>
 <topicref navtitle = "Initializing DITA-FMx"
-    href = "ditafmx_installing_initializing.xml" type = "topic"></topicref>
+    href = "ditafmx_installing_initializing.xml" type = "topic">
+<topicmeta><navtitle>Initializing DITA-FMx</navtitle></topicmeta></topicref>
 <topicref navtitle = "Advanced Installation/Customization Issues"
-    href = "ditafmx_installing_advanced.xml" type = "topic">
+    href = "ditafmx_installing_advanced.xml" type = "topic"><topicmeta><navtitle>Advanced
+Installation/Customization Issues</navtitle></topicmeta>
 <topicref navtitle = "Developing Custom Structure Applications"
     href = "ditafmx_customizingapps.xml" collection-type = "family"
-    type = "topic">
+    type = "topic"><topicmeta><navtitle>Developing Custom Structure
+Applications</navtitle></topicmeta>
 <topicref navtitle = "Cloning the Default Structure Applications"
-    href = "ditafmx_cloningtapps.xml" type = "task"></topicref>
+    href = "ditafmx_cloningtapps.xml" type = "task"><topicmeta><navtitle>Cloning
+the Default Structure Applications</navtitle></topicmeta></topicref>
 <topicref
     navtitle = "Customizing the Formatting of the Default Structure Applications"
-    href = "ditafmx_formattingapps.xml" type = "topic"></topicref>
+    href = "ditafmx_formattingapps.xml" type = "topic"><topicmeta><navtitle>Customizing
+the Formatting of the Default Structure Applications</navtitle></topicmeta></topicref>
 <topicref navtitle = "Adding Map to Book Metadata Mappings"
-    href = "ditafmx_addingnewfmditabookattributes.xml" type = "topic"></topicref>
+    href = "ditafmx_addingnewfmditabookattributes.xml" type = "topic">
+<topicmeta><navtitle>Adding Map to Book Metadata Mappings</navtitle></topicmeta></topicref>
 <topicref navtitle = "Required Element Definitions"
     href = "ditafmx_apprequirements.xml" collection-type = "family"
-    type = "topic" status = "changed">
+    type = "topic" status = "changed"><topicmeta><navtitle>DITA-FMx
+Specific Element Definitions</navtitle></topicmeta>
+<topicref navtitle = "fm-reflabel and Topic References "
+    href = "ditafmx_app_topicref.xml" type = "topic"><topicmeta><navtitle>fm-reflabel
+and Topic References</navtitle></topicmeta></topicref>
+<topicref navtitle = "reltable" href = "ditafmx_app_reltable.xml"
+    type = "topic"><topicmeta><navtitle>reltable</navtitle></topicmeta></topicref>
+<topicref navtitle = "fm-xref" href = "ditafmx_app_fm-xref.xml"
+    type = "topic"><topicmeta><navtitle>fm-xref</navtitle></topicmeta></topicref>
+<topicref navtitle = "fm-link and fm-linkref"
+    href = "ditafmx_app_fm-link.xml" type = "topic"><topicmeta><navtitle>fm-link
+and fm-linkref</navtitle></topicmeta></topicref>
+<topicref navtitle = "link and fm-linklabel"
+    href = "ditafmx_app_link.xml" type = "topic"><topicmeta><navtitle>link
+and fm-linklabel</navtitle></topicmeta></topicref>
 <topicref navtitle = "fm-indexterm"
-    href = "ditafmx_app_fm-indexterm.xml" type = "topic"></topicref>
+    href = "ditafmx_app_fm-indexterm.xml" type = "topic"><topicmeta><navtitle>fm-indexterm</navtitle></topicmeta></topicref>
 <topicref navtitle = "fm-data-marker"
-    href = "ditafmx_app_fm-data-marker.xml" type = "topic"></topicref>
+    href = "ditafmx_app_fm-data-marker.xml" type = "topic"><topicmeta><navtitle>fm-data-marker</navtitle></topicmeta></topicref>
 <topicref href = "ditafmx_app_fm-var.xml" type = "topic" status = "new">
 <topicmeta><navtitle>fm-var</navtitle></topicmeta></topicref>
-<topicref navtitle = "fm-xref" href = "ditafmx_app_fm-xref.xml"
-    type = "topic"></topicref>
-<topicref navtitle = "fm-link and fm-linkref"
-    href = "ditafmx_app_fm-link.xml" type = "topic"></topicref>
-<topicref navtitle = "link and fm-linklabel"
-    href = "ditafmx_app_link.xml" type = "topic"></topicref>
-<topicref navtitle = "simpletable-Based Tables"
-    href = "ditafmx_app_simpletable.xml" type = "topic"></topicref>
 <topicref navtitle = "image" href = "ditafmx_app_imagesupport.xml"
-    type = "topic"></topicref>
-<topicref navtitle = "fm-reflabel and Topic References "
-    href = "ditafmx_app_topicref.xml" type = "topic"></topicref>
-<topicref navtitle = "reltable" href = "ditafmx_app_reltable.xml"
-    type = "topic"></topicref>
+    type = "topic"><topicmeta><navtitle>image</navtitle></topicmeta></topicref>
+<topicref navtitle = "simpletable-Based Tables"
+    href = "ditafmx_app_simpletable.xml" type = "topic"><topicmeta><navtitle>simpletable-Based
+Tables</navtitle></topicmeta></topicref></topicref>
 <topicref navtitle = "Book Application Elements"
-    href = "ditafmx_app_bookapplicationelements.xml" type = "topic"></topicref></topicref></topicref>
-<topicref navtitle = "Setting Up to Use the Generate Output Command"
+    href = "ditafmx_app_bookapplicationelements.xml" type = "topic">
+<topicmeta><navtitle>DITA-FMx Specific Book Application Elements</navtitle></topicmeta></topicref></topicref>
+<topicref navtitle = "Publishing with the DITA Open Toolkit"
     href = "ditafmx_installing_genoutput.xml" type = "topic"></topicref>
 <topicref navtitle = "Setting Up to Use Cross-References "
-    href = "ditafmx_installing_crossrefs.xml" type = "topic"></topicref>
+    href = "ditafmx_installing_crossrefs.xml" type = "topic">
+<topicmeta><navtitle>Setting Up to Use Cross-References</navtitle></topicmeta></topicref>
 <topicref navtitle = "Creating Element Templates"
     href = "ditafmx_installing_creatingelementtemplates.xml"
-    type = "topic"></topicref>
-<topicref href = "ditafmx_installing_fmx11and20.xml" type = "topic">
-<topicmeta><navtitle>Switching Between DITA-FMx 1.1 and 2.0</navtitle></topicmeta></topicref>
+    type = "topic"><topicmeta><navtitle>Creating Element Templates</navtitle></topicmeta></topicref>
 <topicref
     navtitle = "Switching Between DITA-FMx and FM8/9/10/11/12/2015-DITA"
-    href = "ditafmx_installing_usingfm8dita.xml" type = "topic"></topicref>
+    href = "ditafmx_installing_usingfm8dita.xml" type = "topic">
+<topicmeta><navtitle>Switching Between DITA-FMx and FM-DITA</navtitle></topicmeta></topicref>
+<topicref href = "ditafmx_installing_fmx11and20.xml" type = "topic">
+<topicmeta><navtitle>Switching Between DITA-FMx 1.1 and 2.0</navtitle></topicmeta></topicref>
 <topicref navtitle = "INI-Only Settings"
-    href = "ditafmx_ref_inionly.xml" type = "topic"></topicref></topicref>
+    href = "ditafmx_ref_inionly.xml" type = "topic"><topicmeta><navtitle>INI-Only
+Settings</navtitle></topicmeta></topicref></topicref>
 <topicref navtitle = "Uninstalling DITA-FMx"
-    href = "ditafmx_installing_uninstall.xml" type = "topic"></topicref></topicref>
+    href = "ditafmx_installing_uninstall.xml" type = "topic">
+<topicmeta><navtitle>Uninstalling DITA-FMx</navtitle></topicmeta></topicref></topicref>
 <reltable locktitle = "yes" toc = "no" id = "table-one">
 <relheader>
 <relcolspec linking = "sourceonly"></relcolspec>
@@ -112,190 +130,225 @@ Structure Applications</navtitle></topicmeta></topicref>
 <relrow>
 <relcell collection-type = "family" linking = "normal">
 <topicref navtitle = "Installation and Setup"
-    href = "ditafmx_installing.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_installing.xml" type = "topic"><topicmeta><navtitle>Installation
+and Setup</navtitle></topicmeta></topicref></relcell>
 <relcell>
 <topicref navtitle = "Using DITA-FMx" href = "ditafmx_using.xml"
-    type = "topic"></topicref>
+    type = "topic"><topicmeta><navtitle>Using DITA-FMx</navtitle></topicmeta></topicref>
 <topicref navtitle = "DITA-FMx Commands" href = "ditafmx_ref_main.xml"
-    type = "topic"></topicref>
+    type = "topic"><topicmeta><navtitle>DITA-FMx Commands</navtitle></topicmeta></topicref>
 <topicref navtitle = "Extending DITA-FMx" href = "ditafmx_api.xml"
-    type = "topic"></topicref></relcell>
+    type = "topic"><topicmeta><navtitle>Extending DITA-FMx</navtitle></topicmeta></topicref></relcell>
 </relrow>
 <relrow>
 <relcell>
 <topicref navtitle = "Before Running the Installer"
-    href = "ditafmx_installing_first.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_installing_first.xml" type = "topic"><topicmeta><navtitle>Before
+Running the Installer</navtitle></topicmeta></topicref></relcell>
 <relcell>
 <topicref navtitle = "Run the Installer Application"
-    href = "ditafmx_installing_installer.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_installing_installer.xml" type = "topic">
+<topicmeta><navtitle>Run the Installer Application</navtitle></topicmeta></topicref></relcell>
 </relrow>
 <relrow>
 <relcell>
 <topicref navtitle = "Upgrading from DITA-FMx 1.0 or 1.1"
-    href = "ditafmx_installing_upgrading.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_installing_upgrading.xml" type = "topic">
+<topicmeta><navtitle>Upgrading from DITA-FMx 1.0 or 1.1</navtitle></topicmeta></topicref></relcell>
 <relcell>
 <topicref navtitle = "Reinstalling DITA-FMx"
-    href = "ditafmx_installing_update.xml" type = "topic"></topicref>
+    href = "ditafmx_installing_update.xml" type = "topic"><topicmeta><navtitle>Reinstalling
+DITA-FMx</navtitle></topicmeta></topicref>
 <topicref navtitle = "Structure Application Requirements"
-    href = "ditafmx_apprequirements.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_apprequirements.xml" type = "topic"><topicmeta><navtitle>Structure
+Application Requirements</navtitle></topicmeta></topicref></relcell>
 </relrow>
 <relrow>
 <relcell>
 <topicref navtitle = "Installing a DITA-FMx Update"
-    href = "ditafmx_installing_update.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_installing_update.xml" type = "topic"><topicmeta><navtitle>Installing
+a DITA-FMx Update</navtitle></topicmeta></topicref></relcell>
 <relcell status = "changed">
 <topicref href = "ditafmx_fm131appinstall.xml" type = "concept"
     status = "new"><topicmeta><navtitle>Special Instructions for
-FM 2015</navtitle></topicmeta></topicref></relcell>
+FM12 and Earlier</navtitle></topicmeta></topicref></relcell>
 </relrow>
 <relrow>
 <relcell>
 <topicref navtitle = "Migrating from FM-DITA to DITA-FMx"
-    href = "ditafmx_installing_migratingfromfm89.xml" type = "topic"></topicref></relcell>
-<relcell></relcell>
+    href = "ditafmx_installing_migratingfromfm89.xml" type = "topic">
+<topicmeta><navtitle>Migrating from FM-DITA to DITA-FMx</navtitle></topicmeta></topicref></relcell>
+<relcell status = "changed">
+<topicref navtitle = "Switching Between DITA-FMx and FM8-DITA"
+    href = "ditafmx_installing_usingfm8dita.xml" type = "topic">
+<topicmeta><navtitle>Switching Between DITA-FMx and FM-DITA</navtitle></topicmeta></topicref></relcell>
 </relrow>
 <relrow>
 <relcell>
 <topicref navtitle = "FrameMaker 8/9/10/11/12 Installation Requirements"
-    href = "ditafmx_installing_first_fm80.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_installing_first_fm80.xml" type = "topic">
+<topicmeta><navtitle>Installing DITA-FMx for the First Time</navtitle></topicmeta></topicref></relcell>
 <relcell status = "changed">
 <topicref navtitle = "Switching Between DITA-FMx and FM8-DITA"
-    href = "ditafmx_installing_usingfm8dita.xml" type = "topic"></topicref>
+    href = "ditafmx_installing_usingfm8dita.xml" type = "topic">
+<topicmeta><navtitle>Switching Between DITA-FMx and FM-DITA</navtitle></topicmeta></topicref>
 <topicref navtitle = "Run the Installer Application"
-    href = "ditafmx_installing_installer.xml" type = "topic"></topicref>
+    href = "ditafmx_installing_installer.xml" type = "topic">
+<topicmeta><navtitle>Run the Installer Application</navtitle></topicmeta></topicref>
 <topicref href = "ditafmx_fm131appinstall.xml" type = "concept"
     status = "new"><topicmeta><navtitle>Special Instructions for
-FM 2015</navtitle></topicmeta></topicref></relcell>
+FM12 and Earlier</navtitle></topicmeta></topicref></relcell>
 </relrow>
 <relrow>
 <relcell>
 <topicref navtitle = "FrameMaker 7.2 Installation Requirements"
-    href = "ditafmx_installing_first_fm72.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_installing_first_fm72.xml" type = "topic">
+<topicmeta><navtitle>FrameMaker 7.2 Installation Requirements</navtitle></topicmeta></topicref></relcell>
 <relcell></relcell>
 </relrow>
 <relrow>
 <relcell>
 <topicref navtitle = "Run the Installer Application"
-    href = "ditafmx_installing_installer.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_installing_installer.xml" type = "topic">
+<topicmeta><navtitle>Run the Installer Application</navtitle></topicmeta></topicref></relcell>
 <relcell></relcell>
 </relrow>
 <relrow>
 <relcell>
 <topicref navtitle = "DITA Structure Applications"
     href = "ditafmx_installing_apps.xml" collection-type = "family"
-    type = "topic"></topicref></relcell>
+    type = "topic"><topicmeta><navtitle>DITA Structure Applications</navtitle></topicmeta></topicref></relcell>
 <relcell></relcell>
 </relrow>
 <relrow>
 <relcell status = "changed">
 <topicref href = "ditafmx_fm131appinstall.xml" type = "concept"
     status = "new"><topicmeta><navtitle>Special Instructions for
-FM 2015</navtitle></topicmeta></topicref></relcell>
+FM12 and Earlier</navtitle></topicmeta></topicref></relcell>
 <relcell></relcell>
 </relrow>
 <relrow>
 <relcell>
 <topicref navtitle = "Manual Installation of the Structure Applications"
-    href = "ditafmx_installing_apps_manual.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_installing_apps_manual.xml" type = "topic">
+<topicmeta><navtitle>Manual Installation of the Structure Applications</navtitle></topicmeta></topicref></relcell>
 <relcell></relcell>
 </relrow>
 <relrow>
 <relcell>
 <topicref navtitle = "Description of the Structure Application Files"
-    href = "ditafmx_installing_apps_descr.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_installing_apps_descr.xml" type = "topic">
+<topicmeta><navtitle>Description of the Structure Application Files</navtitle></topicmeta></topicref></relcell>
 <relcell></relcell>
 </relrow>
 <relrow>
 <relcell>
 <topicref navtitle = "Initializing DITA-FMx"
-    href = "ditafmx_installing_initializing.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_installing_initializing.xml" type = "topic">
+<topicmeta><navtitle>Initializing DITA-FMx</navtitle></topicmeta></topicref></relcell>
 <relcell></relcell>
 </relrow>
 <relrow>
 <relcell>
 <topicref navtitle = "Advanced Installation/Customization Issues"
-    href = "ditafmx_installing_advanced.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_installing_advanced.xml" type = "topic"><topicmeta><navtitle>Advanced
+Installation/Customization Issues</navtitle></topicmeta></topicref></relcell>
 <relcell></relcell>
 </relrow>
 <relrow>
 <relcell>
 <topicref navtitle = "Developing Custom Structure Applications"
     href = "ditafmx_customizingapps.xml" collection-type = "family"
-    type = "topic"></topicref></relcell>
+    type = "topic"><topicmeta><navtitle>Developing Custom Structure
+Applications</navtitle></topicmeta></topicref></relcell>
 <relcell></relcell>
 </relrow>
 <relrow>
 <relcell>
 <topicref navtitle = "Cloning the Default Structure Applications"
-    href = "ditafmx_cloningtapps.xml" type = "task"></topicref></relcell>
+    href = "ditafmx_cloningtapps.xml" type = "task"><topicmeta><navtitle>Cloning
+the Default Structure Applications</navtitle></topicmeta></topicref></relcell>
 <relcell></relcell>
 </relrow>
 <relrow>
 <relcell>
 <topicref
     navtitle = "Customizing the Formatting of the Default Structure Applications"
-    href = "ditafmx_formattingapps.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_formattingapps.xml" type = "topic"><topicmeta><navtitle>Customizing
+the Formatting of the Default Structure Applications</navtitle></topicmeta></topicref></relcell>
 <relcell></relcell>
 </relrow>
 <relrow>
 <relcell>
 <topicref navtitle = "Adding Map to Book Metadata Mappings"
-    href = "ditafmx_addingnewfmditabookattributes.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_addingnewfmditabookattributes.xml" type = "topic">
+<topicmeta><navtitle>Adding Map to Book Metadata Mappings</navtitle></topicmeta></topicref></relcell>
 <relcell>
 <topicref navtitle = "Passing Map-level Metadata to the FM Book"
     href = "ditafmx_fmditabook_attributes.xml" type = "topic"
-    status = "new"></topicref></relcell>
+    status = "new"><topicmeta><navtitle>Passing Map-level Metadata
+to the FM Book</navtitle></topicmeta></topicref></relcell>
 </relrow>
 <relrow>
 <relcell>
 <topicref navtitle = "Required Element Definitions"
-    href = "ditafmx_apprequirements.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_apprequirements.xml" type = "topic"><topicmeta><navtitle>Required
+Element Definitions</navtitle></topicmeta></topicref></relcell>
 <relcell>
 <topicref navtitle = "Customizing the Default Structure Applications"
-    href = "ditafmx_customizingapps.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_customizingapps.xml" type = "topic"><topicmeta><navtitle>Customizing
+the Default Structure Applications</navtitle></topicmeta></topicref></relcell>
 </relrow>
 <relrow>
 <relcell>
 <topicref navtitle = "simpletable-Based Tables"
-    href = "ditafmx_app_simpletable.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_app_simpletable.xml" type = "topic"><topicmeta><navtitle>simpletable-Based
+Tables</navtitle></topicmeta></topicref></relcell>
 <relcell>
 <topicref navtitle = "Element Mapping"
-    href = "ditafmx_ref_elementmapping.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_ref_elementmapping.xml" type = "topic"><topicmeta><navtitle>Element
+Mapping</navtitle></topicmeta></topicref></relcell>
 </relrow>
 <relrow>
 <relcell>
 <topicref navtitle = "Customizing the Default Structure Applications"
-    href = "ditafmx_customizingapps.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_customizingapps.xml" type = "topic"><topicmeta><navtitle>Customizing
+the Default Structure Applications</navtitle></topicmeta></topicref></relcell>
 <relcell>
 <topicref navtitle = "Structure Application Requirements"
-    href = "ditafmx_apprequirements.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_apprequirements.xml" type = "topic"><topicmeta><navtitle>Structure
+Application Requirements</navtitle></topicmeta></topicref></relcell>
 </relrow>
 <relrow>
 <relcell>
-<topicref navtitle = "Setting Up to Use the Generate Output Command"
+<topicref navtitle = "Publishing with the DITA Open Toolkit"
     href = "ditafmx_installing_genoutput.xml" type = "topic"></topicref></relcell>
 <relcell>
 <topicref navtitle = "Generate Output"
-    href = "ditafmx_ref_genoutput.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_ref_genoutput.xml" type = "topic"><topicmeta><navtitle>Generate
+Output</navtitle></topicmeta></topicref></relcell>
 </relrow>
 <relrow>
 <relcell>
 <topicref navtitle = "Setting Up to Use Cross-References "
-    href = "ditafmx_installing_crossrefs.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_installing_crossrefs.xml" type = "topic">
+<topicmeta><navtitle>Setting Up to Use Cross-References</navtitle></topicmeta></topicref></relcell>
 <relcell>
 <topicref navtitle = "Using the Reference Manager"
-    href = "ditafmx_ref_refmanager.xml" type = "topic"></topicref>
+    href = "ditafmx_ref_refmanager.xml" type = "topic"><topicmeta><navtitle>Using
+the Reference Manager</navtitle></topicmeta></topicref>
 <topicref navtitle = "Xref to Hyperlink"
-    href = "ditafmx_ref_xreftohyperlink.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_ref_xreftohyperlink.xml" type = "topic"><topicmeta><navtitle>Xref
+to Hyperlink</navtitle></topicmeta></topicref></relcell>
 </relrow>
 <relrow>
 <relcell>
 <topicref navtitle = "Creating Element Templates"
     href = "ditafmx_installing_creatingelementtemplates.xml"
-    type = "topic"></topicref></relcell>
+    type = "topic"><topicmeta><navtitle>Creating Element Templates</navtitle></topicmeta></topicref></relcell>
 <relcell>
 <topicref navtitle = "New DITA File" href = "ditafmx_ref_newfile.xml"
-    type = "topic"></topicref></relcell>
+    type = "topic"><topicmeta><navtitle>New DITA File</navtitle></topicmeta></topicref></relcell>
 </relrow>
 <relrow>
 <relcell>
@@ -307,25 +360,30 @@ FM 2015</navtitle></topicmeta></topicref></relcell>
 <relcell>
 <topicref
     navtitle = "Switching Between DITA-FMx and FM8/9/10/11/12-DITA"
-    href = "ditafmx_installing_usingfm8dita.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_installing_usingfm8dita.xml" type = "topic">
+<topicmeta><navtitle>Switching Between DITA-FMx and FM-DITA</navtitle></topicmeta></topicref></relcell>
 <relcell>
 <topicref navtitle = "Before Running the Installer - FM8"
-    href = "ditafmx_installing_first_fm80.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_installing_first_fm80.xml" type = "topic">
+<topicmeta><navtitle>Installing DITA-FMx for the First Time</navtitle></topicmeta></topicref></relcell>
 </relrow>
 <relrow>
 <relcell>
 <topicref navtitle = "INI-Only Settings"
-    href = "ditafmx_ref_inionly.xml" type = "topic"></topicref></relcell>
+    href = "ditafmx_ref_inionly.xml" type = "topic"><topicmeta><navtitle>INI-Only
+Settings</navtitle></topicmeta></topicref></relcell>
 <relcell>
 <topicref navtitle = "DITA Options" href = "ditafmx_ref_options.xml"
-    type = "topic"></topicref>
+    type = "topic"><topicmeta><navtitle>DITA Options</navtitle></topicmeta></topicref>
 <topicref navtitle = "Tips and Troubleshooting"
-    href = "ditafmx_tips.xml" type = "topic"></topicref>
+    href = "ditafmx_tips.xml" type = "topic"><topicmeta><navtitle>Tips
+and Troubleshooting</navtitle></topicmeta></topicref>
 <topicref navtitle = "Using the Reference Manager"
-    href = "ditafmx_ref_refmanager.xml" type = "topic"></topicref>
+    href = "ditafmx_ref_refmanager.xml" type = "topic"><topicmeta><navtitle>Using
+the Reference Manager</navtitle></topicmeta></topicref>
 <topicref navtitle = "Working with Images" href = "ditafmx_images.xml"
-    type = "topic"></topicref>
+    type = "topic"><topicmeta><navtitle>Working with Images</navtitle></topicmeta></topicref>
 <topicref navtitle = "Working with Tables" href = "ditafmx_tables.xml"
-    type = "topic"></topicref></relcell>
+    type = "topic"><topicmeta><navtitle>Working with Tables</navtitle></topicmeta></topicref></relcell>
 </relrow>
 </reltable></map>

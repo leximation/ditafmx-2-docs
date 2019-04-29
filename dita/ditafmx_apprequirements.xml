@@ -9,38 +9,40 @@
 ]>
 <topic id = "id0833I0F01HS"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
-<title>Required Element Definitions</title>
+<title>DITA-FMx Specific Element Definitions</title>
 <shortdesc>To make the most of the authoring and publishing features
 in DITA-FMx, some elements must be set up in a specific manner.
 This topic describes those requirements.</shortdesc>
 <prolog><author>Scott Prentice</author>
+<author>scottp</author>
 <critdates><created date = "2008-03-03"/>
-<revised modified = "2014-03-29"/></critdates></prolog>
-<body><p status = "changed">The easiest way to get up and running
-with DITA in FrameMaker is to use the default structure applications
-provided with DITA-FMx; they will “just work” right out of the box.
-Once you’re comfortable with things and want to make some adjustments
-to fit your house style or want to specialize, you can either clone
-the apps provided, use some DITA apps provided by someone else,
-or make your own from scratch.</p>
-<p status = "new">If you want to customize the apps provided with
-DITA-FMx, refer to the topic <xref href = "ditafmx_customizingapps.xml#id0837A060NHS"
+<revised modified = "2017-07-13"/></critdates></prolog>
+<body><p>The easiest way to get up and running with DITA in FrameMaker
+is to use the default structure applications provided with DITA-FMx;
+they will “just work” right out of the box. Once you’re comfortable
+with things and want to make some adjustments to fit your house
+style or want to specialize, you can either clone the apps provided,
+use some DITA apps provided by someone else, or make your own from
+scratch.</p>
+<p>If you want to customize the apps provided with DITA-FMx, refer
+to the topic <xref href = "ditafmx_customizingapps.xml#id0837A060NHS"
 type = "topic" format = "dita" scope = "local"></xref>. If you want
 to use other applications or want to make your own, just be sure
 that they adhere to the requirements expected by DITA-FMx. In order
 to implement certain DITA features in DITA-FMx, the applications
 must be set up in a very specific way.</p>
-<p>The information in the following topics describes the requirements
-that need to exist in a DITA structure application so that it functions
-properly with DITA-FMx. All of the modifications described affect
-the structure application files only (EDD, template, rules file),
-no modifications need to be made to the DITA DTD files. The items
-are grouped by feature, some of these features require the addition
-of multiple elements or structure application modifications. If
-you don’t want to make use of a given feature, you can skip the
-modifications described in that section. There are many other rules
-and EDD modifications that are needed for proper use of DITA files
-in FrameMaker, these are not discussed; only those features that
-are required or used by DITA-FMx are documented at this time.</p>
+<p status = "changed">The information in the following topics describes
+the elements and other requirements that need to exist in a DITA
+structure application so that it functions properly with DITA-FMx.
+All of the modifications described affect the structure application files
+only (EDD, template, rules file), no modifications need to be made
+to the DITA DTD files. The items are grouped by feature, some of
+these features require the addition of multiple elements or structure
+application modifications. If you don’t want to make use of a given
+feature, you can skip the modifications described in that section.
+There are many other rules and EDD modifications that are needed
+for proper use of DITA files in FrameMaker, these are not discussed;
+only those features that are required or used by DITA-FMx are documented
+at this time.</p>
 <p>The easiest way to set up these features in your custom application
 is to copy and paste from the default DITA-FMx applications.</p></body></topic>

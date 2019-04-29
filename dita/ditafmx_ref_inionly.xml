@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
 <?dtall dict="ANT:&lt;buildname"?><?dtall dict="AntBuild"?><?dtall dict="AntCommand"?><?dtall
 dict="AntScript"?><?dtall dict="app"?><?dtall dict="BaselineOffset"?><?dtall
@@ -41,33 +35,29 @@ dict="XrefProcessing"?><?dtall dict="xml:lang"?><topic
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
 <title>INI-Only Settings</title>
 <shortdesc>Describes the settings that must be applied manually
-in the <filepath conref = "ditafmx_shared.xml#common/ditafm-ini"
-class = "+ topic/ph sw-d/filepath "></filepath> file.</shortdesc>
+in the <filepath conref="ditafmx_shared.xml#common/ditafm-ini" class
+= "+ topic/ph sw-d/filepath "></filepath> file.</shortdesc>
 <prolog><author>Scott Prentice</author>
 <author>test</author>
 <author>scottp</author>
 <critdates><created date = "2008-02-18"/>
-<revised modified = "2015-08-10"/></critdates></prolog>
-<body status = "changed"><p id = "id1414G0HK05Z">The default values
-for these parameters should be sufficient for most people, but there
-are reasons that you may want to change the default behavior. The
-following settings must be changed manually in the <filepath conref
-= "ditafmx_shared.xml#common/ditafm-ini" class = "+ topic/ph sw-d/filepath
-"></filepath> file.</p>
-<dl status = "changed"><dlentry status = "changed">
-<dt status = "changed">INIOnly section</dt>
-<dd status = "new"><p status = "new"><indexterm status = "new">FlattenedConrefAttr,
-INI parameter</indexterm><indexterm status = "new">flattened conref,
-apply formatting</indexterm><indexterm status = "new">formatting
-of flattened conrefs</indexterm><b status = "new">FlattenedConrefAttr</b> -
-Specifies an attribute name to set on conref elements that have
-been flattened during the book-build process. By default this is disabled
-(set to an empty string), but if you set this to an attribute name
-such as “outputclass”, that attribute will be set with the value
-of “flattened-conref”. This can be useful if you want to apply formatting
-to content that was previously a conref (but has been flattened).</p></dd>
-<dd status = "changed"><p status = "new"><indexterm status = "new">MaxRefLevels,
-INI parameter</indexterm><b status = "changed">MaxRefLevels</b> -
+<revised modified = "2019-03-24"/></critdates></prolog>
+<body><p id = "id1414G0HK05Z">The default values for these parameters
+should be sufficient for most people, but there are reasons that
+you may want to change the default behavior. The following settings
+must be changed manually in the <filepath conref="ditafmx_shared.xml#common/ditafm-ini"
+class = "+ topic/ph sw-d/filepath "></filepath> file.</p>
+<dl><dlentry><dt>INIOnly section</dt>
+<dd><p><indexterm>FlattenedConrefAttr, INI parameter</indexterm><indexterm>flattened
+conref, apply formatting</indexterm><indexterm>formatting of flattened
+conrefs</indexterm><b>FlattenedConrefAttr</b> - Specifies an attribute
+name to set on conref elements that have been flattened during the
+book-build process. By default this is disabled (set to an empty
+string), but if you set this to an attribute name such as “outputclass”,
+that attribute will be set with the value of “flattened-conref”. This
+can be useful if you want to apply formatting to content that was
+previously a conref (but has been flattened).</p></dd>
+<dd><p><indexterm>MaxRefLevels, INI parameter</indexterm><b>MaxRefLevels</b> -
 Specifies the number of nested files that are opened due to the
 auto-loading of references (xref or conref). If your files never
 have references within references (such as an xref within a conref),
@@ -79,12 +69,10 @@ will resolve (unless limited by this option). Valid values are 0
 through 9 or “*” (asterisk means unlimited levels). Setting this
 value to 0 disables the auto-updating of xrefs and conrefs. (Defaults
 to “2” if this parameter is missing or set to a null string.)</p><p
-    id = "id1414G0I0OY4" status = "new">This reference resolving
-process is used when generating a book from a map, but is not used
-while authoring unless the INIOnly/UseRefList parameter is set to
-“0”.</p></dd>
-<dd status = "changed"><p status = "changed"><indexterm>UseRefList,
-INI parameter</indexterm><b status = "changed">UseRefList</b> -
+    id = "id1414G0I0OY4">This reference resolving process is used
+when generating a book from a map, but is not used while authoring
+unless the INIOnly/UseRefList parameter is set to “0”.</p></dd>
+<dd><p><indexterm>UseRefList, INI parameter</indexterm><b>UseRefList</b> -
 Controls the way references are resolved while authoring. If set to
 “1” (the default), references (xrefs and conrefs) are resolved “on
 disk,” allowing for much faster processing and less time required
@@ -120,21 +108,21 @@ here use the syntax for shortcuts as specified in the FDK Reference.
 (Defaults to “~/F1”, Alt+F1, if this parameter is missing or set
 to a null string.)</p></dd>
 <dd><p><indexterm>DitaReference, INI parameter</indexterm><indexterm>element-based
-context sensitive Help</indexterm><indexterm>context sensitive Help</indexterm><b>DitaReference</b> -
-Specifies the name of the DITA Reference Help file (relative to
-the <filepath>FrameMaker\DITA-FMx</filepath> folder), which is used
-for element-based context sensitive Help. This Help file may be
-a CHM file or an EXE, or it may specify a URL (via the “http:” or
-“file:” protocols). If an EXE is specified, this is likely an AIR
-Help file, but may be any executable Help application set up to
-accept a command line parameter that indicates the target HTML filename
-to display. (Defaults to “ditafmx-ref.chm” if this parameter is
-missing or set to a null string.)</p><p>Displaying the DITA Reference
-Help uses a combination of this and two other parameters, DitaRefTargetType
-and DitaRefTargetPath. If a DITA document is open and the insertion
-point is within a DITA element, when the user presses Alt+F1 (as
-defined by the DitaHelpKeys parameter), the following action is issued:</p><p>&lt;<i>DitaReference</i>>
-[&lt;<i>DitaRefTargetPath</i>>]&lt;<i>element-tag</i>>&lt;<i>DitaRefTargetType</i>></p><p>If
+context sensi tive Help</indexterm><indexterm>context sensitive
+Help</indexterm><b>DitaReference</b> - Specifies the name of the
+DITA Reference Help file (relative to the <filepath>FrameMaker\DITA-FMx</filepath> folder),
+which is used for element-based context sensitive Help. This Help
+file may be a CHM file or an EXE, or it may specify a URL (via the
+“http:” or “file:” protocols). If an EXE is specified, this is likely
+an AIR Help file, but may be any executable Help application set
+up to accept a command line parameter that indicates the target
+HTML filename to display. (Defaults to “ditafmx-ref.chm” if this
+parameter is missing or set to a null string.)</p><p>Displaying
+the DITA Reference Help uses a combination of this and two other parameters,
+DitaRefTargetType and DitaRefTargetPath. If a DITA document is open
+and the insertion point is within a DITA element, when the user
+presses Alt+F1 (as defined by the DitaHelpKeys parameter), the following
+action is issued:</p><p>&lt;<i>DitaReference</i>> [&lt;<i>DitaRefTargetPath</i>>]&lt;<i>element-tag</i>>&lt;<i>DitaRefTargetType</i>></p><p>If
 the DitaReference parameter specifies a CHM or EXE file, the DitaRefTargetPath,
 selected element tag name, and the DitaRefTargetType (file extension) values
 are concatenated and passed to the Help system.</p><p>If the DitaReference
@@ -144,82 +132,92 @@ are concatenated and the resulting URL is passed to the default
 web browser application.</p></dd>
 <dd><p><indexterm>DitaRefTargetType, INI parameter</indexterm><b>DitaRefTargetType</b> -
 Specifies the file extension of target topics in the “DitaReference”
-Help file for context sensitive Help. For additional information,
-refer to the DitaReference parameter above. (Defaults to “.html”
-if this parameter is missing or set to a null string.)</p></dd>
+Help file for context sensitive Help. For additional information, refer
+to the DitaReference parameter above. (Defaults to “.html” if this
+parameter is missing or set to a null string.)</p></dd>
 <dd><p><indexterm>DitaRefTargetPath, INI parameter</indexterm><b>DitaRefTargetPath</b> -
 Specifies an optional “path” to target topics in the “DitaReference”
-Help file for context sensitive Help. For additional information,
-refer to the DitaReference parameter above. (No default value, may
-be null.)</p></dd>
-<dd><p status = "changed"><indexterm>MapFromListTemplate, INI parameter</indexterm><b>MapFromOutlineTemplate</b> -
+Help file for context sensitive Help. For additional information, refer
+to the DitaReference parameter above. (No default value, may be
+null.)</p></dd>
+<dd><p><indexterm>MapFromListTemplate, INI parameter</indexterm><b>MapFromOutlineTemplate</b> -
 Specifies the “Map from Outline” template file used as the template
 for the <uicontrol>New ‘Map from Outline’ Template</uicontrol> command. (Defaults
 to “$STRUCTDIR\xml\DITA-FMx_1.2\map-from-outline_template.fm” if
 this parameter is missing or set to a null string.)</p></dd>
-<dd><p status = "changed"><indexterm>BookTitleVariableName, INI
-parameter</indexterm><b>BookTitleVariableName</b> - Specifies the
-name of the variable that is updated with the book title (from map/title,
-map/@title, bookmap/title, or bookmap/booktitle/mainbooktitle).
+<dd><p><indexterm>BookTitleVariableName, INI parameter</indexterm><b>BookTitleVariableName</b> -
+Specifies the name of the variable that is updated with the book
+title (from map/title, map/@title, bookmap/title, or bookmap/booktitle/mainbooktitle).
 This variable is only updated in generated list files if it is included
 in the generated list template (structured files can access the
 book title via the attribute on the fm-ditabook element). (Defaults
 to “FMxBookTitle” if this parameter is missing or set to a null
 string.)</p></dd>
-<dd status = "new"><p status = "changed"><indexterm>StripClassAttribute,
-INI parameter</indexterm><b status = "changed">StripClassAttribute</b> -
+<dd><p><indexterm>StripClassAttribute, INI parameter</indexterm><b>StripClassAttribute</b> -
 Set this to “0” to prevent the @class attribute value from being
 deleted when changing an element’s type (using the “Change” button
 in the Element Catalog). (Defaults to “1”, enabled, if this parameter
 is missing or set to a null string.)</p></dd>
-<dd status = "new"><p status = "changed"><indexterm>TplDelimChar,
-INI parameter</indexterm><b status = "changed">TplDelimChar</b> -
+<dd><p><indexterm>TplDelimChar, INI parameter</indexterm><b>TplDelimChar</b> -
 Set this to specify the character to use as the file name delimiter
-for new file templates (<filepath status = "new">new~&lt;topictype>~&lt;template
-name>.fm</filepath>), book-build component templates (<filepath
-    status = "new">tpl~&lt;mapelemtype>.fm</filepath>), and generated
-list templates (<filepath status = "new">gentpl~&lt;mapelemtype>.fm</filepath>).
+for new file templates (<filepath>new~&lt;topictype>~&lt;template
+name>.fm</filepath>), book-build component templates (<filepath>tpl~&lt;mapelemtype>.fm</filepath>),
+and generated list templates (<filepath>gentpl~&lt;mapelemtype>.fm</filepath>).
 If necessary you can set this to a character, such as the hash symbol,
 #. (Defaults to “~” if this parameter is missing or set to a null
 string.)</p></dd>
-<dd status = "new"><p status = "changed"><indexterm>MaxOpenFiles,
-INI parameter</indexterm><b status = "changed">MaxOpenFiles</b> -
+<dd><p><indexterm>MaxOpenFiles, INI parameter</indexterm><b>MaxOpenFiles</b> -
 Specifies the number of XML files opened before a warning is displayed.
 This is convenience when working with FM7.2 and FM8 to allow time to
 restart FrameMaker before it crashes. These versions of FrameMaker
 have a bug that results in a crash after opening 300+ XML files
 in the same session. (Defaults to “300” if this parameter is missing
 or set to a null string.)</p></dd>
-<dd status = "new"><p status = "changed"><indexterm>UseBooklistPlaceholder,
-INI parameter</indexterm><b status = "changed">UseBooklistPlaceholder</b> -
+<dd><p><indexterm>UseBooklistPlaceholder, INI parameter</indexterm><b>UseBooklistPlaceholder</b> -
 Set this to “1” to revert to the pre 1.1.11 DITA-FMx method of requiring
 a placeholder file to generate a list. The default value “0” indicates
 that DITA-FMx will honor the “proper” syntax for frontmatter and backmatter
 list elements which does not require a placeholder file.</p></dd>
-<dd status = "new"><p status = "new"><indexterm>NewMapShortcuts,
-INI parameter</indexterm><indexterm>NewTopicShortcuts, INI parameter</indexterm><indexterm
-status = "new">new file shortcut keys</indexterm><indexterm status
-= "new">shortcut keys, new files</indexterm><b status = "changed">NewMapShortcuts</b> and <b
-    status = "new">NewTopicShortcuts</b> - Allows customization
-of the shortcut keys assigned to the New File menu items. The value
-for both of these is a space-delimited string of doctype/key pairs.
-Use the following syntax:</p><p status = "new">&lt;doctype>:&lt;key-sequence></p><p
-    status = "new">Where:</p><p status = "new">&lt;doctype> is the
-root topic or map element.</p><p status = "new">&lt;key-sequence>
-is the key sequence for the shortcut. To specify an ESC sequence
-the string starts with “\!” (backslash, exclamation). This is followed by
-2 or 3 characters or numbers (case sensitive). (In theory you can
+<dd><p><indexterm>NewMapShortcuts, INI parameter</indexterm><indexterm>NewTopicShortcuts,
+INI parameter</indexterm><indexterm>new file shortcut keys</indexterm><indexterm>shortcut
+keys, new files</indexterm><b>NewMapShortcuts</b> and <b>NewTopicShortcuts</b> -
+Allows customization of the shortcut keys assigned to the New File
+menu items. The value for both of these is a space-delimited string
+of doctype/key pairs. Use the following syntax:</p><p>&lt;doctype>:&lt;key-sequence></p><p>Where:</p><p>&lt;doctype>
+is the root topic or map element.</p><p>&lt;key-sequence> is the
+key sequence for the shortcut. To specify an ESC sequence the string
+starts with “\!” (backslash, exclamation). This is followed by 2
+or 3 characters or numbers (case sensitive). (In theory you can
 also use ALT “~” or CTRL “^” or SHIFT “+”, but this may or may not
 work well. You can also “try” to use function keys, which are defined
-as slash followed by “F” and the number, as in “/F3”.)</p><p
-    status = "new">For example, to create shortcuts for map, bookmap,
-topic, and task, you could use the following:</p><codeblock status = "new" outputclass = "ini">NewMapShortcuts=map:\!NMM bookmap:\!NMB 
+as slash followed by “F” and the number, as in “/F3”.)</p><p>For
+example, to create shortcuts for map, bookmap, topic, and task,
+you could use the following:</p><codeblock outputclass = "ini">NewMapShortcuts=map:\!NMM bookmap:\!NMB 
 NewTopicShortcuts=topic:\!NTO task:\!NTA</codeblock></dd>
-<dd status = "new"><p status = "changed"><indexterm>FilteringAttributes,
-INI parameter</indexterm><b status = "changed">FilteringAttributes</b> -
+<dd><p><indexterm>FilteringAttributes, INI parameter</indexterm><b>FilteringAttributes</b> -
 Specifies the attributes that are considered when performing ditaval
 filtering. The default value is a space-delimited string of attribute
-names: <codeph>audience product platform otherprops rev props</codeph>.</p></dd></dlentry>
+names: <codeph>audience product platform otherprops rev props</codeph>.</p></dd>
+<dd status = "new"><p><indexterm>FilteringAttributes, INI parameter</indexterm><b>UseDatatype</b> -
+As of v.2.0.06, graphic overlay object type information is now stored
+in the <synph outputclass = "element">data</synph> element’s <synph
+    outputclass = "attribute">name</synph> attribute. If you want
+to continue using the <synph outputclass = "attribute">datatype</synph> attribute,
+set this parameter to “1”.</p></dd>
+<dd status = "new"><p><indexterm>NavtitleLen, INI parameter</indexterm><b>NavtitleLen</b> -
+As of v.2.0.06, controls the length of the content in <synph
+    outputclass = "element">navtitle</synph> element when updated
+based on the referenced topic title text. This defaults to 250 characters
+(bytes), which should be more than sufficient, but for multibyte content,
+you may want to increase this value.</p></dd>
+<dd status = "new"><p><indexterm>AutoXrefTextElems, INI parameter</indexterm><b>AutoXrefTextElems</b> -
+As of v.2.0.07, specifies a space delimited list of elements to
+automatically add alt text to xrefs based on the target element
+type selected in the Reference Manager. If not set, no automatic
+alt text is added.</p></dd>
+<dd status = "new"><p><indexterm>ReportRO, INI parameter</indexterm><b>ReportRO</b> -
+As of v.2.0.07, if set to “0”, disables the notification when opening a
+read-only file. If not set, this notification is enabled.</p></dd></dlentry>
 <dlentry id = "id13BNA0H0I5Z"><dt>INIOnly section (for use with
 the Set Attributes command)</dt>
 <dd><p><indexterm>SetAtt rIgnore, INI parameter</indexterm><b>SetAttrIgnore</b> -
@@ -262,20 +260,17 @@ Set Attribute dialog. (Defaults to “.” if this parameter is missing,
 but this value may be set to a null string.)</p><p>If you do not
 have processing that cares about the initial default value of a Strings
 attribute, you can ignore this parameter.</p></dd></dlentry>
-<dlentry id = "id13BNA0H0TY4" status = "changed">
-<dt status = "changed">INIOnly section (for use with content management
-systems)</dt>
-<dd status = "changed"><p status = "changed"><indexterm>CMSClientName,
-INI parameter</indexterm><b status = "changed">CMSClientName</b> -
+<dlentry id = "id13BNA0H0TY4"><dt>INIOnly section (for use with
+content management systems)</dt>
+<dd><p><indexterm>CMSClientName, INI parameter</indexterm><b>CMSClientName</b> -
 Specifies the FDK client name used to connect with the CMS bridge
 or connector. Typically set automatically by the CMS client. (No
 default value, may be null.)</p></dd>
-<dd status = "changed"><p status = "changed"><indexterm>CMSImageDefaultDpi,
-INI parameter</indexterm><b status = "changed">CMSImageDefaultDpi</b> -
+<dd><p><indexterm>CMSImageDefaultDpi, INI parameter</indexterm><b>CMSImageDefaultDpi</b> -
 Specifies the default DPI for new images. Currently only used for
 XDocs CMS. (Defaults to “72” if this parameter is missing or set to
 a null string.)</p></dd></dlentry>
-<dlentry><dt status = "changed">GeneralImport section</dt>
+<dlentry><dt>GeneralImport section</dt>
 <dd><p><indexterm>IndextermProcessing (import), INI parameter</indexterm><b>IndextermProcessing</b> -
 If set to 1, enables conversion of indexterm elements to proper
 format required by FrameMaker. This parameter is set through the user
@@ -378,23 +373,23 @@ likely to be honored by other tools. (Defaults to “1” if this parameter
 is missing or set to a null string.)</p><note>Over time if you clone
 a topic file for other uses, these processing instructions may build
 up in the file. You can delete the items in the document dictionary
-for a given file by opening that file and choosing the Dictionaries button
-in the Spelling Checker dialog. In that dialog select the Document Dictionary
-option, choose Clear from the list, then choose OK.</note></dd>
-<dd><p status = "changed"><indexterm>FmXrefUseOutputclass, INI parameter</indexterm><b>FmXrefUseOutputclass</b> -
+for a given file by opening that file and choosing the Dictionaries
+button in the Spelling Checker dialog. In that dialog select the
+Document Dictionary option, choose Clear from the list, then choose
+OK.</note></dd>
+<dd><p><indexterm>FmXrefUseOutputclass, INI parameter</indexterm><b>FmXrefUseOutputclass</b> -
 If set to 1, specifies that <synph outputclass = "element">fm-xref</synph> elements
 use the <synph outputclass = "attribute">outputclass</synph> attribute
 rather than the <synph outputclass = "attribute">type</synph> attribute
 to store the cross-ref format name. (In DITA-FMx 1.1 the default
 was “0”, but now it is “1”.)</p></dd>
-<dd><p status = "changed"><indexterm>FmDpiUseOutputclass, INI parameter</indexterm><indexterm>fmdpi
+<dd><p><indexterm>FmDpiUseOutputclass, INI parameter</indexterm><indexterm>fmdpi
 feature, attribute used</indexterm><b>FmDpiUseOutputclass</b> -
 If set to 1, specifies that the “fmdpi” value is assigned to the <synph
     outputclass = "attribute">outputclass</synph> attribute rather
-than the <synph outputclass = "attribute">otherprops</synph> attribute.</p><p
-    status = "new">DITA-FMx 1.1 used the <synph
-    outputclass = "attribute">otherprops</synph> attribute, which
-was not the intended use for that attribute. Using the <synph
+than the <synph outputclass = "attribute">otherprops</synph> attribute.</p><p>DITA-FMx
+1.1 used the <synph outputclass = "attribute">otherprops</synph> attribute,
+which was not the intended use for that attribute. Using the <synph
     outputclass = "attribute">outputclass</synph> attribute is more
 in line with the DITA specification. This setting controls how this
 attribute is added to new elements, but does not affect existing
@@ -431,17 +426,20 @@ is “ant”, but if you need to specify another executable or if you
 need to include the path, change this value. This value is used
 for both Generate Output options, Current File and Selected Target.
 (Defaults to “ant” if this parameter is missing or set to a null
-string.)</p></dd>
+string.) This parameter is ignored for OT 2.x or later.</p></dd>
 <dd><p><indexterm>EnvironmentSetup, INI parameter</indexterm><b>EnvironmentSetup</b> -
-Specifies a batch file to run before the Ant script in order to
-set up any needed environment variables. This parameter can be set
-through the DITA-FMx Options dialog in the External Application
-Settings dialog. (No default value, must be set to use the Generate
-Output command.)</p></dd>
+This parameter can be set through the DITA-FMx Options dialog in
+the External Application Settings dialog. (No default value, must
+be set to use the Generate Output command.) </p><p>For OT 2.x or
+later, specifies the <filepath>bin\dita.bat</filepath> file in the
+selected DITA-OT installation.</p><p>For OT 1.x, specifies the batch
+file to run before the Ant script in order to set up any needed
+environment variables. </p></dd>
 <dd><p><indexterm>DitaDir, INI parameter</indexterm><b>DitaDir</b> -
-Specifies the folder that contains the DITA-OT files. This parameter can
-be set through the DITA-FMx Options dialog in the External Application Settings
-dialog. (No default value, must be set to use the Generate Output command.)</p></dd>
+Specifies the folder that contains the DITA-OT installation. This parameter
+can be set through the DITA-FMx Options dialog in the External Application
+Settings dialog. (No default value, must be set to use the Generate Output
+command.)</p></dd>
 <dd><p><indexterm>EnvironmentSetup-BUILD, INI parameter</indexterm><b>EnvironmentSetup-&lt;buildname></b> -
 Specifies an alternate batch file to override the default specified
 by EnvironmentSetup. Allows you to define builds that rely on different
@@ -456,7 +454,7 @@ Current File option. The default is “ditafmx-ant.xml”, but if you
 need to specify another filename, change this value. This filename
 is assumed to be relative to the path specified by the <i>DitaDir</i> parameter.
 (Defaults to “ditafmx-ant.xml” if this parameter is missing or set
-to a null string.)</p></dd>
+to a null string.) This parameter is ignored for OT 2.x or later.</p></dd>
 <dd><p><indexterm>Count (BuildFile), INI parameter</indexterm><b>Count</b> and <b><i>N</i></b> -
 Specifies the number of build options available in the <i>AntScript</i> file
 (and thus displayed in the Generate Output: Current File output

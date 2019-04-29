@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
-<topic id = "id078AAC00PY42"
+<?dtall dict="appdata>\Adobe\FrameMaker\&lt;version"?><?dtall dict="dtd"?><?dtall
+dict="FrameMaker\Structure\xml"?><?dtall dict="fmx"?><?dtall dict="structapps"?><?dtall
+dict="USERNAME\AppData"?><topic id = "id078AAC00PY42"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
 <title>Manual Installation of the Structure Applications</title>
 <shortdesc status = "changed">Perform a manual installation of the
@@ -17,7 +13,7 @@ be done.</shortdesc>
 <author>test</author>
 <author>scottp</author>
 <critdates><created date = "UNK"/>
-<revised modified = "2015-09-08"/></critdates></prolog>
+<revised modified = "2017-11-10"/></critdates></prolog>
 <body><p>The following steps describe the installation of the structure
 applications provided with DITA-FMx.</p>
 <note status = "new">If you’re installing on a system where the

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+]>
+<?dtall dict="AttrAsCondDefaultState"?><?dtall dict="BookBuildOverrides"?><?dtall
+dict="BreakToInline"?><?dtall dict="BuildScript"?><?dtall dict="cmdname"?><?dtall
+dict="content=’CONDITION"?><?dtall dict="DITA_Unsupported"?><?dtall dict="FP_Placement"?><?dtall
+dict="firstParaRules"?><?dtall dict="fmtext"?><?dtall dict="hrefs"?><?dtall
+dict="IndentTables"?><?dtall dict="ini"?><?dtall dict="msgnum"?><?dtall
+dict="name=’author"?><?dtall dict="nbsp"?><?dtall dict="nodename"?><?dtall
+dict="openlink"?><?dtall dict="PdfDocInfo"?><?dtall dict="param"?><?dtall
+dict="Reimport"?><?dtall dict="reltables"?><?dtall dict="ShowStatus"?><?dtall
+dict="StatusChanged"?><?dtall dict="StatusDeleted"?><?dtall dict="StatusNew"?><?dtall
+dict="StatusUnchanged"?><?dtall dict="Stopword"?><?dtall dict="status=’changed"?><?dtall
+dict="status=’new"?><?dtall dict="stopwords"?><?dtall dict="tm"?><?dtall
+dict="unindented"?><?dtall dict="VAR(name"?><?dtall dict="wintitle"?><?dtall
+dict="XDocsFMx"?><topic id = "idba0a47d0-abda-4f8f-b097-e20d042bc365"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>2.0.06 - 20 November 2017</title>
+<prolog><author>scottp</author>
+<critdates><created date = "2015-08-10"/>
+<revised modified = "2017-11-19"/></critdates></prolog>
+<body status = "new"><section><title outputclass = "h3">New features</title><dl>
+<dlentry><dt>Added support for FM 2017</dt>
+<dd><note type = "important">For installations on FM 2017, the update
+#2 (14.0.2) is required for DITA-FMx due to updated FDK library.</note></dd></dlentry>
+<dlentry><dt>Added support for Lightweight DITA</dt>
+<dd><ul><li><p>Includes new LwDITA-FMx-Topic, LwDITA-FMx-Map and
+LwDITA-FMx-Book structure apps (based on latest pre-release LwDITA
+DTDs).</p></li>
+<li><p>Auto-detects “xdita” in topic/@domains to “do the right thing”
+with the LwDITA model.</p></li>
+<li><p>New Map adds “title” as /map/topicref/navtitle (structapp
+applies formatting to that navtitle).</p></li>
+<li><p>Wrap a &lt;simpletable> with a &lt;fig>, fig/@outputclass
+is set to 'fm:tablewrapper' (allows the &lt;title> in the &lt;fig>
+to be formatted as a table title).</p></li></ul></dd></dlentry>
+<dlentry><dt>Added support for DITA-OT 2.x and 3.x</dt>
+<dd><p>The Generate Output command now detects the DITA-OT version
+selected in the External Application Settings dialog and uses the
+proper syntax for the OT command line. The transformation type (format)
+entries in the BuildFile section of the <filepath>ditafmx.ini</filepath> are
+set to those available in OT 2.5.4; if you require alternate transformation
+types, you’ll need to edit that section.</p></dd></dlentry>
+<dlentry><dt>Added support for hazardstatement elements</dt>
+<dd><p>Provides support for rendering <synph outputclass = "element">hazardstatement</synph> elements
+for authoring as well as new publishing options. For details, refer
+to <xref href = "ditafmx_hazardstatements.xml#ideab292b7-16d3-465e-9b8e-425f601e34b1"
+type = "topic" format = "dita" scope = "local"></xref>.</p></dd></dlentry>
+<dlentry><dt>fmx:maxlen feature (beta)</dt>
+<dd><p>New fmx:maxlen feature provides interactive length checking
+of an element. Enable by adding add the attribute “fmx:maxlen” to
+an element definition. Specify a default value of the maximum length
+in characters (make it read only and possibly hidden). This attribute
+should not be written to XML. This attribute will be used if set
+in the <filepath>ditafmx.ini</filepath> with INIOnly/ElemMaxLenCheck=1.</p></dd></dlentry>
+<dlentry><dt>xref-container feature (beta)</dt>
+<dd><p>New element/feature to allow markup (such as images) within
+an xref.</p></dd></dlentry></dl></section>
+<section><title outputclass = "h3">Structure application updates</title><dl>
+<dlentry><dt>Lightweight DITA structure applcations</dt>
+<dd><ul><li><p>Three new structure applications are provided to
+support Lightweight DITA. LwDITA-FMx-Topic, LwDITA-FMx-Map, and
+LwDITA-FMx-Book can be installed by extracting the contents of the <filepath>LwDITA-FMx_apps.zip</filepath> file
+found in the <filepath>DITA-FMx-2</filepath> installation folder.</p></li></ul></dd></dlentry>
+<dlentry><dt>Topic app (topic_1.2.edd.fm, topic_1.2.template.fm)</dt>
+<dd><ul><li><p>Added support for <synph outputclass = "element">fm-var</synph> in
+the <synph outputclass = "element">shortdesc</synph> general rule.</p></li>
+<li><p>Added support for <synph outputclass = "element">hazardstatement</synph> processing,
+including updates to the hazardstatement (and related element) context
+rules and the addition of numerous hazard* paragraph tags.</p></li></ul></dd></dlentry>
+<dlentry><dt>Book app (book_1.2.edd.fm, book_1.2.template.fm)</dt>
+<dd><ul><li><p>Added support for <synph outputclass = "element">fm-var</synph> in
+the <synph outputclass = "element">shortdesc</synph> general rule.</p></li>
+<li><p>Added support for <synph outputclass = "element">hazardstatement</synph> processing,
+including updates to the hazardstatement (and related element) context
+rules, the addition of numerous hazard* paragraph tags, a new Hazard
+table format, and new hazard* color definitions.</p></li></ul></dd></dlentry>
+<dlentry><dt>Book XSLT (bookmap2fmbook.xsl)</dt>
+<dd><ul><li><p>Updated to support SAXON as the XSLT processor (the
+default in FM2015 and FM 2017). Both the XALAN and SAXON versions
+of this XSLT file are provided in the Book application folder. FM
+2015 and FM2017 users should be able to use this out-of-the-box,
+but installing on FM versions before FM 2015, you’ll need to copy
+the XALAN version for use. For details, see the <filepath>_SAXON-or-XALAN.txt</filepath>.
+file in the Book application folder.</p></li></ul></dd></dlentry>
+<dlentry><dt>Component template updates</dt>
+<dd><ul><li><p>All updates to the Book application EDD and template
+are reflected in the component templates.</p></li>
+<li><p>Added new <filepath>tpl~topicref.fm</filepath> component
+template.</p></li>
+<li><p>Added new <filepath>tpl~topicref-HAZALT.fm</filepath> component
+template that provides an example of the alternate hazardstatement
+table publishing option.</p></li></ul></dd></dlentry></dl></section>
+<section><title outputclass = "h3">Bug fixes / minor updates</title><dl>
+<dlentry><dt>Table formatting</dt>
+<dd><ul><li><p>Tables with titles are now properly indented during
+the book-build process (if the “Indent Tables” option is enabled).</p></li>
+<li><p>Table widths (for both simpletables and regular tables) are
+now properly sized in the book-build process.</p></li>
+<li><p>If the “Preserve Table Widths” option is enabled, the percentage
+values are not assigned to tables where @pgwide=’1’ (they remain
+full page width).</p></li>
+<li><p>Fixed an error with table width sizing on tables where @pgwide
+is greater than “1”.</p></li></ul></dd></dlentry>
+<dlentry><dt>Image updates</dt>
+<dd><ul><li><p>Inserting an <synph outputclass = "element">image</synph> into
+an existing <synph outputclass = "element">fig</synph> now sets
+the @placement attribute to “break”.</p></li>
+<li><p>Default value in EDD for image/@placement attribute is now
+used as the default value in the Insert Image dialog.</p></li></ul></dd></dlentry>
+<dlentry><dt>Graphic overlay object issues</dt>
+<dd><ul><li><p>To support use in LwDITA (where data/@datatype is
+not valid), graphic overlay objects will now use data/@name instead.
+This migration will happen on file save and should be transparent
+to users. If you want to continue using @datatype rather than @name
+for this purpose, set the following parameter in the <filepath>ditafmx.ini</filepath> file
+.. INIOnly/UseDatatype=1</p></li>
+<li><p>Added full support for FP_NumPoints (number of points in
+a polyline). This was being written but not read.</p></li></ul></dd></dlentry>
+<dlentry><dt>Ditaval issues</dt>
+<dd><ul><li><p>The <i>by deletion</i> option now supports filtering
+with a missing <synph outputclass = "attribute">attr</synph> or <synph
+    outputclass = "attribute">val</synph> attribute. This has been
+supported in the <i>as conditions</i> option.</p></li></ul></dd></dlentry>
+<dlentry><dt>Conditional filtering update</dt>
+<dd><ul><li><p>A new feature was added for those who want manually
+apply conditional tagging to content in your DITA files, and have
+those conditions controlled (hide/show state) along with the conditionalization
+settings in the Options dialog. The hide/show state of conditions
+with names based on the default “DITA-*” conditions and ending with
+“-Set” (i.e. “DITA-Prolog-Set”) are toggled along with the default
+conditions.</p></li></ul></dd></dlentry>
+<dlentry><dt>Reference Manager issues</dt>
+<dd><ul><li><p>The values presented in the conrefend field should
+now be correct regardless of other selected values.</p></li>
+<li><p>The Element Data list populates with only values valid at
+the current insertion point.</p></li></ul></dd></dlentry>
+<dlentry><dt>File reference issues</dt>
+<dd><ul><li><p>File references (@href attributes) that use encoded
+spaces (“%20”) now load properly.</p></li>
+<li><p>UpdateReferences command now works properly when the auto-load options
+are off.</p></li></ul></dd></dlentry>
+<dlentry><dt>Key referencing issues</dt>
+<dd><ul><li><p>An unresolved <synph outputclass = "attribute">keyref</synph> on
+an image no longer deletes that image element on file open.</p></li>
+<li><p>Updating an existing <synph outputclass = "attribute">conkeyref</synph> (with
+the Reference Manager) no longer deletes that element.</p></li>
+<li><p>Saving a file with an unresolved <synph outputclass = "attribute">conkeyref</synph>,
+no longer writes that node with a missing element name.</p></li>
+<li><p>Inline conkeyrefs are no longer converted into their parent
+elements on file save.</p></li>
+<li><p>Inline elements within key element references are no longer
+converted to visible markup, now elements are unwrapped (content
+remains, but markup is gone). This is not an ideal solution; will
+eventually fully support inline elements.</p></li></ul></dd></dlentry>
+<dlentry><dt>Topicref issues</dt>
+<dd><ul><li><p>Topicref navtitles are now truncated at 250 bytes
+in length. When content is truncated, the navtitle will end with
+an ellipsis. To change this length set the following <filepath>ditafmx.ini</filepath> parameter
+accordingly .. INIOnly/NavtitleLen</p></li>
+<li><p>Updating a topicref (with the Update References command)
+which references a topic with multibyte characters will no longer
+create an empty navtitle element.</p></li>
+<li><p>Fixed the handling of navtitles to allow for formatting that
+applies a prefix.</p></li></ul></dd></dlentry>
+<dlentry><dt>Auto-prolog issues</dt>
+<dd><ul><li><p>Auto-adding “revised date” with the “new author”
+option not selected, now works as expected.</p></li></ul></dd></dlentry>
+<dlentry><dt>Book-build INI updates</dt>
+<dd><ul><li><p>Added BookBuildOverrides/FixTableWidths=1 setting
+to correct table widths after master pages are applied. This is
+needed if the new master page(s) are wider than the base page width.</p></li>
+<li><p>Added new BookBuildOverrides/HazardToTable setting to enable/disable the
+hazardstatement processing in a book build.</p></li>
+<li><p>Added new BookBuildOverrides/UseColorFromTable=0 setting
+to prevent color from being applied to full-width hazard tables.</p></li>
+<li><p>Added new BookBuildOverrides/HazardSymbolMaxWidth setting
+to provide deliverable-specific control over the hazard symbol width.
+If not set, the value in the Authoring Options dialog is used. Note
+that this is a “max” width setting; it does not increase the width
+of a smaller image.</p></li>
+<li><p>Fixed error in handling PDFDocInfo settings. If an item was
+sent to an empty value, then entire process would fail.</p></li></ul></dd></dlentry>
+<dlentry><dt>ditafmx.ini updates</dt>
+<dd><ul><li><p>In a fresh installation (or after deleting the INI),
+the new <filepath>ditafmx.ini</filepath> file is written as UTF-8.</p></li>
+<li><p>Checking for MaxRefLevels parameter is done first in the
+INIOnly section then in the General section. (Logic was reversed
+before, but this parameter is “ini only”.)</p></li>
+<li><p>Added new “beta” INIOnly/ElemMaxLenCheck=1 setting to enable
+the fmx:maxlen feature (described above).</p></li>
+<li><p>The BuildFile/OTVer parameter is now a “no-op”. The OT version
+is now read from the <filepath>&lt;OTDIR>\lib\configuration.properties</filepath> file.
+If this file doesn’t exist, the OT version is assumed to be 1.5
+(that file didn’t exist before OT 1.6).</p></li></ul></dd></dlentry>
+<dlentry><dt>CMS support</dt>
+<dd><ul><li><p>Updates to fix conref and conrefend problems with
+xDocsFMx.</p></li></ul></dd></dlentry>
+<dlentry><dt>Authorization</dt>
+<dd><ul><li><p>Maintenance renewal message now allows 360 days to
+buy renewal.</p></li></ul></dd></dlentry></dl></section></body></topic>

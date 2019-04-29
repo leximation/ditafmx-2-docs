@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+]>
+<?dtall dict="apps"?><?dtall dict="DTDs"?><?dtall dict="Structure\xml"?><?dtall
+dict="ditafmx"?><?dtall dict="FrameMaker\DITA"?><concept
+    id = "ide861c20d-568d-4b7c-b5aa-d8c1f3f3cae5"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Using Lightweight DITA in DITA-FMx</title>
+<shortdesc>Lightweight DITA offers a simpler model for authoring
+of content.</shortdesc>
+<prolog><author>scottp</author>
+<critdates><created date = "UNK"/>
+<revised modified = "2017-11-10"/></critdates></prolog>
+<conbody><p>As of v.2.0.06, DITA-FMx supports authoring and publishing
+of the Lightweight DITA model. While the specification for this
+model is not final, it seems stable enough to provide a set of (beta)
+structure applications to give users a taste of this alternative authoring
+and publishing option.</p>
+<p>The structure applications provided with DITA-FMx are based on
+the model as of June 2, 2016. Updates to the DTDs are available
+on <xref href = "https://github.com/oasis-open/dita-lightweight"
+format = "html" scope = "external">github.com</xref>.</p>
+<note type = "remember">These structure applications are considered
+to be “beta” samples. If you run into problems or have any questions,
+please contact us at &lt;<ph audience = "web">ditafmx-help AT leximation
+DOT com</ph><xref href = "mailto:ditafmx-help@leximation.com" format
+= "html" scope = "external" audience = "help">ditafmx-help@leximation.com</xref>>. </note>
+<p>In order to use the Lightweight DITA model, you need to install
+the structure applications. We provide the same set of apps as with
+the full model, Topic, Map, and Book. These apps are available in <filepath>LwDITA-FMx_apps.zip</filepath> file
+found in the DITA-FMx installation folder (<filepath>FrameMaker\DITA-FMx-2</filepath>).
+Just extract the contents of that file into your <filepath>Structure\xml</filepath> folder.
+This should result in a LwDITA-FMx folder with the application folders
+inside.</p>
+<fig><title>Lightweight DITA structure applications</title><image
+href="images/lwdita-install.png" align="left" placement="break"
+ outputclass = "fmdpi:120"/></fig>
+<p>Each of the application folders contains a “structapps-stub”
+file along with the required application files. Insert the stub
+file into your structure application definition file as described
+in <xref href = "ditafmx_installing_apps_manual.xml#id078AAC00PY42"
+type = "topic" format = "dita" scope = "local"></xref> (using the LwDITA
+stub files instead of the default app files). </p>
+<p>After installing these applications, set the Book, Topic, and
+Map applications to the LwDITA apps in the DITA Options dialog.
+Once this is complete, you should be able to create and edit Lightweight
+DITA files in FrameMaker.</p>
+<p>The <filepath>_readme.txt</filepath> file contains additional
+information about Lightweight DITA and the provided structure applications.</p></conbody></concept>

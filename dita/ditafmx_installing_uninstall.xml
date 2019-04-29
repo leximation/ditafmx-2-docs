@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
 <topic id = "id0846EF00BY4"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
@@ -15,7 +9,7 @@ form.</shortdesc>
 <prolog><author>Scott Prentice</author>
 <author>scottp</author>
 <critdates><created date = "2008-04-06"/>
-<revised modified = "2015-09-08"/></critdates></prolog>
+<revised modified = "2019-03-14"/></critdates></prolog>
 <body status = "changed"><p><indexterm>uninstall</indexterm>There
 is no Uninstall application provided with DITA-FMx. Because most
 of the installation is done manually, it would be misleading and
@@ -36,7 +30,7 @@ ditabook=Standard, Translation client for DITA, fminit\ditabook.dll, structured<
 <p>FrameMaker 9/10/11:</p>
 <codeblock expanse = "page" outputclass = "ini">ditafm=Standard, Translation client for DITA, fminit\ditafm.dll, structured 
 ditafm_app=Standard, Translation client for DITA, fminit\ditafm_app.dll, structured</codeblock>
-<p status = "changed">FrameMaker 12/2015:</p>
+<p status = "changed">FrameMaker 12/2015/2017/2019:</p>
 <codeblock expanse = "page" status = "changed" outputclass = "ini">ditafm=Standard, Translation client for DITA, fminit\ditafm.dll, structured 
 ditafm_app=Standard, Translation client for DITA, fminit\ditafm_app.dll, structured 
 Dita OT=Standard, DITA OT client for DITA, fminit\openToolkit.dll, structured</codeblock></body></topic>

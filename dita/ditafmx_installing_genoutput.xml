@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
 <?dtall dict="ANT:&lt;targetname"?><?dtall dict="airhelp"?><?dtall dict="BuildFile"?><?dtall
 dict="C:\Program"?><?dtall dict="chm"?><?dtall dict="DitaDir"?><?dtall dict="EnvironmentSetup"?><?dtall
@@ -13,14 +7,14 @@ dict="Files\Adobe\FrameMaker\DITA"?><?dtall dict="fullpackage"?><?dtall
 dict="LogFile"?><?dtall dict="lmi"?><?dtall dict="SourceForge"?><topic
     id = "id_067EF01A0YZ"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
-<title>Setting Up to Use the Generate Output Command</title>
+<title>Publishing with the DITA Open Toolkit</title>
 <shortdesc>Details on setting up DITA-FMx to communicate with the
 DITA Open Toolkit.</shortdesc>
 <prolog><author>Scott Prentice</author>
 <author>test</author>
 <author>scottp</author>
 <critdates><created date = "2008-02-24"/>
-<revised modified = "2015-03-31"/></critdates></prolog>
+<revised modified = "2019-03-22"/></critdates></prolog>
 <body status = "changed"><p status = "changed"><indexterm class
 = "- topic/indexterm ">Generate Output commmand</indexterm><indexterm
 class = "- topic/indexterm ">commands<indexterm class = "- topic/indexterm
@@ -44,38 +38,33 @@ defined.</p>
 <p status = "new">The <uicontrol status = "changed">DITA-OT Directory</uicontrol> and
 the <uicontrol>DITA-OT Environment Setup File</uicontrol> fields
 in the External Application Settings dialog must be specified to
-load the proper environment settings when the DITA-OT is run. If
-you’re using a current version of the DITA-OT and follow the instructions
-below, setup should be fairly simple. However, if you use an older
-version of the OT or have special requirements you may need to ensure
-that the environment settings are defined globally.</p>
-<p status = "changed">If you are using DITA-OT 1.4.1 or later, we
-have found that you must use Java 1.5 or higher. We recommend that
-you use the “fullpackage” version of the DITA-OT.</p>
+load the proper environment settings when the DITA-OT is run. </p>
+<p status = "new">Setup varies depending on the version of the DITA-OT.
+OT 1.x requires some additional setup, but OT 2.x (and 3.x) are
+quite simple.</p>
 <p>Complete the following steps to ensure that you are able to generate
 output through the Open Toolkit:</p>
-<ol><li status = "changed">Download the latest “full” ZIP of the
-DITA-OT from SourceForge &lt;<xref href = "http://sourceforge.net/projects/dita-ot/"
-format = "html" scope = "external">sourceforge.net/projects/dita-ot/</xref>>.
-Extract the contents of this file to your local file system into
-a directory named <filepath>C:\DITA</filepath> (or similar). It
-is a good practice to ensure that the path to the DITA-OT directory
-has no spaces in any of the directory names. After extracting the
-contents of the OT archive, you will have a path such as <filepath
-    status = "changed">C:\DITA\DITA-OT1.8.4</filepath>.</li>
-<li status = "changed">Download and install the Java Development
-Kit (JDK) version 5 or higher (<xref href = "http://www.oracle.com/technetwork/java/javase/downloads"
+<ol><li status = "changed">Download the latest ZIP of the DITA-OT
+&lt;<xref href = "http://www.dita-ot.org/download" format = "html"
+scope = "external">www.dita-ot.org/download</xref>>. Extract the
+contents of this file to your local file system into a directory
+named <filepath>C:\DITA</filepath> (or similar). It is a good practice
+to ensure that the path to the DITA-OT directory has no spaces in
+any of the directory names. After extracting the contents of the
+OT archive, you will have a path such as <filepath status = "changed">C:\DITA\dita-ot-2.5.4</filepath>.</li>
+<li status = "changed">Make sure you’ve got a recent version of
+the Java Development Kit (JDK) (<xref href = "http://www.oracle.com/technetwork/java/javase/downloads"
 format = "html" scope = "external">www.oracle.com/technetwork/java/javase/downloads</xref>).</li>
-<li>Set your JAVA_HOME environment variable to the path of the newly
-installed JDK (perhaps "C:\Program Files\Java\jdk1.6.0_04").</li>
-<li>Copy the <filepath conref = "ditafmx_shared.xml#common/ditafmx-ant"
+<li>Your JAVA_HOME environment variable should be set to the path
+of the JDK (perhaps "C:\Program Files\Java\jdk1.8.0_65").</li>
+<li>(<i>OT 1.x only</i>) Copy the <filepath conref="ditafmx_shared.xml#common/ditafmx-ant"
 class = "+ topic/ph sw-d/filepath "></filepath> file from the <filepath
     status = "changed">Program Files\Adobe\FrameMaker\DITA-FMx-2</filepath> folder
 to your DITA-OT folder.</li>
-<li>In the DITA-OT folder, copy the <filepath>startcmd.bat</filepath> file
+<li>(<i>OT 1.x only</i>) In the DITA-OT folder, copy the <filepath>startcmd.bat</filepath> file
 to <filepath>ditafmx-startcmd.bat</filepath> (in the same folder
 copy the file to a new name).</li>
-<li status = "changed">Open the <filepath>ditafmx-startcmd.bat</filepath> file
+<li status = "changed">(<i>OT 1.x only</i>) Open the <filepath>ditafmx-startcmd.bat</filepath> file
 in Notepad (or other text editor) and comment out the last line
 (add a “REM” at the start of the line). If you don't comment out
 this line, it will still work, you'll just get an empty shell that
@@ -85,42 +74,106 @@ Apps</uicontrol> button to display the <wintitle>External Application
 Settings</wintitle> dialog. Set the value of the <uicontrol>DITA-OT
 Directory</uicontrol> option to reference the main DITA-OT directory.
 Then set the value of the <uicontrol>DITA-OT Environment Setup File</uicontrol> option
-to reference the <filepath>ditafmx-startcmd.bat</filepath> file.<p>If
-you make use of the <uicontrol>Selected Target</uicontrol> option
-with the <uicontrol>Generate Output</uicontrol> command in Frame,
-by default this environment setup file is used for those builds
-as well. If you want to specify an alternate environment setup file,
-you can add the “EnvironmentSetup” parameter to the associated "ANT:&lt;targetname>"
+to reference the <filepath>bin\dita.bat</filepath> file (for OT
+2.x or later) or the <filepath>ditafmx-startcmd.bat</filepath> file
+(for OT 1.x).<p>(<i>OT 1.x only</i>) If you make use of the <uicontrol>Selected
+Target</uicontrol> option with the <uicontrol>Generate Output</uicontrol> command,
+this environment setup file is used for those builds as well. If
+you want to specify an alternate environment setup file, you can
+add the “EnvironmentSetup” parameter to the associated "ANT:&lt;targetname>"
 sections.</p></li></ol>
-<p>This should let you generate output through the default OT 1.5.4
-targets, without requiring you to set up the system environment.
-If you use the PDF2 transform, you may need to do some additional
-work such as starting Frame from a shell in the OT directory (or
-adding a "cd %DITA_DIR%" line to the <filepath>ditafmx-startcmd.bat</filepath> file.</p>
-<p>Alternatively, you may want to start FM from the DITA-OT directory.
+<p>This should let you generate output through most of the default
+targets. In order to use the PDF target, some additional setup and
+installation may be required. </p>
+<p>(<i>OT 1.x only</i>) You may need to start Frame from a shell
+in the OT directory, or add a "cd %DITA_DIR%" line to the <filepath>ditafmx-startcmd.bat</filepath> file.
+Alternatively, you may want to start FM from the DITA-OT directory.
 To do this just create a shortcut to <filepath>FrameMaker.exe</filepath>,
 and in the "Start In" field of the Shortcut tab, set this value
 to the path to your DITA-OT directory.</p>
 <section id = "id078AF0J0LHS" status = "changed"><title>Generate
-Output: Current File Option</title><p>The <uicontrol>Current File</uicontrol> option
-of the <uicontrol>Generate Output</uicontrol> command lets you generate output
-from the current topic or map file using a pre-defined Ant script (<filepath
-conref = "ditafmx_shared.xml#common/ditafmx-ant" class = "+ topic/ph
-sw-d/filepath "></filepath>). The installation process described
-above should be all that’s needed to use this command.</p><p
+Output: Current File Option (OT 2.x or later)</title><p>The <uicontrol>Current
+File</uicontrol> option of the <uicontrol>Generate Output</uicontrol> command
+lets you generate output from the current topic or map. </p><p
     status = "changed">The information about the current file and
-project are passed to the Ant script through command line parameters.
-Initially this provides support for 11 targets. If you want to add
-others, modify the <filepath conref = "ditafmx_shared.xml#common/ditafmx-ant"
+project are passed to the build process through command line parameters.
+By default this provides support for 8 targets. If you want to add
+others, and add those targets to the BuildFile section of the <filepath
+conref="ditafmx_shared.xml#common/ditafm-ini" class = "+ topic/ph
+sw-d/filepath "></filepath> file. The following is the default BuildFile
+section after completing the basic setup (assuming OT 2.5.4):</p><codeblock status = "new" outputclass = "ini">[BuildFile] 
+EnvironmentSetup=C:\DITA\dita-ot-2.5.4\bin\dita.bat 
+DitaDir=C:\DITA\dita-ot-2.5.4\ 
+AntCommand=ant 
+AntScript=ditafmx-ant.xml 
+Count=8 
+1=xhtml 
+2=html5 
+3=pdf 
+4=htmlhelp 
+5=javahelp 
+6=eclipsehelp 
+7=tocjs 
+8=troff </codeblock><note>The AntCommand and AntScript parameters
+are ignored for use with the OT 2.x or later.</note><p status = "new">Each
+of the numbered entries corresponds to target (transformation type)
+defined in the OT. If you want to add additional targets, install
+the necessary OT plugin to support additional targets, then add
+the corresponding target name to the BuildFile section (don’t forget
+to update the Count parameter).</p><p>As of DITA-FMx 2.0.07 three
+additional BuildFile parameters are available:</p><dl><dlentry><dt>OT2Params</dt>
+<dd><p>Pass additional parameters to the OT transformation.</p><note>Specifying
+an output location (via '-output=' or '-o='), will override the creation
+of the default build directory based on the current filename.</note></dd></dlentry>
+<dlentry><dt>OT2Params-&lt;build></dt>
+<dd><p>Same as the OT2Params parameter, but only applies to the
+specified DITA-FMx build. If set, this value overrides the OT2Params
+value. For example, the parameter name could be: OT2Params-xhtml</p></dd></dlentry>
+<dlentry><dt>OT2Logging</dt>
+<dd><p>Possible values are: Verbose (the default value, if not specified),
+Debug, or None (errors only).</p></dd></dlentry></dl><p status = "new">If
+you need to use a different DITA-OT installation for a specific
+build target, add new entries for EnvironmentSetup-&lt;target> and
+DitaDir-&lt;target>. For example, if the “chm” target required the
+use of a specially set up DITA-OT installation, you might use the
+following:</p><codeblock status = "new" outputclass = "ini">[BuildFile] 
+EnvironmentSetup=C:\DITA\dita-ot-2.5.4\bin\dita.bat 
+DitaDir=C:\DITA\dita-ot-2.5.4\ 
+EnvironmentSetup<b>-chm</b>=C:\DITA\dita-ot-2.1.1-special\bin\dita.bat 
+DitaDir<b>-chm</b>=C:\DITA\dita-ot-2.1.1-special\ 
+AntCommand=ant 
+AntScript=ditafmx-ant.xml 
+Count=9 
+1=xhtml 
+2=html5 
+3=pdf 
+4=chm 
+5=htmlhelp 
+6=javahelp 
+7=eclipsehelp 
+8=tocjs 
+9=troff</codeblock><p><indexterm>ditaval filtering</indexterm><indexterm>DitavalFiles
+INI section</indexterm>In order to take advantage of ditaval filtering,
+you must register or create ditaval files so they are known to DITA-FMx.
+The Ditaval Manager provides the means to add existing files, or
+create new files.</p></section>
+<section id = "id1f6c869c-80dc-4d0c-a7d0-67e25e2902ce"
+    status = "changed"><title>Generate Output: Current File Option
+(OT 1.x)</title><p>The <uicontrol>Current File</uicontrol> option
+of the <uicontrol>Generate Output</uicontrol> command lets you generate output
+from the current topic or map. </p><p status = "changed">The information
+about the current file and project are passed to the Ant script through
+command line parameters. Initially this provides support for 11
+targets. If you want to add others, modify the <filepath conref="ditafmx_shared.xml#common/ditafmx-ant"
 class = "+ topic/ph sw-d/filepath "></filepath> file and add more
-targets to the BuildFile section of the <filepath conref = "ditafmx_shared.xml#common/ditafm-ini"
+targets to the BuildFile section of the <filepath conref="ditafmx_shared.xml#common/ditafm-ini"
 class = "+ topic/ph sw-d/filepath "></filepath> file. The following
 is the default BuildFile section after completing the basic setup:</p><codeblock status = "new" outputclass = "ini">[BuildFile] 
+EnvironmentSetup=C:\DITA\DITA-OT1.8.5\ditafmx-startcmd.bat 
+DitaDir=C:\DITA\DITA-OT1.8.5\ 
 AntCommand=ant 
-EnvironmentSetup=C:\DITA\DITA-OT1.8.4\ditafmx-startcmd.bat 
-DitaDir=C:\DITA\DITA-OT1.8.4\ 
 AntScript=ditafmx-ant.xml 
-Count=11 
+Count=9 
 1=xhtml 
 2=chm 
 3=pdf 
@@ -129,9 +182,7 @@ Count=11
 6=docbook 
 7=eclipsecontent 
 8=troff 
-9=wordrtf 
-10=epub-out 
-11=suitehelp</codeblock><p status = "new">Each of the numbered entries
+9=wordrtf</codeblock><p status = "new">Each of the numbered entries
 corresponds to target defined in the <filepath status = "new">ditafmx-ant.xml</filepath> file.
 If you want to add additional targets, add it to the <filepath
     status = "new">ditafmx-ant.xml</filepath> file, then add the
@@ -147,12 +198,12 @@ and DitaDir-&lt;target>. For example, if the “chm” target required
 the use of a specially set up DITA-OT installation, you might use
 the following:</p><codeblock status = "new" outputclass = "ini">[BuildFile] 
 AntCommand=ant 
-EnvironmentSetup=C:\DITA\DITA-OT1.8.4\ditafmx-startcmd.bat 
-DitaDir=C:\DITA\DITA-OT1.8.4\ 
-EnvironmentSetup-chm=C:\DITA\DITA-OT1.8.4-CHM\ditafmx-startcmd.bat 
-DitaDir-chm=C:\DITA\DITA-OT1.8.4-CHM\ 
+EnvironmentSetup=C:\DITA\DITA-OT1.8.5\ditafmx-startcmd.bat 
+DitaDir=C:\DITA\DITA-OT1.8.5\ 
+EnvironmentSetup-chm=C:\DITA\DITA-OT1.8.5-MYCHM\ditafmx-startcmd.bat 
+DitaDir-chm=C:\DITA\DITA-OT1.8.5-MYCHM\ 
 AntScript=ditafmx-ant.xml 
-Count=11 
+Count=9 
 1=xhtml 
 2=chm 
 3=pdf 
@@ -161,25 +212,14 @@ Count=11
 6=docbook 
 7=eclipsecontent 
 8=troff 
-9=wordrtf 
-10=epub-out 
-11=suitehelp</codeblock><p status = "changed">The “lmi-airhelp”
-target is included in the <filepath conref = "ditafmx_shared.xml#common/ditafmx-ant"
-class = "+ topic/ph sw-d/filepath "></filepath> file. If you would
-like to try building AIR Help from DITA files, download the DITA
-to AIR Help plugin from Leximation at <xref href = "http://leximation.com/airhelp/"
-format = "html" scope = "external">www.leximation.com/airhelp/</xref>.
-You will also need to add an “lmi-airhelp” entry to the BuildFile
-section of the <filepath conref = "ditafmx_shared.xml#common/ditafm-ini"
-class = "+ topic/ph sw-d/filepath "></filepath> file.</p><p><indexterm>ditaval
-filtering</indexterm><indexterm>DitavalFiles INI section</indexterm>In
-order to take advantage of ditaval filtering, you must register
-or create ditaval files so they are known to DITA-FMx. The Ditaval
-Manager provides the means to add existing files, or create new
-files.</p></section>
+9=wordrtf </codeblock><p><indexterm>ditaval filtering</indexterm><indexterm>DitavalFiles
+INI section</indexterm>In order to take advantage of ditaval filtering,
+you must register or create ditaval files so they are known to DITA-FMx.
+The Ditaval Manager provides the means to add existing files, or
+create new files.</p></section>
 <section id = "id_0679K0GL05Z"><title>Generate Output: Selected
-Target Option</title><p>The following steps should get you up and
-running with the <uicontrol>Selected Target</uicontrol> option of
+Target Option (OT 1.x only)</title><p>The following steps should
+get you up and running with the <uicontrol>Selected Target</uicontrol> option of
 the <uicontrol>Generate Output</uicontrol> command.</p><ol><li><p><indexterm
 class = "- topic/indexterm ">PROJECT.xml file</indexterm>Copy the <filepath>PROJECT.xml</filepath> file
 to your DITA-OT directory and rename it something appropriate for

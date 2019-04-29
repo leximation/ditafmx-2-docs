@@ -1,83 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
 <topic id = "id466d7829-cb25-46ac-9015-ebd3a4a02729"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
-<title>Special Book Application Elements</title>
+<title>DITA-FMx Specific Book Application Elements</title>
+<shortdesc status = "new">The Book structure application includes
+a number of special (non-DITA) elements that are needed for proper
+rendering of certain features.</shortdesc>
 <prolog><author>Scott Prentice</author>
 <author>scottp</author>
-<critdates status = "new"><created date = "2009-02-19"/>
-<revised modified = "2015-03-17" status = "new"/></critdates></prolog>
-<body><p status = "changed">The Book application is essentially
-identical to the Topic application except that it has three additional
-elements that are used to isolate the separate pieces that are part of
-the book. The Book application also makes use of special <synph
-    status = "new" outputclass = "element">fm-tabletitle</synph> and <synph
-    status = "new" outputclass = "element">fm-figuretitle</synph> elements
-for proper table formatting.</p>
-<dl status = "changed"><dlentry><dt>fm-ditabook</dt>
-<dd status = "changed"><indexterm>fm-ditabook element</indexterm><indexterm>elements<indexterm>fm-ditabook</indexterm></indexterm>The
+<critdates><created date = "2009-02-19"/>
+<revised modified = "2017-11-19"/></critdates></prolog>
+<body status = "changed"><p status = "changed">The Book application
+is essentially identical to the Topic application except that it
+has additional elements that are used to isolate the separate pieces
+that are part of the book. The Book application also makes use of
+special <synph status = "changed" outputclass = "element">fm-*</synph> elements
+for proper rendering of various features. Without these <synph
+    status = "changed" outputclass = "element">fm-*</synph> elements,
+it’s likely that your book build will fail.</p>
+<section><title>Generated book elements</title><p>These elements
+are used in the structure of the generated book file. All are required.</p><dl
+    status = "new"><dlentry><dt>fm-ditabook</dt>
+<dd><p><indexterm>fm-ditabook element</indexterm><indexterm>elements<indexterm>fm-ditabook</indexterm></indexterm>The
 root element of the generated book file. Also represents the root
-DITA map used to create the book. The href attribute defines the
-path and name of the source ditamap file. Additional attributes
-may be added from map metadata for use as variables or by element
-definition context rules.</dd></dlentry>
-<dlentry><dt>fm-ditafile</dt>
-<dd><indexterm>fm-ditafile element</indexterm><indexterm>elements<indexterm>fm-ditafile</indexterm></indexterm>Identifies
-each DITA topic file. The href attribute defines the path and name
-of the source topic file. The maptype attribute contains the name
-of the element that referenced this topic file in the original ditamap.
-This is used by the book-build process to identify specific book
-components to automatically apply templates as well as numbering
-and pagination properties.</dd></dlentry>
+DITA map used to create the book. The <synph outputclass = "attribute">href</synph> attribute
+defines the path and name of the source ditamap file. Additional
+attributes may be added from map metadata for use as variables or
+by element definition context rules.</p></dd></dlentry>
 <dlentry><dt>fm-bookcomponent</dt>
-<dd><indexterm>fm-bookcomponent element</indexterm><indexterm>elements<indexterm>fm-bookcomponent</indexterm></indexterm>Used
-as a container for generated book components. This wraps any generated that
-are added by the book-build process, or you can add this for any
-generated files you add manually.</dd></dlentry>
-<dlentry><dt status = "changed">fm-tabletitle</dt>
-<dd status = "changed"><indexterm>fm-tabletitle element</indexterm><indexterm>elements<indexterm>fm-tabletitle</indexterm></indexterm>Allows
+<dd status = "changed"><p><indexterm>fm-bookcomponent element</indexterm><indexterm>elements<indexterm>fm-bookcomponent</indexterm></indexterm>Used
+as a container for generated book components. This wraps any generated files
+that are added by the book-build process, or you can add this for
+any generated files you add manually.</p></dd></dlentry></dl></section>
+<section><title>Generated file (chapter) elements</title><p>These
+elements are used to support various features in generated file
+or chapter components. Only the <synph outputclass = "element">fm-ditafile</synph> element
+is required; the rest are used if your source topics include elements
+that make use of those features.</p><dl><dlentry>
+<dt status = "changed">fm-ditafile</dt>
+<dd><p><indexterm>fm-ditafile element</indexterm><indexterm>elements<indexterm>fm-ditafile</indexterm></indexterm>Identifies
+each DITA topic file. The <synph outputclass = "attribute">href</synph> attribute
+defines the path and name of the source topic file. The <synph
+    outputclass = "attribute">maptype</synph> attribute contains
+the name of the element that referenced this topic file in the original
+ditamap. This is used by the book-build process to identify specific
+book components to automatically apply templates as well as numbering
+and pagination properties.</p></dd></dlentry>
+<dlentry><dt>fm-tabletitle</dt>
+<dd><p><indexterm>fm-tabletitle element</indexterm><indexterm>elements<indexterm>fm-tabletitle</indexterm></indexterm>Allows
 for properly formatted table titles in generated FrameMaker files.
-The Book application must have the fm-tabletitle element defined
-and valid as a child of the tgroup element.</dd></dlentry>
-<dlentry><dt status = "changed">fm-figuretitle</dt>
-<dd status = "changed"><indexterm>fm-figuretitle element</indexterm><indexterm>elements<indexterm>fm-figuretitle</indexterm></indexterm>Supports <synph
-    status = "new" outputclass = "element">fm-xref</synph> references
-to “moved” figure titles in generated FrameMaker files. The Book
-application must have the <synph status = "new" outputclass = "element">fm-figuretitle</synph> element defined
-and valid as the last child of the fig element. If this element
-is not defined, the “move figure titles” book-build option will
-use the default title element, but in order to support cross-references
-to figure titles that are moved, this element must be defined and
-have its @id attribute’s type set to “UniqueID.”</dd></dlentry>
-<dlentry><dt status = "changed">fm-figuredesc</dt>
-<dd status = "changed"><indexterm>fm-figuredesc element</indexterm><indexterm>elements<indexterm>fm-figuredesc</indexterm></indexterm>Supports
-content in a <synph status = "new" outputclass = "element">desc</synph> element
+The Book application must have the <synph outputclass = "element">fm-tabletitle</synph> element
+defined and valid as a child of the <synph outputclass = "element">tgroup</synph> element.</p></dd></dlentry>
+<dlentry><dt>fm-figuretitle</dt>
+<dd><p><indexterm>fm-figuretitle element</indexterm><indexterm>elements<indexterm>fm-figuretitle</indexterm></indexterm>Supports <synph
+    outputclass = "element">fm-xref</synph> references to “moved”
+figure titles in generated FrameMaker files. The Book application
+must have the <synph outputclass = "element">fm-figuretitle</synph> element defined
+and valid as the last child of the <synph outputclass = "element">fig</synph> element.
+If this element is not defined, the “move figure titles” book-build
+option will use the default <synph outputclass = "element">title</synph> element,
+but in order to support cross-references to figure titles that are
+moved, this element must be defined and have its <synph
+    outputclass = "attribute">id</synph> attribute’s type set to “UniqueID.”</p></dd></dlentry>
+<dlentry><dt>fm-figuredesc</dt>
+<dd><p><indexterm>fm-figuredesc element</indexterm><indexterm>elements<indexterm>fm-figuredesc</indexterm></indexterm>Supports
+content in a <synph outputclass = "element">desc</synph> element
 that is “moved” with figure titles in generated FrameMaker files.
-The Book application must have the <synph status = "new"
-    outputclass = "element">fm-figuredesc</synph> element defined
-and valid as the last child of the fig element. If this element
+The Book application must have the <synph outputclass = "element">fm-figuredesc</synph> element
+defined and valid as the last child of the <synph
+    outputclass = "element">fig</synph> element. If this element
 is not defined, the “move figure titles” book-build option will
-create this element.</dd></dlentry></dl>
-<p>Other than these special “fm-*” elements that are unique to the
-Book application, three element definitions vary from those in the
-Topic application:</p>
-<dl><dlentry><dt>title</dt>
-<dd>The context rule level numbering differs to allow for an additional
-level of “chapter titles.”</dd></dlentry>
+create this element.</p></dd></dlentry></dl><dl status = "new">
+<dlentry><dt status = "changed">fm-hazardtable</dt>
+<dd status = "changed"><p><indexterm>fm-hazardtable element</indexterm><indexterm>elements<indexterm>fm-hazardtable</indexterm></indexterm>If
+“hazard to table” processing is enabled in the book-build INI file
+(the default), the <synph outputclass = "element">hazardstatement</synph> element
+model is wrapped in a special hazard table structure. The <synph
+    outputclass = "element">fm-hazardtable</synph> element is the
+container for this hazard table. </p><p>Compare to the <synph
+    status = "changed" outputclass = "element">table</synph> element.
+The attributes from the <synph status = "changed"
+    outputclass = "element">hazardstatement</synph> element are
+copied to this element and the <synph status = "changed"
+    outputclass = "element">hazardstatement</synph> element is deleted.
+The general rules for all elements that contain the <synph
+    status = "changed" outputclass = "element">hazardstatement</synph> element
+must be updated to also support the <synph status = "changed"
+    outputclass = "element">fm-hazardtable</synph> element. </p></dd></dlentry>
+<dlentry><dt status = "changed">fm-hazardtgroup</dt>
+<dd status = "changed"><p><indexterm>fm-hazardtgroup element</indexterm><indexterm>elements<indexterm>fm-hazardtgroup</indexterm></indexterm>Compare
+to the <synph status = "changed" outputclass = "element">tgroup</synph> element. </p><p>The
+default element definition in the Book EDD inserts a table format
+named “Hazard.” If you want all of your hazard tables to use the
+same style, you can leave this table format as it is. But if you’d
+like different styles for each hazard statement type, you can modify
+the EDD to insert a different table format based on the fm-hazardtable/@type
+attribute.</p></dd></dlentry>
+<dlentry><dt status = "changed">fm-hazardthead</dt>
+<dd status = "changed"><p><indexterm>fm-hazardthead element</indexterm><indexterm>elements<indexterm>fm-hazardthead</indexterm></indexterm>Compare
+to the <synph status = "changed" outputclass = "element">thead</synph> element.
+(Defined in the Book EDD, but not currently used.)</p></dd></dlentry>
+<dlentry><dt status = "changed">fm-hazardtbody</dt>
+<dd status = "changed"><p><indexterm>fm-hazardtbody element</indexterm><indexterm>elements<indexterm>fm-hazardtbody</indexterm></indexterm>Compare
+to the <synph status = "changed" outputclass = "element">tbody</synph> element. </p></dd></dlentry>
+<dlentry><dt status = "changed">fm-hazardrow</dt>
+<dd status = "changed"><p><indexterm>fm-hazardrow element</indexterm><indexterm>elements<indexterm>fm-hazardrow</indexterm></indexterm>Compare
+to the <synph status = "changed" outputclass = "element">row</synph> element. </p></dd></dlentry>
+<dlentry><dt status = "changed">fm-hazardentry</dt>
+<dd status = "changed"><p><indexterm>fm-hazardentry element</indexterm><indexterm>elements<indexterm>fm-hazardentry</indexterm></indexterm>Compare
+to the <synph status = "changed" outputclass = "element">entry</synph> element. </p></dd></dlentry>
+<dlentry><dt status = "changed">fm-hazardhead</dt>
+<dd status = "changed"><p><indexterm>fm-hazardhead element</indexterm><indexterm>elements<indexterm>fm-hazardhead</indexterm></indexterm>Provides
+a heading label for the hazard table. </p></dd></dlentry>
+<dlentry><dt status = "changed">fm-hazardsymbolwrapper</dt>
+<dd status = "changed"><p><indexterm>fm-hazardsymbolwrapper element</indexterm><indexterm>elements<indexterm>fm-hazardsymbolwrapper</indexterm></indexterm>Wraps
+the <synph outputclass = "element">hazardsymbol</synph> element
+that is inserted into the first column of the hazard table. Also,
+inserted into the first column even if there is no <synph
+    outputclass = "element">hazardsymbol</synph> element (can be
+used to control formatting or insertion of a reference image).</p></dd></dlentry></dl></section>
+<section><title>Modified elements</title><p>Other than the special <synph
+    outputclass = "element">fm-*</synph> elements that are unique
+to the Book application, the following element definitions vary
+from those in the Topic application:</p><dl><dlentry><dt>title</dt>
+<dd><p>The context rule level numbering differs to allow for an
+additional level of “chapter titles.”</p></dd></dlentry>
 <dlentry><dt>fig</dt>
-<dd status = "changed">Includes the <synph status = "new"
-    outputclass = "element">title</synph> and <synph status = "new"
+<dd><p>Includes the <synph outputclass = "element">title</synph> and <synph
     outputclass = "element">fm-figuretitle</synph> elements as optional
 elements at the end of the general rule. This is required by the
-“Move fig/title to end of fig element” Book Build option.</dd></dlentry>
+“Move fig/title to end of fig element” Book Build option.</p></dd></dlentry>
 <dlentry><dt>tgroup</dt>
-<dd>Includes the <synph status = "new" outputclass = "element">fm-tabletitle</synph> element
+<dd><p>Includes the <synph outputclass = "element">fm-tabletitle</synph> element
 in the general rule. This is required by the “Move table/title to
-table/tgroup/title” Book Build option.</dd></dlentry></dl></body></topic>
+table/tgroup/title” Book Build option.</p></dd></dlentry>
+<dlentry><dt>typeofhazard</dt>
+<dd><p>Context rule checks the <synph outputclass = "attribute">type</synph> attribute
+of the <synph outputclass = "element">fm-hazardtable</synph> element instead
+of the <synph outputclass = "element">hazardstatement</synph> element.</p></dd></dlentry></dl></section></body></topic>

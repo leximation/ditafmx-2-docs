@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
-<?dtall dict="admin"?><?dtall dict="Files\Adobe\FrameMaker\DITA"?><?dtall
-dict="STRUCTDIR\\xml\\DITA"?><?dtall dict="apps\\DITA"?><concept
+<?dtall dict="admin"?><?dtall dict="apps\\DITA"?><?dtall dict="Files\Adobe\FrameMaker\DITA"?><?dtall
+dict="STRUCTDIR\\xml\\DITA"?><concept
     id = "id3e0f22a6-bded-404b-9a77-2a80461af2bd" status = "new"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
 <title>Alternate Location for the Structure Applications</title>
@@ -17,7 +11,7 @@ admin privileges, it may make sense to install the structure applications
 to an alternate location that is more accessible.</shortdesc>
 <prolog><author>scottp</author>
 <critdates><created date = "2015-08-10"/>
-<revised modified = "2015-08-10"/></critdates></prolog>
+<revised modified = "2017-10-10"/></critdates></prolog>
 <conbody><p status = "new">The structure applications should be
 installed to a location that’s writable for the end user. This is
 to allow for modifications to be made as needed.</p>

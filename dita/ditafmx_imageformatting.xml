@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+]>
+<?dtall dict="BookBuildOverrides"?><?dtall dict="BreakToInline"?><?dtall
+dict="placement=’break"?><?dtall dict="placement=’inline"?><topic
+    id = "idd23c490c-4441-4e76-968f-91bbae5af1dd"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Image Formatting Options</title>
+<shortdesc>Default DITA attributes provide for very basic formatting
+of images. DITA-FMx supports the use of special outputclass attribute
+values to leverage FrameMaker’s enhanced image layout options.</shortdesc>
+<prolog><author>Scott Prentice</author>
+<author>test</author>
+<author>scottp</author>
+<critdates><created date = "2019-03-14"/>
+<revised modified = "2019-03-14"/></critdates></prolog>
+<body status = "changed"><p status = "new"><indexterm status = "new">images<indexterm>formatting</indexterm></indexterm><indexterm
+status = "new">images<indexterm>layout options</indexterm></indexterm>To
+apply special layout features to an image, add one or more of the
+following values to the image element’s <synph outputclass = "attribute">outputclass</synph> attribute.
+Note that there is not a one-to-one correlation between these values
+and the interface options, so some experimentation will likely be
+needed to get exactly what you want.</p>
+<ul><li><p>fm:pos-below - Below Current Line</p></li>
+<li><p>fm:pos-top - At Top of Column</p></li>
+<li><p>fm:pos-bottom - At Bottom of Column</p></li>
+<li><p>fm:pos-inline - At Insertion Point</p></li>
+<li><p>fm:pos-runin - Run into Paragraph</p></li>
+<li><p>fm:pos-col-left - </p></li>
+<li><p>fm:pos-col-right - </p></li>
+<li><p>fm:pos-col-near - </p></li>
+<li><p>fm:pos-col-far - </p></li>
+<li><p>fm:pos-col-inside - </p></li>
+<li><p>fm:pos-col-outside - Outside Column</p></li>
+<li><p>fm:pos-frame-left - </p></li>
+<li><p>fm:pos-frame-right - </p></li>
+<li><p>fm:pos-frame-near - </p></li>
+<li><p>fm:pos-frame-far - </p></li>
+<li><p>fm:pos-frame-inside - </p></li>
+<li><p>fm:pos-frame-outside - Outside Text Frame</p></li>
+<li><p>fm:align-left - Align left</p></li>
+<li><p>fm:align-center - Align center</p></li>
+<li><p>fm:align-right - Align right</p></li>
+<li><p>fm:align-inside - Align inside</p></li>
+<li><p>fm:align-outside - Align outside</p></li>
+<li><p>fm:aframe-cropped - Anchored frame, cropped</p></li>
+<li><p>fm:aframe-floating - Anchored frame, floating</p></li>
+<li><p>fm:baseline-&lt;UNITVAL> - Above Baseline</p></li>
+<li><p>fm:gap-&lt;UNITVAL> - Gap</p></li></ul>
+<note><p>&lt;UNITVAL> = 60pt, 60%, etc (no space before or within
+&lt;UNITVAL>)</p></note></body></topic>

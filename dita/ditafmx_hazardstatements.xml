@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+]>
+<topic id = "ideab292b7-16d3-465e-9b8e-425f601e34b1"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Working with Hazard Statements</title>
+<shortdesc>The hazardstatement element model can be very useful
+for certain documentation types, but authoring and publishing in
+a consistent manner can be tricky.</shortdesc>
+<prolog><author>scottp</author>
+<critdates><created date = "2017-10-03"/>
+<revised modified = "2017-10-03"/></critdates></prolog>
+<body><p>With the release of DITA-FMx 2.0.06 you can now make effective
+use of hazardstatement elements in your topic files. There are a
+number of options to control the processing while authoring as well
+as various options and setup requirements for publishing.</p></body></topic>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+]>
+<topic id = "id7219b1ac-da20-4d78-b157-30ba56adc49f"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Working with Glossaries</title>
+<shortdesc>Providing a glossary can significantly enhance most any
+documentation set.</shortdesc>
+<prolog><author>scottp</author>
+<critdates><created date = "2017-11-09"/>
+<revised modified = "2017-11-09"/></critdates></prolog></topic>

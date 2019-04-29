@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+]>
+<topic id = "id3431a2b9-d3a9-4ea4-ad3c-f4c4a713a90e"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Glossary Lists</title>
+<shortdesc>Once you’ve developed the glossary entries, you may want
+to present them as a generated list for easy browsing.</shortdesc>
+<prolog><author>scottp</author>
+<critdates><created date = "2017-11-09"/>
+<revised modified = "2017-11-09"/></critdates></prolog>
+<body><p>The assumed use for this list is as an additional “TOC”
+list at the beginning of the book. This would be presented as a
+list of terms that link to the full glossary topics (glossentries).
+With DITA-FMx, we can leverage FrameMaker’s ability to create multiple
+types of generated lists, and a glossary list is just one of those
+types.</p>
+<p>The following steps describe one way to achieve this list.</p>
+<ol><li><p>We assume that you’re using a bookmap, and in the <synph
+    outputclass = "element">frontmatter</synph> <synph
+    outputclass = "element">booklists</synph> element you should
+insert an empty<synph outputclass = "element">glossarylist</synph> element.</p></li>
+<li><p>Next, set up a “gentpl” component template to properly format
+that generated list (like a TOC or Index). You might start by cloning
+the <filepath>gentpl~toc.fm</filepath> file to <filepath>gentpl~glossarylist.fm.</filepath></p></li>
+<li><p>In your bookbuild INI, you need to provide the para tag names
+for “GeneratedFile-glossarylist” like you do for the TOC.</p></li>
+<li><p>Not required, but a good practice would be to separate your <synph
+    outputclass = "element">glossentry</synph> topics into a separate
+submap that has a single root element so they all show up as child
+nodes of the root. </p><codeblock>&lt;map>
+&lt;title>Glossary&lt;/title>
+&lt;topicref href="glossmain.xml">
+&lt;glossref href="glossentryone.xml"/>
+&lt;glossref href="glossentrytwo.xml"/>
+&lt;glossref href="glossentrythree.xml"/>
+...
+&lt;/topicref>
+&lt;/map></codeblock></li>
+<li><p>In your template, make sure the <synph outputclass = "element">glossterm</synph> (titles)
+get tagged with some unique para tag, so you can use that in step
+#3 (above).</p></li></ol></body></topic>

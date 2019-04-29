@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
 <bookmap id = "id0831I900FHS" status = "changed"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
@@ -18,21 +12,22 @@
 <emailaddresses><emailaddress>ditafmx@leximation.com</emailaddress></emailaddresses>
 <urls><url>http://leximation.com/dita-fmx</url></urls></organizationinfo></authorinformation>
 <author>Scott Prentice</author>
-<author>test</author>
 <author>scottp</author>
 <critdates status = "new"><created date = "2007-01-01" status = "new"/>
-<revised modified = "2016-09-13" status = "new"/></critdates>
+<revised modified = "2019-04-23" status = "new"/></critdates>
 <prodinfo><prodname>DITA-FMx</prodname>
 <vrmlist status = "changed"><vrm version = "2.0.00"/>
 <vrm version = "2.0.01"/>
 <vrm version = "2.0.02"/>
 <vrm version = "2.0.03"/>
 <vrm version = "2.0.04"/>
-<vrm version = "2.0.05"/></vrmlist></prodinfo>
+<vrm version = "2.0.05"/>
+<vrm version = "2.0.06"/>
+<vrm version = "2.0.07"/></vrmlist></prodinfo>
 <bookrights><copyrfirst>
 <year>2006</year>
 </copyrfirst>
-<copyrlast><year status = "changed">2016</year></copyrlast>
+<copyrlast><year status = "changed">2019</year></copyrlast>
 <bookowner><organization>Leximation, Inc.</organization></bookowner></bookrights></bookmeta>
 <frontmatter><mapref href = "_keymap.ditamap" format = "ditamap">
 <topicmeta><navtitle>keymap</navtitle></topicmeta></mapref>

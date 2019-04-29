@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
 <topic id = "id081TB060Y5Z"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
-<title>Switching Between DITA-FMx and FM8/9/10/11/12/2015-DITA</title>
+<title>Switching Between DITA-FMx and FM-DITA</title>
 <shortdesc status = "changed">If needed, you can easily switch between
-DITA-FMx and the built-in FM8/9/10/11/12/2015 DITA support.</shortdesc>
+DITA-FMx and the built-in FM-DITA support.</shortdesc>
 <prolog><author>Scott Prentice</author>
 <author>scottp</author>
 <critdates><created date = "2008-02-24"/>
-<revised modified = "2015-08-10"/></critdates></prolog>
+<revised modified = "2019-03-14"/></critdates></prolog>
 <body><p>For testing purposes, you may want to alternate between
 DITA-FMx and the built-in FrameMaker DITA support. Fundamentally,
 this is very simple to do, and if you do this frequently, there
@@ -30,26 +24,24 @@ time you modify the <filepath>maker.ini</filepath> file you’ll ned
 to restart FrameMaker to initialize the alternate plugin.</p>
 <note type = "important">Before modifying the <filepath>maker.ini</filepath> file
 you should make a backup and keep it in a safe place.</note>
-<p>You may want to set up the <filepath>maker.ini</filepath> file
+<p status = "changed">You may want to set up the <filepath>maker.ini</filepath> file
 so it’s easy to make this change. Just move the lines to the end
-of the APIClients section and add some comments to look like this
-(note that the FM8 DITA lines have been modified slightly):</p>
-<codeblock expanse = "page" outputclass = "ini">; Default FM8-DITA 
-;ditafm=Standard, FM8-DITA, fminit\ditafm.dll, structured 
-;ditafm_app=Standard, FM8-DITA, fminit\ditafm_app.dll, structured 
-;ditabook=Standard, FM8-DITA, fminit\ditabook.dll, structured 
-;ditaOpenToolkit=Standard, FM8-DITAOT, fminit\openToolkit.dll, structured 
- 
+of the APIClients section and add some comments to look like this:</p>
+<codeblock expanse = "page" status = "changed" outputclass = "ini">; Default FM2019-DITA 
+;ditafm=Standard, Translation client for DITA, fminit\ditafm.dll, structured
+;ditafm_app=Standard, Translation client for DITA, fminit\ditafm_app.dll, structured
+;Dita OT=Standard, DITA OT client for DITA, fminit\openToolkit.dll, structured
+
 ; DITA-FMx 
-ditafmx=Standard, ditafmx, DITA-FMx\ditafmx_80.dll, structured 
-ditafmx_app=Standard, ditafmx_app, DITA-FMx\ditafmx_80_app.dll, structured</codeblock>
+ditafmx=Standard, ditafmx, DITA-FMx-2\ditafmx_150.dll, structured
+ditafmx_app=Standard, ditafmx_app, DITA-FMx-2\ditafmx_150_app.dll, structured</codeblock>
 <p>This way you can easily add or remove the semicolon to comment
 or uncomment the appropriate lines.</p>
-<p>One additional step that will streamline this process is to change
-the FM8 DITA entry for “ditafm_app” to “ditafmx_app,” then make
-the same change in the structure application definitions file (change
-“ditafm_app” to “ditafmx_app” in the UseApiClient entries). This
-won’t change the functionality of the FM DITA import/export client,
+<p status = "changed">One additional step that will streamline this
+process is to change the FM-DITA entry for “ditafm_app” to “ditafmx_app,”
+then make the same change in the structure application definitions
+file (change “ditafm_app” to “ditafmx_app” in the UseApiClient entries).
+This won’t change the functionality of the FM-DITA import/export client,
 it just means that you can use the same structure application for
 both plugins and you won’t have to edit the structapps file each
 time you switch. If you call them both “ditafmx_app,” then when

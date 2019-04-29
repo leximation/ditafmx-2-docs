@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
-
-<!-- Begin Document Specific Declarations -->
-
-
-<!-- End Document Specific Declarations -->
-
 ]>
 <?dtall dict="FrameMaker\Structure\xml"?><topic id = "id0838A0Q605Z"
     xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
@@ -15,7 +9,7 @@ installation to the latest point release.</shortdesc>
 <prolog><author>Scott Prentice</author>
 <author>scottp</author>
 <critdates><created date = "2008-03-08"/>
-<revised modified = "2015-03-31"/></critdates></prolog>
+<revised modified = "2017-10-10"/></critdates></prolog>
 <body status = "changed"><p status = "changed">To reinstall or update
 DITA-FMx over an existing installation, you’ve got two basic options.</p>
 <dl status = "new"><dlentry><dt status = "new">Quick and simple,
@@ -53,9 +47,9 @@ the DITA-FMx Revision History, so you can integrate any structure
 application updates. In particular, you should consider using the
 updated XSLT scripts for the Book application to take advantage of
 any fixes to the book-build processing.</p>
-<note status = "changed">If you’re installing an update on Windows
-Vista, 7, or 8, keep in mind that the user-editable INI files are
-in the “app data” area not in the Program Files area.</note>
+<note status = "changed">If you’re installing an update on <ph conref="ditafmx_shared.xml#common/winvers_new"></ph>,
+keep in mind that the user-editable INI files are in the “app data”
+area not in the Program Files area.</note>
 <note type = "important" otherprops = "fm120">If you’re installing
 an update on FM12, due to a core problem in FrameMaker, you must
 manually delete the <filepath>ModalDialogPosition.ini</filepath> file

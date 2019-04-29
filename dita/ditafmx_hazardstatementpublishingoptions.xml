@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd" [
+]>
+<?dtall dict="fm"?><?dtall dict="tpl~topicref"?><topic
+    id = "id97325cf7-d095-4331-9c64-5617fd46d6e9"
+    xmlns:ditaarch = "http://dita.oasis-open.org/architecture/2005/">
+<title>Hazard Statement Publishing Options</title>
+<shortdesc>To render <synph status = "changed" outputclass = "element">hazardstatement</synph> elements
+for publishing, the default DITA elements are wrapped in a table
+structure made up of a number of special <synph status = "changed"
+    outputclass = "element">fm-*</synph> elements.</shortdesc>
+<prolog><author>scottp</author>
+<critdates><created date = "2017-10-03"/>
+<revised modified = "2017-11-10"/></critdates></prolog>
+<body><note>The <synph status = "changed" outputclass = "element">fm-*</synph> elements
+mentioned here are described in <xref href = "ditafmx_app_bookapplicationelements.xml#id466d7829-cb25-46ac-9015-ebd3a4a02729"
+type = "topic" format = "dita" scope = "local"></xref>.</note>
+<p status = "new"><indexterm status = "new">hazardstatement support</indexterm><indexterm>hazardstatement
+element</indexterm><indexterm>elements<indexterm>hazardstatement</indexterm></indexterm>The
+hazard table wrapping of <synph status = "changed"
+    outputclass = "element">hazardstatement</synph> elements is
+performed by default if the special <synph status = "changed"
+    outputclass = "element">fm-*</synph> elements exist in the Book
+structure application. To prevent this process from running, in
+the bookbuild INI, set BookBuildOverrides/HazardToTable=0.</p>
+<p>DITA-FMx supports two styles of hazard tables. One style has
+a full-width header and a row below with two cells, one for the
+hazard symbol and the other for the hazard information (<synph
+    status = "changed" outputclass = "element">messagepanel</synph> structure).
+The other style has a partial-width header where the hazard symbol
+is in the first column, and the header and content in the second
+column (this is the default style in the DITA-FMx Book templates).</p>
+<fig><title>Full-width header hazard table style</title><image href="images/hazard-book-alt.png"
+align="left" placement="break"  outputclass = "fmdpi:120"/></fig>
+<fig><title>Partial-width header hazard table style (default)</title><image
+href="images/hazard-book-default.png" align="left" placement="break"
+ outputclass = "fmdpi:120"/></fig>
+<p>During the hazard-to-table processing, each <synph
+    outputclass = "element">hazardstatement</synph> element is replaced
+with an <synph outputclass = "element">fm-hazardtable</synph> element
+and the attributes are transfered from one to the other. Within
+the <synph outputclass = "element">fm-hazardtable</synph> a <synph
+    outputclass = "element">fm-hazardtgroup</synph> element is inserted
+which inserts a “Hazard” table object. The default properties of
+this table controls the appearance of the resulting hazard tables.
+To create a full-width header table, the default layout should have
+1 header row and 1 body row, with 2 columns. For a partial-width
+header table, set up the default table layout with no header rows, 2
+body rows and 2 columns.</p>
+<fig><title>Structural model after hazard-to-table processing</title><image
+href="images/hazard-book-struct.png" align="left" placement="break"
+ outputclass = "fmdpi:120"/></fig>
+<p>The header background coloring is controlled by a custom color
+definition named based on the hazardstatement/@type attribute. Create
+a custom color for each @type value you plan to use. These colors
+should use the naming convention of “hazard-<i>TYPE</i>” (where
+“<i>TYPE</i>” is the value of the <synph outputclass = "attribute">type</synph> attribute).
+Hazard statements without a <synph outputclass = "attribute">type</synph> attribute
+value will use a color named “hazard.”</p>
+<p>The formatting and text of the header label is also tied to the <synph
+    outputclass = "attribute">type</synph> attribute. A paragraph
+tag is applied to the <synph status = "changed" outputclass = "element">fm-hazardhead</synph> element
+using the naming convention of “hazard.head.<i>TYPE</i>” (and “hazard.head”
+for no <synph outputclass = "attribute">type</synph> value). This paragraph
+tag defines an autonum prefix for each label for the header text.</p>
+<p><indexterm>hazardsymbol element</indexterm><indexterm>messagepanel
+element</indexterm><indexterm>elements<indexterm>hazardsymbol</indexterm></indexterm><indexterm>elements<indexterm>messagepanel</indexterm></indexterm>The <synph
+    status = "changed" outputclass = "element">hazardsymbol</synph> element
+is inserted into the first column and wrapped in a <synph
+    status = "changed" outputclass = "element">fm-hazardsymbolwrapper</synph> element.
+This wrapper element is used even when there is no <synph
+    status = "changed" outputclass = "element">hazardsymbol</synph> element
+to allow custom formatting if needed. For the partial-width header
+table, the top, left, and bottom rulings are set to “None” for the first
+column, effectively making the symbol separate from the content
+table.</p>
+<p>The maximum width of hazardsymbol images is controlled by the
+Max Symbol Width setting in the Authoring Options dialog. To override
+this for a book build, use the BookBuildOverrides/HazardSymbolMaxWidth
+parameter.</p>
+<p>The <synph status = "changed" outputclass = "element">messagepanel</synph> element
+(and children) are inserted into the second cell in the second row.
+Additional <synph status = "changed" outputclass = "element">messagepanel</synph> elements
+are inserted into extra rows in the table. Use typical EDD/template
+formatting techniques for the <synph status = "changed"
+    outputclass = "element">messagepanel</synph> elements. </p>
+<p>If you are using the full-width header tables and want to create
+separate table formats for each hazard type, you can use the header
+background color defined in the default format rather than creating
+custom color definitions. To do this, in the bookbuild INI set BookBuildOverrides/UseColorFromTable=1. </p>
+<p>The default DITA-FMx Book application and component templates
+all have the necessary settings, objects, and element definitions
+to render the partial-width header hazard tables (this format appears
+to be the most “standard”). If you’d like to test the full-width
+header style, locate the <filepath>tpl~topicref-HAZALT.fm</filepath> file
+in the Book application’s <filepath>component-templates</filepath> folder.
+This file contains the styles and objects that will create a full-width
+header style hazard table. If you’ve enabled the “Component Templates”
+book-build option, and your component map element types are “topicrefs”
+you can swap this file for the default topicref component template.
+Or, if needed, rename it to be a chapter component template. To
+set up other templates, you’ll need to copy and paste the Hazard
+table into that template as well as transfer the color definitions
+and paragraph definitions. </p></body></topic>
