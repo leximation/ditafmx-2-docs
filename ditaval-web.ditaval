@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<val>
+    <prop att="audience" val="chm" action="exclude" />
+    <prop att="audience" val="help" action="exclude" />
+    <prop att="audience" val="print" action="exclude" />
+    <prop att="audience" val="web" action="include" />
+    <prop img="flag-fm72.png" alt="FM7.2 Only" att="otherprops" val="fm72" action="flag" />
+    <prop img="flag-fm80.png" alt="FM8 Only" att="otherprops" val="fm80" action="flag" />
+    <prop img="flag-fm90.png" alt="FM9 Only" att="otherprops" val="fm90" action="flag" />
+    <prop img="flag-fm100.png" alt="FM10 Only" att="otherprops" val="fm100" action="flag" />
+    <prop img="flag-fm110.png" alt="FM11 Only" att="otherprops" val="fm110" action="flag" />
+    <prop img="flag-fm100-110.png" alt="FM10/11 Only" att="otherprops" val="fm100-110" action="flag" />
+</val>
