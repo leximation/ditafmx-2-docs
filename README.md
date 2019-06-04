@@ -20,3 +20,9 @@ DITA-FMx is a plugin for Adobe FrameMaker (versions 7.2 through 2019) that provi
   - Root map is *_ditafmx.ditamap*
 - Files for building a book/PDF (using DITA-FMx) are in the *book* directory
   - The *ditafmx-bookbuild.ini* file defines properties of the book build (see DITA-FMx docs for details)
+
+## Please report DITA-FMx defects and enhancements as issues
+
+- Documentation - [ditafmx-2-docs](https://github.com/leximation/ditafmx-2-docs/issues)
+- Structure applications - [ditafmx-2-apps](https://github.com/leximation/ditafmx-2-apps/issues)
+- Plugin functionality - [ditafmx-2-issues](https://github.com/leximation/ditafmx-2-issues/issues)
